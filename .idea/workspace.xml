@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2185cc8e-e960-4fe9-9d38-20554f2000ae" name="Changes" comment="IntelliJ test" />
+    <list default="true" id="2185cc8e-e960-4fe9-9d38-20554f2000ae" name="Changes" comment="IntelliJ test">
+      <change afterPath="$PROJECT_DIR$/demo/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/.idea/demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/test/java/com/example/demo/DemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +75,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "test",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/abuba/OneDrive - Aston University/Computer Science - Year 2/Team Project/GitTest/team-29",
+    "last_opened_file_path": "C:/Users/abuba/OneDrive - Aston University/Computer Science - Year 2/Team Project/GitTest/team-29/demo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,6 +94,8 @@
       <updated>1698402830853</updated>
       <workItem from="1698402831990" duration="894000" />
       <workItem from="1698404421373" duration="645000" />
+      <workItem from="1698405302895" duration="146000" />
+      <workItem from="1698405477066" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="IntelliJ test">
       <option name="closed" value="true" />
