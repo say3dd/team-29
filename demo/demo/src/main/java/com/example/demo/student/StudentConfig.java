@@ -15,21 +15,19 @@ public class StudentConfig {
     @Bean
     CommandLineRunner commandLineRunner(StudentRepository repository){
         return args -> {
-        Student abu = new Student(
-                    "Abu",
-                    "example@gmail.com",
-                    LocalDate.of(2001, JULY, 11)
-            );
+//        Student abu = new Student(
+//                    "Abu",
+//                    "example@gmail.com",
+//                    LocalDate.of(2001, JULY, 11)
+//            );
+//
+//            Student rick = new Student(
+//                    "Rick",
+//                    "rick-example@gmail.com",
+//                    LocalDate.of(2002, MAY, 5)
+//            );
 
-            Student rick = new Student(
-                    "Rick",
-                    "rick-example@gmail.com",
-                    LocalDate.of(2002, MAY, 5)
-            );
-
-            repository.saveAll(
-                    List.of(abu, rick)
-            );
+            repository.saveAll(List.of());
         };
     }
 }

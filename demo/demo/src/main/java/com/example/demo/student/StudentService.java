@@ -1,11 +1,14 @@
 package com.example.demo.student;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class StudentService {
 
@@ -17,4 +20,35 @@ public class StudentService {
     public List<Student> getStudent(){
             return studentRepository.findAll();
         }
+
+    public void addNewStudent(Student student) {
+        Optional<Student> studentOptional =
+                studentRepository.findStudentByEmail(student.getEmail());
+        if (studentOptional.isPresent()){
+            throw new IllegalStateException("email taken");
+        }
+       studentRepository.save(student);
+    }
+
+    public void deleteStudent(Long studentId) {
+    studentRepository.findById(studentId);
+        boolean exists = studentRepository.existsById(studentId);
+        if (!exists){
+            throw new IllegalStateException(("student with id "
+                    + studentId + " does not exists"));
+        }
+        studentRepository.deleteById(studentId);
+    }
+
+    @Transactional
+    public void updateStudent(Long studentId, String name, String email) {
+    studentRepository.findById(studentId);
+        boolean exists = studentRepository.existsById(studentId);
+        if (!exists){
+            throw new IllegalStateException(("student with id "
+                    + studentId + " does not exists"));
+        }
+
+
+    }
 }
