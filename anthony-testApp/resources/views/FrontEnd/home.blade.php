@@ -1,6 +1,7 @@
 @extends('FrontEnd.master')
 
 
+
 @section('footer')
 <section class="footer-section">
   <footer>
