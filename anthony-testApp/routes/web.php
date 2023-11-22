@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TemplateController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,15 +14,8 @@ use App\Http\Controllers\TemplateController;
 |
 */
 
-Route::get('/', [TemplateController::class, 'index']);
-
-Route::get('/test', [TemplateController::class, 'test']);
-
-
-
-/*
 Route::get('/', function () {
-    return view('welcome');
+    return view('FrontEnd/home');
 });
 
 Route::get('/dashboard', function () {
@@ -37,4 +29,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-*/
