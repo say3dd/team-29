@@ -7,7 +7,7 @@
 
         <input type="checkbox" id="check">
         <label for="check" class="menu-icon">
-        <i class="bx bx-menu" id="menu"></i>
+        <i class="bx bx-menu"  id="menu"></i>
         <i class="bx bx-x" id="close"></i>
         </label>
 
