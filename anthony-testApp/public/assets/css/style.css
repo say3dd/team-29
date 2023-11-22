@@ -116,7 +116,7 @@ header {
 
 
 
-/*                              HERO SECTION                                    */
+/*                                   HERO SECTION                                    */
 #hero {
   width: 100%;
   height: 87vh;
@@ -404,10 +404,10 @@ footer {
 
 
 
-/* Mobile Compativility */
+/*                 Mobile Compativility              */
 @media (max-width: 1400px) {
   header {
-    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496)),
+      background: linear-gradient(rgba(0, 0, 0, 0.311), rgb(0, 0, 0)),
     url("../images/image.jpg");
       background-size: cover;
       background-position: center;
