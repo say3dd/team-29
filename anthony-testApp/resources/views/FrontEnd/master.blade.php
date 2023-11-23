@@ -30,6 +30,7 @@
                         @endif
                     @endauth
                 </div>
+                
             @endif
             <a href="" class="logo"> <img src="{{asset('assets/images/Screenshot_2023-11-16_030651.png')}}" alt=""></a>
             <input type="checkbox" id="check">
