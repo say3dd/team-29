@@ -1,4 +1,10 @@
-<x-guest-layout>
+<x-guest-layout style="background-color: #120045;">
+
+    <!-- Logo -->
+    <div class="text-center mb-8">
+        <img src="{{ asset('assets/images/logo.png') }}" alt="Valhalla" class="mx-auto h-12 w-auto">
+    </div>
+    
     <div class="mb-4 text-sm text-gray-600">
         {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
     </div>

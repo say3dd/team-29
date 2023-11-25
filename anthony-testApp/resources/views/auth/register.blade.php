@@ -1,6 +1,11 @@
-<x-guest-layout>
+<x-guest-layout style="background-color: #120045;">
     <form method="POST" action="{{ route('register') }}">
         @csrf
+
+        <!-- Logo -->
+    <div class="text-center mb-8">
+        <img src="{{ asset('assets/images/logo.png') }}" alt="Valhalla" class="mx-auto h-12 w-auto">
+    </div>
 
         <!-- Name -->
         <div>
