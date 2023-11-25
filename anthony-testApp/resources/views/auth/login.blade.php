@@ -1,4 +1,12 @@
 <x-guest-layout>
+
+<body style="background-color: #120045;">
+    
+    <!-- Logo -->
+    <div class="mb-4">
+        <img src="{{ asset('assets/images/logo.png') }}" alt="Valhalla" class="mx-auto h-16 w-auto rounded-full border border-white p-2">
+    </div>
+
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -44,4 +52,5 @@
             </x-primary-button>
         </div>
     </form>
+</body>
 </x-guest-layout>

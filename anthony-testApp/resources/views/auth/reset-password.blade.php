@@ -1,9 +1,14 @@
-<x-guest-layout>
+<x-guest-layout style="background-color: #120045;">
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
 
         <!-- Password Reset Token -->
         <input type="hidden" name="token" value="{{ $request->route('token') }}">
+
+        <!-- Logo -->
+    <div class="text-center mb-8">
+        <img src="{{ asset('assets/images/logo.png') }}" alt="Valhalla" class="mx-auto h-12 w-auto">
+    </div>
 
         <!-- Email Address -->
         <div>

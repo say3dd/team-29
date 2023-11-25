@@ -1,4 +1,10 @@
-<x-guest-layout>
+<x-guest-layout style="background-color: #120045;">
+    
+    <!-- Logo -->
+    <div class="text-center mb-8">
+        <img src="{{ asset('assets/images/logo.png') }}" alt="Valhalla" class="mx-auto h-12 w-auto">
+    </div>
+    
     <div class="mb-4 text-sm text-gray-600">
         {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
     </div>
