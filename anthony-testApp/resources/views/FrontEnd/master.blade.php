@@ -29,7 +29,7 @@
                 </label>
                 <nav class="navbar">
                     <a href="#">Home</a>
-                    <a href="{{route('product')}}">Products</a>
+                    <a href="#">Products</a>
                     <a href="#">Contact Us</a>
 
                     <!--        Fixed the heading so that the login and register is included in the header           -->

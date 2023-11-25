@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/product', function () {
+    return view('FrontEnd/product');
+});
 Route::get('/', function () {
     return view('FrontEnd/home');
 });
@@ -22,9 +25,9 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('FrontEnd/test');
 });
-Route::get('/products', function () {
-    return view('FrontEnd/product');
-});
+// Route::get('/products', function () {
+//     return view('FrontEnd/product');
+// });
 
 
 
@@ -36,9 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/', function () {
-        return view('FrontEnd/product');
-    });
+    
 });
 
 require __DIR__ . '/auth.php';

@@ -1,6 +1,6 @@
 @extends('FrontEnd.master')
 
-
+@section('title', 'Home')
 
 @section('footer')
 <section class="footer-section">
