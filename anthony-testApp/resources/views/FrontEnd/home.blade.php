@@ -1,17 +1,7 @@
 @extends('FrontEnd.master')
-
 @section('title', 'Home')
 
-@section('footer')
-<section class="footer-section">
 
-  <footer>
-    <div class="footer-content">
-      <p> Made By Valhalla &copy; </p>
-      <div class="social-icons">
-        </div>
-    </div>
-  </footer>
-</section>
+@section('content')
+<h1> a Test from Abu </h1>
 @endsection
-

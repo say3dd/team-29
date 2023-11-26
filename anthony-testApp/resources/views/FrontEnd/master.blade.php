@@ -28,7 +28,7 @@
                     <i class="bx bx-x" id="close"></i>
                 </label>
                 <nav class="navbar">
-                    <a href="#">Home</a>
+                    <a href="{{url('Home')}}">Home</a>
                     <a href="#">Products</a>
                     <a href="#">Contact Us</a>
 
@@ -60,6 +60,7 @@
             <!--         Hero Section         -->
             <section id="hero">
                 <div class="container">
+                    @yield('content')
                     <div class="hero-info">
 
                         <h1>Explore Top-Quality Gaming Gear</h1>
@@ -227,7 +228,17 @@
                 </section>
 
 
-                @include('footer')
+                <section class="footer-section">
+
+  <footer>
+    @yield('footer')
+    <div class="footer-content">
+      <p> Made By Valhalla &copy; </p>
+      <div class="social-icons">
+        </div>
+    </div>
+  </footer>
+</section>
 
     </body>
 
