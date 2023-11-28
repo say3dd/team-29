@@ -204,56 +204,55 @@
                 
                                 <a href="#" class="buy-product">Add to Basket</a>
                             </div>
-                
                         </div>
-            
-
 
                         </div>
-                        <div class="big-card">
+                      
+            <div id="best-seller-container">
+                <div class="laptop">
+                    <div class = "specs-container">
+                        <img src="{{ asset('assets/images/GU603VI-N4015W_1_Supersize.jpg') }}" alt="laptop 4">
+                  
+                        <h1>MSI Raider GE78HX</h1>
+                        <p>Processor: Intel Core i7</p>
+                        <p>RAM: 16GB</p>
+                        <p>Graphics: NVIDIA RTX 3080</p>
+                        <h3>£530</h3>
+                    </div>
+    
+                    <a href="#" class="buy-product">Add to Basket</a>
+                </div>
+                <div class="laptop">
+                    <div class = "specs-container">
+                        <img src="{{ asset('assets/images/laptop1.jpg') }}" alt="laptop 4">
+                      
+                  
+                        <h1>MSI Raider GE78HX</h1>
+                        <p>Processor: Intel Core i7</p>
+                        <p>RAM: 16GB</p>
+                        <p>Graphics: NVIDIA RTX 3080</p>
+                        <h3>£590</h3>
+                    </div>
+    
+                    <a href="#" class="buy-product">Add to Basket</a>
+                </div>
+                <div class="laptop">
+                    <div class = "specs-container">
+                        <img src="{{ asset('assets/images/30035515_1_Supersize.png') }}" alt="laptop 4">
+                  
+                        <h1>MSI Raider GE78HX</h1>
+                        <p>Processor: Intel Core i7</p>
+                        <p>RAM: 16GB</p>
+                        <p>Graphics: NVIDIA RTX 3080</p>
+                        <h3>£720</h3>
+                    </div>
+    
+                    <a href="#" class="buy-product">Add to Basket</a>
+                </div>
+    
+    
+            </div>
 
-                            <!-- Add this line -->
-                                
-                                <div class="laptop">
-                                    <div class = "specs-container">
-                                    <img src="{{ asset('assets/images/laptop1.jpg') }}" alt="laptop 4">
-                                  
-                                        <h1>MSI Raider GE78HX</h1>
-                                        <p>Processor: Intel Core i7</p>
-                                        <p>RAM: 16GB</p>
-                                        <p>Graphics: NVIDIA RTX 3080</p>
-                                        <h3>£450</h3>
-                                    </div>
-                    
-                                    <a href="#" class="buy-product">Add to Basket</a>
-                                </div>
-                                <div class="laptop">
-                                    <div class = "specs-container">
-                                    <img src="{{ asset('assets/images/30035515_1_Supersize.png') }}" alt="laptop 4">
-                                  
-                                        <h1>MSI Raider GE78HX</h1>
-                                        <p>Processor: Intel Core i9</p>
-                                        <p>RAM: 8GB</p>
-                                        <p>Graphics: NVIDIA RTX 2060</p>
-                                        <h3>£700</h3>
-                                    </div>
-                    
-                                    <a href="#" class="buy-product">Add to Basket</a>
-                                </div>
-                                <div class="laptop">
-                                    <div class = "specs-container">
-                                    <img src="{{ asset('assets/images/GU603VI-N4015W_1_Supersize.jpg') }}" alt="laptop 4">
-                                  
-                                        <h1>MSI Raider GE78HX</h1>
-                                        <p>Processor: Intel Core i7</p>
-                                        <p>RAM: 16GB</p>
-                                        <p>Graphics: NVIDIA RTX 3080</p>
-                                        <h3>£650</h3>
-                                    </div>
-                    
-                                    <a href="#" class="buy-product">Add to Basket</a>
-                                </div>
-                            </div>
                 </section>
 
 
