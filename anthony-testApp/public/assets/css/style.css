@@ -195,7 +195,7 @@ header {
 
 .main {
   background-color: #120045;
-  
+
   padding-top: 1px; /* Add a small padding to prevent margin collapse */
 }
 
@@ -214,7 +214,33 @@ header {
   margin: 0 auto;
   margin-bottom: 3rem;
   gap:1rem;
+  
+}
 
+.specs-container {
+
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
+  background-color:#3d026b;
+  padding: 20px;
+  border-radius: 10px;  
+  
+
+}
+
+.specs-container h3 {
+
+  font-weight: bolder;
+  font-size: 1.3rem;
+  margin-top: 1.2rem;
+ 
+
+}
+
+
+
+#best-seller-container p {
+  font-size: 1.2rem;
 }
 
 .title-container {
@@ -240,8 +266,13 @@ header {
 
 }
 
+.laptop p {
+  text-align: center;
+}
+
+
 .laptop h1{
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   font-weight: bolder;
 }
 
@@ -253,6 +284,17 @@ header {
   border: 3px solid  black;
 
 }
+
+
+    .laptop img {
+        transition: filter 0.5s; /* Adjust the transition duration */
+    }
+
+    .laptop:hover img {
+        filter: saturate(200%); /* Adjust the saturation value to your preference */
+        transform: scale(1.05);
+    }
+
 
 blockquote{
 font-weight: 400;
@@ -275,20 +317,21 @@ font-size: 1.2rem;
    background-color:#A634FF;
   border: none;
   color: white;
-  border-radius: 30px;
+  border-radius: 10px;
   width: 15em;
   font-size: 1.2rem;
   text-align: center;
   display: inline-block;
   padding: 0.8rem;
   text-decoration: none;
-  margin-top: 1.5rem;
+  margin-top: 1.2rem;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  
 }
 
 
 .buy-product:hover {
-  background-color:#48007f;
+  background-color:#bc00f5;
   color: #FFFFFF; /* Change text color on hover */
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
 }
@@ -296,6 +339,8 @@ font-size: 1.2rem;
 .buy-product:active {
   transform: translateY(2px); /* Add a slight downward shift on click */
 }
+
+
 
 
 
