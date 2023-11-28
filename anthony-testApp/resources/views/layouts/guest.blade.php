@@ -18,9 +18,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-indigo-950">
             <div>
                 <a href="/" title="Logo">
-                    <x-application-logo>
-                        <img src="{{asset('assets/images/logo.png')}}" alt="Logo" class="w-200 h-20"/>
-                    </x-application-logo>
+                        <img src="{{asset('assets/images/logo.png')}}" alt="Logo" class="w-200 h-20 rounded-full"/>
                 </a> 
             </div>
 
