@@ -18,7 +18,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-indigo-950">
             <div>
                 <a href="/" title="Logo">
-                        <img src="{{asset('assets/images/logo.png')}}" alt="Logo" class="w-200 h-20 rounded-full"/>
+                        <img src="{{asset('assets/images/transparent-logo.png')}}" alt="Logo" class="w-200 h-20 rounded-full bg-opacity-0"/>
                 </a> 
             </div>
 
