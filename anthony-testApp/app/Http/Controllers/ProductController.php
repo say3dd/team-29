@@ -17,7 +17,7 @@ class ProductController extends Controller
     // directing user to the product page
     public function index(){
         if(Auth::user()){ 
-            return view('Product.product');
+            return view('FrontEnd.products');
         }
     }
 }
