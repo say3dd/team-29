@@ -18,3 +18,4 @@ class TemplateController extends Controller
         return view('Frontend.test');
     }
 }
+
