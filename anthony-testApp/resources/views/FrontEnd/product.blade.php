@@ -8,6 +8,9 @@
 </head>
 <body>
     @include('header')
+
+<h1>Hello </h1>
+
     @include('footer')
 </body>
 
