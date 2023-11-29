@@ -386,7 +386,7 @@ font-size: 1.2rem;
   background-color:#A634FF;
  border: none;
  color: white;
- border-radius: 30px;
+ border-radius: 10px;
  width: 15em;
  font-size: 1.2rem;
  text-align: center;
@@ -399,7 +399,7 @@ font-size: 1.2rem;
 
 
 .view-laptops-btn:hover {
-  background-color:#48007f;
+  background-color:#bc00f5;
   color: #FFFFFF; /* Change text color on hover */
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
 }
