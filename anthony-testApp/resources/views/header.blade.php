@@ -10,7 +10,7 @@
             <i class="bx bx-x" id="close"></i>
         </label>
         <nav class="navbar">
-            <a href="{{url('master')}}">Home</a>
+            <a href="{{url('http://127.0.0.1:8000')}}">Home</a>
             <a href="{{url('test')}}">Products</a>
             <a href="#">Contact Us</a>
 
