@@ -95,32 +95,41 @@
                     <div class="title-line"></div> <!-- Add this line -->
                     <div id="best-seller-container">
                         <div class="laptop">
-                            <img src="{{ asset('assets/images/laptop1.jpg') }}" alt="laptop 1">
-                            <h1>MSI Raider GE78HX</h1>
-                            <p>Processor: Intel Core i7</p>
-                            <p>RAM: 16GB</p>
-                            <p>Storage: 512GB SSD</p>
-                            <p>Graphics: NVIDIA RTX 3080</p>
+                            <div class = "specs-container">
+                                <img src="{{ asset('assets/images/GU603VI-N4015W_1_Supersize.jpg') }}" alt="laptop 4">
+                          
+                                <h1>MSI Raider GE78HX</h1>
+                                <p>Processor:AMD RYZEN 5950X</p>
+                                <p>RAM: 16GB</p>
+                                <p>Graphics: NVIDIA RTX 3080</p>
+                                <h3>£420</h3>
+                            </div>
+            
                             <a href="#" class="buy-product">Add to Basket</a>
                         </div>
                         <div class="laptop">
-
-                            <img src="{{ asset('assets/images/GU603VI-N4015W_1_Supersize.jpg') }}" alt="laptop 2">
-                            <h1>MSI M100 32FS</h1>
-                            <p>Processor: Intel Core i7</p>
-                            <p>RAM: 16GB</p>
-                            <p>Storage: 512GB SSD</p>
-                            <p>Graphics: NVIDIA RTX 2060</p>
+                            <div class = "specs-container">
+                                <img src="{{ asset('assets/images/30035515_1_Supersize.png') }}" alt="laptop 4">
+                                <h1>MSI Raider GE78HX</h1>
+                                <p>Processor: Intel Core i7</p>
+                                <p>RAM: 16GB</p>
+                                <p>Graphics: NVIDIA RTX 3080</p>
+                                <h3>£590</h3>
+                            </div>
+            
                             <a href="#" class="buy-product">Add to Basket</a>
                         </div>
                         <div class="laptop">
-                            <img src="{{ asset('assets/images/GU603VI-N4015W_1_Supersize.jpg') }}" alt="laptop 3">
-                            <h1>Asus TUF ZQ13X</h1>
-
-                            <p>AMD Ryzen 7</p>
-                            <p>RAM: 32GB</p>
-                            <p> 1TB SSD</p>
-                            <p>Graphics: AMD Radeon RX 5700</p>
+                            <div class = "specs-container">
+                            <img src="{{ asset('assets/images/laptop1.jpg') }}" alt="laptop 4">
+                          
+                                <h1>MSI Raider GE78HX</h1>
+                                <p>Processor: AMD 5800X</p>
+                                <p>RAM: 16GB</p>
+                                <p>Graphics: NVIDIA RTX 3080</p>
+                                <h3>£810</h3>
+                            </div>
+            
                             <a href="#" class="buy-product">Add to Basket</a>
                         </div>
 
@@ -158,73 +167,92 @@
                         <div class="title-line"></div> <!-- Add this line -->
                         <div id="best-seller-container">
                             <div class="laptop">
-                                <img src="{{ asset('assets/images/laptop1.jpg') }}" alt="laptop 1">
-
-                                <h1>MSI Raider GE78HX</h1>
-                                <p>Processor: Intel Core i7</p>
-                                <p>RAM: 16GB</p>
-                                <p>Storage: 512GB SSD</p>
-                                <p>Graphics: NVIDIA RTX 3080</p>
+                                <div class = "specs-container">
+                                    <img src="{{ asset('assets/images/GU603VI-N4015W_1_Supersize.jpg') }}" alt="laptop 4">
+                              
+                                    <h1>MSI Raider GE78HX</h1>
+                                    <p>Processor:AMD RYZEN 5950X</p>
+                                    <p>RAM: 16GB</p>
+                                    <p>Graphics: NVIDIA RTX 3080</p>
+                                    <h3>£420</h3>
+                                </div>
+                
                                 <a href="#" class="buy-product">Add to Basket</a>
                             </div>
-                            <div class="laptop">
-                                <img src="{{ asset('assets/images/GU603VI-N4015W_1_Supersize.jpg') }}" alt="laptop 2">
-                                <h1>MSI M100 32FS</h1>
-                                <p>Processor: Intel Core i7</p>
-                                <p>RAM: 16GB</p>
-                                <p>Storage: 512GB SSD</p>
-                                <p>Graphics: NVIDIA RTX 2060</p>
-                                <a href="#" class="buy-product">Add to Basket</a>
-                            </div>
-                            <div class="laptop">
-                                <img src="{{ asset('assets/images/30035515_1_Supersize.png') }}" alt="laptop 3">
-                                <h1>Asus TUF ZQ13X</h1>
-
-                                <p>AMD Ryzen 7</p>
-                                <p>RAM: 32GB</p>
-                                <p> 1TB SSD</p>
-                                <p>Graphics: AMD Radeon RX 5700</p>
-                                <a href="#" class="buy-product">Add to Basket</a>
-                            </div>
-
-
-                        </div>
-                        <div class="big-card">
-
-                            <!-- Add this line -->
-                            <div id="best-seller-container">
-                                <div class="laptop">
-                                    <img src="{{ asset('assets/images/laptop1.jpg') }}" alt="laptop 4">
+                           <div class="laptop">
+                                <div class = "specs-container">
+                                    <img src="{{ asset('assets/images/30035515_1_Supersize.png') }}" alt="laptop 4">
                                     <h1>MSI Raider GE78HX</h1>
                                     <p>Processor: Intel Core i7</p>
                                     <p>RAM: 16GB</p>
-                                    <p>Storage: 512GB SSD</p>
                                     <p>Graphics: NVIDIA RTX 3080</p>
-                                    <a href="#" class="buy-product">Add to Basket</a>
+                                    <h3>£590</h3>
                                 </div>
-                                <div class="laptop">
-                                    <img src="{{ asset('assets/images/GU603VI-N4015W_1_Supersize.jpg') }}"
-                                        alt="laptop 5">
-                                    <h1>MSI M100 32FS</h1>
-                                    <p>Processor: Intel Core i7</p>
-                                    <p>RAM: 16GB</p>
-                                    <p>Storage: 512GB SSD</p>
-                                    <p>Graphics: NVIDIA RTX 2060</p>
-                                    <a href="#" class="buy-product">Add to Basket</a>
-                                </div>
-                                <div class="laptop">
-                                    <img src="{{ asset('assets/images/30035515_1_Supersize.png') }}" alt="laptop 6">
-                                    <h1>Asus TUF ZQ13X</h1>
-
-                                    <p>AMD Ryzen 7</p>
-                                    <p>RAM: 32GB</p>
-                                    <p> 1TB SSD</p>
-                                    <p>Graphics: AMD Radeon RX 5700</p>
-                                    <a href="#" class="buy-product">Add to Basket</a>
-                                </div>
-
-
+                
+                                <a href="#" class="buy-product">Add to Basket</a>
                             </div>
+                            <div class="laptop">
+                                <div class = "specs-container">
+                                <img src="{{ asset('assets/images/laptop1.jpg') }}" alt="laptop 4">
+                              
+                                    <h1>MSI Raider GE78HX</h1>
+                                    <p>Processor: AMD 5800X</p>
+                                    <p>RAM: 16GB</p>
+                                    <p>Graphics: NVIDIA RTX 3080</p>
+                                    <h3>£810</h3>
+                                </div>
+                
+                                <a href="#" class="buy-product">Add to Basket</a>
+                            </div>
+                        </div>
+
+                        </div>
+                      
+            <div id="best-seller-container">
+                <div class="laptop">
+                    <div class = "specs-container">
+                        <img src="{{ asset('assets/images/GU603VI-N4015W_1_Supersize.jpg') }}" alt="laptop 4">
+                  
+                        <h1>MSI Raider GE78HX</h1>
+                        <p>Processor: Intel Core i7</p>
+                        <p>RAM: 16GB</p>
+                        <p>Graphics: NVIDIA RTX 3080</p>
+                        <h3>£530</h3>
+                    </div>
+    
+                    <a href="#" class="buy-product">Add to Basket</a>
+                </div>
+                <div class="laptop">
+                    <div class = "specs-container">
+                        <img src="{{ asset('assets/images/laptop1.jpg') }}" alt="laptop 4">
+                      
+                  
+                        <h1>MSI Raider GE78HX</h1>
+                        <p>Processor: Intel Core i7</p>
+                        <p>RAM: 16GB</p>
+                        <p>Graphics: NVIDIA RTX 3080</p>
+                        <h3>£590</h3>
+                    </div>
+    
+                    <a href="#" class="buy-product">Add to Basket</a>
+                </div>
+                <div class="laptop">
+                    <div class = "specs-container">
+                        <img src="{{ asset('assets/images/30035515_1_Supersize.png') }}" alt="laptop 4">
+                  
+                        <h1>MSI Raider GE78HX</h1>
+                        <p>Processor: Intel Core i7</p>
+                        <p>RAM: 16GB</p>
+                        <p>Graphics: NVIDIA RTX 3080</p>
+                        <h3>£720</h3>
+                    </div>
+    
+                    <a href="#" class="buy-product">Add to Basket</a>
+                </div>
+    
+    
+            </div>
+
                 </section>
 
 
@@ -232,12 +260,47 @@
 
   <footer>
     @yield('footer')
-    <div class="footer-content">
-      <p> Made By Valhalla &copy; </p>
-      <div class="social-icons">
-        </div>
-    </div>
+    
+    <section class="footer-section">
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <div class="footer-column">
+                       
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Mission & Vision</a></li>
+                            <li><a href="#">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        
+                        <ul>
+                            <li><a href="#">Laptops</a></li>
+                            <li><a href="#">Keyboards</a></li>
+                            <li><a href="#">Mice</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                       
+                        <ul>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Customer Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Valhalla</p>
+            </div>
+        </footer>
+    </section>
+
+
   </footer>
+  
 </section>
 
     </body>
