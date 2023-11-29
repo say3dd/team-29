@@ -3,10 +3,12 @@
 
 <head>
 
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
     <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}">
+
 
     <style>
         h1 {
@@ -19,7 +21,9 @@
             font-size: small;
         }
     </style>
-
+<header>
+    @include ('header')
+</header>
 <body>
     <h1>
         <div class="title_shape">
@@ -39,7 +43,7 @@
     <h2>
         <div class="background_shape6">
             <p
-                style="position: absolute; top: 69%; left: 13%; font-size: 0.9rem; font-weight: lighter; text-decoration: underline; opacity: 0.7;">
+                style="position: absolute; top: 64%; left: 13%; font-size: 0.9rem; font-weight: lighter; text-decoration: underline; opacity: 0.7;">
                 >> Home >>
                 Products >> Gaming
                 Laptops
@@ -154,7 +158,7 @@
             </div>
 
             <div class="laptop_all">
-                <img class="image_all_laptop" src=" {{asset('assets/images_product/ asus_ROG_Strix_G16_G614.png')}}" style=" background-color: white;">
+                <img class="image_all_laptop" src="{{asset('assets/images_product/asus_ROG_Strix_G16_G614.png')}}" style=" background-color: white;">
                 <p style="font-weight:bold; font-size: 1.1rem;">Asus ROG Strix G16 G614</p>
                 <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
                 <p> - GeForce RTX™ 4090</p>
@@ -167,77 +171,13 @@
             </div>
 
             <div class="laptop_all">
-                <img class="image_all_laptop" src=" {{asset('assets/images_product/ alienware_m18.avif')}} ">
+                <img class="image_all_laptop" src="{{asset('assets/images_product/alienware_m18.avif')}} ">
                 <p style="font-weight:bold; font-size: 1.1rem;">Alienware m18</p>
                 <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
                 <p> - GeForce RTX™ 4080</p>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
                 <p style=" font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline;
                                         text-decoration:underline; text-decoration-color:aquamarine ">
-                    Price: £3,362.99
-                </p><br>
-                <button class=" button_cart_laptop"> Add to Basket </button>
-            </div>
-            <div class="laptop_all">
-                <img class="image_all_laptop" src="{{asset('assets/images_product/ msi_Titan_GT77_HX_13V.jpg')}}">
-                <p style="font-weight:bold; font-size: 1.1rem; margin-bottom:0px;">MSI Titan GT77 HX 13V</p>
-                <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
-                <p> - GeForce RTX™ 4090</p>
-                <p style="margin-bottom: 26px;"> - 128GB RAM</p>
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
-                    Price: £3,362.99
-                </p><br>
-                <button class="button_cart_laptop"> Add to Basket </button>
-            </div>
-
-            <div class="laptop_all">
-                <img class="image_all_laptop" src="{{asset('assets/images_product/ alienware_m16.png')}}" style=" background-color: white;">
-                <p style="font-weight:bold; font-size: 1.1rem;">Alienware m16</p>
-                <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
-                <p> - GeForce RTX™ 4070</p>
-                <p style="margin-bottom: 42px;"> - 32GB RAM</p>
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
-                    Price: £3,362.99
-                </p><br>
-                <button class="button_cart_laptop"> Add to Basket </button>
-            </div>
-
-            <div class="laptop_all">
-                <img class="image_all_laptop" src="{{asset('assets/images_product/ medion_erazer_X20.webp')}}">
-                <p style="font-weight:bold; font-size: 1.1rem;">Medion Erazer X20</p>
-                <p> - 13th Intel® Core™ i9 13900HX Processor</p>
-                <p> - GeForce RTX 4070 8GB</p>
-                <p style="margin-bottom: 42px;"> - 32GB RAM</p>
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
-                    Price: £3,362.99
-                </p><br>
-                <button class="button_cart_laptop"> Add to Basket </button>
-            </div>
-
-            <div class="laptop_all">
-                <img class="image_all_laptop" src=" {{asset('assets/images_product/ asus_ROG_Strix_G16_G614.png')}}" style=" background-color: white;">
-                <p style="font-weight:bold; font-size: 1.1rem;">Asus ROG Strix G16 G614</p>
-                <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
-                <p> - GeForce RTX™ 4090</p>
-                <p> - 128GB RAM</p>
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
-                    Price: £3,362.99
-                </p><br>
-                <button class="button_cart_laptop"> Add to Basket </button>
-            </div>
-
-            <div class="laptop_all">
-                <img class="image_all_laptop" src="{{asset('assets/images_product/ alienware_m18.avif')}} ">
-                <p style="font-weight:bold; font-size: 1.1rem;">Alienware m18</p>
-                <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
-                <p> - GeForce RTX™ 4080</p>
-                <p style="margin-bottom: 42px;"> - 32GB RAM</p>
-                <p style=" font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline;
-                    text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
                 <button class=" button_cart_laptop"> Add to Basket </button>
@@ -256,5 +196,6 @@
         </div>
     </h2>
 </body>
+@include('footer')
 
 </html>
