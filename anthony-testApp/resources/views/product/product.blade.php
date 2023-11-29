@@ -11,7 +11,6 @@
 
 @include('header')
 
-@section('content')
 <body>
     <h1>
         <div class="background_shape1"></div>
@@ -404,5 +403,7 @@
             </div>
         </div>
     </h4>
-    @include ('footer')
+    <div class = "footer_class">
+        @include ('footer')
+    </div>
 </html>

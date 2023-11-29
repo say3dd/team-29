@@ -22,6 +22,9 @@ h4 {
     font-family: "Noto Sans", sans-serif;
 }
 
+.footer_class {
+    top: 0%;
+}
 /* SLide Show Properties*/
 .mySlides {
     display: none;
