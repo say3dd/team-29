@@ -19,7 +19,13 @@ Route::get('/', function () {
     return view('FrontEnd/home');
 });
 
+<<<<<<< HEAD
 
+=======
+Route::get('/contactUs', function () {
+    return view('FrontEnd/contactUs');
+});
+>>>>>>> c792de4a0b911a0d1c7f540784fcfc6fccb31823
 
 
 Route::get('/test', function () {

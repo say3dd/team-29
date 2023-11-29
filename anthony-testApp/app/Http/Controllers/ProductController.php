@@ -14,10 +14,10 @@ class ProductController extends Controller
     }
 
 
-    // directing user the product page
+    // directing user to the product page
     public function index(){
         if(Auth::user()){ 
-            return view('FrontEnd.product');
+            return view('FrontEnd.product.product');
         }
     }
 }
