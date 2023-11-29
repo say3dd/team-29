@@ -10,6 +10,8 @@
 </head>   
 
 @include('header')
+
+@section('content')
 <body>
     <h1>
         <div class="background_shape1"></div>
