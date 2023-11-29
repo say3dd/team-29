@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Products;
 
 class ProductsController extends Controller
 {
     public function productList()
     {
-        $products = ProductsController::all();
+        $products = Products::all();
         return view('products', compact('products'));
     }
 }
