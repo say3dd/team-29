@@ -22,7 +22,11 @@
                 </a> 
             </div>
 
+<<<<<<< HEAD
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-purple10 shadow-md overflow-hidden sm:rounded-lg">
+=======
+            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-purple-700 shadow-md overflow-hidden sm:rounded-lg">
+>>>>>>> 347e5038236892e9a8d5c165608700cb2c2f25c6
                 {{ $slot }}
             </div>
         </div>
