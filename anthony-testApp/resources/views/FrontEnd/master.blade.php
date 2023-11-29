@@ -28,8 +28,8 @@
                     <i class="bx bx-x" id="close"></i>
                 </label>
                 <nav class="navbar">
-                    <a href="{{url('Home')}}">Home</a>
-                    <a href="#">Products</a>
+                    <a href="{{url('home')}}">Home</a>
+                    <a href="{{url('product')}}">Products</a>
                     <a href="#">Contact Us</a>
 
                     <!--        Fixed the heading so that the login and register is included in the header           -->
@@ -89,6 +89,7 @@
 
         <!-- Best seller prodcuts-->
         <section class= "main">
+            @yield('content')
             <section id="best-seller-sction">
                 <div class="big-card">
                     <h1 class = "title-sellers">Best Sellers Of The Week</h1>
