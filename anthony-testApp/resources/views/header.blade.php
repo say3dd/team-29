@@ -12,7 +12,7 @@
         <nav class="navbar">
             <a href="{{url('http://127.0.0.1:8000')}}">Home</a>
             <a href="{{route('products')}}">Products</a>
-            <a href="#">Contact Us</a>
+            <a href="{{route('contact.Us')}}">Contact Us</a>
 
             <!--        Fixed the heading so that the login and register is included in the header           -->
 

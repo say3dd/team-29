@@ -17,12 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 route::get('/products', [ProductController::class, 'products']) -> name('products');
-
 route::get('/', [HomeController::class, 'home']) -> name('home');
 
 Route::get('/contactUs', function () {
     return view('FrontEnd/contactUs');
-});
+}) -> name('contact.Us');
 
 
 Route::get('/test', function () {
