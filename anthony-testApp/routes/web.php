@@ -16,35 +16,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/', function () {
     return view('FrontEnd/home');
 });
 
 
 Route::get('/contactUs', function () {
-    return view('FrontEnd/contactUs')->name('contactUs');
+    return view('FrontEnd/contactUs');
 });
 
 
 Route::get('/test', function () {
     return view('FrontEnd/test');
 });
-// Route::get('/products', function () {
-//     return view('FrontEnd/product');
-// });
-
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/product', [ProductController::class, 'index']);
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/product', [ProductController::class, 'index'])->name('product');
 });
 
 require __DIR__ . '/auth.php';
