@@ -10,11 +10,11 @@ class ProductController extends Controller
     public function productList()
     {
         $products = ProductController::all();
-        return view('products', compact('products'));
+        return view('product', compact('product'));
     }
 
 
-    // directing user to the product page
+    // displays all the products
     public function index(){
         if(Auth::user()){ 
             return view('Product.product');
