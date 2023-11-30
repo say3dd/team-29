@@ -9,11 +9,15 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    //
 
+    /*user will be redirected to either home page or admin page based on the current user.
+    If the user has "admin" on the usertype field then they will be redirected admin dashboard page
+    and to home page from if they are just "user"
+    */
     public function index(){
         if(Auth::id()){
         $usertype = Auth::user()->usertype;
+
 
         switch($usertype){
             case 'admin':
@@ -21,11 +25,11 @@ class HomeController extends Controller
                 break;
 
             case 'user':
-
                 return view('FrontEnd.home');
                 break;
+
             default:
-            return redirect()->back();
+                return redirect()->back();
         }
 
         }
