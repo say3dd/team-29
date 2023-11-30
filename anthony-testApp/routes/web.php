@@ -15,13 +15,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/', function () {
     return view('FrontEnd/home');
 });
 
 
 Route::get('/contactUs', function () {
-    return view('FrontEnd/contactUs');
+    return view('FrontEnd/contactUs')->name('contactUs');
 });
 
 
@@ -37,14 +38,13 @@ Route::get('/test', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/product',[ProductController::class,'index']);
-    
+    Route::get('/product', [ProductController::class, 'index']);
 });
 
 require __DIR__ . '/auth.php';
