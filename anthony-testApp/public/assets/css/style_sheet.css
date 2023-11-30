@@ -492,11 +492,18 @@ footer {
     margin-top: 30px;
 }
 
+.laptop_all_text a:link {
+    font-weight: bold;
+    font-size: 1.05rem;
+    color: white;
+}
+
 .image_all_laptop {
     width: 170px;
     height: 150px;
     border-radius: 2rem;
     margin: 0;
+    margin-bottom: 40px;
 }
 
 .button_to_switch_page {
