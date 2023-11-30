@@ -57,22 +57,28 @@
             </button>
             <div class="laptop_all">
                 <img class="image_all_laptop" src="{{asset('assets/images_product/msi_Titan_GT77_HX_13V.jpg')}}">
-                <p style="font-weight:bold; font-size: 1.1rem; margin-bottom:0px;">MSI Titan GT77 HX 13V</p>
+                <div class = "laptop_all_text">
+                <a href="{{ url('page') }}">MSI Titan GT77 HX 13V </a>
                 <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
                 <p> - GeForce RTX™ 4090</p>
-                <p style="margin-bottom: 26px;"> - 128GB RAM</p>
+                </div>
+                <p style="margin-bottom: 42px;"> - 128GB RAM</p>
+                
                 <p
                     style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
+
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>
 
             <div class="laptop_all">
                 <img class="image_all_laptop" src="{{asset('assets/images_product/alienware_m16.png')}}" style=" background-color: white;">
-                <p style="font-weight:bold; font-size: 1.1rem;">Alienware m16</p>
+                <div class = "laptop_all_text">
+                <a href="{{ url('page') }}">Alienware m16</a>
                 <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
                 <p> - GeForce RTX™ 4070</p>
+                </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
                 <p
                     style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
@@ -83,9 +89,11 @@
 
             <div class="laptop_all">
                 <img class="image_all_laptop" src=" {{asset('assets/images_product/medion_erazer_X20.webp')}}">
-                <p style="font-weight:bold; font-size: 1.1rem;">Medion Erazer X20</p>
+                <div class = "laptop_all_text">
+                <a href="{{ url('page') }}">Medion Erazer X20</a>
                 <p> - 13th Intel® Core™ i9 13900HX Processor</p>
                 <p> - GeForce RTX 4070 8GB</p>
+                </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
                 <p
                     style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
@@ -96,9 +104,11 @@
 
             <div class="laptop_all">
                 <img class="image_all_laptop" src="{{asset('assets/images_product/asus_ROG_Strix_G16_G614.png')}}" style=" background-color: white;">
-                <p style="font-weight:bold; font-size: 1.1rem;">Asus ROG Strix G16 G614</p>
+                <div class = "laptop_all_text">
+                    <a href="{{ url('page') }}">Asus ROG Strix G16 G614</a>
                 <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
                 <p> - GeForce RTX™ 4090</p>
+                </div>
                 <p> - 128GB RAM</p>
                 <p
                     style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
@@ -109,9 +119,11 @@
 
             <div class="laptop_all">
                 <img class="image_all_laptop" src="{{asset('assets/images_product/alienware_m18.avif')}} ">
-                <p style="font-weight:bold; font-size: 1.1rem;">Alienware m18</p>
+                <div class = "laptop_all_text">
+                    <a href="{{ url('page') }}">Alienware m18</a>
                 <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
                 <p> - GeForce RTX™ 4080</p>
+                </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
                 <p style=" font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline;
                     text-decoration:underline; text-decoration-color:aquamarine ">
@@ -121,10 +133,12 @@
             </div>
             <div class="laptop_all">
                 <img class="image_all_laptop" src="{{asset('assets/images_product/msi_Titan_GT77_HX_13V.jpg')}}">
-                <p style="font-weight:bold; font-size: 1.1rem; margin-bottom:0px;">MSI Titan GT77 HX 13V</p>
+                <div class = "laptop_all_text">
+                     <a href="{{ url('page') }}">MSI Titan GT77 HX 13V</a>
                 <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
                 <p> - GeForce RTX™ 4090</p>
-                <p style="margin-bottom: 26px;"> - 128GB RAM</p>
+                </div>
+                <p style="margin-bottom: 42px;"> - 128GB RAM</p>
                 <p
                     style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
@@ -134,9 +148,11 @@
 
             <div class="laptop_all">
                 <img class="image_all_laptop" src="{{asset('assets/images_product/alienware_m16.png')}}" style=" background-color: white;">
-                <p style="font-weight:bold; font-size: 1.1rem;">Alienware m16</p>
+                <div class = "laptop_all_text">
+                     <a href="{{ url('page') }}">Alienware m18</a>
                 <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
                 <p> - GeForce RTX™ 4070</p>
+                </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
                 <p
                     style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
@@ -147,9 +163,11 @@
 
             <div class="laptop_all">
                 <img class="image_all_laptop" src=" {{asset('assets/images_product/medion_erazer_X20.webp')}}">
-                <p style="font-weight:bold; font-size: 1.1rem;">Medion Erazer X20</p>
+                <div class = "laptop_all_text">
+                     <a href="{{ url('page') }}">Medion Erazer X20</a>
                 <p> - 13th Intel® Core™ i9 13900HX Processor</p>
                 <p> - GeForce RTX 4070 8GB</p>
+                </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
                 <p
                     style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
@@ -160,9 +178,11 @@
 
             <div class="laptop_all">
                 <img class="image_all_laptop" src="{{asset('assets/images_product/asus_ROG_Strix_G16_G614.png')}}" style=" background-color: white;">
-                <p style="font-weight:bold; font-size: 1.1rem;">Asus ROG Strix G16 G614</p>
+                <div class = "laptop_all_text">
+                    <a href="{{ url('page') }}">Asus ROG Strix G16 G614</a>
                 <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
                 <p> - GeForce RTX™ 4090</p>
+                </div>
                 <p> - 128GB RAM</p>
                 <p
                     style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
@@ -173,9 +193,11 @@
 
             <div class="laptop_all">
                 <img class="image_all_laptop" src="{{asset('assets/images_product/alienware_m18.avif')}} ">
-                <p style="font-weight:bold; font-size: 1.1rem;">Alienware m18</p>
+                <div class = "laptop_all_text">
+                    <a href="{{ url('page') }}">Alienware m18</a>
                 <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
                 <p> - GeForce RTX™ 4080</p>
+                </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
                 <p style=" font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline;
                                         text-decoration:underline; text-decoration-color:aquamarine ">
