@@ -7,13 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product</title>
     <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}">
-    
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-</head>   
-
-@include('header')
-
-@section('content')
+</head>
+<header>
+    @include ('header')
+</header>
 <body>
     <h1>
         <div class="background_shape1"></div>
@@ -50,11 +47,11 @@
             ____________________________
         </p>
         <button class="button_cart">
-            <img src="{{asset('assets/images_product/icon_basket.png')}}" alt="" width="20" height="25">
+            <img src=" {{asset('assets/images_product/icon_basket.png')}}" alt="" width="20" height="25">
             Add to Basket
         </button>
         <button class="button_wish">
-            <img src="{{asset('assets/images_product/love1.png')}}" alt="" width="25" height="23">
+            <img src=" {{asset('assets/images_product/love1.png')}}" alt="" width="25" height="23">
             Add to Wish List
         </button>
         </div>
@@ -193,19 +190,19 @@
         <div class="slideshow-container">
             <div class="slide">
                 <div class="mySlides">
-                    <img src="{{asset('assets/images_product/laptop4.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
+                    <img src=" {{asset('assets/images_product/laptop4.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
                 </div>
                 <div class="mySlides">
-                    <img src="{{asset('assets/images_product/laptop2.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
+                    <img src=" {{asset('assets/images_product/laptop2.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
                 </div>
                 <div class="mySlides">
-                    <img src="{{asset('assets/images_product/laptop3.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
+                    <img src=" {{asset('assets/images_product/laptop3.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
                 </div>
                 <div class="mySlides">
-                    <img src="{{asset('assets/images_product/laptop1.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
+                    <img src= "{{asset('assets/images_product/laptop1.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
                 </div>
                 <div class="mySlides">
-                    <img src="{{asset('assets/images_product/laptop5.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
+                    <img src= " {{asset('assets/images_product/laptop5.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
                 </div>
                 <button class="previousSlide" onclick="plusDivs(-1)">&#10094;</button>
                 <button class="nextSlide" onclick="plusDivs(1)">&#10095;</button>
@@ -247,28 +244,28 @@
     <h2>
         <div class="background_shape2"></div>
         <div class="laptop_image_spec">
-            <img src="{{asset('assets/images_product/laptop_specification1.avif')}}"
-                style=" position: absolute; margin-left: 142px; margin-top: 50%; border-radius: 1rem;">
-            <img src="{{asset('assets/images_product/laptop_specification2.avif')}}"
-                style=" position: absolute; margin-left: 642px; margin-top: 50%; border-radius: 1rem;">
-            <img src="{{asset('assets/images_product/laptop_specification3.avif')}}"
-                style=" position: absolute; margin-left: 1132px; margin-top: 50%; border-radius: 1rem;">
+            <img src=" {{asset('assets/images_product/laptop_specification1.avif')}}"
+                style=" position: absolute; margin-left: 142px; margin-top: 43%; border-radius: 1rem;">
+            <img src=" {{asset('assets/images_product/laptop_specification2.avif')}}"
+                style=" position: absolute; margin-left: 642px; margin-top: 43%; border-radius: 1rem;">
+            <img src=" {{asset('assets/images_product/laptop_specification3.avif')}}"
+                style=" position: absolute; margin-left: 1132px; margin-top: 43%; border-radius: 1rem;">
 
-            <p style=" position: absolute; margin-top: 62.7%;  margin-left:  76px; width: 350px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
+            <p style=" position: absolute; margin-top: 55.7%;  margin-left:  76px; width: 350px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
             color: white; text-align: left; font-size: 0.9em;">
                 Micro-LED stadium lighting
             </p>
-            <p style=" position: absolute; margin-top: 62.7%;  margin-left:  576px; width: 350px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
+            <p style=" position: absolute; margin-top: 55.7%;  margin-left:  576px; width: 350px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
              color: white; text-align: left; font-size: 0.9em;">
                 Per-key lighting
             </p>
-            <p style=" position: absolute; margin-top: 62.7%;  margin-left:  1066px; width: 350px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
+            <p style=" position: absolute; margin-top: 55.7%;  margin-left:  1066px; width: 350px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
             color: white; text-align: left; font-size: 0.9em;">
 
                 AlienFX touchpad
             </p>
 
-            <p style=" position: absolute; margin-top: 65.7%;  margin-left:  76px; width: 390px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
+            <p style=" position: absolute; margin-top: 58.7%;  margin-left:  76px; width: 390px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
          color: white; text-align: left; font-size: 0.9em; font-weight: lighter;">
                 Express yourself with bold,
                 iconic lightning featuring 100
@@ -276,7 +273,7 @@
                 instantly captivating, bright
                 and fluid look.
             </p>
-            <p style=" position: absolute; margin-top: 65.7%;  margin-left: 576px; width: 390px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
+            <p style=" position: absolute; margin-top: 58.7%;  margin-left: 576px; width: 390px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
             color: white; text-align: left; font-size: 0.9em; font-weight: lighter;">
                 Customise your gaming
                 experience with nearly infinite
@@ -284,7 +281,7 @@
                 combinations via the
                 Alienware Command Center.
             </p>
-            <p style=" position: absolute; margin-top: 65.7%; margin-left: 1066px; width: 390px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
+            <p style=" position: absolute; margin-top: 58.7%; margin-left: 1066px; width: 390px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
             color: white; text-align: left; font-size: 0.9em; font-weight: lighter;">
                 Our multi-touch AlienFX
                 touchpad with integrated
@@ -334,11 +331,11 @@
                 style="position: absolute; top: 84%; color: white; text-align: left; font-weight:lighter ;font-size: 1.2em; margin-left: 35px; width: 700px;">
                 Toggle monitor-based overlays on/off to help you focus on the targets at hand.
             </p>
-            <img src="{{asset('assets/images_product/laptop_specification5.avif')}}" style=" position: absolute; margin-left: 802px; margin-top: 8%; border-radius: 1rem;
+            <img src=" {{asset('assets/images_product/laptop_specification5.avif')}}" style=" position: absolute; margin-left: 802px; margin-top: 8%; border-radius: 1rem;
             width: 43%;">
         </div>
         <div class="background_shape4">
-            <img src="{{asset('assets/images_product/laptop_specification4.avif')}}"
+            <img src=" {{asset('assets/images_product/laptop_specification4.avif')}} "
                 style=" position: absolute;border-radius: 2rem; width:99.5%; height: 470px;">
             <p style="position: absolute; top: 70%; color: white; text-align: center; font-size: 1.75em; left: 43%; ">
                 Seamless Gaming
@@ -358,7 +355,7 @@
         <div class="background_shape5">
 
             <div class="laptop">
-                <img src="{{asset('assets/images_product/msi_Titan_GT77_HX_13V.jpg')}}"
+                <img src=" {{asset('assets/images_product/msi_Titan_GT77_HX_13V.jpg')}}"
                     style="width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
                 <p style="font-weight:bold; font-size: 1.1rem;">MSI Titan GT77 HX 13V</p>
                 <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
@@ -368,7 +365,7 @@
             </div>
 
             <div class="laptop">
-                <img src="{{asset('assets/images_product/alienware_m16.png')}}"
+                <img src=" {{asset('assets/images_product/alienware_m16.png')}} "
                     style=" background-color: white;width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
                 <p style="font-weight:bold; font-size: 1.1rem;">Alienware m16</p>
                 <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
@@ -378,7 +375,7 @@
             </div>
 
             <div class="laptop">
-                <img src="{{asset('assets/images_product/medion_erazer_X20.webp')}}" style="width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
+                <img src=" {{asset('assets/images_product/medion_erazer_X20.webp')}}" style="width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
                 <p style="font-weight:bold; font-size: 1.1rem;">Medion Erazer X20</p>
                 <p> - 13th Intel® Core™ i9 13900HX Processor</p>
                 <p> - GeForce RTX 4070 8GB</p>
@@ -387,7 +384,7 @@
             </div>
 
             <div class="laptop">
-                <img src="{{asset('assets/images_product/asus_ROG_Strix_G16_G614.png')}}"
+                <img src=" {{asset('assets/images_product/asus_ROG_Strix_G16_G614.png')}} "
                     style=" background-color: white; width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
                 <p style="font-weight:bold; font-size: 1.1rem;">Asus ROG Strix G16 G614</p>
                 <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
@@ -397,7 +394,7 @@
             </div>
 
             <div class="laptop">
-                <img src="{{asset('assets/images_product/alienware_m18.avif ')}}" style=" width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
+                <img src=" {{asset('assets/images_product/alienware_m18.avif ')}} " style=" width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
                 <p style="font-weight:bold; font-size: 1.1rem;">Alienware m18</p>
                 <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
                 <p> - GeForce RTX™ 4080</p>
@@ -406,5 +403,10 @@
             </div>
         </div>
     </h4>
-    @include ('footer')
+</body>
+<footer>
+    <div style = "margin-top: 180%;">
+        @include('footer')
+    </div>
+</footer>
 </html>
