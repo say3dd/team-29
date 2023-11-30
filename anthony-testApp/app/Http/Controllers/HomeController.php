@@ -14,6 +14,13 @@ class HomeController extends Controller
     If the user has "admin" on the usertype field then they will be redirected admin dashboard page
     and to home page from if they are just "user"
     */
+
+
+
+    public function home(){
+        return view('FrontEnd.master');
+    }
+
     public function index(){
         if(Auth::id()){
         $usertype = Auth::user()->usertype;
