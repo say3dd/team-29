@@ -21,6 +21,7 @@
             font-size: small;
         }
     </style>
+</head>
 <header>
     @include ('header')
 </header>
@@ -196,6 +197,6 @@
         </div>
     </h2>
 </body>
-@include('footer')
+        @include('footer')
 
 </html>
