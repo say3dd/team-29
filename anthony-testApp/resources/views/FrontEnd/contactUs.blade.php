@@ -1,15 +1,8 @@
 @extends('FrontEnd.master')
 
-
-@section('title', 'contactUs')
-
+@section('title', 'ContactUs')
 
 @section('content')
-    <div class="details">
-        {{-- 
-        Your code goes here
-        --}}
 
-        <h1>contact us page test</h1>
-    </div>
+<h1>ContactUs</h1>
 @endsection
