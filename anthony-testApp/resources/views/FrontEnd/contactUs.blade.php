@@ -1,8 +1,15 @@
-@extend('master')
+@extends('FrontEnd.master')
 
 
+@section('title', 'contactUs')
 
-@include('header');
 
+@section('content')
+    <div class="details">
+        {{-- 
+        Your code goes here
+        --}}
 
-@include('footer')
+        <h1>contact us page test</h1>
+    </div>
+@endsection
