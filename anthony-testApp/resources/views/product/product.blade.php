@@ -8,9 +8,8 @@
     <title>Product</title>
     <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}">
 </head>
-<header>
+
     @include ('header')
-</header>
 <body>
     <h1>
         <div class="background_shape1"></div>
