@@ -37,7 +37,7 @@ Route::get('/test', function () {
     return view('FrontEnd/test');
 });
 
-Route::get('/product', [ProductController::class, 'index'])->name('product');
+Route::get('/product', [ProductController::class,'index'])->name('product');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class,'edit'])->name('profile.edit');

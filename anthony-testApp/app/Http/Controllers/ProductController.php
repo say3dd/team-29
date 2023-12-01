@@ -17,7 +17,7 @@ class ProductController extends Controller
     // displays all the products
     public function index(){
         
-            return view('FrontEnd.products');
+            return view('Product.product');
         
     }
 }
