@@ -472,7 +472,7 @@ footer {
 
 .path {
     position: absolute;
-    top: 65%;
+    top: 64%;
     left: 13%;
     font-size: 0.9rem;
     font-weight: lighter;
@@ -593,13 +593,17 @@ footer {
 
 @media (max-width: 1440px) {
     .button_sort {
-        top: 63.5%;
+        top: 64.5%;
         left: 83%;
     }
 
     .button_filter {
-        top: 63.5%;
+        top: 64.5%;
         left: 86%;
+    }
+
+    .path {
+        top: 66%;
     }
 
     .nav-header {
