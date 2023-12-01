@@ -16,8 +16,8 @@ class ProductController extends Controller
 
     // displays all the products
     public function index(){
-        if(Auth::user()){ 
+        
             return view('FrontEnd.products');
-        }
+        
     }
 }
