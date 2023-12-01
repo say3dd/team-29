@@ -420,6 +420,37 @@ footer {
 
 /*Css for the AllProducts webapge*/
 
+/*Image on the top of the webpage*/
+
+.title_shape {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 3%;
+    width: 80%;
+    height: 380px;
+    background-color: transparent;
+    color: white;
+    border-radius: 2rem;
+    padding: 0.25em;
+}
+
+.title_image {
+    position: absolute;
+    border-radius: 2rem;
+    width: 99.5%;
+    height: 380px;
+}
+
+.laptop_title1 {
+    font-size: 1.8em;
+}
+
+.title_content {
+    font-size: 1.6em;
+}
+
+/*Container for showing the list of laptops*/
+
 .background_shape6 {
     background-image: linear-gradient(#4e008b, #1e0431);
     color: white;
@@ -428,13 +459,37 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly; /* Arrange items evenly within the container */
-    gap: 0rem;
+    gap: 1rem;
     margin-bottom: 10%;
     margin-top: 2%;
     border-radius: 2rem;
     padding: 0.27em;
     padding-top: 42px;
     padding-bottom: 50px;
+}
+
+/*Path*/
+
+.path {
+    position: absolute;
+    top: 65%;
+    left: 13%;
+    font-size: 0.9rem;
+    font-weight: lighter;
+    text-decoration: underline;
+    opacity: 0.7;
+}
+
+/*Css for Sort anf Filter buttons*/
+
+.image_sort {
+    width: 18px;
+    height: 22px;
+}
+
+.image_filter {
+    width: 18px;
+    height: 22px;
 }
 
 .button_filter {
@@ -480,6 +535,7 @@ footer {
     color: white;
 }
 
+/*Properties for showing the list of laptops */
 .laptop_all {
     text-align: center;
     background-color: #4e008b;
@@ -488,7 +544,7 @@ footer {
     border-radius: 2rem;
     font-weight: lighter;
     font-family: "Noto Sans", sans-serif;
-    width: 14%; /* Adjust width to fit the container */
+    width: 17%; /* Adjust width to fit the container */
     margin-top: 30px;
 }
 
@@ -505,6 +561,12 @@ footer {
     margin: 0;
     margin-bottom: 40px;
 }
+
+.price {
+    font-size: 1.3rem;
+}
+
+/*Properties for the buttons that are used to switch between the pages */
 
 .button_to_switch_page {
     background-color: #360060;
@@ -527,54 +589,53 @@ footer {
     color: white;
 }
 
-.title_shape {
-    position: relative;
-    margin: 0 auto;
-    margin-top: 3%;
-    width: 80%;
-    height: 380px;
-    background-color: transparent;
-    color: white;
-    border-radius: 2rem;
-    padding: 0.25em;
-}
-
-.title_shape_text {
-    margin: 0 auto;
-    margin-top: 9%;
-    left: 4%;
-    opacity: 0.1;
-    width: 40%;
-    height: 140px;
-    background-color: #4e008b;
-    color: white;
-    border-radius: 2rem;
-    padding: 0.25em;
-    position: absolute;
-}
+/*Properties for Responsive website (size: 1440px) */
 
 @media (max-width: 1440px) {
     .button_sort {
-        top: 67%;
+        top: 63.5%;
         left: 83%;
     }
 
     .button_filter {
-        top: 67%;
+        top: 63.5%;
         left: 86%;
+    }
+
+    .nav-header {
+        padding: 1.3rem 5%;
     }
 }
 
+/*Properties for Responsive website (size: 1024px) */
+
 @media (max-width: 1024px) {
+    .nav-header {
+        padding: 0.9rem;
+    }
+    .title_shape {
+        width: 80%;
+        height: 320px;
+    }
+
+    .title_image {
+        width: 99.5%;
+        height: 320px;
+    }
+
+    .path {
+        top: 59%;
+    }
+
     .button_sort {
-        top: 63%;
+        top: 58%;
         left: 81%;
         width: 35px;
         height: 35px;
     }
 
     .button_filter {
-        top: 63%;
+        top: 58%;
         left: 85%;
         width: 35px;
         height: 35px;
@@ -582,8 +643,199 @@ footer {
 
     .image_all_laptop {
         width: 150px;
-        height: 150px;
-        border-radius: 2rem;
-        margin: 0;
+        height: 130px;
+    }
+
+    .laptop_all_text a:link {
+        font-size: 1rem;
+    }
+
+    .laptop_all {
+        width: 22%; /* Adjust width to fit the container */
+    }
+}
+@media (max-width: 768px) {
+    .laptop_title1 {
+        font-size: 1.5em;
+    }
+
+    .title_content {
+        font-size: 1.3em;
+    }
+
+    .path {
+        top: 57.5%;
+    }
+
+    .button_sort {
+        top: 55.5%;
+        left: 79.5%;
+        width: 35px;
+        height: 35px;
+    }
+
+    .button_filter {
+        top: 55.5%;
+        left: 84%;
+        width: 35px;
+        height: 35px;
+    }
+
+    .image_sort {
+        width: 16px;
+        height: 20px;
+    }
+
+    .image_filter {
+        width: 16px;
+        height: 20px;
+    }
+
+    .image_all_laptop {
+        width: 135px;
+        height: 115px;
+        margin-bottom: 20px;
+    }
+
+    .laptop_all_text a:link {
+        font-size: 0.95rem;
+    }
+
+    .laptop_all {
+        width: 22%; /* Adjust width to fit the container */
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 445px) {
+    .title_shape {
+        margin-left: 10%;
+        width: 120%;
+        height: 140px;
+    }
+
+    .title_image {
+        height: 160px;
+    }
+
+    .laptop_title1 {
+        font-size: 1.2em;
+    }
+
+    .title_content {
+        margin-top: 25px;
+        font-size: 1em;
+    }
+
+    .background_shape6 {
+        width: 117%;
+        margin-left: 12%;
+        margin-top: 13%;
+        padding-bottom: 50px;
+    }
+
+    .laptop_all {
+        width: 32%; /* Adjust width to fit the container */
+    }
+
+    .laptop_all_text a:link {
+        font-weight: bold;
+        font-size: 1.05rem;
+        color: white;
+    }
+
+    .image_all_laptop {
+        width: 118px;
+        height: 98px;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+
+    .path {
+        top: 52%;
+        left: 22%;
+    }
+
+    .button_sort {
+        top: 50.5%;
+        left: 107%;
+        width: 35px;
+        height: 35px;
+    }
+
+    .button_filter {
+        top: 50.5%;
+        left: 115%;
+        width: 35px;
+        height: 35px;
+    }
+
+    .laptop_all_text a:link {
+        font-size: 0.9rem;
+    }
+
+    .button_to_switch_page {
+        top: 170%;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 385px) {
+    .title_shape {
+        width: 131%;
+        height: 140px;
+    }
+    .button_sort {
+        left: 106%;
+    }
+
+    .background_shape6 {
+        width: 128%;
+        margin-left: 13%;
+    }
+
+    .title_image {
+        height: 170px;
+    }
+
+    .laptop_title1 {
+        font-size: 1em;
+    }
+
+    .title_content {
+        margin-top: 25px;
+        font-size: 0.8em;
+    }
+
+    .laptop_all {
+        width: 34%; /* Adjust width to fit the container */
+    }
+
+    .image_all_laptop {
+        width: 128px;
+        height: 108px;
+    }
+
+    .path {
+        top: 50%;
+    }
+
+    .button_sort {
+        top: 49%;
+        left: 120%;
+        width: 35px;
+        height: 35px;
+    }
+
+    .button_filter {
+        top: 49%;
+        left: 130%;
+        width: 35px;
+        height: 35px;
     }
 }

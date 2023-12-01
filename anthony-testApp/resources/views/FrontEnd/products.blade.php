@@ -28,12 +28,11 @@
 <body>
     <h1>
         <div class="title_shape">
-            <img src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" style=" position: absolute;border-radius: 2rem; width:99.5%; height: 380px;">
-            <div class="title_shape_text"></div>
-            <p style="position: absolute; top: 34%; color: white; text-align: center; font-size: 1.8em; left: 5%; ">
+            <img class = "title_image" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
+            <p class = "laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">
                 GAMING LAPTOPS
             </p>
-            <p style="position: absolute; top: 44%; color: white; text-align: left; font-size: 1.6em; left: 5%; ">
+            <p class = "title_content" style="position: absolute; top: 43%; color: white; text-align: left; left: 5%; ">
                 The most portable and powerful laptops for gamers,<br>
                 creators, and professionals
             </p>
@@ -43,17 +42,16 @@
     </h1>
     <h2>
         <div class="background_shape6">
-            <p
-                style="position: absolute; top: 64%; left: 13%; font-size: 0.9rem; font-weight: lighter; text-decoration: underline; opacity: 0.7;">
+            <p class = "path">
                 >> Home >>
                 Products >> Gaming
                 Laptops
             </p>
             <button class="button_sort">
-                <img src="{{asset('assets/images_product/sort.png')}}" alt="" width="20" height="25">
+                <img  class = "image_sort" src="{{asset('assets/images_product/sort.png')}}" alt="" >
             </button>
             <button class="button_filter">
-                <img src="{{asset('assets/images_product/filter.png')}}" alt="" width="20" height="25">
+                <img class = "image_filter" src="{{asset('assets/images_product/filter.png')}}" alt="">
             </button>
             <div class="laptop_all">
                 <img class="image_all_laptop" src="{{asset('assets/images_product/msi_Titan_GT77_HX_13V.jpg')}}">
@@ -64,8 +62,8 @@
                 </div>
                 <p style="margin-bottom: 42px;"> - 128GB RAM</p>
                 
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
+                <p class = "price"
+                    style="font-weight: bold; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
 
@@ -80,8 +78,8 @@
                 <p> - GeForce RTX™ 4070</p>
                 </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
+                <p class = "price"
+                    style="font-weight: bold; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
                 <button class="button_cart_laptop"> Add to Basket </button>
@@ -95,8 +93,8 @@
                 <p> - GeForce RTX 4070 8GB</p>
                 </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
+                <p class = "price"
+                    style="font-weight: bold; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
                 <button class="button_cart_laptop"> Add to Basket </button>
@@ -110,8 +108,8 @@
                 <p> - GeForce RTX™ 4090</p>
                 </div>
                 <p> - 128GB RAM</p>
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
+                <p class = "price"
+                    style="font-weight: bold; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
                 <button class="button_cart_laptop"> Add to Basket </button>
@@ -125,7 +123,7 @@
                 <p> - GeForce RTX™ 4080</p>
                 </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
-                <p style=" font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline;
+                <p class = "price" style=" font-weight: bold; margin-bottom: 0px; text-decoration: underline;
                     text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
@@ -139,8 +137,8 @@
                 <p> - GeForce RTX™ 4090</p>
                 </div>
                 <p style="margin-bottom: 42px;"> - 128GB RAM</p>
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
+                <p class = "price"
+                    style="font-weight: bold; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
                 <button class="button_cart_laptop"> Add to Basket </button>
@@ -154,8 +152,8 @@
                 <p> - GeForce RTX™ 4070</p>
                 </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
+                <p class = "price"
+                    style="font-weight: bold; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
                 <button class="button_cart_laptop"> Add to Basket </button>
@@ -169,8 +167,8 @@
                 <p> - GeForce RTX 4070 8GB</p>
                 </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
+                <p class = "price"
+                    style="font-weight: bold; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
                 <button class="button_cart_laptop"> Add to Basket </button>
@@ -184,8 +182,8 @@
                 <p> - GeForce RTX™ 4090</p>
                 </div>
                 <p> - 128GB RAM</p>
-                <p
-                    style="font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
+                <p class = "price"
+                    style="font-weight: bold; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
                 <button class="button_cart_laptop"> Add to Basket </button>
@@ -199,11 +197,43 @@
                 <p> - GeForce RTX™ 4080</p>
                 </div>
                 <p style="margin-bottom: 42px;"> - 32GB RAM</p>
-                <p style=" font-weight: bold; font-size: 1.3rem; margin-bottom: 0px; text-decoration: underline;
+                <p class = "price"
+                style=" font-weight: bold; margin-bottom: 0px; text-decoration: underline;
                                         text-decoration:underline; text-decoration-color:aquamarine ">
                     Price: £3,362.99
                 </p><br>
                 <button class=" button_cart_laptop"> Add to Basket </button>
+            </div>
+             <div class="laptop_all">
+                <img class="image_all_laptop" src="{{asset('assets/images_product/msi_Titan_GT77_HX_13V.jpg')}}">
+                <div class = "laptop_all_text">
+                <a href="{{ url('page') }}">MSI Titan GT77 HX 13V </a>
+                <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
+                <p> - GeForce RTX™ 4090</p>
+                </div>
+                <p style="margin-bottom: 42px;"> - 128GB RAM</p>
+                
+                <p class = "price"
+                    style="font-weight: bold; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
+                    Price: £3,362.99
+                </p><br>
+
+                <button class="button_cart_laptop"> Add to Basket </button>
+            </div>
+
+            <div class="laptop_all">
+                <img class="image_all_laptop" src="{{asset('assets/images_product/alienware_m16.png')}}" style=" background-color: white;">
+                <div class = "laptop_all_text">
+                <a href="{{ url('page') }}">Alienware m16</a>
+                <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
+                <p> - GeForce RTX™ 4070</p>
+                </div>
+                <p style="margin-bottom: 42px;"> - 32GB RAM</p>
+                <p class = "price"
+                    style="font-weight: bold; margin-bottom: 0px; text-decoration: underline; text-decoration:underline; text-decoration-color:aquamarine ">
+                    Price: £3,362.99
+                </p><br>
+                <button class="button_cart_laptop"> Add to Basket </button>
             </div>
 
             <div class="button_container">
