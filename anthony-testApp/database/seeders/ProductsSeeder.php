@@ -73,6 +73,16 @@ class ProductsSeeder extends Seeder
             'image_path' => 'assets/images_product/razer_blade_14.jpg', 
             'brand' => 'Razer'
         ]);
+
+        Product::create([
+            'laptop_name' => 'Lenovo Legion Pro 7i Gen 8',
+            'price' => 1799.50,
+            'RAM' => 16,
+            'processor' => '13th Gen Intel® Core™ i7-13700HX Processor',
+            'GPU' => 'GeForce RTX™ 4070',
+            'image_path' => 'assets/images_product/razer_blade_15.jpg', 
+            'brand' => 'Lenovo'
+        ]);
         
         
 
