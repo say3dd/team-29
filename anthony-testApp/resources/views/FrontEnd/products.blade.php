@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Products</title>
     <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+   
 
     <style>
         h1 {
@@ -22,13 +23,20 @@
         }
     </style>
 </head>
+
 <header>
+  <section class = "navbar-section">
     @include ('header')
+  </section>
+ 
 </header>
+
+
+
 <body>
     <h1>
         <div class="title_shape">
-            <img class = "title_image" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
+            <img class = "title_image" style="im" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
             <p class = "laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">
                 GAMING LAPTOPS
             </p>
