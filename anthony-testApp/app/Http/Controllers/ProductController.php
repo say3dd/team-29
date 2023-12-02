@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,9 +16,10 @@ class ProductController extends Controller
 
 
     // displays all the products
-    public function index(){
-        
-            return view('Product.product');
-        
+    public function index()
+    {
+        $laptops = Product::all();
+
+        return view('FrontEnd.products', ['laptops' => $laptops]);
     }
 }
