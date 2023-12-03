@@ -18,7 +18,7 @@ class ProductController extends Controller
     // displays all the products
     public function index()
     {
-        $laptops = Product::all();
+        $laptops = Product::paginate(8);
 
         return view('FrontEnd.products', ['laptops' => $laptops]);
     }

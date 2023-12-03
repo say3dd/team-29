@@ -30,7 +30,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 32,
             'processor' => '13th Gen Intel® Core™ i7-13700HX Processor',
             'GPU' => 'GeForce RTX™ 4070',
-            'image_path' => 'assets/images_product/alienware_m16.png', // should be jpeg it comes up as transparent - not good
+            'image_path' => 'assets/images_product/alienware_m16.jpg', // should be jpeg it comes up as transparent - not good
             'brand' => 'Alienware',
         ]);
 
@@ -50,7 +50,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 128,
             'processor' => '13th Gen Intel® Core™ i9-13980HX Processor',
             'GPU' => 'GeForce RTX™ 4090',
-            'image_path' => 'assets/images_product/asus_ROG_Strix_G16_G614.png', // should be jpeg, comes up as transparent
+            'image_path' => 'assets/images_product/asus_ROG_Strix_G16_G614.jpg', // should be jpeg, comes up as transparent
             'brand' => 'Asus',
         ]);
 
@@ -60,7 +60,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 32,
             'processor' => '13th Gen Intel® Core™ i7-13700HX Processor',
             'GPU' => 'GeForce RTX™ 4080',
-            'image_path' => 'assets/images_product/alienware_m18.avif', // .avif files dont work with database
+            'image_path' => 'assets/images_product/alienware-m18.jpg', // .avif files dont work with database
             'brand' => 'Alienware',
         ]);
 
@@ -80,9 +80,31 @@ class ProductsSeeder extends Seeder
             'RAM' => 16,
             'processor' => '13th Gen Intel® Core™ i7-13700HX Processor',
             'GPU' => 'GeForce RTX™ 4070',
-            'image_path' => 'assets/images_product/razer_blade_15.jpg', 
+            'image_path' => 'assets\images_product\lenovo_legion_pro.jpg', 
             'brand' => 'Lenovo'
         ]);
+
+        Product::create([
+            'laptop_name' => 'ASUS Zephyrus M16',
+            'price' => 2599.99,
+            'RAM' => 32,
+            'processor' => '13th Gen Intel® Core™ i9-13980HX Processor',
+            'GPU' => 'GeForce RTX™ 4080',
+            'image_path' => 'assets\images_product\ASUS ZEPHYRUS.JPG', 
+            'brand' => 'Asus',
+        ]);
+
+        Product::create([
+            'laptop_name' => 'ACER Predator 21 X',
+            'price' => 2899.99,
+            'RAM' => 16,
+            'processor' => '13th Gen Intel® Core™ i9-13980HX Processor',
+            'GPU' => 'GeForce RTX™ 4080',
+            'image_path' => 'assets\images_product\acer_predator_21.jpg', 
+            'brand' => 'Acer',
+        ]);
+
+        
         
         
 
