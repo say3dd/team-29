@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -20,7 +19,7 @@ class ProductController extends Controller
     {
         $laptops = Product::all();
 
-        return view('FrontEnd.products', ['laptops' => $laptops]);
+        return view('Product_files.products', ['laptops' => $laptops]);
     }
 
     
