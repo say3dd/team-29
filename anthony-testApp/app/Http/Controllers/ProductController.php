@@ -22,4 +22,6 @@ class ProductController extends Controller
 
         return view('FrontEnd.products', ['laptops' => $laptops]);
     }
+
+    
 }
