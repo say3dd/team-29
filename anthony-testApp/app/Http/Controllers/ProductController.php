@@ -20,4 +20,6 @@ class ProductController extends Controller
             return view('Product.product');
         }
     }
+
+    
 }
