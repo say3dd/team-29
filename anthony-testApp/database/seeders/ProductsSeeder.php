@@ -20,7 +20,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 128,
             'processor' => '13th Gen Intel® Core™ i9-13980HX Processor',
             'GPU' => 'GeForce RTX™ 4090',
-            'image_path' => 'assets\images_product\msi_Titan_GT77_HX_13V.jpg',
+            'image_path' => 'assets/laptop_images/MSI Titan GT77 HX 13V/msi_Titan_GT77_HX_13V.jpg',
             'brand' => 'MSI',
         ]);
 
@@ -30,7 +30,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 32,
             'processor' => '13th Gen Intel® Core™ i7-13700HX Processor',
             'GPU' => 'GeForce RTX™ 4070',
-            'image_path' => 'assets/images_product/alienware_m16.jpg', // should be jpeg it comes up as transparent - not good
+            'image_path' => 'assets/laptop_images/Alienware M16/alienware_m16.jpg', 
             'brand' => 'Alienware',
         ]);
 
@@ -40,7 +40,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 32,
             'processor' => '13th Intel® Core™ i9 13900HX Processor',
             'GPU' => 'GeForce RTX 4070 8GB',
-            'image_path' => 'assets/images_product/medion_erazer_X20.webp',
+            'image_path' => 'assets/laptop_images/Medion Erazer X20/medion_erazer_X20.webp',
             'brand' => 'Intel',
         ]);
 
@@ -50,7 +50,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 128,
             'processor' => '13th Gen Intel® Core™ i9-13980HX Processor',
             'GPU' => 'GeForce RTX™ 4090',
-            'image_path' => 'assets/images_product/asus_ROG_Strix_G16_G614.jpg', // should be jpeg, comes up as transparent
+            'image_path' => 'assets/laptop_images/Asus ROG Strix G16 G614/asus_ROG_Strix_G16_G614.jpg', 
             'brand' => 'Asus',
         ]);
 
@@ -60,7 +60,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 32,
             'processor' => '13th Gen Intel® Core™ i7-13700HX Processor',
             'GPU' => 'GeForce RTX™ 4080',
-            'image_path' => 'assets/images_product/alienware-m18.jpg', // .avif files dont work with database
+            'image_path' => 'assets/laptop_images/Alienware M18/alienware-m18.jpg', 
             'brand' => 'Alienware',
         ]);
 
@@ -70,7 +70,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 16,
             'processor' => 'AMD Ryzen™ 9 7940HS',
             'GPU' => 'GeForce RTX™ 4090',
-            'image_path' => 'assets/images_product/razer_blade_14.jpg', 
+            'image_path' => 'assets/laptop_images/Razer Blade 14/razer_blade_14.jpg', 
             'brand' => 'Razer'
         ]);
 
@@ -80,7 +80,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 16,
             'processor' => '13th Gen Intel® Core™ i7-13700HX Processor',
             'GPU' => 'GeForce RTX™ 4070',
-            'image_path' => 'assets\images_product\lenovo_legion_pro.jpg', 
+            'image_path' => 'assets/laptop_images/Lenovo Legion Pro 7i Gen 8/lenovo_legion_pro.jpg', 
             'brand' => 'Lenovo'
         ]);
 
@@ -90,7 +90,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 32,
             'processor' => '13th Gen Intel® Core™ i9-13980HX Processor',
             'GPU' => 'GeForce RTX™ 4080',
-            'image_path' => 'assets\images_product\ASUS ZEPHYRUS.JPG', 
+            'image_path' => 'assets/laptop_images/Asus Zephyrus M16/ASUS ZEPHYRUS.JPG', 
             'brand' => 'Asus',
         ]);
 
@@ -100,7 +100,7 @@ class ProductsSeeder extends Seeder
             'RAM' => 16,
             'processor' => '13th Gen Intel® Core™ i9-13980HX Processor',
             'GPU' => 'GeForce RTX™ 4080',
-            'image_path' => 'assets\images_product\acer_predator_21.jpg', 
+            'image_path' => 'assets/laptop_images/ACER Predator 21 X/acer_predator_21.jpg', 
             'brand' => 'Acer',
         ]);
 
