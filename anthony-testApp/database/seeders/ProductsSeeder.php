@@ -86,7 +86,7 @@ class ProductsSeeder extends Seeder
 
         Product::create([
             'laptop_name' => 'Acer Predator Helios Neo 16',
-            'price' => 1,399.00,
+            'price' => 1399.00,
             'RAM' => 16,
             'processor' => '13th Gen Intel® Core™ i7-13700HX Processor',
             'GPU' => 'GeForce RTX™ 4070',
@@ -95,7 +95,7 @@ class ProductsSeeder extends Seeder
         ]);
         Product::create([
             'laptop_name' => 'Lenovo Legion Slim 5 ',
-            'price' => 1,399.00,
+            'price' => 1399.00,
             'RAM' => 16,
             'processor' => 'AMD Ryzen 7 7840HS ',
             'GPU' => 'GeForce RTX 4060',
@@ -104,7 +104,7 @@ class ProductsSeeder extends Seeder
         ]);
         Product::create([
             'laptop_name' => 'ASUS TUF Gaming A15',
-            'price' => 1,299.00,
+            'price' => 1299.00,
             'RAM' => 16,
             'processor' => 'AMD Ryzen 9 7940HS',
             'GPU' => 'GeForce RTX 4070',
@@ -113,7 +113,7 @@ class ProductsSeeder extends Seeder
         ]);
         Product::create([
             'laptop_name' => 'Asus ROG Zephyrus Duo',
-            'price' => 4,799.00,
+            'price' => 4799.00,
             'RAM' => 64,
             'processor' => 'AMD Ryzen 9 7945HX',
             'GPU' => 'GeForce RTX 4090',
@@ -122,7 +122,7 @@ class ProductsSeeder extends Seeder
         ]);
         Product::create([
             'laptop_name' => 'RAZER Blade 17.3',
-            'price' => 3,999.00,
+            'price' => 3999.00,
             'RAM' => 32,
             'processor' => 'Intel® Core™ i9-12900H',
             'GPU' => 'GeForce RTX 3070',
