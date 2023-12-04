@@ -114,7 +114,7 @@ class ProductsSeeder extends Seeder
         //     'brand' => 'Acer'
         // ]);
 
-        Product::create([
+        Product::create([   
             'laptop_name' => 'Lenovo Legion Slim 5',
             'price' => 1199.00,
             'RAM' => 16,
