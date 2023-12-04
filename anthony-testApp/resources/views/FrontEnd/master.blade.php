@@ -71,7 +71,7 @@
                             Explore our curated selection and elevate your gaming journey to new heights.
                         </p>
                         </p>
-                        <a href="#" class="view-laptops-btn">View Products</a>
+                        <a href="{{url('product')}}" class="view-laptops-btn">View Products</a>
                     </div>
                 </div>
 
