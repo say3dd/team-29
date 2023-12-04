@@ -57,7 +57,7 @@
       
                 @yield('productP')
 
-                <div class="button_container ">
+                <div class="button_container">
                  <a href="{{route('productspage.id' ,['id' =>1]) }}">
                        <button class="button_to_switch_page" style="margin-top: 19px;"> 1 </button> 
                     </a>
@@ -68,7 +68,7 @@
                     <button class="button_to_switch_page" style="margin-top: 19px;"> 3 </button>
                    </a>
                 </div>
-                </form>
+               
             </div>
     </h2>
 </body>
