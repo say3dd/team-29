@@ -24,7 +24,6 @@ class ProductController extends Controller
         return view('FrontEnd.products3');
         }
         else{
-           return redirect()-> route('products');
         }
 
     }

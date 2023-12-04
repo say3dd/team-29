@@ -6,7 +6,7 @@
 <div class="laptop_all">
     <img class="image_all_laptop" src="{{ asset($laptop->image_path) }}">
     <div class="laptop_all_text">
-        <a href="{{url('product')}}"> {{$laptop ->laptop_name}} </a>
+        <a href="{{route('product')}}"> {{$laptop ->laptop_name}} </a>
         <p>{{ $laptop->processor }}</p>
         <p>{{ $laptop->GPU }}</p>
     </div>
