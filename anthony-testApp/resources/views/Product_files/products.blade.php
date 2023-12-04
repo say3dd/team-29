@@ -61,6 +61,8 @@
             <button class="button_filter">
                 <img class = "image_filter" src="{{asset('assets/images_product/filter.png')}}" alt="">
             </button>
+
+            {{-- code for showing the product --}}
             @foreach($laptops as $laptop)
             <div class="laptop_all">
                 <img class="image_all_laptop" src="{{ asset($laptop->image_path) }}">
