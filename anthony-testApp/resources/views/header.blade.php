@@ -34,7 +34,8 @@
             @endif
 
             <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-            <a href="#" class="cart-icon"><i class="bx bx-shopping-bag"></i> Basket</a>
+            <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i> Basket</a>
+            
         </nav>
     </section>
     <!--         Hero Section         -->

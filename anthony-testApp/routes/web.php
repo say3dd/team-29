@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BasketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +39,8 @@ Route::get('/test', function () {
 });
 
 Route::get('/product', [ProductController::class,'index'])->name('product');
+
+Route::get('/basket', [BasketController::class,'contents'])->name('basket');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class,'edit'])->name('profile.edit');
