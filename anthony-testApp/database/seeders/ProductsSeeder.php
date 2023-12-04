@@ -104,6 +104,48 @@ class ProductsSeeder extends Seeder
             'brand' => 'Acer',
         ]);
 
+        Product::create([
+            'laptop_name' => 'Acer Predator Helios Neo 16',
+            'price' => 1399.00,
+            'RAM' => 16,
+            'processor' => '13th gen Intel® Core™ i7',
+            'GPU' => 'GeForce RTX 4070',
+            'image_path' => 'assets/laptop_images/ACER Predator Helios/acer_predator_helios_neo16',
+            'brand' => 'Acer'
+        ]);
+
+        Product::create([
+            'laptop_name' => 'Lenovo Legion Slim 5',
+            'price' => 1199.00,
+            'RAM' => 16,
+            'processor' => 'AMD Ryzen 7 7840HS',
+            'GPU' => 'GeForce RTX 4060 8 GB',
+            'image_path' => 'assets/laptop_images/Lenovo Legion Slim 5/lenovo_legion_slim_5',
+            'brand' => 'Lenovo'
+        ]);
+
+        Product::create([
+            'laptop_name' => 'ASUS TUF Gaming A15',
+            'price' => 1299.00,
+            'RAM' => 16,
+            'processor' => 'AMD Ryzen 9 7940HS',
+            'GPU' => 'GeForce RTX 4070 8 GB',
+            'image_path' => 'assets/laptop_images/Asus Tuf Gaming A15/asus_tuf_gaming_a15',
+            'brand' => 'Asus'
+        ]);
+
+        Product::create([
+            'laptop_name' => 'Asus ROG Zephyrus Duo',
+            'price' => 4799.00,
+            'RAM' => 64,
+            'processor' => 'AMD Ryzen 9 7945HX',
+            'GPU' => 'GeForce RTX 4090 16 GB',
+            'image_path' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo',
+            'brand' => 'Asus'
+        ]);
+
+
+
         
         
         
