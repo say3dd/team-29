@@ -15,27 +15,21 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/', function () {
-    return view('FrontEnd/home');
-});
-
+route::get('/', [HomeController::class, 'home']) -> name('home');
+route::get('/product', [ProductController::class, 'product']) ->  name('product');
+Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');
 
 Route::get('/contactUs', function () {
     return view('FrontEnd/contactUs');
-});
+})-> name('contact.Us');
 
 
 Route::get('/test', function () {
     return view('FrontEnd/test');
 });
+// Route::get('/products', function () {
+//     return view('FrontEnd/product');
+// });
 
 Route::get('/product', [ProductController::class,'index'])->name('product');
 

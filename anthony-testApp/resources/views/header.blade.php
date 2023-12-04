@@ -11,10 +11,11 @@
         </label>
         <nav class="navbar">
             <a href="{{url('http://127.0.0.1:8000')}}">Home</a>
-            <a href="{{url('product')}}">Products</a>
-            <a href="#">Contact Us</a>
+            <a href="{{route('productspage.id', ['id' => 1])}}">Products</a>
+            <a href="{{route('contact.Us')}}">Contact Us</a>
 
-            <!--        Fixed the heading so that the login and register is included in the header           -->
+
+           <!--        Fixed the heading so that the login and register is included in the header           -->
 
             @if (Route::has('login'))
 

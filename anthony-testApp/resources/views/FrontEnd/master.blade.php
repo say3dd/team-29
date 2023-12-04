@@ -28,9 +28,10 @@
                     <i class="bx bx-x" id="close"></i>
                 </label>
                 <nav class="navbar">
-                    <a href="{{ url('home') }}">Home</a>
-                    <a href="{{ url('product') }}">Products</a>
-                    <a href="{{ url('contactUs') }}">Contact Us</a>
+
+                    <a href="{{url('http://127.0.0.1:8000')}}">Home</a>
+                    <a href="{{route('productspage.id', ['id' => 1])}}">Products</a>
+                    <a href="{{route('contact.Us')}}">Contact Us</a>
 
                     <!--        Fixed the heading so that the login and register is included in the header           -->
 
@@ -71,7 +72,7 @@
                             Explore our curated selection and elevate your gaming journey to new heights.
                         </p>
                         </p>
-                        <a href="#" class="view-laptops-btn">View Products</a>
+                        <a href="{{route('productspage.id', ['id' => 1])}}" class="view-laptops-btn">View Products</a>
                     </div>
                 </div>
 
