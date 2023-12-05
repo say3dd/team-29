@@ -12,6 +12,12 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
+
+                    <div class="return-to-home">
+                        <div class="bg-">
+                        <a href="{{route('index')}}">Home</a>
+                        </div>
+                    </div>
                 </div>
             </div>
              {{-- code for to go home page --}}
