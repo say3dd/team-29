@@ -512,6 +512,7 @@ footer {
     margin-top: 18px;
     border-radius: 1rem;
     margin-left: 3px;
+    transition: background-color 0.3s ease;
 }
 
 .button_filter:hover {
@@ -536,6 +537,108 @@ footer {
 }
 
 .button_sort:hover {
+    background-color: rgba(115, 87, 146, 0.9);
+    text-decoration: underline;
+    color: white;
+}
+
+/* Filtering Feature */
+ul {
+    list-style: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 0.5em;
+}
+
+.filters {
+    position: absolute;
+    width: 300px;
+    box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.3);
+    padding: 1.5em;
+    position: absolute;
+    background-color: #1e0431;
+    border-radius: 2rem;
+    left: 70%;
+    top: 68.3%;
+    padding-bottom: 60px;
+}
+
+.filters__list li {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    padding-bottom: 1em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.filtering_background {
+    width: 260px;
+    padding: 1.5em;
+    padding-top: 1em;
+    background-image: linear-gradient(
+        rgba(94, 32, 141, 0.6),
+        rgba(78, 0, 139, 0.6)
+    );
+    border-radius: 2rem;
+}
+
+.filters__list li:last-child {
+    padding-bottom: 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5em;
+    margin-left: 25px;
+}
+
+.filters:not(.filters--active) {
+    display: none;
+}
+
+.button_apply {
+    padding: 1em;
+    background: #5e208d;
+    border-color: #9000ff;
+    margin-top: 25px;
+    margin-left: 25px;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 1.2rem;
+}
+
+.button_apply:hover {
+    background-color: rgba(115, 87, 146, 0.9);
+    text-decoration: underline;
+    color: white;
+}
+
+.button_reset {
+    padding: 1em;
+    background: #5e208d;
+    border-color: #9000ff;
+    margin-top: 25px;
+    margin-left: 30px;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 1.2rem;
+}
+
+.button_reset:hover {
     background-color: rgba(115, 87, 146, 0.9);
     text-decoration: underline;
     color: white;
