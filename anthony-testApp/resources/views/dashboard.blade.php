@@ -13,9 +13,10 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
 
-                    <div class="return-to-home">
-                        <div class="bg-">
-                        <a href="{{route('index')}}">Home</a>
+                    {{-- code for to go home page --}}
+                    <div class="home_buton" style="padding: 5px; margin: 5px;">
+                        <div class="p-2 m-2 w-16 rounded bg-blue-600 hover:active:transition-colors ">
+                        <a class= "text-center align-middle text-white" href="{{route('index')}}">Home</a>
                         </div>
                     </div>
                 </div>
