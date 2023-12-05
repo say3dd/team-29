@@ -38,5 +38,9 @@ class HomeController extends Controller
         return view('FrontEnd.master');
     }
 
+    public function homePage(){
+        return view('FrontEnd.home');
+    }
+
 
 }
