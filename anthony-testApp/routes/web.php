@@ -23,8 +23,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/', function () {
-    return view('FrontEnd/home'); })->name('index');
+Route::get('/', [HomeController::class, 'homePage'])->name('index');
 
 
 Route::get('/contactUs', function () {
@@ -50,7 +49,7 @@ Route::middleware('auth', 'admin')->group(function () {
 
     Route::get('/plist', function () {
         return view('Admin.ProductList');
-    });
+    })->name('plist');
 
 
 });
