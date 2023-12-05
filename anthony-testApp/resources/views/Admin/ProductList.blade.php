@@ -8,7 +8,7 @@
         @yield('title', 'Product List')
 
     </title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"  rel="stylesheet" />
+    @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body>
     
