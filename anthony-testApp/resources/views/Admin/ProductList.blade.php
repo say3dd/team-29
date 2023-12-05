@@ -8,6 +8,15 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body>
+
+<div class="admin-nav" style="padding: 2rem; margin: 2rem; max-width: 80% width: 100% display:flex;
+background: cyan;">
+    <span class="p-5 m-5 bg-purple-500 rounded text-white"><a href="{{'index'}}">Home</a></span>
+    <span class="p-5 m-5 bg-purple-700 rounded text-white"><a href="{{'home'}}">Dashboard</a></span>
+    
+
+</div>
+
     <!-- Start block -->
 <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5 antialiased">
     <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
