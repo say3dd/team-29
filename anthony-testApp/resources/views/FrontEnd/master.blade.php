@@ -28,7 +28,7 @@
                     <i class="bx bx-x" id="close"></i>
                 </label>
                 <nav class="navbar">
-                    <a href="{{ url('home') }}">Home</a>
+                    <a href="{{ url('/') }}">Home</a>
                     <a href="{{ url('product') }}">Products</a>
                     <a href="{{ url('contactUs') }}">Contact Us</a>
 
