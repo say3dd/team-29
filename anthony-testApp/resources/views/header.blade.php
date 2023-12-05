@@ -2,7 +2,7 @@
             
     <section class="nav-header">
     
-        <a href="" class="logo"> <img src="{{asset('assets/images/Screenshot_2023-11-16_030651.png')}}" alt=""></a>
+        <a href="" class="logo"> <img src="{{asset('assets/images/transparent-logo.png')}}" alt=""></a>
         
         <input type="checkbox" id="check">
         <label for="check" class="menu-icon">
@@ -10,7 +10,7 @@
             <i class="bx bx-x" id="close"></i>
         </label>
         <nav class="navbar">
-            <a href="{{url('http://127.0.0.1:8000')}}">Home</a>
+            <a href="{{url('index')}}">Home</a>
             <a href="{{url('product')}}">Products</a>
             <a href="#">Contact Us</a>
 
