@@ -25,7 +25,7 @@ class HomeController extends Controller
                 break;
 
             case 'user':
-                return view('home');
+                return view('dashboard');
                 break;
 
             default:
