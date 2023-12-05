@@ -512,6 +512,7 @@ footer {
     margin-top: 18px;
     border-radius: 1rem;
     margin-left: 3px;
+    transition: background-color 0.3s ease;
 }
 
 .button_filter:hover {
@@ -536,6 +537,108 @@ footer {
 }
 
 .button_sort:hover {
+    background-color: rgba(115, 87, 146, 0.9);
+    text-decoration: underline;
+    color: white;
+}
+
+/* Filtering Feature */
+ul {
+    list-style: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 0.5em;
+}
+
+.filters {
+    position: absolute;
+    width: 300px;
+    box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.3);
+    padding: 1.5em;
+    position: absolute;
+    background-color: #1e0431;
+    border-radius: 2rem;
+    left: 70%;
+    top: 68.3%;
+    padding-bottom: 60px;
+}
+
+.filters__list li {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    padding-bottom: 1em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.filtering_background {
+    width: 260px;
+    padding: 1.5em;
+    padding-top: 1em;
+    background-image: linear-gradient(
+        rgba(94, 32, 141, 0.6),
+        rgba(78, 0, 139, 0.6)
+    );
+    border-radius: 2rem;
+}
+
+.filters__list li:last-child {
+    padding-bottom: 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5em;
+    margin-left: 25px;
+}
+
+.filters:not(.filters--active) {
+    display: none;
+}
+
+.button_apply {
+    padding: 1em;
+    background: #5e208d;
+    border-color: #9000ff;
+    margin-top: 25px;
+    margin-left: 25px;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 1.2rem;
+}
+
+.button_apply:hover {
+    background-color: rgba(115, 87, 146, 0.9);
+    text-decoration: underline;
+    color: white;
+}
+
+.button_reset {
+    padding: 1em;
+    background: #5e208d;
+    border-color: #9000ff;
+    margin-top: 25px;
+    margin-left: 30px;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 1.2rem;
+}
+
+.button_reset:hover {
     background-color: rgba(115, 87, 146, 0.9);
     text-decoration: underline;
     color: white;
@@ -604,17 +707,21 @@ footer {
 
 @media (max-width: 1440px) {
     .button_sort {
-        top: 64.5%;
+        top: 63.5%;
         left: 83%;
     }
 
     .button_filter {
-        top: 64.5%;
+        top: 63.5%;
         left: 86%;
     }
 
     .path {
-        top: 66%;
+        top: 65%;
+    }
+
+    .button_container {
+        top: 247%;
     }
 
     .nav-header {
@@ -632,7 +739,6 @@ footer {
 /*Properties for Responsive website (size: 1024px) */
 
 @media (max-width: 1024px) {
-    /*    Navbar Section */
     .menu-icon {
         display: inline-flex;
     }
@@ -688,9 +794,8 @@ footer {
     }
 
     .nav-header {
-        padding: 0.9rem;
+        padding: 1.3rem 5%;
     }
-
     .title_shape {
         width: 80%;
         height: 320px;
@@ -701,19 +806,23 @@ footer {
         height: 320px;
     }
 
+    .background_shape6 {
+        margin-top: 4%;
+    }
+
     .path {
-        top: 59%;
+        top: 63%;
     }
 
     .button_sort {
-        top: 58%;
+        top: 61.5%;
         left: 81%;
         width: 35px;
         height: 35px;
     }
 
     .button_filter {
-        top: 58%;
+        top: 61.5%;
         left: 85%;
         width: 35px;
         height: 35px;
@@ -731,10 +840,26 @@ footer {
     .laptop_all {
         width: 22%; /* Adjust width to fit the container */
     }
+
+    .button_container {
+        top: 296%;
+    }
+
+    .nav-header {
+        padding: 0.9rem;
+    }
 }
 @media (max-width: 768px) {
     .laptop_title1 {
-        font-size: 1.5em;
+        font-size: 1.6em;
+    }
+
+    .title_shape {
+        height: 260px;
+    }
+
+    .title_image {
+        height: 260px;
     }
 
     .title_content {
@@ -742,18 +867,18 @@ footer {
     }
 
     .path {
-        top: 57.5%;
+        top: 54%;
     }
 
     .button_sort {
-        top: 55.5%;
+        top: 52.5%;
         left: 79.5%;
         width: 35px;
         height: 35px;
     }
 
     .button_filter {
-        top: 55.5%;
+        top: 52.5%;
         left: 84%;
         width: 35px;
         height: 35px;
@@ -786,24 +911,16 @@ footer {
     .price {
         font-size: 1.1rem;
     }
+
+    .button_container {
+        top: 276%;
+    }
 }
 
 @media (max-width: 445px) {
-    .navbar {
-        width: 190%;
-    }
-
-    .footer-links {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        margin-top: 20px;
-        gap: 0rem;
-    }
-
     .title_shape {
-        margin-left: 10%;
-        width: 120%;
+        margin-left: 2.5%;
+        width: 93%;
         height: 140px;
     }
 
@@ -812,19 +929,20 @@ footer {
     }
 
     .laptop_title1 {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 
     .title_content {
         margin-top: 25px;
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     .background_shape6 {
-        width: 117%;
-        margin-left: 12%;
+        width: 92%;
+        margin-left: 3.5%;
+        margin-right: 5%;
         margin-top: 13%;
-        padding-bottom: 50px;
+        padding-bottom: 180px;
     }
 
     .laptop_all {
@@ -847,85 +965,137 @@ footer {
     }
 
     .path {
-        top: 52%;
-        left: 22%;
+        top: 41.5%;
+        left: 10.5%;
+        font-size: 0.7rem;
+    }
+
+    .image_sort {
+        width: 14px;
+        height: 18px;
+    }
+
+    .image_filter {
+        width: 14px;
+        height: 18px;
     }
 
     .button_sort {
-        top: 50.5%;
-        left: 107%;
-        width: 35px;
-        height: 35px;
+        top: 40%;
+        left: 80%;
+        width: 30px;
+        height: 30px;
     }
 
     .button_filter {
-        top: 50.5%;
-        left: 115%;
-        width: 35px;
-        height: 35px;
+        top: 40%;
+        left: 88%;
+        width: 30px;
+        height: 30px;
     }
 
     .laptop_all_text a:link {
         font-size: 0.9rem;
     }
 
-    .button_to_switch_page {
-        top: 170%;
-        margin-top: 0px;
+    .button_container {
+        top: 390%;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 20px;
+        gap: 0rem;
     }
 }
 
 @media (max-width: 385px) {
     .title_shape {
-        width: 131%;
-        height: 140px;
-    }
-    .button_sort {
-        left: 106%;
+        width: 90%;
+        height: 130px;
+        left: 1%;
     }
 
     .background_shape6 {
-        width: 128%;
-        margin-left: 13%;
+        width: 88%;
+        margin-left: 5%;
+        margin-top: 7%;
     }
 
     .title_image {
-        height: 170px;
+        height: 130px;
     }
 
     .laptop_title1 {
-        font-size: 1em;
-    }
-
-    .title_content {
-        margin-top: 25px;
         font-size: 0.8em;
     }
 
+    .title_content {
+        margin-top: 15px;
+        font-size: 0.7em;
+    }
+
     .laptop_all {
-        width: 34%; /* Adjust width to fit the container */
+        width: 64%; /* Adjust width to fit the container */
     }
 
     .image_all_laptop {
-        width: 128px;
-        height: 108px;
+        width: 158px;
+        height: 138px;
     }
 
     .path {
-        top: 50%;
+        top: 37%;
+        font-size: 0.65rem;
+    }
+
+    .image_sort {
+        width: 10px;
+        height: 14px;
+    }
+
+    .image_filter {
+        width: 10px;
+        height: 14px;
     }
 
     .button_sort {
-        top: 49%;
-        left: 120%;
-        width: 35px;
-        height: 35px;
+        top: 35%;
+        left: 76%;
+        width: 30px;
+        height: 30px;
     }
 
     .button_filter {
-        top: 49%;
-        left: 130%;
-        width: 35px;
-        height: 35px;
+        top: 35%;
+        left: 84%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .button_container {
+        top: 688%;
+    }
+}
+
+@media (max-width: 320px) {
+    .path {
+        top: 36.5%;
+        font-size: 0.55rem;
+    }
+    .button_sort {
+        top: 34.5%;
+        left: 76%;
+        width: 25px;
+        height: 25px;
+    }
+
+    .button_filter {
+        top: 34.5%;
+        left: 84%;
+        width: 25px;
+        height: 25px;
     }
 }
