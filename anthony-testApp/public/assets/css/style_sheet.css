@@ -617,10 +617,6 @@ footer {
         top: 66%;
     }
 
-    .nav-header {
-        padding: 1.3rem 5%;
-    }
-
     .button_container {
         top: 247%;
     }
@@ -633,10 +629,17 @@ footer {
     }
 }
 
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+    gap: 0rem;
+}
+
 /*Properties for Responsive website (size: 1024px) */
 
 @media (max-width: 1024px) {
-    /*    Navbar Section */
     .menu-icon {
         display: inline-flex;
     }
@@ -692,9 +695,8 @@ footer {
     }
 
     .nav-header {
-        padding: 0.9rem;
+        padding: 1.3rem 5%;
     }
-
     .title_shape {
         width: 80%;
         height: 320px;
