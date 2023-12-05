@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-             {{-- code for to go home page --}}
+             {{-- admin navigation to product Lists --}}
                     <div class="admin-dashboard-nav" style="padding: 5px; margin: 5px;">
                         <div class="p-5 m-5 mx-w-100% w-100% bg-cyan-200 rounded flex">
                         <span class=" p-5 m-5 text-center rounded bg-purple-300">
