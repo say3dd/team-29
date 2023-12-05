@@ -620,6 +620,10 @@ footer {
     .button_container {
         top: 247%;
     }
+
+    .nav-header {
+        padding: 1.3rem 5%;
+    }
     .footer-links {
         display: flex;
         justify-content: space-around;
@@ -627,14 +631,6 @@ footer {
         margin-top: 20px;
         gap: 0rem;
     }
-}
-
-.footer-links {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 20px;
-    gap: 0rem;
 }
 
 /*Properties for Responsive website (size: 1024px) */
@@ -745,6 +741,10 @@ footer {
     .button_container {
         top: 296%;
     }
+
+    .nav-header {
+        padding: 0.9rem;
+    }
 }
 @media (max-width: 768px) {
     .laptop_title1 {
@@ -815,18 +815,6 @@ footer {
 }
 
 @media (max-width: 445px) {
-    .navbar {
-        width: 190%;
-    }
-
-    .footer-links {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        margin-top: 20px;
-        gap: 0rem;
-    }
-
     .title_shape {
         margin-left: 2.5%;
         width: 93%;
@@ -909,6 +897,14 @@ footer {
 
     .button_container {
         top: 390%;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 20px;
+        gap: 0rem;
     }
 }
 
