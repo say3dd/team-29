@@ -26,8 +26,6 @@
 
  @include ('header')
 
-
-
 <body>
     <h1>
         <div class="title_shape">
