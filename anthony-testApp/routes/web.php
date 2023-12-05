@@ -22,11 +22,10 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
 
 Route::get('/', function () {
-    return view('FrontEnd/home');
-});
+    return view('FrontEnd/home'); })->name('index');
 
 
 Route::get('/contactUs', function () {
