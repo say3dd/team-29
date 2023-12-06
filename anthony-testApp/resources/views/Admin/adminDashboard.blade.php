@@ -12,6 +12,20 @@
                     {{ __("You're logged in as Admin!") }}
                 </div>
             </div>
+
+             {{-- admin navigation to product Lists --}}
+                    <div class="admin-dashboard-nav" style="padding: 5px; margin: 5px;">
+                        <div class="p-5 m-5 mx-w-100% w-100% bg-cyan-200 rounded flex">
+                        <span class=" p-5 m-5 text-center rounded bg-purple-300">
+                        <a class= "text-center align-middle text-white" href="{{route('index')}}">Home</a>
+                         </span>
+
+                         <span class=" p-5 m-5 text-center rounded bg-purple-300">
+                        <a class= "text-center align-middle text-white" href="{{route('plist')}}">Product List</a>
+                            </span>
+
+                        </div>
+                    </div>
         </div>
     </div>
 </x-app-layout>
