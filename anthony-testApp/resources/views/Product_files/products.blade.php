@@ -74,7 +74,7 @@
                 <br>
                 
                 <form action='{{route('product.getInfo')}}' method='get'>
-                    <input type="hidden" name="laptopData" value={{$laptop}}>
+                    <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
                     <button class="button_cart_laptop"> Add to Basket </button>
                 </form>
                 <!--It took me 8 hours of work just to get this thing to get this data and of course it comes out as a string I can't separate... -->
