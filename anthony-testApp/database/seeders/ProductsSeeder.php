@@ -14,6 +14,19 @@ class ProductsSeeder extends Seeder
     public function run()
     {
         // seed products, columns are: laptop_name, price, RAM, processor, GPU, image_path, brand
+
+        Product::create([
+            'laptop_name' => 'Dell Alienware x16 Gaming Laptop',
+            'price' => 3349.00,
+            'RAM' => 32,
+            'processor' => '13th Gen Intel® Core™ i9-13980HX',
+            'GPU' => 'GeForce RTX™ 4090',
+            'image_path' => 'assets/laptop_images/Dell Alienware x16/dell_alienware_x16.jpg',
+            'brand' => 'Alienware',
+        ]);
+
+
+
         Product::create([
             'laptop_name' => 'MSI Titan GT77 HX 13V',
             'price' => 3362.99,
