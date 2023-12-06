@@ -12,8 +12,8 @@
     {{-- navigation to admin dashboard --}}
 <div class="admin-nav" style="padding: 2rem; margin: 2rem; max-width: 80% width: 100% display:flex;
 background: cyan;">
-    <span class="p-5 m-5 bg-purple-500 rounded text-white"><a href="{{'index'}}">Home</a></span>
-    <span class="p-5 m-5 bg-purple-700 rounded text-white"><a href="{{'home'}}">Dashboard</a></span>
+    <span class="p-5 m-5 bg-purple-500 rounded text-white"><a href="{{route('index')}}">Home</a></span>
+    <span class="p-5 m-5 bg-purple-700 rounded text-white"><a href="{{route('home')}}">Dashboard</a></span>
     
 
 </div>
