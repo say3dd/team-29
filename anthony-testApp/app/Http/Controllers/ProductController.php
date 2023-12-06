@@ -20,13 +20,16 @@ class ProductController extends Controller
         $laptops = Product::paginate(12);
 
         return view('Product_files.products', ['laptops' => $laptops]);
+        
     }
 
     public function show($id)
-{
-    $laptop = Product::find($id);
-    return view('Product_files.product', ['laptop' => $laptop]);
-}
+    {
+        $laptop = Product::find($id);
+        $laptops = Product::where('product_id', '!=', $id)->take(5)->get();
+        return view('Product_files.product', ['product' => $laptop, 'laptops' => $laptops]);
+    }
 
-    
 }
+    
+    
