@@ -14,6 +14,13 @@ class ProductController extends Controller
         return view('product', compact('product'));
     }
 
+    public function getInfo()
+    {
+        $testVar = request();
+        $laptops = Product::all();
+       // $testvar = productToGrab;
+        return view('FrontEnd.products', ['laptops' => $laptops, 'productToAdd' => $testVar]);
+    }
 
     // displays all the products
     public function index()

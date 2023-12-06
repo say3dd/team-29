@@ -39,6 +39,12 @@ Route::get('/test', function () {
 });
 
 Route::get('/product', [ProductController::class,'index'])->name('product');
+Route::get('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
+/*
+The second route here sometimes overrides the first one (possibly something causing the buttons to trigger without an input).
+For now I've made a workaround by having the getInfo function check if it has recieved an input, if not it behaves just like the index function.
+if anybody could let me (Francis) know of a better way to do this, I'd gladly appreciate it.
+*/
 
 Route::get('/basket', [BasketController::class,'contents'])->name('basket');
 
