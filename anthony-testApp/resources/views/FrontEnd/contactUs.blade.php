@@ -4,7 +4,7 @@
 
 @section('content')
 
-<!-- resources/views/contact.blade.php -->
+<!-- resources/views/contactUs.blade.php -->
 
 
 @section('content')
