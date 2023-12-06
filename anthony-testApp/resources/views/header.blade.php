@@ -2,7 +2,7 @@
             
     <section class="nav-header">
     
-        <a href="" class="logo"> <img src="{{asset('assets/images/transparent-logo.png')}}" alt=""></a>
+        <a href="" class="logo"> <img src="{{asset('images/Screenshot_2023-11-16_030651.png')}}" alt=""></a>
         
         <input type="checkbox" id="check">
         <label for="check" class="menu-icon">
