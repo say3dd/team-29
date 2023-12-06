@@ -46,6 +46,7 @@
 
     </h1>
     <h2>
+        <!-- This is the code for the layout of product container - where all the product will be shown -->
         <div class="background_shape6">
             <p class = "path" >
             >> Home >>
@@ -58,131 +59,42 @@
         <button class="button_filter" id = "filter-button">
             <img class = "image_filter" src="{{asset('assets/images_product/filter.png')}}" alt="" >
         </button>
-        <div id="filter-container" class="filters">
-            <ul class="filters__list">
+        <!-- This is the code for the filter of products , linked to the database-->
+    <div id="filter-container" class="filters">
+                      <!-- <div class = "filtering background"> this code is missing somewhere here figure out tmrw --> 
+
+        <ul class="filters__list">
                 <li>
-                    <p style = "text-decoration: underline; font-size: 1.2rem;">Filters </p>
-                </li>
-                <div class = "filtering_background">
+                    <p style = "text-decoration: underline">GPU: </p><br>
+                    </li>
+                @foreach ($graphics as $graphic)  
                 <li>
-                    <p style = "text-decoration: underline"> Graphics: </p><br>
-                </li>
+            <input id="{{$graphic->GPU}}" name="gpu" value="{{$graphic->GPU}}" type="checkbox" />
+            <label class="text-xs">{{$graphic->GPU}}</label>
+            </li>
+            @endforeach
                 <li>
-            <input id="GeForce_RTX_4060" type="checkbox" />
-                <label for="GeForce_RTX_4060">NVIDIA GeForce RTX 4060</label>
-                </li>
-                    <li>
-            <input id="GeForce_RTX_4070" type="checkbox" />
-                <label for="GeForce_RTX_4070">NVIDIA GeForce RTX 4070</label>
-                </li>
-                    <li>
-            <input id="GeForce_RTX_4080" type="checkbox" />
-                <label for="GeForce_RTX_4080">NVIDIA GeForce RTX 4080</label>
-                </li>
-                    <li>
-            <input id="GeForce_RTX_4090" type="checkbox" />
-                <label for="GeForce_RTX_4090">NVIDIA GeForce RTX 4090</label>
-                </li>
-                </div>
+                    <p style = "text-decoration: underline"> Brand: </p><br>
+                    </li>
+                @foreach ($brands as $brand)  
                 <li>
-                    <p></p>
-                </li>
-                <div class = "filtering_background">
-                <li>
-                    <p style = "text-decoration: underline"> Processor: </p><br>
-                </li>
-                    <li>
-            <input id="i9-13980HX" type="checkbox" />
-                <label for="i9-13980HX">13th Gen Intel® Core™ i9-13980HX </label>
-                </li>
-                    <li>
-            <input id="i9 13900HX" type="checkbox" />
-                <label for="i9 13900HX">13th Intel® Core™ i9 13900HX</label>
-                </li>
-                    <li>
-            <input id="i9-12900H" type="checkbox" />
-                <label for="i9-12900H">Intel® Core™ i9-12900H</label>
-                </li>
-                    <li>
-            <input id="i7-13700HX" type="checkbox" />
-                <label for="i7-13700HX">13th Gen Intel® Core™ i7-13700HX</label>
-                </li>
-                    <li>
-            <input id="ryzen_7_7840HS" type="checkbox" />
-                <label for="ryzen_7_7840HS">AMD Ryzen 7 7840HS</label>
-                </li>
-                    <li>
-            <input id="ryzen_9_7940HS" type="checkbox" />
-                <label for="ryzen_9_7940HS">AMD Ryzen 9 7940HS</label>
-                </li>
-                    <li>
-            <input id="ryzen_9_7945HX" type="checkbox" />
-                <label for="ryzen_9_7945HX">AMD Ryzen 9 7945HX</label>
-                </li>
-                </div>
-                <li>
-                    <p></p>
-                </li>
-                <div class = "filtering_background">
-                    <li>
-                        <p style = "text-decoration: underline"> Memory (RAM): </p><br>
-                </li>
-                    <li>
-            <input id="RAM_64GB" type="checkbox" />
-                <label for="RAM_64GB">64 GB</label>
-                </li>
-                    <li>
-            <input id="RAM_32GB" type="checkbox" />
-                <label for="RAM_32GB">32 GB</label>
-                </li>
-                    <li>
-            <input id="RAM_16GB" type="checkbox" />
-                <label for="RAM_16GB"> 16 GB</label>
-                </li>
-            </div>
-                <li>
-                    <p></p>
-                </li>
-                <div class = "filtering_background">
-             <li>
-                <p style = "text-decoration: underline">By Brand: </p><br>
-                </li>
-                    <li>
-            <input id="f5" type="checkbox" />
-                <label for="asus">Asus</label>
-                </li>
-                    <li>
-            <input id="acer" type="checkbox" />
-                <label for="acer">Acer</label>
-                </li>
-                    <li>
-            <input id="lenovo" type="checkbox" />
-                <label for="lenovo"> Lenovo Legion</label>
-                </li>
-                    <li>
-            <input id="alienware" type="checkbox" />
-                <label for="alienware"> Dell Alienware</label>
-                </li>
-                    <li>
-            <input id="msi" type="checkbox" />
-                <label for="msi"> MSI</label>
-                </li>
-                    <li>
-            <input id="razer" type="checkbox" />
-                <label for="razer"> Razer </label>
-                </li>
-                </div>
-                <li>
-                    <button class = "button_apply" > Apply Changes </button>
-                    <button class = "button_reset" > Reset </button>
-                </li>
-            </ul>
-        </div>
+            <input id="{{$brand->brand}}" name="brands"
+            @if(in_array($brand->id,explode(',',$q_brands))) @checked(true) @endif
+             value="{{$brand->brand}}" type="checkbox" onchange="filterProductsByBrand(this)" />
+            <label>{{$brand->brand}}</label>
+            </li>
+            @endforeach
+        </ul>
+    </div>
+    <!--Form for hidden fields so the filter request gets sent without a need for a submit button, more smoother functionality -->
+<form id="pdtfilter" method="GET">
+    <input type ="hidden" name="brands" id="brands" value="{{ $q_brands}}" />
+</form>
+
 <script>
-var button_filter = document.getElementById("filter-button");
+    var button_filter = document.getElementById("filter-button");
 var container = document.getElementById("filter-container");
 var input = document.querySelectorAll("input");
-
 
 button_filter.onclick = function (e) {
   e.stopPropagation();
@@ -202,6 +114,17 @@ window.onclick = function () {
 };
 
 console.log(input);
+
+
+function filterProductsByBrand(brand){
+    var brands = [];
+    document.querySelectorAll("input[name='brands']:checked").forEach(function (checkbox) {
+        brands.push(checkbox.value);
+    });
+
+    document.getElementById("brands").value = brands.join(',');
+    document.getElementById("pdtfilter").submit();
+}
 
 </script>
       

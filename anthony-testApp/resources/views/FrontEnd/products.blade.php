@@ -17,13 +17,6 @@
     
     <button class="button_cart_laptop"> Add to Basket </button>
 
-    <!-- Here i will add the update/ delete functions if the user is of type admin
-        Users will be of tyype 0 
-        Admin of type 1 
-        If user type=1 and ::auth then these buttons should show
-        Delete buttons deletes said database with a popup saying do you want to delete this product
-        Edit shows a pop up page that shows what can be deleted or not 
-    --> 
 
 
 </div>
