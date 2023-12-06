@@ -67,8 +67,7 @@
             <div class="laptop_all">
                 <img class="image_all_laptop" src="{{ asset($laptop->image_path) }}">
                 <div class="laptop_all_text">
-                    <a href="{{url('page')}}"> {{$laptop ->laptop_name}} </a>
-                    <p>{{ $laptop->processor }}</p>
+                    <a style= "color: inherit" href="{{ route('laptops.show', $laptop->product_id) }}"> {{$laptop->laptop_name}} </a>                    <p>{{ $laptop->processor }}</p>
                     <p>{{ $laptop->GPU }}</p>
                 </div>
                 <p style="margin-bottom: 42px;">RAM: {{$laptop->RAM}} GB </p>

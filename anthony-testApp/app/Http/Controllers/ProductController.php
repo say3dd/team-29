@@ -17,10 +17,16 @@ class ProductController extends Controller
     // displays all the products
     public function index()
     {
-        $laptops = Product::paginate(8);
+        $laptops = Product::paginate(12);
 
         return view('Product_files.products', ['laptops' => $laptops]);
     }
+
+    public function show($id)
+{
+    $laptop = Product::find($id);
+    return view('Product_files.product', ['laptop' => $laptop]);
+}
 
     
 }

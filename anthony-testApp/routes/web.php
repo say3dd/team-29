@@ -46,4 +46,6 @@ Route::middleware('auth')->group(function () {
    
 });
 
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
+
 require __DIR__ . '/auth.php';
