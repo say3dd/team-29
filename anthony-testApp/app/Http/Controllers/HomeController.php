@@ -22,11 +22,9 @@ class HomeController extends Controller
         switch($usertype){
             case 'admin':
                 return view('Admin.adminDashboard');
-                break;
 
             case 'user':
                 return view('dashboard');
-                break;
 
             default:
                 return redirect()->back();
