@@ -4,5 +4,7 @@
 
 @section('content')
 
-<h1>ContactUs</h1>
+
+
+<h1 class="text-red-700 p-50">ContactUs</h1>
 @endsection

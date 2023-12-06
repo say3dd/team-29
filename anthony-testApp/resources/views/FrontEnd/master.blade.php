@@ -9,6 +9,7 @@
             Valhalla</title>
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
     </head>
 
@@ -28,7 +29,7 @@
                     <i class="bx bx-x" id="close"></i>
                 </label>
                 <nav class="navbar">
-                    <a href="{{ url('/') }}">Home</a>
+                    <a href="{{ url('index') }}">Home</a>
                     <a href="{{ url('product') }}">Products</a>
                     <a href="{{ url('contactUs') }}">Contact Us</a>
 
