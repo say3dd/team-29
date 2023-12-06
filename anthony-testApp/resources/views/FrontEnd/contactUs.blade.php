@@ -3,14 +3,11 @@
 @section('title', 'ContactUs')
 
 @section('content')
-<<<<<<< HEAD
 
-<!-- resources/views/contact.blade.php -->
+<!-- resources/views/contactUs.blade.php -->
 
 
 @section('content')
-=======
->>>>>>> be49d0404d09d29711104e6fcc507ec0637b5749
 <h1 class="text-white">ContactUs</h1>
 @if(session('success'))
         <div class="alert alert-success">
