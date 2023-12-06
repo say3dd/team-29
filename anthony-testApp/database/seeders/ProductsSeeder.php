@@ -108,7 +108,7 @@ class ProductsSeeder extends Seeder
         //     'laptop_name' => 'Acer Predator Helios Neo 16',
         //     'price' => 1399.00,
         //     'RAM' => 16,
-        //     'processor' => '13th gen Intel® Core™ i7',
+        //     'processor' => '13th Gen Intel® Core™ i7',
         //     'GPU' => 'GeForce RTX 4070',
         //     'image_path' => 'assets/laptop_images/ACER Predator Helios/acer_predator_helios_neo16.jpg',
         //     'brand' => 'Acer'
