@@ -6,7 +6,6 @@
 
 <!-- resources/views/contact.blade.php -->
 
-@extends('layouts.app')
 
 @section('content')
 <h1 class="text-white">ContactUs</h1>

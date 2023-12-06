@@ -23,7 +23,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/', [HomeController::class, 'homePage'])->name('index');
+Route::get('/', function (){
+    return view('FrontEnd.landing');
+});
+
+Route::get('/index', [HomeController::class, 'homePage'])->name('index');
 
 
 Route::get('/contactUs', function () {
