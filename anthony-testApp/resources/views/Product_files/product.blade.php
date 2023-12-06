@@ -243,11 +243,11 @@
     <h2>
         <div class="background_shape2"></div>
         <div class="laptop_image_spec">
-            <img src=" {{asset('assets/images_product/laptop_specification1.avif')}}"
+            <img src=" {{asset('assets/images_product/laptop_specification1.jpg')}}"
                 style=" position: absolute; margin-left: 142px; margin-top: 43%; border-radius: 1rem;">
-            <img src=" {{asset('assets/images_product/laptop_specification2.avif')}}"
+            <img src=" {{asset('assets/images_product/laptop_specification2.jpg')}}"
                 style=" position: absolute; margin-left: 642px; margin-top: 43%; border-radius: 1rem;">
-            <img src=" {{asset('assets/images_product/laptop_specification3.avif')}}"
+            <img src=" {{asset('assets/images_product/laptop_specification3.jpg')}}"
                 style=" position: absolute; margin-left: 1132px; margin-top: 43%; border-radius: 1rem;">
 
             <p style=" position: absolute; margin-top: 55.7%;  margin-left:  76px; width: 350px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
@@ -330,11 +330,11 @@
                 style="position: absolute; top: 84%; color: white; text-align: left; font-weight:lighter ;font-size: 1.2em; margin-left: 35px; width: 700px;">
                 Toggle monitor-based overlays on/off to help you focus on the targets at hand.
             </p>
-            <img src=" {{asset('assets/images_product/laptop_specification5.avif')}}" style=" position: absolute; margin-left: 802px; margin-top: 8%; border-radius: 1rem;
+            <img src=" {{asset('assets/images_product/laptop_specification5.jpg')}}" style=" position: absolute; margin-left: 802px; margin-top: 8%; border-radius: 1rem;
             width: 43%;">
         </div>
         <div class="background_shape4">
-            <img src=" {{asset('assets/images_product/laptop_specification4.avif')}} "
+            <img src=" {{asset('assets/images_product/laptop_specification4.jpg')}} "
                 style=" position: absolute;border-radius: 2rem; width:99.5%; height: 470px;">
             <p style="position: absolute; top: 70%; color: white; text-align: center; font-size: 1.75em; left: 43%; ">
                 Seamless Gaming
