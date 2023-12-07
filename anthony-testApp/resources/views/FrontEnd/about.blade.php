@@ -91,8 +91,39 @@
         </div>
       </div>
     </section>
+
+    <section class=main>
+
+      <!-- Our Value Section -->
+
+      <div id="about2-container">
+        <div class="about-card">
+          <div class="about-info-value">
+            <h1 class="section-heading">Our Values</h1>
+            <div class="about-title-line"></div> <!-- Add this line -->
+            <p><strong>Gaming Passion:</strong> Fueled by our shared love for
+              gaming, we innovate to enhance your gaming experience with
+              cutting-edge solutions.</p>
+            <p><strong>Integrity and Transparency:</strong> Trust is fundamental
+              at Vallhala. We operate with unwavering integrity, ensuring
+              transparency in all our interactions for a trustworthy
+              environment.</p>
+            <p><strong>Innovative Spirit:</strong> Vallhala thrives on
+              innovation, exploring new horizons to introduce groundbreaking
+              features and technologies.</p>
+          </div>
+          <div>
+         
+            <img  src="{{ asset('assets/images/GrtSb9NjcYRJcojjhgEJf9.jpg') }}" alt=""">
+
+          </div>
+
+        </div>
+      </div>
+
+      </section>
     <!--            Footer                      -->
- 
+      
         @include('footer')
     
        
