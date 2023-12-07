@@ -23,7 +23,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/', [HomeController::class, 'homePage'])->name('index');
+Route::get('/', function (){
+    return view('FrontEnd.landing');
+});
+
+Route::get('/index', [HomeController::class, 'homePage'])->name('index');
 
 
 Route::get('/contactUs', function () {
@@ -56,4 +60,10 @@ Route::middleware('auth', 'admin')->group(function () {
 
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
 
+Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
+Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
+
 require __DIR__ . '/auth.php';
+
+
+
