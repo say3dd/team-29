@@ -214,15 +214,6 @@ header {
 
 
 
-
-
-
-
-
-
-
-
-
 /* About section  main */
 
 
@@ -323,15 +314,6 @@ span {
 
 
 
-
-
-
-
-
-
-
-
-
 /*   Why Choose Us Section   */
 
 
@@ -403,17 +385,6 @@ color: #c492eb;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* Our Value Section */
 
 
@@ -424,7 +395,7 @@ color: #c492eb;
 }
 
 #about2-container {
-  margin-bottom:  rem;
+  margin-bottom:  8rem;
   margin-left: 15rem;
   margin-right: 15rem;
   margin-top: 4rem;
@@ -432,7 +403,7 @@ color: #c492eb;
   padding-top: 2rem;
   padding-left: 9rem;
   padding-right: 8rem;
-  padding-bottom: 10rem;
+  padding-bottom: 4rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
   border-radius: 15px;
  
@@ -482,8 +453,6 @@ color: #c492eb;
 
 
 
-
-
 /* testimonials */
 
 .testimonials h1 {
@@ -500,7 +469,7 @@ color: #c492eb;
   max-width: 70%;
   margin: 0 auto;
   margin-top: 2%;
-  margin-bottom: 0%;
+  margin-bottom: 3%;
 }
 
 .testimonial {
@@ -543,7 +512,6 @@ color: #c492eb;
 .person-title {
   font-size: 1.8rem;
 }
-
 
 
 

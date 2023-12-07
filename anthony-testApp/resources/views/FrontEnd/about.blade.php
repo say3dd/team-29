@@ -18,7 +18,7 @@
         @include('header')
    
 
-               <!-- About Section-->
+            <!-- About Section-->
 
     <div class="about-section">
 
@@ -121,10 +121,6 @@
         </div>
       </div>
 
-      
-    <!--            Footer                      -->
-      
-
       <!-- What other people say? -->
       <h1 class="title-sellers">What our customers say ?</h1>
       <div class="title-line"></div> <!-- Add this line -->
@@ -185,10 +181,8 @@
         </div>
       </section>
 
-    </section>
-
-
-
+    <!--            Footer                      -->
+ 
         @include('footer')
     
        
