@@ -414,6 +414,86 @@ color: #c492eb;
 
 
 
+/* Our Value Section */
+
+
+.heading-text {
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 4%;
+}
+
+#about2-container {
+  margin-bottom:  rem;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  margin-top: 4rem;
+  background-color:#4E008B;
+  padding-top: 2rem;
+  padding-left: 9rem;
+  padding-right: 8rem;
+  padding-bottom: 10rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+ 
+}
+
+.about-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  gap: 5rem;
+ 
+}
+
+.about-card img {
+  max-width: 30rem;
+  height: 20rem; 
+  border-radius: 5%; 
+  border: #300452 5px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.about-info {
+  text-align: left;
+}
+
+.section-heading {
+  text-align: center;
+}
+
+
+
+
+.about-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  
+}
+
+.title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 75%; /* Set the width as a percentage or use other relative units */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
