@@ -213,6 +213,150 @@ header {
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* About section  main */
+
+
+
+
+
+
+.logo-icon{
+  width: 15rem;
+  border-radius: 150px;
+  border:blueviolet 3px solid;
+  border-radius: 50%;
+ 
+
+}
+
+
+.about-text p{
+
+  width: 70%;
+}
+
+.about-info{
+  margin-right: 3%;
+
+}
+.about-info p {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.about-contents{
+  margin-left: 3%;
+}  
+.btn-header {
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  border: white 1px solid;
+  border-radius: 5%;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.btn-header:hover {
+  background-color: #760000;
+  color: white;
+}
+  
+
+
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem; /* Use padding-top instead of margin-top */
+  margin-left: 25%;
+  padding-bottom: 5rem; 
+   gap: 1rem;
+
+}
+
+.about-section {
+  background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496)),
+              url("../images/abstract-purple-art-4k-5g.jpg"); 
+ 
+  background-attachment: fixed;
+}
+
+
+.find-more-btn{
+  background-color:#A634FF;
+ border: none;
+ color: white;
+ border-radius: 10px;
+ width: 10em;
+ font-size: 1.1rem;
+ text-align: center;
+ display: inline-block;
+ padding: 0.8rem;
+ text-decoration: none;
+ margin-top: 1.5rem;
+ box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Styling  span element */
+span {
+  font-size: 2.5rem;
+  color: rgb(115, 0, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Mobile Compativility */
 @media (max-width: 1400px) {
     header {

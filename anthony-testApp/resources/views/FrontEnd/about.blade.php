@@ -18,8 +18,31 @@
         @include('header')
    
 
-            <!-- About Section-->
+               <!-- About Section-->
 
+    <div class="about-section">
+
+      <div class="about-container">
+        <div id="image">
+      
+            <img class = "logo-icon" src="{{ asset('assets/images/logo-img.png') }}" alt=""">
+        </div>
+        <div class="about-contents">
+          <div class="about-text">
+            <h1>About <span>Valhalla</span></h1>
+
+            <p>Welcome to Vallhala, where gaming reaches new heights! Immerse
+              yourself in the extraordinary world of high-performance gaming
+              laptops. Our cutting-edge devices are meticulously crafted with
+              the latest hardware, boasting powerful processors, dedicated
+              graphics cards, and high-refresh-rate displays.</p>
+            <a href="#" class="find-more-btn">Find More Info</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</header>
     <!--            Footer                      -->
  
         @include('footer')
