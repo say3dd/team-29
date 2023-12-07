@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product</title>
-    <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style_sheet_Product_Template.css')}}">
 </head>
 
     @include ('header')
