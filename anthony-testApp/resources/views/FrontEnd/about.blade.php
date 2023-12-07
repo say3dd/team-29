@@ -121,9 +121,74 @@
         </div>
       </div>
 
-      </section>
+      
     <!--            Footer                      -->
       
+
+      <!-- What other people say? -->
+      <h1 class="title-sellers">What our customers say ?</h1>
+      <div class="title-line"></div> <!-- Add this line -->
+      <section id="testimonials">
+        <div id="testimonials-container">
+          <div class="testimonial">
+            <div class="top-card">
+         
+                <img  src="{{ asset('assets/images/person1.jpg') }}" alt=""">
+
+            </div>
+            <div class="bottom-card">
+              <h2 class="person-title">Ethan Davis</h2>
+              <blockquote class="person-info">"Vallhala redefined my gaming
+                experience.
+                The cutting-edge technology and powerful processors in their
+                gaming laptops elevate gameplay to new heights.Vallhala has
+                redefined my seamless gaming experience."</blockquote>
+
+            </div>
+
+          </div>
+          <div class="testimonial">
+            <div class="top-card">
+            
+                
+                <img  src="{{ asset('assets/images/ptreview16.jpg') }}" alt=""">
+
+            </div>
+
+            <div class="bottom-card">
+              <h2 class="person-title">Olivia Smith</h2>
+              <blockquote class="person-info">"Vallhala redefined my gaming
+                experience.
+                The cutting-edge technology and powerful processors in their
+                gaming laptops elevate gameplay to new heights.Vallhala has
+                redefined my seamless gaming experience.
+                "</blockquote>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="top-card">
+                <img  src="{{ asset('assets/images/image-person.jpg') }}" alt=""">
+
+            </div>
+            <div class="bottom-card">
+              <h2 class="person-title">John Smith</h2>
+              <blockquote class="person-info">"Vallhala has truly transformed
+                the laptop experience.
+                The laptops are reliable for everyday use, striking the
+                perfect
+                balance of power and portability. Vallhala has truly
+                transformed my 
+                 gaming experience and productivity."</blockquote>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+
+
         @include('footer')
     
        
