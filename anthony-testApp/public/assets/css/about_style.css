@@ -666,6 +666,66 @@ color: #c492eb;
 
 
 
+/* testimonials */
+
+.testimonials h1 {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  color: #000000;
+  font-weight: bold;
+}
+
+#testimonials-container {
+  display: flex;
+  justify-content: center;
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 0%;
+}
+
+.testimonial {
+  flex-basis: 30%;
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 5%;
+  overflow: hidden; /* Ensure overflow is hidden */
+}
+
+.top-card {
+  background-color: #4e008b; /* Background color for the top half */
+  padding: 20px;
+
+}
+
+.bottom-card {
+  background-color: #370061; /* Background color for the bottom half */
+  padding: 20px;
+
+}
+
+.testimonial img {
+  width: 12rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid #360060;
+}
+
+.person-info {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.7rem;
+  
+}
+
+.person-title {
+  font-size: 1.8rem;
+}
+
 
 
 
