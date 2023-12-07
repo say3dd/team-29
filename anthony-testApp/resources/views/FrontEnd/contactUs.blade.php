@@ -4,7 +4,7 @@
 
 @section('content')
 <h1 class="text-white">ContactUs</h1>
-@if(session('success'))
+  @if(session('success')) 
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
@@ -22,6 +22,6 @@
         <textarea name="message" id="message" rows="4" required></textarea>
 
         <button type="submit">Submit</button>
-    </form>
+    </form>  
 
 @endsection
