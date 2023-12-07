@@ -43,6 +43,54 @@
 
     </div>
 </header>
+
+    <!-- Why Choose Us?  Section -->
+    <section class="Choose_Us_Section">
+      <h2 id="choose_us_title">Why Choose Us ?</h2>
+
+      <div class="choose-row">
+        <div class="about-image">
+          <img class="about-icons"
+            src
+            alt>
+        </div>
+        <div class="about-info">
+          <h2 class = "choose-title">Peak Performance</h2>
+          <p>
+            Dive into the world of gaming excellence on our e-commerce platform.
+            Explore our exclusive collection of high-performance laptops,
+            made to elevate your gaming experiences. Immerse in gaming
+            excellence with powerful laptops.
+          </p>
+        </div>
+
+     
+
+        <div class="about-info">
+          <h2 class = "choose-title">Versatility</h2>
+          <p>
+            Whether it's daily tasks, personal use, or work-related duties, our
+            versatile laptops are your perfect companions. Experience
+            reliability in every click, ensuring seamless computing for your
+            everyday needs and purposes.
+          </p>
+        </div>
+
+     
+
+        <div class="about-info">
+          <h2 class = "choose-title">Innovation</h2>
+
+          <p>
+            Our comprehensive range of laptops is curated to cater to the
+            diverse needs of professionals in the corporate world. Find the
+            perfect balance of power and portability to elevate your
+            professional endeavors.
+
+          </p>
+        </div>
+      </div>
+    </section>
     <!--            Footer                      -->
  
         @include('footer')

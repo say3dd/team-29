@@ -332,6 +332,80 @@ span {
 
 
 
+/*   Why Choose Us Section   */
+
+
+
+.about-image{
+  padding-left:0%;
+}
+
+
+.choose-row {
+  display: flex;
+  justify-content: space-between;
+  width: 82%;
+  align-items: center;
+  margin: auto;
+ 
+  
+ 
+}
+
+
+#choose_us_title{
+  background-color: rgb(67, 0, 129);
+  color:white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.9rem;
+
+
+}
+
+
+
+.about-info  {
+  color: rgb(255, 255, 255);
+  background-color: #4E008B;
+  padding: 1rem;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 1rem;
+  }
+  
+
+  
+  
+
+.about-info h2{
+
+color: rgb(255, 255, 255);
+text-align:  center;
+font-weight: bolder;
+font-size: 1.5rem;
+color: #c492eb;
+
+
+}
+
+.Choose_Us_Section{
+  background-color: rgb(33, 0, 65);
+  padding-bottom: 5rem;
+  border-bottom: #9000ff 1  px solid;
+  
+}
+
+.choose-title {
+  margin-bottom: 0rem;
+}
+
+
+
+
+
+
+
 
 
 
