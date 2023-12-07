@@ -82,7 +82,7 @@
                 <!--productToAdd is the string of data that the function returns, what I need to do is get the id from this and use that to update the basket DB -->
                 @if(isset($productToAdd)){
                     {{$laptop->laptop_name}}
-                    {{$productToAdd->input('laptopData')}}
+                    {{$productToAdd}}
                 }
                 @else{
                     echo '<script>console.log("variable $productToAdd not set")</script>';

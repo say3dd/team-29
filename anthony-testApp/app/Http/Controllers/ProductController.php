@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Basket;
 
 class ProductController extends Controller
 {
@@ -16,10 +17,13 @@ class ProductController extends Controller
 
     public function getInfo()
     {
-        $testVar = request();
+        $laptopID = request()->input('laptopData'); //grabs specifically the section of the request that holds the laptop's ID
+        if($laptopID != ''){
+            $basket = Basket::create();
+       }
+       
         $laptops = Product::all();
-       // $testvar = productToGrab;
-        return view('FrontEnd.products', ['laptops' => $laptops, 'productToAdd' => $testVar]);
+        return view('FrontEnd.products', ['laptops' => $laptops, 'productToAdd' => $laptopID]);
     }
 
     // displays all the products
