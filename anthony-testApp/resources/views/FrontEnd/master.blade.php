@@ -228,7 +228,7 @@
                             </div>
 
                             <a href="#" class="buy-product">Add to Basket</a>
-                        </div>
+                        </div> 
 
 
                     </div>
