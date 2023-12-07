@@ -42,9 +42,7 @@ h4 {
     position: relative; /* Set position to relative */
     z-index: 2; /* Set a higher z-index to make sure it's above the image */
     /* Add other styles for your navbar section */
-  }
-
-
+}
 
 /* Styling  span element */
 
@@ -600,40 +598,39 @@ footer {
 /*Properties for Responsive website (size: 1440px) */
 
 @media (max-width: 1440px) {
-
     /*    Navbar Section */
     .menu-icon {
         display: inline-flex;
-      }
-  
-      #check:checked ~ .menu-icon #menu {
+    }
+
+    #check:checked ~ .menu-icon #menu {
         display: none;
-      }
-      .menu-icon #close {
+    }
+    .menu-icon #close {
         display: none;
-      }
-      .brand-images {
+    }
+    .brand-images {
         flex-direction: column; /* Stack images in a column on smaller screens */
         align-items: center;
-      }
-  
-      #check:checked ~ .menu-icon #close {
+    }
+
+    #check:checked ~ .menu-icon #close {
         display: block;
-      }
-      .title-line {
+    }
+    .title-line {
         width: 100%; /* Set the line to 100% width on mobile */
-      }
-    
-      .big-card {
+    }
+
+    .big-card {
         margin: 2rem 5%; /* Adjust margin for better spacing on mobile */
-      }
-    
-      .laptop {
+    }
+
+    .laptop {
         flex-basis: 90%; /* Set the flex basis to 100% for full width on mobile */
         margin: 20px 0; /* Adjust margin for better spacing */
-      }
-  
-      .navbar {
+    }
+
+    .navbar {
         position: absolute;
         top: 100%;
         left: 0;
@@ -643,20 +640,19 @@ footer {
         z-index: -1;
         transition: 0.3s ease;
         overflow: hidden;
-      }
-  
-      #check:checked ~ .navbar {
+    }
+
+    #check:checked ~ .navbar {
         height: 19rem;
-      }
-  
-      .navbar a {
+    }
+
+    .navbar a {
         display: block;
         margin: 1.5rem 0;
         text-align: center;
         transition: 0.3s ease;
-      }
-  
-  
+    }
+
     .button_sort {
         top: 64.5%;
         left: 83%;
@@ -679,23 +675,17 @@ footer {
         justify-content: space-around;
         width: 100%;
         margin-top: 20px;
-      gap: 0rem;
-        
-      }
-    
+        gap: 0rem;
+    }
 }
 
 /*Properties for Responsive website (size: 1024px) */
 
 @media (max-width: 1024px) {
-
-    
-
-    
     .nav-header {
         padding: 0.9rem;
     }
-    
+
     .title_shape {
         width: 80%;
         height: 320px;
@@ -794,17 +784,14 @@ footer {
 }
 
 @media (max-width: 445px) {
-
     .footer-links {
         display: flex;
         justify-content: space-around;
         width: 100%;
         margin-top: 20px;
-      gap: 0rem;
-        
-      }
+        gap: 0rem;
+    }
 
-      
     .title_shape {
         margin-left: 10%;
         width: 120%;
