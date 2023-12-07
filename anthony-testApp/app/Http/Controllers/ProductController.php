@@ -17,8 +17,13 @@ class ProductController extends Controller
     public function getInfo()
     {
         $laptopID = request()->input('laptopData'); //grabs specifically the section of the request that holds the laptop's ID
-        if($laptopID != ''){
-            $basket = Basket::create();
+        if($laptopID != '' && Auth::id() != null){
+            $basket = Basket::create([
+                'user_id' => Auth::id(),
+                'product_id' => $laptopID,
+                'product_name' => 'placeholder',
+                'product_price' => 0
+            ]);
        }
        
         $laptops = Product::all();
