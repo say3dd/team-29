@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', function (){
-    return view('FrontEnd.landing');
+    return view('FrontEnd.master');
 });
 
 Route::get('/index', [HomeController::class, 'homePage'])->name('index');
@@ -33,6 +33,12 @@ Route::get('/index', [HomeController::class, 'homePage'])->name('index');
 Route::get('/contactUs', function () {
     return view('FrontEnd/contactUs');
 });
+
+// Addded route function to the about page
+Route::get('/about', function () {
+    return view('FrontEnd/about');
+});
+
 
 
 Route::get('/test', function () {

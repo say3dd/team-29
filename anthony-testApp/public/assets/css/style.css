@@ -81,7 +81,7 @@ p {
   font-size: 1.4rem;
   color: white;
   text-decoration: none;
-  margin-left: 2.5rem;
+  margin-left: 1.5rem;
   font-weight: bold;
 }
 
@@ -593,6 +593,25 @@ gap: 15rem;
     margin-top: 20px;
   gap: 0rem;
     
+  }
+
+  .menu-icon {
+    display: inline-flex;
+  }
+
+  #check:checked ~ .menu-icon #menu {
+    display: none;
+  }
+  .menu-icon #close {
+    display: none;
+  }
+  .brand-images {
+    flex-direction: column; /* Stack images in a column on smaller screens */
+    align-items: center;
+  }
+
+  #check:checked ~ .menu-icon #close {
+    display: block;
   }
 
 
