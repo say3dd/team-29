@@ -12,8 +12,9 @@
         <nav class="navbar">
             <a href="{{url('index')}}">Home</a>
             <a href="{{url('product')}}">Products</a>
-            <a href="{{url('contactUs')}}">Contact Us</a>
             <a href="{{url('about')}}">About</a>
+            <a href="{{url('contactUs')}}">Contact Us</a>
+         
 
             <!--        Fixed the heading so that the login and register is included in the header           -->
 
