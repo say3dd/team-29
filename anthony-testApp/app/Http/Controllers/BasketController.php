@@ -14,8 +14,20 @@ class BasketController extends Controller
     public function contents(){
         $userID = Auth::id();
         $baskets = DB::table('baskets')->get();
-        $userBasket = $baskets->where('id', $userID);
+        $userBasket = $baskets->where('user_id', $userID);
         return view('FrontEnd/basket', ['userID' => $userID, 'userBasket' => $userBasket]);
+    }
+
+    public function removeItem(){
+        $basketID = request()->basketToDelete;
+        $userID = Auth::id();
+
+        if($basketID != '' && $userID != null){
+            $delSuccessful = DB::table('baskets')->where('id',$basketID)->delete();
+        }
+        $baskets = DB::table('baskets')->get();
+        $userBasket = $baskets->where('user_id', $userID);
+        return view('FrontEnd/basket', ['userID' => $userID, 'userBasket' => $userBasket, 'del' => $delSuccessful]);
     }
 
 }

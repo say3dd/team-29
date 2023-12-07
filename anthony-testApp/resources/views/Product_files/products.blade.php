@@ -73,7 +73,8 @@
                 text-decoration:underline; text-decoration-color:aquamarine ">Price: £{{ $laptop->price }}</p>
                 <br>
                 
-                <form action='{{route('product.getInfo')}}' method='get'>
+                <form action='{{route('product.getInfo')}}' method='post'>
+                    @csrf
                     <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
                     <button class="button_cart_laptop"> Add to Basket </button>
                 </form>
