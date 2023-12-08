@@ -69,7 +69,22 @@
                 text-decoration:underline; text-decoration-color:aquamarine ">Price: £{{ $laptop->price }}</p>
                 <br>
                 
-                <button class="button_cart_laptop"> Add to Basket </button>
+                <form action='{{route('product.getInfo')}}' method='post'>
+                    @csrf
+                    <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
+                    <button class="button_cart_laptop"> Add to Basket </button>
+                </form>
+                <!--It took me 8 hours of work just to get this thing to get this data and of course it comes out as a string I can't separate... -->
+                <!--productToAdd is the string of data that the function returns, what I need to do is get the id from this and use that to update the basket DB -->
+                @if(isset($productToAdd)){
+                    {{$laptop->laptop_name}}
+                    {{$productToAdd}}
+                }
+                @else{
+                    echo '<script>console.log("variable $productToAdd not set")</script>';
+                }
+                @endif
+
             </div>
             @endforeach
 
