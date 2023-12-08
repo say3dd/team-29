@@ -29,7 +29,7 @@ Route::get('/test', function () {
     return view('FrontEnd/test');
 });
 
-Route::middleware('guest')->group(function () {
+Route::middleware('guest', 'auth')->group(function () {
     Route::get('/', function () {
         return view('FrontEnd.landing');
     });
