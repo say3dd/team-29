@@ -215,6 +215,7 @@ body {
     max-height: 420px;
     min-width: none;
     height: auto;
+    width: auto;
     width: 100%;
     border-radius: 10px;
 }
@@ -268,6 +269,16 @@ body {
     font-family: "Noto Sans", sans-serif;
     margin-left: 16px;
     margin-top: 8px;
+}
+
+.image_cart {
+    width: 20px;
+    height: 25px;
+}
+
+.image_wish_list {
+    width: 25px;
+    height: 23px;
 }
 
 /* Hover effect fot buttons */
@@ -503,7 +514,6 @@ body {
     border-color: transparent;
     color: white;
 }
-
 .related_product_content:hover {
     text-decoration: underline;
     color: white;
@@ -605,6 +615,182 @@ footer {
 .footer-bottom p {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1960px) {
+    /* Section 1 */
+
+    /* Container for fitting in information about the product*/
+    .background_shape1 {
+        top: 14%;
+    }
+    /* Slide Show */
+
+    .slide_image {
+        width: 720px;
+        height: 470px;
+    }
+
+    /* Buttons style */
+    .button_cart,
+    .button_wish {
+        margin-left: 42px;
+    }
+
+    /* Section 2 */
+    /* Container 1 for features */
+
+    .container_section2 {
+        margin-top: -28%;
+        height: 485px;
+    }
+
+    /*CSS styling for showcasing unique features of a laptop*/
+
+    .unique_features {
+        font-size: 1.6em;
+    }
+
+    .unique_feature1 {
+        position: absolute;
+        left: 11%;
+    }
+
+    .unique_feature2 {
+        position: absolute;
+        left: 25%;
+    }
+
+    .unique_feature3 {
+        position: absolute;
+        left: 48.5%;
+    }
+
+    .unique_features_content {
+        margin-top: -20px;
+        font-size: 1.3em;
+    }
+
+    .unique_feature1_content {
+        width: 460px;
+        position: absolute;
+        left: 6%;
+    }
+
+    .unique_feature2_content {
+        width: 460px;
+        position: absolute;
+        left: 34.5%;
+    }
+
+    .unique_feature3_content {
+        width: 460px;
+        position: absolute;
+        left: 63.7%;
+    }
+
+    /* Section 3 */
+
+    .container_section3 {
+        height: 700px;
+    }
+
+    .unique_feature_title_title {
+        font-size: 2.2em;
+    }
+
+    .unique_feature_content {
+        font-size: 1.4em;
+        width: 750px;
+    }
+
+    .unique_feature_title {
+        font-size: 1.6em;
+    }
+
+    .unique_feature4_5_6_7_8_image {
+        top: -80%;
+    }
+}
+
+@media (max-width: 1820px) {
+    /* Buttons style */
+    .button_cart,
+    .button_wish {
+        margin-left: 34px;
+    }
+    /* Section 1 Slide Show */
+
+    .slide_image {
+        width: 720px;
+        height: 470px;
+    }
+
+    /* Section 2 */
+    /* Container 1 for features */
+
+    .container_section2 {
+        margin-top: -22%;
+        height: 485px;
+    }
+
+    /*CSS styling for showcasing unique features of a laptop*/
+
+    .features_images img {
+        margin-right: 40px;
+        margin-left: 40px;
+        width: 27%;
+    }
+
+    .unique_features {
+        text-align: left;
+        font-size: 1.4em;
+    }
+
+    .unique_feature1 {
+        position: absolute;
+        left: 10%;
+    }
+
+    .unique_feature2 {
+        position: absolute;
+        left: 23.5%;
+    }
+
+    .unique_feature3 {
+        position: absolute;
+        left: 46.5%;
+    }
+
+    .unique_features_content {
+        margin-top: -20px;
+        font-size: 1.2em;
+    }
+
+    .unique_feature1_content {
+        position: absolute;
+        left: 5%;
+        padding: 50px 80px;
+    }
+
+    .unique_feature2_content {
+        position: absolute;
+        left: 34%;
+        padding: 50px 80px;
+        margin-right: 60px;
+    }
+
+    .unique_feature3_content {
+        position: absolute;
+        left: 63%;
+        padding: 50px 80px;
+    }
+
+    /* Section 3 */
+
+    .unique_feature4_5_6_7_8_image {
+        top: -76%;
+    }
 }
 
 @media (max-width: 1440px) {
@@ -1176,8 +1362,8 @@ footer {
         font-size: 1.1em;
     }
 
-    /* Section 4*/
-    /* Container 3 for features */
+    /* Section 5 */
+    /* Container for realted products*/
 
     .container_section5 {
         background-image: linear-gradient(#4e008b, #300452);
@@ -1214,70 +1400,18 @@ footer {
     .laptop1 {
         width: 16%; /* Adjust width to fit the container */
     }
-
-    /*Buttons for adding products to a Basket from the list of Related products*/
-
-    .button_cart_laptop {
-        background-color: #300452;
-        font-size: 15px;
-        color: white;
-        border: 0.1rem solid #fff;
-        border-radius: 1rem;
-        padding-left: 1.2em;
-        padding-right: 1.2em;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        font-family: "Noto Sans", sans-serif;
-    }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 435px) {
     /* Section 1 */
 
     /* Container for fitting in information about the product*/
     .background_shape1 {
         position: relative;
         width: 90vw;
-        height: 780px;
+        height: 640px;
         margin: 0;
-        top: -1%;
-        background-color: #4e008b;
-        color: white;
-        border-radius: 2rem;
-        padding: 0;
-    }
-
-    /*CSS styling for product information*/
-
-    /* Container for product information */
-    .product_information {
-        position: absolute;
-        width: 70%;
-        top: 44%;
-        height: 300px;
-    }
-
-    /*CSS styling for the name, price and other relative information of the product */
-    .product_name {
-        font-size: 1.2em;
-    }
-
-    .product_main_features {
-        font-size: 1em;
-    }
-
-    .product_price {
-        font-size: 24px;
-    }
-
-    .product_price_no_VAT {
-        font-size: 18px;
-    }
-
-    /*Properties for "View specification" button*/
-    .button_view_specification {
-        font-size: 1em;
-        margin-left: 20px;
+        top: -13%;
     }
 
     /* Slide Show Properties*/
@@ -1285,9 +1419,9 @@ footer {
     /* Container for slide show */
     .background_shape_1_2 {
         position: absolute;
-        top: 4%;
-        width: 80%;
-        height: 300px;
+        top: 3%;
+        width: 90%;
+        height: 220px;
     }
 
     .slideshow-container {
@@ -1295,21 +1429,483 @@ footer {
     }
 
     .slide_image {
-        height: 60px;
-        width: 120px;
+        height: 180px;
+        width: 300px;
+    }
+
+    /* Buttons for the slide show */
+    .previousSlide {
+        font-size: 18px;
     }
 
     .nextSlide {
-        top: 45.5%;
-        right: 12.5%;
+        font-size: 18px;
+        right: 8.5%;
+    }
+
+    /*CSS styling for product information*/
+
+    /* Container for product information */
+    .product_information {
+        position: absolute;
+        width: 80%;
+        top: 38%;
+    }
+
+    /*CSS styling for the name, price and other relative information of the product */
+    .product_name {
+        font-size: 1.1em;
+    }
+
+    .product_main_features {
+        font-size: 0.9em;
+    }
+
+    .product_price {
+        font-size: 20px;
+    }
+
+    .product_price_no_VAT {
+        font-size: 15px;
+    }
+
+    /*Properties for "View specification" button*/
+    .button_view_specification {
+        font-size: 0.95em;
+        margin-left: 14px;
     }
 
     /* Buttons for adding the product to the Basket or to a Wish List */
-
     /* Buttons style */
     .button_cart,
     .button_wish {
+        font-size: 13px;
+        margin-left: 10px;
+    }
+
+    .button_cart {
+        margin-right: 10px;
+    }
+
+    .image_cart {
+        width: 14px;
+        height: 19px;
+    }
+
+    .image_wish_list {
+        width: 18px;
+        height: 16px;
+    }
+
+    /* Section 2 */
+    /* Container 1 for features */
+
+    .container_section2 {
+        margin-top: -50%;
+        height: 660px;
+    }
+
+    /*CSS styling for showcasing unique features of a laptop*/
+
+    .features_images {
+        text-align: center;
+        margin-top: 3%;
+    }
+
+    .features_images img {
+        margin-bottom: 70px;
+        margin-right: 50px;
+        margin-left: 50px;
+        width: 60%;
+        border-radius: 2rem;
+    }
+
+    .unique_features {
+        font-size: 0.7em;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .unique_feature1 {
+        position: absolute;
+        top: 108%;
+        left: 37%;
+    }
+
+    .unique_feature2 {
+        position: absolute;
+        top: 131%;
+        left: -22%;
+    }
+
+    .unique_feature3 {
+        position: absolute;
+        top: 154.5%;
+        left: -50%;
+    }
+
+    .unique_features_content {
+        margin-top: -45px;
+        text-align: center;
+        font-size: 0.6em;
+    }
+
+    .unique_feature1_content {
+        width: 300px;
+        padding: 50px 80px;
+        position: absolute;
+        top: 105%;
+        left: -4%;
+    }
+
+    .unique_feature2_content {
+        width: 300px;
+        padding: 50px 80px;
+        margin-right: 60px;
+        position: absolute;
+        top: 128%;
+        left: -4%;
+    }
+
+    .unique_feature3_content {
+        width: 290px;
+        height: 155px;
+        padding: 50px 80px;
+        position: absolute;
+        top: 152%;
+        left: -3%;
+    }
+
+    /* Section 3 */
+    /* Container 2 for features */
+
+    .container_section3 {
+        height: 480px;
+    }
+
+    .unique_feature_title_title {
+        font-size: 1em;
+        margin-left: 20px;
+    }
+
+    .unique_feature_content {
+        font-size: 0.6em;
+        width: 300px;
+        margin-left: 20px;
+    }
+
+    .unique_feature_title {
+        font-size: 0.8em;
+        margin-left: 20px;
+    }
+
+    .unique_feature4_5_6_7_8_image {
+        top: 2%;
+        margin-left: 20%;
+        height: 26%;
+        width: 60%;
+    }
+
+    /* Section 4*/
+    /* Container 3 for features */
+    .container_section4 {
+        height: 280px;
+    }
+
+    .unique_feature9_image {
+        height: 140px;
+    }
+
+    .unique_feature9 {
+        font-size: 1.1em;
+    }
+
+    .unique_feature9_content {
+        font-size: 0.6em;
+    }
+
+    /* Section 5 */
+    /* Container for realted products*/
+
+    .container_section5 {
+        gap: 0.5rem;
+        padding: 0.24em;
+        padding-bottom: 62px;
+    }
+
+    /*Properties of the list of Related products*/
+
+    .title_related_products {
+        position: absolute;
+        margin-top: 2.5%;
+        font-size: 0.9rem;
+    }
+
+    .related_product_image {
+        width: 90px;
+        height: 80px;
+    }
+
+    .related_product_content {
+        font-size: 1em;
+    }
+
+    .laptop1 {
+        width: 26%; /* Adjust width to fit the container */
+        font-size: 0.7em;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 385px) {
+    /* Section 1 */
+
+    /* Container for fitting in information about the product*/
+    .background_shape1 {
+        position: relative;
+        width: 90vw;
+        height: 600px;
+        top: -13%;
+    }
+
+    /* Slide Show Properties*/
+
+    /* Container for slide show */
+    .background_shape_1_2 {
+        position: absolute;
+        top: 2%;
+        width: 90%;
+        height: 200px;
+    }
+
+    .slideshow-container {
+        padding: 1.3em;
+    }
+
+    .slide_image {
+        height: 160px;
+        width: 260px;
+    }
+
+    /* Buttons for the slide show */
+    .previousSlide {
+        font-size: 15px;
+    }
+
+    .nextSlide {
+        font-size: 15px;
+        right: 8.5%;
+    }
+
+    /*CSS styling for product information*/
+
+    /* Container for product information */
+    .product_information {
+        position: absolute;
+        width: 80%;
+        top: 36%;
+    }
+
+    /*CSS styling for the name, price and other relative information of the product */
+    .product_name {
+        font-size: 1em;
+    }
+
+    .product_main_features {
+        font-size: 0.8em;
+    }
+
+    .product_price {
         font-size: 18px;
-        margin-left: 30px;
+    }
+
+    .product_price_no_VAT {
+        font-size: 13px;
+    }
+
+    /*Properties for "View specification" button*/
+    .button_view_specification {
+        font-size: 0.9em;
+        margin-left: 8px;
+    }
+
+    /* Buttons for adding the product to the Basket or to a Wish List */
+    /* Buttons style */
+    .button_cart,
+    .button_wish {
+        font-size: 12px;
+        margin-left: -2px;
+    }
+
+    .button_cart {
+        margin-right: 20px;
+    }
+
+    .image_cart {
+        width: 14px;
+        height: 19px;
+    }
+
+    .image_wish_list {
+        width: 18px;
+        height: 16px;
+    }
+
+    /* Section 2 */
+    /* Container 1 for features */
+
+    .container_section2 {
+        margin-top: -58%;
+        height: 400px;
+    }
+
+    /*CSS styling for showcasing unique features of a laptop*/
+
+    .features_images {
+        text-align: center;
+        margin-top: 3%;
+    }
+
+    .features_images img {
+        margin-bottom: 70px;
+        margin-right: 50px;
+        margin-left: 50px;
+        width: 26%;
+    }
+
+    .unique_features {
+        font-size: 0.7em;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .unique_feature1 {
+        position: absolute;
+        top: 98%;
+        left: 37%;
+    }
+
+    .unique_feature2 {
+        position: absolute;
+        top: 112%;
+        left: -31%;
+    }
+
+    .unique_feature3 {
+        position: absolute;
+        top: 126%;
+        left: -62%;
+    }
+
+    .unique_features_content {
+        margin-top: -45px;
+        text-align: center;
+        font-size: 0.6em;
+    }
+
+    .unique_feature1_content {
+        width: 300px;
+        padding: 50px 80px;
+        position: absolute;
+        top: 95%;
+        left: -10%;
+    }
+
+    .unique_feature2_content {
+        width: 300px;
+        padding: 50px 80px;
+        margin-right: 60px;
+        position: absolute;
+        top: 109%;
+        left: -10%;
+    }
+
+    .unique_feature3_content {
+        width: 290px;
+        height: 155px;
+        padding: 50px 80px;
+        position: absolute;
+        top: 123%;
+        left: -10%;
+    }
+
+    /* Section 3 */
+    /* Container 2 for features */
+
+    .container_section3 {
+        height: 480px;
+    }
+
+    .unique_feature_title_title {
+        font-size: 1em;
+        margin-left: 20px;
+    }
+
+    .unique_feature_content {
+        font-size: 0.6em;
+        width: 300px;
+        margin-left: 20px;
+    }
+
+    .unique_feature_title {
+        font-size: 0.8em;
+        margin-left: 20px;
+    }
+
+    .unique_feature4_5_6_7_8_image {
+        top: 2%;
+        margin-left: 20%;
+        height: 26%;
+        width: 60%;
+    }
+
+    /* Section 4*/
+    /* Container 3 for features */
+    .container_section4 {
+        height: 280px;
+    }
+
+    .unique_feature9_image {
+        height: 140px;
+    }
+
+    .unique_feature9 {
+        font-size: 1.1em;
+    }
+
+    .unique_feature9_content {
+        font-size: 0.6em;
+    }
+
+    /* Section 5 */
+    /* Container for realted products*/
+
+    .container_section5 {
+        gap: 0.5rem;
+        padding: 0.24em;
+        padding-bottom: 62px;
+    }
+
+    /*Properties of the list of Related products*/
+
+    .title_related_products {
+        position: absolute;
+        margin-top: 2.5%;
+        font-size: 0.9rem;
+    }
+
+    .related_product_image {
+        width: 90px;
+        height: 80px;
+    }
+
+    .related_product_content {
+        font-size: 1em;
+    }
+
+    .laptop1 {
+        width: 26%; /* Adjust width to fit the container */
+        font-size: 0.7em;
+        margin-top: 40px;
     }
 }
