@@ -18,8 +18,6 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-route::get('/products', [ProductController::class, 'products']) -> name('products');
-route::get('/', [HomeController::class, 'home']) -> name('home');
 
 
 
@@ -30,16 +28,31 @@ route::get('/', [HomeController::class, 'home']) -> name('home');
 Route::get('/test', function () {
     return view('FrontEnd/test');
 });
-// Route::get('/products', function () {
-//     return view('FrontEnd/product');
-// });
+
+Route::middleware('guest')->group(function () {
+
+    //code for index should be here
+    Route::get('/', function () {
+        return view('FrontEnd.landing');
+    });
+
+    // your code ends here
+
+    Route::get('/index', [HomeController::class,'index'])->name('index');
+    Route::get('/contactUs',[ContactController::class, 'index'])->name('contactUs');;
+
+    // Addded route function to the about page
+    Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
 
 
+    // Route::get('/', );
+    Route::get('/product', [ProductController::class, 'showProducts'])->name('product');
+    Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/home', [HomeController::class,'index'])->name('home');
+    Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
+    Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
+});
+
 
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

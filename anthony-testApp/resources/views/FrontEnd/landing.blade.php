@@ -14,5 +14,12 @@
 <body>
 
     <h1>Hello test</h1>
+    <h1>adasdsa</h1>
+
+    <div class="link">
+        <span>
+            <a href="{{route('index')}}">Full site</a>
+        </span>
+    </div>
 </body>
 </html>
