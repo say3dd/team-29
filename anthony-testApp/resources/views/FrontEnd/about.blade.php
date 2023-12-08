@@ -36,7 +36,7 @@
               laptops. Our cutting-edge devices are meticulously crafted with
               the latest hardware, boasting powerful processors, dedicated
               graphics cards, and high-refresh-rate displays.</p>
-            <a href="#" class="find-more-btn">Find More Info</a>
+            <a href="{{url('contactUs')}}" class="find-more-btn">Contact Us</a>
           </div>
         </div>
       </div>
