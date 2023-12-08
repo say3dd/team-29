@@ -82,76 +82,6 @@ h4 {
     color: white;
 }
 
-/* footer section */
-
-.footer_class {
-    top: 0%;
-}
-
-.footer-section {
-    background-color: #300452;
-    color: white;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-section a {
-    color: #9000ff;
-}
-
-footer {
-    font-size: 1.2rem;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 20px;
-    gap: 15rem;
-}
-
-.footer-column {
-    text-align: left;
-    padding: 10px;
-}
-
-.footer-column h2 {
-    color: #fff;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column ul li {
-    margin-bottom: 5px;
-}
-
-.footer-bottom {
-    margin-top: 20px;
-}
-
-.footer-bottom p {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
 /*Css for the AllProducts webapge*/
 
 /*Image on the top of the webpage*/
@@ -404,6 +334,26 @@ input[type="checkbox"] {
     font-size: 1.3rem;
 }
 
+/*Properties for the Basket button */
+
+.button_cart_laptop {
+    background-color: #300452;
+    font-size: 15px;
+    color: white;
+    border: 0.1rem solid #fff;
+    border-radius: 1rem;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.button_cart_laptop:hover {
+    text-decoration: underline;
+    color: white;
+}
+
 /*Properties for the buttons that are used to switch between the pages */
 
 .button_container {
@@ -429,6 +379,76 @@ input[type="checkbox"] {
     background-color: rgba(115, 87, 146, 0.9);
     text-decoration: underline;
     color: white;
+}
+
+/* footer section */
+
+.footer_class {
+    top: 0%;
+}
+
+.footer-section {
+    background-color: #300452;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-section a {
+    color: #9000ff;
+}
+
+footer {
+    font-size: 1.2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+    gap: 15rem;
+}
+
+.footer-column {
+    text-align: left;
+    padding: 10px;
+}
+
+.footer-column h2 {
+    color: #fff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
 /*Properties for Responsive website (size: 1440px) */
