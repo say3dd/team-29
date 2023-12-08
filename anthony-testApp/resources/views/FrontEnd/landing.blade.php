@@ -8,7 +8,7 @@
     <meta name="description" content="Get started with a free landing page built with Tailwind CSS and the Flowbite Blocks system.">
     <link href="./output.css" rel="stylesheet">
     <title>
-        @section('title', 'welcome')
+        @yield('title', 'welcome')
     </title>
 </head>
 <body>
