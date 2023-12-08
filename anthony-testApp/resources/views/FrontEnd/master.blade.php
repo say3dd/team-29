@@ -98,7 +98,7 @@
                     <h1 class = "title-sellers">Best Sellers Of The Week</h1>
                     <div class="title-line"></div> 
                     <div id="best-seller-container">
-                        {{-- @foreach ($bestSellerLaptops as $laptop)
+                        @foreach ($bestSellerLaptops as $laptop)
                             <div class="laptop">
                                 <div class="specs-container">
                                     <img src="{{ asset($laptop->image_path) }}" alt="laptop">
@@ -110,7 +110,7 @@
                                 </div>
                                 <a href="#" class="buy-product">Add to Basket</a>
                             </div>
-                        @endforeach --}}
+                        @endforeach
                     </div>
             </section>
 
