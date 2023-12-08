@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product</title>
-    <link rel="stylesheet" href="{{asset('assets/css/style_sheet_2.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style_sheet_product_webpage_template.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
 
@@ -84,11 +84,11 @@
         <br><hr>
         <div class="buttons">
         <button class="button_cart">
-            <img src="{{asset('assets/images_product/icon_basket.png')}}" alt="" width="20" height="25">
+            <img class = "image_cart" src="{{asset('assets/images_product/icon_basket.png')}}" alt="">
             Add to Basket
         </button>
         <button class="button_wish">
-            <img src="{{asset('assets/images_product/love1.png')}}" alt="" width="25" height="23">
+            <img class = "image_wish_list" src="{{asset('assets/images_product/love1.png')}}" alt="" >
             Add to Wish List
         </button>
         </div>
