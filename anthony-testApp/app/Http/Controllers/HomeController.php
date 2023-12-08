@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 // use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,9 +36,12 @@ class HomeController extends Controller
         }
     }
 
-    public function index(){
+   
 
-        return redirect()->route('index');
+    public function index(){
+        $laptops = Product::paginate(4);
+
+        return view('FrontEnd.home', ['laptops' => $laptops]);
     }
 
 
