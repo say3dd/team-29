@@ -30,20 +30,18 @@ Route::get('/test', function () {
 });
 
 Route::middleware('guest')->group(function () {
-    Route::get('', function () {
+    Route::get('/', function () {
         return view('FrontEnd.landing');
     });
 
-    Route::get('/index', [HomeController::class, 'index'])->name('index');
+    Route::get('/index', [HomeController::class,'index'])->name('index');
     Route::get('/contactUs',[ContactController::class, 'index'])->name('contactUs');;
 
     // Addded route function to the about page
-    Route::get('/about', function () {
-        return view('FrontEnd/about');
-    })->name('about');
+    Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
 
 
-    Route::get('/', [ProductController::class, 'showHomeProducts']);
+    // Route::get('/', );
     Route::get('/product', [ProductController::class, 'showProducts'])->name('product');
     Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
 

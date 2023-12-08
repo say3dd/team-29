@@ -24,10 +24,10 @@ class ProductController extends Controller
     }
 
     public function showHomeProducts()
-{
-    $laptops = Product::paginate(4);
-    return view('FrontEnd.master', ['laptops' => $laptops]);
-}
+    {
+        $laptops = Product::paginate(4);
+        return view('FrontEnd.home', ['laptops' => $laptops]);
+    }
 
     public function show($id)
     {
