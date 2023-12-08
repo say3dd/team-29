@@ -25,29 +25,27 @@ use App\Http\Controllers\ProfileController;
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/', function () {
-    return view('FrontEnd.landing');
-});
-
-Route::get('/index', [HomeController::class,'index'])->name('index');
-
-
-Route::get('/contactUs', function () {
-    return view('FrontEnd/contactUs');
-});
-
-// Addded route function to the about page
-Route::get('/about', function () {
-    return view('FrontEnd/about');
-});
-
-
-
 Route::get('/test', function () {
     return view('FrontEnd/test');
 });
 
+Route::middleware('guest')->group(function () {
+    Route::get('/', function () {
+        return view('FrontEnd.landing');
+    });
 
+    Route::get('/index', [HomeController::class, 'index'])->name('index');
+    Route::get('/contactUs', function () {
+        return view('FrontEnd/contactUs');
+    });
+
+    // Addded route function to the about page
+    Route::get('/about', function () {
+        return view('FrontEnd/about');
+    });
+
+    
+});
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

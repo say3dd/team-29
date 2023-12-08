@@ -1,8 +1,6 @@
 @extends('FrontEnd.master')
-@section('title', 'Home')
+@section('title', 'Valhalla Home')
 
 
-{{-- @section('content')
-@endsection --}}
-
-
+@section('content')
+@endsection
