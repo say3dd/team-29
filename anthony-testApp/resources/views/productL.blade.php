@@ -61,38 +61,60 @@
         </button>
         <!-- This is the code for the filter of products , linked to the database-->
     <div id="filter-container" class="filters">
-                      <!-- <div class = "filtering background"> this code is missing somewhere here figure out tmrw --> 
-
         <ul class="filters__list">
-                <li>
-                    <p style = "text-decoration: underline">GPU: </p><br>
-                    </li>
-                @foreach ($graphics as $graphic)  
-                <li>
-            <input id="{{$graphic->GPU}}" name="gpu" value="{{$graphic->GPU}}" type="checkbox" />
-            <label class="text-xs">{{$graphic->GPU}}</label>
-            </li>
-            @endforeach
+            <form action="{{URL::current()}}" method="GET">
                 <li>
                     <p style = "text-decoration: underline"> Brand: </p><br>
                     </li>
                 @foreach ($brands as $brand)  
+                @php 
+                $checkedbrands = [];
+                if(isset($_GET['brands']))
+                {
+                    $checkedbrands=$_GET['brands'];
+                }
+                @endphp
                 <li>
-            <input id="{{$brand->brand}}" name="brands"
-            @if(in_array($brand->id,explode(',',$q_brands))) @checked(true) @endif
-             value="{{$brand->brand}}" type="checkbox" onchange="filterProductsByBrand(this)" />
+            <input id="{{$brand->brand}}" name="brands[]" value="{{$brand->brand}}" type="checkbox"
+            @if(in_array($brand -> brand, $checkedbrands))checked="checked" @endif/>
             <label>{{$brand->brand}}</label>
             </li>
             @endforeach
+            <li>
+                <p style = "text-decoration: underline">GPU: </p><br>
+                </li>
+            @foreach ($graphics as $graphic)  
+            @php 
+            $checkedGPU = [];
+            if(isset($_GET['graphics']))
+            {
+                $checkedGPU=$_GET['graphics'];
+            }
+            @endphp
+            <li>
+
+        <input id="{{$graphic->GPU}}" name="graphics[]" value="{{$graphic->GPU}}" type="checkbox" 
+        @if(in_array($graphic -> GPU, $checkedGPU)) checked="checked" @endif/>
+        <label>{{$graphic->GPU}}</label>
+        </li>
+        @endforeach
+            <li>
+                <button class = "button_apply" > Apply Changes </button>
+                <button class = "button_reset" onclick="resetFilters()" > Reset </button>
+            </li>
+
         </ul>
+
+    </form>
     </div>
     <!--Form for hidden fields so the filter request gets sent without a need for a submit button, more smoother functionality -->
-<form id="pdtfilter" method="GET">
-    <input type ="hidden" name="brands" id="brands" value="{{ $q_brands}}" />
-</form>
+
 
 <script>
-    var button_filter = document.getElementById("filter-button");
+/*Code for the submit button - works by assinging variabels with the id
+ and making it so if the filter is active, 
+add those selected and when filled and enter is pressed run the funtion */
+var button_filter = document.getElementById("filter-button");
 var container = document.getElementById("filter-container");
 var input = document.querySelectorAll("input");
 
@@ -113,19 +135,15 @@ window.onclick = function () {
   container.classList.remove("filters--active");
 };
 
+
 console.log(input);
-
-
-function filterProductsByBrand(brand){
-    var brands = [];
-    document.querySelectorAll("input[name='brands']:checked").forEach(function (checkbox) {
-        brands.push(checkbox.value);
+/* Here is the code for resetting the filter section - gathers all the data input in checkbox and for each checbox, it removes them all by assinging it false.**/
+function resetFilters() {
+    var checkboxes = document.querySelectorAll("#filter-container input[type='checkbox']");
+    checkboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
     });
-
-    document.getElementById("brands").value = brands.join(',');
-    document.getElementById("pdtfilter").submit();
 }
-
 </script>
       
                 @yield('productP')
