@@ -30,7 +30,7 @@ class ProductController extends Controller
        }
        
         $laptops = Product::all();
-        return view('FrontEnd.products', ['laptops' => $laptops, 'productToAdd' => $laptopID]);
+        return view('Product_files.products', ['laptops' => $laptops, 'productToAdd' => $laptopID]);
     }
 
     // displays all the products
