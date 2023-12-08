@@ -5,8 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            @yield('title', 'master content')
-            Valhalla</title>
+            @yield('title', 'Master layout')
+            </title>
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
 
@@ -29,10 +29,10 @@
                     <i class="bx bx-x" id="close"></i>
                 </label>
                 <nav class="navbar">
-                    <a href="{{ url('index') }}">Home</a>
-                    <a href="{{ url('product') }}">Products</a>
-                    <a href="{{ url('about') }}">About</a>
-                    <a href="{{ url('contactUs') }}">Contact Us</a>
+                    <a href="{{ route('index') }}">Home</a>
+                    <a href="{{ route('product') }}">Products</a>
+                    <a href="{{ route('contactUs') }}">Contact Us</a>
+                    <a href="{{ route('about')}}">About</a>
                    
 
                     <!--        Fixed the heading so that the login and register is included in the header           -->
@@ -98,7 +98,7 @@
                     <h1 class = "title-sellers">Best Sellers Of The Week</h1>
                     <div class="title-line"></div> 
                     <div id="best-seller-container">
-                        @foreach ($bestSellerLaptops as $laptop)
+                         @foreach ($bestSellerLaptops as $laptop)
                             <div class="laptop">
                                 <div class="specs-container">
                                     <img src="{{ asset($laptop->image_path) }}" alt="laptop">
@@ -110,7 +110,7 @@
                                 </div>
                                 <a href="#" class="buy-product">Add to Basket</a>
                             </div>
-                        @endforeach
+                        @endforeach 
                     </div>
             </section>
 
@@ -144,98 +144,22 @@
                         <h1 class = "title-sellers">Our Laptops</h1>
                         <div class="title-line"></div> <!-- Add this line -->
                         <div id="best-seller-container">
-                            <div class="laptop">
-                                <div class = "specs-container">
-                                    <img src="{{ asset('assets/images/GU603VI-N4015W_1_Supersize.jpg') }}"
-                                        alt="laptop 4">
-
-                                    <h1>MSI Raider GE78HX</h1>
-                                    <p>Processor:AMD RYZEN 5950X</p>
-                                    <p>RAM: 16GB</p>
-                                    <p>Graphics: NVIDIA RTX 3080</p>
-                                    <h3>£420</h3>
+                            @foreach ($laptops as $laptop)
+                                <div class="laptop">
+                                    <div class="specs-container">
+                                        <img src="{{ asset($laptop->image_path) }}" alt="laptop">
+                                        <h1>{{ $laptop->laptop_name }}</h1>
+                                        <p>Processor: {{ $laptop->processor }}</p>
+                                        <p>RAM: {{ $laptop->RAM }}GB</p>
+                                        <p>Graphics: {{ $laptop->GPU }}</p>
+                                        <h3>£{{ $laptop->price }}</h3>
+                                    </div>
+                                    <a href="#" class="buy-product">Add to Basket</a>
                                 </div>
-
-                                <a href="#" class="buy-product">Add to Basket</a>
-                            </div>
-                            <div class="laptop">
-                                <div class = "specs-container">
-                                    <img src="{{ asset('assets/images/30035515_1_Supersize.png') }}" alt="laptop 4">
-                                    <h1>MSI Raider GE78HX</h1>
-                                    <p>Processor: Intel Core i7</p>
-                                    <p>RAM: 16GB</p>
-                                    <p>Graphics: NVIDIA RTX 3080</p>
-                                    <h3>£590</h3>
-                                </div>
-
-                                <a href="#" class="buy-product">Add to Basket</a>
-                            </div>
-                            <div class="laptop">
-                                <div class = "specs-container">
-                                    <img src="{{ asset('assets/images/laptop1.jpg') }}" alt="laptop 4">
-
-                                    <h1>MSI Raider GE78HX</h1>
-                                    <p>Processor: AMD 5800X</p>
-                                    <p>RAM: 16GB</p>
-                                    <p>Graphics: NVIDIA RTX 3080</p>
-                                    <h3>£810</h3>
-                                </div>
-
-                                <a href="#" class="buy-product">Add to Basket</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div id="best-seller-container">
-                        <div class="laptop">
-                            <div class = "specs-container">
-                                <img src="{{ asset('assets/images/GU603VI-N4015W_1_Supersize.jpg') }}"
-                                    alt="laptop 4">
-
-                                <h1>MSI Raider GE78HX</h1>
-                                <p>Processor: Intel Core i7</p>
-                                <p>RAM: 16GB</p>
-                                <p>Graphics: NVIDIA RTX 3080</p>
-                                <h3>£530</h3>
-                            </div>
-
-                            <a href="#" class="buy-product">Add to Basket</a>
-                        </div>
-                        <div class="laptop">
-                            <div class = "specs-container">
-                                <img src="{{ asset('assets/images/laptop1.jpg') }}" alt="laptop 4">
-
-
-                                <h1>MSI Raider GE78HX</h1>
-                                <p>Processor: Intel Core i7</p>
-                                <p>RAM: 16GB</p>
-                                <p>Graphics: NVIDIA RTX 3080</p>
-                                <h3>£590</h3>
-                            </div>
-
-                            <a href="#" class="buy-product">Add to Basket</a>
-                        </div>
-                        <div class="laptop">
-                            <div class = "specs-container">
-                                <img src="{{ asset('assets/images/30035515_1_Supersize.png') }}" alt="laptop 4">
-
-                                <h1>MSI Raider GE78HX</h1>
-                                <p>Processor: Intel Core i7</p>
-                                <p>RAM: 16GB</p>
-                                <p>Graphics: NVIDIA RTX 3080</p>
-                                <h3>£720</h3>
-                            </div>
-
-                            <a href="#" class="buy-product">Add to Basket</a>
-                        </div> 
-
-
+                            @endforeach
                     </div>
 
                 </section>
-
-
                 <section class="footer-section">
 
                     <footer>
@@ -277,8 +201,6 @@
                                 </div>
                             </footer>
                         </section>
-
-
                     </footer>
 
                 </section>

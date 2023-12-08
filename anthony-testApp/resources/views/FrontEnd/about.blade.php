@@ -31,12 +31,12 @@
           <div class="about-text">
             <h1>About <span>Valhalla</span></h1>
 
-            <p>Welcome to Vallhala, where gaming reaches new heights! Immerse
+            <p>Welcome to Valhalla, where gaming reaches new heights! Immerse
               yourself in the extraordinary world of high-performance gaming
               laptops. Our cutting-edge devices are meticulously crafted with
               the latest hardware, boasting powerful processors, dedicated
               graphics cards, and high-refresh-rate displays.</p>
-            <a href="#" class="find-more-btn">Find More Info</a>
+            <a href="{{url('contactUs')}}" class="find-more-btn">Contact Us</a>
           </div>
         </div>
       </div>
@@ -105,10 +105,10 @@
               gaming, we innovate to enhance your gaming experience with
               cutting-edge solutions.</p>
             <p><strong>Integrity and Transparency:</strong> Trust is fundamental
-              at Vallhala. We operate with unwavering integrity, ensuring
+              at Valhalla. We operate with unwavering integrity, ensuring
               transparency in all our interactions for a trustworthy
               environment.</p>
-            <p><strong>Innovative Spirit:</strong> Vallhala thrives on
+            <p><strong>Innovative Spirit:</strong> Valhalla thrives on
               innovation, exploring new horizons to introduce groundbreaking
               features and technologies.</p>
           </div>
@@ -134,7 +134,7 @@
             </div>
             <div class="bottom-card">
               <h2 class="person-title">Ethan Davis</h2>
-              <blockquote class="person-info">"Vallhala redefined my gaming
+              <blockquote class="person-info">"Valhalla redefined my gaming
                 experience.
                 The cutting-edge technology and powerful processors in their
                 gaming laptops elevate gameplay to new heights.Vallhala has
@@ -153,7 +153,7 @@
 
             <div class="bottom-card">
               <h2 class="person-title">Olivia Smith</h2>
-              <blockquote class="person-info">"Vallhala redefined my gaming
+              <blockquote class="person-info">"Valhalla redefined my gaming
                 experience.
                 The cutting-edge technology and powerful processors in their
                 gaming laptops elevate gameplay to new heights.Vallhala has
@@ -168,7 +168,7 @@
             </div>
             <div class="bottom-card">
               <h2 class="person-title">John Smith</h2>
-              <blockquote class="person-info">"Vallhala has truly transformed
+              <blockquote class="person-info">"Valhalla has truly transformed
                 the laptop experience.
                 The laptops are reliable for everyday use, striking the
                 perfect

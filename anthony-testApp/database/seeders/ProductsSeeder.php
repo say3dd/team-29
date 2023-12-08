@@ -117,15 +117,15 @@ class ProductsSeeder extends Seeder
             'brand' => 'Acer',
         ]);
 
-        // Product::create([
-        //     'laptop_name' => 'Acer Predator Helios Neo 16',
-        //     'price' => 1399.00,
-        //     'RAM' => 16,
-        //     'processor' => '13th Gen Intel® Core™ i7',
-        //     'GPU' => 'GeForce RTX 4070',
-        //     'image_path' => 'assets/laptop_images/ACER Predator Helios/acer_predator_helios_neo16.jpg',
-        //     'brand' => 'Acer'
-        // ]);
+        Product::create([
+            'laptop_name' => 'Acer Predator Helios Neo 16',
+            'price' => 1399.00,
+            'RAM' => 16,
+            'processor' => '13th Gen Intel® Core™ i7',
+            'GPU' => 'GeForce RTX 4070',
+            'image_path' => 'assets/laptop_images/ACER Predator Helios/acer_predator_helios_neo16.jpg',
+            'brand' => 'Acer'
+        ]);
 
         Product::create([   
             'laptop_name' => 'Lenovo Legion Slim 5',

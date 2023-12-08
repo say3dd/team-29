@@ -15,12 +15,18 @@ class ProductController extends Controller
 
 
     // displays max of 12 products
-    public function index()
+    public function showProducts()
     {
         $laptops = Product::paginate(12);
 
         return view('Product_files.products', ['laptops' => $laptops]);
         
+    }
+
+    public function showHomeProducts()
+    {
+        $laptops = Product::paginate(4);
+        return view('FrontEnd.home', ['laptops' => $laptops]);
     }
 
     public function show($id)

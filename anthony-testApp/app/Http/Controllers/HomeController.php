@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 // use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +15,7 @@ class HomeController extends Controller
     If the user has "admin" on the usertype field then they will be redirected admin dashboard page
     and to home page from if they are just "user"
     */
-    public function index(){
+    public function authHome(){
         if(Auth::id()){
         $usertype = Auth::user()->usertype;
 
@@ -35,8 +36,12 @@ class HomeController extends Controller
         }
     }
 
-    public function homePage(){
-        return view('FrontEnd.home');
+   
+
+    public function index(){
+        $laptops = Product::paginate(4);
+
+        return view('FrontEnd.home', ['laptops' => $laptops]);
     }
 
 
