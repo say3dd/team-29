@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product</title>
-    <link rel="stylesheet" href="{{asset('assets/css/style_sheet_2.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style_sheet_product_webpage_template.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
 
- @include ('header')
+<section class = "navbar-section">
+    @include ('header')
+</section>
 
 <body>
 <div class="main">
