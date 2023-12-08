@@ -1,7 +1,5 @@
-<!-- @KraeBM (Bilal Mohamed) worked on all the backend, JS and blade templating of this page -->
-<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Products webpage using CSS.  -->
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
 
     <meta charset="UTF-8">
@@ -26,20 +24,20 @@
 </head>
 
 <header>
-     <!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
   <section class = "navbar-section">
     @include ('header')
   </section>
- 
+
 </header>
 <body>
     <h1>
         <div class="title_shape">
-            <img class = "title_image" style="im" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
-            <p class = "laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">
+            <img src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" class = "title_image">
+            <div class="title_shape_text"></div>
+            <p class = "laptop_title1" style="position: absolute; top: 34%; color: white; text-align: center; left: 5%; ">
                 GAMING LAPTOPS
             </p>
-            <p class = "title_content" style="position: absolute; top: 43%; color: white; text-align: left; left: 5%; ">
+            <p class = "title_content" style="position: absolute; top: 44%; color: white; text-align: left; left: 5%; ">
                 The most portable and powerful laptops for gamers,<br>
                 creators, and professionals
             </p>
@@ -49,7 +47,7 @@
     </h1>
     <h2>
         <!-- This is the code for the layout of product container - where all the product will be shown -->
-<div class="background_shape6">
+        <div class="background_shape6">
             <p class = "path" >
             >> Home >>
             Products >> Gaming
@@ -61,68 +59,43 @@
         <button class="button_filter" id = "filter-button">
             <img class = "image_filter" src="{{asset('assets/images_product/filter.png')}}" alt="" >
         </button>
-       
-        <!-- This is the code for the filter of products , linked to the database one is for the brands other is for graphics-->
+        <!-- This is the code for the filter of products , linked to the database-->
     <div id="filter-container" class="filters">
+                      <!-- <div class = "filtering background"> this code is missing somewhere here figure out tmrw -->
+
         <ul class="filters__list">
-            <form action="{{URL::current()}}" method="GET">
+                <li>
+                    <p style = "text-decoration: underline">GPU: </p><br>
+                    </li>
+                @foreach ($graphics as $graphic)
+                <li>
+            <input id="{{$graphic->GPU}}" name="gpu" value="{{$graphic->GPU}}" type="checkbox" />
+            <label class="text-xs">{{$graphic->GPU}}</label>
+            </li>
+            @endforeach
                 <li>
                     <p style = "text-decoration: underline"> Brand: </p><br>
                     </li>
-                    <!-- for each brand/graphics, it assigns the checked area as empty, once filled with the brands/graphics
-                         it selects the item and shows which is needed by its id, name and value. Also has an if statement on whether brand/graphics  is there and checkbrands is checked -->
-                @foreach ($brands as $brand)  
-                @php 
-                $checkedbrands = [];
-                if(isset($_GET['brands']))
-                {
-                    $checkedbrands=$_GET['brands'];
-                }
-                @endphp
+                @foreach ($brands as $brand)
                 <li>
-            <input id="{{$brand->brand}}" name="brands[]" value="{{$brand->brand}}" type="checkbox"
-            @if(in_array($brand -> brand, $checkedbrands))checked="checked" @endif/>
+            <input id="{{$brand->brand}}" name="brands"
+            @if(in_array($brand->id,explode(',',$q_brands))) @checked(true) @endif
+             value="{{$brand->brand}}" type="checkbox" onchange="filterProductsByBrand(this)" />
             <label>{{$brand->brand}}</label>
             </li>
             @endforeach
-            <li>
-                <p style = "text-decoration: underline">GPU: </p><br>
-                </li>
-            @foreach ($graphics as $graphic)  
-            @php 
-            $checkedGPU = [];
-            if(isset($_GET['graphics']))
-            {
-                $checkedGPU=$_GET['graphics'];
-            }
-            @endphp
-            <li>
-
-        <input id="{{$graphic->GPU}}" name="graphics[]" value="{{$graphic->GPU}}" type="checkbox" 
-        @if(in_array($graphic -> GPU, $checkedGPU)) checked="checked" @endif/>
-        <label>{{$graphic->GPU}}</label>
-        </li>
-        @endforeach
-            <li>
-                <button class = "button_apply" > Apply Changes </button>
-                <button class = "button_reset" onclick="resetFilters()" > Reset </button>
-            </li>
-
         </ul>
-
-    </form>
     </div>
     <!--Form for hidden fields so the filter request gets sent without a need for a submit button, more smoother functionality -->
-
+<form id="pdtfilter" method="GET">
+    <input type ="hidden" name="brands" id="brands" value="{{ $q_brands}}" />
+</form>
 
 <script>
-/*Code for the submit button - works by assaigning variables with the id
- and making it so if the filter is active, 
-add those selected and when filled and enter is pressed run the funtion */
-var button_filter = document.getElementById("filter-button");
+    var button_filter = document.getElementById("filter-button");
 var container = document.getElementById("filter-container");
 var input = document.querySelectorAll("input");
-/* to make the apply button functionable **/
+
 button_filter.onclick = function (e) {
   e.stopPropagation();
   if (container.classList.contains("filters--active")) {
@@ -140,23 +113,26 @@ window.onclick = function () {
   container.classList.remove("filters--active");
 };
 
-
 console.log(input);
-/* Here is the code for resetting the filter section - gathers all the data input in checkbox and for each checbox, it removes them all by assinging it false.**/
-function resetFilters() {
-    var checkboxes = document.querySelectorAll("#filter-container input[type='checkbox']");
-    checkboxes.forEach(function(checkbox) {
-        checkbox.checked = false;
+
+
+function filterProductsByBrand(brand){
+    var brands = [];
+    document.querySelectorAll("input[name='brands']:checked").forEach(function (checkbox) {
+        brands.push(checkbox.value);
     });
+
+    document.getElementById("brands").value = brands.join(',');
+    document.getElementById("pdtfilter").submit();
 }
-/* Where the area in products will go, and the functionality of the buttons to change pages **/
+
 </script>
 
-@yield('productP')
-<!-- Each button assigned an ID which presents a cetain page, leads to user interaction and less clunkiness in code. Also more fluid to use. -->
+                @yield('productP')
+
                 <div class="button_container">
                  <a href="{{route('productspage.id' ,['id' =>1]) }}">
-                       <button class="button_to_switch_page" style="margin-top: 19px;"> 1 </button> 
+                       <button class="button_to_switch_page" style="margin-top: 19px;"> 1 </button>
                     </a>
                   <a href="{{route('productspage.id', ['id' =>2]) }}" >
                      <button class="button_to_switch_page" style="margin-top: 200px;"> 2 </button>
@@ -165,12 +141,11 @@ function resetFilters() {
                     <button class="button_to_switch_page" style="margin-top: 19px;"> 3 </button>
                    </a>
                 </div>
-                
+
+            </div>
     </h2>
-</div>
 </body>
 <footer>
-     <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
     @include ('footer')
 </footer>
 </html>
