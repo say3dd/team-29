@@ -31,7 +31,7 @@
           <div class="about-text">
             <h1>About <span>Valhalla</span></h1>
 
-            <p>Welcome to Vallhala, where gaming reaches new heights! Immerse
+            <p>Welcome to Valhalla, where gaming reaches new heights! Immerse
               yourself in the extraordinary world of high-performance gaming
               laptops. Our cutting-edge devices are meticulously crafted with
               the latest hardware, boasting powerful processors, dedicated
