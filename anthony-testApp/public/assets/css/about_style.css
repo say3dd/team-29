@@ -528,13 +528,27 @@ color: #c492eb;
 
 
 
+@media (max-width: 1700px) {
+  
+  .about-card img {
+    
+   display: none;
+  }
+}
 
 
 
 
 
 
-
+@media (max-width: 1590px) {
+  
+  .about-card img {
+    
+    display: none;
+    
+  }
+}
 
 
 
