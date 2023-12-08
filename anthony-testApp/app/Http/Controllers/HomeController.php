@@ -37,7 +37,7 @@ class HomeController extends Controller
 
     public function index(){
 
-        return view('FrontEnd.home');
+        return redirect()->route('index');
     }
 
 

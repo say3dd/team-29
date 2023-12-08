@@ -29,23 +29,29 @@ Route::get('/test', function () {
     return view('FrontEnd/test');
 });
 
-Route::middleware('guest', 'auth')->group(function () {
-    Route::get('/', function () {
+Route::middleware('guest')->group(function () {
+    Route::get('', function () {
         return view('FrontEnd.landing');
     });
 
     Route::get('/index', [HomeController::class, 'index'])->name('index');
-    Route::get('/contactUs', function () {
-        return view('FrontEnd/contactUs');
-    });
+    Route::get('/contactUs',[ContactController::class, 'index'])->name('contactUs');;
 
     // Addded route function to the about page
     Route::get('/about', function () {
         return view('FrontEnd/about');
-    });
+    })->name('about');
 
-    
+
+    Route::get('/', [ProductController::class, 'showHomeProducts']);
+    Route::get('/product', [ProductController::class, 'showProducts'])->name('product');
+    Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
+
+    Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
+    Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
 });
+
+
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -59,11 +65,6 @@ Route::middleware('auth', 'admin')->group(function () {
         return view('Admin.ProductList');
     })->name('plist');
 });
-Route::get('/', [ProductController::class, 'showHomeProducts']);
-Route::get('/product', [ProductController::class, 'showProducts'])->name('product');
-Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
 
-Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
-Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
 
 require __DIR__ . '/auth.php';

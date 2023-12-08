@@ -29,10 +29,10 @@
                     <i class="bx bx-x" id="close"></i>
                 </label>
                 <nav class="navbar">
-                    <a href="{{ url('index') }}">Home</a>
-                    <a href="{{ url('product') }}">Products</a>
-                    <a href="{{ url('about') }}">About</a>
-                    <a href="{{ url('contactUs') }}">Contact Us</a>
+                    <a href="{{ route('index') }}">Home</a>
+                    <a href="{{ route('product') }}">Products</a>
+                    <a href="{{ route('contactUs') }}">Contact Us</a>
+                    <a href="{{ route('about')}}">About</a>
                    
 
                     <!--        Fixed the heading so that the login and register is included in the header           -->
