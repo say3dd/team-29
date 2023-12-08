@@ -28,7 +28,7 @@ Route::get('/', function () {
     return view('FrontEnd.landing');
 });
 
-Route::get('/index', [HomeController::class, 'homePage'])->name('index');
+Route::get('/index', [HomeController::class,'homePage'])->name('index');
 
 
 Route::get('/contactUs', function () {
