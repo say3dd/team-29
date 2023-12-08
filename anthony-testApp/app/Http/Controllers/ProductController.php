@@ -13,6 +13,9 @@ class ProductController extends Controller
         return view('product', compact('product'));
     }
 
+    public function products(){
+        return view('FrontEnd.products');
+    }
 
     // displays max of 12 products
     public function showProducts()
