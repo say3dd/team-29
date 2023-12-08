@@ -24,7 +24,11 @@
     </style>
 </head>
 
- @include ('header')
+<section class = "navbar-section">
+    @include ('header')
+</section>
+
+
 
 <body>
     <h1>
