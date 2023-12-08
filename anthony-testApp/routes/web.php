@@ -46,7 +46,6 @@ Route::get('/test', function () {
     return view('FrontEnd/test');
 });
 
-Route::get('/product', [ProductController::class,'index'])->name('product');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class,'edit'])->name('profile.edit');
@@ -64,7 +63,8 @@ Route::middleware('auth', 'admin')->group(function () {
 
 
 });
-
+Route::get('/', [ProductController::class, 'showHomeProducts']);
+Route::get('/product', [ProductController::class,'showProducts'])->name('product');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
 
 Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
