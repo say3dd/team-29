@@ -14,7 +14,7 @@ class ProductController extends Controller
     }
 
 
-    // displays all the products
+    // displays max of 12 products
     public function index()
     {
         $laptops = Product::paginate(12);
