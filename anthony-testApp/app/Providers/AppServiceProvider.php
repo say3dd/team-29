@@ -23,8 +23,8 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        View::composer('FrontEnd.home', function ($view) {
-            $bestSellerLaptops = Product::whereIn('product_id', [3, 2, 10])->orderBy('product_id')->get();  
+        View::composer('*', function ($view) {
+            $bestSellerLaptops = Product::whereIn('product_id', [3, 2, 10])->orderBy('product_id')->get();
             $view->with('bestSellerLaptops', $bestSellerLaptops);
         });
     }
