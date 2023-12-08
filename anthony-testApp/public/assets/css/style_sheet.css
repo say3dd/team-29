@@ -707,17 +707,17 @@ input[type="checkbox"] {
 
 @media (max-width: 1440px) {
     .button_sort {
-        top: 63.5%;
+        margin-top: 3%;
         left: 83%;
     }
 
     .button_filter {
-        top: 63.5%;
+        margin-top: 3%;
         left: 86%;
     }
 
     .path {
-        top: 65%;
+        margin-top: 3%;
     }
 
     .button_container {
@@ -811,18 +811,18 @@ input[type="checkbox"] {
     }
 
     .path {
-        top: 63%;
+        margin-top: -1%;
     }
 
     .button_sort {
-        top: 61.5%;
+        margin-top: 0%;
         left: 81%;
         width: 35px;
         height: 35px;
     }
 
     .button_filter {
-        top: 61.5%;
+        margin-top: 0%;
         left: 85%;
         width: 35px;
         height: 35px;
@@ -867,18 +867,18 @@ input[type="checkbox"] {
     }
 
     .path {
-        top: 54%;
+        margin-top: -11%;
     }
 
     .button_sort {
-        top: 52.5%;
+        margin-top: -10%;
         left: 79.5%;
         width: 35px;
         height: 35px;
     }
 
     .button_filter {
-        top: 52.5%;
+        margin-top: -10%;
         left: 84%;
         width: 35px;
         height: 35px;
@@ -965,7 +965,7 @@ input[type="checkbox"] {
     }
 
     .path {
-        top: 41.5%;
+        margin-top: -45%;
         left: 10.5%;
         font-size: 0.7rem;
     }
@@ -981,15 +981,15 @@ input[type="checkbox"] {
     }
 
     .button_sort {
-        top: 40%;
-        left: 80%;
+        margin-top: -43%;
+        left: 79%;
         width: 30px;
         height: 30px;
     }
 
     .button_filter {
-        top: 40%;
-        left: 88%;
+        margin-top: -43%;
+        left: 87%;
         width: 30px;
         height: 30px;
     }
@@ -1038,7 +1038,7 @@ input[type="checkbox"] {
     }
 
     .laptop_all {
-        width: 64%; /* Adjust width to fit the container */
+        width: 66%; /* Adjust width to fit the container */
     }
 
     .image_all_laptop {
@@ -1047,7 +1047,7 @@ input[type="checkbox"] {
     }
 
     .path {
-        top: 37%;
+        margin-top: -62%;
         font-size: 0.65rem;
     }
 
@@ -1062,14 +1062,14 @@ input[type="checkbox"] {
     }
 
     .button_sort {
-        top: 35%;
+        margin-top: -60%;
         left: 76%;
         width: 30px;
         height: 30px;
     }
 
     .button_filter {
-        top: 35%;
+        margin-top: -60%;
         left: 84%;
         width: 30px;
         height: 30px;
@@ -1082,20 +1082,20 @@ input[type="checkbox"] {
 
 @media (max-width: 320px) {
     .path {
-        top: 36.5%;
+        margin-top: -74%;
         font-size: 0.55rem;
     }
     .button_sort {
-        top: 34.5%;
-        left: 76%;
-        width: 25px;
-        height: 25px;
+        margin-top: -72%;
+        left: 70%;
+        width: 35px;
+        height: 35px;
     }
 
     .button_filter {
-        top: 34.5%;
-        left: 84%;
-        width: 25px;
-        height: 25px;
+        margin-top: -72%;
+        left: 81%;
+        width: 35px;
+        height: 35px;
     }
 }
