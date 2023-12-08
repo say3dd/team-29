@@ -20,4 +20,9 @@ class ContactController extends Controller
         ]);
         return redirect()->route('contact.show')->with('success', 'Your message has been sent successfully!');
     }
+
+
+    public function index(){
+        return view('FrontEnd.contactUs');
+    }
 }
