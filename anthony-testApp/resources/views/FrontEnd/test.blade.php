@@ -6,62 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product</title>
-    <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style_sheet_2.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
-<header>
-    @include ('header')
-</header>
+
+ @include ('header')
+
 <body>
-    <h1>
-        <div class="background_shape1"></div>
-        <div class="background_shape_1_2"></div>
-        <p style="position: absolute; top: 18%; margin-left: 960px; padding: 15px; color: white; font-size: 2.5vm;">
+<div class="main">
+    {{-- Section 1 starts here --}}
+        <div class="background_shape1">
+            <div class="background_shape_1_2">
+            <div class="slideshow-container">
+            <div class="slide">
+                <div class="mySlides">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop4.jpg')}}" style=" " alt="">
+                </div>
+                <div class="mySlides">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop2.jpg')}}" alt="">
+                </div>
+                <div class="mySlides">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop3.jpg')}}" alt="">
+                </div>
+                <div class="mySlides">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop1.jpg')}}" alt="">
+                </div>
+                <div class="mySlides">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop5.jpg')}}" alt="">
+                </div>
+                <button class="previousSlide" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="nextSlide" onclick="plusDivs(1)">&#10095;</button>
+            </div>
+            <script>
+                var slideIndex = 1;
+                showDivs(slideIndex);
+
+                function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                }
+
+                function showDivs(n) {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    if (n > x.length) { slideIndex = 1 }
+                    if (n < 1) { slideIndex = x.length }
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    x[slideIndex - 1].style.display = "block";
+                }
+            </script>
+            </div>
+        </div>
+        <div class="product_information">
+        <p class="product_name">
             Dell Alienware x16 Gaming Laptop</p>
-        <p
-            style="position: absolute; top: 19%; margin-left: 944px; padding: 15px; color: white; font-size: 38px; font-weight: lighter;">
-            ____________________________</p>
-        <p
-            style="position: absolute; top: 28%; margin-left: 960px; padding: 15px; color: white; font-size: 0.6em; font-weight: lighter;">
-            &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;13th Gen Intel Core i9-13900HK<br>
-            &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Windows 11 Home<br>
-            &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;NVIDIA® GeForce RTX 4090<br>
-            &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;16", QHD+ 2560x1600, 240Hz<br>
-            &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;32 GB 6000 MT/s RAM, 1 TB SSD<br><br>
-        </p>
-        <p
-            style="position: absolute; top: 40%; margin-left: 944px; padding: 15px; color: white; font-size: 38px; font-weight: lighter;">
-            ____________________________
-        </p>
-        <p
-            style="position: absolute; top: 47%; margin-left: 960px; padding: 15px; color: white; font-size: 34px; font-weight: lighter;">
-            Price:
-            £3,349.00
-        </p>
-        <p
-            style="position: absolute; top: 53%; margin-left: 980px; padding: 15px; color: white; font-size: 20px;  font-weight: lighter;">
-            £2,857.50
+        <hr><br>
+        <div class = "product_main_features">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;13th Gen Intel Core i9-13900HK<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Windows 11 Home<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;NVIDIA® GeForce RTX 4090<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;16", QHD+ 2560x1600, 240Hz<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;32 GB 6000 MT/s RAM, 1 TB SSD<br>
+        </div>
+        <div class="button_view_specification">
+            <button class="button_view_specification" onclick="openMessageBox()">
+                View all specifications </button>
+        </div><br>
+        <hr><br>
+        <div class = "product_price">
+            &nbsp;&nbsp;&nbsp;&nbsp;Price:£3,349.00
+        </div><br>
+        <div class = "product_price_no_VAT">
+             &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;£2,857.50
             excluding VAT @20%
-        </p>
-        <p
-            style="position: absolute; top: 53%; margin-left: 944px; padding: 15px; color: white; font-size: 38px; font-weight: lighter;">
-            ____________________________
-        </p>
+        </div>
+        <br><hr>
+        <div class="buttons">
         <button class="button_cart">
-            <img src=" {{asset('assets/images_product/icon_basket.png')}}" alt="" width="20" height="25">
+            <img src="{{asset('assets/images_product/icon_basket.png')}}" alt="" width="20" height="25">
             Add to Basket
         </button>
         <button class="button_wish">
-            <img src=" {{asset('assets/images_product/love1.png')}}" alt="" width="25" height="23">
+            <img src="{{asset('assets/images_product/love1.png')}}" alt="" width="25" height="23">
             Add to Wish List
         </button>
         </div>
-        <div class="background_shape_image"></div>
-
-        <div class="button_view_specification">
-            <button class="button_view_specification" onclick="openMessageBox()"> View
-                all specifications </button>
-        </div>
-
+        {{-- Part of Section 1, for showcasing all of the specification of the product --}}
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeMessageBox()">&times;</span>
@@ -185,47 +216,9 @@
                     </p>
                 </div>
             </div>
+
         </div>
 
-        <div class="slideshow-container">
-            <div class="slide">
-                <div class="mySlides">
-                    <img src=" {{asset('assets/images_product/laptop4.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
-                </div>
-                <div class="mySlides">
-                    <img src=" {{asset('assets/images_product/laptop2.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
-                </div>
-                <div class="mySlides">
-                    <img src=" {{asset('assets/images_product/laptop3.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
-                </div>
-                <div class="mySlides">
-                    <img src= "{{asset('assets/images_product/laptop1.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
-                </div>
-                <div class="mySlides">
-                    <img src= " {{asset('assets/images_product/laptop5.jpg')}}" style="width: 680px; height: 460px; border-radius: 10px; " alt="">
-                </div>
-                <button class="previousSlide" onclick="plusDivs(-1)">&#10094;</button>
-                <button class="nextSlide" onclick="plusDivs(1)">&#10095;</button>
-            </div>
-            <script>
-                var slideIndex = 1;
-                showDivs(slideIndex);
-
-                function plusDivs(n) {
-                    showDivs(slideIndex += n);
-                }
-
-                function showDivs(n) {
-                    var i;
-                    var x = document.getElementsByClassName("mySlides");
-                    if (n > x.length) { slideIndex = 1 }
-                    if (n < 1) { slideIndex = x.length }
-                    for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";
-                    }
-                    x[slideIndex - 1].style.display = "block";
-                }
-            </script>
         </div>
         </div>
         <script>
@@ -240,108 +233,87 @@
                 modal.style.display = "none";
             }
         </script>
-    </h1>
-    <h2>
-        <div class="background_shape2"></div>
-        <div class="laptop_image_spec">
-            <img src=" {{asset('assets/images_product/laptop_specification1.avif')}}"
-                style=" position: absolute; margin-left: 142px; margin-top: 43%; border-radius: 1rem;">
-            <img src=" {{asset('assets/images_product/laptop_specification2.avif')}}"
-                style=" position: absolute; margin-left: 642px; margin-top: 43%; border-radius: 1rem;">
-            <img src=" {{asset('assets/images_product/laptop_specification3.avif')}}"
-                style=" position: absolute; margin-left: 1132px; margin-top: 43%; border-radius: 1rem;">
-
-            <p style=" position: absolute; margin-top: 55.7%;  margin-left:  76px; width: 350px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
-            color: white; text-align: left; font-size: 0.9em;">
-                Micro-LED stadium lighting
-            </p>
-            <p style=" position: absolute; margin-top: 55.7%;  margin-left:  576px; width: 350px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
-             color: white; text-align: left; font-size: 0.9em;">
-                Per-key lighting
-            </p>
-            <p style=" position: absolute; margin-top: 55.7%;  margin-left:  1066px; width: 350px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
-            color: white; text-align: left; font-size: 0.9em;">
-
-                AlienFX touchpad
-            </p>
-
-            <p style=" position: absolute; margin-top: 58.7%;  margin-left:  76px; width: 390px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
-         color: white; text-align: left; font-size: 0.9em; font-weight: lighter;">
+        </div>
+    {{-- Section 1 ends here --}}
+    {{-- Section 2 ends here --}}
+    <div class = "container_section2">
+        <div class="features_images">
+            <img  src="{{asset('assets/images_product/laptop_specification1.jpg')}}">
+            <img  src="{{asset('assets/images_product/laptop_specification2.jpg')}}">
+            <img  src="{{asset('assets/images_product/laptop_specification3.jpg')}}">
+        </div>
+        <div class="unique_features">
+            
+                <div class="unique_feature1">Micro-LED stadium lighting</div>
+                <div class="unique_feature2">Per-key lighting</div>
+                <div class="unique_feature3">AlienFX touchpad</div>
+            
+        </div>
+        <div class = "unique_features_content">
+            <div class="unique_feature1_content">
                 Express yourself with bold,
                 iconic lightning featuring 100
                 micro-LED lights for an
                 instantly captivating, bright
                 and fluid look.
-            </p>
-            <p style=" position: absolute; margin-top: 58.7%;  margin-left: 576px; width: 390px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
-            color: white; text-align: left; font-size: 0.9em; font-weight: lighter;">
+            </div>
+            <div class="unique_feature2_content">
                 Customise your gaming
                 experience with nearly infinite
                 colour effects and
                 combinations via the
                 Alienware Command Center.
-            </p>
-            <p style=" position: absolute; margin-top: 58.7%; margin-left: 1066px; width: 390px; height: 155px; padding-right: 80px; padding-left: 80px; padding-top: 50px; padding-bottom: 50px; 
-            color: white; text-align: left; font-size: 0.9em; font-weight: lighter;">
+            </div>
+            <div class="unique_feature3_content">
                 Our multi-touch AlienFX
                 touchpad with integrated
                 scrolling and customisable
                 lighting is back, and 15.5%
                 larger in area than the x15’s
                 touchpad.
-            </p>
+            </div>
         </div>
-    </h2>
-    <h3>
-        <div class="background_shape3">
-            <p
-                style="position: absolute; top: 3%; color: white; text-align: left; font-size: 1.75em; margin-left: 35px;">
+    </div>
+    {{-- Section 2 ends here --}}
+    {{-- Section 3 begins here --}}
+        <div class="container_section3">
+            <p class="unique_feature_title_title">
                 Total Command </p>
-            <p
-                style="position: absolute; top: 14%; color: white; text-align: left; font-weight: lighter; font-size: 1.2em; margin-left: 35px;">
+            <p class="unique_feature_content">
                 Control more than ever with the all-new Alienware Command Center.</p>
-            <p
-                style="position: absolute; top: 21.5%; color: white; text-align: left; font-size: 1.2em; margin-left: 35px; text-decoration: underline;">
+            <p class="unique_feature_title">
                 Presets and overclocking</p>
-            <p
-                style="position: absolute; top: 28%; color: white; text-align: left; font-weight:lighter ;font-size: 1.2em; margin-left: 35px; width: 700px;">
+            <p class="unique_feature_content">
                 Maximise your gameplay with performance presets while overclocking capabilities give you the speed you
                 need.
             </p>
-            <p
-                style="position: absolute; top: 40%; color: white; text-align: left; font-size: 1.2em; margin-left: 35px; text-decoration: underline;">
+            <p class="unique_feature_title">
                 Performance overlay</p>
-            <p
-                style="position: absolute; top: 47%; color: white; text-align: left; font-weight:lighter ;font-size: 1.2em; margin-left: 35px; width: 700px;">
+            <p class="unique_feature_content">
                 Manage and see CPU, GPU, memory and thermals stats without exiting the game.
             </p>
-            <p style="position: absolute; top: 59%; color: white; text-align: left; font-size: 1.2em; margin-left: 35px;
-            text-decoration: underline;">
+            <p class="unique_feature_title">
                 AlienFX</p>
-            <p style="position: absolute; top: 65%; color: white; text-align: left; font-weight:lighter ;font-size: 1.2em;
-            margin-left: 35px; width: 700px;">
+            <p class="unique_feature_content">
                 Customise your set up with lighting settings that extend to all your Alienware accessories, as well as
                 keybinds and
                 calibration.
             </p>
-            <p style="position: absolute; top: 77%; color: white; text-align: left; font-size: 1.2em; margin-left: 35px;
-            text-decoration: underline;">
+            <p class="unique_feature_title">
                 AlienVision</p>
-            <p
-                style="position: absolute; top: 84%; color: white; text-align: left; font-weight:lighter ;font-size: 1.2em; margin-left: 35px; width: 700px;">
+            <p class="unique_feature_content">
                 Toggle monitor-based overlays on/off to help you focus on the targets at hand.
             </p>
-            <img src=" {{asset('assets/images_product/laptop_specification5.avif')}}" style=" position: absolute; margin-left: 802px; margin-top: 8%; border-radius: 1rem;
-            width: 43%;">
+            <img class="unique_feature4_5_6_7_8_image" src="{{asset('assets/images_product/laptop_specification5.jpg')}}">
         </div>
-        <div class="background_shape4">
-            <img src=" {{asset('assets/images_product/laptop_specification4.avif')}} "
-                style=" position: absolute;border-radius: 2rem; width:99.5%; height: 470px;">
-            <p style="position: absolute; top: 70%; color: white; text-align: center; font-size: 1.75em; left: 43%; ">
+    {{-- Section 3 ends here --}}
+    {{-- Section 4 begins here --}}
+        <div class="container_section4">
+            <img class="unique_feature9_image" src="{{asset('assets/images_product/laptop_specification4.jpg')}}">
+            <p class="unique_feature9">
                 Seamless Gaming
             </p>
-            <p
-                style="position: absolute; top: 80%; color: white; text-align: center; font-size: 1.2em; left: 10%; font-weight: lighter; width: 1200px;">
+            <p class="unique_feature9_content">
                 The x16 is designed for a premium gaming experience on the go or at home with your Alienware ecosystem,
                 so
                 enjoy
@@ -350,63 +322,47 @@
                 game.
             </p>
         </div>
-    </h3>
-    <h4>
-        <div class="background_shape5">
+    {{-- Section 4 ends here --}}
+    {{-- Section 5 begins here --}}
 
-            <div class="laptop">
-                <img src=" {{asset('assets/images_product/msi_Titan_GT77_HX_13V.jpg')}}"
-                    style="width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
-                <p style="font-weight:bold; font-size: 1.1rem;">MSI Titan GT77 HX 13V</p>
+        <div class="container_section5">
+            <div class="title_related_products"> Related Products </div>
+            <div class="laptop1">
+                <img class="related_product_image" src="{{asset('assets/laptop_images/MSI Titan GT77 HX 13V/msi_Titan_GT77_HX_13V.jpg')}} ">
+                <button class="related_product_content">MSI Titan GT77 HX 13V</button>
                 <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
                 <p> - GeForce RTX™ 4090</p>
                 <p> - 128GB RAM</p>
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>
-
-            <div class="laptop">
-                <img src=" {{asset('assets/images_product/alienware_m16.png')}} "
-                    style=" background-color: white;width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
-                <p style="font-weight:bold; font-size: 1.1rem;">Alienware m16</p>
+            <div class="laptop1">
+                <img class="related_product_image" src="{{asset('assets/laptop_images/Alienware M16/alienware_m16.jpg')}}">
+                <button class="related_product_content">Alienware m16</button>
                 <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
                 <p> - GeForce RTX™ 4070</p>
                 <p> - 32GB RAM</p>
-                <button class="button_cart_laptop" style="margin-top: 18px;"> Add to Basket </button>
+                <button class="button_cart_laptop" style="margin-top: 0px;"> Add to Basket </button>
             </div>
-
-            <div class="laptop">
-                <img src=" {{asset('assets/images_product/medion_erazer_X20.webp')}}" style="width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
-                <p style="font-weight:bold; font-size: 1.1rem;">Medion Erazer X20</p>
-                <p> - 13th Intel® Core™ i9 13900HX Processor</p>
-                <p> - GeForce RTX 4070 8GB</p>
-                <p> - 32GB RAM</p>
-                <button class="button_cart_laptop" style="margin-top: 2px;"> Add to Basket </button>
-            </div>
-
-            <div class="laptop">
-                <img src=" {{asset('assets/images_product/asus_ROG_Strix_G16_G614.png')}} "
-                    style=" background-color: white; width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
-                <p style="font-weight:bold; font-size: 1.1rem;">Asus ROG Strix G16 G614</p>
+            <div class="laptop1">
+                <img class="related_product_image" src="{{asset('assets/laptop_images/Asus ROG Strix G16 G614/asus_ROG_Strix_G16_G614.jpg')}}">
+                <button class="related_product_content">Asus ROG Strix G16 G614</button>
                 <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
                 <p> - GeForce RTX™ 4090</p>
                 <p> - 128GB RAM</p>
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>
-
-            <div class="laptop">
-                <img src=" {{asset('assets/images_product/alienware_m18.avif ')}} " style=" width: 170px; height: 150px; border-radius: 2rem; margin: 0;">
-                <p style="font-weight:bold; font-size: 1.1rem;">Alienware m18</p>
+            <div class="laptop1">
+                <img class="related_product_image" src="{{asset('assets/laptop_images/Alienware M18/alienware-m18.jpg ')}}">
+                <button class="related_product_content">Alienware m18</button>
                 <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
                 <p> - GeForce RTX™ 4080</p>
                 <p> - 32GB RAM</p>
-                <button class="button_cart_laptop" style="margin-top: 19px;"> Add to Basket </button>
+                <button class="button_cart_laptop" style="margin-top: 0px;"> Add to Basket </button>
             </div>
         </div>
-    </h4>
+</div>
 </body>
-<footer>
-    <div style = "margin-top: 180%;">
-        @include('footer')
-    </div>
-</footer>
+
+@include('footer')
+
 </html>

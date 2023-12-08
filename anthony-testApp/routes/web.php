@@ -1,9 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +21,18 @@ use Illuminate\Support\Facades\Route;
 route::get('/products', [ProductController::class, 'products']) -> name('products');
 route::get('/', [HomeController::class, 'home']) -> name('home');
 
-Route::get('/contactUs', function () {
-    return view('FrontEnd/contactUs');
-}) -> name('contact.Us');
 
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/test', function () {
     return view('FrontEnd/test');
 });
+// Route::get('/products', function () {
+//     return view('FrontEnd/product');
+// });
 
 
 
@@ -35,12 +41,19 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/home', [HomeController::class,'index'])->name('home');
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/product',[ProductController::class,'index']);
-    
+    Route::get('/home', [HomeController::class, 'authHome'])->name('home');
 });
+
+Route::middleware('auth', 'admin')->group(function () {
+
+    Route::get('/plist', function () {
+        return view('Admin.ProductList');
+    })->name('plist');
+});
+
 
 require __DIR__ . '/auth.php';

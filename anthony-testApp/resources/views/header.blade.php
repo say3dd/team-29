@@ -10,16 +10,18 @@
             <i class="bx bx-x" id="close"></i>
         </label>
         <nav class="navbar">
-            <a href="{{url('http://127.0.0.1:8000')}}">Home</a>
-            <a href="{{route('products')}}">Products</a>
-            <a href="{{route('contact.Us')}}">Contact Us</a>
+            <a href="{{route('index')}}">Home</a>
+            <a href="{{route('product')}}">Products</a>
+            <a href="{{route('about')}}">About</a>
+            <a href="{{route('contactUs')}}">Contact Us</a>
+         
 
             <!--        Fixed the heading so that the login and register is included in the header           -->
 
             @if (Route::has('login'))
 
                 @auth
-                    <a href="{{ url('/dashboard') }}"
+                    <a href="{{ url('home') }}"
                         class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                 @else
                     <a href="{{ route('login') }}"
