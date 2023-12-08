@@ -105,10 +105,10 @@
               gaming, we innovate to enhance your gaming experience with
               cutting-edge solutions.</p>
             <p><strong>Integrity and Transparency:</strong> Trust is fundamental
-              at Vallhala. We operate with unwavering integrity, ensuring
+              at Valhalla. We operate with unwavering integrity, ensuring
               transparency in all our interactions for a trustworthy
               environment.</p>
-            <p><strong>Innovative Spirit:</strong> Vallhala thrives on
+            <p><strong>Innovative Spirit:</strong> Valhalla thrives on
               innovation, exploring new horizons to introduce groundbreaking
               features and technologies.</p>
           </div>
@@ -134,7 +134,7 @@
             </div>
             <div class="bottom-card">
               <h2 class="person-title">Ethan Davis</h2>
-              <blockquote class="person-info">"Valhallaredefined my gaming
+              <blockquote class="person-info">"Valhalla redefined my gaming
                 experience.
                 The cutting-edge technology and powerful processors in their
                 gaming laptops elevate gameplay to new heights.Vallhala has
