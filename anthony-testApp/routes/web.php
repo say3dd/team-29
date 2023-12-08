@@ -25,7 +25,7 @@ use App\Http\Controllers\ProfileController;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', function (){
-    return view('FrontEnd.master');
+    return view('FrontEnd.home');
 });
 
 Route::get('/index', [HomeController::class, 'homePage'])->name('index');
