@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
@@ -28,7 +29,7 @@ Route::get('/', function () {
     return view('FrontEnd.landing');
 });
 
-Route::get('/index', [HomeController::class,'homePage'])->name('index');
+Route::get('/index', [HomeController::class,'index'])->name('index');
 
 
 Route::get('/contactUs', function () {
@@ -47,11 +48,11 @@ Route::get('/test', function () {
 });
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'authHome'])->name('home');
 });
 
 Route::middleware('auth', 'admin')->group(function () {
