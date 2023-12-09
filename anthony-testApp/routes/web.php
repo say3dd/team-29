@@ -22,9 +22,7 @@ use App\Http\Controllers\ProfileController;
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/', function () {
-    return view('FrontEnd.landing');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/test', function () {
     return view('FrontEnd/test');
