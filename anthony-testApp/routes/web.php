@@ -29,8 +29,6 @@ Route::get('/test', function () {
     return view('FrontEnd/test');
 });
 
-<<<<<<< HEAD
-=======
 Route::get('/product', [ProductController::class,'index'])->name('product');
 Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
 /*
@@ -41,7 +39,6 @@ if anybody could let me (Francis) know of a better way to do this, I'd gladly ap
 
 Route::get('/basket', [BasketController::class,'contents'])->name('basket');
 Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
->>>>>>> Francis
 
     Route::get('/index', [HomeController::class,'index'])->name('index');
     Route::get('/contactUs',[ContactController::class,'contact'])->name('contactUs');;
@@ -51,8 +48,9 @@ Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.rem
 
 
     // Route::get('/', );
-    Route::get('/product', [ProductController::class, 'showProducts'])->middleware(['guest'])->name('product');
-    Route::get('/product/{id}', [ProductController::class, 'show'])->middleware(['guest'])->name('laptops.show');
+    Route::get('/product', [ProductController::class,'index'])->name('product');
+    Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
+    Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
 
     Route::get('/contact', [ContactController::class, 'showForm'])->middleware(['guest'])->name('contact.show');
     Route::post('/contact', [ContactController::class, 'submitForm'])->middleware(['guest'])->name('contact.submit');

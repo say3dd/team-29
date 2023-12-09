@@ -22,10 +22,6 @@ class ProductController extends Controller
         if($laptopID != '' && Auth::id() != null){
             $product_data = DB::table('products')->where('product_id', $laptopID)->first();
 
-<<<<<<< HEAD
-    // displays max of 12 products
-    public function showProducts()
-=======
             $basket = Basket::create([
                 'user_id' => Auth::id(),
                 'product_id' => $laptopID,
@@ -40,7 +36,6 @@ class ProductController extends Controller
 
     // displays all the products
     public function index()
->>>>>>> Francis
     {
         $laptops = Product::paginate(12);
 
