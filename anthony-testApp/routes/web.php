@@ -20,13 +20,15 @@ use App\Http\Controllers\BasketController;
 */
 
 
+
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/test', function () {
-    return view('FrontEnd/test');
+    return view('FrontEnd.test');
 });
 
 Route::get('/product', [ProductController::class,'index'])->name('product');
@@ -39,6 +41,10 @@ if anybody could let me (Francis) know of a better way to do this, I'd gladly ap
 
 Route::get('/basket', [BasketController::class,'contents'])->name('basket');
 Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
+Route::get('/test1', function () {
+    return view('FrontEnd.basket');
+});
+
 
     Route::get('/index', [HomeController::class,'index'])->name('index');
     Route::get('/contactUs',[ContactController::class,'contact'])->name('contactUs');;
