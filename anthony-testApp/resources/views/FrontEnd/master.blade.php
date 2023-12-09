@@ -60,6 +60,35 @@
                     </nav>
                 </section>
                 
+            <!--         Hero Section         -->
+            <section id="hero">
+                <div class="container">
+                    @yield('content')
+                    <div class="hero-info">
+
+                        <h1>Explore Top-Quality Gaming Gear</h1>
+                        <p class="hero-text">
+                            Immerse yourself in the world of gaming with Valhalla's collection of top-notch gaming
+                            laptops.
+                            Unleash the power, speed, and precision you need for an unparalleled gaming experience.
+                            Explore our curated selection and elevate your gaming journey to new heights.
+                        </p>
+                        </p>
+                        <a href="{{url('product')}}" class="view-laptops-btn">View Products</a>
+                    </div>
+                </div>
+
+
+                <!-- Brands Section -->
+                <div class="brands-section">
+                    <div class="brand-images">
+                        <img src="{{ asset('assets/images/AMD-Logo.png') }}" alt="Brand 1">
+                        <img src="{{ asset('assets/images/MSI-Logo-2019.png') }}" alt="Brand 2">
+                        <img src="{{ asset('assets/images/nvidia logo.png') }}" alt="Brand 3">
+                        <img src="{{ asset('assets/images/Razer-Logo (1).png') }}" alt="Brand 4">
+                    </div>
+                </div>
+        </header>
                 
 
 
