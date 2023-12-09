@@ -1,3 +1,7 @@
+    <!-- 
+    About Page
+    Created by [Anthony Resuello]
+-->
 <!DOCTYPE html>
 <html lang="en">
 
