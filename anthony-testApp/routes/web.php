@@ -27,7 +27,11 @@ use App\Http\Controllers\ProfileController;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/test', function () {
-    return view('FrontEnd/test');
+    return view('FrontEnd.test');
+});
+
+Route::get('/test1', function () {
+    return view('FrontEnd.basket');
 });
 
 
