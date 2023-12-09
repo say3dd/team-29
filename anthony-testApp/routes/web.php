@@ -31,7 +31,7 @@ Route::get('/test', function () {
 });
 
 Route::get('/test1', function () {
-    return view('FrontEnd.basket');
+    return view('FrontEnd.cart');
 });
 
 

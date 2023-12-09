@@ -21,26 +21,11 @@ class ProductController extends Controller
         $laptopID = request()->input('laptopData'); //grabs specifically the section of the request that holds the laptop's ID
         if($laptopID != '' && Auth::id() != null){
             $product_data = DB::table('products')->where('product_id', $laptopID)->first();
-
-<<<<<<< HEAD
-    // displays max of 12 products
-    public function showProducts()
-=======
-            $basket = Basket::create([
-                'user_id' => Auth::id(),
-                'product_id' => $laptopID,
-                'product_name' => $product_data->laptop_name,
-                'product_price' => $product_data->price
-            ]);
-       }
-       
-        $laptops = Product::all();
-        return view('Product_files.products', ['laptops' => $laptops, 'productToAdd' => $laptopID]);
+        }
     }
 
-    // displays all the products
-    public function index()
->>>>>>> Francis
+    // displays max of 12 products
+    public function showProducts()
     {
         $laptops = Product::paginate(12);
 
