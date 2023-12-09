@@ -15,7 +15,8 @@ class BasketController extends Controller
         $userID = Auth::id();
         $baskets = DB::table('baskets')->get();
         $userBasket = $baskets->where('user_id', $userID);
-        return view('FrontEnd/basket', ['userID' => $userID, 'userBasket' => $userBasket]);
+        //francis in php instead of '/' notation, we use '.' notation, I have updated this for you.
+        return view('FrontEnd.basket', ['userID' => $userID, 'userBasket' => $userBasket]);
     }
 
     public function removeItem(){
