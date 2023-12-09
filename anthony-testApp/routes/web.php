@@ -63,10 +63,7 @@ Route::get('/test1', function () {
     Route::get('/contact', [ContactController::class, 'showForm'])->middleware(['guest'])->name('contact.show');
     Route::post('/contact', [ContactController::class, 'submitForm'])->middleware(['guest'])->name('contact.submit');
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 274730d1756d6dc77c97c1d5e8164346526f17f0
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -75,22 +72,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-Route::middleware('auth','admin')->group(function () {
 
     Route::get('/plist', function () {
         return view('Admin.ProductList');
     })->name('plist');
 });
 
-<<<<<<< HEAD
 Route::group(['middleware' => 'cart.notEmpty'], function () {
     Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
     Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
 });
-=======
     Route::get('/index', [HomeController::class, 'index'])->name('index');
 
->>>>>>> 274730d1756d6dc77c97c1d5e8164346526f17f0
 
 require __DIR__ . '/auth.php';
 
