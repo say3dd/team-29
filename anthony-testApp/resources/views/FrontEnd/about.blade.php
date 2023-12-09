@@ -20,7 +20,6 @@
 
     <header>
         @include('header')
-   
 
             <!-- About Section-->
 
@@ -186,8 +185,9 @@
       </section>
 
     <!--            Footer                      -->
- 
+      <footer>
         @include('footer')
+      </footer>
     
        
    
