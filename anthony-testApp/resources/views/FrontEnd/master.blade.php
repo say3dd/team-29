@@ -1,3 +1,7 @@
+    <!-- 
+    Home Page 
+    Created by [Anthony Resuello]
+-->
     <!DOCTYPE html>
         <html lang="en">
 
@@ -7,7 +11,7 @@
             <title>
                 @yield('title', 'Master layout')
                 </title>
-            <link rel="stylesheet" href="{{ asset('assets/css/homepage_style.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/home_style.css') }}">
 
 
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
@@ -31,7 +35,7 @@
                     <nav class="navbar">
                         <a href="{{ route('index') }}">Home</a>
                         <a href="{{ route('product') }}">Products</a>
-                        <a href="{{ route('about') }}">about</a>
+                        <a href="{{ route('about') }}">About</a>
                         <a href="{{ route('contactUs') }}">Contact Us</a>
                         
 
@@ -55,7 +59,7 @@
                         @endif
 
                         <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-                        <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i> Basket</a>
+                        <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket</a>
                         <!--Just for the record, idk what I'm doing with this ^ so feel free to clean it up -->
                     </nav>
                 </section>
@@ -137,8 +141,6 @@
                 </div>
                 </div>
             </section>
-
-
                 <!-- Our Product Section-->
             <section class= "main">
 
@@ -161,18 +163,10 @@
                                 </div>
                             @endforeach
                     </div>
-
                 </section>
-
-
-        
-                    @include('footer')
-
-
-                     
-
+                    <footer>
+                        @include('footer')
+                    </footer>
                     </section>
-
         </body>
-
         </html>   
