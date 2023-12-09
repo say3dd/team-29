@@ -7,7 +7,7 @@
             <title>
                 @yield('title', 'Master layout')
                 </title>
-            <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/homepage_style.css') }}">
 
 
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
@@ -140,29 +140,29 @@
 
 
                 <!-- Our Product Section-->
-                <section class= "main">
+            <section class= "main">
 
-                    <section id="best-seller-sction">
-                        <div class="big-card">
-                            <h1 class = "title-sellers">Our Laptops</h1>
-                            <div class="title-line"></div> <!-- Add this line -->
-                            <div id="best-seller-container">
-                                @foreach ($laptops as $laptop)
-                                    <div class="laptop">
-                                        <div class="specs-container">
-                                            <img src="{{ asset($laptop->image_path) }}" alt="laptop">
-                                            <h1>{{ $laptop->laptop_name }}</h1>
-                                            <p>Processor: {{ $laptop->processor }}</p>
-                                            <p>RAM: {{ $laptop->RAM }}GB</p>
-                                            <p>Graphics: {{ $laptop->GPU }}</p>
-                                            <h3>£{{ $laptop->price }}</h3>
-                                        </div>
-                                        <a href="#" class="buy-product">Add to Basket</a>
+                <section id="best-seller-sction">
+                    <div class="big-card">
+                        <h1 class = "title-sellers">Our Laptops</h1>
+                        <div class="title-line"></div> <!-- Add this line -->
+                        <div id="best-seller-container">
+                            @foreach ($laptops as $laptop)
+                                <div class="laptop">
+                                    <div class="specs-container">
+                                        <img src="{{ asset($laptop->image_path) }}" alt="laptop">
+                                        <h1>{{ $laptop->laptop_name }}</h1>
+                                        <p>Processor: {{ $laptop->processor }}</p>
+                                        <p>RAM: {{ $laptop->RAM }}GB</p>
+                                        <p>Graphics: {{ $laptop->GPU }}</p>
+                                        <h3>£{{ $laptop->price }}</h3>
                                     </div>
-                                @endforeach
-                        </div>
-    
-                    </section>
+                                    <a href="#" class="buy-product">Add to Basket</a>
+                                </div>
+                            @endforeach
+                    </div>
+
+                </section>
 
 
         
