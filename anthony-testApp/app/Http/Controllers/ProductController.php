@@ -25,7 +25,8 @@ class ProductController extends Controller
                 'user_id' => Auth::id(),
                 'product_id' => $laptopID,
                 'product_name' => $product_data->laptop_name,
-                'product_price' => $product_data->price
+                'product_price' => $product_data->price,
+                'image_path' =>$product_data->image_path
             ]);
        }
        
