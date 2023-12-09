@@ -6,7 +6,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+<<<<<<< HEAD
+use App\Http\Controllers\CheckoutController;
+=======
 use App\Http\Controllers\BasketController;
+>>>>>>> 274730d1756d6dc77c97c1d5e8164346526f17f0
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +22,6 @@ use App\Http\Controllers\BasketController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 
 
 
@@ -52,7 +55,6 @@ Route::get('/test1', function () {
     // Addded route function to the about page
     Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
 
-
     // Route::get('/', );
     Route::get('/product', [ProductController::class,'index'])->name('product');
     Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
@@ -69,6 +71,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/home', [HomeController::class,'authHome'])->name('home');
 });
 
+Route::middleware(['auth', 'admin'])->group(function () {
 Route::middleware('auth','admin')->group(function () {
 
     Route::get('/plist', function () {
@@ -76,7 +79,12 @@ Route::middleware('auth','admin')->group(function () {
     })->name('plist');
 });
 
+Route::group(['middleware' => 'cart.notEmpty'], function () {
+    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
+    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+});
     Route::get('/index', [HomeController::class, 'index'])->name('index');
 
 
 require __DIR__ . '/auth.php';
+
