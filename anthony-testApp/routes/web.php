@@ -42,7 +42,7 @@ if anybody could let me (Francis) know of a better way to do this, I'd gladly ap
 Route::get('/basket', [BasketController::class,'contents'])->name('basket');
 Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
 Route::get('/test1', function () {
-    return view('FrontEnd.basket');
+    return view('FrontEnd.cart');
 });
 
 
