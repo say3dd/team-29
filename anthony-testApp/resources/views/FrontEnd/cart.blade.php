@@ -32,13 +32,14 @@
       <!-- Sub total -->
       <div class="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
         <div class="mb-2 flex justify-between">
-          {{-- subtotal price (do sum of all products)--}}
           <p class="text-gray-700">Subtotal</p>
+          {{-- subtotal price (do sum of all products)--}}
           <p class="text-gray-700">$129.99</p>
         </div>
         {{-- shipping price (by default £4.99)--}}
         <div class="flex justify-between">
           <p class="text-gray-700">Shipping</p>
+          {{-- shipping price (by default £4.99)--}}
           <p class="text-gray-700">$4.99</p>
         </div>
         <hr class="my-4" />
