@@ -6,11 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-<<<<<<< HEAD
 use App\Http\Controllers\CheckoutController;
-=======
 use App\Http\Controllers\BasketController;
->>>>>>> 274730d1756d6dc77c97c1d5e8164346526f17f0
 
 /*
 |--------------------------------------------------------------------------
@@ -72,7 +69,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-Route::middleware('auth','admin')->group(function () {
 
     Route::get('/plist', function () {
         return view('Admin.ProductList');
