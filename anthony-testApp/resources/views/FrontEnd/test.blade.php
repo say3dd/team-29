@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product</title>
-    <link rel="stylesheet" href="{{asset('assets/css/style_sheet_2.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style_sheet_product_webpage_template.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
 
- @include ('header')
+<section class = "navbar-section">
+    @include ('header')
+</section>
 
 <body>
 <div class="main">
@@ -97,73 +99,65 @@
             <div class="modal-content">
                 <span class="close" onclick="closeMessageBox()">&times;</span>
                 <p>
-                <p
-                    style="font-size: 2.1vw; margin-left: 35px; text-align: left; color: white; line-height: 26px; margin-bottom: 0px;">
+                <p class = "specification_title1">
                     Product Features</p>
-                <div class="columns">
-                    <p style="font-size: 0.44em; text-align: left; color: white; line-height: 26px;">
-                        __________________________________________________________________ <br>
+                <div class = "columns_container">
+                <div class="column1">
+                    <div class = "all_specification_contents" >
+                        <hr>
                         Processor: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- 13th Gen Intel® Core™ i9-13980HX (36 MB cache, 24 cores, 32 threads,
                         up to
                         5.60 GHz
                         Turbo) <br>
-                        __________________________________________________________________ <br>
+                       <hr>
 
                         Operating System: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- Windows 11 Home, English, Dutch, French, German, Italian <br>
-                        __________________________________________________________________ <br>
+                        <hr>
 
                         Graphics Card: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- NVIDIA® GeForce RTX™ 4090, 16 GB GDDR6 <br>
-                        __________________________________________________________________ <br>
+                        <hr>
 
                         Display:<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- 18" QHD+ (2560 x 1600) 165Hz, 3ms, ComfortView Plus, NVIDIA G-SYNC +
                         DDS,
                         100%
                         DCI-P3 <br>
-                        __________________________________________________________________ <br>
+                       <hr>
 
                         Memory: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- 32 GB: 2 x 16 GB, DDR5, 4800 MT/s <br>
-                        __________________________________________________________________ <br>
+                        <hr>
 
                         Storage:<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- 1 TB, M.2, PCIe NVMe, SSD <br>
-                        __________________________________________________________________ <br>
+                        <hr>
 
-                        __________________________________________________________________ <br>
                         Colour: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- Dark Metallic Moon <br>
-                        __________________________________________________________________ <br>
-                        Ports:<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;- Left<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1x) RJ-45<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1x) Global headset jack<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1x) Type-A USB 3.2 Gen 1 Port<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1x) Type A USB 3.2 Gen 1 Port w/ PowerShare<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;- Right<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1x) Type C USB 3.2 Gen 1 Port<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;- Back<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1x) Power/DC-in Port<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2x) Type C (Thunderbolt 4.0 , USB 4 Gen 2, 15W
-                        (3A/5V)
-                        Power
-                        Delivery and DisplayPort 1.4)<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1x) Type-A USB 3.2 Gen 1 Port<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1x) HDMI 2.1 Output Port<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1x) mini-DisplayPort<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1x) SD Card slot<br>
-                        __________________________________________________________________ <br>
-                    </p>
-                </div>
+                        <hr>
+                        
+                        Camera: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 1080p at 30 fps FHD IR camera with Windows Hello support<br>
+                        <hr>
 
-                <div class="columns">
-                    <p style="font-size: 0.44em; text-align: left; color: white; line-height: 26px; ">
+                        Audio and Speakers: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Stereo speakers, 2 W x 2 = 4 W total<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Realtek ALC3254<br>
+                        <hr>
+
                         Slots: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;-1 SD-card slot<br>
-                        __________________________________________________________________ <br>
+                        <hr>
+
+                    </div>
+                </div>
+
+                <div class="column2">
+                    <div class = "all_specification_contents" >
+                        <hr>
 
                         Dimensions & Weight:<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- Height (rear): 25.10 mm (0.99 in.)<br>
@@ -172,16 +166,8 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;- Width: 410.30 mm (16.15 in.)<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- Depth: 319.90 mm (12.59 in.)<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- Weight (maximum): 4.04 kg (8.90 lb)<br>
-                        __________________________________________________________________ <br>
+                        <hr>
 
-                        Camera: <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;- 1080p at 30 fps FHD IR camera with Windows Hello support<br>
-                        __________________________________________________________________ <br>
-
-                        Audio and Speakers: <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;- Stereo speakers, 2 W x 2 = 4 W total<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;- Realtek ALC3254<br>
-                        __________________________________________________________________ <br>
 
                         Keyboard: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- Alienware mSeries keyboard with per-key RGB LED AlienFX lighting,
@@ -189,33 +175,33 @@
                         N-key
                         rollover
                         technology<br>
-                        __________________________________________________________________ <br>
+                        <hr>
 
                         Touchpad: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- Multi-touch gesture touchpad with integrated scrolling<br>
-                        __________________________________________________________________ <br>
+                        <hr>
 
                         Wireless: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- Intel® Killer™ Wi-Fi 6E AX1690i, 2x2, 802.11ax, MU-MIMO, Bluetooth®
                         wireless
                         card<br>
-                        __________________________________________________________________ <br>
+                        <hr>
 
                         Primary Battery: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- 6 Cell, 97 Wh, integrated<br>
-                        __________________________________________________________________ <br>
+                        <hr>
 
                         Battery Life: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- Up to 5 hours, 47 minutes<br>
-                        __________________________________________________________________ <br>
+                        <hr>
 
                         Power: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- 30W Small Form Factor adapter<br>
-                        __________________________________________________________________ <br>
-                    </p>
-                    </p>
+                        <hr>
+                    </div>
                 </div>
             </div>
+        </div>
 
         </div>
 
