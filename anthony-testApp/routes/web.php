@@ -18,6 +18,10 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
+/*
+Author: @BravoBoy2 @say3dd @KraeBM @BM786
+*/
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
