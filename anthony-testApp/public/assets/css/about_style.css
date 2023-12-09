@@ -252,25 +252,7 @@ header {
 .about-contents{
   margin-left: 3%;
 }  
-.btn-header {
-  background-color: #ff0000;
-  border: none;
-  color: white;
-  border: white 1px solid;
-  border-radius: 5%;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
 
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.btn-header:hover {
-  background-color: #760000;
-  color: white;
-}
   
 
 
@@ -968,26 +950,7 @@ color: #c492eb;
   .about-contents{
     margin-left: 3%;
   }  
-  .btn-header {
-    background-color: #ff0000;
-    border: none;
-    color: white;
-    border: white 1px solid;
-    border-radius: 5%;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
   
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
-  
-  .btn-header:hover {
-    background-color: #760000;
-    color: white;
-  }
-    
   
   
   
@@ -1258,12 +1221,12 @@ color: #c492eb;
   }
   
   
-  
+  /*  about- title line */
   .about-title-line {
     height: 2px; /* Adjust the height as needed */
     background-color: #9000ff; /* Adjust the color as needed */
     margin: 0 auto; /* Center the line horizontally */
-    
+   
   
   
   }
