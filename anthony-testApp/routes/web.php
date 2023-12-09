@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,6 @@ use App\Http\Controllers\ProfileController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 
 
 
@@ -44,7 +44,6 @@ Route::middleware('guest')->group(function () {
     // Addded route function to the about page
     Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
 
-
     // Route::get('/', );
     Route::get('/product', [ProductController::class, 'showProducts'])->name('product');
     Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
@@ -53,20 +52,23 @@ Route::middleware('guest')->group(function () {
     Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
 });
 
-
-Route::middleware('auth', 'verified')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/home', [HomeController::class, 'authHome'])->name('home');
 });
 
-Route::middleware('auth', 'admin')->group(function () {
-
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/plist', function () {
         return view('Admin.ProductList');
     })->name('plist');
 });
 
+Route::group(['middleware' => 'cart.notEmpty'], function () {
+    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
+    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+});
 
 require __DIR__ . '/auth.php';
+
