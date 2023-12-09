@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 /* Define Color Variables */
-
-   /* Purple -primary-color: #4E008B;        */
-   /* Light Purple with Opacity --secondary-color: #9500ff83;   */
-   /* Accent Color  --accent-color: #A634FF;  */
-   /* Text Color   --text-color: white; */
-   /* Shadow Color    --shadow-color: rgba(0, 0, 0, 0.3);*/
-
+:root {
+    --primary-color: #4E008B;         /* Purple */
+    --secondary-color: #9500ff83;     /* Light Purple with Opacity */
+    --accent-color: #A634FF;          /* Accent Color */
+    --text-color: white;              /* Text Color */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Shadow Color */
+  }
+  
 
 * {
   padding: 0;
