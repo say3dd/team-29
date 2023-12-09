@@ -31,7 +31,7 @@
                     <nav class="navbar">
                         <a href="{{ route('index') }}">Home</a>
                         <a href="{{ route('product') }}">Products</a>
-                        <a href="{{ route('about') }}">about</a>
+                        <a href="{{ route('about') }}">About</a>
                         <a href="{{ route('contactUs') }}">Contact Us</a>
                         
 
