@@ -134,6 +134,7 @@ body {
 }
 
 /*Properties for "View specification" button*/
+
 .button_view_specification {
     border: transparent;
     background-color: transparent;
@@ -149,6 +150,8 @@ body {
     text-decoration: underline;
     color: white;
 }
+
+/*Properties of a window that enables users to access and review all the laptop specifications*/
 
 .modal {
     display: none;
@@ -172,6 +175,40 @@ body {
     background-color: rgba(20, 6, 54);
     backdrop-filter: none;
 }
+
+.specification_title1 {
+    font-size: 2.1vw;
+    margin-left: 35px;
+    text-align: left;
+    color: white;
+    line-height: 26px;
+    margin-bottom: 0px;
+}
+.all_specification_contents {
+    font-size: 1em;
+    text-align: left;
+    color: white;
+    line-height: 26px;
+    flex-wrap: wrap;
+}
+
+/* Container to fit all the specifications neatly into two columns */
+
+.columns_container {
+    display: flex;
+    justify-content: center;
+    gap: 8em;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 0.4em;
+}
+
+.column1,
+.column2 {
+    width: 40%;
+}
+
+/* Properties of the button to close "All Specifications" window */
 
 .close {
     color: white;
@@ -1052,6 +1089,16 @@ footer {
         margin-left: 20px;
     }
 
+    /*Properties of a window that enables users to access and review all the laptop specifications*/
+
+    .modal {
+        top: 5%;
+    }
+
+    .all_specification_contents {
+        font-size: 0.9em;
+    }
+
     /* Slide Show Properties*/
 
     /* Container for slide show */
@@ -1300,6 +1347,34 @@ footer {
         margin-left: 14px;
     }
 
+    /*Properties of a window that enables users to access and review all the laptop specifications*/
+
+    .modal {
+        top: 9%;
+    }
+
+    .modal-content {
+        padding: 15px;
+        width: 70%;
+    }
+
+    .specification_title1 {
+        font-size: 1.2em;
+    }
+    .all_specification_contents {
+        font-size: 0.9em;
+    }
+
+    .columns_container {
+        gap: 1em;
+        padding: 0.4em;
+    }
+
+    .column1,
+    .column2 {
+        width: 75%;
+    }
+
     /* Buttons for adding the product to the Basket or to a Wish List */
     /* Buttons style */
     .button_cart,
@@ -1354,19 +1429,19 @@ footer {
 
     .unique_feature1 {
         position: absolute;
-        top: 108%;
+        top: 111%;
         left: 37%;
     }
 
     .unique_feature2 {
         position: absolute;
-        top: 131%;
+        top: 134.5%;
         left: -22%;
     }
 
     .unique_feature3 {
         position: absolute;
-        top: 154.5%;
+        top: 158%;
         left: -50%;
     }
 
@@ -1380,7 +1455,7 @@ footer {
         width: 300px;
         padding: 50px 80px;
         position: absolute;
-        top: 105%;
+        top: 108%;
         left: -4%;
     }
 
@@ -1389,7 +1464,7 @@ footer {
         padding: 50px 80px;
         margin-right: 60px;
         position: absolute;
-        top: 128%;
+        top: 131%;
         left: -4%;
     }
 
@@ -1398,7 +1473,7 @@ footer {
         height: 155px;
         padding: 50px 80px;
         position: absolute;
-        top: 152%;
+        top: 155%;
         left: -3%;
     }
 
