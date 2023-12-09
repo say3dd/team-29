@@ -32,8 +32,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $basket = Basket::create(); //This just makes a bare minimum basket when a user registers for now
-        $basketID = $basket->id;    //grabs the id value from the row just made
+
 
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -45,7 +44,6 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'basket_id' => $basketID
         ]);
 
         event(new Registered($user));

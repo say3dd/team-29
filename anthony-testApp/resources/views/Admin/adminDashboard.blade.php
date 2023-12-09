@@ -1,3 +1,5 @@
+{{-- Author @BravoBoy2 @AbuIsNotHer3 = Abubakarsiddik Mohammed (two accounts but the same person) --}}
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -15,8 +17,8 @@
 
              {{-- admin navigation to product Lists --}}
                     <div class="admin-dashboard-nav" style="padding: 5px; margin: 5px;">
-                        <div class="p-5 m-5 mx-w-100% w-100% bg-cyan-200 rounded flex">
-                        <span class=" p-5 m-5 text-center rounded bg-purple-300">
+                        <div class="p-5 m-5 mx-w-100% w-100% bg-cyan-200 rounded flex flex-row sm:mx-w-50% antialiased">
+                        <span class=" p-5 m-5 text-center rounded bg-purple-300 sm:p-2 max-w-1">
                         <a class= "text-center align-middle text-white" href="{{route('index')}}">Home</a>
                          </span>
 
