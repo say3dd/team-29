@@ -1,82 +1,354 @@
+<!DOCTYPE html>
+<html>
 
 <head>
-@vite(['resources/css/app.css','resources/js/app.js'])
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product</title>
+    <link rel="stylesheet" href="{{asset('assets/css/style_sheet_product_webpage_template.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
 
+<section class = "navbar-section">
+    @include ('header')
+</section>
+
 <body>
-    
+<div class="main">
+    {{-- Section 1 starts here --}}
+        <div class="background_shape1">
+            <div class="background_shape_1_2">
+            <div class="slideshow-container">
+            <div class="slide">
+                <div class="mySlides">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop4.jpg')}}" style=" " alt="">
+                </div>
+                <div class="mySlides">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop2.jpg')}}" alt="">
+                </div>
+                <div class="mySlides">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop3.jpg')}}" alt="">
+                </div>
+                <div class="mySlides">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop1.jpg')}}" alt="">
+                </div>
+                <div class="mySlides">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop5.jpg')}}" alt="">
+                </div>
+                <button class="previousSlide" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="nextSlide" onclick="plusDivs(1)">&#10095;</button>
+            </div>
+            <script>
+                var slideIndex = 1;
+                showDivs(slideIndex);
 
-<div class="h-screen bg-gray-100 pt-20">
-    <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
-    <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
-      <div class="rounded-lg md:w-2/3">
-        <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-          <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="product-image" class="w-full rounded-lg sm:w-40" />
-          <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
-            <div class="mt-5 sm:mt-0">
-              <h2 class="text-lg font-bold text-gray-900">Nike Air Max 2019</h2>
-              <p class="mt-1 text-xs text-gray-700">36EU - 4US</p>
+                function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                }
+
+                function showDivs(n) {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    if (n > x.length) { slideIndex = 1 }
+                    if (n < 1) { slideIndex = x.length }
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    x[slideIndex - 1].style.display = "block";
+                }
+            </script>
             </div>
-            <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-              <div class="flex items-center border-gray-100">
-                <span class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
-                <input class="h-8 w-8 border bg-white text-center text-xs outline-none" type="number" value="2" min="1" />
-                <span class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
-              </div>
-              <div class="flex items-center space-x-4">
-                <p class="text-sm">259.000 ₭</p>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </div>
+        </div>
+        <div class="product_information">
+        <p class="product_name">
+            Dell Alienware x16 Gaming Laptop</p>
+        <hr><br>
+        <div class = "product_main_features">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;13th Gen Intel Core i9-13900HK<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Windows 11 Home<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;NVIDIA® GeForce RTX 4090<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;16", QHD+ 2560x1600, 240Hz<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;32 GB 6000 MT/s RAM, 1 TB SSD<br>
+        </div>
+        <div class="button_view_specification">
+            <button class="button_view_specification" onclick="openMessageBox()">
+                View all specifications </button>
+        </div><br>
+        <hr><br>
+        <div class = "product_price">
+            &nbsp;&nbsp;&nbsp;&nbsp;Price:£3,349.00
+        </div><br>
+        <div class = "product_price_no_VAT">
+             &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;£2,857.50
+            excluding VAT @20%
+        </div>
+        <br><hr>
+        <div class="buttons">
+        <button class="button_cart">
+            <img src="{{asset('assets/images_product/icon_basket.png')}}" alt="" width="20" height="25">
+            Add to Basket
+        </button>
+        <button class="button_wish">
+            <img src="{{asset('assets/images_product/love1.png')}}" alt="" width="25" height="23">
+            Add to Wish List
+        </button>
+        </div>
+        {{-- Part of Section 1, for showcasing all of the specification of the product --}}
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeMessageBox()">&times;</span>
+                <p>
+                <p class = "specification_title1">
+                    Product Features</p>
+                <div class = "columns_container">
+                <div class="column1">
+                    <div class = "all_specification_contents" >
+                        <hr>
+                        Processor: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 13th Gen Intel® Core™ i9-13980HX (36 MB cache, 24 cores, 32 threads,
+                        up to
+                        5.60 GHz
+                        Turbo) <br>
+                       <hr>
+
+                        Operating System: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Windows 11 Home, English, Dutch, French, German, Italian <br>
+                        <hr>
+
+                        Graphics Card: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- NVIDIA® GeForce RTX™ 4090, 16 GB GDDR6 <br>
+                        <hr>
+
+                        Display:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 18" QHD+ (2560 x 1600) 165Hz, 3ms, ComfortView Plus, NVIDIA G-SYNC +
+                        DDS,
+                        100%
+                        DCI-P3 <br>
+                       <hr>
+
+                        Memory: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 32 GB: 2 x 16 GB, DDR5, 4800 MT/s <br>
+                        <hr>
+
+                        Storage:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 1 TB, M.2, PCIe NVMe, SSD <br>
+                        <hr>
+
+                        Colour: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Dark Metallic Moon <br>
+                        <hr>
+                        
+                        Camera: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 1080p at 30 fps FHD IR camera with Windows Hello support<br>
+                        <hr>
+
+                        Audio and Speakers: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Stereo speakers, 2 W x 2 = 4 W total<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Realtek ALC3254<br>
+                        <hr>
+
+                        Slots: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;-1 SD-card slot<br>
+                        <hr>
+
+                    </div>
+                </div>
+
+                <div class="column2">
+                    <div class = "all_specification_contents" >
+                        <hr>
+
+                        Dimensions & Weight:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Height (rear): 25.10 mm (0.99 in.)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Height (peak): 26.70 mm (1.05 in.)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Height (front): 24.10 mm (0.95 in.)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Width: 410.30 mm (16.15 in.)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Depth: 319.90 mm (12.59 in.)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Weight (maximum): 4.04 kg (8.90 lb)<br>
+                        <hr>
+
+
+                        Keyboard: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Alienware mSeries keyboard with per-key RGB LED AlienFX lighting,
+                        includes
+                        N-key
+                        rollover
+                        technology<br>
+                        <hr>
+
+                        Touchpad: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Multi-touch gesture touchpad with integrated scrolling<br>
+                        <hr>
+
+                        Wireless: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Intel® Killer™ Wi-Fi 6E AX1690i, 2x2, 802.11ax, MU-MIMO, Bluetooth®
+                        wireless
+                        card<br>
+                        <hr>
+
+                        Primary Battery: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 6 Cell, 97 Wh, integrated<br>
+                        <hr>
+
+                        Battery Life: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Up to 5 hours, 47 minutes<br>
+                        <hr>
+
+                        Power: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 30W Small Form Factor adapter<br>
+                        <hr>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-          <img src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1131&q=80" alt="product-image" class="w-full rounded-lg sm:w-40" />
-          <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
-            <div class="mt-5 sm:mt-0">
-              <h2 class="text-lg font-bold text-gray-900">Nike Air Max 2019</h2>
-              <p class="mt-1 text-xs text-gray-700">36EU - 4US</p>
+
+        </div>
+
+        </div>
+        </div>
+        <script>
+            // JavaScript functions to show/hide the modal
+            function openMessageBox() {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "block";
+            }
+
+            function closeMessageBox() {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "none";
+            }
+        </script>
+        </div>
+    {{-- Section 1 ends here --}}
+    {{-- Section 2 ends here --}}
+    <div class = "container_section2">
+        <div class="features_images">
+            <img  src="{{asset('assets/images_product/laptop_specification1.jpg')}}">
+            <img  src="{{asset('assets/images_product/laptop_specification2.jpg')}}">
+            <img  src="{{asset('assets/images_product/laptop_specification3.jpg')}}">
+        </div>
+        <div class="unique_features">
+            
+                <div class="unique_feature1">Micro-LED stadium lighting</div>
+                <div class="unique_feature2">Per-key lighting</div>
+                <div class="unique_feature3">AlienFX touchpad</div>
+            
+        </div>
+        <div class = "unique_features_content">
+            <div class="unique_feature1_content">
+                Express yourself with bold,
+                iconic lightning featuring 100
+                micro-LED lights for an
+                instantly captivating, bright
+                and fluid look.
             </div>
-            <div class="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-              <div class="flex items-center border-gray-100">
-                <span class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
-                <input class="h-8 w-8 border bg-white text-center text-xs outline-none" type="number" value="2" min="1" />
-                <span class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
-              </div>
-              <div class="flex items-center space-x-4">
-                <p class="text-sm">259.000 ₭</p>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </div>
+            <div class="unique_feature2_content">
+                Customise your gaming
+                experience with nearly infinite
+                colour effects and
+                combinations via the
+                Alienware Command Center.
             </div>
-          </div>
+            <div class="unique_feature3_content">
+                Our multi-touch AlienFX
+                touchpad with integrated
+                scrolling and customisable
+                lighting is back, and 15.5%
+                larger in area than the x15’s
+                touchpad.
+            </div>
         </div>
-      </div>
-      <!-- Sub total -->
-      <div class="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
-        <div class="mb-2 flex justify-between">
-          <p class="text-gray-700">Subtotal</p>
-          <p class="text-gray-700">$129.99</p>
-        </div>
-        <div class="flex justify-between">
-          <p class="text-gray-700">Shipping</p>
-          <p class="text-gray-700">$4.99</p>
-        </div>
-        <hr class="my-4" />
-        <div class="flex justify-between">
-          <p class="text-lg font-bold">Total</p>
-          <div class="">
-            <p class="mb-1 text-lg font-bold">$134.98 USD</p>
-            <p class="text-sm text-gray-700">including VAT</p>
-          </div>
-        </div>
-        <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
-      </div>
     </div>
-  </div>
-</div>
+    {{-- Section 2 ends here --}}
+    {{-- Section 3 begins here --}}
+        <div class="container_section3">
+            <p class="unique_feature_title_title">
+                Total Command </p>
+            <p class="unique_feature_content">
+                Control more than ever with the all-new Alienware Command Center.</p>
+            <p class="unique_feature_title">
+                Presets and overclocking</p>
+            <p class="unique_feature_content">
+                Maximise your gameplay with performance presets while overclocking capabilities give you the speed you
+                need.
+            </p>
+            <p class="unique_feature_title">
+                Performance overlay</p>
+            <p class="unique_feature_content">
+                Manage and see CPU, GPU, memory and thermals stats without exiting the game.
+            </p>
+            <p class="unique_feature_title">
+                AlienFX</p>
+            <p class="unique_feature_content">
+                Customise your set up with lighting settings that extend to all your Alienware accessories, as well as
+                keybinds and
+                calibration.
+            </p>
+            <p class="unique_feature_title">
+                AlienVision</p>
+            <p class="unique_feature_content">
+                Toggle monitor-based overlays on/off to help you focus on the targets at hand.
+            </p>
+            <img class="unique_feature4_5_6_7_8_image" src="{{asset('assets/images_product/laptop_specification5.jpg')}}">
+        </div>
+    {{-- Section 3 ends here --}}
+    {{-- Section 4 begins here --}}
+        <div class="container_section4">
+            <img class="unique_feature9_image" src="{{asset('assets/images_product/laptop_specification4.jpg')}}">
+            <p class="unique_feature9">
+                Seamless Gaming
+            </p>
+            <p class="unique_feature9_content">
+                The x16 is designed for a premium gaming experience on the go or at home with your Alienware ecosystem,
+                so
+                enjoy
+                features like impressive refresh rates, Cherry mechanical keys and Dolby Atmos® sound no matter where
+                you
+                game.
+            </p>
+        </div>
+    {{-- Section 4 ends here --}}
+    {{-- Section 5 begins here --}}
 
+        <div class="container_section5">
+            <div class="title_related_products"> Related Products </div>
+            <div class="laptop1">
+                <img class="related_product_image" src="{{asset('assets/laptop_images/MSI Titan GT77 HX 13V/msi_Titan_GT77_HX_13V.jpg')}} ">
+                <button class="related_product_content">MSI Titan GT77 HX 13V</button>
+                <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
+                <p> - GeForce RTX™ 4090</p>
+                <p> - 128GB RAM</p>
+                <button class="button_cart_laptop"> Add to Basket </button>
+            </div>
+            <div class="laptop1">
+                <img class="related_product_image" src="{{asset('assets/laptop_images/Alienware M16/alienware_m16.jpg')}}">
+                <button class="related_product_content">Alienware m16</button>
+                <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
+                <p> - GeForce RTX™ 4070</p>
+                <p> - 32GB RAM</p>
+                <button class="button_cart_laptop" style="margin-top: 0px;"> Add to Basket </button>
+            </div>
+            <div class="laptop1">
+                <img class="related_product_image" src="{{asset('assets/laptop_images/Asus ROG Strix G16 G614/asus_ROG_Strix_G16_G614.jpg')}}">
+                <button class="related_product_content">Asus ROG Strix G16 G614</button>
+                <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
+                <p> - GeForce RTX™ 4090</p>
+                <p> - 128GB RAM</p>
+                <button class="button_cart_laptop"> Add to Basket </button>
+            </div>
+            <div class="laptop1">
+                <img class="related_product_image" src="{{asset('assets/laptop_images/Alienware M18/alienware-m18.jpg ')}}">
+                <button class="related_product_content">Alienware m18</button>
+                <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
+                <p> - GeForce RTX™ 4080</p>
+                <p> - 32GB RAM</p>
+                <button class="button_cart_laptop" style="margin-top: 0px;"> Add to Basket </button>
+            </div>
+        </div>
+</div>
 </body>
+
+@include('footer')
+
+</html>
