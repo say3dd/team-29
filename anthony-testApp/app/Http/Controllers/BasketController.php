@@ -15,7 +15,13 @@ class BasketController extends Controller
         $userID = Auth::id();
         $baskets = DB::table('baskets')->get();
         $userBasket = $baskets->where('user_id', $userID);
-        return view('FrontEnd/basket', ['userID' => $userID, 'userBasket' => $userBasket]);
+        //francis in php instead of '/' notation, we use '.' notation, I have updated this for you.
+
+        $running_total = 0.00;
+        foreach($userBasket as $item){
+            $running_total += $item->product_price;
+        }
+        return view('FrontEnd.cart', ['userID' => $userID, 'userBasket' => $userBasket, 'total' => $running_total]);
     }
 
     public function removeItem(){
@@ -27,7 +33,12 @@ class BasketController extends Controller
         }
         $baskets = DB::table('baskets')->get();
         $userBasket = $baskets->where('user_id', $userID);
-        return view('FrontEnd/basket', ['userID' => $userID, 'userBasket' => $userBasket, 'del' => $delSuccessful]);
+        
+        $running_total = 0.00;
+        foreach($userBasket as $item){
+            $running_total += $item->product_price;
+        }
+        return view('FrontEnd.cart', ['userID' => $userID, 'userBasket' => $userBasket, 'total' => $running_total]);
     }
 
 }

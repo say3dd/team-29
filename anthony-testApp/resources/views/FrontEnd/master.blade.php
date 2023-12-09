@@ -1,66 +1,65 @@
-<!DOCTYPE html>
-    <html lang="en">
+    <!DOCTYPE html>
+        <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            @yield('title', 'Master layout')
-            </title>
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-    </head>
-
-    <body>
-        <!--             Header                      -->
-
-        <header>
-
-            <section class="nav-header">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>
+                @yield('title', 'Master layout')
+                </title>
+            <link rel="stylesheet" href="{{ asset('assets/css/homepage_style.css') }}">
 
 
-                <a href="" class="logo"> <img
-                        src="{{ asset('assets/images/Screenshot_2023-11-16_030651.png') }}" alt=""></a>
-                <input type="checkbox" id="check">
-                <label for="check" class="menu-icon">
-                    <i class="bx bx-menu" id="menu"></i>
-                    <i class="bx bx-x" id="close"></i>
-                </label>
-                <nav class="navbar">
-                    <a href="{{ route('index') }}">Home</a>
-                    <a href="{{ route('product') }}">Products</a>
-                    <a href="{{ route('contactUs') }}">Contact Us</a>
-                    <a href="{{ route('about')}}">About</a>
-                   
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+        </head>
 
-                    <!--        Fixed the heading so that the login and register is included in the header           -->
+        <body>
+            <!--             Header                      -->
 
-                    @if (Route::has('login'))
+            <header>
 
-                        @auth
-                            <a href="{{ url('home') }}"
-                                class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                        @else
-                            <a href="{{ route('login') }}"
-                                class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"><i
-                                    class="bx bx-user"></i> Log in</a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}"
-                                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                            @endif
-                        @endauth
-                    @endif
-
-                    <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-                    <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i> Basket</a>
-                    <!--Just for the record, idk what I'm doing with this ^ so feel free to clean it up -->
-                </nav>
-            </section>
+                <section class="nav-header">
 
 
+                    <a href="" class="logo"> <img
+                            src="{{ asset('assets/images/Screenshot_2023-11-16_030651.png') }}" alt=""></a>
+                    <input type="checkbox" id="check">
+                    <label for="check" class="menu-icon">
+                        <i class="bx bx-menu" id="menu"></i>
+                        <i class="bx bx-x" id="close"></i>
+                    </label>
+                    <nav class="navbar">
+                        <a href="{{ route('index') }}">Home</a>
+                        <a href="{{ route('product') }}">Products</a>
+                        <a href="{{ route('about') }}">About</a>
+                        <a href="{{ route('contactUs') }}">Contact Us</a>
+                        
+
+                        <!--        Fixed the heading so that the login and register is included in the header           -->
+
+                        @if (Route::has('login'))
+
+                            @auth
+                                <a href="{{ url('home') }}"
+                                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                            @else
+                                <a href="{{ route('login') }}"
+                                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"><i
+                                        class="bx bx-user"></i> Log in</a>
+
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}"
+                                        class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                @endif
+                            @endauth
+                        @endif
+
+                        <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
+                        <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i> Basket</a>
+                        <!--Just for the record, idk what I'm doing with this ^ so feel free to clean it up -->
+                    </nav>
+                </section>
+                
             <!--         Hero Section         -->
             <section id="hero">
                 <div class="container">
@@ -90,9 +89,10 @@
                     </div>
                 </div>
         </header>
+                
 
-        <!-- Best seller prodcuts-->
-        <section class= "main">
+          <!-- Best seller prodcuts-->
+          <section class= "main">
             @yield('content')
             <section id="best-seller-sction">
                 <div class="big-card">
@@ -115,8 +115,8 @@
                     </div>
             </section>
 
-            <!-- Services Section -->
-            <section class="our-product-section">
+              <!-- Services Section -->
+              <section class="our-product-section">
                 <div id="product-container">
                     <div class="box-card">
                         <div class = "info">
@@ -137,7 +137,9 @@
                 </div>
                 </div>
             </section>
-            <!-- Our Product Section-->
+
+
+                <!-- Our Product Section-->
             <section class= "main">
 
                 <section id="best-seller-sction">
@@ -161,53 +163,16 @@
                     </div>
 
                 </section>
-                <section class="footer-section">
-
-                    <footer>
-                        @yield('footer')
-
-                        <section class="footer-section">
-                            <footer>
-                                <div class="footer-content">
-                                    <div class="footer-links">
-                                        <div class="footer-column">
-
-                                            <ul>
-                                                <li><a href="#">Our Story</a></li>
-                                                <li><a href="#">Mission & Vision</a></li>
-                                                <li><a href="#">Team</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="footer-column">
-
-                                            <ul>
-                                                <li><a href="#">Laptops</a></li>
-                                                <li><a href="#">Keyboards</a></li>
-                                                <li><a href="#">Mice</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="footer-column">
-
-                                            <ul>
-                                                <li><a href="#">Support</a></li>
-                                                <li><a href="#">Contact Us</a></li>
-                                                <li><a href="#">Customer Service</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="footer-bottom">
-                                    <p>&copy; 2023 Valhalla</p>
-                                </div>
-                            </footer>
-                        </section>
 
 
-                    </footer>
+        
+                    @include('footer')
 
-                </section>
 
-    </body>
+                     
 
-    </html>   
+                    </section>
+
+        </body>
+
+        </html>   

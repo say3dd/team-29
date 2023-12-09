@@ -12,6 +12,7 @@ class Basket extends Model
         'user_id',
         'product_id',
         'product_name',
-        'product_price'
+        'product_price',
+        'image_path'
     ];
 }
