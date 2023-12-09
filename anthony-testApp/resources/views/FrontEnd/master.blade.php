@@ -241,6 +241,29 @@
                     </div>
             </section>
 
+              <!-- Services Section -->
+              <section class="our-product-section">
+                <div id="product-container">
+                    <div class="box-card">
+                        <div class = "info">
+                            <h1 class="section-heading">High-Performance Gaming Laptops</h1>
+                            <p>Our high-performance gaming laptops are packed with the latest hardware,
+                                including powerful processors, dedicated graphics cards, and high-refresh-rate displays.
+                            </p>
+                            <p>They can handle even the most demanding games with ease, and they're also great for other
+                                graphics-intensive tasks
+                                like video editing, 3D modelling and game development.</p>
+                            <a href="#" class="view-laptops-btn">View Products</a>
+                        </div>
+                        <div>
+                            <img src="{{ asset('assets/images/asus-rog-launched-two-new-high-end.jpg') }}"
+                                alt="laptop 3">
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+
 
       @include('footer')
 
