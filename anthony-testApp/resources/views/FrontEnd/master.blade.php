@@ -1,3 +1,7 @@
+    <!-- 
+    Home Page 
+    Created by [Anthony Resuello]
+-->
     <!DOCTYPE html>
         <html lang="en">
 
@@ -7,7 +11,7 @@
             <title>
                 @yield('title', 'Master layout')
                 </title>
-            <link rel="stylesheet" href="{{ asset('assets/css/homepage_style.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/home_style.css') }}">
 
 
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
@@ -137,8 +141,6 @@
                 </div>
                 </div>
             </section>
-
-
                 <!-- Our Product Section-->
             <section class= "main">
 
@@ -161,18 +163,10 @@
                                 </div>
                             @endforeach
                     </div>
-
                 </section>
-
-
-        
-                    @include('footer')
-
-
-                     
-
+                    <footer>
+                        @include('footer')
+                    </footer>
                     </section>
-
         </body>
-
         </html>   
