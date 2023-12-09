@@ -89,11 +89,6 @@
                 <button class="button_to_switch_page" style="margin-top: 19px;"> 1 </button>
                 <button class="button_to_switch_page" style="margin-top: 200px;"> 2 </button>
                 <button class="button_to_switch_page" style="margin-top: 19px;"> 3 </button>
-                <button class="button_to_switch_page" style="margin-top: 19px;"> 4 </button>
-                <button class="button_to_switch_page" style="margin-top: 19px;"> 5 </button>
-                <button class="button_to_switch_page" style="margin-top: 19px;"> 6 </button>
-                <button class="button_to_switch_page" style="margin-top: 19px;"> 7 </button>
-                <button class="button_to_switch_page" style="margin-top: 19px;"> 8 </button>
             </div>
         </div>
     </h2>
