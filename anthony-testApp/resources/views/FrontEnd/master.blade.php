@@ -163,7 +163,7 @@
                     <div class="big-card">
                         <h1 class = "title-sellers">Our Laptops</h1>
                         <div class="title-line"></div> <!-- Add this line -->
-                        <div id="best-seller-container">
+                        <div id="laptop-container">
                             @foreach ($laptops as $laptop)
                                 <div class="laptop">
                                     <div class="specs-container">
