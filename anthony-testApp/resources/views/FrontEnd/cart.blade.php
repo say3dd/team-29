@@ -38,6 +38,9 @@
                       <!-- Name of the product -->
                       <h2 class="text-xl underline font-bold text-white">{{$item->product_name}}</h2>
                       <p class=" pt-4 text-lg text-white ">Price: £{{$item->product_price}}</p>
+                      <p class=" pt-4 text-lg text-white ">RAM: {{$item->RAM}} GB</p>
+                      <p class=" pt-4 text-lg text-white ">GPU: {{$item->GPU}}</p>
+                      <p class=" pt-4 text-lg text-white ">Processor: {{$item->processor}}</p>
                     </div>
                     <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                       <div class="flex items-center space-x-4">

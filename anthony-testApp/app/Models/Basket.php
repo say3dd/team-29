@@ -13,6 +13,9 @@ class Basket extends Model
         'product_id',
         'product_name',
         'product_price',
-        'image_path'
+        'image_path',
+        'RAM',
+        'GPU',
+        'processor'
     ];
 }
