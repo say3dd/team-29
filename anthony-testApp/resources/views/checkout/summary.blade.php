@@ -8,7 +8,7 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <!--@noramknarf (Francis Moran) - added functionality to display items in the cart, total cost & added links into and out of the page (connected to routes by Basit)-->
-<body class="flex items-center justify-center min-h-screen bg-indigo-950"">
+<body class="flex items-center justify-center min-h-screen bg-dark-blue ">
 <div class="container">   
 <div class="py-16 px-4 md:px-6 2xl:px-0 flex justify-center items-center 2xl:mx-auto 2xl:container">
     <div class="flex flex-col justify-start items-start w-full space-y-9">
@@ -35,7 +35,7 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
                     <p class="text-base font-semibold leading-none text-gray-600 dark:text-white">£{{$item->product_price}}</p>
                 </div>
                 <div class="mt-6 sm:mt-0 xl:my-10 xl:px-20 w-52 sm:w-96 xl:w-auto">
-                    <img src="{{$item->image_path}}" alt="item image" />
+                    {{-- <img src="{{$item->image_path}}" alt="item image" /> --}}
                 </div>
                 @endforeach
             </div>
