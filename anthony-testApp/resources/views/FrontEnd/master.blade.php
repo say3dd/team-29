@@ -1,6 +1,7 @@
     <!-- 
     Home Page 
     Created by [Anthony Resuello]
+    @noramknarf (Francis Moran) - various minor bugfixes
 -->
     <!DOCTYPE html>
         <html lang="en">

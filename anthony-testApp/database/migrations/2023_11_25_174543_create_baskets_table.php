@@ -1,5 +1,5 @@
 <?php
-
+//@noramknarf (Francis Moran) - Everything
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Schema;
  * the idea is that when the User model is created in 
  * RegisteredUserController->store(), a basket will be made for them
  * 
- * It really wasn't clear what people want to do so I just kinda did this cause I /need/ to do something
- * hope you don't mind
  */
 
 return new class extends Migration

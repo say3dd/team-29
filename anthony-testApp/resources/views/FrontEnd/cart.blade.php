@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html>
-   
+   <!--@noramknarf (Francis Moran) - implemented functionality to display each item in the user's basket with details + total cost & delete items from baskets (see basketController)-->
 <head>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <meta charset="UTF-8">
@@ -84,7 +84,10 @@
                 <p class="text-sm text-white">including VAT</p>
               </div>
             </div>
+            <!-- button leading to checkout (probably a better way to do this but this is quick, simple and doesn't need me to do anything to the button)-->
+            <form action ='{{route('checkout.summary')}}' method='get'>
             <button class="mt-6 w-full rounded-md bg-violet-600 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+            </form>
           </div>
         </div>
       </div>

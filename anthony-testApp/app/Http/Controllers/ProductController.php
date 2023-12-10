@@ -1,5 +1,5 @@
 <?php
-
+//@noramknarf (Francis Moran) - getInfo() function
 namespace App\Http\Controllers;
 
 use App\Models\Product;
@@ -86,7 +86,9 @@ class ProductController extends Controller
                 'GPU' => $product_data->GPU,
                 'processor' => $product_data->processor
             ]);
-            //I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual
+            /* In summary, $laptopID is the id passed to the controller by the products page,
+            $product_data is the entire row from the products table for that product, any info needed can be accessed with -> then the column name in the products table
+            I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual*/
        }
        
         $laptops = Product::all();
