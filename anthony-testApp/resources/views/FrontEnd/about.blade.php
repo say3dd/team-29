@@ -1,6 +1,14 @@
-    <!-- 
-    About Page
-    Created by [Anthony Resuello]
+<!-- 
+
+   _____________________________________ Created and designed the About page of the webiste by @AnthonyResuello (Anthony Resuello) ____________________________________________
+                                          
+    - Used same styling and classes from my homepage to make the webiste look consistent.
+    - About Section 
+    - Why Choose Us Section 
+    - Our values Section
+    - What other people say?
+
+
 -->
 <!DOCTYPE html>
 <html lang="en">

@@ -1,6 +1,12 @@
-    <!-- 
-    Home Page 
-    Created by [Anthony Resuello]
+    <!--
+
+    _______________________________________   Created and designed the Homepage of the webiste by @AnthonyResuello (Anthony Resuello) _______________________________________________
+
+    - Homepage served as the main template of the overall design of the website (colors and styling).
+    - Designed Using Fimga (Link in the Team doucmentation called (website prototype).
+
+
+    @noramknarf (Francis Moran) - various minor bugfixes
 -->
     <!DOCTYPE html>
         <html lang="en">
@@ -34,13 +40,23 @@
                     </label>
                     <nav class="navbar">
                         <a href="{{ route('index') }}">Home</a>
-                        <a href="{{ route('product') }}">Products</a>
+                        <a href="{{route('productspage.id', ['id' => 1])}}">Products</a>
                         <a href="{{ route('about') }}">About</a>
                         <a href="{{ route('contactUs') }}">Contact Us</a>
                         
 
                         <!--        Fixed the heading so that the login and register is included in the header           -->
 
+
+                        {{-- 
+                            /*
+                            Login, register and dashboard 
+                            mady by @AbuIsNotHer3 @BravoBoy2 == Abubakarsiddik Mohammed.
+
+                            Desgined by @AnthonyResuello
+                            */
+                            
+                            --}}
                         @if (Route::has('login'))
 
                             @auth
@@ -59,7 +75,7 @@
                         @endif
 
                         <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-                        <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket</a>
+                        <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i> Basket</a>
                         <!--Just for the record, idk what I'm doing with this ^ so feel free to clean it up -->
                     </nav>
                 <!--- End of Section  --> </section>
@@ -78,7 +94,7 @@
                             Explore our curated selection and elevate your gaming journey to new heights.
                         </p>
                         </p>
-                        <a href="{{url('product')}}" class="view-laptops-btn">View Products</a>
+                        <a href="{{route('productspage.id', ['id' => 1])}}" class="view-laptops-btn">View Products</a>
                     </div>
                 </div>
 
@@ -136,7 +152,7 @@
                             <p>They can handle even the most demanding games with ease, and they're also great for other
                                 graphics-intensive tasks
                                 like video editing, 3D modelling and game development.</p>
-                            <a href="#" class="view-laptops-btn">View Products</a>
+                            <a href="{{route('productspage.id' ,['id' =>1]) }}" class="view-laptops-btn">View Products</a>
                         </div>
                         <div>
                             <img src="{{ asset('assets/images/asus-rog-launched-two-new-high-end.jpg') }}"
@@ -173,8 +189,6 @@
                             @endforeach
                     </div>
                 </section>
-
-                
                     <footer>
                         @include('footer')
                     </footer>

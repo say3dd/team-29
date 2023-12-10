@@ -1,4 +1,12 @@
 <?php
+/*
+
+    Author @BM786 Basit Ali Mohammad == worked on this page checkout summary and contact.
+        @noramknarf (Francis Moran) - route to product.getInfo() and basket routes.
+     */
+
+
+
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -53,6 +61,7 @@ Route::get('/test1', function () {
     Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
 
     // Route::get('/', );
+    // @say3dd (Mohammed Miah) - Routing for the different product functionalities
     Route::get('/product', [ProductController::class,'index'])->name('product');
     Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
     Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
@@ -80,6 +89,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::group(['middleware' => 'cart.notEmpty'], function () {
     Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
     Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+    Route::get('/checkout/thankyou', function(){
+        return view('checkout.thankyou');
+    })->name('thank-you');
 });
     Route::get('/index', [HomeController::class, 'index'])->name('index');
 

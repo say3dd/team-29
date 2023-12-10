@@ -1,5 +1,6 @@
 <?php
-
+//@noramknarf (Francis Moran) - getInfo() function
+/* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */
 namespace App\Http\Controllers;
 
 use App\Models\Product;
@@ -87,14 +88,16 @@ class ProductController extends Controller
                 'GPU' => $product_data->GPU,
                 'processor' => $product_data->processor
             ]);
-            //I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual
+            /* In summary, $laptopID is the id passed to the controller by the products page,
+            $product_data is the entire row from the products table for that product, any info needed can be accessed with -> then the column name in the products table
+            I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual*/
        }
        
         $laptops = Product::all();
         return view('Product_files.products', ['laptops' => $laptops, 'productToAdd' => $laptopID,'brands' => $brands,'graphics'=> $graphics]);
     }
 
-    // displays all the products
+    // @say3dd (Mohammed Miah) displays all the products, maximum of 12 on the products page
     public function index()
     {
         $laptops = Product::paginate(12);
@@ -102,12 +105,16 @@ class ProductController extends Controller
         
     }
 
+
+
+    // @say3dd (Mohammed Miah) Function to show a maximum of 4 products on the home page, namely the "Our Laptops" section.
     public function showHomeProducts()
     {
         $laptops = Product::paginate(4);
         return view('FrontEnd.home', ['laptops' => $laptops]);
     }
 
+    // @say3dd (Mohammed Miah) Function to allow us to see related products on the individual product details page
     public function show($id)
     {
         $laptop = Product::find($id);

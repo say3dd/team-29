@@ -1,7 +1,8 @@
 /*    
-    Home Page  css 
-    Created by [Anthony Resuello]
+  _______________________________    Created and designed the  Homepage (CSS)  of the webiste by @AnthonyResuello (Anthony Resuello) _______________________________________
+ 
 */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 /* Define Color Variables */
@@ -512,6 +513,30 @@ gap: 15rem;
   #laptop-container > div {
     flex: 1 0 calc(25% - 1rem); /* Each item takes up 25% of the container width with 1rem gap */
   }
+  .box-card img {
+
+  }
+
+  
+#product-container {
+  margin: 5rem 14rem;
+  background-color:#4E008B;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 50px;
+ 
+}
+
+
+.box-card {
+
+  align-items: center;
+  margin: auto;
+  padding: 5rem;
+}
+
+  
+  
 }
 
 
@@ -574,6 +599,7 @@ gap: 15rem;
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
   border-radius: 50px;
+
 }
 
 
