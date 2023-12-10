@@ -1065,7 +1065,7 @@ color: #c492eb;
       }
   
       #check:checked ~ .navbar {
-        height: 19rem;
+        height: 25rem;
       }
   
       .navbar a {
@@ -1537,10 +1537,48 @@ color: #c492eb;
   .brand-images {
     display: none;
   }
+
+
+  .about-container p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .about-text p{
+
+    width: 90%;
+  }
+  .about-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem; /* Use padding-top instead of margin-top */
+    margin-left: 0%;
+    padding-bottom: 5rem; 
+     gap: 1rem;
+  
+  }
   
   
+
   
-  
+#testimonials-container {
+
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.testimonial {
+  flex-basis: 100%;
+  text-align: center;
+  margin: 10px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  overflow: hidden; /* Ensure overflow is hidden */
+}
+
   /*        Best Seller Section          */
   
   
