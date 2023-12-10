@@ -62,6 +62,7 @@ Route::get('/test1', function () {
 
     // Route::get('/', );
     // @say3dd (Mohammed Miah) - Routing for the different product functionalities
+    // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
     Route::get('/product', [ProductController::class,'index'])->name('product');
     Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
     Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
