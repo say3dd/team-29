@@ -1,3 +1,4 @@
+<!-- @KraeBM (Bilal Mohamed) worked on the blade templating of this website  -->
 @extends('productL')
 @section('productP')
 
