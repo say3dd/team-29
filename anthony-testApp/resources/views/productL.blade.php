@@ -26,6 +26,7 @@
 </head>
 
 <header>
+     <!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
   <section class = "navbar-section">
     @include ('header')
   </section>
@@ -166,6 +167,7 @@ function resetFilters() {
     </h2>
 </body>
 <footer>
+     <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
     @include ('footer')
 </footer>
 </html>
