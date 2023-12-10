@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
-
+<!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
 <section class = "navbar-section">
     @include ('header')
 </section>
@@ -102,6 +102,7 @@
     </div>
   </div>
   </div>
+  <!-- Developed and desgined the footer for this page @AnthonyResuello (Anthony Resuello) -->
       @include('footer')
 </body>
 
