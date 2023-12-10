@@ -955,6 +955,18 @@ font-size: 1.6rem;
 
 
 
+.box-card img {
+  display: none;
+}
+
+.laptop img {
+  width: 12rem;
+  height: 12rem;
+}
+
+
+
+
 
 }
 
