@@ -106,6 +106,7 @@
                          @foreach ($bestSellerLaptops as $laptop)
                             <div class="laptop">
                                 <div class="specs-container">
+                                    
                                     <img src="{{ asset($laptop->image_path) }}" alt="laptop">
                                     <h1>{{ $laptop->laptop_name }}</h1>
                                     <p>Processor: {{ $laptop->processor }}</p>
@@ -113,7 +114,11 @@
                                     <p>Graphics: {{ $laptop->GPU }}</p>
                                     <h3>£{{ $laptop->price }}</h3>
                                 </div>
-                                <a href="#" class="buy-product">Add to Basket</a>
+                                <form action='{{route('product.getInfo')}}' method='post'>
+                                    @csrf
+                                    <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
+                                    <button class="buy-product"> Add to Basket </button>
+                                </form>
                             </div>
                         @endforeach 
                     </div>
@@ -159,7 +164,11 @@
                                         <p>Graphics: {{ $laptop->GPU }}</p>
                                         <h3>£{{ $laptop->price }}</h3>
                                     </div>
-                                    <a href="#" class="buy-product">Add to Basket</a>
+                                    <form action='{{route('product.getInfo')}}' method='post'>
+                                        @csrf
+                                        <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
+                                        <button class="buy-product"> Add to Basket </button>
+                                    </form>
                                 </div>
                             @endforeach
                     </div>
