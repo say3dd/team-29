@@ -1,13 +1,10 @@
 
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 
+<!--@noramknarf (Francis Moran) - implemented functionality to display each item in the user's basket with details + total cost & delete items from baskets (see basketController)-->
+<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the basket using Tailwind  -->
 
-   
-=======
-   <!--@noramknarf (Francis Moran) - implemented functionality to display each item in the user's basket with details + total cost & delete items from baskets (see basketController)-->
->>>>>>> 3c3d45613c742fa92f75a8e2df1fa9029427fe0a
 <head>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <meta charset="UTF-8">
