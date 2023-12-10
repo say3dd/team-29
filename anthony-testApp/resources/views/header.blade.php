@@ -1,3 +1,11 @@
+<!-- 
+         ______________________________   Created and designed the Header of the webiste by @AnthonyResuello (Anthony Resuello)     ____________________________________________
+
+    - Created and desgined the header to make it consistent for all pages of the website
+
+-->
+
+
 <header>
             
     <section class="nav-header">

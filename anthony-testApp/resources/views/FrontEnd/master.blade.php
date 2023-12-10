@@ -1,6 +1,11 @@
-    <!-- 
-    Home Page 
-    Created by [Anthony Resuello]
+    <!--
+
+    _______________________________________   Created and designed the Homepage of the webiste by @AnthonyResuello (Anthony Resuello) _______________________________________________
+
+    - Homepage served as the main template of the overall design of the website (colors and styling).
+    - Designed Using Fimga (Link in the Team doucmentation called (website prototype).
+
+
     @noramknarf (Francis Moran) - various minor bugfixes
 -->
     <!DOCTYPE html>
