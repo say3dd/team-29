@@ -34,13 +34,23 @@
                     </label>
                     <nav class="navbar">
                         <a href="{{ route('index') }}">Home</a>
-                        <a href="{{ route('product') }}">Products</a>
+                        <a href="{{route('productspage.id', ['id' => 1])}}">Products</a>
                         <a href="{{ route('about') }}">About</a>
                         <a href="{{ route('contactUs') }}">Contact Us</a>
                         
 
                         <!--        Fixed the heading so that the login and register is included in the header           -->
 
+
+                        {{-- 
+                            /*
+                            Login, register and dashboard 
+                            mady by @AbuIsNotHer3 @BravoBoy2 == Abubakarsiddik Mohammed.
+
+                            Desgined by @AnthonyResuello
+                            */
+                            
+                            --}}
                         @if (Route::has('login'))
 
                             @auth
@@ -78,7 +88,7 @@
                             Explore our curated selection and elevate your gaming journey to new heights.
                         </p>
                         </p>
-                        <a href="{{url('product')}}" class="view-laptops-btn">View Products</a>
+                        <a href="{{route('productspage.id', ['id' => 1])}}" class="view-laptops-btn">View Products</a>
                     </div>
                 </div>
 
@@ -106,6 +116,7 @@
                          @foreach ($bestSellerLaptops as $laptop)
                             <div class="laptop">
                                 <div class="specs-container">
+                                    
                                     <img src="{{ asset($laptop->image_path) }}" alt="laptop">
                                     <h1>{{ $laptop->laptop_name }}</h1>
                                     <p>Processor: {{ $laptop->processor }}</p>
@@ -113,7 +124,11 @@
                                     <p>Graphics: {{ $laptop->GPU }}</p>
                                     <h3>£{{ $laptop->price }}</h3>
                                 </div>
-                                <a href="#" class="buy-product">Add to Basket</a>
+                                <form action='{{route('product.getInfo')}}' method='post'>
+                                    @csrf
+                                    <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
+                                    <button class="buy-product"> Add to Basket </button>
+                                </form>
                             </div>
                         @endforeach 
                     </div>
@@ -131,7 +146,7 @@
                             <p>They can handle even the most demanding games with ease, and they're also great for other
                                 graphics-intensive tasks
                                 like video editing, 3D modelling and game development.</p>
-                            <a href="#" class="view-laptops-btn">View Products</a>
+                            <a href="{{route('productspage.id' ,['id' =>1]) }}" class="view-laptops-btn">View Products</a>
                         </div>
                         <div>
                             <img src="{{ asset('assets/images/asus-rog-launched-two-new-high-end.jpg') }}"
@@ -148,7 +163,7 @@
                     <div class="big-card">
                         <h1 class = "title-sellers">Our Laptops</h1>
                         <div class="title-line"></div> <!-- Add this line -->
-                        <div id="laptop-container">
+                        <div id="best-seller-container">
                             @foreach ($laptops as $laptop)
                                 <div class="laptop">
                                     <div class="specs-container">
@@ -159,13 +174,15 @@
                                         <p>Graphics: {{ $laptop->GPU }}</p>
                                         <h3>£{{ $laptop->price }}</h3>
                                     </div>
-                                    <a href="#" class="buy-product">Add to Basket</a>
+                                    <form action='{{route('product.getInfo')}}' method='post'>
+                                        @csrf
+                                        <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
+                                        <button class="buy-product"> Add to Basket </button>
+                                    </form>
                                 </div>
                             @endforeach
                     </div>
                 </section>
-
-                
                     <footer>
                         @include('footer')
                     </footer>
