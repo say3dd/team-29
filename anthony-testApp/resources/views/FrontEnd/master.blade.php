@@ -41,6 +41,16 @@
 
                         <!--        Fixed the heading so that the login and register is included in the header           -->
 
+
+                        {{-- 
+                            /*
+                            Login, register and dashboard 
+                            mady by @AbuIsNotHer3 @BravoBoy2 == Abubakarsiddik Mohammed.
+
+                            Desgined by @AnthonyResuello
+                            */
+                            
+                            --}}
                         @if (Route::has('login'))
 
                             @auth
