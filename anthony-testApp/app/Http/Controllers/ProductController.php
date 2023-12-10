@@ -81,8 +81,12 @@ class ProductController extends Controller
                 'product_id' => $laptopID,
                 'product_name' => $product_data->laptop_name,
                 'product_price' => $product_data->price,
-                'image_path' =>$product_data->image_path
+                'image_path' =>$product_data->image_path,
+                'RAM' => $product_data->RAM,
+                'GPU' => $product_data->GPU,
+                'processor' => $product_data->processor
             ]);
+            //I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual
        }
        
         $laptops = Product::all();
