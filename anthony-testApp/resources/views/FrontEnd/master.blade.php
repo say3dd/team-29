@@ -62,7 +62,7 @@
                         <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket</a>
                         <!--Just for the record, idk what I'm doing with this ^ so feel free to clean it up -->
                     </nav>
-                </section>
+                <!--- End of Section  --> </section>
                 
             <!--         Hero Section         -->
             <section id="hero">

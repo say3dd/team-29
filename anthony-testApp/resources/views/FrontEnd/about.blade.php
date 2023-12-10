@@ -1,3 +1,7 @@
+    <!-- 
+    About Page
+    Created by [Anthony Resuello]
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +20,6 @@
 
     <header>
         @include('header')
-   
 
             <!-- About Section-->
 
@@ -182,8 +185,9 @@
       </section>
 
     <!--            Footer                      -->
- 
+      <footer>
         @include('footer')
+      </footer>
     
        
    
