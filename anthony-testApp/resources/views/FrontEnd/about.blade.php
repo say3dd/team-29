@@ -6,7 +6,7 @@
     - About Section 
     - Why Choose Us Section 
     - Our values Section
-    - What other people say?
+    - What other people say? Section
 
 
 -->
