@@ -1,5 +1,4 @@
 @extends('productL')
-
 @section('productP')
 
 @foreach($laptops as $laptop)

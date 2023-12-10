@@ -2,7 +2,7 @@
             
     <section class="nav-header">
     
-        <a href="" class="logo"> <img src="{{asset('assets/images/Screenshot_2023-11-16_030651.png')}}" alt=""></a>
+        <a href="{{route('index')}}" class="logo"> <img src="{{asset('assets/images/Screenshot_2023-11-16_030651.png')}}" alt=""></a>
         
         <input type="checkbox" id="check">
         <label for="check" class="menu-icon">
@@ -11,7 +11,7 @@
         </label>
         <nav class="navbar">
             <a href="{{route('index')}}">Home</a>
-            <a href="{{route('product')}}">Products</a>
+            <a href="{{route('productspage.id', ['id' => 1])}}">Products</a>
             <a href="{{route('about')}}">About</a>
             <a href="{{route('contactUs')}}">Contact Us</a>
          
