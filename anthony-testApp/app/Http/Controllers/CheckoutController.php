@@ -1,18 +1,32 @@
 <?php
+//@noramknarf (Francis Moran) - rigged up the logic in showSummary & got the redirect working in placeOrder
+
+/*
+Author @BM786 Basit Ali Mohammad == worked on this page.
+
+*/
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CheckoutController extends Controller
 {
     public function showSummary()
     {
-        // Add logic to fetch order details, products, and calculate totals
-        // You can pass the necessary data to the view
-        $orderDetails = []; // Replace with your logic to fetch order details
+        $userID = Auth::id();
+        $baskets = DB::table('baskets')->get();
+        $userBasket = $baskets->where('user_id', $userID);
 
-        return view('checkout.summary', ['orderDetails' => $orderDetails]);
+        $running_total = 0.00;
+        foreach($userBasket as $item){
+            $running_total += $item->product_price;
+        }
+        //Copied this logic from the basket page, seems to work but I need some help getting the images working -F
+
+        return view('checkout.summary', ['userBasket' => $userBasket, 'total' => $running_total]);
     }
 
     public function placeOrder(Request $request)
@@ -24,6 +38,9 @@ class CheckoutController extends Controller
         // Your order processing logic here
 
         // Redirect to a thank you page or order confirmation page
+
+        /*For now, since we've been told we only need a dummy page and this could take a long time to implement,
+        I am going to just redirect to a static image -F */
         return redirect()->route('thank-you')->with('success', 'Thank you for your order!');
     }
 }

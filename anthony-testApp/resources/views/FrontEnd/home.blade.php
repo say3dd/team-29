@@ -1,8 +1,9 @@
-{{-- @author Anthony R --}}
+ <!-- 
+            Home Page 
+            Created by  {{--  author: @AnthonyResuello  --}} 
+            
+-->
 
 @extends('FrontEnd.master')
-@section('title', 'Valhalla Home')
+@section('title', 'Home')
 
-{{-- 
-@section('content')
-@endsection --}}

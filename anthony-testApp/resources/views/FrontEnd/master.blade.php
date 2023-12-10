@@ -1,6 +1,7 @@
     <!-- 
     Home Page 
     Created by [Anthony Resuello]
+    @noramknarf (Francis Moran) - various minor bugfixes
 -->
     <!DOCTYPE html>
         <html lang="en">
@@ -41,6 +42,16 @@
 
                         <!--        Fixed the heading so that the login and register is included in the header           -->
 
+
+                        {{-- 
+                            /*
+                            Login, register and dashboard 
+                            mady by @AbuIsNotHer3 @BravoBoy2 == Abubakarsiddik Mohammed.
+
+                            Desgined by @AnthonyResuello
+                            */
+                            
+                            --}}
                         @if (Route::has('login'))
 
                             @auth
@@ -59,7 +70,7 @@
                         @endif
 
                         <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-                        <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket</a>
+                        <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i> Basket</a>
                         <!--Just for the record, idk what I'm doing with this ^ so feel free to clean it up -->
                     </nav>
                 <!--- End of Section  --> </section>
@@ -153,7 +164,7 @@
                     <div class="big-card">
                         <h1 class = "title-sellers">Our Laptops</h1>
                         <div class="title-line"></div> <!-- Add this line -->
-                        <div id="best-seller-container">
+                        <div id="laptop-container">
                             @foreach ($laptops as $laptop)
                                 <div class="laptop">
                                     <div class="specs-container">

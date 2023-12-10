@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html>
-   
+   <!--@noramknarf (Francis Moran) - implemented functionality to display each item in the user's basket with details + total cost & delete items from baskets (see basketController)-->
 <head>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <meta charset="UTF-8">
