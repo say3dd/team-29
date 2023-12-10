@@ -224,7 +224,6 @@ header {
 }
 #laptop-container {
   display: flex;
-
   justify-content: center;
   max-width: 70%;
   margin: 0 auto;
@@ -595,7 +594,7 @@ gap: 15rem;
 
 #product-container {
   margin: 5rem 3rem;
-  background-color: #9500ff83;
+  background-color:#4E008B;
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
   border-radius: 50px;
@@ -806,7 +805,7 @@ gap: 15rem;
 /*            Product Section             */
 
 #product-container {
-  background-color: #9500ff83;
+  background-color:#4E008B;
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
   border-radius: 50px;
@@ -913,7 +912,7 @@ gap: 15rem;
   background-color:#4E008B;
   padding: 20px;
   box-shadow: 0 10px 20px #000000;
-  border-radius: 5%;
+  border-radius: 15px;
 }
 
 
