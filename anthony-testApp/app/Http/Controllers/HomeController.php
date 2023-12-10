@@ -1,11 +1,15 @@
 <?php
-
+/*
+@AbuIsNotHer3 @BravoBoy2 === The same person (Abubakarsiddik ) worked on this page alone
+*/
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
 // use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+
+
 
 
 class HomeController extends Controller
