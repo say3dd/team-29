@@ -1,5 +1,14 @@
 <?php
 
+/*
+
+    Author @BM786 Basit Ali Mohammad == worked on this page checkout summary and contact.
+        
+     */
+
+
+
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
