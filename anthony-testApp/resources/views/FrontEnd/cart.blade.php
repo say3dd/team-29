@@ -84,7 +84,11 @@
                 <p class="text-sm text-white">including VAT</p>
               </div>
             </div>
-            <button class="mt-6 w-full rounded-md bg-violet-600 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+            <form action="{{ route('checkout.summary') }}" method="GET">
+              <button type="submit" class="mt-6 w-full rounded-md bg-violet-600 py-1.5 font-medium text-blue-50 hover:bg-blue-600">
+                  Check out
+              </button>
+          </form>
           </div>
         </div>
       </div>
