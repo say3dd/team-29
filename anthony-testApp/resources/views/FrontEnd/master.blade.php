@@ -34,7 +34,7 @@
                     </label>
                     <nav class="navbar">
                         <a href="{{ route('index') }}">Home</a>
-                        <a href="{{ route('product') }}">Products</a>
+                        <a href="{{route('productspage.id', ['id' => 1])}}">Products</a>
                         <a href="{{ route('about') }}">About</a>
                         <a href="{{ route('contactUs') }}">Contact Us</a>
                         
@@ -78,7 +78,7 @@
                             Explore our curated selection and elevate your gaming journey to new heights.
                         </p>
                         </p>
-                        <a href="{{url('product')}}" class="view-laptops-btn">View Products</a>
+                        <a href="{{route('productspage.id', ['id' => 1])}}" class="view-laptops-btn">View Products</a>
                     </div>
                 </div>
 
@@ -136,7 +136,7 @@
                             <p>They can handle even the most demanding games with ease, and they're also great for other
                                 graphics-intensive tasks
                                 like video editing, 3D modelling and game development.</p>
-                            <a href="#" class="view-laptops-btn">View Products</a>
+                            <a href="{{route('productspage.id' ,['id' =>1]) }}" class="view-laptops-btn">View Products</a>
                         </div>
                         <div>
                             <img src="{{ asset('assets/images/asus-rog-launched-two-new-high-end.jpg') }}"
@@ -153,7 +153,7 @@
                     <div class="big-card">
                         <h1 class = "title-sellers">Our Laptops</h1>
                         <div class="title-line"></div> <!-- Add this line -->
-                        <div id="laptop-container">
+                        <div id="best-seller-container">
                             @foreach ($laptops as $laptop)
                                 <div class="laptop">
                                     <div class="specs-container">
@@ -173,8 +173,6 @@
                             @endforeach
                     </div>
                 </section>
-
-                
                     <footer>
                         @include('footer')
                     </footer>
