@@ -1,5 +1,5 @@
 <?php
-
+//@noramknarf (Francis Moran) - Everything barring tweaks from others (As mentioned in the comment in contents())
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class BasketController extends Controller
 {
-    // Below is a possibly hacky solution to grabbing the user id from auth. Not sure if this still needs to be here, may move out of the auth folder
+    // Below is a possibly hacky solution to grabbing the user id from auth. 
 
     public function contents(){
         $userID = Auth::id();
