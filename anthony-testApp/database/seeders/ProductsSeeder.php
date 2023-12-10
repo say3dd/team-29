@@ -1,5 +1,12 @@
 <?php
 
+
+/*
+
+@say3dd - Seeded the database with products for the website
+
+*/
+
 namespace Database\Seeders;
 
 use App\Models\Product;
