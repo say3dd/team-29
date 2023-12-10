@@ -1,4 +1,5 @@
 <!-- @KraeBM (Bilal Mohamed) worked on all the backend, JS and blade templating of this page , HTML code and html formatting has been done by @ElizavetaMikheeva  -->
+<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Products webpage using CSS.  -->
 <!DOCTYPE html>
 <html> 
 <head>
