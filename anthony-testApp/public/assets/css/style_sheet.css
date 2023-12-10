@@ -847,3 +847,11 @@ footer {
         height: 35px;
     }
 }
+.button_apply:hover{
+  cursor: pointer;
+  text-decoration: none;  
+}
+.button_reset:hover{
+    cursor: pointer;
+    text-decoration: none;  
+  }
