@@ -161,9 +161,14 @@
                                     </div>
                                     <a href="#" class="buy-product">Add to Basket</a>
                                 </div>
+                                
                             @endforeach
                     </div>
+                    
                 </section>
+
+
+
                     <footer>
                         @include('footer')
                     </footer>
