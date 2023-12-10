@@ -15,9 +15,63 @@ class ProductController extends Controller
         $products = ProductController::all();
         return view('product', compact('product'));
     }
+    /* this function is used to show the product page **/
+    public function pageUpdate(Request $request,$id){
+        /** Assigning the variables to the product coloums and making them distinct so theres no repetition */
+        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
+        $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();
+    /** Assigning laptop as all products before its populated so laptop is definine din all tables before filled.*/
+    
+    $laptops = Product::all();
+    
+    /**Assigning opartions for if there are no filters chosen or 
+     * if both filters are chosen - here both selected in the request */
+    $checkedBrands = $request-> get('brands',[]);
+    $checkedGPU = $request -> get('graphics',[]);
+    
+    /* if statements on whether both ticked or one ticked **/
+    if(!empty($checkedBrands)&& !empty($checkedGPU)){
+       $laptops =  Product::whereIn('brand',$checkedBrands)
+            -> whereIn('GPU',$checkedGPU)->get();
+    }
+    elseif(!empty($checkedBrands)){
+        $laptops = Product::whereIn('brand',$checkedBrands)->get();
+    }
+    elseif(!empty($checkedGPU)){
+        $laptops = Product::whereIn('GPU',$checkedGPU)->get();
+    }
+        /** The page update page works on making sure the products are displayed and each page works,  */
+    
 
+    switch($id){
+    case 1:
+    return view('Product_files.products', [
+        'laptops' => $laptops,
+        'brands' => $brands,
+        'graphics' => $graphics,
+    ]);
+    case 2:
+        return view('Product_files.products2', [
+            'laptops' => $laptops,
+            'brands' => $brands,
+            'graphics' => $graphics,
+        ]);
+        case 3:
+            return view('Product_files.products3', [
+                'laptops' => $laptops,
+                'brands' => $brands,
+                'graphics' => $graphics,
+            ]);
+            default: 
+             return redirect()->back();
+    }
+    }
     public function getInfo()
     {
+        /* had to restate these and put assign them within view since it returns an Undefined variable $brands/$graphics issue **/
+        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
+        $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();
+
         $laptopID = request()->input('laptopData'); //grabs specifically the section of the request that holds the laptop's ID
         if($laptopID != '' && Auth::id() != null){
             $product_data = DB::table('products')->where('product_id', $laptopID)->first();
@@ -27,20 +81,23 @@ class ProductController extends Controller
                 'product_id' => $laptopID,
                 'product_name' => $product_data->laptop_name,
                 'product_price' => $product_data->price,
-                'image_path' =>$product_data->image_path
+                'image_path' =>$product_data->image_path,
+                'RAM' => $product_data->RAM,
+                'GPU' => $product_data->GPU,
+                'processor' => $product_data->processor
             ]);
+            //I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual
        }
        
         $laptops = Product::all();
-        return view('Product_files.products', ['laptops' => $laptops, 'productToAdd' => $laptopID]);
+        return view('Product_files.products', ['laptops' => $laptops, 'productToAdd' => $laptopID,'brands' => $brands,'graphics'=> $graphics]);
     }
 
     // displays all the products
     public function index()
     {
         $laptops = Product::paginate(12);
-
-        return view('Product_files.products', ['laptops' => $laptops]);
+         return view('Product_files.product', compact('laptops'));
         
     }
 

@@ -56,6 +56,8 @@ Route::get('/test1', function () {
     Route::get('/product', [ProductController::class,'index'])->name('product');
     Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
     Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
+    Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');
+
 
     Route::get('/contact', [ContactController::class, 'showForm'])->middleware(['guest'])->name('contact.show');
     Route::post('/contact', [ContactController::class, 'submitForm'])->middleware(['guest'])->name('contact.submit');

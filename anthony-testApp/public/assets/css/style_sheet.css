@@ -358,7 +358,7 @@ input[type="checkbox"] {
 
 .button_container {
     position: absolute;
-    top: 230%;
+    top: 226%;
 }
 
 .button_to_switch_page {
@@ -370,7 +370,7 @@ input[type="checkbox"] {
     height: 30px;
     margin-right: 20px;
     margin: 0 auto;
-    margin-top: 290%;
+    margin-top: 287%;
     font-family: "Noto Sans", sans-serif;
     border-radius: 0.8rem;
 }
