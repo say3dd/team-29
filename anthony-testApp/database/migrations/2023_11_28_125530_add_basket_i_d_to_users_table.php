@@ -1,5 +1,5 @@
 <?php
-
+//@noramknarf (Francis Moran) - Everything (though this is all no longer necessary, only kept to avoid creating issues with DB for others)
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

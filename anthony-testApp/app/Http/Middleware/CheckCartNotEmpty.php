@@ -1,5 +1,10 @@
 <?php
 
+/*
+Author @BM786 Basit Ali Mohammad == worked alone on this page.
+
+*/
+
 namespace App\Http\Middleware;
 
 use Closure;

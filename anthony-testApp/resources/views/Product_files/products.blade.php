@@ -2,7 +2,7 @@
 @extends('productL')
 
 @section('productP')
-
+<!--@noramknarf (Francis Moran) - added functionality to "add to basket" buttons (see ProductController->getInfo()) -->
 @foreach($laptops as $laptop)
 <div class="laptop_all">
     <img class="image_all_laptop" src="{{ asset($laptop->image_path) }}">
