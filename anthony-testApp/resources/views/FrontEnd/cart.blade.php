@@ -1,7 +1,13 @@
 
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
+
+
+   
+=======
    <!--@noramknarf (Francis Moran) - implemented functionality to display each item in the user's basket with details + total cost & delete items from baskets (see basketController)-->
+>>>>>>> 3c3d45613c742fa92f75a8e2df1fa9029427fe0a
 <head>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <meta charset="UTF-8">
@@ -26,7 +32,6 @@
       <h1 class="mb-10 text-3xl font-bold fon text-white"> Shopping Cart</h1>
             <div class="mx-auto w-3/4 h-3/5 justify-center px-6 md:flex md:space-x-6 xl:px-0">
               <div class="rounded-lg md:w-2/3">
-                <!-- Start of product container -->
                 <!-- Products display -->
                 @foreach ($userBasket as $item)
                 <!-- Product item -->
@@ -37,14 +42,18 @@
                     <div class="mt-5 sm:mt-0">
                       <!-- Name of the product -->
                       <h2 class="text-xl underline font-bold text-white">{{$item->product_name}}</h2>
-                      <p class=" pt-4 text-lg text-white ">Price: £{{$item->product_price}}</p>
-                      <p class=" pt-4 text-lg text-white ">RAM: {{$item->RAM}} GB</p>
-                      <p class=" pt-4 text-lg text-white ">GPU: {{$item->GPU}}</p>
-                      <p class=" pt-4 text-lg text-white ">Processor: {{$item->processor}}</p>
+                      <!-- RAM of the product the product -->
+                      <p class=" pl-6 pt-1 text-sm text-white ">RAM: {{$item->RAM}} GB</p>
+                      <!-- Video Card of the product -->
+                      <p class=" pl-6 pt-1 text-sm text-white ">GPU: {{$item->GPU}}</p>
+                      <!-- Processor of the product -->
+                      <p class=" pl-6 pt-1 text-sm text-white ">Processor: {{$item->processor}}</p>
+                      <!-- Price of the product -->
+                      <p class=" pl-6 pt-1 text-sm text-white font-semibold ">Price: £{{$item->product_price}}</p>
                     </div>
                     <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                       <div class="flex items-center space-x-4">
-                        <!-- Price of the product -->
+
                         <!-- Button to delete the product -->
                         <form action='{{route('basket.remove')}}' method='post'>
                           @csrf
