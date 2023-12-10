@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+{{--
+
+Author @BM786 Basit Ali Mohammad == worked on this page.
+    
+ --}}   
+    
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
