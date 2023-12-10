@@ -1,4 +1,5 @@
 <!-- @KraeBM (Bilal Mohamed) worked on the blade templating of this website  -->
+<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Products webpage using CSS  -->
 @extends('productL')
 
 @section('productP')
