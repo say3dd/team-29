@@ -17,7 +17,7 @@ class ProductsSeeder extends Seeder
 
         Product::create([
             'laptop_name' => 'Dell Alienware x16 Gaming Laptop',
-            'price' => 3349.00,
+            'price' => 3579.00,
             'RAM' => 32,
             'processor' => '13th Gen Intel® Core™ i9-13980HX',
             'GPU' => 'GeForce RTX 4090',
@@ -28,18 +28,18 @@ class ProductsSeeder extends Seeder
 
 
         Product::create([
-            'laptop_name' => 'MSI Titan GT77 HX 13V',
+           'laptop_name' => 'MSI Titan GT77 HX 13V',
             'price' => 3362.99,
             'RAM' => 128,
-            'processor' => '13th Gen Intel® Core™ i9-13980HX Processor',
-            'GPU' => 'GeForce RTX 4090',
+           'processor' => '13th Gen Intel® Core™ i9-13980HX Processor',
+           'GPU' => 'GeForce RTX 4090',
             'image_path' => 'assets/laptop_images/MSI Titan GT77 HX 13V/msi_Titan_GT77_HX_13V.jpg',
             'brand' => 'MSI',
         ]);
 
         Product::create([
             'laptop_name' => 'Alienware M16',
-            'price' => 3362.99,
+            'price' => 2329.01,
             'RAM' => 32,
             'processor' => '13th Gen Intel® Core™ i7-13700HX Processor',
             'GPU' => 'GeForce RTX 4070',
@@ -49,7 +49,7 @@ class ProductsSeeder extends Seeder
 
         Product::create([
             'laptop_name' => 'Medion Erazer X20',
-            'price' => 3362.99,
+            'price' => 1899.00,
             'RAM' => 32,
             'processor' => '13th Intel® Core™ i9 13900HX Processor',
             'GPU' => 'GeForce RTX 4070 8GB',
@@ -69,7 +69,7 @@ class ProductsSeeder extends Seeder
 
         Product::create([
             'laptop_name' => 'Alienware M18',
-            'price' => 3362.99,
+            'price' => 2729.00,
             'RAM' => 32,
             'processor' => '13th Gen Intel® Core™ i7-13700HX Processor',
             'GPU' => 'GeForce RTX 4080',
@@ -147,15 +147,15 @@ class ProductsSeeder extends Seeder
             'brand' => 'Asus'
         ]);
 
-        Product::create([
-            'laptop_name' => 'Asus ROG Zephyrus Duo',
-            'price' => 4799.00,
-            'RAM' => 64,
-            'processor' => 'AMD Ryzen 9 7945HX',
-            'GPU' => 'GeForce RTX 4090',
-            'image_path' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg',
-            'brand' => 'Asus'
-        ]);
+        //Product::create([
+        //    'laptop_name' => 'Asus ROG Zephyrus Duo',
+        //    'price' => 4799.00,
+        //    'RAM' => 64,
+        //    'processor' => 'AMD Ryzen 9 7945HX',
+        //    'GPU' => 'GeForce RTX 4090',
+        //   'image_path' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg',
+        //    'brand' => 'Asus'
+        //]);
 
 
 

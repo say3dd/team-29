@@ -1,5 +1,6 @@
 <?php
 //@noramknarf (Francis Moran) - getInfo() function
+/* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */
 namespace App\Http\Controllers;
 
 use App\Models\Product;
@@ -12,7 +13,8 @@ class ProductController extends Controller
 {
     public function productList()
     {
-        $products = ProductController::all();
+        //mistake fixed
+        $products = Product::all();
         return view('product', compact('product'));
     }
     /* this function is used to show the product page **/

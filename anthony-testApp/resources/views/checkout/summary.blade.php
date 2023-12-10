@@ -1,3 +1,9 @@
+
+{{--
+Author @BM786 Basit Ali Mohammad == worked on this page.
+
+--}}
+
 <head>
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>

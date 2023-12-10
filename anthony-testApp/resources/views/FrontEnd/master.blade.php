@@ -42,6 +42,16 @@
 
                         <!--        Fixed the heading so that the login and register is included in the header           -->
 
+
+                        {{-- 
+                            /*
+                            Login, register and dashboard 
+                            mady by @AbuIsNotHer3 @BravoBoy2 == Abubakarsiddik Mohammed.
+
+                            Desgined by @AnthonyResuello
+                            */
+                            
+                            --}}
                         @if (Route::has('login'))
 
                             @auth
@@ -60,7 +70,7 @@
                         @endif
 
                         <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-                        <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket</a>
+                        <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i> Basket</a>
                         <!--Just for the record, idk what I'm doing with this ^ so feel free to clean it up -->
                     </nav>
                 <!--- End of Section  --> </section>
@@ -107,6 +117,7 @@
                          @foreach ($bestSellerLaptops as $laptop)
                             <div class="laptop">
                                 <div class="specs-container">
+                                    
                                     <img src="{{ asset($laptop->image_path) }}" alt="laptop">
                                     <h1>{{ $laptop->laptop_name }}</h1>
                                     <p>Processor: {{ $laptop->processor }}</p>
@@ -114,7 +125,11 @@
                                     <p>Graphics: {{ $laptop->GPU }}</p>
                                     <h3>£{{ $laptop->price }}</h3>
                                 </div>
-                                <a href="#" class="buy-product">Add to Basket</a>
+                                <form action='{{route('product.getInfo')}}' method='post'>
+                                    @csrf
+                                    <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
+                                    <button class="buy-product"> Add to Basket </button>
+                                </form>
                             </div>
                         @endforeach 
                     </div>
@@ -160,7 +175,11 @@
                                         <p>Graphics: {{ $laptop->GPU }}</p>
                                         <h3>£{{ $laptop->price }}</h3>
                                     </div>
-                                    <a href="#" class="buy-product">Add to Basket</a>
+                                    <form action='{{route('product.getInfo')}}' method='post'>
+                                        @csrf
+                                        <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
+                                        <button class="buy-product"> Add to Basket </button>
+                                    </form>
                                 </div>
                             @endforeach
                     </div>

@@ -1,5 +1,13 @@
 <?php
-//@noramknarf (Francis Moran) - route to product.getInfo() and basket routes.
+/*
+
+    Author @BM786 Basit Ali Mohammad == worked on this page checkout summary and contact.
+        @noramknarf (Francis Moran) - route to product.getInfo() and basket routes.
+     */
+
+
+
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
