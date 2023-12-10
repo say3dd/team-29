@@ -119,10 +119,10 @@
                     <h1 class = "title-sellers">Best Sellers Of The Week</h1>
                     <div class="title-line"></div> 
                     <div id="best-seller-container">
+                        <!-- @say3dd (Mohammed Miah) - Code for connecting to the databse and displaying best sellers -->
                          @foreach ($bestSellerLaptops as $laptop)
                             <div class="laptop">
                                 <div class="specs-container">
-                                    
                                     <img src="{{ asset($laptop->image_path) }}" alt="laptop">
                                     <h1>{{ $laptop->laptop_name }}</h1>
                                     <p>Processor: {{ $laptop->processor }}</p>
@@ -170,6 +170,7 @@
                         <h1 class = "title-sellers">Our Laptops</h1>
                         <div class="title-line"></div> <!-- Add this line -->
                         <div id="laptop-container">
+                            <!-- @say3dd - Code for displaying "Our Laptops" section -->
                             @foreach ($laptops as $laptop)
                                 <div class="laptop">
                                     <div class="specs-container">
