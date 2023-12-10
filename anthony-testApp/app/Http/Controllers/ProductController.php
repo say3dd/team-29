@@ -1,5 +1,5 @@
 <?php
-
+/* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
