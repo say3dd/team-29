@@ -19,7 +19,7 @@
 <div class="main">
     {{-- Section 1 starts here --}}
         <div class="background_shape1">
-            <div class="background_shape_1_2">  
+            <div class="background_shape_1_2">
             <div class="slideshow-container">
             <div class="slide">
                 <div class="mySlides">
@@ -40,25 +40,6 @@
                 <button class="previousSlide" onclick="plusDivs(-1)">&#10094;</button>
                 <button class="nextSlide" onclick="plusDivs(1)">&#10095;</button>
             </div>
-            <script>
-                var slideIndex = 1;
-                showDivs(slideIndex);
-
-                function plusDivs(n) {
-                    showDivs(slideIndex += n);
-                }
-
-                function showDivs(n) {
-                    var i;
-                    var x = document.getElementsByClassName("mySlides");
-                    if (n > x.length) { slideIndex = 1 }
-                    if (n < 1) { slideIndex = x.length }
-                    for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";
-                    }
-                    x[slideIndex - 1].style.display = "block";
-                }
-            </script>
             </div>
         </div>
         <div class="product_information">
@@ -139,7 +120,7 @@
                         Colour: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- Dark Metallic Moon <br>
                         <hr>
-                        
+
                         Camera: <br>
                         &nbsp;&nbsp;&nbsp;&nbsp;- 1080p at 30 fps FHD IR camera with Windows Hello support<br>
                         <hr>
@@ -208,18 +189,6 @@
 
         </div>
         </div>
-        <script>
-            // JavaScript functions to show/hide the modal
-            function openMessageBox() {
-                var modal = document.getElementById("myModal");
-                modal.style.display = "block";
-            }
-
-            function closeMessageBox() {
-                var modal = document.getElementById("myModal");
-                modal.style.display = "none";
-            }
-        </script>
         </div>
     {{-- Section 1 ends here --}}
     {{-- Section 2 ends here --}}
@@ -230,11 +199,11 @@
             <img  src="{{asset('assets/images_product/laptop_specification3.jpg')}}">
         </div>
         <div class="unique_features">
-            
+
                 <div class="unique_feature1">Micro-LED stadium lighting</div>
                 <div class="unique_feature2">Per-key lighting</div>
                 <div class="unique_feature3">AlienFX touchpad</div>
-            
+
         </div>
         <div class = "unique_features_content">
             <div class="unique_feature1_content">
@@ -311,7 +280,7 @@
         </div>
     {{-- Section 4 ends here --}}
     {{-- Section 5 begins here --}}
-    
+
 
         <div class="container_section5">
             <div class="title_related_products"> Related Products </div>
@@ -349,6 +318,37 @@
             </div>
         </div>
 </div>
+
+<script>
+    // JavaScript functions to show/hide the modal
+    function openMessageBox() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+    }
+
+    function closeMessageBox() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
 </body>
  <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
 @include('footer')
