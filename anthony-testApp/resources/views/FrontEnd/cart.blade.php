@@ -74,7 +74,7 @@
             <div class="mb-2 flex justify-between">
               <p class="text-white">Subtotal</p>
               <!-- Subtotal price (do sum of all products) -->
-              <p class="text-white">£{{$total}}</p>
+              <p class="text-white">£{{number_format($total,2)}}</p>
             </div>
             <!-- Shipping price (by default £4.99) -->
             <div class="flex justify-between">
@@ -86,7 +86,7 @@
               <p class="text-lg text-white font-bold">Total</p>
               <div>
                 <!-- Total (sum + shipping price) -->
-                <p class="mb-1 text-white text-lg font-bold">£{{$total += 4.99}}</p>
+                <p class="mb-1 text-white text-lg font-bold">£{{number_format($total += 4.99, 2)}}</p>
                 <p class="text-sm text-white">including VAT</p>
               </div>
             </div>
