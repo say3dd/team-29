@@ -467,10 +467,6 @@ footer {
 /*Properties for Responsive website (size: 1440px) */
 
 @media (max-width: 1490px) {
-    .button_container {
-        top: 247%;
-    }
-
     .button_sort {
         left: 83.5%;
     }
@@ -485,13 +481,28 @@ footer {
         margin-top: 20px;
         gap: 0rem;
     }
+
+    .filters {
+        width: 270px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .filters {
+        left: 68%;
+        top: 72%;
+    }
+
+    .button_apply {
+        font-size: 1em;
+    }
+
+    .button_reset {
+        font-size: 1em;
+    }
 }
 
 @media (max-width: 1400px) {
-    .button_container {
-        top: 247%;
-    }
-
     .nav-header {
         padding: 1.3rem 5%;
     }
@@ -502,8 +513,27 @@ footer {
         margin-top: 20px;
         gap: 0rem;
     }
+
+    .button_apply {
+        font-size: 0.95em;
+    }
+
+    .button_reset {
+        font-size: 0.95em;
+    }
+
+    .filters {
+        width: 245px;
+        left: 69%;
+        top: 75%;
+    }
 }
 
+@media (max-width: 1180px) {
+    .filters {
+        left: 66%;
+    }
+}
 /*Properties for Responsive website (size: 1024px) */
 
 @media (max-width: 1024px) {
@@ -590,6 +620,22 @@ footer {
         height: 35px;
     }
 
+    .filters {
+        width: 220px;
+        left: 65%;
+        top: 66%;
+    }
+
+    .button_apply {
+        font-size: 0.9em;
+        margin-left: 18px;
+    }
+
+    .button_reset {
+        font-size: 0.9em;
+        margin-left: 23px;
+    }
+
     .image_all_laptop {
         width: 150px;
         height: 130px;
@@ -601,10 +647,6 @@ footer {
 
     .laptop_all {
         width: 22%; /* Adjust width to fit the container */
-    }
-
-    .button_container {
-        top: 296%;
     }
 
     .nav-header {
@@ -655,6 +697,12 @@ footer {
         height: 20px;
     }
 
+    .filters {
+        width: 220px;
+        left: 63.5%;
+        top: 58%;
+    }
+
     .image_all_laptop {
         width: 135px;
         height: 115px;
@@ -671,10 +719,6 @@ footer {
 
     .price {
         font-size: 1.1rem;
-    }
-
-    .button_container {
-        top: 276%;
     }
 }
 
@@ -706,6 +750,11 @@ footer {
     .image_filter {
         width: 14px;
         height: 18px;
+    }
+
+    .filters {
+        left: 56.5%;
+        top: 57%;
     }
 }
 
@@ -790,8 +839,9 @@ footer {
         font-size: 0.9rem;
     }
 
-    .button_container {
-        top: 390%;
+    .filters {
+        left: 44%;
+        top: 45%;
     }
 
     .footer-links {
@@ -863,13 +913,41 @@ footer {
         width: 30px;
         height: 30px;
     }
+}
 
-    .button_container {
-        top: 688%;
+@media (max-width: 426px) {
+    .filters {
+        width: 190px;
+        left: 42%;
+        top: 43%;
+    }
+
+    .button_apply {
+        font-size: 0.75em;
+        margin-left: 14px;
+    }
+
+    .button_reset {
+        font-size: 0.75em;
+        margin-left: 18px;
+    }
+}
+
+@media (max-width: 376px) {
+    .filters {
+        width: 190px;
+        left: 32%;
+        top: 39%;
     }
 }
 
 @media (max-width: 320px) {
+    .filters {
+        width: 190px;
+        left: 23%;
+        top: 38%;
+    }
+
     .path {
         font-size: 0.55rem;
         margin-left: 15px;
