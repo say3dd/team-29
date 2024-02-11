@@ -4,7 +4,7 @@
      button work, so the user could see all of the specifications about a praticular product  -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product</title>
     <link rel="stylesheet" href="{{asset('assets/css/style_sheet_product_webpage_template.css')}}">
@@ -191,46 +191,7 @@
         </div>
         </div>
     {{-- Section 1 ends here --}}
-    {{-- Section 2 ends here --}}
-    <div class = "container_section2">
-        <div class="features_images">
-            <img  src="{{asset('assets/images_product/laptop_specification1.jpg')}}">
-            <img  src="{{asset('assets/images_product/laptop_specification2.jpg')}}">
-            <img  src="{{asset('assets/images_product/laptop_specification3.jpg')}}">
-        </div>
-        <div class="unique_features">
 
-                <div class="unique_feature1">Micro-LED stadium lighting</div>
-                <div class="unique_feature2">Per-key lighting</div>
-                <div class="unique_feature3">AlienFX touchpad</div>
-
-        </div>
-        <div class = "unique_features_content">
-            <div class="unique_feature1_content">
-                Express yourself with bold,
-                iconic lightning featuring 100
-                micro-LED lights for an
-                instantly captivating, bright
-                and fluid look.
-            </div>
-            <div class="unique_feature2_content">
-                Customise your gaming
-                experience with nearly infinite
-                colour effects and
-                combinations via the
-                Alienware Command Center.
-            </div>
-            <div class="unique_feature3_content">
-                Our multi-touch AlienFX
-                touchpad with integrated
-                scrolling and customisable
-                lighting is back, and 15.5%
-                larger in area than the x15’s
-                touchpad.
-            </div>
-        </div>
-    </div>
-    {{-- Section 2 ends here --}}
     {{-- Section 3 begins here --}}
         <div class="container_section3">
             <p class="unique_feature_title_title">
@@ -279,9 +240,8 @@
             </p>
         </div>
     {{-- Section 4 ends here --}}
+
     {{-- Section 5 begins here --}}
-
-
         <div class="container_section5">
             <div class="title_related_products"> Related Products </div>
             <div class="laptop1">
