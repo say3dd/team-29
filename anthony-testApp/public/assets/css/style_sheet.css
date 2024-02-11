@@ -129,16 +129,22 @@ h4 {
     margin-top: 2%;
     border-radius: 2rem;
     padding: 0.27em;
-    padding-top: 42px;
-    padding-bottom: 250px;
+    padding-top: 1%;
+    padding-bottom: 60px;
+}
+
+.container_for_path_buttons {
+    margin-bottom: 0%;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /*Path*/
 
 .path {
-    position: absolute;
-    top: 64%;
-    left: 13%;
+    margin-left: 2%;
     font-size: 0.9rem;
     font-weight: lighter;
     text-decoration: underline;
@@ -165,12 +171,11 @@ h4 {
     width: 40px;
     height: 40px;
     margin-right: 20px;
-    left: 87%;
-    top: 62%;
+    left: 86.5%;
     font-family: "Noto Sans", sans-serif;
-    margin-top: 18px;
     border-radius: 1rem;
-    margin-left: 3px;
+    margin-left: 5px;
+    margin-top: 0.2%;
     transition: background-color 0.3s ease;
 }
 
@@ -187,11 +192,10 @@ h4 {
     font-size: 1em;
     width: 40px;
     height: 40px;
-    margin-right: 20px;
-    left: 84.5%;
-    top: 62%;
+    margin-right: 25px;
+    left: 84%;
     font-family: "Noto Sans", sans-serif;
-    margin-top: 18px;
+    margin-top: 0.2%;
     border-radius: 1rem;
 }
 
@@ -229,7 +233,7 @@ li {
     background-color: #1e0431;
     border-radius: 2rem;
     left: 70%;
-    top: 68.3%;
+    top: 69.3%;
     padding-bottom: 60px;
 }
 
@@ -313,7 +317,7 @@ input[type="checkbox"] {
     font-weight: lighter;
     font-family: "Noto Sans", sans-serif;
     width: 17%; /* Adjust width to fit the container */
-    margin-top: 30px;
+    margin-top: 2%;
 }
 
 .laptop_all_text a:link {
@@ -358,8 +362,17 @@ input[type="checkbox"] {
 /*Properties for the buttons that are used to switch between the pages */
 
 .button_container {
-    position: absolute;
-    top: 226%;
+    display: flexbox;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.laptops_container {
+    width: 100%;
+    margin-top: 100px;
 }
 
 .button_to_switch_page {
@@ -371,7 +384,6 @@ input[type="checkbox"] {
     height: 30px;
     margin-right: 20px;
     margin: 0 auto;
-    margin-top: 287%;
     font-family: "Noto Sans", sans-serif;
     border-radius: 0.8rem;
 }
@@ -454,21 +466,28 @@ footer {
 
 /*Properties for Responsive website (size: 1440px) */
 
-@media (max-width: 1440px) {
+@media (max-width: 1490px) {
+    .button_container {
+        top: 247%;
+    }
+
     .button_sort {
-        margin-top: 2%;
-        left: 83%;
+        left: 83.5%;
     }
 
-    .button_filter {
-        margin-top: 2%;
-        left: 86%;
+    .nav-header {
+        padding: 1.3rem 5%;
     }
-
-    .path {
-        margin-top: 1.5%;
+    .footer-links {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 20px;
+        gap: 0rem;
     }
+}
 
+@media (max-width: 1400px) {
     .button_container {
         top: 247%;
     }
@@ -559,19 +578,13 @@ footer {
         margin-top: 4%;
     }
 
-    .path {
-        margin-top: -2%;
-    }
-
     .button_sort {
-        margin-top: -1%;
-        left: 81%;
+        left: 81.5%;
         width: 35px;
         height: 35px;
     }
 
     .button_filter {
-        margin-top: -1%;
         left: 85%;
         width: 35px;
         height: 35px;
@@ -599,7 +612,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 974px) {
     .laptop_title1 {
         font-size: 1.6em;
     }
@@ -617,18 +630,16 @@ footer {
     }
 
     .path {
-        margin-top: -13%;
+        font-size: 0.8rem;
     }
 
     .button_sort {
-        margin-top: -12%;
         left: 79.5%;
         width: 35px;
         height: 35px;
     }
 
     .button_filter {
-        margin-top: -12%;
         left: 84%;
         width: 35px;
         height: 35px;
@@ -667,7 +678,38 @@ footer {
     }
 }
 
-@media (max-width: 445px) {
+@media (max-width: 768px) {
+    .container_for_path_buttons {
+        padding-top: 1%;
+    }
+
+    .button_filter {
+        left: 84%;
+        width: 28px;
+    }
+
+    .button_sort {
+        left: 80%;
+        width: 28px;
+    }
+
+    .image_all_laptop {
+        width: 115px;
+        height: 105px;
+    }
+
+    .image_sort {
+        width: 14px;
+        height: 18px;
+    }
+
+    .image_filter {
+        width: 14px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 500px) {
     .title_shape {
         margin-left: 2.5%;
         width: 93%;
@@ -692,7 +734,7 @@ footer {
         margin-left: 3.5%;
         margin-right: 5%;
         margin-top: 13%;
-        padding-bottom: 180px;
+        padding-bottom: 50px;
     }
 
     .laptop_all {
@@ -706,18 +748,20 @@ footer {
     }
 
     .image_all_laptop {
-        width: 118px;
-        height: 98px;
+        width: 125px;
+        height: 105px;
     }
 
     .price {
         font-size: 1.1rem;
     }
 
+    .container_for_path_buttons {
+        padding-top: 1%;
+    }
+
     .path {
-        margin-top: -45%;
-        left: 10.5%;
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
 
     .image_sort {
@@ -731,14 +775,12 @@ footer {
     }
 
     .button_sort {
-        margin-top: -43%;
-        left: 79%;
+        left: 81%;
         width: 30px;
         height: 30px;
     }
 
     .button_filter {
-        margin-top: -43%;
         left: 87%;
         width: 30px;
         height: 30px;
@@ -797,7 +839,6 @@ footer {
     }
 
     .path {
-        margin-top: -62%;
         font-size: 0.65rem;
     }
 
@@ -812,14 +853,12 @@ footer {
     }
 
     .button_sort {
-        margin-top: -60%;
         left: 76%;
         width: 30px;
         height: 30px;
     }
 
     .button_filter {
-        margin-top: -60%;
         left: 84%;
         width: 30px;
         height: 30px;
@@ -832,21 +871,20 @@ footer {
 
 @media (max-width: 320px) {
     .path {
-        margin-top: -74%;
         font-size: 0.55rem;
+        margin-left: 15px;
     }
+
     .button_sort {
-        margin-top: -72%;
-        left: 70%;
-        width: 35px;
-        height: 35px;
+        left: 72%;
+        width: 30px;
+        height: 30px;
     }
 
     .button_filter {
-        margin-top: -72%;
         left: 81%;
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
 }
 .button_apply:hover {
