@@ -1,5 +1,11 @@
 <?php
 //@noramknarf (Francis Moran) - rigged up the logic in showSummary & got the redirect working in placeOrder
+
+/*
+Author @BM786 Basit Ali Mohammad == worked on this page.
+
+*/
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

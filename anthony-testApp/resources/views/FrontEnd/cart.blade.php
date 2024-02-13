@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html>
 
+<!--@noramknarf (Francis Moran) - implemented functionality to display each item in the user's basket with details + total cost & delete items from baskets (see basketController)-->
+<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the basket using Tailwind  -->
 
-   
 <head>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <meta charset="UTF-8">
@@ -38,11 +39,14 @@
                     <div class="mt-5 sm:mt-0">
                       <!-- Name of the product -->
                       <h2 class="text-xl underline font-bold text-white">{{$item->product_name}}</h2>
+                      <!-- RAM of the product the product -->
+                      <p class=" pl-6 pt-1 text-sm text-white ">RAM: {{$item->RAM}} GB</p>
+                      <!-- Video Card of the product -->
+                      <p class=" pl-6 pt-1 text-sm text-white ">GPU: {{$item->GPU}}</p>
+                      <!-- Processor of the product -->
+                      <p class=" pl-6 pt-1 text-sm text-white ">Processor: {{$item->processor}}</p>
                       <!-- Price of the product -->
-                      <p class=" pt-4 text-lg text-white ">Price: £{{$item->product_price}}</p>
-                      <p class=" pt-4 text-lg text-white ">RAM: {{$item->RAM}} GB</p>
-                      <p class=" pt-4 text-lg text-white ">GPU: {{$item->GPU}}</p>
-                      <p class=" pt-4 text-lg text-white ">Processor: {{$item->processor}}</p>
+                      <p class=" pl-6 pt-1 text-sm text-white font-semibold ">Price: £{{$item->product_price}}</p>
                     </div>
                     <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                       <div class="flex items-center space-x-4">
