@@ -5,6 +5,14 @@
       <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+<<<<<<< HEAD
+      <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/tests/Feature" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/tests/Unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+=======
       <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/tests/Feature" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/tests/Unit" isTestSource="true" />
@@ -121,6 +129,7 @@
       <excludeFolder url="file://$MODULE_DIR$/anthony-testApp/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/anthony-testApp/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/anthony-testApp/vendor/webmozart/assert" />
+>>>>>>> dc442e08df7241f3ee5304990d967cbbafc0d790
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

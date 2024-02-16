@@ -35,12 +35,11 @@
 <body>
     <h1>
         <div class="title_shape">
-            <img src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" class = "title_image">
-            <div class="title_shape_text"></div>
-            <p class = "laptop_title1" style="position: absolute; top: 34%; color: white; text-align: center; left: 5%; ">
+            <img class = "title_image" style="im" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
+            <p class = "laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">
                 GAMING LAPTOPS
             </p>
-            <p class = "title_content" style="position: absolute; top: 44%; color: white; text-align: left; left: 5%; ">
+            <p class = "title_content" style="position: absolute; top: 43%; color: white; text-align: left; left: 5%; ">
                 The most portable and powerful laptops for gamers,<br>
                 creators, and professionals
             </p>
@@ -50,8 +49,9 @@
     </h1>
     <h2>
         <!-- This is the code for the layout of product container - where all the product will be shown -->
-        <div class="background_shape6">
-            <p class = "path" >
+<div class="background_shape6">
+    <section class = "container_for_path_buttons">
+        <p class = "path" >
             >> Home >>
             Products >> Gaming
             Laptops
@@ -62,13 +62,16 @@
         <button class="button_filter" id = "filter-button">
             <img class = "image_filter" src="{{asset('assets/images_product/filter.png')}}" alt="" >
         </button>
-        <!-- This is the code for the filter of products , linked to the database-->
+    </section>
+        <!-- This is the code for the filter of products , linked to the database one is for the brands other is for graphics-->
     <div id="filter-container" class="filters">
         <ul class="filters__list">
             <form action="{{URL::current()}}" method="GET">
                 <li>
                     <p style = "text-decoration: underline"> Brand: </p><br>
                     </li>
+                    <!-- for each brand/graphics, it assigns the checked area as empty, once filled with the brands/graphics
+                         it selects the item and shows which is needed by its id, name and value. Also has an if statement on whether brand/graphics  is there and checkbrands is checked -->
                 @foreach ($brands as $brand)  
                 @php 
                 $checkedbrands = [];
@@ -114,13 +117,13 @@
 
 
 <script>
-/*Code for the submit button - works by assinging variabels with the id
+/*Code for the submit button - works by assaigning variables with the id
  and making it so if the filter is active, 
 add those selected and when filled and enter is pressed run the funtion */
 var button_filter = document.getElementById("filter-button");
 var container = document.getElementById("filter-container");
 var input = document.querySelectorAll("input");
-
+/* to make the apply button functionable **/
 button_filter.onclick = function (e) {
   e.stopPropagation();
   if (container.classList.contains("filters--active")) {
@@ -147,24 +150,26 @@ function resetFilters() {
         checkbox.checked = false;
     });
 }
+/* Where the area in products will go, and the functionality of the buttons to change pages **/
 </script>
-      
-                @yield('productP')
 
+@yield('productP')
+<!-- Each button assigned an ID which presents a cetain page, leads to user interaction and less clunkiness in code. Also more fluid to use. -->
+            <section class = "laptops_container">
                 <div class="button_container">
                  <a href="{{route('productspage.id' ,['id' =>1]) }}">
-                       <button class="button_to_switch_page" style="margin-top: 19px;"> 1 </button> 
+                       <button class="button_to_switch_page" style="margin-top: 25px;"> 1 </button> 
                     </a>
                   <a href="{{route('productspage.id', ['id' =>2]) }}" >
-                     <button class="button_to_switch_page" style="margin-top: 200px;"> 2 </button>
+                     <button class="button_to_switch_page" style="margin-top: 25px;"> 2 </button>
                   </a>
                    <a href="{{route('productspage.id', ['id'=> 3]) }}" >
-                    <button class="button_to_switch_page" style="margin-top: 19px;"> 3 </button>
+                    <button class="button_to_switch_page" style="margin-top: 25px;"> 3 </button>
                    </a>
                 </div>
-               
-            </div>
+            </section>    
     </h2>
+</div>
 </body>
 <footer>
      <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
