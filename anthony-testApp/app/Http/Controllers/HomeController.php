@@ -37,6 +37,6 @@ class HomeController extends Controller
     public function home(){
         return view('FrontEnd.master');
     }
-
+//a commit test from Bilal's Laptop
 
 }
