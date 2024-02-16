@@ -1,3 +1,5 @@
+{{-- Author @BravoBoy2 @AbuIsNotHer3 = Abubakarsiddik Mohammed --}}
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -12,6 +14,12 @@
                     {{ __("You're logged in!") }}
                 </div>
             </div>
+             {{-- code for to go home page --}}
+                    <div class="home_buton" style="padding: 5px; margin: 5px;">
+                        <div class="p-2 m-2 w-16 rounded bg-blue-600 hover:active:transition-colors ">
+                        <a class= "text-center align-middle text-white" href="{{route('index')}}">Home</a>
+                        </div>
+                    </div>
         </div>
     </div>
 </x-app-layout>

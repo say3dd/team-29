@@ -1,13 +1,19 @@
+/*    
+  _______________________________    Created and designed the  Homepage (CSS)  of the webiste by @AnthonyResuello (Anthony Resuello) _______________________________________
+ 
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 /* Define Color Variables */
-
-   /* Purple -primary-color: #4E008B;        */
-   /* Light Purple with Opacity --secondary-color: #9500ff83;   */
-   /* Accent Color  --accent-color: #A634FF;  */
-   /* Text Color   --text-color: white; */
-   /* Shadow Color    --shadow-color: rgba(0, 0, 0, 0.3);*/
-
+:root {
+    --primary-color: #4E008B;         /* Purple */
+    --secondary-color: #9500ff83;     /* Light Purple with Opacity */
+    --accent-color: #A634FF;          /* Accent Color */
+    --text-color: white;              /* Text Color */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Shadow Color */
+  }
+  
 
 * {
   padding: 0;
@@ -81,7 +87,7 @@ p {
   font-size: 1.4rem;
   color: white;
   text-decoration: none;
-  margin-left: 2.5rem;
+  margin-left: 1.5rem;
   font-weight: bold;
 }
 
@@ -119,7 +125,7 @@ header {
 /*                                   HERO SECTION                                    */
 #hero {
   width: 100%;
-  height: 87vh;
+  height: 86vh;
 }
 
 .container {
@@ -216,6 +222,15 @@ header {
   gap:1rem;
   
 }
+#laptop-container {
+  display: flex;
+  justify-content: center;
+  max-width: 70%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  gap: 1rem;
+}
+
 
 .specs-container {
 
@@ -262,22 +277,24 @@ header {
   background-color:#4E008B;
   padding: 20px;
   box-shadow: 0 10px 20px #000000;
-  border-radius: 5%;
+  border-radius: 15px;
 
 }
 
 .laptop p {
   text-align: center;
+  font-weight: 100;
 }
 
 
 .laptop h1{
-  font-size: 1.6rem;
-  font-weight: bolder;
+  font-size: 1.3rem;
+  font-weight: 900;
 }
 
 .laptop img {
   width: 15rem;
+  height: 15rem;
   border-radius: 10%;
   margin-bottom: 20px;
   overflow: hidden;
@@ -326,6 +343,7 @@ font-size: 1.2rem;
   text-decoration: none;
   margin-top: 1.2rem;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  cursor:pointer;
   
 }
 
@@ -485,7 +503,40 @@ gap: 15rem;
  margin-bottom: 0.5rem;
 }
 
+@media(max-width: 1490px ) {
+  #laptop-container {
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+  }
 
+  /* Adjust the width to achieve a 4x4 grid */
+  #laptop-container > div {
+    flex: 1 0 calc(25% - 1rem); /* Each item takes up 25% of the container width with 1rem gap */
+  }
+  .box-card img {
+
+  }
+
+  
+#product-container {
+  margin: 5rem 14rem;
+  background-color:#4E008B;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 50px;
+ 
+}
+
+
+.box-card {
+
+  align-items: center;
+  margin: auto;
+  padding: 5rem;
+}
+
+  
+  
+}
 
 
 
@@ -543,10 +594,11 @@ gap: 15rem;
 
 #product-container {
   margin: 5rem 3rem;
-  background-color: #9500ff83;
+  background-color:#4E008B;
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
   border-radius: 50px;
+
 }
 
 
@@ -593,6 +645,25 @@ gap: 15rem;
     margin-top: 20px;
   gap: 0rem;
     
+  }
+
+  .menu-icon {
+    display: inline-flex;
+  }
+
+  #check:checked ~ .menu-icon #menu {
+    display: none;
+  }
+  .menu-icon #close {
+    display: none;
+  }
+  .brand-images {
+    flex-direction: column; /* Stack images in a column on smaller screens */
+    align-items: center;
+  }
+
+  #check:checked ~ .menu-icon #close {
+    display: block;
   }
 
 
@@ -673,6 +744,15 @@ gap: 15rem;
     margin-bottom: 3rem;
     gap: 1rem;
   }
+  #laptop-container {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: center;
+    max-width: 70%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    gap: 1rem;
+  }
   }
 
 
@@ -725,7 +805,7 @@ gap: 15rem;
 /*            Product Section             */
 
 #product-container {
-  background-color: #9500ff83;
+  background-color:#4E008B;
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
   border-radius: 50px;
@@ -832,7 +912,7 @@ gap: 15rem;
   background-color:#4E008B;
   padding: 20px;
   box-shadow: 0 10px 20px #000000;
-  border-radius: 5%;
+  border-radius: 15px;
 }
 
 
@@ -869,6 +949,18 @@ font-size: 1.6rem;
 .view-laptops-btn{
   display: none;
 
+}
+
+
+
+
+.box-card img {
+  display: none;
+}
+
+.laptop img {
+  width: 12rem;
+  height: 12rem;
 }
 
 

@@ -1,5 +1,7 @@
 <?php
-
+/*
+mady by @AbuIsNotHer3 @BravoBoy2 == Abubakarsiddik Mohammed 
+*/
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
