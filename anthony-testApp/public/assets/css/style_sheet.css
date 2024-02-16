@@ -1,5 +1,3 @@
-/*  @ElizavetaMikheeva (Elizaveta Mikheeva) - created the CSS file for fomrating and styling  Products webpage */
-
 body {
     background-color: #120045;
     margin: 0;
@@ -60,9 +58,10 @@ h4 {
     font-size: 1.4rem;
     color: white;
     text-decoration: none;
-    margin-left: 1.5rem;
+    margin-left: 2.5rem;
     font-weight: bold;
 }
+
 #check {
     display: none;
 }
@@ -359,7 +358,7 @@ input[type="checkbox"] {
 
 .button_container {
     position: absolute;
-    top: 226%;
+    top: 230%;
 }
 
 .button_to_switch_page {
@@ -371,7 +370,7 @@ input[type="checkbox"] {
     height: 30px;
     margin-right: 20px;
     margin: 0 auto;
-    margin-top: 287%;
+    margin-top: 290%;
     font-family: "Noto Sans", sans-serif;
     border-radius: 0.8rem;
 }
@@ -456,17 +455,17 @@ footer {
 
 @media (max-width: 1440px) {
     .button_sort {
-        margin-top: 2%;
+        margin-top: 3%;
         left: 83%;
     }
 
     .button_filter {
-        margin-top: 2%;
+        margin-top: 3%;
         left: 86%;
     }
 
     .path {
-        margin-top: 1.5%;
+        margin-top: 3%;
     }
 
     .button_container {
@@ -560,18 +559,18 @@ footer {
     }
 
     .path {
-        margin-top: -2%;
+        margin-top: -1%;
     }
 
     .button_sort {
-        margin-top: -1%;
+        margin-top: 0%;
         left: 81%;
         width: 35px;
         height: 35px;
     }
 
     .button_filter {
-        margin-top: -1%;
+        margin-top: 0%;
         left: 85%;
         width: 35px;
         height: 35px;
@@ -598,7 +597,6 @@ footer {
         padding: 0.9rem;
     }
 }
-
 @media (max-width: 768px) {
     .laptop_title1 {
         font-size: 1.6em;
@@ -617,18 +615,18 @@ footer {
     }
 
     .path {
-        margin-top: -13%;
+        margin-top: -11%;
     }
 
     .button_sort {
-        margin-top: -12%;
+        margin-top: -10%;
         left: 79.5%;
         width: 35px;
         height: 35px;
     }
 
     .button_filter {
-        margin-top: -12%;
+        margin-top: -10%;
         left: 84%;
         width: 35px;
         height: 35px;
@@ -848,12 +846,4 @@ footer {
         width: 35px;
         height: 35px;
     }
-}
-.button_apply:hover {
-    cursor: pointer;
-    text-decoration: none;
-}
-.button_reset:hover {
-    cursor: pointer;
-    text-decoration: none;
 }
