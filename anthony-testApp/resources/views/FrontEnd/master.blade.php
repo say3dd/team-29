@@ -8,7 +8,7 @@
 
     @noramknarf (Francis Moran) - various minor bugfixes
 -->
-    <!DOCTYPE html>
+<!DOCTYPE html>
         <html lang="en">
 
         <head>
@@ -113,36 +113,10 @@
 
           <!-- Best seller prodcuts-->
           <section class= "main">
-            @yield('content')
-            <section id="best-seller-sction">
-                <div class="big-card">
-                    <h1 class = "title-sellers">Best Sellers Of The Week</h1>
-                    <div class="title-line"></div> 
-                    <div id="best-seller-container">
-                        <!-- @say3dd (Mohammed Miah) - Code for connecting to the databse and displaying best sellers -->
-                         @foreach ($bestSellerLaptops as $laptop)
-                            <div class="laptop">
-                                <div class="specs-container">
-                                    <img src="{{ asset($laptop->image_path) }}" alt="laptop">
-                                    <h1>{{ $laptop->laptop_name }}</h1>
-                                    <p>Processor: {{ $laptop->processor }}</p>
-                                    <p>RAM: {{ $laptop->RAM }}GB</p>
-                                    <p>Graphics: {{ $laptop->GPU }}</p>
-                                    <h3>£{{ $laptop->price }}</h3>
-                                </div>
-                                <form action='{{route('product.getInfo')}}' method='post'>
-                                    @csrf
-                                    <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
-                                    <button class="buy-product"> Add to Basket </button>
-                                </form>
-                            </div>
-                        @endforeach 
-                    </div>
-            </section>
 
-              <!-- Services Section -->
-              <section class="our-product-section">
-                <div id="product-container">
+      <!-- Services Section -->
+     <section class="our-product-section">
+                  <div id="product-container">
                     <div class="box-card">
                         <div class = "info">
                             <h1 class="section-heading">High-Performance Gaming Laptops</h1>
@@ -162,13 +136,80 @@
                 </div>
                 </div>
             </section>
+
+            
+   
+
+          
+            <section id="best-seller-sction">
+            
+                    <h1 class = "title-categories">Product Categories</h1>
+                    <div class="title-line-categories"></div> 
+                    <div id="category-container">
+                    
+                            <div class="Category-1">
+                          
+                                <img src="{{ asset('assets/images/AOC_27G2_PV_-FRONT-large.png') }}" alt="laptop1"> 
+                                
+                                <div class = "Category-1-bottom">
+                         
+                                 <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                                    <h1>Laptop</h1>
+                                 </a>
+                                </div>  
+                         
+                            </div>
+                          
+                            <div class="Category-1">
+                                <img src="{{ asset('assets/images/webprim_apexpro_tkl.png__1200x627_crop-fit_optimize_subsampling-2.png') }}" alt="laptop1"> 
+                                <div class = "Category-1-bottom">
+                                <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                                    <h1>Keyboard</h1></a>
+                                </div>  
+                         
+                            </div>
+                       
+                            <div class="Category-1">
+                                <img src="{{ asset('assets/images/pro-headset-gallery-1.png') }}" alt="laptop1"> 
+                                <div class = "Category-1-bottom">
+                                <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                                    <h1>Headset</h1></a>
+                                </div>  
+                         
+                            </div>
+                       
+                            <div class="Category-1">
+                                <img src="{{ asset('assets/images/a60b39dbd9168b865d64254d7d860d20.png') }}" alt="laptop1"> 
+                                <div class = "Category-1-bottom">
+                                <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                                    <h1>Mouse</h1></a>
+                                
+                                </div>  
+                         
+                            </div>
+                       
+                            <div class="Category-1">
+                                <img src="{{ asset('assets/images/h732.png') }}" alt="laptop1"> 
+                                <div class = "Category-1-bottom">
+                                <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                                    <h1>Laptop</h1></a>
+                                </div>  
+                         
+                        
+                       
+                     
+                    </div>
+            </section>
+
+
+
                 <!-- Our Product Section-->
             <section class= "main">
 
                 <section id="best-seller-sction">
                     <div class="big-card">
-                        <h1 class = "title-sellers">Our Laptops</h1>
-                        <div class="title-line"></div> <!-- Add this line -->
+                        <h1 class = "title-products">Best Sellers</h1>
+                        <div class="title-line-products"></div> <!-- Add this line -->
                         <div id="laptop-container">
                             <!-- @say3dd - Code for displaying "Our Laptops" section -->
                             @foreach ($laptops as $laptop)

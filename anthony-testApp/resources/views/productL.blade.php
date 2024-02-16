@@ -50,7 +50,8 @@
     <h2>
         <!-- This is the code for the layout of product container - where all the product will be shown -->
 <div class="background_shape6">
-            <p class = "path" >
+    <section class = "container_for_path_buttons">
+        <p class = "path" >
             >> Home >>
             Products >> Gaming
             Laptops
@@ -61,7 +62,7 @@
         <button class="button_filter" id = "filter-button">
             <img class = "image_filter" src="{{asset('assets/images_product/filter.png')}}" alt="" >
         </button>
-       
+    </section>
         <!-- This is the code for the filter of products , linked to the database one is for the brands other is for graphics-->
     <div id="filter-container" class="filters">
         <ul class="filters__list">
@@ -154,18 +155,19 @@ function resetFilters() {
 
 @yield('productP')
 <!-- Each button assigned an ID which presents a cetain page, leads to user interaction and less clunkiness in code. Also more fluid to use. -->
+            <section class = "laptops_container">
                 <div class="button_container">
                  <a href="{{route('productspage.id' ,['id' =>1]) }}">
-                       <button class="button_to_switch_page" style="margin-top: 19px;"> 1 </button> 
+                       <button class="button_to_switch_page" style="margin-top: 25px;"> 1 </button> 
                     </a>
                   <a href="{{route('productspage.id', ['id' =>2]) }}" >
-                     <button class="button_to_switch_page" style="margin-top: 200px;"> 2 </button>
+                     <button class="button_to_switch_page" style="margin-top: 25px;"> 2 </button>
                   </a>
                    <a href="{{route('productspage.id', ['id'=> 3]) }}" >
-                    <button class="button_to_switch_page" style="margin-top: 19px;"> 3 </button>
+                    <button class="button_to_switch_page" style="margin-top: 25px;"> 3 </button>
                    </a>
                 </div>
-                
+            </section>    
     </h2>
 </div>
 </body>
