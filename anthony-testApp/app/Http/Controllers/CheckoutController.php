@@ -24,8 +24,8 @@ class CheckoutController extends Controller
         foreach($userBasket as $item){
             $running_total += $item->product_price;
         }
-        //Copied this logic from the basket page, seems to work but I need some help getting the images working -F
-
+        //Copied this logic from the basket page, seems to work but may need tweaking later
+        $running_total += 5.00; //The 5.00 is the placeholder shipping cost as shown on the basket page
         return view('checkout.summary', ['userBasket' => $userBasket, 'total' => $running_total]);
     }
 
