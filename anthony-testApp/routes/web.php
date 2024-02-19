@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-route::get('/', [HomeController::class, 'home']) -> name('home');
+route::get('/', [HomeController::class, 'index']) -> name('index');
 route::get('/products_page', [ProductController::class, 'product']) ->  name('product');
 Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');
 
@@ -38,7 +38,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class,'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class,'destroy'])->name('profile.destroy');
     Route::get('/home', [HomeController::class,'index'])->name('home');
-   
 });
 
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
