@@ -32,6 +32,16 @@
                 <div class="rounded-lg md:w-2/3">
                   <!-- Products display -->
                   @foreach ($userBasket as $item)
+                  @php
+                    $count = 0
+                  @endphp
+                  @foreach ($userBasket as $tempItem)
+                  @if ($tempItem->product_name === $item->product_name)
+                    @php
+                    $count += 1
+                    @endphp
+                  @endif
+                @endforeach
                   <!-- Product item -->
                   <div class="justify-between mb-6 rounded-lg p-6 shadow-md  bg-violet-800 sm:flex sm:justify-start">
                     <!-- Image of the product -->
@@ -48,6 +58,8 @@
                         <p class=" pl-6 pt-1 text-sm text-white ">Processor: {{$item->processor}}</p>
                         <!-- Price of the product -->
                         <p class=" pl-6 pt-1 text-sm text-white font-semibold ">Price: £{{$item->product_price}}</p>
+                        <!--Number of this product in the basket-->
+                        <p class=" pl-6 pt-1 text-sm text-white ">Amount CLEAN UP AFTER TESTING: {{$count}}</p>
                       </div>
                       <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                         <div class="flex items-center space-x-4">
