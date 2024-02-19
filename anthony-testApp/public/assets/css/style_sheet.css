@@ -1,0 +1,975 @@
+/*  @ElizavetaMikheeva (Elizaveta Mikheeva) - created the CSS file for fomrating and styling  Products webpage */
+
+body {
+    background-color: #120045;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Noto Sans", sans-serif;
+}
+
+h1 {
+    font-family: "Noto Sans", sans-serif;
+}
+
+h2 {
+    font-family: "Noto Sans", sans-serif;
+}
+
+h3 {
+    font-family: "Noto Sans", sans-serif;
+}
+
+h4 {
+    font-family: "Noto Sans", sans-serif;
+}
+
+/* Navigation header styling */
+.nav-header {
+    font-size: 2rem;
+    top: 0;
+    left: 0;
+    padding: 1rem 10%;
+    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496));
+    backdrop-filter: blur(1rem);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.navbar-section {
+    position: relative; /* Set position to relative */
+    z-index: 2; /* Set a higher z-index to make sure it's above the image */
+    /* Add other styles for your navbar section */
+}
+
+/* Styling  span element */
+
+.logo img {
+    width: 15rem;
+    height: auto;
+    border-radius: 20px;
+    border: #4e008b solid 3px;
+}
+
+/* Styling for navigation links */
+.navbar a {
+    font-size: 1.4rem;
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: bold;
+}
+#check {
+    display: none;
+}
+.nav-bar .icons {
+    cursor: pointer;
+}
+
+.navbar a:hover {
+    color: rgb(115, 0, 255);
+    text-decoration: none;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 5%;
+    color: white;
+}
+
+/*Css for the AllProducts webapge*/
+
+/*Image on the top of the webpage*/
+
+.title_shape {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 3%;
+    width: 80%;
+    height: 380px;
+    background-color: transparent;
+    color: white;
+    border-radius: 2rem;
+    padding: 0.25em;
+}
+
+.title_image {
+    position: absolute;
+    border-radius: 2rem;
+    width: 99.5%;
+    height: 380px;
+}
+
+.laptop_title1 {
+    font-size: 1.8em;
+}
+
+.title_content {
+    font-size: 1.6em;
+}
+
+/*Container for showing the list of laptops*/
+
+.background_shape6 {
+    background-image: linear-gradient(#4e008b, #1e0431);
+    color: white;
+    margin: 0 auto; /* Center the container horizontally */
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Arrange items evenly within the container */
+    gap: 1rem;
+    margin-bottom: 10%;
+    margin-top: 2%;
+    border-radius: 2rem;
+    padding: 0.27em;
+    padding-top: 1%;
+    padding-bottom: 60px;
+}
+
+.container_for_path_buttons {
+    margin-bottom: 0%;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Path*/
+
+.path {
+    margin-left: 2%;
+    font-size: 0.9rem;
+    font-weight: lighter;
+    text-decoration: underline;
+    opacity: 0.7;
+}
+
+/*Css for Sort anf Filter buttons*/
+
+.image_sort {
+    width: 18px;
+    height: 22px;
+}
+
+.image_filter {
+    width: 18px;
+    height: 22px;
+}
+
+.button_filter {
+    position: absolute;
+    border: transparent;
+    background-color: #360060;
+    font-size: 1em;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    left: 86.5%;
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 1rem;
+    margin-left: 5px;
+    margin-top: 0.2%;
+    transition: background-color 0.3s ease;
+}
+
+.button_filter:hover {
+    background-color: rgba(115, 87, 146, 0.9);
+    text-decoration: underline;
+    color: white;
+}
+
+.button_sort {
+    position: absolute;
+    border: transparent;
+    background-color: #360060;
+    font-size: 1em;
+    width: 40px;
+    height: 40px;
+    margin-right: 25px;
+    left: 84%;
+    font-family: "Noto Sans", sans-serif;
+    margin-top: 0.2%;
+    border-radius: 1rem;
+}
+
+.button_sort:hover {
+    background-color: rgba(115, 87, 146, 0.9);
+    text-decoration: underline;
+    color: white;
+}
+
+/* Filtering Feature */
+ul {
+    list-style: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 0.5em;
+}
+
+.filters {
+    position: absolute;
+    width: 300px;
+    box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.3);
+    padding: 1.5em;
+    position: absolute;
+    background-color: #1e0431;
+    border-radius: 2rem;
+    left: 70%;
+    top: 69.3%;
+    padding-bottom: 60px;
+}
+
+.filters__list li {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    padding-bottom: 1em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.filtering_background {
+    width: 260px;
+    padding: 1.5em;
+    padding-top: 1em;
+    background-image: linear-gradient(
+        rgba(94, 32, 141, 0.6),
+        rgba(78, 0, 139, 0.6)
+    );
+    border-radius: 2rem;
+}
+
+.filters__list li:last-child {
+    padding-bottom: 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5em;
+    margin-left: 25px;
+}
+
+.filters:not(.filters--active) {
+    display: none;
+}
+
+.button_apply {
+    padding: 1em;
+    background: #5e208d;
+    border-color: #9000ff;
+    margin-top: 25px;
+    margin-left: 25px;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 1.2rem;
+}
+
+.button_apply:hover {
+    background-color: rgba(115, 87, 146, 0.9);
+    text-decoration: underline;
+    color: white;
+}
+
+.button_reset {
+    padding: 1em;
+    background: #5e208d;
+    border-color: #9000ff;
+    margin-top: 25px;
+    margin-left: 30px;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 1.2rem;
+}
+
+.button_reset:hover {
+    background-color: rgba(115, 87, 146, 0.9);
+    text-decoration: underline;
+    color: white;
+}
+
+/*Properties for showing the list of laptops */
+.laptop_all {
+    text-align: center;
+    background-color: #4e008b;
+    padding: 20px;
+    box-shadow: 0 10px 20px #000000;
+    border-radius: 2rem;
+    font-weight: lighter;
+    font-family: "Noto Sans", sans-serif;
+    width: 17%; /* Adjust width to fit the container */
+    margin-top: 2%;
+}
+
+.laptop_all_text a:link {
+    font-weight: bold;
+    font-size: 1.05rem;
+    color: white;
+}
+
+.image_all_laptop {
+    width: 190px;
+    height: 170px;
+    border-radius: 2rem;
+    margin: 0;
+    margin-bottom: 40px;
+    background-color: white;
+}
+
+.price {
+    font-size: 1.3rem;
+}
+
+/*Properties for the Basket button */
+
+.button_cart_laptop {
+    background-color: #300452;
+    font-size: 15px;
+    color: white;
+    border: 0.1rem solid #fff;
+    border-radius: 1rem;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.button_cart_laptop:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+/*Properties for the buttons that are used to switch between the pages */
+
+.button_container {
+    display: flexbox;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.laptops_container {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.button_to_switch_page {
+    background-color: #360060;
+    border: transparent;
+    color: white;
+    font-size: 1em;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    margin: 0 auto;
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 0.8rem;
+}
+
+.button_to_switch_page:hover {
+    background-color: rgba(115, 87, 146, 0.9);
+    text-decoration: underline;
+    color: white;
+}
+
+/* footer section */
+
+.footer_class {
+    top: 0%;
+}
+
+.footer-section {
+    background-color: #300452;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-section a {
+    color: #9000ff;
+}
+
+footer {
+    font-size: 1.2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+    gap: 15rem;
+}
+
+.footer-column {
+    text-align: left;
+    padding: 10px;
+}
+
+.footer-column h2 {
+    color: #fff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/*Properties for Responsive website (size: 1440px) */
+
+@media (max-width: 1490px) {
+    .button_sort {
+        left: 83.5%;
+    }
+
+    .nav-header {
+        padding: 1.3rem 5%;
+    }
+    .footer-links {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 20px;
+        gap: 0rem;
+    }
+
+    .filters {
+        width: 270px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .filters {
+        left: 68%;
+        top: 72%;
+    }
+
+    .button_apply {
+        font-size: 1em;
+    }
+
+    .button_reset {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 1400px) {
+    .nav-header {
+        padding: 1.3rem 5%;
+    }
+    .footer-links {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 20px;
+        gap: 0rem;
+    }
+
+    .button_apply {
+        font-size: 0.95em;
+    }
+
+    .button_reset {
+        font-size: 0.95em;
+    }
+
+    .filters {
+        width: 245px;
+        left: 69%;
+        top: 75%;
+    }
+}
+
+@media (max-width: 1180px) {
+    .filters {
+        left: 66%;
+    }
+}
+/*Properties for Responsive website (size: 1024px) */
+
+@media (max-width: 1024px) {
+    .menu-icon {
+        display: inline-flex;
+    }
+
+    #check:checked ~ .menu-icon #menu {
+        display: none;
+    }
+    .menu-icon #close {
+        display: none;
+    }
+    .brand-images {
+        flex-direction: column; /* Stack images in a column on smaller screens */
+        align-items: center;
+    }
+
+    #check:checked ~ .menu-icon #close {
+        display: block;
+    }
+    .title-line {
+        width: 100%; /* Set the line to 100% width on mobile */
+    }
+
+    .big-card {
+        margin: 2rem 5%; /* Adjust margin for better spacing on mobile */
+    }
+
+    .laptop {
+        flex-basis: 90%; /* Set the flex basis to 100% for full width on mobile */
+        margin: 20px 0; /* Adjust margin for better spacing */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: blueviolet;
+        z-index: -1;
+        transition: 0.3s ease;
+        overflow: hidden;
+    }
+
+    #check:checked ~ .navbar {
+        height: 19rem;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1.5rem 0;
+        text-align: center;
+        transition: 0.3s ease;
+    }
+
+    .nav-header {
+        padding: 1.3rem 5%;
+    }
+    .title_shape {
+        width: 80%;
+        height: 320px;
+    }
+
+    .title_image {
+        width: 99.5%;
+        height: 320px;
+    }
+
+    .background_shape6 {
+        margin-top: 4%;
+    }
+
+    .button_sort {
+        left: 81.5%;
+        width: 35px;
+        height: 35px;
+    }
+
+    .button_filter {
+        left: 85%;
+        width: 35px;
+        height: 35px;
+    }
+
+    .filters {
+        width: 220px;
+        left: 65%;
+        top: 66%;
+    }
+
+    .button_apply {
+        font-size: 0.9em;
+        margin-left: 18px;
+    }
+
+    .button_reset {
+        font-size: 0.9em;
+        margin-left: 23px;
+    }
+
+    .image_all_laptop {
+        width: 150px;
+        height: 130px;
+    }
+
+    .laptop_all_text a:link {
+        font-size: 1rem;
+    }
+
+    .laptop_all {
+        width: 22%; /* Adjust width to fit the container */
+    }
+
+    .nav-header {
+        padding: 0.9rem;
+    }
+}
+
+@media (max-width: 974px) {
+    .laptop_title1 {
+        font-size: 1.6em;
+    }
+
+    .title_shape {
+        height: 260px;
+    }
+
+    .title_image {
+        height: 260px;
+    }
+
+    .title_content {
+        font-size: 1.3em;
+    }
+
+    .path {
+        font-size: 0.8rem;
+    }
+
+    .button_sort {
+        left: 79.5%;
+        width: 35px;
+        height: 35px;
+    }
+
+    .button_filter {
+        left: 84%;
+        width: 35px;
+        height: 35px;
+    }
+
+    .image_sort {
+        width: 16px;
+        height: 20px;
+    }
+
+    .image_filter {
+        width: 16px;
+        height: 20px;
+    }
+
+    .filters {
+        width: 220px;
+        left: 63.5%;
+        top: 58%;
+    }
+
+    .image_all_laptop {
+        width: 135px;
+        height: 115px;
+        margin-bottom: 20px;
+    }
+
+    .laptop_all_text a:link {
+        font-size: 0.95rem;
+    }
+
+    .laptop_all {
+        width: 22%; /* Adjust width to fit the container */
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container_for_path_buttons {
+        padding-top: 1%;
+    }
+
+    .button_filter {
+        left: 84%;
+        width: 28px;
+    }
+
+    .button_sort {
+        left: 80%;
+        width: 28px;
+    }
+
+    .image_all_laptop {
+        width: 115px;
+        height: 105px;
+    }
+
+    .image_sort {
+        width: 14px;
+        height: 18px;
+    }
+
+    .image_filter {
+        width: 14px;
+        height: 18px;
+    }
+
+    .filters {
+        left: 56.5%;
+        top: 57%;
+    }
+}
+
+@media (max-width: 500px) {
+    .title_shape {
+        margin-left: 2.5%;
+        width: 93%;
+        height: 140px;
+    }
+
+    .title_image {
+        height: 160px;
+    }
+
+    .laptop_title1 {
+        font-size: 1.1em;
+    }
+
+    .title_content {
+        margin-top: 25px;
+        font-size: 0.9em;
+    }
+
+    .background_shape6 {
+        width: 92%;
+        margin-left: 3.5%;
+        margin-right: 5%;
+        margin-top: 13%;
+        padding-bottom: 50px;
+    }
+
+    .laptop_all {
+        width: 32%; /* Adjust width to fit the container */
+    }
+
+    .laptop_all_text a:link {
+        font-weight: bold;
+        font-size: 1.05rem;
+        color: white;
+    }
+
+    .image_all_laptop {
+        width: 125px;
+        height: 105px;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+
+    .container_for_path_buttons {
+        padding-top: 1%;
+    }
+
+    .path {
+        font-size: 0.75rem;
+    }
+
+    .image_sort {
+        width: 14px;
+        height: 18px;
+    }
+
+    .image_filter {
+        width: 14px;
+        height: 18px;
+    }
+
+    .button_sort {
+        left: 81%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .button_filter {
+        left: 87%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .laptop_all_text a:link {
+        font-size: 0.9rem;
+    }
+
+    .filters {
+        left: 44%;
+        top: 45%;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 20px;
+        gap: 0rem;
+    }
+}
+
+@media (max-width: 385px) {
+    .title_shape {
+        width: 90%;
+        height: 130px;
+        left: 1%;
+    }
+
+    .background_shape6 {
+        width: 88%;
+        margin-left: 5%;
+        margin-top: 7%;
+    }
+
+    .title_image {
+        height: 130px;
+    }
+
+    .laptop_title1 {
+        font-size: 0.8em;
+    }
+
+    .title_content {
+        margin-top: 15px;
+        font-size: 0.7em;
+    }
+
+    .laptop_all {
+        width: 66%; /* Adjust width to fit the container */
+    }
+
+    .image_all_laptop {
+        width: 158px;
+        height: 138px;
+    }
+
+    .path {
+        font-size: 0.65rem;
+    }
+
+    .image_sort {
+        width: 10px;
+        height: 14px;
+    }
+
+    .image_filter {
+        width: 10px;
+        height: 14px;
+    }
+
+    .button_sort {
+        left: 76%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .button_filter {
+        left: 84%;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 426px) {
+    .filters {
+        width: 190px;
+        left: 42%;
+        top: 43%;
+    }
+
+    .button_apply {
+        font-size: 0.75em;
+        margin-left: 14px;
+    }
+
+    .button_reset {
+        font-size: 0.75em;
+        margin-left: 18px;
+    }
+}
+
+@media (max-width: 376px) {
+    .filters {
+        width: 190px;
+        left: 32%;
+        top: 39%;
+    }
+}
+
+@media (max-width: 320px) {
+    .filters {
+        width: 190px;
+        left: 23%;
+        top: 38%;
+    }
+
+    .path {
+        font-size: 0.55rem;
+        margin-left: 15px;
+    }
+
+    .button_sort {
+        left: 72%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .button_filter {
+        left: 81%;
+        width: 30px;
+        height: 30px;
+    }
+}
+.button_apply:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+.button_reset:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
