@@ -1,0 +1,2 @@
+
+<?php echo $__env->make('productL', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\xampp\team-29\anthony-testApp\resources\views/Product_files/products3.blade.php ENDPATH**/ ?>
