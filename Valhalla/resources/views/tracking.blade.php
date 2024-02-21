@@ -1,6 +1,4 @@
-{{-- Author @BM786 = Basit Ali Mohammad --}}
-<x-app-layout>
-  <style>
+<style>
     @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
     body {
       background-color: #5B21B6;
@@ -11,7 +9,7 @@
       margin-bottom: 50px;
     }
     .card {
-      @apply relative flex flex-col min-w-0 break-words bg-violet-700 bg-clip-border border border-solid border-purple-900 rounded-sm;
+      @apply relative flex flex-col min-w-0 break-words bg-violet-700 bg-clip-border border border-solid border-gray-300 rounded-sm;
       display: flex;
       flex-direction: column;
       min-width: 0;
@@ -23,10 +21,10 @@
       border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0;
     }
     .card-header {
-      @apply py-3 px-5 mb-0 bg-violet-700 border-b border-solid border-purple-900;
+      @apply py-3 px-5 mb-0 bg-violet-700 border-b border-solid border-gray-300;
       padding: 0.75rem 1.25rem;
       margin-bottom: 0;
-      background-color: #6b46c1;
+      background-color: #fff;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
     .track {
@@ -46,7 +44,7 @@
       text-align: center;
     }
     .track .step.active:before {
-      background: #6b46c1;
+      background: #5B21B6;
     }
     .track .step::before {
       height: 7px;
@@ -57,7 +55,7 @@
       top: 18px;
     }
     .track .step.active .icon {
-      background: #6b46c1;
+      background: #5B21B6;
       color: #fff;
     }
     .track .icon {
@@ -73,7 +71,7 @@
     .track .step.active .text {
       @apply font-normal;
       font-weight: 400;
-      color: #fbf6f6;
+      color: #000;
     }
     .track .text {
       @apply block mt-7;
@@ -119,14 +117,14 @@
       margin-bottom: 1rem;
     }
     .btn-warning {
-      @apply text-white bg-purple-700 border border-purple-700 rounded;
+      @apply text-white bg-violet-700 border border-violet-700 rounded;
       color: #ffffff;
       background-color: #5B21B6;
       border-color: #5B21B6;
       border-radius: 1px;
     }
     .btn-warning:hover {
-      @apply text-white bg-purple-700 border border-purple-700 rounded;
+      @apply text-white bg-violet-700 border border-violet-700 rounded;
       color: #ffffff;
       background-color: #4713A2;
       border-color: #ff2b00;
@@ -135,10 +133,10 @@
   </style>
   
   
-  <div class="container mx-auto p-5 my-5 bg-purple-900 rounded-xl text-white">
+  <div class="container mx-auto p-5 my-5 bg-violet-700">
     <article class="card text-white">
         <header class="card-header pl-2 font-bold text-white"> My Orders / Tracking </header>
-        <div class="card-body mt-6 text-white">
+        <div class="card-body mt-6">
             <h6>Order ID: </h6>
             <article class="card mt-2">
                 <div class="card-body flex flex-row">
@@ -152,7 +150,7 @@
                 <div class="step active"> <span class="icon"> <i class="fas fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
                 <div class="step active"> <span class="icon"> <i class="fas fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
                 <div class="step"> <span class="icon"> <i class="fas fa-truck"></i> </span> <span class="text"> On the way </span> </div>
-                <div class="step"> <span class="icon"> <i class="fas fa-box"></i> </span> <span class="text">Delivered</span> </div>
+                <div class="step"> <span class="icon"> <i class="fas fa-box"></i> </span> <span class="text">Ready for pickup</span> </div>
             </div>
             <hr>
             <ul class="flex flex-row">
@@ -166,15 +164,65 @@
                 </li>
             </ul>
             <hr>
-            <div class="items-center justify-start mt-8">
-              <a href="{{route('dashboard')}}">
-              <x-primary-button>
-                  {{ __('Back To Orders') }}
-              </x-primary-button>
-          </a>
-          </div>
+            <a href="#" class="bg-blue-900 hover:bg-blue-800 text-white font-bold mt-16 py-2 px-4 rounded" data-abc="true"> <i class="fas fa-chevron-left"></i> Back to orders</a>
         </div>
     </article>
   </div>
-</x-app-layout>
 
+
+
+
+{{--
+    
+    <div class="container mx-auto p-5 my-5">
+  <article class="card">
+      <header class="card-header"> My Orders / Tracking </header>
+      <div class="card-body">
+          <h6>Order ID: </h6>
+          <article class="card">
+              <div class="card-body flex flex-row">
+                  <div class="flex-1"> <strong>Estimated Delivery time:</strong> <br>25 Mar 2024 </div>
+                  <div class="flex-1"> <strong>Shipping BY:</strong> <br> Royal Mail, | <i class="fa fa-phone"></i> Phone Number </div>
+                  <div class="flex-1"> <strong>Status:</strong> <br> Picked by the courier </div>
+                  <div class="flex-1"> <strong>Tracking #:</strong> <br> Tracking Number </div>
+              </div>
+          </article>
+          <div class="track">
+              <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+              <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
+              <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+              <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Ready for pickup</span> </div>
+          </div>
+          <hr>
+          <ul class="flex flex-row">
+              <li class="w-1/4">
+                  <figure class="itemside mb-3">
+                      <div class="aside"><img src="IMAGE" class="w-16 h-16 border"></div>
+                      <figcaption class="info align-self-center">
+                          <p class="title">PRODUCT NAME <br> RAM</p> <span class="text-muted"> PRICE </span>
+                      </figcaption>
+                  </figure>
+              </li>
+              <li class="w-1/4">
+                  <figure class="itemside mb-3">
+                      <div class="aside"><img src="IMAGE" class="w-16 h-16 border"></div>
+                      <figcaption class="info align-self-center">
+                          <p class="title"> PRODUCT NAME <br> RAM</p> <span class="text-muted">PRICE </span>
+                      </figcaption>
+                  </figure>
+              </li>
+              <li class="w-1/4">
+                  <figure class="itemside mb-3">
+                      <div class="aside"><img src="IMAGE" class="w-16 h-16 border"></div>
+                      <figcaption class="info align-self-center">
+                          <p class="title"> PRODUCT NAME <br> RAM</p> <span class="text-muted"> PRICE </span>
+                      </figcaption>
+                  </figure>
+              </li>
+          </ul>
+          <hr>
+          <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a>
+      </div>
+  </article>
+</div>
+    --}}
