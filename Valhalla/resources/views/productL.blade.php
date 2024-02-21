@@ -170,6 +170,23 @@ function resetFilters() {
             </section>    
     </h2>
 </div>
+<script>
+     function saveScrollPosition(form) {
+     var scrollY = window.scrollY || document.documentElement.scrollTop;
+    form.scrollPosition.value = scrollY;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+        @if(session('restoreScroll'))
+        var savedScrollPosition = {{ session('scrollPosition', '0') }};
+        
+        if (savedScrollPosition) {
+            window.scrollTo(0, savedScrollPosition);
+            @php session()->forget('restoreScroll'); session()->forget('scrollPosition'); @endphp
+        }
+        @endif
+    });   
+</script>
 </body>
 <footer>
      <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->

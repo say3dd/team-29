@@ -47,6 +47,5 @@ class HomeController extends Controller
 
         return view('FrontEnd.home', ['laptops' => $laptops]);
     }
-//a commit test from Bilal's Laptop
 
 }

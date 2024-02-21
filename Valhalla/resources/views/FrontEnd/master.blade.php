@@ -222,10 +222,19 @@
                                         <p>Graphics: {{ $laptop->GPU }}</p>
                                         <h3>£{{ $laptop->price }}</h3>
                                     </div>
-                                    <form action='{{route('product.getInfo')}}' method='post'>
+                                   <!-- @KraeBM (Bilal Mohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
+                                   <script>
+                                            function saveScrollPosition(form) {
+                                                var scrollY = window.scrollY || document.documentElement.scrollTop;
+                                                form.scrollPosition.value = scrollY;
+                                            }
+                                     </script>
+                                    <form action='{{route('product.getInfo')}}' method='post'onsubmit='saveScrollPosition(this)'>
                                         @csrf
                                         <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
+                                        <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
                                         <button class="buy-product"> Add to Basket </button>
+                                    
                                     </form>
                                 </div>
                             @endforeach
@@ -235,5 +244,23 @@
                         @include('footer')
                     </footer>
                     </section>
+                    <!-- @KraeBM (Bilal Mohamed)  Improves the position where the user last pressed the "add to basket": 
+                        button so no need to wait for page to load before moving to original position
+                    It also makes sure when a user presses the home button/product button, it takes you to the top and not hwere the previous saved position is - this would be frustrating
+                to constantly scroll up after pressing the navbar buttons -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+        @if(session('restoreScroll'))
+        var savedScrollPosition = {{ session('scrollPosition', '0') }};
+        
+        if (savedScrollPosition) {
+            window.scrollTo(0, savedScrollPosition);
+            @php session()->forget('restoreScroll'); session()->forget('scrollPosition'); @endphp
+        }
+        @endif
+    });
+                      
+</script>
         </body>
+
         </html>   
