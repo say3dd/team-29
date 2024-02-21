@@ -98,7 +98,7 @@ class ProductController extends Controller
        the saved Scroll positon */
        $scrollPosition = $request->input('scrollPosition');
        session(['scrollPosition' => $scrollPosition, 'restoreScroll' => true]);   
-       return redirect()->back();   
+       return redirect()->back();
     }
 
     // @say3dd (Mohammed Miah) displays all the products, maximum of 12 on the products page
