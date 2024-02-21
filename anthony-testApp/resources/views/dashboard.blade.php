@@ -6,7 +6,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    <style>
+    {{-- <style>
         body {
           @apply bg-gray-200 font-sans;
           font-family: 'Open Sans', sans-serif;
@@ -97,11 +97,11 @@
         .btn-warning:hover {
           @apply bg-red-500 border-red-500;
         }
-      </style>
+      </style> --}}
       <style>
         @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
         body {
-          background-color: #eeeeee;
+          background-color: #5B21B6;
           font-family: 'Open Sans', sans-serif;
         }
         .container {
@@ -109,7 +109,7 @@
           margin-bottom: 50px;
         }
         .card {
-          @apply relative flex flex-col min-w-0 break-words bg-white bg-clip-border border border-solid border-gray-300 rounded-sm;
+          @apply relative flex flex-col min-w-0 break-words bg-violet-700 bg-clip-border border border-solid border-gray-300 rounded-sm;
           display: flex;
           flex-direction: column;
           min-width: 0;
@@ -121,14 +121,14 @@
           border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0;
         }
         .card-header {
-          @apply py-3 px-5 mb-0 bg-white border-b border-solid border-gray-300;
+          @apply py-3 px-5 mb-0 bg-violet-700 border-b border-solid border-gray-300;
           padding: 0.75rem 1.25rem;
           margin-bottom: 0;
-          background-color: #fff;
+          background-color: #1E3A8A;
           border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         .track {
-          @apply relative bg-gray-400 h-7 flex mb-60 mt-50;
+          @apply relative bg-violet-700 h-7 flex mb-60 mt-50;
           position: relative;
           background-color: #ddd;
           height: 7px;
@@ -144,7 +144,7 @@
           text-align: center;
         }
         .track .step.active:before {
-          background: #FF5722;
+          background: #1E3A8A;
         }
         .track .step::before {
           height: 7px;
@@ -155,7 +155,7 @@
           top: 18px;
         }
         .track .step.active .icon {
-          background: #ee5435;
+          background: #1E3A8A;
           color: #fff;
         }
         .track .icon {
@@ -171,7 +171,7 @@
         .track .step.active .text {
           @apply font-normal;
           font-weight: 400;
-          color: #000;
+          color: #fbf6f6;
         }
         .track .text {
           @apply block mt-7;
@@ -217,32 +217,32 @@
           margin-bottom: 1rem;
         }
         .btn-warning {
-          @apply text-white bg-orange-500 border border-orange-500 rounded;
+          @apply text-white bg-violet-700 border border-violet-700 rounded;
           color: #ffffff;
-          background-color: #ee5435;
-          border-color: #ee5435;
+          background-color: #5B21B6;
+          border-color: #5B21B6;
           border-radius: 1px;
         }
         .btn-warning:hover {
-          @apply text-white bg-red-500 border border-red-500 rounded;
+          @apply text-white bg-blue-700 border border-blue-700 rounded;
           color: #ffffff;
-          background-color: #ff2b00;
+          background-color: #4713A2;
           border-color: #ff2b00;
           border-radius: 1px;
         }
       </style>
       
-<class
+<class>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+                <div class="p-6 bg-violet-800 text-white">
                     {{ __("You're logged in!") }}
                 </div>
             </div>
              {{-- code for to go home page --}}
                     <div class="home_buton">
-                        <div class="p-2 m-2 w-16 rounded bg-blue-600 hover:active:transition-colors ">
+                        <div class="p-2 m-2 w-16 rounded bg-blue-900 hover:bg-blue-800 ">
                         <a class= "text-center align-middle text-white" href="{{route('index')}}">Home</a>
                         </div>
 
@@ -296,8 +296,8 @@
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['total_price']; ?></td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['created_at']; ?></td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200">
-                <a href="#" class="btn btn-primary">View</a>
-                <button class="btn btn-primary">Track</button>
+                <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View</a>
+                <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Track</button>
               </td>
             </tr>
             <?php
@@ -317,52 +317,27 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-<div class="container mx-auto p-5 my-5">
-  <article class="card">
-      <header class="card-header"> My Orders / Tracking </header>
-      <div class="card-body">
+<div class="container mx-auto p-5 my-5 bg-violet-700">
+  <article class="card text-white">
+      <header class="card-header pl-2 font-bold text-white"> My Orders / Tracking </header>
+      <div class="card-body mt-6">
           <h6>Order ID: </h6>
-          <article class="card">
+          <article class="card mt-2">
               <div class="card-body flex flex-row">
                   <div class="flex-1"> <strong>Estimated Delivery time:</strong> <br>25 Mar 2024 </div>
-                  <div class="flex-1"> <strong>Shipping BY:</strong> <br> Royal Mail, | <i class="fa fa-phone"></i> Phone Number </div>
+                  <div class="flex-1"> <strong>Shipping BY:</strong> <br> Royal Mail </div>
                   <div class="flex-1"> <strong>Status:</strong> <br> Picked by the courier </div>
-                  <div class="flex-1"> <strong>Tracking #:</strong> <br> Tracking Number </div>
+                  <div class="flex-1"> <strong>Tracking Number:</strong> <br> #1234567 </div>
               </div>
           </article>
-          <div class="track">
-              <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
-              <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
-              <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
-              <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Ready for pickup</span> </div>
+          <div class="track mt-11">
+              <div class="step active"> <span class="icon"> <i class="fas fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+              <div class="step active"> <span class="icon"> <i class="fas fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
+              <div class="step"> <span class="icon"> <i class="fas fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+              <div class="step"> <span class="icon"> <i class="fas fa-box"></i> </span> <span class="text">Ready for pickup</span> </div>
           </div>
           <hr>
           <ul class="flex flex-row">
-              <li class="w-1/4">
-                  <figure class="itemside mb-3">
-                      <div class="aside"><img src="IMAGE" class="w-16 h-16 border"></div>
-                      <figcaption class="info align-self-center">
-                          <p class="title">PRODUCT NAME <br> RAM</p> <span class="text-muted"> PRICE </span>
-                      </figcaption>
-                  </figure>
-              </li>
-              <li class="w-1/4">
-                  <figure class="itemside mb-3">
-                      <div class="aside"><img src="IMAGE" class="w-16 h-16 border"></div>
-                      <figcaption class="info align-self-center">
-                          <p class="title"> PRODUCT NAME <br> RAM</p> <span class="text-muted">PRICE </span>
-                      </figcaption>
-                  </figure>
-              </li>
               <li class="w-1/4">
                   <figure class="itemside mb-3">
                       <div class="aside"><img src="IMAGE" class="w-16 h-16 border"></div>
@@ -373,10 +348,12 @@
               </li>
           </ul>
           <hr>
-          <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a>
+          <a href="#" class="bg-blue-900 hover:bg-blue-800 text-white font-bold mt-16 py-2 px-4 rounded" data-abc="true"> <i class="fas fa-chevron-left"></i> Back to orders</a>
       </div>
   </article>
 </div>
+
+
 </x-app-layout>
 
 
