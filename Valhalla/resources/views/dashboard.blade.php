@@ -1,4 +1,5 @@
-{{-- Author @BravoBoy2 @AbuIsNotHer3 = Abubakarsiddik Mohammed --}}
+{{-- Authors @BravoBoy2 @AbuIsNotHer3 = Abubakarsiddik Mohammed 
+              @BM786 = Basit Ali Mohammad          --}}
 
 <x-app-layout>
     <x-slot name="header">
@@ -233,16 +234,16 @@
       </style>
       
 <class>
-    <div class="py-12">
+    <div class="py-12 bg-blue-800">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-violet-800 text-white">
+            <div class="bg-violet-700 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-white">
                     {{ __("You're logged in!") }}
                 </div>
             </div>
              {{-- code for to go home page --}}
                     <div class="home_buton">
-                        <div class="p-2 m-2 w-16 rounded bg-blue-900 hover:bg-blue-800 ">
+                        <div class="p-2 m-2 w-16 rounded bg-blue-900 hover:bg-blue-700 ">
                         <a class= "text-center align-middle text-white" href="{{route('index')}}">Home</a>
                         </div>
 
@@ -265,7 +266,7 @@
   </div>
 </div>
 
-<div class="py-5">
+<div class="py-1 -mt-9">
   <div class="container mx-auto">
     <div class="flex">
       <div class="w-full">
@@ -296,8 +297,8 @@
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['total_price']; ?></td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['created_at']; ?></td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200">
-                <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View</a>
-                <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Track</button>
+                <a href="#" class="text-white font-bold py-2 px-4 rounded">View</a>
+                <button type="button" class="bg-violet-700 hover:bg-violet-800 text-white font-bold py-2 px-4 rounded">Track</button>
               </td>
             </tr>
             <?php
@@ -305,7 +306,7 @@
             } else {
             ?>
             <tr>
-              <td colspan="5" class="px-4 py-2">No orders yet</td>
+              <td colspan="6" class="px-4 py-2 bg-white">No orders yet</td>
             </tr>
             <?php
             }
@@ -339,7 +340,7 @@
           <hr>
           <ul class="flex flex-row">
               <li class="w-1/4">
-                  <figure class="itemside mb-3">
+                  <figure class="itemside mb-3 text-white">
                       <div class="aside"><img src="IMAGE" class="w-16 h-16 border"></div>
                       <figcaption class="info align-self-center">
                           <p class="title"> PRODUCT NAME <br> RAM</p> <span class="text-muted"> PRICE </span>
@@ -352,8 +353,6 @@
       </div>
   </article>
 </div>
-
-
 </x-app-layout>
 
 
