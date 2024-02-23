@@ -41,7 +41,7 @@
         <p class="title_of_category"> SHOP BY CATEGORY </p>
 
         <div class="categories_all">
-            <a href="{{ route('productspage.id', ['id' => 1])}}">
+            <a>
                 <img class="image_categories_laptop" src="{{asset('assets/images_categories/laptops_category2.jpg')}}"
                     style="width:100%">
                 <div class="category_text"> Laptops</div>
