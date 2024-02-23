@@ -16,8 +16,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\BasketController;
-use App\Http\Controllers\TrackingController;
-use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +56,6 @@ Route::get('/test1', function () {
 
     Route::get('/index', [HomeController::class,'index'])->name('index');
     Route::get('/contactUs',[ContactController::class,'contact'])->name('contactUs');;
-    Route::get('/tracking', [TrackingController::class,'tracking'])->name('tracking');
 
     // Addded route function to the about page
     Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
@@ -98,12 +95,8 @@ Route::group(['middleware' => 'cart.notEmpty'], function () {
     })->name('thank-you');
 });
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-});
-
-    Route::get('/index', [HomeController::class, 'index'])->name('index');
-
-
 require __DIR__ . '/auth.php';
 
+Route::get('/wishlist', function () {
+    return view('FrontEnd.wishlist');
+});
