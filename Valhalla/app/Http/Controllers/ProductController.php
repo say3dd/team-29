@@ -112,11 +112,7 @@ class ProductController extends Controller
 
 
     // @say3dd (Mohammed Miah) Function to show a maximum of 4 products on the home page, namely the "Our Laptops" section.
-    public function showHomeProducts()
-    {
-        $laptops = Product::paginate(4);
-        return view('FrontEnd.home', ['laptops' => $laptops]);
-    }
+
 
     // @say3dd (Mohammed Miah) Function to allow us to see related products on the individual product details page
     public function show($id)
