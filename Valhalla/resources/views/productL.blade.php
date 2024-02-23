@@ -170,6 +170,27 @@ function resetFilters() {
             </section>    
     </h2>
 </div>
+<script>
+     /* Saves the users scroll position - if pages refreshed it goes back to it  --> */
+     function saveScrollPosition(form) {
+     var scrollY = window.scrollY || document.documentElement.scrollTop;
+    form.scrollPosition.value = scrollY;
+}
+/* Improves the position where the user last pressed the "add to basket": button so no need to wait for page to load before moving 
+to original position It also makes sure when a user presses the home button/product button, it takes you to the top and not where
+ the previous saved position is - this would be frustrating to constantly scroll up after pressing the navbar buttons */
+
+document.addEventListener('DOMContentLoaded', function() {
+        @if(session('restoreScroll'))
+        var savedScrollPosition = {{ session('scrollPosition', '0') }};
+        
+        if (savedScrollPosition) {
+            window.scrollTo(0, savedScrollPosition);
+            @php session()->forget('restoreScroll'); session()->forget('scrollPosition'); @endphp
+        }
+        @endif
+    });   
+</script>
 </body>
 <footer>
      <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
