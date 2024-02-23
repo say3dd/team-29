@@ -18,8 +18,6 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\TrackingController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ReturnController;
-use App\Http\Controllers\ReturnRequestSubmitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,21 +98,12 @@ Route::group(['middleware' => 'cart.notEmpty'], function () {
     })->name('thank-you');
 });
 
-require __DIR__ . '/auth.php';
-
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
-Route::get('/wishlist', function () {
-    return view('FrontEnd.wishlist');
-});
+    Route::get('/index', [HomeController::class, 'index'])->name('index');
 
-Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name('return.request');
 
-Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'submit'])->name('return.request.submit');
+require __DIR__ . '/auth.php';
 
-// Categories page -- change this soon 
-Route::get('/categories', function () {
-    return view('FrontEnd.categories');
-})->name('categories');
