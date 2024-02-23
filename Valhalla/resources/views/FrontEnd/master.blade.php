@@ -40,7 +40,7 @@
                     </label>
                     <nav class="navbar">
                         <a href="{{ route('index') }}">Home</a>
-                        <a href="{{route('productspage.id', ['id' => 1])}}">Products</a>
+                        <a href="{{route('categories') }}">Products</a>
                         <a href="{{ route('about') }}">About</a>
                         <a href="{{ route('contactUs') }}">Contact Us</a>
                         
