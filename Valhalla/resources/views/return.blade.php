@@ -70,7 +70,7 @@
             <option value="">Select a reason</option>
             <option value="Defective">Defective</option>
             <option value="Wrong Item">Wrong Item</option>
-            <option value="Changed Mind">Changed Mind</option>
+            <option value="Changed Mind">Changed my Mind</option>
             <option value="Other">Other</option>
         </select>
 
