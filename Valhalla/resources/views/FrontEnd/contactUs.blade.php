@@ -39,17 +39,16 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
                 {{ __('Submit') }}
             </x-primary-button>
         </div>
+        <div class="items-center justify-start -mt-8">
+            <a href="{{route('index')}}">
+            <x-primary-button>
+                {{ __('Back') }}
+            </x-primary-button>
+        </a>
+        </div>
+
     </form>
-    <div class="items-center justify-start -mt-11 ml-2">
-        <x-primary-button onclick="goBack()">
-            {{ __('Back') }}
-        </x-primary-button>
-    </div>
-    
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
 </x-guest-layout>
 
+<script>
+    // Check if the form has been submitted
