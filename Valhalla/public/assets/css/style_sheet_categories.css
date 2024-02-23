@@ -189,6 +189,7 @@ header {
 .category_text {
     margin-top: 6%;
     margin-bottom: 6%;
+    color: #fff;
 }
 
 .middle {
@@ -218,6 +219,8 @@ header {
 
 .categories_all .text:hover {
     text-decoration: underline;
+    font-size: 1.6rem;
+    transition: 0.3s;
 }
 
 .text {
