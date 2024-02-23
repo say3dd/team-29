@@ -97,18 +97,12 @@ Route::group(['middleware' => 'cart.notEmpty'], function () {
         return view('checkout.thankyou');
     })->name('thank-you');
 });
-<<<<<<< HEAD
+
+require __DIR__ . '/auth.php';
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
-
-    Route::get('/index', [HomeController::class, 'index'])->name('index');
-
-=======
->>>>>>> 3a679de3cd786878c5e31d0beec3c368a981b27d
-
-require __DIR__ . '/auth.php';
 
 Route::get('/wishlist', function () {
     return view('FrontEnd.wishlist');
