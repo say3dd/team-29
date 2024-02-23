@@ -15,16 +15,15 @@
     <p class="price" style=" font-weight: bold; margin-bottom: 0px; text-decoration: underline;
     text-decoration:underline; text-decoration-color:aquamarine ">Price: £{{ $laptop->price }}</p>
     <br>
-    
-    <form action='{{route('product.getInfo')}}' method='post'>
+    <form action='{{route('product.getInfo')}}' method='post' onsubmit='saveScrollPosition(this)'>
         @csrf
         <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
+        <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
         <button class="button_cart_laptop"> Add to Basket </button>
     </form>
     <!--It took me 8 hours of work just to get this thing to get this data and of course it comes out as a string I can't separate... -->
     <!--productToAdd is the string of data that the function returns, what I need to do is get the id from this and use that to update the basket DB -->
-    
-
 </div>
+
 @endforeach
 @endsection
