@@ -94,8 +94,9 @@ Route::group(['middleware' => 'cart.notEmpty'], function () {
         return view('checkout.thankyou');
     })->name('thank-you');
 });
-    Route::get('/index', [HomeController::class, 'index'])->name('index');
-
 
 require __DIR__ . '/auth.php';
 
+Route::get('/wishlist', function () {
+    return view('FrontEnd.wishlist');
+});
