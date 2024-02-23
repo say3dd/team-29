@@ -110,7 +110,7 @@
           margin-bottom: 50px;
         }
         .card {
-          @apply relative flex flex-col min-w-0 break-words bg-violet-700 bg-clip-border border border-solid border-gray-300 rounded-sm;
+          @apply relative flex flex-col min-w-0 break-words bg-white bg-clip-border border border-solid border-gray-300 rounded-sm;
           display: flex;
           flex-direction: column;
           min-width: 0;
@@ -122,7 +122,7 @@
           border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0;
         }
         .card-header {
-          @apply py-3 px-5 mb-0 bg-violet-700 border-b border-solid border-gray-300;
+          @apply py-3 px-5 mb-0 bg-white border-b border-solid border-gray-300;
           padding: 0.75rem 1.25rem;
           margin-bottom: 0;
           background-color: #1E3A8A;
@@ -242,10 +242,13 @@
                 </div>
             </div>
              {{-- code for to go home page --}}
-                    <div class="home_buton">
-                        <div class="p-2 m-2 w-16 rounded bg-blue-900 hover:bg-blue-700 ">
-                        <a class= "text-center align-middle text-white" href="{{route('index')}}">Home</a>
-                        </div>
+             <div class="items-center justify-start mt-8">
+              <a href="{{route('index')}}">
+              <x-primary-button>
+                  {{ __('Home') }}
+              </x-primary-button>
+          </a>
+          </div>
 
                         <div class="padding: 5px, marging: 5px">
                           
@@ -258,16 +261,15 @@
 ?>
 
 <div class="py-3 bg-primary">
-  <div class="container">
-    <h6 class="text-white">
-      <a href="#" class="text-white">Home</a> / 
-      <a href="#" class="text-white">My Orders</a>
+  <div class="container -mt-10">
+    <h6 class="text-white"> 
+      <a href="#" class="text-white underline font-bold">My Orders</a>
     </h6>
   </div>
 </div>
 
 <div class="py-1 -mt-9">
-  <div class="container mx-auto">
+  <div class="container mx-auto -mt-10">
     <div class="flex">
       <div class="w-full">
         <table class="table-auto w-full border-collapse border border-gray-800">
@@ -297,8 +299,6 @@
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['total_price']; ?></td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['created_at']; ?></td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200">
-                <a href="#" class="text-white font-bold py-2 px-4 rounded">View</a>
-                <button type="button" class="bg-violet-700 hover:bg-violet-800 text-white font-bold py-2 px-4 rounded">Track</button>
               </td>
             </tr>
             <?php
@@ -313,6 +313,13 @@
             ?>
           </tbody>
         </table>
+        <div class="items-center justify-start mt-8">
+          <a href="{{route('tracking')}}">
+          <x-primary-button>
+              {{ __('Track') }}
+          </x-primary-button>
+      </a>
+      </div>
       </div>
     </div>
   </div>
@@ -349,7 +356,13 @@
               </li>
           </ul>
           <hr>
-          <a href="#" class="bg-blue-900 hover:bg-blue-800 text-white font-bold mt-16 py-2 px-4 rounded" data-abc="true"> <i class="fas fa-chevron-left"></i> Back to orders</a>
+          <div class="items-center justify-start mt-8">
+            <a href="{{route('dashboard')}}">
+            <x-primary-button>
+                {{ __('Back To Orders') }}
+            </x-primary-button>
+        </a>
+        </div>
       </div>
   </article>
 </div>
