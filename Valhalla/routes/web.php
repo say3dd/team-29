@@ -100,3 +100,9 @@ require __DIR__ . '/auth.php';
 Route::get('/wishlist', function () {
     return view('FrontEnd.wishlist');
 });
+
+
+// Categories page -- change this soon 
+Route::get('/categories', function () {
+    return view('FrontEnd.categories');
+})->name('categories');
