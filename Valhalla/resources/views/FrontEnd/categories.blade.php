@@ -24,8 +24,8 @@
     </style>
 </head>
 
- <!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
-<section class = "navbar-section">
+<!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
+<section class="navbar-section">
     @include ('header')
 </section>
 
@@ -34,14 +34,16 @@
         <div class="topnavigation">
             <form action="" class="search-container">
                 <input type="text" placeholder="Search Valhalla" name="search">
-                <button type="submit"><img src="search_icon.png" style="height:50px;" class="seacrh_button"></button>
+                <button type="submit"><img src="{{asset('assets/images_categories/search_icon.png')}}"
+                        style="height:50px;" class="seacrh_button"></button>
             </form>
         </div>
         <p class="title_of_category"> SHOP BY CATEGORY </p>
 
         <div class="categories_all">
             <a>
-                <img class="image_categories_laptop" src= "{{asset('assets/images_categories/laptops_category2.jpg')}}" style="width:100%">
+                <img class="image_categories_laptop" src="{{asset('assets/images_categories/laptops_category2.jpg')}}"
+                    style="width:100%">
                 <div class="category_text"> Laptops</div>
                 <div class="middle">
                     <div class="text">Laptops</div>
@@ -50,7 +52,8 @@
         </div>
         <div class="categories_all">
             <a>
-                <img class="image_categories_laptop" src="{{asset('assets/images_categories/mouse.jpg')}}"  style="width:100%">
+                <img class="image_categories_laptop" src="{{asset('assets/images_categories/mouse.jpg')}}"
+                    style="width:100%">
                 <div class="category_text"> Mice</div>
                 <div class="middle">
                     <div class="text">Mice</div>
@@ -59,7 +62,8 @@
         </div>
         <div class="categories_all">
             <a>
-                <img class="image_categories_laptop" src="{{asset('assets/images_categories/keyboard2.jpg')}}"  style="width:100%">
+                <img class="image_categories_laptop" src="{{asset('assets/images_categories/keyboard2.jpg')}}"
+                    style="width:100%">
                 <div class="category_text"> Keyboards</div>
                 <div class="middle">
                     <div class="text">Keyboards</div>
@@ -68,7 +72,8 @@
         </div>
         <div class="categories_all">
             <a>
-                <img class="image_categories_laptop" src="{{asset('assets/images_categories/monitors.jpg')}}" style="width:100%">
+                <img class="image_categories_laptop" src="{{asset('assets/images_categories/monitors.jpg')}}"
+                    style="width:100%">
                 <div class="category_text"> Monitors</div>
                 <div class="middle">
                     <div class="text">Monitors</div>
@@ -77,7 +82,8 @@
         </div>
         <div class="categories_all">
             <a>
-                <img class="image_categories_laptop" src="{{asset('assets/images_categories/headset.jpg')}}"  style="width:100%">
+                <img class="image_categories_laptop" src="{{asset('assets/images_categories/headset.jpg')}}"
+                    style="width:100%">
                 <div class="category_text"> Headsets</div>
                 <div class="middle">
                     <div class="text">Headsets</div>
@@ -89,7 +95,7 @@
     </div>
 
 </body>
- <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
+<!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
 @include('footer')
 
 </html>
