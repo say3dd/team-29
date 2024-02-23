@@ -68,7 +68,7 @@ class ProductController extends Controller
              return redirect()->back();
     }
     }
-    public function getInfo()
+    public function getInfo(Request $request)
     {
         /* had to restate these and put assign them within view since it returns an Undefined variable $brands/$graphics issue **/
         $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
@@ -92,9 +92,13 @@ class ProductController extends Controller
             $product_data is the entire row from the products table for that product, any info needed can be accessed with -> then the column name in the products table
             I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual*/
        }
-       
-        $laptops = Product::all();
-        return view('Product_files.products', ['laptops' => $laptops, 'productToAdd' => $laptopID,'brands' => $brands,'graphics'=> $graphics]);
+       $laptops = Product::all();
+       /*Scroll position set to the poisition of the user input */
+       /*Sets the restore scroll originally to true, if its true, then page refreshes from the top, if not continues by using 
+       the saved Scroll positon */
+       $scrollPosition = $request->input('scrollPosition');
+       session(['scrollPosition' => $scrollPosition, 'restoreScroll' => true]);   
+       return redirect()->back();
     }
 
     // @say3dd (Mohammed Miah) displays all the products, maximum of 12 on the products page

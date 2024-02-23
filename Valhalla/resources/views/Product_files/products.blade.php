@@ -19,12 +19,12 @@
     text-decoration:underline; text-decoration-color:aquamarine ">Price: £{{ $laptop->price }}</p>
     <br>
 
-    <form action='{{route('product.getInfo')}}' method='post'>
+    <form action='{{route('product.getInfo')}}' method='post' onsubmit='saveScrollPosition(this)'>
         @csrf
         <input type="hidden" name="laptopData" value={{$laptop->product_id}}>
+        <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
         <button class="button_cart_laptop"> Add to Basket </button>
     </form>
-
 
 </div>
 @endforeach
