@@ -45,5 +45,12 @@
             </x-primary-button>
         </div>
     </form>
+    <div class="items-center justify-start -mt-8">
+        <a href="{{route('index')}}">
+        <x-primary-button>
+            {{ __('Back') }}
+        </x-primary-button>
+    </a>
+    </div>
 </body>
 </x-guest-layout>
