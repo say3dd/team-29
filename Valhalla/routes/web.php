@@ -18,6 +18,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\TrackingController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ReturnController;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,6 +109,7 @@ Route::get('/wishlist', function () {
     return view('FrontEnd.wishlist');
 });
 
+Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name('return.request');
 
 // Categories page -- change this soon 
 Route::get('/categories', function () {
