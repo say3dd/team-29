@@ -4,7 +4,7 @@
 <x-app-layout>
     <x-slot name="header">
         <header>
-            //Css file linked. Located in public/assets
+{{--            Css file linked. Located in public/assets--}}
             <link rel="stylesheet" href="{{asset('assets/css/Dashboard.css')}}">
         </header>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
