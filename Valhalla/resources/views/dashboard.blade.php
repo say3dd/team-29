@@ -226,6 +226,18 @@
                   </div>
               </td>
           </tr>
+          <tr>
+            <td colspan="5" class="px-4 py-2 bg-white">No orders yet</td>
+            <td class="px-4 py-2 border-gray-800 bg-white flex justify-center">
+              <div>
+                  <a href="{{route('return.request')}}">
+                      <x-primary-button>
+                          {{ __('Return') }}
+                      </x-primary-button>
+                  </a>
+              </div>
+          </td>
+          </tr>
           <?php
           }
           ?>
