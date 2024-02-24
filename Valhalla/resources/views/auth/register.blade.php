@@ -50,10 +50,14 @@
         </div>
     </form>
     <div class="items-center justify-start -mt-8">
-        <a href="{{route('index')}}">
-        <x-primary-button>
+        <x-primary-button onclick="goBack()">
             {{ __('Back') }}
         </x-primary-button>
-    </a>
     </div>
+    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </x-guest-layout>
