@@ -7,98 +7,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    {{-- <style>
-        body {
-          @apply bg-gray-200 font-sans;
-          font-family: 'Open Sans', sans-serif;
-        }
-      
-        .container {
-          @apply mt-12 mb-12;
-        }
-      
-        .card {
-          @apply relative flex flex-col min-w-0 break-words bg-white bg-clip-border border border-gray-300 rounded-md;
-        }
-      
-        .card-header:first-child {
-          @apply rounded-t-md;
-        }
-      
-        .card-header {
-          @apply py-3 px-5 mb-0 bg-white border-b border-gray-300;
-        }
-      
-        .track {
-          @apply relative bg-gray-300 h-7 flex mb-16 mt-12;
-        }
-      
-        .track .step {
-          @apply flex-1 w-1/4 mt-px text-center relative;
-        }
-      
-        .track .step.active:before {
-          @apply bg-red-500;
-        }
-      
-        .track .step::before {
-          @apply h-7 absolute block w-full left-0 top-3px;
-          content: '';
-        }
-      
-        .track .step.active .icon {
-          @apply bg-red-500 text-white;
-        }
-      
-        .track .icon {
-          @apply inline-block w-10 h-10 leading-10 rounded-full relative bg-gray-300;
-        }
-      
-        .track .step.active .text {
-          @apply font-normal text-black;
-        }
-      
-        .track .text {
-          @apply block mt-2;
-        }
-      
-        .itemside {
-          @apply relative flex w-full;
-        }
-      
-        .itemside .aside {
-          @apply relative flex-none;
-        }
-      
-        .img-sm {
-          @apply w-20 h-20 p-1;
-        }
-      
-        ul.row,
-        ul.row-sm {
-          @apply list-none p-0;
-        }
-      
-        .itemside .info {
-          @apply pl-4 pr-1;
-        }
-      
-        .itemside .title {
-          @apply block mb-2 text-gray-900;
-        }
-      
-        p {
-          @apply mt-0 mb-4;
-        }
-      
-        .btn-warning {
-          @apply text-white bg-orange-500 border border-orange-500 rounded-md;
-        }
-      
-        .btn-warning:hover {
-          @apply bg-red-500 border-red-500;
-        }
-      </style> --}}
+
       <style>
         @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
         body {
@@ -110,7 +19,7 @@
           margin-bottom: 50px;
         }
         .card {
-          @apply relative flex flex-col min-w-0 break-words bg-white bg-clip-border border border-solid border-gray-300 rounded-sm;
+          @apply relative flex flex-col min-w-0 break-words bg-blue-800 bg-clip-border border border-solid border-gray-300 rounded-sm;
           display: flex;
           flex-direction: column;
           min-width: 0;
@@ -122,7 +31,7 @@
           border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0;
         }
         .card-header {
-          @apply py-3 px-5 mb-0 bg-white border-b border-solid border-gray-300;
+          @apply py-3 px-5 mb-0 bg-blue-800 border-b border-solid border-gray-300;
           padding: 0.75rem 1.25rem;
           margin-bottom: 0;
           background-color: #1E3A8A;
@@ -272,7 +181,7 @@
   <div class="container mx-auto -mt-10">
     <div class="flex">
       <div class="w-full">
-        <table class="table-auto w-full border-collapse border border-gray-800">
+        <table class="table-auto w-full border-solid border-gray-800">
           <thead>
             <tr>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Product</th>
@@ -280,7 +189,7 @@
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Tracking Number</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Price</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Order Date</th>
-              <th class="px-4 py-2 border-gray-800 border bg-gray-200">View</th>
+              <th class="px-4 py-2 border-gray-800 border bg-gray-200">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -306,66 +215,27 @@
             } else {
             ?>
             <tr>
-              <td colspan="6" class="px-4 py-2 bg-white">No orders yet</td>
-            </tr>
-            <?php
-            }
-            ?>
-          </tbody>
-        </table>
-        <div class="items-center justify-start mt-8">
-          <a href="{{route('tracking')}}">
-          <x-primary-button>
-              {{ __('Track') }}
-          </x-primary-button>
-      </a>
-      </div>
-      </div>
-    </div>
-  </div>
+              <td colspan="5" class="px-4 py-2 bg-white">No orders yet</td>
+              <td class="px-4 py-2 border-gray-800 bg-white flex justify-center">
+                  <div>
+                      <a href="{{route('tracking')}}">
+                          <x-primary-button>
+                              {{ __('Track') }}
+                          </x-primary-button>
+                      </a>
+                  </div>
+              </td>
+          </tr>
+          <?php
+          }
+          ?>
+      </tbody>
+  </table>
+</div>
+</div>
+</div>
 </div>
 
-<div class="container mx-auto p-5 my-5 bg-violet-700">
-  <article class="card text-white">
-      <header class="card-header pl-2 font-bold text-white"> My Orders / Tracking </header>
-      <div class="card-body mt-6">
-          <h6>Order ID: </h6>
-          <article class="card mt-2">
-              <div class="card-body flex flex-row">
-                  <div class="flex-1"> <strong>Estimated Delivery time:</strong> <br>25 Mar 2024 </div>
-                  <div class="flex-1"> <strong>Shipping BY:</strong> <br> Royal Mail </div>
-                  <div class="flex-1"> <strong>Status:</strong> <br> Picked by the courier </div>
-                  <div class="flex-1"> <strong>Tracking Number:</strong> <br> #1234567 </div>
-              </div>
-          </article>
-          <div class="track mt-11">
-              <div class="step active"> <span class="icon"> <i class="fas fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
-              <div class="step active"> <span class="icon"> <i class="fas fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
-              <div class="step"> <span class="icon"> <i class="fas fa-truck"></i> </span> <span class="text"> On the way </span> </div>
-              <div class="step"> <span class="icon"> <i class="fas fa-box"></i> </span> <span class="text">Ready for pickup</span> </div>
-          </div>
-          <hr>
-          <ul class="flex flex-row">
-              <li class="w-1/4">
-                  <figure class="itemside mb-3 text-white">
-                      <div class="aside"><img src="IMAGE" class="w-16 h-16 border"></div>
-                      <figcaption class="info align-self-center">
-                          <p class="title"> PRODUCT NAME <br> RAM</p> <span class="text-muted"> PRICE </span>
-                      </figcaption>
-                  </figure>
-              </li>
-          </ul>
-          <hr>
-          <div class="items-center justify-start mt-8">
-            <a href="{{route('dashboard')}}">
-            <x-primary-button>
-                {{ __('Back To Orders') }}
-            </x-primary-button>
-        </a>
-        </div>
-      </div>
-  </article>
-</div>
 </x-app-layout>
 
 
