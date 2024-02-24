@@ -19,7 +19,7 @@
           margin-bottom: 50px;
         }
         .card {
-          @apply relative flex flex-col min-w-0 break-words bg-blue-800 bg-clip-border border border-solid border-gray-300 rounded-sm;
+          @apply relative flex flex-col min-w-0 break-words bg-purple-900 bg-clip-border border border-solid border-gray-300 rounded-sm;
           display: flex;
           flex-direction: column;
           min-width: 0;
@@ -31,7 +31,7 @@
           border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0;
         }
         .card-header {
-          @apply py-3 px-5 mb-0 bg-blue-800 border-b border-solid border-gray-300;
+          @apply py-3 px-5 mb-0 bg-purple-900 border-b border-solid border-gray-300;
           padding: 0.75rem 1.25rem;
           margin-bottom: 0;
           background-color: #1E3A8A;
@@ -134,7 +134,7 @@
           border-radius: 1px;
         }
         .btn-warning:hover {
-          @apply text-white bg-blue-700 border border-blue-700 rounded;
+          @apply text-white bg-purple-900 border border-purple-900 rounded;
           color: #ffffff;
           background-color: #4713A2;
           border-color: #ff2b00;
@@ -143,9 +143,9 @@
       </style>
       
 <class>
-    <div class="py-12 bg-blue-800">
+    <div class="py-12 bg-purple-900">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-violet-700 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-purple-700 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-white">
                     {{ __("You're logged in!") }}
                 </div>
@@ -164,9 +164,6 @@
                           
                           <?php                                        // Orders
 
-//include('functions/userfunctions.php');
-//include('includes/header.php');
-//include('auth.php');
 ?>
 
 <div class="py-3 bg-primary">
@@ -185,7 +182,7 @@
           <thead>
             <tr>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Product</th>
-              <th class="px-4 py-2 border-gray-800 border bg-gray-200">ID</th>
+              <th class="px-4 py-2 border-gray-800 border bg-gray-200">Order Number</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Tracking Number</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Price</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Order Date</th>
@@ -194,16 +191,11 @@
           </thead>
           <tbody>
             <?php
-            //$orders = getOrders();
-
-            //if(mysqli_num_rows($orders) > 0)
-            //{
-            //foreach($orders as $item)
             if (!empty($orders)) {
               foreach ($orders as $item) {
             ?>
             <tr>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['id']; ?></td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['order_number']; ?></td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['tracking_number']; ?></td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['total_price']; ?></td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['created_at']; ?></td>
