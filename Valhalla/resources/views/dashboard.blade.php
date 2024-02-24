@@ -1,8 +1,12 @@
-{{-- Authors @BravoBoy2 @AbuIsNotHer3 = Abubakarsiddik Mohammed 
+{{-- Authors @BravoBoy2 @AbuIsNotHer3 = Abubakarsiddik Mohammed
               @BM786 = Basit Ali Mohammad          --}}
 
 <x-app-layout>
     <x-slot name="header">
+        <header>
+            //Css file linked. Located in public/assets
+            <link rel="stylesheet" href="{{asset('assets/css/Dashboard.css')}}">
+        </header>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
@@ -11,8 +15,8 @@
       <style>
         @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
         body {
-          background-color: #5B21B6;
-          font-family: 'Open Sans', sans-serif;
+            background-color: #5B21B6;
+            font-family: 'Open Sans', sans-serif;
         }
         .container {
           margin-top: 50px;
@@ -31,11 +35,11 @@
           border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0;
         }
         .card-header {
-          @apply py-3 px-5 mb-0 bg-purple-900 border-b border-solid border-gray-300;
-          padding: 0.75rem 1.25rem;
-          margin-bottom: 0;
-          background-color: #1E3A8A;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            @apply py-3 px-5 mb-0 bg-purple-900 border-b border-solid border-gray-300;
+            padding: 0.75rem 1.25rem;
+            margin-bottom: 0;
+            background-color: #1E3A8A;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         .track {
           @apply relative bg-violet-700 h-7 flex mb-60 mt-50;
@@ -47,11 +51,11 @@
           margin-top: 50px;
         }
         .track .step {
-          @apply flex-grow-1 w-1/4 mt-18 text-center relative;
-          position: relative;
-          width: 25%;
-          margin-top: -18px;
-          text-align: center;
+            @apply flex-grow-1 w-1/4 mt-18 text-center relative;
+            position: relative;
+            width: 25%;
+            margin-top: -18px;
+            text-align: center;
         }
         .track .step.active:before {
           background: #1E3A8A;
@@ -141,7 +145,7 @@
           border-radius: 1px;
         }
       </style>
-      
+
 <class>
     <div class="py-12 bg-purple-900">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -160,15 +164,15 @@
           </div>
 
                         <div class="padding: 5px, marging: 5px">
-                          
-                          
+
+
                           <?php                                        // Orders
 
 ?>
 
 <div class="py-3 bg-primary">
   <div class="container -mt-10">
-    <h6 class="text-white"> 
+    <h6 class="text-white">
       <a href="#" class="text-white underline font-bold">My Orders</a>
     </h6>
   </div>
