@@ -147,7 +147,7 @@
       </style>
 
 <class>
-    <div class="py-12 bg-purple-900">
+    <div class="py-12 bg-indigo-950">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-purple-700 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-white">
@@ -157,7 +157,7 @@
              {{-- code for to go home page --}}
              <div class="items-center justify-start mt-8">
               <a href="{{route('index')}}">
-              <x-primary-button>
+              <x-primary-button class="border-white">
                   {{ __('Home') }}
               </x-primary-button>
           </a>

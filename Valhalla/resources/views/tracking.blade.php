@@ -108,10 +108,10 @@
       padding-right: 7px;
     }
     .itemside .title {
-      @apply block mb-5 text-gray-800;
+      @apply block mb-5 text-white;
       display: block;
       margin-bottom: 5px;
-      color: #212529;
+      color: #FFFFFF;
     }
     p {
       @apply mt-0 mb-4;
