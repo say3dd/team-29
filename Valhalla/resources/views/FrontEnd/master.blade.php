@@ -94,7 +94,7 @@
                             Explore our curated selection and elevate your gaming journey to new heights.
                         </p>
                         </p>
-                        <a href="{{route('productspage.id', ['id' => 1])}}" class="view-laptops-btn">View Products</a>
+                        <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
                     </div>
                 </div>
 
