@@ -25,6 +25,12 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
+        <div class="mt-4">
+                <a class="underline text-sm text-white hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                    {{ __(" Don't have an account yet? Register ") }}
+                </a>
+
+
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center" class="text-white">
@@ -45,5 +51,16 @@
             </x-primary-button>
         </div>
     </form>
+    <div class="items-center justify-start -mt-8">
+        <x-primary-button onclick="goBack()">
+            {{ __('Back') }}
+        </x-primary-button>
+    </div>
+    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </x-guest-layout>

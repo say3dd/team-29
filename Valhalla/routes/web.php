@@ -16,6 +16,10 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\TrackingController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ReturnController;
+use App\Http\Controllers\ReturnRequestSubmitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +60,7 @@ Route::get('/test1', function () {
 
     Route::get('/index', [HomeController::class,'index'])->name('index');
     Route::get('/contactUs',[ContactController::class,'contact'])->name('contactUs');;
+    Route::get('/tracking', [TrackingController::class,'tracking'])->name('tracking');
 
     // Addded route function to the about page
     Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
@@ -97,10 +102,17 @@ Route::group(['middleware' => 'cart.notEmpty'], function () {
 
 require __DIR__ . '/auth.php';
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
+
 Route::get('/wishlist', function () {
     return view('FrontEnd.wishlist');
 });
 
+Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name('return.request');
+
+Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'submit'])->name('return.request.submit');
 
 // Categories page -- change this soon 
 Route::get('/categories', function () {
