@@ -194,33 +194,35 @@
 
     {{-- Section 3 begins here --}}
         <div class="container_section3">
-            <p class="unique_feature_title_title">
-                Total Command </p>
-            <p class="unique_feature_content">
-                Control more than ever with the all-new Alienware Command Center.</p>
-            <p class="unique_feature_title">
-                Presets and overclocking</p>
-            <p class="unique_feature_content">
-                Maximise your gameplay with performance presets while overclocking capabilities give you the speed you
-                need.
-            </p>
-            <p class="unique_feature_title">
-                Performance overlay</p>
-            <p class="unique_feature_content">
-                Manage and see CPU, GPU, memory and thermals stats without exiting the game.
-            </p>
-            <p class="unique_feature_title">
-                AlienFX</p>
-            <p class="unique_feature_content">
-                Customise your set up with lighting settings that extend to all your Alienware accessories, as well as
-                keybinds and
-                calibration.
-            </p>
-            <p class="unique_feature_title">
-                AlienVision</p>
-            <p class="unique_feature_content">
-                Toggle monitor-based overlays on/off to help you focus on the targets at hand.
-            </p>
+            <div class = "text_container">
+                <p class="unique_feature_title_title">
+                    Total Command </p>
+                <p class="unique_feature_content">
+                    Control more than ever with the all-new Alienware Command Center.</p>
+                <p class="unique_feature_title">
+                    Presets and overclocking</p>
+                <p class="unique_feature_content">
+                    Maximise your gameplay with performance presets while overclocking capabilities give you the speed you
+                    need.
+                </p>
+                <p class="unique_feature_title">
+                    Performance overlay</p>
+                <p class="unique_feature_content">
+                    Manage and see CPU, GPU, memory and thermals stats without exiting the game.
+                </p>
+                <p class="unique_feature_title">
+                    AlienFX</p>
+                <p class="unique_feature_content">
+                    Customise your set up with lighting settings that extend to all your Alienware accessories, as well as
+                    keybinds and
+                    calibration.
+                </p>
+                <p class="unique_feature_title">
+                    AlienVision</p>
+                <p class="unique_feature_content">
+                    Toggle monitor-based overlays on/off to help you focus on the targets at hand.
+                </p>
+            </div>
             <img class="unique_feature4_5_6_7_8_image" src="{{asset('assets/images_product/laptop_specification5.jpg')}}">
         </div>
     {{-- Section 3 ends here --}}
