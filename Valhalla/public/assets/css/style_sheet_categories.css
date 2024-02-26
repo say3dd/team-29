@@ -20,9 +20,8 @@ body {
     font-size: 2rem;
     top: 0;
     left: 0;
-    width: 100%;
     padding: 1rem 10%;
-    background: rgba(0, 0, 0, 0.171);
+    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496));
     backdrop-filter: blur(1rem);
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,6 +30,11 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+}
+.navbar-section {
+    position: relative; /* Set position to relative */
+    z-index: 2; /* Set a higher z-index to make sure it's above the image */
+    /* Add other styles for your navbar section */
 }
 
 /* Styling  span element */
@@ -50,7 +54,6 @@ body {
     margin-left: 1.5rem;
     font-weight: bold;
 }
-
 #check {
     display: none;
 }
@@ -68,6 +71,7 @@ body {
     display: none;
     position: absolute;
     right: 5%;
+    color: white;
 }
 
 header {
@@ -327,10 +331,6 @@ footer {
     .menu-icon #close {
         display: none;
     }
-    .brand-images {
-        flex-direction: column; /* Stack images in a column on smaller screens */
-        align-items: center;
-    }
 
     #check:checked ~ .menu-icon #close {
         display: block;
@@ -352,9 +352,9 @@ footer {
 }
 
 @media (max-width: 1024px) {
+    /*    Navbar Section */
     .menu-icon {
         display: inline-flex;
-        color: #fff;
     }
 
     #check:checked ~ .menu-icon #menu {
@@ -373,10 +373,6 @@ footer {
     }
     .title-line {
         width: 100%; /* Set the line to 100% width on mobile */
-    }
-
-    .big-card {
-        margin: 2rem 5%; /* Adjust margin for better spacing on mobile */
     }
 
     .laptop {
@@ -405,10 +401,6 @@ footer {
         margin: 1.5rem 0;
         text-align: center;
         transition: 0.3s ease;
-    }
-
-    .nav-header {
-        padding: 1.3rem 5%;
     }
 }
 
