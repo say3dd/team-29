@@ -56,7 +56,7 @@
             Products >> Gaming
             Laptops
         </p>
-        <button class="button_sort">
+        <button class="button_sort" id = "sort-button">
             <img class = "image_sort" src="{{asset('assets/images_product/sort.png')}}" alt="" >
         </button>
         <button class="button_filter" id = "filter-button">
@@ -65,6 +65,7 @@
     </section>
         <!-- This is the code for the filter of products , linked to the database one is for the brands other is for graphics-->
     <div id="filter-container" class="filters">
+        <div class ="scroller">
         <ul class="filters__list">
             <form action="{{URL::current()}}" method="GET">
                 <li>
@@ -105,6 +106,7 @@
         </li>
         @endforeach
             <li>
+            </div>
                 <button class = "button_apply" > Apply Changes </button>
                 <button class = "button_reset" onclick="resetFilters()" > Reset </button>
             </li>
@@ -112,9 +114,25 @@
         </ul>
 
     </form>
+
     </div>
     <!--Form for hidden fields so the filter request gets sent without a need for a submit button, more smoother functionality -->
 
+    <div id="sorting-container" class="sort">
+        <ul class="sort__list">
+            <form action="{{URL::current()}}" method="GET">
+                <li>
+                    <p style = "text-decoration: underline"> Sort By: </p><br>
+                </li>
+            <label type = "checkbox">Newest Arrival</label>
+            <label type = "checkbox">Price: High To Low</label>
+            <label type = "checkbox">Price: Low to High</label>
+            <label type = "checkbox">Recommended</label>
+        </ul>
+
+    </form>
+
+    </div>
 
 <script>
 /*Code for the submit button - works by assaigning variables with the id
@@ -144,7 +162,7 @@ window.onclick = function () {
 
 console.log(input);
 /* Here is the code for resetting the filter section - gathers all the data input in checkbox and for each checbox, it removes them all by assinging it false.**/
-function resetFilters() {
+function resetSort() {
     var checkboxes = document.querySelectorAll("#filter-container input[type='checkbox']");
     checkboxes.forEach(function(checkbox) {
         checkbox.checked = false;

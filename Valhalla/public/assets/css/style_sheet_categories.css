@@ -224,8 +224,8 @@ header {
 
 .categories_all .text:hover {
     text-decoration: underline;
-    font-size: 1.7rem;
     transition: 0.3s;
+    transform: scale(1.15);
 }
 
 .text {
