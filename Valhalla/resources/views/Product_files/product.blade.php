@@ -23,7 +23,7 @@
             <div class="slideshow-container">
             <div class="slide">
                 <div class="mySlides">
-                    <img class="slide_image" src="{{asset('assets/images_product/laptop4.jpg')}}" style=" " alt="">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop4.jpg')}}">
                 </div>
                 <div class="mySlides">
                     <img class="slide_image" src="{{asset('assets/images_product/laptop2.jpg')}}" alt="">

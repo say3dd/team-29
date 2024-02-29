@@ -1,4 +1,4 @@
-<!-- 
+<!--
          ______________________________   Created and designed the Header of the webiste by @AnthonyResuello (Anthony Resuello)     ____________________________________________
 
     - Created and desgined the header to make it consistent for all pages of the website
@@ -7,11 +7,11 @@
 
 
 <header>
-            
+
     <section class="nav-header">
-    
+
         <a href="{{route('index')}}" class="logo"> <img src="{{asset('assets/images/Screenshot_2023-11-16_030651.png')}}" alt=""></a>
-        
+
         <input type="checkbox" id="check">
         <label for="check" class="menu-icon">
             <i class="bx bx-menu" id="menu"></i>
@@ -22,7 +22,7 @@
             <a href="{{route('categories')}}">Products</a>
             <a href="{{route('about')}}">About</a>
             <a href="{{route('contactUs')}}">Contact Us</a>
-         
+
 
             <!--        Fixed the heading so that the login and register is included in the header           -->
 
@@ -44,10 +44,11 @@
             @endif
 
             <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-            <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i> Basket</a>
-            
+            <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket <span
+                    class="badge badge-pill badge-danger">1 </span></a>
+
         </nav>
     </section>
     <!--         Hero Section         -->
-   
+
 </header>
