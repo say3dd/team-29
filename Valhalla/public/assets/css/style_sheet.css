@@ -233,7 +233,7 @@ li {
     background-color: #1e0431;
     border-radius: 2rem;
     left: 70%;
-    top: 69.3%;
+    top: 70.3%;
     padding-bottom: 60px;
 }
 
@@ -247,15 +247,25 @@ li {
     line-height: 1.5;
 }
 
-.filtering_background {
-    width: 260px;
-    padding: 1.5em;
-    padding-top: 1em;
-    background-image: linear-gradient(
-        rgba(94, 32, 141, 0.6),
-        rgba(78, 0, 139, 0.6)
-    );
-    border-radius: 2rem;
+.scroller {
+    height: 700px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #4e008b;
+    border-radius: 13px;
+    height: 500px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #7404ca;
+    border-radius: 13px;
 }
 
 .filters__list li:last-child {
@@ -270,6 +280,46 @@ input[type="checkbox"] {
 .filters:not(.filters--active) {
     display: none;
 }
+
+/* Container for sorting */
+
+.sort {
+    position: absolute;
+    width: 300px;
+    box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.3);
+    padding: 1.5em;
+    position: absolute;
+    background-color: #1e0431;
+    border-radius: 2rem;
+    left: 70%;
+    top: 70.3%;
+    padding-bottom: 60px;
+}
+
+.sort__list li {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    padding-bottom: 1em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.sort__list li:last-child {
+    padding-bottom: 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5em;
+    margin-left: 25px;
+}
+
+.sort:not(.sort--active) {
+    display: none;
+}
+
+/* Button for both sorting and filetering, to either apply all of the changes, or reset */
 
 .button_apply {
     padding: 1em;
@@ -357,6 +407,8 @@ input[type="checkbox"] {
 .button_cart_laptop:hover {
     text-decoration: underline;
     color: white;
+    transition: 0.3s;
+    transform: scale(1.1);
 }
 
 /*Properties for the buttons that are used to switch between the pages */
