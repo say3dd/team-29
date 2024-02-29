@@ -120,6 +120,7 @@
                     <div class="box-card">
                         <div class = "info">
                             <h1 class="section-heading">High-Performance Gaming Laptops</h1>
+                            <div class="line-section"></div> <!-- Add this line -->
                             <p>Explore a world of immersive gaming with our high-performance laptops.
                             Powered by cutting-edge technology, these gaming laptops redefine the gaming experience. 
                             The combination of lightning-fast processors, dedicated graphics, and high-refresh-rate displays ensures smooth gameplay,
