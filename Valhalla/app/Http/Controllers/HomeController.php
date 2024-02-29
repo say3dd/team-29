@@ -43,7 +43,7 @@ class HomeController extends Controller
    
 
     public function index(){
-        $laptops = Product::paginate(4);
+        $laptops = Product::paginate(8);
 
         return view('FrontEnd.home', ['laptops' => $laptops]);
     }
