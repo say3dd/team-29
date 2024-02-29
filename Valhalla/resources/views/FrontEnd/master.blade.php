@@ -120,12 +120,14 @@
                     <div class="box-card">
                         <div class = "info">
                             <h1 class="section-heading">High-Performance Gaming Laptops</h1>
-                            <p>Our high-performance gaming laptops are packed with the latest hardware,
-                                including powerful processors, dedicated graphics cards, and high-refresh-rate displays.
+                            <p>Explore a world of immersive gaming with our high-performance laptops.
+                            Powered by cutting-edge technology, these gaming laptops redefine the gaming experience. 
+                            The combination of lightning-fast processors, dedicated graphics, and high-refresh-rate displays ensures smooth gameplay,
+                            whether you're into intense action games or immersive simulations.
                             </p>
                             <p>They can handle even the most demanding games with ease, and they're also great for other
-                                graphics-intensive tasks
-                                like video editing, 3D modelling and game development.</p>
+                            graphics-intensive tasks
+                            like video editing, 3D modelling and game development.</p>
                             <a href="{{route('productspage.id' ,['id' =>1]) }}" class="view-laptops-btn">View Products</a>
                         </div>
                         <div>
@@ -175,7 +177,7 @@
                                 <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
                                     <h1>Headset</h1></a>
                                 </div>  
-                         
+                                
                             </div>
                        
                             <div class="Category-1">
@@ -206,22 +208,26 @@
                 <!-- Our Product Section-->
             <section class= "main">
 
-                <section id="best-seller-sction">
+
+            <section id="best-seller-sction">
                     <div class="big-card">
-                        <h1 class = "title-products">Best Sellers</h1>
+                        <h1 class="title-products">Best Sellers</h1>
                         <div class="title-line-products"></div> <!-- Add this line -->
                         <div id="laptop-container">
                             <!-- @say3dd - Code for displaying "Our Laptops" section -->
                             @foreach ($laptops as $laptop)
-                                <div class="laptop">
-                                    <div class="specs-container">
-                                        <img src="{{ asset($laptop->image_path) }}" alt="laptop">
-                                        <h1>{{ $laptop->laptop_name }}</h1>
-                                        <p>Processor: {{ $laptop->processor }}</p>
-                                        <p>RAM: {{ $laptop->RAM }}GB</p>
-                                        <p>Graphics: {{ $laptop->GPU }}</p>
-                                        <h3>£{{ $laptop->price }}</h3>
-                                    </div>
+                            <div class="laptop">
+                                <div>
+                                    <img src="{{ asset($laptop->image_path) }}" alt="laptop">
+                                </div>
+                                <div class="laptop-specs">
+                                    <h1>{{ $laptop->laptop_name }}</h1>
+                                    <p> {{ $laptop->processor }}</p>
+                                    <p>RAM: {{ $laptop->RAM }}GB</p>
+                                    <p>Graphics: {{ $laptop->GPU }}</p>
+                                    <h3>£{{ $laptop->price }}</h3>
+                                
+                                
                                    <!-- @KraeBM (Bilal Mohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
                                    <script>
                                             function saveScrollPosition(form) {
@@ -236,7 +242,9 @@
                                         <button class="buy-product"> Add to Basket </button>
                                     
                                     </form>
-                                </div>
+                                    </div>
+                                    </div>
+                                
                             @endforeach
                     </div>
                 </section>
