@@ -44,8 +44,7 @@
             @endif
 
             <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-            <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket <span
-                    class="badge badge-pill badge-danger">1 </span></a>
+            <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket <span class="badge badge-pill badge-danger">1 </span></a>
 
         </nav>
     </section>

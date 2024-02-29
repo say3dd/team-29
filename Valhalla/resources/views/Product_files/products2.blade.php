@@ -3,12 +3,11 @@
 @extends('productL')
 @section('productP')
 
-    @foreach($products as $product)
+@foreach($products as $product)
 <div class="laptop_all">
     <img class="image_all_laptop" src="{{ asset($product->image_path) }}">
     <div class="laptop_all_text">
-        <a style="color: inherit"
-           href="{{ route('laptops.show', $product->product_id) }}"> {{$product->laptop_name}} </a>
+        <a style= "color: inherit" href="{{ route('laptops.show', $product->product_id) }}"> {{$product->laptop_name}} </a>
         <p>{{ $product->processor }}</p>
         <p>{{ $product->GPU }}</p>
     </div>
