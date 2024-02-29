@@ -10,8 +10,7 @@
     <img class="image_all_laptop" src="{{ asset($product->image_path) }}" style="transition: 0.3s ease">
     <div class="laptop_all_text">
         <!--@say3dd (Mohammed Miah) Routing to make the user go to the details of an individual product by clicking on the name -->
-        <a style="color: inherit"
-           href="{{ route('laptops.show', $product->product_id) }}"> {{$product->laptop_name}} </a>
+        <a style= "color: inherit" href="{{ route('laptops.show', $product->product_id) }}"> {{$product->laptop_name}} </a>
         <p>{{ $product->processor }}</p>
         <p>{{ $product->GPU }}</p>
     </div>
