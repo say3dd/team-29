@@ -61,6 +61,6 @@ class ProfileController extends Controller
     }
 
     public function adminIndex(){
-
+        return view('Admin.ProductList');
     }
 }

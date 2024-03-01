@@ -41,7 +41,7 @@ Route::get('/test', function () {
 });
 
 Route::get('/product', [ProductController::class,'index'])->name('product');
-Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
+Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
 /*
 The second route here sometimes overrides the first one (possibly something causing the buttons to trigger without an input).
 For now I've made a workaround by having the getInfo function check if it has recieved an input, if not it behaves just like the index function.
@@ -56,8 +56,8 @@ Route::get('/test1', function () {
 
 
     Route::get('/index', [HomeController::class,'index'])->name('index');
-    Route::get('/contactUs',[ContactController::class,'contact'])->name('contactUs');;
-    Route::get('/tracking', [TrackingController::class,'tracking'])->name('tracking');
+    Route::get('/contactUs',[ContactController::class,'contact'])->name('contactUs');
+Route::get('/tracking', [TrackingController::class,'tracking'])->name('tracking');
 
     // Addded route function to the about page
     Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
@@ -66,7 +66,7 @@ Route::get('/test1', function () {
     // @say3dd (Mohammed Miah) - Routing for the different product functionalities
     // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
     Route::get('/product', [ProductController::class,'index'])->name('product');
-    Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
+    Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
     Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
     Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');
 
@@ -84,9 +84,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::middleware(['auth', 'admin'])->group(function () {
 
-    Route::get('/plist', function () {
-        return view('Admin.ProductList');
-    })->name('plist');
+    Route::get('/plist', [ProfileController::class, 'adminIndex'])->name('plist');
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
@@ -96,8 +94,6 @@ Route::group(['middleware' => 'cart.notEmpty'], function () {
         return view('checkout.thankyou');
     })->name('thank-you');
 });
-
-require __DIR__ . '/auth.php';
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -111,7 +107,16 @@ Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name
 
 Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'submit'])->name('return.request.submit');
 
-// Categories page -- change this soon 
+// Categories page -- change this soon
 Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
+
+
+//--------------------- No code beyond this line. All routing code must be ABOVE THIS LINE. ^^^^^^________----------
+require __DIR__ . '/auth.php';
+//MUST NOT ANY CODE HERE.
+
+
+
+
