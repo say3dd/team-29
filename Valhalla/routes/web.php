@@ -72,6 +72,7 @@ Route::get('/test1', function () {
     Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');
 
 
+
     Route::get('/contact', [ContactController::class, 'showForm'])->middleware(['guest'])->name('contact.show');
     Route::post('/contact', [ContactController::class, 'submitForm'])->middleware(['guest'])->name('contact.submit');
 
@@ -86,7 +87,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::middleware(['auth', 'admin'])->group(function () {
 
-    Route::get('/plist', [ProfileController::class, 'adminIndex']) ->name('ProductList');
+    Route::get('/productlist', [ProfileController::class, 'adminIndex']) ->name('ProductList');
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
