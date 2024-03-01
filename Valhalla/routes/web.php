@@ -81,11 +81,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/home', [HomeController::class,'authHome'])->name('home');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
 
-    Route::get('/plist', [ProfileController::class, 'adminIndex']) ->name('plist');
+    Route::get('/plist', [ProfileController::class, 'adminIndex']) ->name('ProductList');
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
@@ -94,10 +95,6 @@ Route::group(['middleware' => 'cart.notEmpty'], function () {
     Route::get('/checkout/thankyou', function(){
         return view('checkout.thankyou');
     })->name('thank-you');
-});
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 Route::get('/wishlist', function () {

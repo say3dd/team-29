@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Refactored Controller files and blade files. Added functionality of addToBasket() in home page and productL.blade.php">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProfileController.php" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Refactored admin route">
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Admin/adminDashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Admin/adminDashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -458,7 +457,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709323832718</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactored admin route">
+      <option name="closed" value="true" />
+      <created>1709324806609</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709324806609</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,6 +487,7 @@
     <MESSAGE value="added Dashboard.css and linked it with dashboard.blade.php" />
     <MESSAGE value="removed unintended line from dashboard.blade.php" />
     <MESSAGE value="Refactored Controller files and blade files. Added functionality of addToBasket() in home page and productL.blade.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored Controller files and blade files. Added functionality of addToBasket() in home page and productL.blade.php" />
+    <MESSAGE value="Refactored admin route" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored admin route" />
   </component>
 </project>

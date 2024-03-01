@@ -23,7 +23,7 @@
                          </span>
 
                          <span class=" p-5 m-5 text-center rounded bg-purple-300">
-                        <a class= "text-center align-middle text-white" href="{{route('plist')}}">Product List</a>
+                        <a class= "text-center align-middle text-white" href="{{route('ProductList')}}">Product List</a>
                             </span>
 
                         </div>
