@@ -1,6 +1,6 @@
 <?php
 /*
-mady by @AbuIsNotHer3 @BravoBoy2 == Abubakarsiddik Mohammed 
+mady by @AbuIsNotHer3 @BravoBoy2 == Abubakarsiddik Mohammed
 */
 namespace App\Http\Controllers;
 
@@ -58,5 +58,9 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function adminIndex(){
+
     }
 }

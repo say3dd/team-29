@@ -6,20 +6,17 @@
      */
 
 
-
-
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Basket\BasketController;
+use App\Http\Controllers\Basket\CheckoutController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\BasketController;
-use App\Http\Controllers\TrackingController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ReturnController;
-use App\Http\Controllers\ReturnRequestSubmitController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Product\ReturnController;
+use App\Http\Controllers\Product\ReturnRequestSubmitController;
+use App\Http\Controllers\Product\TrackingController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
