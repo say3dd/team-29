@@ -22,15 +22,28 @@ class ProductController extends Controller
         /** Assigning the variables to the product coloums and making them distinct so theres no repetition */
         $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
         $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();
-    /** Assigning laptop as all products before its populated so laptop is definine din all tables before filled.*/
-    
+        $price = Product::select('price') ->distinct()->orderby('price') -> get();
+        $sorting = $request->input('sorting');
+
+
+
+        /** Assigning laptop as all products before its populated so laptop is definine din all tables before filled.*/
+
     $laptops = Product::all();
-    
-    /**Assigning opartions for if there are no filters chosen or 
+/** Assigning operations for the sorting functions  */
+        if($sorting=="Price_LtoH") {
+            $laptops = Product::orderby('price', 'ASC')->paginate('12');
+        }
+        if($sorting=="Price_HtoL"){
+            $laptops = Product::orderby('price', 'Desc')->paginate('12');
+
+        }
+
+    /**Assigning opartions for if there are no filters chosen or
      * if both filters are chosen - here both selected in the request */
     $checkedBrands = $request-> get('brands',[]);
     $checkedGPU = $request -> get('graphics',[]);
-    
+
     /* if statements on whether both ticked or one ticked **/
     if(!empty($checkedBrands)&& !empty($checkedGPU)){
        $laptops =  Product::whereIn('brand',$checkedBrands)
@@ -43,7 +56,7 @@ class ProductController extends Controller
         $laptops = Product::whereIn('GPU',$checkedGPU)->get();
     }
         /** The page update page works on making sure the products are displayed and each page works,  */
-    
+
 
     switch($id){
     case 1:
@@ -64,7 +77,7 @@ class ProductController extends Controller
                 'brands' => $brands,
                 'graphics' => $graphics,
             ]);
-            default: 
+            default:
              return redirect()->back();
     }
     }
@@ -94,10 +107,10 @@ class ProductController extends Controller
        }
        $laptops = Product::all();
        /*Scroll position set to the poisition of the user input */
-       /*Sets the restore scroll originally to true, if its true, then page refreshes from the top, if not continues by using 
+       /*Sets the restore scroll originally to true, if its true, then page refreshes from the top, if not continues by using
        the saved Scroll positon */
        $scrollPosition = $request->input('scrollPosition');
-       session(['scrollPosition' => $scrollPosition, 'restoreScroll' => true]);   
+       session(['scrollPosition' => $scrollPosition, 'restoreScroll' => true]);
        return redirect()->back();
     }
 
@@ -106,7 +119,7 @@ class ProductController extends Controller
     {
         $laptops = Product::paginate(12);
          return view('Product_files.product', compact('laptops'));
-        
+
     }
 
 
@@ -123,5 +136,5 @@ class ProductController extends Controller
     }
 
 }
-    
-    
+
+

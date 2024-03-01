@@ -120,25 +120,25 @@
 
     <div id="sorting-container" class="sort">
         <ul class="sort__list">
-            <form action="{{URL::current()}}" method="GET">
+            <form action="{{URL::current()}}" method="GET" wire:model="sorting">
                 <li>
                     <p style = "text-decoration: underline"> Sort By: </p><br>
                 </li>
                 <li>
-            <input type ="checkbox" name ="newest-arrival">
-               <label> Newest Arrival </label>
-                </li>
-            <li>
-                <input  type ="checkbox" name = "PriceH-L" >
-                <label>Price : High to Low </label>
-            </li>
-                <li>
-                <input type ="checkbox" name="PriceL-H">
-                    <label> Price: Low to High </label>
+           <input type="radio" id="Newest-Arrival" name="sorting" value="Newest-Arrival">
+               <label for="Newest-Arrival"> Newest Arrival </label><br>
                 </li>
                 <li>
-                    <input type ="checkbox" name="Recommended" >
-                    <label> Recommended</label>
+                <input type="radio" id="Price_HtoL" name="sorting" value="Price_HtoL">
+                <label for="Price_HtoL">Price: High to Low</label><br>
+                </li>
+                <li>
+                <input type="radio" id="Price_LtoH" name="sorting" value="Price_LtoH">
+                <label for="Price_LtoH">Price: Low to High</label><br>
+                </li>
+                <li>
+                    <input type="radio" id="Recommended" name="sorting" value="Recommended">
+                    <label for="Recommended"> Recommended</label> <br>
                 </li>
                 <li>
         <button class = "button_apply" > Apply Changes </button>
