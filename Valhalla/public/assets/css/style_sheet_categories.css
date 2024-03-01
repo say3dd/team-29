@@ -20,9 +20,8 @@ body {
     font-size: 2rem;
     top: 0;
     left: 0;
-    width: 100%;
     padding: 1rem 10%;
-    background: rgba(0, 0, 0, 0.171);
+    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496));
     backdrop-filter: blur(1rem);
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,6 +30,11 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+}
+.navbar-section {
+    position: relative; /* Set position to relative */
+    z-index: 2; /* Set a higher z-index to make sure it's above the image */
+    /* Add other styles for your navbar section */
 }
 
 /* Styling  span element */
@@ -50,7 +54,6 @@ body {
     margin-left: 1.5rem;
     font-weight: bold;
 }
-
 #check {
     display: none;
 }
@@ -68,11 +71,12 @@ body {
     display: none;
     position: absolute;
     right: 5%;
+    color: white;
 }
 
 header {
     background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496)),
-        url("{{asset('assets/images_categories/abstract3.jpg')}}");
+        url("abstract3.jpg");
     background-repeat: no-repeat;
     background-position: center;
     padding-top: 1px; /* Add a small padding to prevent margin collapse */
@@ -83,7 +87,7 @@ header {
     width: 100%;
     height: 16vh;
     background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496)),
-        url("{{asset('assets/images_categories/abstract3.jpg')}}");
+        url("abstract3.jpg");
     background-repeat: no-repeat;
     background-size: cover; /* Ensure the background image covers the entire section */
     background-position: center; /* Center the background image */
@@ -133,6 +137,7 @@ header {
     font-size: 1em;
     border-radius: 9px;
     border-color: white;
+    color: #fff;
     border-width: 1.5px;
     height: 40px;
     width: 80%;
@@ -219,8 +224,8 @@ header {
 
 .categories_all .text:hover {
     text-decoration: underline;
-    font-size: 1.6rem;
     transition: 0.3s;
+    transform: scale(1.15);
 }
 
 .text {
@@ -303,6 +308,35 @@ footer {
     margin-bottom: 0.5rem;
 }
 
+@media (max-width: 1400px) {
+    .nav-header {
+        padding: 1.3rem 5%;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 20px;
+        gap: 0rem;
+    }
+
+    .menu-icon {
+        display: inline-flex;
+    }
+
+    #check:checked ~ .menu-icon #menu {
+        display: none;
+    }
+    .menu-icon #close {
+        display: none;
+    }
+
+    #check:checked ~ .menu-icon #close {
+        display: block;
+    }
+}
+
 @media (max-width: 1150px) {
     .image_categories_laptop {
         height: 32vh;
@@ -310,6 +344,63 @@ footer {
 
     .text {
         font-size: 1.2rem;
+    }
+
+    .categories_all .text:hover {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    /*    Navbar Section */
+    .menu-icon {
+        display: inline-flex;
+    }
+
+    #check:checked ~ .menu-icon #menu {
+        display: none;
+    }
+    .menu-icon #close {
+        display: none;
+    }
+    .brand-images {
+        flex-direction: column; /* Stack images in a column on smaller screens */
+        align-items: center;
+    }
+
+    #check:checked ~ .menu-icon #close {
+        display: block;
+    }
+    .title-line {
+        width: 100%; /* Set the line to 100% width on mobile */
+    }
+
+    .laptop {
+        flex-basis: 90%; /* Set the flex basis to 100% for full width on mobile */
+        margin: 20px 0; /* Adjust margin for better spacing */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: blueviolet;
+        z-index: -1;
+        transition: 0.3s ease;
+        overflow: hidden;
+    }
+
+    #check:checked ~ .navbar {
+        height: 19rem;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1.5rem 0;
+        text-align: center;
+        transition: 0.3s ease;
     }
 }
 
@@ -332,6 +423,10 @@ footer {
         font-size: 0.8rem;
         padding: 16px 26px;
     }
+
+    .categories_all .text:hover {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 580px) {
@@ -345,10 +440,54 @@ footer {
 
     .text {
         font-size: 0.6rem;
+        padding: 16px 16px;
+    }
+
+    .categories_all .text:hover {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .title_of_category {
+        font-size: 1.6em;
+        margin-left: 0px;
+        margin-bottom: 18px;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 20px;
+        gap: 0rem;
     }
 }
 
 @media (max-width: 430px) {
+    .topnavigation .search-container {
+        width: 100%;
+        margin-left: 50px;
+        margin-right: 30px;
+    }
+
+    .topnavigation input[type="text"] {
+        height: 35px;
+        font-size: 0.9em;
+    }
+
+    .search-container button {
+        margin-top: 2px;
+    }
+
+    /*Properties for showing the list of categories */
+
+    .title_of_category {
+        font-size: 1.4em;
+        margin-left: 0px;
+        margin-bottom: 14px;
+    }
+
     .image_categories_laptop {
         height: 13vh;
     }
@@ -359,7 +498,11 @@ footer {
     }
 
     .text {
-        padding: 16px 22px;
+        padding: 16px 12px;
+    }
+
+    .categories_all .text:hover {
+        font-size: 0.8rem;
     }
 }
 
@@ -374,13 +517,29 @@ footer {
     }
 
     .text {
-        padding: 16px 18px;
+        padding: 16px 8px;
+    }
+
+    .categories_all .text:hover {
+        font-size: 0.8rem;
     }
 }
 
 @media (max-width: 330px) {
+    .title_of_category {
+        font-size: 1.2em;
+    }
+
+    .topnavigation input[type="text"] {
+        font-size: 0.8em;
+    }
+
     .text {
-        padding: 16px 14px;
-        font-size: 0.5em;
+        padding: 16px 6px;
+        font-size: 0.6rem;
+    }
+
+    .categories_all .text:hover {
+        font-size: 0.8rem;
     }
 }
