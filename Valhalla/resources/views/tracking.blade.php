@@ -3,12 +3,12 @@
   <style>
     @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
     body {
-      background-color: #5B21B6;
       font-family: 'Open Sans', sans-serif;
     }
     .container {
       margin-top: 50px;
       margin-bottom: 50px;
+      
     }
     .card {
       @apply relative flex flex-col min-w-0 break-words bg-violet-700 bg-clip-border border border-solid border-purple-900 rounded-sm;
