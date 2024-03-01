@@ -4,6 +4,7 @@ mady by @AbuIsNotHer3 @BravoBoy2 == Abubakarsiddik Mohammed
 */
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\Admin;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -61,6 +62,6 @@ class ProfileController extends Controller
     }
 
     public function adminIndex(){
-
+        return view('Admin.ProductList');
     }
 }

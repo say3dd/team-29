@@ -85,9 +85,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::middleware(['auth', 'admin'])->group(function () {
 
-    Route::get('/plist', function () {
-        return view('Admin.ProductList');
-    })->name('plist');
+    Route::get('/plist', [ProfileController::class, 'adminIndex']) ->name('plist');
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
@@ -97,8 +95,6 @@ Route::group(['middleware' => 'cart.notEmpty'], function () {
         return view('checkout.thankyou');
     })->name('thank-you');
 });
-
-require __DIR__ . '/auth.php';
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -116,3 +112,12 @@ Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'su
 Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
+
+
+//--------------------- No code beyond this line. All routing code must be ABOVE THIS LINE. ^^^^^^________----------
+require __DIR__ . '/auth.php';
+//MUST NOT ANY CODE HERE.
+
+
+
+
