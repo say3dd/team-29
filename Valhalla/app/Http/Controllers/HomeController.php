@@ -4,7 +4,7 @@
 */
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\BasketService\BasketInterface;
+use App\Http\Controllers\Basket\BasketService\BasketInterface;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BasketService;
+namespace App\Http\Controllers\Basket\BasketService;
 interface BasketInterface
 
 {

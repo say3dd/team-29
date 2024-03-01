@@ -1,14 +1,15 @@
 <?php
 //@noramknarf (Francis Moran) - getInfo() function
 /* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Product;
 
+use App\Http\Controllers\Basket\BasketService\BasketInterface;
+use App\Http\Controllers\Controller;
 use App\Models\Basket;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\BasketService\BasketInterface;
 
 class ProductController extends Controller implements BasketInterface
 {
@@ -143,7 +144,8 @@ class ProductController extends Controller implements BasketInterface
         }
 
         session()->put('basket', $basket);
-        return redirect()->back()->with('success', 'Item has been added to basket');
+        $message="Item has been added to basket";
+        return redirect()->back()->with('success', $message);
     }
 
 }

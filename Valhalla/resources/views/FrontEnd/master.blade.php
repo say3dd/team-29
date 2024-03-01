@@ -18,6 +18,7 @@
         @yield('title', 'Master layout')
     </title>
     <link rel="stylesheet" href="{{ asset('assets/css/home_style.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
@@ -208,8 +209,16 @@
     <!-- Our Product Section-->
     <section class= "main">
 
+        @if(session('success'))
+            <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
+                {{session('success')}}
+{{--                <p class=" text-amber-200">Hello, a message</p>--}}
+            </div>
+        @endif
 
-        <section id="best-seller-sction">
+
+
+        <section id="best-seller-section">
             <div class="big-card">
                 <h1 class="title-products">Best Sellers</h1>
                 <div class="title-line-products"></div> <!-- Add this line -->

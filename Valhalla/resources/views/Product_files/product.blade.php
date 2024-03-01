@@ -42,6 +42,8 @@
             </div>
             </div>
         </div>
+
+
         <div class="product_information">
         <p class="product_name">
             Dell Alienware x16 Gaming Laptop</p>

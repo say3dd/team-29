@@ -1,7 +1,7 @@
 <!-- @KraeBM (Bilal Mohamed) worked on all the backend, JS and blade templating of this page -->
 <!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Products webpage using CSS.  -->
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
 
     <meta charset="UTF-8">
@@ -10,6 +10,8 @@
     <title>Products</title>
     <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" >
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
 
 
     <style>
@@ -23,19 +25,19 @@
             font-size: small;
         }
     </style>
-</head>
+
 
 <header>
      <!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
   <section class = "navbar-section">
     @include ('header')
   </section>
- 
+
 </header>
 <body>
     <h1>
         <div class="title_shape">
-            <img class = "title_image" style="im" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
+            <img class = "title_image" style="" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
             <p class = "laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">
                 GAMING LAPTOPS
             </p>
@@ -48,6 +50,14 @@
 
     </h1>
     <h2>
+
+        @if(session('success'))
+            <div id="flash-success" class="p-5 bg-[#79c753] mx-44 my-5 rounded-[5px] w-1/2 ">
+                {{session('success')}}
+                {{--                <p class=" text-amber-200">Hello, a message</p>--}}
+            </div>
+        @endif
+
         <!-- This is the code for the layout of product container - where all the product will be shown -->
 <div class="background_shape6">
     <section class = "container_for_path_buttons">
@@ -73,8 +83,8 @@
                     </li>
                     <!-- for each brand/graphics, it assigns the checked area as empty, once filled with the brands/graphics
                          it selects the item and shows which is needed by its id, name and value. Also has an if statement on whether brand/graphics  is there and checkbrands is checked -->
-                @foreach ($brands as $brand)  
-                @php 
+                @foreach ($brands as $brand)
+                @php
                 $checkedbrands = [];
                 if(isset($_GET['brands']))
                 {
@@ -90,8 +100,8 @@
             <li>
                 <p style = "text-decoration: underline">GPU: </p><br>
                 </li>
-            @foreach ($graphics as $graphic)  
-            @php 
+            @foreach ($graphics as $graphic)
+            @php
             $checkedGPU = [];
             if(isset($_GET['graphics']))
             {
@@ -100,7 +110,7 @@
             @endphp
             <li>
 
-        <input id="{{$graphic->GPU}}" name="graphics[]" value="{{$graphic->GPU}}" type="checkbox" 
+        <input id="{{$graphic->GPU}}" name="graphics[]" value="{{$graphic->GPU}}" type="checkbox"
         @if(in_array($graphic -> GPU, $checkedGPU)) checked="checked" @endif/>
         <label>{{$graphic->GPU}}</label>
         </li>
@@ -136,7 +146,7 @@
 
 <script>
 /*Code for the submit button - works by assaigning variables with the id
- and making it so if the filter is active, 
+ and making it so if the filter is active,
 add those selected and when filled and enter is pressed run the funtion */
 var button_filter = document.getElementById("filter-button");
 var container = document.getElementById("filter-container");
@@ -176,7 +186,7 @@ function resetSort() {
             <section class = "laptops_container">
                 <div class="button_container">
                  <a href="{{route('productspage.id' ,['id' =>1]) }}">
-                       <button class="button_to_switch_page" style="margin-top: 25px;"> 1 </button> 
+                       <button class="button_to_switch_page" style="margin-top: 25px;"> 1 </button>
                     </a>
                   <a href="{{route('productspage.id', ['id' =>2]) }}" >
                      <button class="button_to_switch_page" style="margin-top: 25px;"> 2 </button>
@@ -185,7 +195,7 @@ function resetSort() {
                     <button class="button_to_switch_page" style="margin-top: 25px;"> 3 </button>
                    </a>
                 </div>
-            </section>    
+            </section>
     </h2>
 </div>
 <script>
@@ -194,20 +204,20 @@ function resetSort() {
      var scrollY = window.scrollY || document.documentElement.scrollTop;
     form.scrollPosition.value = scrollY;
 }
-/* Improves the position where the user last pressed the "add to basket": button so no need to wait for page to load before moving 
+/* Improves the position where the user last pressed the "add to basket": button so no need to wait for page to load before moving
 to original position It also makes sure when a user presses the home button/product button, it takes you to the top and not where
  the previous saved position is - this would be frustrating to constantly scroll up after pressing the navbar buttons */
 
 document.addEventListener('DOMContentLoaded', function() {
         @if(session('restoreScroll'))
         var savedScrollPosition = {{ session('scrollPosition', '0') }};
-        
+
         if (savedScrollPosition) {
             window.scrollTo(0, savedScrollPosition);
             @php session()->forget('restoreScroll'); session()->forget('scrollPosition'); @endphp
         }
         @endif
-    });   
+    });
 </script>
 </body>
 <footer>
