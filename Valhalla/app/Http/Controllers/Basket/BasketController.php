@@ -1,15 +1,14 @@
 <?php
 //@noramknarf (Francis Moran) - Everything barring tweaks from others (As mentioned in the comment in contents())
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Basket;
 
-use Illuminate\Http\Request;
-use app\models\Basket;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class BasketController extends Controller
 {
-    // Below is a possibly hacky solution to grabbing the user id from auth. 
+    // Below is a possibly hacky solution to grabbing the user id from auth.
 
     public function contents(){
         $userID = Auth::id();
@@ -31,7 +30,7 @@ class BasketController extends Controller
         if($basketID != '' && $userID != null){
             $delSuccessful = DB::table('baskets')->where('id',$basketID)->delete();
         }
-        
+
         return $this->contents();
     }
 

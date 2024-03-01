@@ -6,8 +6,9 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
 
 */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Basket;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;

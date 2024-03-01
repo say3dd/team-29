@@ -10,6 +10,8 @@
     <title>Products</title>
     <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" >
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
 
 
     <style>
@@ -23,7 +25,7 @@
             font-size: small;
         }
     </style>
-</head>
+
 
 <header>
      <!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
@@ -35,7 +37,7 @@
 <body>
     <h1>
         <div class="title_shape">
-            <img class = "title_image" style="im" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
+            <img class = "title_image" style="" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
             <p class = "laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">
                 GAMING LAPTOPS
             </p>
@@ -48,6 +50,14 @@
 
     </h1>
     <h2>
+
+        @if(session('success'))
+            <div id="flash-success" class="p-5 bg-[#79c753] mx-44 my-5 rounded-[5px] w-1/2 ">
+                {{session('success')}}
+                {{--                <p class=" text-amber-200">Hello, a message</p>--}}
+            </div>
+        @endif
+
         <!-- This is the code for the layout of product container - where all the product will be shown -->
 <div class="background_shape6">
     <section class = "container_for_path_buttons">
