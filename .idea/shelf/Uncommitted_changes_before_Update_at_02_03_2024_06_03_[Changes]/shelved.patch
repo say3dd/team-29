@@ -1,0 +1,160 @@
+Index: Valhalla/routes/web.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n/*\n\n    Author @BM786 Basit Ali Mohammad == worked on this page checkout summary and contact.\n        @noramknarf (Francis Moran) - route to product.getInfo() and basket routes.\n     */\n\n\n\n\nuse Illuminate\\Support\\Facades\\Route;\nuse Illuminate\\Support\\Facades\\Auth;\nuse App\\Http\\Controllers\\HomeController;\nuse App\\Http\\Controllers\\ContactController;\nuse App\\Http\\Controllers\\ProductController;\nuse App\\Http\\Controllers\\ProfileController;\nuse App\\Http\\Controllers\\CheckoutController;\nuse App\\Http\\Controllers\\BasketController;\nuse App\\Http\\Controllers\\TrackingController;\nuse App\\Http\\Controllers\\DashboardController;\nuse App\\Http\\Controllers\\ReturnController;\nuse App\\Http\\Controllers\\ReturnRequestSubmitController;\n\n/*\n|--------------------------------------------------------------------------\n| Web Routes\n|--------------------------------------------------------------------------\n|\n| Here is where you can register web routes for your application. These\n| routes are loaded by the RouteServiceProvider and all of them will\n| be assigned to the \"web\" middleware group. Make something great!\n|\n*/\n\n\n\n// Route::get('/dashboard', function () {\n//     return view('dashboard');\n// })->middleware(['auth', 'verified'])->name('dashboard');\nRoute::get('/', [HomeController::class, 'index']);\n\nRoute::get('/test', function () {\n    return view('FrontEnd.test');\n});\n\nRoute::get('/product', [ProductController::class,'index'])->name('product');\nRoute::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); \n/*\nThe second route here sometimes overrides the first one (possibly something causing the buttons to trigger without an input).\nFor now I've made a workaround by having the getInfo function check if it has recieved an input, if not it behaves just like the index function.\nif anybody could let me (Francis) know of a better way to do this, I'd gladly appreciate it.\n*/\n\nRoute::get('/basket', [BasketController::class,'contents'])->name('basket');\nRoute::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');\nRoute::get('/test1', function () {\n    return view('FrontEnd.cart');\n});\n\n\n    Route::get('/index', [HomeController::class,'index'])->name('index');\n    Route::get('/contactUs',[ContactController::class,'contact'])->name('contactUs');;\n    Route::get('/tracking', [TrackingController::class,'tracking'])->name('tracking');\n\n    // Addded route function to the about page\n    Route::get('/about', function (){return view('FrontEnd/about');})->name('about');\n\n    // Route::get('/', );\n    // @say3dd (Mohammed Miah) - Routing for the different product functionalities\n    // @KraeBM (Bilal Mohamed) - Routing for product functionalities.\n    Route::get('/product', [ProductController::class,'index'])->name('product');\n    Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); \n    Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');\n    Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');\n\n\n    Route::get('/contact', [ContactController::class, 'showForm'])->middleware(['guest'])->name('contact.show');\n    Route::post('/contact', [ContactController::class, 'submitForm'])->middleware(['guest'])->name('contact.submit');\n\n\nRoute::middleware(['auth', 'verified'])->group(function () {\n    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');\n    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');\n    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');\n    Route::get('/home', [HomeController::class,'authHome'])->name('home');\n});\n\nRoute::middleware(['auth', 'admin'])->group(function () {\n\n    Route::get('/plist', function () {\n        return view('Admin.ProductList');\n    })->name('plist');\n});\n\nRoute::group(['middleware' => 'cart.notEmpty'], function () {\n    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');\n    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');\n    Route::get('/checkout/thankyou', function(){\n        return view('checkout.thankyou');\n    })->name('thank-you');\n});\n\nrequire __DIR__ . '/auth.php';\n\nRoute::middleware(['auth', 'verified'])->group(function () {\n    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');\n});\n\nRoute::get('/wishlist', function () {\n    return view('FrontEnd.wishlist');\n});\n\nRoute::get('/return-request', [ReturnController::class, 'showReturnForm'])->name('return.request');\n\nRoute::post('/submit-return-request', [ReturnRequestSubmitController::class, 'submit'])->name('return.request.submit');\n\n// Categories page -- change this soon \nRoute::get('/categories', function () {\n    return view('FrontEnd.categories');\n})->name('categories');\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/routes/web.php b/Valhalla/routes/web.php
+--- a/Valhalla/routes/web.php	
++++ b/Valhalla/routes/web.php	
+@@ -44,7 +44,7 @@
+ });
+ 
+ Route::get('/product', [ProductController::class,'index'])->name('product');
+-Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
++Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
+ /*
+ The second route here sometimes overrides the first one (possibly something causing the buttons to trigger without an input).
+ For now I've made a workaround by having the getInfo function check if it has recieved an input, if not it behaves just like the index function.
+@@ -69,7 +69,7 @@
+     // @say3dd (Mohammed Miah) - Routing for the different product functionalities
+     // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
+     Route::get('/product', [ProductController::class,'index'])->name('product');
+-    Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
++    Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
+     Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
+     Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');
+ 
+@@ -114,7 +114,7 @@
+ 
+ Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'submit'])->name('return.request.submit');
+ 
+-// Categories page -- change this soon 
++// Categories page -- change this soon
++Route::get('/search', 'ProductController@search')->name('search');
+ Route::get('/categories', function () {
+-    return view('FrontEnd.categories');
+-})->name('categories');
++    return view('FrontEnd.categories');})->name('categories');
+Index: Valhalla/app/Http/Controllers/ProductController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n//@noramknarf (Francis Moran) - getInfo() function\n/* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */\nnamespace App\\Http\\Controllers;\n\nuse App\\Models\\Product;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\Auth;\nuse App\\Models\\Basket;\nuse Illuminate\\Support\\Facades\\DB;\n\nclass ProductController extends Controller\n{\n    public function productList()\n    {\n        //mistake fixed\n        $products = Product::all();\n        return view('product', compact('product'));\n    }\n    /* this function is used to show the product page **/\n    public function pageUpdate(Request $request,$id){\n        /** Assigning the variables to the product coloums and making them distinct so theres no repetition */\n        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();\n        $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();\n    /** Assigning laptop as all products before its populated so laptop is definine din all tables before filled.*/\n    \n    $laptops = Product::all();\n    \n    /**Assigning opartions for if there are no filters chosen or \n     * if both filters are chosen - here both selected in the request */\n    $checkedBrands = $request-> get('brands',[]);\n    $checkedGPU = $request -> get('graphics',[]);\n    \n    /* if statements on whether both ticked or one ticked **/\n    if(!empty($checkedBrands)&& !empty($checkedGPU)){\n       $laptops =  Product::whereIn('brand',$checkedBrands)\n            -> whereIn('GPU',$checkedGPU)->get();\n    }\n    elseif(!empty($checkedBrands)){\n        $laptops = Product::whereIn('brand',$checkedBrands)->get();\n    }\n    elseif(!empty($checkedGPU)){\n        $laptops = Product::whereIn('GPU',$checkedGPU)->get();\n    }\n        /** The page update page works on making sure the products are displayed and each page works,  */\n    \n\n    switch($id){\n    case 1:\n    return view('Product_files.products', [\n        'laptops' => $laptops,\n        'brands' => $brands,\n        'graphics' => $graphics,\n    ]);\n    case 2:\n        return view('Product_files.products2', [\n            'laptops' => $laptops,\n            'brands' => $brands,\n            'graphics' => $graphics,\n        ]);\n        case 3:\n            return view('Product_files.products3', [\n                'laptops' => $laptops,\n                'brands' => $brands,\n                'graphics' => $graphics,\n            ]);\n            default: \n             return redirect()->back();\n    }\n    }\n    public function getInfo(Request $request)\n    {\n        /* had to restate these and put assign them within view since it returns an Undefined variable $brands/$graphics issue **/\n        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();\n        $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();\n\n        $laptopID = request()->input('laptopData'); //grabs specifically the section of the request that holds the laptop's ID\n        if($laptopID != '' && Auth::id() != null){\n            $product_data = DB::table('products')->where('product_id', $laptopID)->first();\n\n            $basket = Basket::create([\n                'user_id' => Auth::id(),\n                'product_id' => $laptopID,\n                'product_name' => $product_data->laptop_name,\n                'product_price' => $product_data->price,\n                'image_path' =>$product_data->image_path,\n                'RAM' => $product_data->RAM,\n                'GPU' => $product_data->GPU,\n                'processor' => $product_data->processor\n            ]);\n            /* In summary, $laptopID is the id passed to the controller by the products page,\n            $product_data is the entire row from the products table for that product, any info needed can be accessed with -> then the column name in the products table\n            I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual*/\n       }\n       $laptops = Product::all();\n       /*Scroll position set to the poisition of the user input */\n       /*Sets the restore scroll originally to true, if its true, then page refreshes from the top, if not continues by using \n       the saved Scroll positon */\n       $scrollPosition = $request->input('scrollPosition');\n       session(['scrollPosition' => $scrollPosition, 'restoreScroll' => true]);   \n       return redirect()->back();\n    }\n\n    // @say3dd (Mohammed Miah) displays all the products, maximum of 12 on the products page\n    public function index()\n    {\n        $laptops = Product::paginate(12);\n         return view('Product_files.product', compact('laptops'));\n        \n    }\n\n\n\n    // @say3dd (Mohammed Miah) Function to show a maximum of 4 products on the home page, namely the \"Our Laptops\" section.\n\n\n    // @say3dd (Mohammed Miah) Function to allow us to see related products on the individual product details page\n    public function show($id)\n    {\n        $laptop = Product::find($id);\n        $laptops = Product::where('product_id', '!=', $id)->take(5)->get();\n        return view('Product_files.product', ['product' => $laptop, 'laptops' => $laptops]);\n    }\n\n}\n    \n    \n
+===================================================================
+diff --git a/Valhalla/app/Http/Controllers/ProductController.php b/Valhalla/app/Http/Controllers/ProductController.php
+--- a/Valhalla/app/Http/Controllers/ProductController.php	
++++ b/Valhalla/app/Http/Controllers/ProductController.php	
+@@ -23,14 +23,14 @@
+         $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
+         $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();
+     /** Assigning laptop as all products before its populated so laptop is definine din all tables before filled.*/
+-    
++
+     $laptops = Product::all();
+-    
+-    /**Assigning opartions for if there are no filters chosen or 
++
++    /**Assigning opartions for if there are no filters chosen or
+      * if both filters are chosen - here both selected in the request */
+     $checkedBrands = $request-> get('brands',[]);
+     $checkedGPU = $request -> get('graphics',[]);
+-    
++
+     /* if statements on whether both ticked or one ticked **/
+     if(!empty($checkedBrands)&& !empty($checkedGPU)){
+        $laptops =  Product::whereIn('brand',$checkedBrands)
+@@ -43,7 +43,7 @@
+         $laptops = Product::whereIn('GPU',$checkedGPU)->get();
+     }
+         /** The page update page works on making sure the products are displayed and each page works,  */
+-    
++
+ 
+     switch($id){
+     case 1:
+@@ -64,7 +64,7 @@
+                 'brands' => $brands,
+                 'graphics' => $graphics,
+             ]);
+-            default: 
++            default:
+              return redirect()->back();
+     }
+     }
+@@ -94,10 +94,10 @@
+        }
+        $laptops = Product::all();
+        /*Scroll position set to the poisition of the user input */
+-       /*Sets the restore scroll originally to true, if its true, then page refreshes from the top, if not continues by using 
++       /*Sets the restore scroll originally to true, if its true, then page refreshes from the top, if not continues by using
+        the saved Scroll positon */
+        $scrollPosition = $request->input('scrollPosition');
+-       session(['scrollPosition' => $scrollPosition, 'restoreScroll' => true]);   
++       session(['scrollPosition' => $scrollPosition, 'restoreScroll' => true]);
+        return redirect()->back();
+     }
+ 
+@@ -106,7 +106,7 @@
+     {
+         $laptops = Product::paginate(12);
+          return view('Product_files.product', compact('laptops'));
+-        
++
+     }
+ 
+ 
+@@ -122,6 +122,51 @@
+         return view('Product_files.product', ['product' => $laptop, 'laptops' => $laptops]);
+     }
+ 
++    public function search(Request $request){
++        if($request->ajax()){
++
++            $data = Product::where('laptop_name', 'like', '%' . $request->search . '%')->get();
++            $output = '';
++            if (count($data) > 0) {
++
++                $output = '
++            <table class="table">
++            <thead>
++            <tr>
++                <th scope="col">Laptop</th>
++                <th scope="col">Price</th>
++            </tr>
++            </thead>
++            <tbody>';
++
++                foreach ($data as $row) {
++                    $output .= '
++                    <tr>
++                    <th scope="row"></th>
++                    <td>' . $row->laptop_name . '</td>
++                    <td>' . $row->price . '</td>
++                    </tr>
++                    ';
++                }
++
++
++
++                $output .= '
++             </tbody>
++            </table>';
++            } else {
++
++                $output .= 'No results';
++            }
++
++            return $output;
++
++        }
++
++        return view('categories');
++
++    }
++
+ }
+-    
+-    
++
++
