@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Dashboard.php has been refactored and organised">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/BasketService/BasketInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/BasketService/BasketInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Middleware/CheckCartNotEmpty.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Middleware/CheckCartNotEmpty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +26,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Abu-testing" />
+        <entry key="$PROJECT_DIR$" value="Valhalla-working-branch-backup" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -390,25 +385,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Valhalla-working-branch-backup&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/xampp/team-29&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Abu-testing",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/xampp/htdocs/xampp/team-29",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Team code\team-29\Valhalla\app\Http\Controllers" />
+      <recent name="C:\Team code\team-29\Valhalla\app\Http" />
+      <recent name="C:\Team code\team-29\Valhalla\resources\views\Product_files" />
     </key>
   </component>
   <component name="RunManager">
@@ -436,10 +432,6 @@
       <workItem from="1708474424958" duration="1244000" />
       <workItem from="1708970654791" duration="1128000" />
       <workItem from="1708973724751" duration="1745000" />
-      <workItem from="1709223487564" duration="11356000" />
-      <workItem from="1709542258909" duration="889000" />
-      <workItem from="1709543178857" duration="1332000" />
-      <workItem from="1709550923452" duration="4251000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -457,23 +449,31 @@
       <option name="project" value="LOCAL" />
       <updated>1708812796953</updated>
     </task>
-    <task id="LOCAL-00003" summary="added a new basket implementation">
+    <task id="LOCAL-00003" summary="Refactored Controller files and blade files. Added functionality of addToBasket() in home page and productL.blade.php">
       <option name="closed" value="true" />
-      <created>1709339846614</created>
+      <created>1709323832718</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1709339846614</updated>
+      <updated>1709323832718</updated>
     </task>
-    <task id="LOCAL-00004" summary="new crud functions for basket has been added.&#10;Additionally, new DatabaseSeeder.php has been updated.&#10;Some additional code has been added to the master.blade.php for basket control">
+    <task id="LOCAL-00004" summary="Refactored admin route">
       <option name="closed" value="true" />
-      <created>1709496229616</created>
+      <created>1709324806609</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1709496229616</updated>
+      <updated>1709324806609</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Dashboard.php has been refactored and organised">
+      <option name="closed" value="true" />
+      <created>1709325479647</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709325479647</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,7 +490,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Valhalla-working-branch-backup" />
+                        <option value="Abu-testing" />
                       </list>
                     </value>
                   </entry>
@@ -506,8 +506,9 @@
     <MESSAGE value="bilal test" />
     <MESSAGE value="added Dashboard.css and linked it with dashboard.blade.php" />
     <MESSAGE value="removed unintended line from dashboard.blade.php" />
-    <MESSAGE value="added a new basket implementation" />
-    <MESSAGE value="new crud functions for basket has been added.&#10;Additionally, new DatabaseSeeder.php has been updated.&#10;Some additional code has been added to the master.blade.php for basket control" />
-    <option name="LAST_COMMIT_MESSAGE" value="new crud functions for basket has been added.&#10;Additionally, new DatabaseSeeder.php has been updated.&#10;Some additional code has been added to the master.blade.php for basket control" />
+    <MESSAGE value="Refactored Controller files and blade files. Added functionality of addToBasket() in home page and productL.blade.php" />
+    <MESSAGE value="Refactored admin route" />
+    <MESSAGE value="Dashboard.php has been refactored and organised" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard.php has been refactored and organised" />
   </component>
 </project>
