@@ -76,9 +76,15 @@
             @endif
 
             <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-            <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i> Basket</a>
+            <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket</a>
+            <span class="bg-red-700 text-white text-2xl p-3 w-3 h-3 rounded-full"> {{count((array) session('basket'))}}</span>
             <!--Just for the record, idk what I'm doing with this ^ so feel free to clean it up -->
         </nav>
+
+
+
+{{--        <div class="dropdown-menu">--}}
+
         <!--- End of Section  --> </section>
 
     <!--         Hero Section         -->

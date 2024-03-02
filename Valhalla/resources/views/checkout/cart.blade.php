@@ -42,6 +42,30 @@
                     @endphp
                   @endif
                 @endforeach
+
+
+                        <div class="row">
+                            @php $total = 0 @endphp
+                            @foreach((array) session('basket') as $id => $details))
+                            @php $total += $details['price'] * $details['quantity'] @endphp
+                            @endforeach
+                        </div>
+                </div>
+
+                  @if(session('basket'))
+                      @foreach(session('cart') as $id => $details)
+                          <div class="row cart-detail">
+                              <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                  <img src="{{ asset('img') }}/{{ $details['photo'] }}" />
+                              </div>
+                              <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                  <p>{{ $details['product_name'] }}</p>
+                                  <span class="price text-info"> ${{ $details['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
+                              </div>
+                          </div>
+                      @endforeach
+                  @endif
+
                   <!-- Product item -->
                   <div class="justify-between mb-6 rounded-lg p-6 shadow-md  bg-violet-800 sm:flex sm:justify-start">
                     <!-- Image of the product -->
@@ -108,14 +132,14 @@
                       Check out
                   </button>
                 </form>
-              
+
             </div>
           </div>
         </div>
       @else
         <h1 class="mb-10 text-3xl font-bold fon text-white"> Your basket is empty.</h1>
       @endif
-        
+
     </div>
     </div>
   </div>
