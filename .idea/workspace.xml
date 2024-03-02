@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="removed unintended line from dashboard.blade.php">
-      <change afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/BasketService/BasketInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_02_2024_15_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_02_2024_15_15__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2024_21_53__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2024_21_53__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_18_05__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_18_05__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_18_55__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_18_55__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_19_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_19_03__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ProductController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -401,21 +384,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Abu-testing&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/xampp/team-29&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Valhalla-working-branch-backup",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/xampp/htdocs/xampp/team-29",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Team code\team-29\Valhalla\app\Http\Controllers" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/anthony-testApp/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
@@ -459,7 +447,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708812796953</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added a new basket implementation">
+      <option name="closed" value="true" />
+      <created>1709339846614</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709339846614</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,6 +476,7 @@
     <MESSAGE value="bilal test" />
     <MESSAGE value="added Dashboard.css and linked it with dashboard.blade.php" />
     <MESSAGE value="removed unintended line from dashboard.blade.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed unintended line from dashboard.blade.php" />
+    <MESSAGE value="added a new basket implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a new basket implementation" />
   </component>
 </project>
