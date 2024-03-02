@@ -3,13 +3,14 @@
 /* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\BasketService\BasketInterface;
+use App\Models\Basket;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Basket;
 use Illuminate\Support\Facades\DB;
 
-class ProductController extends Controller
+class ProductController extends Controller implements BasketInterface
 {
     public function productList()
     {
@@ -134,6 +135,7 @@ class ProductController extends Controller
         $laptops = Product::where('product_id', '!=', $id)->take(5)->get();
         return view('Product_files.product', ['product' => $laptop, 'laptops' => $laptops]);
     }
+
 
 }
 
