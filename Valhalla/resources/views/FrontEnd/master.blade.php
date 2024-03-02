@@ -18,8 +18,10 @@
         @yield('title', 'Master layout')
     </title>
     <link rel="stylesheet" href="{{ asset('assets/css/home_style.css') }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    @vite(['resources/css/app.css', 'resources/js/app.js']);
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
 
 <body>
@@ -72,19 +74,19 @@
                     @endif
                 @endauth
             @endif
-            <button type="button">
-            <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket
-            <span class="bg-red-700 text-white text-2xl rounded-full"> {{count((array) session('basket'))}}  </span> </a>
-            </button>
+
+            <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
+            <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket</a>
+            <span class="bg-red-700 text-white text-2xl p-3 w-3 h-3 rounded-full"> {{count((array) session('basket'))}}</span>
+            <!--Just for the record, idk what I'm doing with this ^ so feel free to clean it up -->
         </nav>
+
+
+
+{{--        <div class="dropdown-menu">--}}
+
         <!--- End of Section  --> </section>
 
-
-    @if(session('success'))
-        <div id="flash-success" class="bg-[#79c753] text-[white] rounded mx-0 my-5 p-5">
-            {{ session('success') }}
-        </div>
-    @endif
     <!--         Hero Section         -->
     <section id="hero">
         <div class="container">
@@ -97,6 +99,7 @@
                     laptops.
                     Unleash the power, speed, and precision you need for an unparalleled gaming experience.
                     Explore our curated selection and elevate your gaming journey to new heights.
+                </p>
                 </p>
                 <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
             </div>
@@ -112,8 +115,8 @@
                 <img src="{{ asset('assets/images/Razer-Logo (1).png') }}" alt="Brand 4">
             </div>
         </div>
-    </section>
 </header>
+
 
 <!-- Best seller prodcuts-->
 <section class= "main">
@@ -140,14 +143,14 @@
                 </div>
             </div>
         </div>
-
+        </div>
     </section>
 
 
 
 
 
-    <section id="best-seller-section">
+    <section id="best-seller-sction">
 
         <h1 class = "title-categories">Product Categories</h1>
         <div class="title-line-categories"></div>
@@ -203,7 +206,7 @@
 
 
 
-            </div>
+
             </div>
     </section>
 
@@ -211,6 +214,14 @@
 
     <!-- Our Product Section-->
     <section class= "main">
+
+        @if(session('success'))
+            <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
+                {{session('success')}}
+{{--                <p class=" text-amber-200">Hello, a message</p>--}}
+            </div>
+        @endif
+
 
 
         <section id="best-seller-section">
@@ -222,17 +233,17 @@
                     @foreach ($products as $product)
                         <div class="laptop">
                             <div>
-                                <img src="{{ asset($product->images) }}" alt="{{$product->product_name}}">
+                                <img src="{{ asset($product->image_path) }}" alt="laptop">
                             </div>
                             <div class="laptop-specs">
-                                <h1>{{ $product->product_name }}</h1>
-                                <p> {{ $product->product_description }}</p>
-{{--                                <p>RAM: {{ $product->RAM }}GB</p>--}}
-{{--                                <p>Graphics: {{ $product->GPU }}</p>--}}
+                                <h1>{{ $product->laptop_name }}</h1>
+                                <p> {{ $product->processor }}</p>
+                                <p>RAM: {{ $product->RAM }}GB</p>
+                                <p>Graphics: {{ $product->GPU }}</p>
                                 <h3>£{{ $product->price }}</h3>
 
 
-                                <!-- @KraeBM (prodcut Mohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
+                                <!-- @KraeBM (prodcutMohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
                                 <script>
                                     function saveScrollPosition(form) {
                                         var scrollY = window.scrollY || document.documentElement.scrollTop;
@@ -241,6 +252,7 @@
                                 </script>
                                 <form action='{{route('product.getInfo')}}' method='post'onsubmit='saveScrollPosition(this)'>
                                     @csrf
+                                    <input type="hidden" name="laptopData" value={{$product->product_id}}>
                                     <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
                                     <button class="buy-product"> <a href="{{route('add_to_basket', $product->product_id)}}"> Add to Basket </a><span class="badge badge-pill badge-danger"></span> </button>
 
@@ -250,7 +262,6 @@
 
                     @endforeach
                 </div>
-            </div>
         </section>
         <footer>
             @include('footer')
@@ -272,14 +283,7 @@ to constantly scroll up after pressing the navbar buttons -->
             @endif
         });
 
-        const dropdownButton = document.getElementById('dropdown-button');
-        const dropdownMenu = document.getElementById('dropdown-menu');
-
-        dropdownButton.addEventListener('click', () => {
-            dropdownMenu.classList.toggle('hidden');
-        });
     </script>
-</section>
 </body>
 
 </html>
