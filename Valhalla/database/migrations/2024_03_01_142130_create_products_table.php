@@ -9,18 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id('product_id');
-            $table->string('laptop_name');
-            $table->decimal('price', 8, 2);
-            $table->integer('RAM');
-            $table->string('processor');
-            $table->string('GPU');
-            $table->string('image_path');
+            $table->id('product_id'); //changed id to product_id since this syntax has been used throughout the code.
+            $table->string('product_name');
+            $table->text('product_description');
+            $table->enum('category', ['Laptop', 'Mouse', 'Keyboard', 'Monitor', 'Headset']); //added enum to add catagories
             $table->string('brand');
+            $table->decimal('price', 8, 2);
+            $table->string('image');
+
             $table->timestamps();
+
+
         });
     }
 

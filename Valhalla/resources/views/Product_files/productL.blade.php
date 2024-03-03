@@ -1,7 +1,7 @@
 <!-- @KraeBM (Bilal Mohamed) worked on all the backend, JS and blade templating of this page -->
 <!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Products webpage using CSS.  -->
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
 
     <meta charset="UTF-8">
@@ -10,6 +10,8 @@
     <title>Products</title>
     <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" >
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
 
 
     <style>
@@ -23,19 +25,19 @@
             font-size: small;
         }
     </style>
-</head>
+
 
 <header>
      <!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
   <section class = "navbar-section">
     @include ('header')
   </section>
- 
+
 </header>
 <body>
     <h1>
         <div class="title_shape">
-            <img class = "title_image" style="im" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
+            <img class = "title_image" style="" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
             <p class = "laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">
                 GAMING LAPTOPS
             </p>
@@ -48,6 +50,14 @@
 
     </h1>
     <h2>
+
+        @if(session('success'))
+            <div id="flash-success" class="p-5 bg-[#79c753] mx-44 my-5 rounded-[5px] w-1/2 ">
+                {{session('success')}}
+                {{--                <p class=" text-amber-200">Hello, a message</p>--}}
+            </div>
+        @endif
+
         <!-- This is the code for the layout of product container - where all the product will be shown -->
 <div class="background_shape6">
     <section class = "container_for_path_buttons">
@@ -73,8 +83,8 @@
                     </li>
                     <!-- for each brand/graphics, it assigns the checked area as empty, once filled with the brands/graphics
                          it selects the item and shows which is needed by its id, name and value. Also has an if statement on whether brand/graphics  is there and checkbrands is checked -->
-                @foreach ($brands as $brand)  
-                @php 
+                @foreach ($brands as $brand)
+                @php
                 $checkedbrands = [];
                 if(isset($_GET['brands']))
                 {
@@ -90,8 +100,8 @@
             <li>
                 <p style = "text-decoration: underline">GPU: </p><br>
                 </li>
-            @foreach ($graphics as $graphic)  
-            @php 
+            @foreach ($graphics as $graphic)
+            @php
             $checkedGPU = [];
             if(isset($_GET['graphics']))
             {
@@ -100,7 +110,7 @@
             @endphp
             <li>
 
-        <input id="{{$graphic->GPU}}" name="graphics[]" value="{{$graphic->GPU}}" type="checkbox" 
+        <input id="{{$graphic->GPU}}" name="graphics[]" value="{{$graphic->GPU}}" type="checkbox"
         @if(in_array($graphic -> GPU, $checkedGPU)) checked="checked" @endif/>
         <label>{{$graphic->GPU}}</label>
         </li>
@@ -120,24 +130,39 @@
 
     <div id="sorting-container" class="sort">
         <ul class="sort__list">
-            <form action="{{URL::current()}}" method="GET">
+            <form action="{{URL::current()}}" method="GET" wire:model="sorting">
                 <li>
                     <p style = "text-decoration: underline"> Sort By: </p><br>
                 </li>
-            <label type = "checkbox">Newest Arrival</label>
-            <label type = "checkbox">Price: High To Low</label>
-            <label type = "checkbox">Price: Low to High</label>
-            <label type = "checkbox">Recommended</label>
+                <li>
+           <input type="radio" id="Newest-Arrival" name="sorting" value="Newest-Arrival">
+               <label for="Newest-Arrival"> Newest Arrival </label><br>
+                </li>
+                <li>
+                <input type="radio" id="Price_HtoL" name="sorting" value="Price_HtoL">
+                <label for="Price_HtoL">Price: High to Low</label><br>
+                </li>
+                <li>
+                <input type="radio" id="Price_LtoH" name="sorting" value="Price_LtoH">
+                <label for="Price_LtoH">Price: Low to High</label><br>
+                </li>
+                <li>
+                    <input type="radio" id="Recommended" name="sorting" value="Recommended">
+                    <label for="Recommended"> Recommended</label> <br>
+                </li>
+                <li>
+        <button class = "button_apply" > Apply Changes </button>
+        <button class = "button_reset" onclick="resetSort()" > Reset </button>
+        </li>
+        </form>
         </ul>
-
-    </form>
-
     </div>
-
 <script>
 /*Code for the submit button - works by assaigning variables with the id
- and making it so if the filter is active, 
+ and making it so if the filter is active,
 add those selected and when filled and enter is pressed run the funtion */
+var sort_filter =document.getElementById("sort-button");
+var  scontainer = document.getElementById("sorting-container");
 var button_filter = document.getElementById("filter-button");
 var container = document.getElementById("filter-container");
 var input = document.querySelectorAll("input");
@@ -155,19 +180,45 @@ container.onclick = function (e) {
   e.stopPropagation();
 };
 
-window.onclick = function () {
-  container.classList.remove("filters--active");
+
+//code for making sorting button work//
+sort_filter.onclick = function(e){
+    e.stopPropagation();
+    if(scontainer.classList.contains("sort--active")){
+        scontainer.classList.remove("sort--active");
+    }else {
+        scontainer.classList.add("sort--active");
+    }
 };
 
+scontainer.onclick = function(e){
+    e.stopPropagation();
+};
+//
 
+window.onclick = function(e) {
+    if (!container.contains(e.target)) {
+        container.classList.remove("filters--active");
+    }
+    if (!scontainer.contains(e.target)) {
+        scontainer.classList.remove("sort--active");
+    }
+};
 console.log(input);
 /* Here is the code for resetting the filter section - gathers all the data input in checkbox and for each checbox, it removes them all by assinging it false.**/
-function resetSort() {
+function resetFilters() {
     var checkboxes = document.querySelectorAll("#filter-container input[type='checkbox']");
     checkboxes.forEach(function(checkbox) {
         checkbox.checked = false;
     });
 }
+function resetSort() {
+    var checkboxes = document.querySelectorAll("#sorting-container input[type='checkbox']");
+    checkboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
+    });
+}
+
 /* Where the area in products will go, and the functionality of the buttons to change pages **/
 </script>
 
@@ -176,7 +227,7 @@ function resetSort() {
             <section class = "laptops_container">
                 <div class="button_container">
                  <a href="{{route('productspage.id' ,['id' =>1]) }}">
-                       <button class="button_to_switch_page" style="margin-top: 25px;"> 1 </button> 
+                       <button class="button_to_switch_page" style="margin-top: 25px;"> 1 </button>
                     </a>
                   <a href="{{route('productspage.id', ['id' =>2]) }}" >
                      <button class="button_to_switch_page" style="margin-top: 25px;"> 2 </button>
@@ -185,7 +236,7 @@ function resetSort() {
                     <button class="button_to_switch_page" style="margin-top: 25px;"> 3 </button>
                    </a>
                 </div>
-            </section>    
+            </section>
     </h2>
 </div>
 <script>
@@ -194,20 +245,20 @@ function resetSort() {
      var scrollY = window.scrollY || document.documentElement.scrollTop;
     form.scrollPosition.value = scrollY;
 }
-/* Improves the position where the user last pressed the "add to basket": button so no need to wait for page to load before moving 
+/* Improves the position where the user last pressed the "add to basket": button so no need to wait for page to load before moving
 to original position It also makes sure when a user presses the home button/product button, it takes you to the top and not where
  the previous saved position is - this would be frustrating to constantly scroll up after pressing the navbar buttons */
 
 document.addEventListener('DOMContentLoaded', function() {
         @if(session('restoreScroll'))
         var savedScrollPosition = {{ session('scrollPosition', '0') }};
-        
+
         if (savedScrollPosition) {
             window.scrollTo(0, savedScrollPosition);
             @php session()->forget('restoreScroll'); session()->forget('scrollPosition'); @endphp
         }
         @endif
-    });   
+    });
 </script>
 </body>
 <footer>

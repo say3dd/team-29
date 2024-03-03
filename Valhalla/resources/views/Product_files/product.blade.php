@@ -20,6 +20,7 @@
     {{-- Section 1 starts here --}}
         <div class="background_shape1">
             <div class="background_shape_1_2">
+<<<<<<< HEAD
                 <div class="slideshow-container">
                     <div class="slide">
                         <div class="mySlides">
@@ -47,6 +48,12 @@
                         <span class="dot" onclick="currentSlide(5)"></span>
                         </div>
                     </div>
+=======
+            <div class="slideshow-container">
+            <div class="slide">
+                <div class="mySlides">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop4.jpg')}}" >
+>>>>>>> e1b44a4673448d44b00b34ec44b9c8d233f91302
                 </div>
             </div>
         <div class="product_information">

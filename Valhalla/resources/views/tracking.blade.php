@@ -3,15 +3,15 @@
   <style>
     @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
     body {
-      background-color: #5B21B6;
       font-family: 'Open Sans', sans-serif;
     }
     .container {
       margin-top: 50px;
       margin-bottom: 50px;
+      
     }
     .card {
-      @apply relative flex flex-col min-w-0 break-words bg-violet-700 bg-clip-border border border-solid border-purple-900 rounded-sm;
+      @apply relative flex flex-col min-w-0 break-words bg-clip-border border border-solid rounded-sm;
       display: flex;
       flex-direction: column;
       min-width: 0;
@@ -23,7 +23,7 @@
       border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0;
     }
     .card-header {
-      @apply py-3 px-5 mb-0 bg-violet-700 border-b border-solid border-purple-900;
+      @apply py-3 px-5 mb-0 border-b border-solid;
       padding: 0.75rem 1.25rem;
       margin-bottom: 0;
       background-color: #6b46c1;
