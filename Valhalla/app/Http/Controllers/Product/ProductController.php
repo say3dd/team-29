@@ -147,6 +147,27 @@ class ProductController extends Controller implements BasketInterface
         return redirect()->back()->with('success', 'Item has been added to basket');
     }
 
+    public function update(Request $request){
+        if ($request->id && $request->quantity){
+            $basket = session()->get('basket');
+            $basket[$request->id]["quantity"] = $request->quantity;
+            session()->put('basket', $basket);
+            session()->flash('success', 'Basket has been updated!');
+        }
+    }
+
+    public function remove(Request $request)
+    {
+        if ($request->id){
+            $basket = session()->get('basket');
+            if (isset($basket[$request->id])){
+                unset($basket[$request->id]);
+                session()->put('basket', $basket);
+            }
+            session()->flash('success', 'Item has been removed!');
+        }
+    }
+
 }
 
 
