@@ -8,6 +8,10 @@ body {
     font-family: "Noto Sans", sans-serif;
 }
 
+hr {
+    border-color: rgb(160, 103, 236);
+}
+
 .main {
     display: flex;
     align-items: center;
@@ -87,16 +91,16 @@ body {
     background-color: #4e008b;
     color: white;
     border-radius: 2rem;
-    padding: 0;
     justify-content: center;
     align-items: center;
     display: flex;
-    gap: 6rem;
+    gap: 3rem;
 }
 
 /*CSS styling for product information*/
 
 /* Container for product information */
+
 .product_information {
     width: 35%;
     height: 499px;
@@ -110,26 +114,23 @@ body {
 .product_name {
     padding: 15px;
     color: white;
-    font-size: 2em;
+    font-size: 1.9em;
     margin: 0;
+    font-weight: 550;
 }
 
 .product_main_features {
     color: white;
     font-size: 1.2em;
     font-weight: lighter;
+    line-height: 1.4;
 }
 
 .product_price {
     color: white;
-    font-size: 34px;
-    font-weight: lighter;
-}
-
-.product_price_no_VAT {
-    color: white;
-    font-size: 20px;
-    font-weight: lighter;
+    font-size: 2.1rem;
+    font-weight: 520;
+    text-align: center;
 }
 
 /*Properties for "View specification" button*/
@@ -165,7 +166,7 @@ body {
 }
 
 .modal-content {
-    margin: 15% auto;
+    margin: 12% auto;
     padding: 20px;
     border-color: white;
     border-radius: 2rem;
@@ -227,39 +228,53 @@ body {
 
 /* Container for slide show */
 .background_shape_1_2 {
-    position: relative;
-    width: 50%;
-    height: 499px;
-    background-color: #300452;
-    border-radius: 2rem;
-    padding: 0.25em;
+    width: 52%;
     margin: 0;
+    padding: 2rem;
+    display: inline-flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    container-type: size;
+    height: 90%;
 }
 
-.slideshow-container {
-    padding: 2.5em;
+.background_shape_1_2 .slideshow-container {
+    background-color: #300452;
+    padding: 2rem;
+    padding-bottom: 1rem;
+    border-radius: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    overflow: hidden;
+    inline-size: inherit;
+    width: fit-content;
+    width: 82%;
+    height: fit-content;
+    height: 72%;
+    margin: 2rem;
 }
 
 .mySlides {
     display: none;
+    max-height: 100%;
+    max-width: 94%;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .slide_image {
-    max-height: 420px;
-    min-width: none;
-    height: auto;
-    width: auto;
-    width: 100%;
     border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
 }
 
 /* Buttons for the slide show */
 .previousSlide {
     position: absolute;
-    top: 44%;
+    top: 50%;
     font-size: 30px;
     padding: 11px;
     background-color: transparent;
@@ -267,65 +282,82 @@ body {
     cursor: pointer;
     border-color: transparent;
     border-radius: 12px;
+    transform: translateY(-50%);
+    left: 0;
+    margin-left: 6px;
 }
 
 .nextSlide {
     position: absolute;
-    top: 45.5%;
+    top: 50%;
     font-size: 30px;
     padding: 11px;
     background-color: transparent;
     color: #fff;
     cursor: pointer;
-    right: 9.5%;
     border-radius: 12px;
     border-color: transparent;
+    transform: translateY(-50%);
+    right: 0;
+    margin-left: 6px;
 }
 
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0;
+    background-color: #4e008b;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    top: -30px;
+    position: relative;
+}
+.active,
+.dot:hover {
+    background-color: #a634ff;
+}
 /* Buttons for adding the product to the Basket or to a Wish List */
 
 /* Container to align buttons on one line */
-.buttons {
+.product_information .buttons {
     text-align: center;
-    display: inline-flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    display: flex;
+    margin: 0 auto;
+    padding: 0.6rem;
+    padding-top: 1rem;
+    width: 100%;
 }
 
-/* Buttons style */
 .button_cart,
 .button_wish {
-    background-color: #300452;
-    font-size: 23px;
+    background-color: #a634ff;
+    border: none;
     color: white;
-    border: 0.1rem solid #fff;
-    border-radius: 1rem;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
     font-family: "Noto Sans", sans-serif;
-    margin-left: 16px;
-    margin-top: 8px;
+    margin: 0 auto;
 }
 
-.image_cart {
-    width: 20px;
-    height: 25px;
-}
-
-.image_wish_list {
-    width: 25px;
-    height: 23px;
-}
-
-/* Hover effect fot buttons */
 .button_cart:hover {
-    text-decoration: underline;
-    color: white;
+    background-color: #bc00f5;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
 }
 
 .button_wish:hover {
-    text-decoration: underline;
-    color: white;
+    background-color: #bc00f5;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
 }
 
 /* Section 3 */
@@ -657,32 +689,20 @@ footer {
         font-size: 28px;
     }
 
-    .product_price_no_VAT {
-        font-size: 18px;
-    }
-
     /*Properties for "View specification" button*/
     .button_view_specification {
         margin-left: 22px;
     }
 
     /* Container for slide show */
-    .background_shape_1_2 {
-        height: 460px;
-    }
-
-    /* Buttons for the slide show */
-
-    .nextSlide {
-        right: 7.5%;
-    }
 
     /* Buttons for adding the product to the Basket or to a Wish List */
 
     /* Buttons style */
     .button_cart,
     .button_wish {
-        font-size: 20px;
+        font-size: 1rem;
+        margin: 1rem;
     }
 
     /* Section 3 */
@@ -706,6 +726,23 @@ footer {
     }
 }
 
+@media (max-width: 1280px) {
+    .background_shape_1_2 .slideshow-container {
+        height: 60%;
+        padding: 1.4rem;
+        padding-bottom: 0.6rem;
+    }
+
+    .product_information .buttons {
+        padding-top: 0rem;
+    }
+
+    .button_cart,
+    .button_wish {
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 1024px) {
     /* Section 1 */
     /* Container for fitting in information about the product*/
@@ -715,14 +752,14 @@ footer {
     }
 
     /* Container for slide show */
-    .background_shape_1_2 {
-        width: 50%;
-        height: 330px;
-        padding: 0.15em;
+
+    /* Buttons for the slide show */
+    .previousSlide {
+        font-size: 24px;
     }
 
-    .slideshow-container {
-        padding: 1.5em;
+    .nextSlide {
+        font-size: 24px;
     }
 
     /*CSS styling for product information*/
@@ -747,22 +784,26 @@ footer {
         font-size: 22px;
     }
 
-    .product_price_no_VAT {
-        font-size: 16px;
-    }
-
     /*Properties for "View specification" button*/
     .button_view_specification {
         margin-left: 8px;
         font-size: 0.9em;
     }
 
+    .background_shape_1_2 .slideshow-container {
+        height: 60%;
+    }
     /* Buttons for adding the product to the Basket or to a Wish List */
 
     /* Buttons style */
+    .product_information .buttons {
+        padding: 0.2rem;
+        padding-top: 0rem;
+    }
+
     .button_cart,
     .button_wish {
-        font-size: 16px;
+        font-size: 0.8rem;
     }
 
     /* Container 3 for features */
@@ -776,8 +817,6 @@ footer {
         flex-wrap: wrap;
         justify-content: space-evenly; /* Arrange items evenly within the container */
         gap: 1rem;
-        margin-bottom: 7%;
-        margin-top: 3%;
         border-radius: 2rem;
         padding: 0.27em;
         padding-top: 42px;
@@ -808,16 +847,30 @@ footer {
     }
 }
 
+@media (max-width: 920px) {
+    .product_information .buttons {
+        padding-top: 0rem;
+    }
+
+    .button_cart,
+    .button_wish {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 860px) {
+    .background_shape_1_2 .slideshow-container {
+        height: 50%;
+    }
+}
+
 @media (max-width: 768px) {
     /* Container for fitting in information about the product*/
     .background_shape1 {
-        position: relative;
-        width: 90vw;
-        height: 780px;
-        background-color: #4e008b;
-        color: white;
+        height: 850px;
         border-radius: 2rem;
         padding: 0;
+        display: flex;
     }
 
     /*CSS styling for product information*/
@@ -826,8 +879,7 @@ footer {
     .product_information {
         position: absolute;
         width: 70%;
-        top: 44%;
-        height: 300px;
+        top: 63%;
     }
 
     /*CSS styling for the name, price and other relative information of the product */
@@ -841,10 +893,6 @@ footer {
 
     .product_price {
         font-size: 24px;
-    }
-
-    .product_price_no_VAT {
-        font-size: 18px;
     }
 
     /*Properties for "View specification" button*/
@@ -867,33 +915,26 @@ footer {
 
     /* Container for slide show */
     .background_shape_1_2 {
+        margin: 0 auto;
         position: absolute;
-        top: 4%;
         width: 80%;
-        height: 300px;
-    }
-
-    .slideshow-container {
-        padding: 1.3em;
-    }
-
-    .slide_image {
-        height: 260px;
-        width: 420px;
-    }
-
-    .nextSlide {
-        top: 45.5%;
-        right: 12.5%;
+        margin-top: 0;
+        top: 8%;
+        height: 60%;
     }
 
     /* Buttons for adding the product to the Basket or to a Wish List */
 
     /* Buttons style */
+    .product_information .buttons {
+        padding: 0;
+        padding-top: 0;
+        margin-bottom: 1rem;
+    }
+
     .button_cart,
     .button_wish {
-        font-size: 18px;
-        margin-left: 30px;
+        font-size: 0.9rem;
     }
 
     /* Section 3 */
@@ -916,7 +957,7 @@ footer {
     }
 
     .unique_feature4_5_6_7_8_image {
-        top: -68%;
+        display: flex;
         height: 40%;
     }
 
@@ -942,13 +983,9 @@ footer {
     /* Container for realted products*/
 
     .container_section5 {
-        background-image: linear-gradient(#4e008b, #300452);
-        color: white;
         margin: 0 auto; /* Center the container horizontally */
-        width: 90vw;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly; /* Arrange items evenly within the container */
         gap: 1rem;
         margin-bottom: 7%;
         margin-top: 3%;
@@ -978,41 +1015,14 @@ footer {
     }
 }
 
-@media (max-width: 435px) {
-    /* Section 1 */
-
-    /* Container for fitting in information about the product*/
+@media (max-width: 595px) {
     .background_shape1 {
-        height: 640px;
+        height: 800px;
     }
-
-    /* Slide Show Properties*/
 
     /* Container for slide show */
     .background_shape_1_2 {
-        position: absolute;
-        top: 3%;
-        width: 90%;
-        height: 220px;
-    }
-
-    .slideshow-container {
-        padding: 1.3em;
-    }
-
-    .slide_image {
-        height: 180px;
-        width: 300px;
-    }
-
-    /* Buttons for the slide show */
-    .previousSlide {
-        font-size: 18px;
-    }
-
-    .nextSlide {
-        font-size: 18px;
-        right: 8.5%;
+        top: 4%;
     }
 
     /*CSS styling for product information*/
@@ -1020,13 +1030,94 @@ footer {
     /* Container for product information */
     .product_information {
         position: absolute;
-        width: 80%;
-        top: 38%;
+        width: 70%;
+        top: 56%;
+    }
+    .background_shape_1_2 .slideshow-container {
+        height: 41%;
+    }
+
+    .button_cart,
+    .button_wish {
+        font-size: 0.75rem;
+    }
+
+    .container_section3 {
+        height: 540px;
+    }
+
+    .text_container {
+        width: 48%;
+    }
+
+    .unique_feature_title_title {
+        font-size: 1.3em;
+    }
+
+    .unique_feature_content {
+        font-size: 0.8em;
+    }
+
+    .unique_feature_title {
+        font-size: 1em;
+    }
+
+    .unique_feature4_5_6_7_8_image {
+        margin-top: 9%;
+    }
+}
+
+@media (max-width: 435px) {
+    /* Section 1 */
+
+    /* Container for fitting in information about the product*/
+    .background_shape1 {
+        height: 680px;
+    }
+
+    /* Slide Show Properties*/
+
+    /* Container for slide show */
+    .background_shape_1_2 {
+        top: -2%;
+    }
+
+    /*CSS styling for product information*/
+
+    /* Container for product information */
+    .product_information {
+        position: absolute;
+        width: 70%;
+        top: 46%;
+    }
+    .background_shape_1_2 .slideshow-container {
+        height: 29%;
+        width: 74%;
+    }
+
+    .nextSlide,
+    .previousSlide {
+        font-size: 24px;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
+
+    .product_information .buttons {
+        padding: 0;
+        padding-top: 0;
+    }
+
+    .button_cart,
+    .button_wish {
+        font-size: 0.5rem;
     }
 
     /*CSS styling for the name, price and other relative information of the product */
     .product_name {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 
     .product_main_features {
@@ -1035,10 +1126,6 @@ footer {
 
     .product_price {
         font-size: 20px;
-    }
-
-    .product_price_no_VAT {
-        font-size: 15px;
     }
 
     /*Properties for "View specification" button*/
@@ -1075,33 +1162,11 @@ footer {
         width: 75%;
     }
 
-    /* Buttons for adding the product to the Basket or to a Wish List */
-    /* Buttons style */
-    .button_cart,
-    .button_wish {
-        font-size: 13px;
-        margin-left: 6px;
-    }
-
-    .button_cart {
-        margin-right: 10px;
-    }
-
-    .image_cart {
-        width: 12px;
-        height: 17px;
-    }
-
-    .image_wish_list {
-        width: 12px;
-        height: 10px;
-    }
-
     /* Section 3 */
     /* Container 2 for features */
 
     .container_section3 {
-        height: 480px;
+        height: 490px;
     }
 
     .unique_feature_title_title {
@@ -1130,7 +1195,7 @@ footer {
     /* Section 4*/
     /* Container 3 for features */
     .container_section4 {
-        height: 280px;
+        height: 250px;
     }
 
     .unique_feature9_image {
@@ -1183,46 +1248,47 @@ footer {
 
     /* Container for fitting in information about the product*/
     .background_shape1 {
-        position: relative;
-        width: 90vw;
         height: 600px;
-        top: -13%;
     }
-
-    /* Slide Show Properties*/
 
     /* Container for slide show */
     .background_shape_1_2 {
-        width: 90%;
-        height: 200px;
+        top: -4%;
+        height: 60%;
     }
-
-    .slideshow-container {
-        padding: 1.3em;
-    }
-
-    .slide_image {
-        height: 160px;
-        width: 260px;
-    }
-
-    /* Buttons for the slide show */
-    .previousSlide {
-        font-size: 15px;
-    }
-
-    .nextSlide {
-        font-size: 15px;
-        right: 8.5%;
-    }
-
-    /*CSS styling for product information*/
 
     /* Container for product information */
     .product_information {
         position: absolute;
-        width: 80%;
-        top: 36%;
+        width: 70%;
+        top: 41%;
+    }
+
+    .background_shape_1_2 .slideshow-container {
+        height: 24%;
+        width: 70%;
+    }
+
+    .nextSlide,
+    .previousSlide {
+        font-size: 20px;
+    }
+
+    .dot {
+        height: 8px;
+        width: 8px;
+    }
+
+    .product_information .buttons {
+        padding: 0;
+        padding-top: 0;
+        top: 78%;
+        position: absolute;
+    }
+
+    .button_cart,
+    .button_wish {
+        font-size: 0.5rem;
     }
 
     /*CSS styling for the name, price and other relative information of the product */
@@ -1238,36 +1304,10 @@ footer {
         font-size: 18px;
     }
 
-    .product_price_no_VAT {
-        font-size: 13px;
-    }
-
     /*Properties for "View specification" button*/
     .button_view_specification {
         font-size: 0.9em;
         margin-left: 8px;
-    }
-
-    /* Buttons for adding the product to the Basket or to a Wish List */
-    /* Buttons style */
-    .button_cart,
-    .button_wish {
-        font-size: 12px;
-        margin-left: -6px;
-    }
-
-    .button_cart {
-        margin-right: 16px;
-    }
-
-    .image_cart {
-        width: 12px;
-        height: 17px;
-    }
-
-    .image_wish_list {
-        width: 12px;
-        height: 10px;
     }
 
     /* Section 3 */
@@ -1294,7 +1334,7 @@ footer {
     }
 
     .unique_feature4_5_6_7_8_image {
-        top: 2%;
+        top: -1%;
         margin-left: 20%;
         height: 26%;
         width: 60%;
@@ -1303,7 +1343,7 @@ footer {
     /* Section 4*/
     /* Container 3 for features */
     .container_section4 {
-        height: 280px;
+        height: 240px;
     }
 
     .unique_feature9_image {
