@@ -18,9 +18,11 @@
         @yield('title', 'Master layout')
     </title>
     <link rel="stylesheet" href="{{ asset('assets/css/home_style.css') }}">
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">--}}
+{{--    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>--}}
+{{--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>--}}
+{{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />--}}
 </head>
 
 <body>
@@ -75,8 +77,44 @@
             @endif
 
             <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-            <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i> Basket</a>
-            <!--Just for the record, idk what I'm doing with this ^ so feel free to clean it up -->
+            <div id="basket-overlap" class="float-right pr-[30px] w-[30vw] left-[-50px] shadow-[0px_5px_10px_black] p-5 top-[30px]">
+                <button type="button" id="btn btn-primary" class="shadow-none mx-0 my-2.5 border-0" data-toggle="basket-overlap">
+            <a href="{{route('basket')}}" class="basket-icon">
+                <i class="bx bx-shopping-bag" aria-hidden="true"></i>
+                <span class="badge badge-pill badge-danger"> Basket {{ count((array) session('basket')) }}</span></a>
+                </button>
+                <div id="basket-menu" class="w-[30vw] left-[-50px] shadow-[0px_5px_10px_black] p-5 top-[30px]">
+                    <div id="total-header-section" class="border-b-[#d2d2d2] border-b border-solid">
+                        @php $total = 0 @endphp
+                        @foreach((array) session('basket') as $id => $details)
+                            @php $total += $details['price'] * $details['quantity'] @endphp
+                        @endforeach
+                        <div id="total-section" class="col-lg-12 col-sm-12 col-12 text-right ">
+                            <p class="mb-5">Total: <span class="text-info">£ {{ $total }}</span></p>
+                        </div>
+                    </div>
+                    @if(session('basket'))
+                        @foreach(session('basket') as $id => $details)
+                            <div id="basket-detail" class="px-0 py-[15px] text-xs font-[50] mr-2.5 bg-black">
+                                <div id="basket-detail-img" class="col-lg-4 col-sm-4 col-4">
+                                    <img class="w-full h-full pl-[15px]" src="{{ asset('img') }}/{{ $details['image'] }}" alt="" />
+                                </div>
+                                <div id="basket-detail-product" class="col-lg-8 col-sm-8 col-8" >
+                                    <p class="text-black font-medium m-0"> {{ $details['product_name'] }}</p>
+                                    <span id="price" class="text-xs font-[50] mr-2.5 text-info"> ${{ $details['price'] }}</span>
+                                    <span id="count" class="bg-black"> Quantity:{{ $details['quantity'] }}</span>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+
+                    <div class="row">
+                        <div id="checkout" class="col-lg-12 col-sm-12 col-12 text-center pt-[15px] border-t-[#d2d2d2] border-t border-solid">
+                            <a href="{{ route('basket') }}" class="btn btn-primary btn-block rounded-full"> View All</a>
+                        </div>
+                    </div>
+            </div>
+            </div>
         </nav>
         <!--- End of Section  --> </section>
 
@@ -108,8 +146,8 @@
                 <img src="{{ asset('assets/images/Razer-Logo (1).png') }}" alt="Brand 4">
             </div>
         </div>
+    </section>
 </header>
-
 
 <!-- Best seller prodcuts-->
 <section class= "main">
@@ -136,14 +174,14 @@
                 </div>
             </div>
         </div>
-        </div>
+
     </section>
 
 
 
 
 
-    <section id="best-seller-sction">
+    <section id="best-seller-section">
 
         <h1 class = "title-categories">Product Categories</h1>
         <div class="title-line-categories"></div>
@@ -199,7 +237,7 @@
 
 
 
-
+            </div>
             </div>
     </section>
 
@@ -209,7 +247,7 @@
     <section class= "main">
 
 
-        <section id="best-seller-sction">
+        <section id="best-seller-section">
             <div class="big-card">
                 <h1 class="title-products">Best Sellers</h1>
                 <div class="title-line-products"></div> <!-- Add this line -->
@@ -218,17 +256,17 @@
                     @foreach ($products as $product)
                         <div class="laptop">
                             <div>
-                                <img src="{{ asset($product->image_path) }}" alt="laptop">
+                                <img src="{{ asset($product->images) }}" alt="{{$product->product_name}}">
                             </div>
                             <div class="laptop-specs">
-                                <h1>{{ $product->laptop_name }}</h1>
-                                <p> {{ $product->processor }}</p>
-                                <p>RAM: {{ $product->RAM }}GB</p>
-                                <p>Graphics: {{ $product->GPU }}</p>
+                                <h1>{{ $product->product_name }}</h1>
+                                <p> {{ $product->product_description }}</p>
+{{--                                <p>RAM: {{ $product->RAM }}GB</p>--}}
+{{--                                <p>Graphics: {{ $product->GPU }}</p>--}}
                                 <h3>£{{ $product->price }}</h3>
 
 
-                                <!-- @KraeBM (prodcutMohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
+                                <!-- @KraeBM (prodcut Mohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
                                 <script>
                                     function saveScrollPosition(form) {
                                         var scrollY = window.scrollY || document.documentElement.scrollTop;
@@ -247,6 +285,7 @@
 
                     @endforeach
                 </div>
+            </div>
         </section>
         <footer>
             @include('footer')
