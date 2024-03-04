@@ -11,7 +11,7 @@ use App\Http\Controllers\Basket\CheckoutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Product\ReturnController;
 use App\Http\Controllers\Product\ReturnRequestSubmitController;
 use App\Http\Controllers\Product\TrackingController;
@@ -90,13 +90,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/productlist', [ProfileController::class, 'adminIndex']) ->name('ProductList');
 });
 
-Route::group(['middleware' => 'cart.notEmpty'], function () {
-    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
-    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
-    Route::get('/checkout/thankyou', function(){
-        return view('checkout.thankyou');
-    })->name('thank-you');
-});
+//Route::group(['middleware' => 'cart.notEmpty'], function () {
+//    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
+//    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+//    Route::get('/checkout/thankyou', function(){
+//        return view('checkout.thankyou');
+//    })->name('thank-you');
+//});
 
 Route::get('/wishlist', function () {
     return view('FrontEnd.wishlist');

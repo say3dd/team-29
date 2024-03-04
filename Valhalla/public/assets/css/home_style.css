@@ -1378,3 +1378,70 @@ Interactive Basket section
 }
 
 
+/*
+Styling for basket
+*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn{
+
+}
+.dropdown .dropdown-content{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+/*.dropdown-content {*/
+/*    */
+/*}*/
+
+
+.dropdown{
+    float:right;
+    padding-right: 30px;
+}
+.btn{
+    border:0px;
+    margin:10px 0px;
+    box-shadow:none !important;
+}
+.dropdown .dropdown-menu{
+    padding:20px;
+    top:30px !important;
+    width:350px !important;
+    left:-110px !important;
+    box-shadow:0px 5px 30px black;
+}
+.total-header-section{
+    border-bottom:1px solid #d2d2d2;
+}
+.total-section p{
+    margin-bottom:20px;
+}
+.checkout{
+    border-top:1px solid #d2d2d2;
+    padding-top: 15px;
+}
+
+.checkout .btn-primary{
+    border-radius:50px;
+
+}
+
+.dropdown-menu:before{
+
+    position:absolute;
+    top:-20px;
+    right:50px;
+    border:10px solid transparent;
+    border-bottom-color:#fff;
+}
+

@@ -85,9 +85,9 @@ class ProductController extends Controller implements BasketInterface
 //        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
 //        $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();
 
-//        $productID = request()->input('productData'); //grabs specifically the section of the request that holds the laptop's ID
-//        if($productID != '' && Auth::id() != null){
-//            $product_data = DB::table('products')->where('product_id', $productID)->first();
+        $productID = request()->input('productData'); //grabs specifically the section of the request that holds the laptop's ID
+        if ($productID != '' && Auth::id() != null) {
+            $product_data = DB::table('products')->where('product_id', $productID)->first();
 //
 //            $basket = Basket::create([
 //                'user_id' => Auth::id(),
@@ -102,7 +102,8 @@ class ProductController extends Controller implements BasketInterface
             /* In summary, $laptopID is the id passed to the controller by the products page,
             $product_data is the entire row from the products table for that product, any info needed can be accessed with -> then the column name in the products table
             I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual*/
-       }
+        }
+    }
 
 
 
@@ -133,7 +134,7 @@ class ProductController extends Controller implements BasketInterface
 
         $basket = session()->get('basket', []);
 
-        if (isset($basket[$id])){
+        if (isset($basket[$id])) {
             $basket[$id]['quantity']++;
 
         }else{
