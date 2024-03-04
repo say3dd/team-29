@@ -243,14 +243,14 @@
                                 <h3>£{{ $product->price }}</h3>
 
 
-                                <!-- @KraeBM (prodcutMohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
+                                <!-- @KraeBM (productMohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
                                 <script>
                                     function saveScrollPosition(form) {
                                         var scrollY = window.scrollY || document.documentElement.scrollTop;
                                         form.scrollPosition.value = scrollY;
                                     }
                                 </script>
-                                <form action='{{route('product.getInfo')}}' method='post'onsubmit='saveScrollPosition(this)'>
+                                < <form action='#' method="post" onsubmit="saveScrollPosition(this)">
                                     @csrf
                                     <input type="hidden" name="laptopData" value={{$product->product_id}}>
                                     <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
