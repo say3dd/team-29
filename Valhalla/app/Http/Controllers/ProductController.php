@@ -62,6 +62,9 @@ class ProductController extends Controller
             }
             return redirect()->back();
         }
+        if($sorting == "Newest-Arrival") {
+            $laptops = Product::orderby('created_at', 'Asc')->paginate(12);
+        }
 
     /** @Bilal Mo Assigning operations for the sorting functions */
     protected function sortLaptops($sorting)
