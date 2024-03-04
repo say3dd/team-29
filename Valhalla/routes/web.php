@@ -51,11 +51,11 @@ For now I've made a workaround by having the getInfo function check if it has re
 if anybody could let me (Francis) know of a better way to do this, I'd gladly appreciate it.
 */
 
-Route::get('/basket', [BasketController::class,'contents'])->name('basket');
-Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
-Route::get('/test1', function () {
-    return view('FrontEnd.cart');
-});
+//Route::get('/basket', [BasketController::class,'contents'])->name('basket');
+//Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
+//Route::get('/test1', function () {
+//    return view('FrontEnd.cart');
+//});
 
 
     Route::get('/index', [HomeController::class,'index'])->name('index');
@@ -75,8 +75,12 @@ Route::get('/test1', function () {
     Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');
 
 
-    Route::get('/contact', [ContactController::class, 'showForm'])->middleware(['guest'])->name('contact.show');
-    Route::post('/contact', [ContactController::class, 'submitForm'])->middleware(['guest'])->name('contact.submit');
+    //refactored the code
+    Route::middleware(['guest'])->group(function(){
+
+    Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
+    Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
+});
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -101,7 +105,6 @@ Route::group(['middleware' => 'cart.notEmpty'], function () {
     })->name('thank-you');
 });
 
-require __DIR__ . '/auth.php';
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -119,3 +122,10 @@ Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'su
 Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
+
+
+//No code beyond this line!
+
+require __DIR__ . '/auth.php';
+
+

@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_03_2024_23_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_03_2024_23_46__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2024_21_53_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_02_2024_21_53__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/database/migrations/2024_03_01_142130_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/migrations/2024_03_01_142130_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/BasketService/BasketInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/BasketService/BasketInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Middleware/CheckCartNotEmpty.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Middleware/CheckCartNotEmpty.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/css/home_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/public/assets/css/home_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -406,6 +402,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -440,6 +437,9 @@
       <workItem from="1708970654791" duration="1128000" />
       <workItem from="1708973724751" duration="1745000" />
       <workItem from="1709223487564" duration="11356000" />
+      <workItem from="1709542258909" duration="889000" />
+      <workItem from="1709543178857" duration="1332000" />
+      <workItem from="1709550923452" duration="4251000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -465,7 +465,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709339846614</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="new crud functions for basket has been added.&#10;Additionally, new DatabaseSeeder.php has been updated.&#10;Some additional code has been added to the master.blade.php for basket control">
+      <option name="closed" value="true" />
+      <created>1709496229616</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709496229616</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +484,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Valhalla-working-branch-backup" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -487,6 +507,7 @@
     <MESSAGE value="added Dashboard.css and linked it with dashboard.blade.php" />
     <MESSAGE value="removed unintended line from dashboard.blade.php" />
     <MESSAGE value="added a new basket implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a new basket implementation" />
+    <MESSAGE value="new crud functions for basket has been added.&#10;Additionally, new DatabaseSeeder.php has been updated.&#10;Some additional code has been added to the master.blade.php for basket control" />
+    <option name="LAST_COMMIT_MESSAGE" value="new crud functions for basket has been added.&#10;Additionally, new DatabaseSeeder.php has been updated.&#10;Some additional code has been added to the master.blade.php for basket control" />
   </component>
 </project>
