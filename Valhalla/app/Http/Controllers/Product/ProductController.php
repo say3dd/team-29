@@ -136,8 +136,8 @@ class ProductController extends Controller implements BasketInterface
 
         }else{
             $basket[$id] = [
-                "laptop_name" => $product->product_name,
-//                "image_path" => $product->images
+                "product_name" => $product->product_name,
+                "images" => $product->images,
                   "price" => $product->price,
                 "quantity" => 1
                 ];

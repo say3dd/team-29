@@ -19,10 +19,7 @@
     </title>
     <link rel="stylesheet" href="{{ asset('assets/css/home_style.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-{{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">--}}
-{{--    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>--}}
-{{--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>--}}
-{{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />--}}
+    @vite(['resources/css/app.css', 'resources/js/app.js']);
 </head>
 
 <body>
@@ -75,49 +72,19 @@
                     @endif
                 @endauth
             @endif
-
-            <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-            <div id="basket-overlap" class="float-right pr-[30px] w-[30vw] left-[-50px] shadow-[0px_5px_10px_black] p-5 top-[30px]">
-                <button type="button" id="btn btn-primary" class="shadow-none mx-0 my-2.5 border-0" data-toggle="basket-overlap">
-            <a href="{{route('basket')}}" class="basket-icon">
-                <i class="bx bx-shopping-bag" aria-hidden="true"></i>
-                <span class="badge badge-pill badge-danger"> Basket {{ count((array) session('basket')) }}</span></a>
-                </button>
-                <div id="basket-menu" class="w-[30vw] left-[-50px] shadow-[0px_5px_10px_black] p-5 top-[30px]">
-                    <div id="total-header-section" class="border-b-[#d2d2d2] border-b border-solid">
-                        @php $total = 0 @endphp
-                        @foreach((array) session('basket') as $id => $details)
-                            @php $total += $details['price'] * $details['quantity'] @endphp
-                        @endforeach
-                        <div id="total-section" class="col-lg-12 col-sm-12 col-12 text-right ">
-                            <p class="mb-5">Total: <span class="text-info">£ {{ $total }}</span></p>
-                        </div>
-                    </div>
-                    @if(session('basket'))
-                        @foreach(session('basket') as $id => $details)
-                            <div id="basket-detail" class="px-0 py-[15px] text-xs font-[50] mr-2.5 bg-black">
-                                <div id="basket-detail-img" class="col-lg-4 col-sm-4 col-4">
-                                    <img class="w-full h-full pl-[15px]" src="{{ asset('img') }}/{{ $details['image'] }}" alt="" />
-                                </div>
-                                <div id="basket-detail-product" class="col-lg-8 col-sm-8 col-8" >
-                                    <p class="text-black font-medium m-0"> {{ $details['product_name'] }}</p>
-                                    <span id="price" class="text-xs font-[50] mr-2.5 text-info"> ${{ $details['price'] }}</span>
-                                    <span id="count" class="bg-black"> Quantity:{{ $details['quantity'] }}</span>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endif
-
-                    <div class="row">
-                        <div id="checkout" class="col-lg-12 col-sm-12 col-12 text-center pt-[15px] border-t-[#d2d2d2] border-t border-solid">
-                            <a href="{{ route('basket') }}" class="btn btn-primary btn-block rounded-full"> View All</a>
-                        </div>
-                    </div>
-            </div>
-            </div>
+            <button type="button">
+            <a href="{{route('basket')}}" class="cart-icon"><i class="bx bx-shopping-bag"></i>Basket
+            <span class="bg-red-700 text-white text-2xl rounded-full"> {{count((array) session('basket'))}}  </span> </a>
+            </button>
         </nav>
         <!--- End of Section  --> </section>
 
+
+    @if(session('success'))
+        <div id="flash-success" class="bg-[#79c753] text-[white] rounded mx-0 my-5 p-5">
+            {{ session('success') }}
+        </div>
+    @endif
     <!--         Hero Section         -->
     <section id="hero">
         <div class="container">
@@ -130,7 +97,6 @@
                     laptops.
                     Unleash the power, speed, and precision you need for an unparalleled gaming experience.
                     Explore our curated selection and elevate your gaming journey to new heights.
-                </p>
                 </p>
                 <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
             </div>
@@ -275,7 +241,6 @@
                                 </script>
                                 <form action='{{route('product.getInfo')}}' method='post'onsubmit='saveScrollPosition(this)'>
                                     @csrf
-                                    <input type="hidden" name="laptopData" value={{$product->product_id}}>
                                     <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
                                     <button class="buy-product"> <a href="{{route('add_to_basket', $product->product_id)}}"> Add to Basket </a><span class="badge badge-pill badge-danger"></span> </button>
 
@@ -307,7 +272,14 @@ to constantly scroll up after pressing the navbar buttons -->
             @endif
         });
 
+        const dropdownButton = document.getElementById('dropdown-button');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+
+        dropdownButton.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+        });
     </script>
+</section>
 </body>
 
 </html>
