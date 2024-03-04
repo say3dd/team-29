@@ -160,62 +160,54 @@
 <script>
 /*Code for the submit button - works by assaigning variables with the id
  and making it so if the filter is active,
-add those selected and when filled and enter is pressed run the funtion */
-var sort_filter =document.getElementById("sort-button");
-var  scontainer = document.getElementById("sorting-container");
-var button_filter = document.getElementById("filter-button");
-var container = document.getElementById("filter-container");
-var input = document.querySelectorAll("input");
-/* to make the apply button functionable **/
-button_filter.onclick = function (e) {
-  e.stopPropagation();
-  if (container.classList.contains("filters--active")) {
-    container.classList.remove("filters--active");
-  } else {
-    container.classList.add("filters--active");
-  }
-};
+add those selected and when filled and enter is pressed run the function */
+var sortButton = document.getElementById("sort-button");
+var sortContainer = document.getElementById("sorting-container");
+var filterButton = document.getElementById("filter-button");
+var filterContainer = document.getElementById("filter-container");
 
-container.onclick = function (e) {
-  e.stopPropagation();
-};
-
-
-//code for making sorting button work//
-sort_filter.onclick = function(e){
+// Function to toggle filter container visibility
+filterButton.onclick = function(e) {
     e.stopPropagation();
-    if(scontainer.classList.contains("sort--active")){
-        scontainer.classList.remove("sort--active");
-    }else {
-        scontainer.classList.add("sort--active");
+    // If sort container is active, hide it
+    if (sortContainer.classList.contains("sort--active")) {
+        sortContainer.classList.remove("sort--active");
     }
+    filterContainer.classList.toggle("filters--active");
 };
 
-scontainer.onclick = function(e){
+// Function to toggle sort container visibility
+sortButton.onclick = function(e) {
     e.stopPropagation();
+    if (filterContainer.classList.contains("filters--active")) {
+        filterContainer.classList.remove("filters--active");
+    }
+    sortContainer.classList.toggle("sort--active");
 };
-//
 
+// Hide containers when clicking outside of the containers
 window.onclick = function(e) {
-    if (!container.contains(e.target)) {
-        container.classList.remove("filters--active");
+    if (!filterContainer.contains(e.target) && !filterButton.contains(e.target)) {
+        filterContainer.classList.remove("filters--active");
     }
-    if (!scontainer.contains(e.target)) {
-        scontainer.classList.remove("sort--active");
+    if (!sortContainer.contains(e.target) && !sortButton.contains(e.target)) {
+        sortContainer.classList.remove("sort--active");
     }
 };
-console.log(input);
-/* Here is the code for resetting the filter section - gathers all the data input in checkbox and for each checbox, it removes them all by assinging it false.**/
+
+// Reset filter selections
 function resetFilters() {
     var checkboxes = document.querySelectorAll("#filter-container input[type='checkbox']");
     checkboxes.forEach(function(checkbox) {
         checkbox.checked = false;
     });
 }
+
+// Reset sort selections
 function resetSort() {
-    var checkboxes = document.querySelectorAll("#sorting-container input[type='checkbox']");
-    checkboxes.forEach(function(checkbox) {
-        checkbox.checked = false;
+    var radios = document.querySelectorAll("#sorting-container input[type='radio']");
+    radios.forEach(function(radio) {
+        radio.checked = false;
     });
 }
 

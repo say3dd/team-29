@@ -22,9 +22,22 @@ class ProductController extends Controller
         /** Assigning the variables to the product coloums and making them distinct so theres no repetition */
         $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
         $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();
-    /** Assigning laptop as all products before its populated so laptop is definine din all tables before filled.*/
+        $price = Product::select('price') ->distinct()->orderby('price') -> get();
+        $sorting = $request->input('sorting');
+
+
+
+        /** Assigning laptop as all products before its populated so laptop is definine din all tables before filled.*/
 
     $laptops = Product::all();
+/** Assigning operations for the sorting functions  */
+        if($sorting=="Price_LtoH") {
+            $laptops = Product::orderby('price', 'ASC')->paginate('12');
+        }
+        if($sorting=="Price_HtoL"){
+            $laptops = Product::orderby('price', 'Desc')->paginate('12');
+
+        }
 
     /**Assigning opartions for if there are no filters chosen or
      * if both filters are chosen - here both selected in the request */
