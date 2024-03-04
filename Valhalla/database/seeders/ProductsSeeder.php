@@ -23,16 +23,13 @@ class ProductsSeeder extends Seeder
         // seed products, columns are: laptop_name, price, RAM, processor, GPU, image_path, brand
 
         Product::create([
-            'laptop_name' => 'Dell Alienware x16 Gaming Laptop',
-            'price' => 3579.00,
-            'RAM' => 32,
-            'processor' => '13th Gen Intel® Core™ i9-13980HX',
-            'GPU' => 'GeForce RTX 4090',
-            'image_path' => 'assets/laptop_images/Dell Alienware x16/dell_alienware_x16.jpg',
+            'product_name' => 'Dell Alienware x16 Gaming Laptop',
+            'product_description' => 'GeForce RTX 4090, 13th Gen Intel® Core™ i9-13980HX, 32GB RAM',
+            'category' => 'Laptop',
             'brand' => 'Alienware',
+            'price' => 3579.00,
+            'image' => 'assets/laptop_images/Dell Alienware x16/dell_alienware_x16.jpg',
         ]);
-
-
 
         Product::create([
            'laptop_name' => 'MSI Titan GT77 HX 13V',
