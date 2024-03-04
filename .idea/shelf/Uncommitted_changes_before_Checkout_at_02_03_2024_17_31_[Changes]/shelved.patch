@@ -1,0 +1,266 @@
+Index: Valhalla/app/Http/Controllers/Product/ProductController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/app/Http/Controllers/Product/ProductController.php b/Valhalla/app/Http/Controllers/ProductController.php
+rename from Valhalla/app/Http/Controllers/Product/ProductController.php
+rename to Valhalla/app/Http/Controllers/ProductController.php
+--- a/Valhalla/app/Http/Controllers/Product/ProductController.php	(revision e1b44a4673448d44b00b34ec44b9c8d233f91302)
++++ b/Valhalla/app/Http/Controllers/ProductController.php	(date 1709340437916)
+@@ -2,14 +2,15 @@
+ //@noramknarf (Francis Moran) - getInfo() function
+ /* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */
+ namespace App\Http\Controllers;
+-namespace App\Http\Controllers\Product;
+ 
++namespace App\Http\Controllers;
++
++use App\Http\Controllers\BasketService\BasketInterface;
+ use App\Models\Basket;
+ use App\Models\Product;
+ use Illuminate\Http\Request;
+ use Illuminate\Support\Facades\Auth;
+ use Illuminate\Support\Facades\DB;
+-use App\Http\Controllers\BasketService\BasketInterface;
+ 
+ class ProductController extends Controller implements BasketInterface
+ {
+@@ -25,8 +26,8 @@
+ 
+         $products = Product::all();
+         /** Assigning the variables to the product coloums and making them distinct so theres no repetition */
+-        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
+-        $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();
++//        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
++//        $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();
+ 
+ 
+     /**Assigning opartions for if there are no filters chosen or
+@@ -52,20 +53,20 @@
+     case 1:
+     return view('Product_files.products', [
+         'products' => $products,
+-        'brands' => $brands,
+-        'graphics' => $graphics,
++//        'brands' => $brands,
++//        'graphics' => $graphics,
+     ]);
+     case 2:
+         return view('Product_files.products2', [
+             'products' => $products,
+-            'brands' => $brands,
+-            'graphics' => $graphics,
++//            'brands' => $brands,
++//            'graphics' => $graphics,
+         ]);
+         case 3:
+             return view('Product_files.products3', [
+                 'products' => $products,
+-                'brands' => $brands,
+-                'graphics' => $graphics,
++//                'brands' => $brands,
++//                'graphics' => $graphics,
+             ]);
+             default:
+              return redirect()->back();
+@@ -74,27 +75,27 @@
+     public function getInfo(Request $request)
+     {
+         /* had to restate these and put assign them within view since it returns an Undefined variable $brands/$graphics issue **/
+-        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
+-        $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();
++//        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
++//        $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();
+ 
+-        $productID = request()->input('productData'); //grabs specifically the section of the request that holds the laptop's ID
+-        if($productID != '' && Auth::id() != null){
+-            $product_data = DB::table('products')->where('product_id', $productID)->first();
+-
+-            $basket = Basket::create([
+-                'user_id' => Auth::id(),
+-                'product_id' => $productID,
+-                'product_name' => $product_data->laptop_name,
+-                'product_price' => $product_data->price,
+-                'image_path' =>$product_data->image_path,
+-                'RAM' => $product_data->RAM,
+-                'GPU' => $product_data->GPU,
+-                'processor' => $product_data->processor
+-            ]);
+-            /* In summary, $laptopID is the id passed to the controller by the products page,
+-            $product_data is the entire row from the products table for that product, any info needed can be accessed with -> then the column name in the products table
+-            I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual*/
+-       }
++//        $productID = request()->input('productData'); //grabs specifically the section of the request that holds the laptop's ID
++//        if($productID != '' && Auth::id() != null){
++//            $product_data = DB::table('products')->where('product_id', $productID)->first();
++//
++//            $basket = Basket::create([
++//                'user_id' => Auth::id(),
++//                'product_id' => $productID,
++//                'product_name' => $product_data->laptop_name,
++//                'product_price' => $product_data->price,
++//                'image_path' =>$product_data->image_path,
++//                'RAM' => $product_data->RAM,
++//                'GPU' => $product_data->GPU,
++//                'processor' => $product_data->processor
++//            ]);
++//            /* In summary, $laptopID is the id passed to the controller by the products page,
++//            $product_data is the entire row from the products table for that product, any info needed can be accessed with -> then the column name in the products table
++//            I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual*/
++//       }
+           $products = Product::all();
+        /*Scroll position set to the poisition of the user input */
+        /*Sets the restore scroll originally to true, if its true, then page refreshes from the top, if not continues by using
+Index: Valhalla/app/Http/Controllers/Product/ReturnController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/app/Http/Controllers/Product/ReturnController.php b/Valhalla/app/Http/Controllers/ReturnController.php
+rename from Valhalla/app/Http/Controllers/Product/ReturnController.php
+rename to Valhalla/app/Http/Controllers/ReturnController.php
+--- a/Valhalla/app/Http/Controllers/Product/ReturnController.php	(revision e1b44a4673448d44b00b34ec44b9c8d233f91302)
++++ b/Valhalla/app/Http/Controllers/ReturnController.php	(date 1709340224399)
+@@ -2,9 +2,7 @@
+ 
+ // Author @BM786 = Basit Ali Mohammad
+ 
+-namespace App\Http\Controllers\Product;
+-
+-use App\Http\Controllers\Controller;
++namespace App\Http\Controllers;
+ 
+ class ReturnController extends Controller
+ {
+Index: Valhalla/app/Http/Controllers/Product/ReturnRequestSubmitController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/app/Http/Controllers/Product/ReturnRequestSubmitController.php b/Valhalla/app/Http/Controllers/ReturnRequestSubmitController.php
+rename from Valhalla/app/Http/Controllers/Product/ReturnRequestSubmitController.php
+rename to Valhalla/app/Http/Controllers/ReturnRequestSubmitController.php
+--- a/Valhalla/app/Http/Controllers/Product/ReturnRequestSubmitController.php	(revision e1b44a4673448d44b00b34ec44b9c8d233f91302)
++++ b/Valhalla/app/Http/Controllers/ReturnRequestSubmitController.php	(date 1709340224410)
+@@ -2,9 +2,8 @@
+ 
+ // Author @BM786 = Basit Ali Mohammad
+ 
+-namespace App\Http\Controllers\Product;
++namespace App\Http\Controllers;
+ 
+-use App\Http\Controllers\Controller;
+ use Illuminate\Http\Request;
+ 
+ class ReturnRequestSubmitController extends Controller
+Index: Valhalla/app/Http/Controllers/Product/TrackingController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/app/Http/Controllers/Product/TrackingController.php b/Valhalla/app/Http/Controllers/TrackingController.php
+rename from Valhalla/app/Http/Controllers/Product/TrackingController.php
+rename to Valhalla/app/Http/Controllers/TrackingController.php
+--- a/Valhalla/app/Http/Controllers/Product/TrackingController.php	(revision e1b44a4673448d44b00b34ec44b9c8d233f91302)
++++ b/Valhalla/app/Http/Controllers/TrackingController.php	(date 1709340224392)
+@@ -2,9 +2,8 @@
+ 
+ // Author @BM786 = Basit Ali Mohammad
+ 
+-namespace App\Http\Controllers\Product;
++namespace App\Http\Controllers;
+ 
+-use App\Http\Controllers\Controller;
+ use Illuminate\Http\Request;
+ 
+ class TrackingController extends Controller
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6b9f93ae-4d00-4c0d-898a-902cb42df0cc\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ProductController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ProductController.php\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\" synchronizationState=\"SYNCHRONIZE\">\r\n    <pharConfigPath>$PROJECT_DIR$/Valhalla/composer.json</pharConfigPath>\r\n    <execution />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_TAGS\">\r\n      <GitPushTagMode>\r\n        <option name=\"argument\" value=\"--tags\" />\r\n        <option name=\"title\" value=\"All\" />\r\n      </GitPushTagMode>\r\n    </option>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"bilals-remote\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"PhpWorkspaceProjectConfiguration\" interpreter_name=\"C:\\xampp\\php\\php.exe\">\r\n    <include_path>\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/clock\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/http-client\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/http-factory\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/simple-cache\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psy/psysh\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/http-message\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/brick/math\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nette/schema\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/filp/whoops\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/voku/portable-ascii\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/league/commonmark\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/league/config\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nette/utils\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/league/mime-type-detection\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nesbot/carbon\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/league/flysystem\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/league/flysystem-local\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/spatie/backtrace\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/spatie/flare-client-php\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/ramsey/collection\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/ramsey/uuid\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/vlucas/phpdotenv\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/dflydev/dot-access-data\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/spatie/ignition\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/spatie/laravel-ignition\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/framework\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/pint\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/egulias/email-validator\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/breeze\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/sanctum\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/serializable-closure\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/prompts\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/sail\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/monolog/monolog\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/myclabs/deep-copy\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/tinker\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/mockery/mockery\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/php-code-coverage\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/php-file-iterator\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phar-io/manifest\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phar-io/version\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/php-timer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/phpunit\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/php-invoker\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/php-text-template\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/deprecation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/css-selector\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/mime\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-ctype\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/mailer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-intl-grapheme\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-intl-idn\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-php83\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-uuid\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-php72\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-php80\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/string\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/process\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/uid\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/translation\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/yaml\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/theseer/tokenizer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/carbonphp/carbon-doctrine-types\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/fruitcake/php-cors\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/fakerphp/faker\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/hamcrest/hamcrest-php\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/cli-parser\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/code-unit\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpoption/phpoption\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/ralouphie/getallheaders\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/complexity\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/diff\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/code-unit-reverse-lookup\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/comparator\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/global-state\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/lines-of-code\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/environment\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/exporter\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/recursion-context\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/type\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/object-enumerator\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/object-reflector\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/guzzlehttp/guzzle\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/guzzlehttp/promises\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/version\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/webmozart/assert\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nunomaduro/collision\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nunomaduro/termwind\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/guzzlehttp/psr7\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/guzzlehttp/uri-template\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/graham-campbell/result-type\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/tijsverkoyen/css-to-inline-styles\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/dragonmantank/cron-expression\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/fakerphp/faker\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/hamcrest/hamcrest-php\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/carbonphp/carbon-doctrine-types\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/fruitcake/php-cors\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/phpoption/phpoption\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/ralouphie/getallheaders\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/cli-parser\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/code-unit\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/code-unit-reverse-lookup\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/comparator\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/complexity\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/diff\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/environment\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/exporter\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/global-state\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/lines-of-code\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/object-enumerator\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/object-reflector\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/recursion-context\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/type\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/sebastian/version\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/webmozart/assert\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/guzzlehttp/guzzle\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/guzzlehttp/promises\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/guzzlehttp/psr7\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/guzzlehttp/uri-template\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/nunomaduro/collision\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/nunomaduro/termwind\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/tijsverkoyen/css-to-inline-styles\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/dragonmantank/cron-expression\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/graham-campbell/result-type\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/psr/clock\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/psr/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/psr/http-client\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/psr/http-factory\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/psr/http-message\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/psr/simple-cache\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/psy/psysh\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/filp/whoops\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/voku/portable-ascii\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/brick/math\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/nette/schema\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/nette/utils\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/league/commonmark\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/league/config\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/league/flysystem\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/league/flysystem-local\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/league/mime-type-detection\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/nesbot/carbon\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/ramsey/collection\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/ramsey/uuid\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/spatie/backtrace\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/spatie/flare-client-php\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/spatie/ignition\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/spatie/laravel-ignition\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/vlucas/phpdotenv\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/dflydev/dot-access-data\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/egulias/email-validator\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/laravel/breeze\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/laravel/pint\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/laravel/prompts\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/laravel/sail\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/laravel/sanctum\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/laravel/serializable-closure\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/laravel/tinker\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/mockery/mockery\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/monolog/monolog\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/myclabs/deep-copy\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/phar-io/manifest\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/phar-io/version\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/phpunit/php-code-coverage\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/phpunit/php-file-iterator\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/phpunit/php-invoker\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/phpunit/php-text-template\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/phpunit/php-timer\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/phpunit/phpunit\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/css-selector\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/deprecation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/mailer\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/mime\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/polyfill-ctype\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/polyfill-intl-grapheme\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/polyfill-intl-idn\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/polyfill-php72\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/polyfill-php80\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/polyfill-php83\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/polyfill-uuid\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/process\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/string\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/translation\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/uid\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/symfony/yaml\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/theseer/tokenizer\" />\r\n      <path value=\"$PROJECT_DIR$/anthony-testApp/vendor/laravel/framework\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/clock\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/http-client\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/http-factory\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/simple-cache\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psy/psysh\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/http-message\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/brick/math\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nette/schema\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/filp/whoops\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/voku/portable-ascii\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/league/commonmark\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/league/config\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nette/utils\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/league/mime-type-detection\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nesbot/carbon\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/league/flysystem\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/league/flysystem-local\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/spatie/backtrace\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/spatie/flare-client-php\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/ramsey/collection\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/ramsey/uuid\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/vlucas/phpdotenv\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/dflydev/dot-access-data\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/spatie/ignition\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/spatie/laravel-ignition\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/framework\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/pint\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/egulias/email-validator\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/breeze\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/sanctum\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/serializable-closure\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/prompts\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/sail\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/monolog/monolog\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/myclabs/deep-copy\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/laravel/tinker\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/mockery/mockery\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/php-code-coverage\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/php-file-iterator\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phar-io/manifest\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phar-io/version\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/php-timer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/phpunit\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/php-invoker\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpunit/php-text-template\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/deprecation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/css-selector\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/mime\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-ctype\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/mailer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-intl-grapheme\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-intl-idn\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-php83\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-uuid\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-php72\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/polyfill-php80\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/string\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/process\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/uid\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/translation\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/symfony/yaml\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/theseer/tokenizer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/carbonphp/carbon-doctrine-types\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/fruitcake/php-cors\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/fakerphp/faker\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/hamcrest/hamcrest-php\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/cli-parser\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/code-unit\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/phpoption/phpoption\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/ralouphie/getallheaders\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/complexity\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/diff\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/code-unit-reverse-lookup\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/comparator\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/global-state\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/lines-of-code\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/environment\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/exporter\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/recursion-context\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/type\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/object-enumerator\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/object-reflector\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/guzzlehttp/guzzle\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/guzzlehttp/promises\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/sebastian/version\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/webmozart/assert\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nunomaduro/collision\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/nunomaduro/termwind\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/guzzlehttp/psr7\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/guzzlehttp/uri-template\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/graham-campbell/result-type\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/tijsverkoyen/css-to-inline-styles\" />\r\n      <path value=\"$PROJECT_DIR$/Valhalla/vendor/dragonmantank/cron-expression\" />\r\n    </include_path>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2cbDsWQdrUY6DcJYafl9CTERNek\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"Valhalla-working-branch-backup\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"last_opened_file_path\": \"C:/xampp/htdocs/xampp/team-29\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Team code\\team-29\\Valhalla\\app\\Http\\Controllers\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"PHPUnitRunConfigurationType\" factoryName=\"PHPUnit\">\r\n      <TestRunner configuration_file=\"$PROJECT_DIR$/anthony-testApp/phpunit.xml\" scope=\"XML\" use_alternative_configuration_file=\"true\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14475.35\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6b9f93ae-4d00-4c0d-898a-902cb42df0cc\" name=\"Changes\" comment=\"\" />\r\n      <created>1708371592515</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1708371592515</updated>\r\n      <workItem from=\"1708371593753\" duration=\"1908000\" />\r\n      <workItem from=\"1708474424958\" duration=\"1244000\" />\r\n      <workItem from=\"1708970654791\" duration=\"1128000\" />\r\n      <workItem from=\"1708973724751\" duration=\"1745000\" />\r\n      <workItem from=\"1709223487564\" duration=\"11356000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"added Dashboard.css and linked it with dashboard.blade.php\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708812711950</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708812711950</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"removed unintended line from dashboard.blade.php\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1708812796953</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1708812796953</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"added a new basket implementation\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1709339846614</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1709339846614</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"bilal test\" />\r\n    <MESSAGE value=\"added Dashboard.css and linked it with dashboard.blade.php\" />\r\n    <MESSAGE value=\"removed unintended line from dashboard.blade.php\" />\r\n    <MESSAGE value=\"added a new basket implementation\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"added a new basket implementation\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e1b44a4673448d44b00b34ec44b9c8d233f91302)
++++ b/.idea/workspace.xml	(date 1709400668084)
+@@ -4,8 +4,12 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ProductController.php" afterDir="false" />
++    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="refactored controller classes">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ReturnController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ReturnController.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/ReturnRequestSubmitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ReturnRequestSubmitController.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/Product/TrackingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/TrackingController.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -384,21 +388,22 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "Valhalla-working-branch-backup",
+-    "ignore.virus.scanning.warn.message": "true",
+-    "last_opened_file_path": "C:/xampp/htdocs/xampp/team-29",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;Valhalla-working-branch-backup&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/xampp/team-29&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Team code\team-29\Valhalla\app\Http\Controllers" />
+@@ -455,7 +460,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1709339846614</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="refactored controller classes">
++      <option name="closed" value="true" />
++      <created>1709340052467</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1709340052467</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -477,6 +490,7 @@
+     <MESSAGE value="added Dashboard.css and linked it with dashboard.blade.php" />
+     <MESSAGE value="removed unintended line from dashboard.blade.php" />
+     <MESSAGE value="added a new basket implementation" />
+-    <option name="LAST_COMMIT_MESSAGE" value="added a new basket implementation" />
++    <MESSAGE value="refactored controller classes" />
++    <option name="LAST_COMMIT_MESSAGE" value="refactored controller classes" />
+   </component>
+ </project>
+\ No newline at end of file

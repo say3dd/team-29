@@ -20,28 +20,42 @@
     {{-- Section 1 starts here --}}
         <div class="background_shape1">
             <div class="background_shape_1_2">
+<<<<<<< HEAD
+                <div class="slideshow-container">
+                    <div class="slide">
+                        <div class="mySlides">
+                            <img class="slide_image" src="{{asset('assets/images_product/laptop4.jpg')}}" alt="">
+                        </div>
+                        <div class="mySlides">
+                            <img class="slide_image" src="{{asset('assets/images_product/laptop2.jpg')}}" alt="">
+                        </div>
+                        <div class="mySlides">
+                            <img class="slide_image" src="{{asset('assets/images_product/laptop3.jpg')}}" alt="">
+                        </div>
+                        <div class="mySlides">
+                            <img class="slide_image" src="{{asset('assets/images_product/laptop1.jpg')}}" alt="">
+                        </div>
+                        <div class="mySlides">
+                            <img class="slide_image" src="{{asset('assets/images_product/laptop5.jpg')}}" alt="">
+                        </div>
+                        <a class="previousSlide" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="nextSlide" onclick="plusSlides(1)">&#10095;</a>
+                        <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        </div>
+                    </div>
+=======
             <div class="slideshow-container">
             <div class="slide">
                 <div class="mySlides">
-                    <img class="slide_image" src="{{asset('assets/images_product/laptop4.jpg')}}" style=" " alt="">
+                    <img class="slide_image" src="{{asset('assets/images_product/laptop4.jpg')}}" >
+>>>>>>> e1b44a4673448d44b00b34ec44b9c8d233f91302
                 </div>
-                <div class="mySlides">
-                    <img class="slide_image" src="{{asset('assets/images_product/laptop2.jpg')}}" alt="">
-                </div>
-                <div class="mySlides">
-                    <img class="slide_image" src="{{asset('assets/images_product/laptop3.jpg')}}" alt="">
-                </div>
-                <div class="mySlides">
-                    <img class="slide_image" src="{{asset('assets/images_product/laptop1.jpg')}}" alt="">
-                </div>
-                <div class="mySlides">
-                    <img class="slide_image" src="{{asset('assets/images_product/laptop5.jpg')}}" alt="">
-                </div>
-                <button class="previousSlide" onclick="plusDivs(-1)">&#10094;</button>
-                <button class="nextSlide" onclick="plusDivs(1)">&#10095;</button>
             </div>
-            </div>
-        </div>
         <div class="product_information">
         <p class="product_name">
             Dell Alienware x16 Gaming Laptop</p>
@@ -59,22 +73,12 @@
         </div><br>
         <hr><br>
         <div class = "product_price">
-            &nbsp;&nbsp;&nbsp;&nbsp;Price:£3,349.00
-        </div><br>
-        <div class = "product_price_no_VAT">
-             &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;£2,857.50
-            excluding VAT @20%
+            Price:£3,349.00
         </div>
         <br><hr>
         <div class="buttons">
-        <button class="button_cart">
-            <img src="{{asset('assets/images_product/icon_basket.png')}}" alt="" width="20" height="25">
-            Add to Basket
-        </button>
-        <button class="button_wish">
-            <img src="{{asset('assets/images_product/love1.png')}}" alt="" width="25" height="23">
-            Add to Wish List
-        </button>
+        <button class="button_cart"> ADD TO BASKET</button>
+        <button class="button_wish">ADD TO WISHLIST </button>
         </div>
         {{-- Part of Section 1, for showcasing all of the specification of the product --}}
         <div id="myModal" class="modal">
@@ -294,22 +298,33 @@
     }
 
     var slideIndex = 1;
-    showDivs(slideIndex);
-
-    function plusDivs(n) {
-        showDivs(slideIndex += n);
-    }
-
-    function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = x.length }
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
         }
-        x[slideIndex - 1].style.display = "block";
-    }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
 </script>
 </body>
  <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->

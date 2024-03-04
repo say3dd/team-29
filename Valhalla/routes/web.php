@@ -6,20 +6,17 @@
      */
 
 
-
-
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Basket\BasketController;
+use App\Http\Controllers\Basket\CheckoutController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\BasketController;
-use App\Http\Controllers\TrackingController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ReturnController;
-use App\Http\Controllers\ReturnRequestSubmitController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Product\ReturnController;
+use App\Http\Controllers\Product\ReturnRequestSubmitController;
+use App\Http\Controllers\Product\TrackingController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +41,7 @@ Route::get('/test', function () {
 });
 
 Route::get('/product', [ProductController::class,'index'])->name('product');
-Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
+Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
 /*
 The second route here sometimes overrides the first one (possibly something causing the buttons to trigger without an input).
 For now I've made a workaround by having the getInfo function check if it has recieved an input, if not it behaves just like the index function.
@@ -69,9 +66,11 @@ Route::get('/test1', function () {
     // @say3dd (Mohammed Miah) - Routing for the different product functionalities
     // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
     Route::get('/product', [ProductController::class,'index'])->name('product');
-    Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo'); 
+    Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
+    Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
     Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
     Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');
+
 
 
     Route::get('/contact', [ContactController::class, 'showForm'])->middleware(['guest'])->name('contact.show');
@@ -83,13 +82,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/home', [HomeController::class,'authHome'])->name('home');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
 
-    Route::get('/plist', function () {
-        return view('Admin.ProductList');
-    })->name('plist');
+    Route::get('/productlist', [ProfileController::class, 'adminIndex']) ->name('ProductList');
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
@@ -100,12 +98,6 @@ Route::group(['middleware' => 'cart.notEmpty'], function () {
     })->name('thank-you');
 });
 
-require __DIR__ . '/auth.php';
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-});
-
 Route::get('/wishlist', function () {
     return view('FrontEnd.wishlist');
 });
@@ -114,7 +106,16 @@ Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name
 
 Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'submit'])->name('return.request.submit');
 
-// Categories page -- change this soon 
+// Categories page -- change this soon
 Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
+
+
+//--------------------- No code beyond this line. All routing code must be ABOVE THIS LINE. ^^^^^^________----------
+require __DIR__ . '/auth.php';
+//MUST NOT ANY CODE HERE.
+
+
+
+

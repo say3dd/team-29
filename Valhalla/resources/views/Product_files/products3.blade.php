@@ -1,1 +1,1 @@
-@extends('productL')
+@extends('Product_files.productL')

@@ -1,10 +1,10 @@
 <?php
 
-// Author @BM786 = Basit Ali Mohammad 
+// Author @BM786 = Basit Ali Mohammad
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Product;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ReturnController extends Controller
 {
