@@ -1,43 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <a href="{{ route('index') }}"> home </a>
-    <title></title>
+    <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}" >
+<style>
+#div1, #div2 {
+  display:flex;
+  flex-direction: column;  
+  width: 33%;
+  height: 33%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  transition: 100ms;
+  border-color: #f2f2f2;
+  
+}
 
+img{
+    width: 100px;
+    height: 100px;
     
+}
+</style>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+
+</script>
 </head>
-
 <body>
-    <ul id="sortable-list">
-        <li data-item="test">list item</li>
-        <li data-item="test">list item2</li>
-        <li data-item="test">list item3</li>
-        <li data-item="test">list item4</li>
-        <li data-item="test">list item5</li>
-        
-      </ul>
-    </body>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src=https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            new Sortable(document.getElementById('sortable-list'), {
-                animation:7150,
-                onEnd: function (evt) {
-                    updateWishlistOrder(evt.newIndex, evt.oldIndex);
-                }
-            });
-    
-            function updateWishlistOrder(newIndex, oldIndex) {
-                var wishlistItems = [];
-                $('#sortable-list div').each(function () {
-                    wishlistItems.push($(this).data('item-id'));
-                });
-            }
-        });
-    </script>
+<h2 style="color:white;">Drag and Drop</h2>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+<div id="drag1" draggable="true" ondragstart="drag(event)">
+    <div class="laptop_all">
+    </div>
+</div>
+
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+
+</body>
 </html>
+
