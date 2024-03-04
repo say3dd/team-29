@@ -18,11 +18,9 @@
         @yield('title', 'Master layout')
     </title>
     <link rel="stylesheet" href="{{ asset('assets/css/home_style.css') }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-{{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">--}}
-{{--    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>--}}
-{{--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>--}}
-{{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />--}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 <body>
@@ -77,45 +75,64 @@
             @endif
 
             <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-            <div id="basket-overlap" class="float-right pr-[30px] w-[30vw] left-[-50px] shadow-[0px_5px_10px_black] p-5 top-[30px]">
-                <button type="button" id="btn btn-primary" class="shadow-none mx-0 my-2.5 border-0" data-toggle="basket-overlap">
-            <a href="{{route('basket')}}" class="basket-icon">
-                <i class="bx bx-shopping-bag" aria-hidden="true"></i>
-                <span class="badge badge-pill badge-danger"> Basket {{ count((array) session('basket')) }}</span></a>
-                </button>
-                <div id="basket-menu" class="w-[30vw] left-[-50px] shadow-[0px_5px_10px_black] p-5 top-[30px]">
-                    <div id="total-header-section" class="border-b-[#d2d2d2] border-b border-solid">
-                        @php $total = 0 @endphp
-                        @foreach((array) session('basket') as $id => $details)
-                            @php $total += $details['price'] * $details['quantity'] @endphp
-                        @endforeach
-                        <div id="total-section" class="col-lg-12 col-sm-12 col-12 text-right ">
-                            <p class="mb-5">Total: <span class="text-info">£ {{ $total }}</span></p>
-                        </div>
-                    </div>
-                    @if(session('basket'))
-                        @foreach(session('basket') as $id => $details)
-                            <div id="basket-detail" class="px-0 py-[15px] text-xs font-[50] mr-2.5 bg-black">
-                                <div id="basket-detail-img" class="col-lg-4 col-sm-4 col-4">
-                                    <img class="w-full h-full pl-[15px]" src="{{ asset('img') }}/{{ $details['image'] }}" alt="" />
-                                </div>
-                                <div id="basket-detail-product" class="col-lg-8 col-sm-8 col-8" >
-                                    <p class="text-black font-medium m-0"> {{ $details['product_name'] }}</p>
-                                    <span id="price" class="text-xs font-[50] mr-2.5 text-info"> ${{ $details['price'] }}</span>
-                                    <span id="count" class="bg-black"> Quantity:{{ $details['quantity'] }}</span>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endif
 
-                    <div class="row">
-                        <div id="checkout" class="col-lg-12 col-sm-12 col-12 text-center pt-[15px] border-t-[#d2d2d2] border-t border-solid">
-                            <a href="{{ route('basket') }}" class="btn btn-primary btn-block rounded-full"> View All</a>
+
+            <div class="dropdown">
+                <button class="btn btn-primary" type="button" onclick="toggleDropdown()">
+                    <i class="bx bx-shopping-bag" aria-hidden="true"></i> Basket
+                    <span class="badge badge-pill badge-danger">
+            {{ count((array) session('basket')) }}
+        </span>
+                </button>
+
+                <div class="dropdown-menu" id="cartDropdown">
+                    <div class="row total-header-section">
+                        <?php
+                        $total = 0;
+                        foreach ((array) session('basket') as $id => $details) {
+                            $total += $details['price'] * $details['quantity'];
+                        }
+                        ?>
+                        <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
+                            <p>Total: <span class="text-info">£ {{ $total }}</span></p>
                         </div>
                     </div>
+                     @if(session('basket'))
+                    @foreach(session('basket') as $id => $details)
+                    <div class="row cart-detail">
+                        <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                            <img src="{{ $details['images'] }}" alt="Product Image" />
+                        </div>
+                        <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                            <p>{{ $details['product_name'] }}</p>
+                            <span class="price text-info"> ${{ $details['price'] }}</span>
+                            <span class="count"> Quantity: {{ $details['quantity'] }}</span>
+                        </div>
+                    </div>
+                    @endforeach
+                    @endif
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                            <a href="{{ route('basket') }}" class="btn btn-primary btn-block">View all</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
+
+
+
+
+
+
+
+
+
         </nav>
+
+
+
+{{--        <div class="dropdown-menu">--}}
+
         <!--- End of Section  --> </section>
 
     <!--         Hero Section         -->
@@ -135,8 +152,14 @@
                 <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
             </div>
         </div>
+    </section>
 
-
+    @if(session('success'))
+        <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
+            {{session('success')}}
+            {{--                <p class=" text-amber-200">Hello, a message</p>--}}
+        </div>
+    @endif
         <!-- Brands Section -->
         <div class="brands-section">
             <div class="brand-images">
@@ -146,8 +169,9 @@
                 <img src="{{ asset('assets/images/Razer-Logo (1).png') }}" alt="Brand 4">
             </div>
         </div>
-    </section>
+
 </header>
+
 
 <!-- Best seller prodcuts-->
 <section class= "main">
@@ -174,14 +198,14 @@
                 </div>
             </div>
         </div>
-
+        </div>
     </section>
 
 
 
 
 
-    <section id="best-seller-section">
+    <section id="best-seller-sction">
 
         <h1 class = "title-categories">Product Categories</h1>
         <div class="title-line-categories"></div>
@@ -235,9 +259,9 @@
                         <h1>Laptop</h1></a>
                 </div>
 
-
-
             </div>
+
+
             </div>
     </section>
 
@@ -245,6 +269,9 @@
 
     <!-- Our Product Section-->
     <section class= "main">
+
+
+
 
 
         <section id="best-seller-section">
@@ -256,28 +283,32 @@
                     @foreach ($products as $product)
                         <div class="laptop">
                             <div>
-                                <img src="{{ asset($product->images) }}" alt="{{$product->product_name}}">
+                                <img src="{{ asset($product->images) }}" alt="{{ $product->product_name }}">
                             </div>
                             <div class="laptop-specs">
                                 <h1>{{ $product->product_name }}</h1>
-                                <p> {{ $product->product_description }}</p>
+{{--                                <p> {{ $product->processor }}</p>--}}
 {{--                                <p>RAM: {{ $product->RAM }}GB</p>--}}
-{{--                                <p>Graphics: {{ $product->GPU }}</p>--}}
-                                <h3>£{{ $product->price }}</h3>
+                                <p>Description: {{ $product->product_description }}</p>
+                                <h3> £{{ $product->price }}</h3>
 
 
-                                <!-- @KraeBM (prodcut Mohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
+                                <!-- @KraeBM (productMohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
                                 <script>
                                     function saveScrollPosition(form) {
                                         var scrollY = window.scrollY || document.documentElement.scrollTop;
                                         form.scrollPosition.value = scrollY;
                                     }
                                 </script>
-                                <form action='{{route('product.getInfo')}}' method='post'onsubmit='saveScrollPosition(this)'>
+                                 <form action="{{ route('product.getInfo') }}" method="post" onsubmit="saveScrollPosition(this)">
                                     @csrf
                                     <input type="hidden" name="laptopData" value={{$product->product_id}}>
                                     <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
-                                    <button class="buy-product"> <a href="{{route('add_to_basket', $product->product_id)}}"> Add to Basket </a><span class="badge badge-pill badge-danger"></span> </button>
+
+                                    <button type="button" role="button" class="buy-product">
+                                        <a href="{{route('add_to_basket', $product->product_id)}}"> Add to Basket </a>
+                                        <span class="badge badge-pill badge-danger"></span>
+                                    </button>
 
                                 </form>
                             </div>
@@ -291,6 +322,7 @@
             @include('footer')
         </footer>
     </section>
+</section>
     <!-- @KraeBM (Bilal Mohamed)  Improves the position where the user last pressed the "add to basket":
         button so no need to wait for page to load before moving to original position
     It also makes sure when a user presses the home button/product button, it takes you to the top and not hwere the previous saved position is - this would be frustrating
@@ -307,7 +339,14 @@ to constantly scroll up after pressing the navbar buttons -->
             @endif
         });
 
+        function toggleDropdown() {
+            const dropdown = document.getElementById('cartDropdown');
+            dropdown.classList.toggle('hide');
+
+        }
+
     </script>
+
 </body>
 
 </html>
