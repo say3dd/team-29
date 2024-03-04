@@ -38,6 +38,9 @@ class ProductController extends Controller
             $laptops = Product::orderby('price', 'Desc')->paginate('12');
 
         }
+        if($sorting == "Newest-Arrival") {
+            $laptops = Product::orderby('created_at', 'Asc')->paginate(12);
+        }
 
     /**Assigning opartions for if there are no filters chosen or
      * if both filters are chosen - here both selected in the request */
