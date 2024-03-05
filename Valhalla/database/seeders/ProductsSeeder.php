@@ -48,7 +48,6 @@ class ProductsSeeder extends Seeder
                 'price' => 3262.99,
                 'images' => 'assets/laptop_images/Medion Erazer X20/medion_erazer_X20.webp'
             ],
-
             [
                 'brand' => 'Asus',
                 'product_name' => 'ROG Strix G16 G614',
@@ -105,14 +104,15 @@ class ProductsSeeder extends Seeder
                 'images' => 'assets/laptop_images/Asus Zephyrus M16/ASUS ZEPHYRUS.JPG'
             ],
             [
-                'brand' => 'ACER',
-                'product_name' => 'ACER Predator 21 X',
-                'price' => 2899.99,
-                'RAM' => 16,
-                'processor' => '13th Gen Intel® Core™ i9-13980HX Processor',
-                'GPU' => 'GeForce RTX 4080',
-                'image_path' => 'assets/laptop_images/ACER Predator 21 X/acer_predator_21.jpg',
-                'category' => 'Laptop',
+                    'brand' => 'ACER',
+                    'product_name' => 'ACER Predator 21 X',
+                    'product_description' => 'Name: ACER Predator 21 X
+                                        RAM: 64 GB
+                                        Processor: 13th Gen Intel® Core™ i9-13980HX Processor,
+                                        GPU: GeForce RTX 4090',
+                    'images' => 'assets/laptop_images/ACER Predator 21 X/acer_predator_21.jpg',
+                    'category' => 'Laptop',
+                    'price' => 2899.99,
             ],
             [
                 'brand' => 'MSI',
