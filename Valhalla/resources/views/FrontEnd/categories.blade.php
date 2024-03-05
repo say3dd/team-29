@@ -32,10 +32,10 @@
 <body>
     <div class="background_shape6">
         <div class="topnavigation">
-            <form action="" class="search-container">
-                <input type="text" placeholder="Search Valhalla" name="search">
-                <button type="submit"><img src="{{asset('assets/images_categories/search_icon.png')}}"
-                        style="height:50px;" class="seacrh_button"></button>
+            <form action="{{route('categories.search')}}" class="search-container" method="GET">
+                <input type="text" class="form-control" placeholder="Search Valhalla" name="search">
+                <button type="submit"> <img src="{{asset('assets/images_categories/search_icon.png')}}"
+                        style="height:50px;" class="search_button"> </button>
             </form>
         </div>
         <p class="title_of_category"> SHOP BY CATEGORY </p>
