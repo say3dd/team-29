@@ -107,12 +107,13 @@ class ProductsSeeder extends Seeder
             [
                 'brand' => 'ACER',
                 'product_name' => 'ACER Predator 21 X',
-                'price' => 2899.99,
-                'RAM' => 16,
-                'processor' => '13th Gen Intel® Core™ i9-13980HX Processor',
-                'GPU' => 'GeForce RTX 4080',
-                'image_path' => 'assets/laptop_images/ACER Predator 21 X/acer_predator_21.jpg',
+                'product_description' => 'Name: Asus Predator 21 X
+                                          RAM : 16 GB
+                                          processor : 13th Gen Intel® Core™ i9-13980HX Processor,
+                                          GPU : GeForce RTX 4080',
                 'category' => 'Laptop',
+                'price' => 2899.99,
+                'images' => 'assets/laptop_images/ACER Predator 21 X/acer_predator_21.jpg'
             ],
             [
                 'brand' => 'MSI',
