@@ -17,73 +17,80 @@ class ProductController extends Controller
         $products = Product::all();
         return view('product', compact('product'));
     }
-    /* this function is used to show the product page **/
-    public function pageUpdate(Request $request,$id){
-        /** Assigning the variables to the product coloums and making them distinct so theres no repetition */
-        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
-        $graphics = Product::select('GPU')->distinct()-> orderby('GPU')-> get();
-        $price = Product::select('price') ->distinct()->orderby('price') -> get();
+    /** @BilalMo The page update page works on making sure the products are displayed a  */
+    public function pageUpdate(Request $request,$id)
+    {
+      /** This retrieve the distinct data */
+        $brands = $this->getDistinctBrands();
+        $graphics = $this->getDistinctGPUs();
+
+      /** This organises the sorting for the product page */
         $sorting = $request->input('sorting');
+        $laptops = $this->sortLaptops($sorting);
 
-
-
-        /** Assigning laptop as all products before its populated so laptop is definine din all tables before filled.*/
-
-    $laptops = Product::all();
-/** Assigning operations for the sorting functions  */
-        if($sorting=="Price_LtoH") {
-            $laptops = Product::orderby('price', 'ASC')->paginate('12');
+        /** This handles the filtering side of the product page */
+        $checkedBrands = $request->get('brands', []);
+        $checkedGPU = $request->get('graphics', []);
+        /*If the filtered laptops contain these checked items, and it true, make only those visible when laptop is called **/
+        $filteredLaptops = $this->filterLaptops($checkedBrands, $checkedGPU);
+        if ($filteredLaptops) {
+            $laptops = $filteredLaptops;
         }
-        if($sorting=="Price_HtoL"){
-            $laptops = Product::orderby('price', 'Desc')->paginate('12');
+        /* Return the rendered page with the details required to show**/
+        return $this->renderPage($id, compact('laptops', 'brands', 'graphics'));
+    }
+    /** @BilalMo Assigns the product to get the distinct Brands  */
+    protected function getDistinctBrands()
+    {
+        return Product::select('brand')->distinct()->orderBy('brand')->get();
+    }
+    /** @BilalMo Assigns the product to get the distinct GPUs  */
+    protected function getDistinctGPUs() {
+        return Product::select('GPU')->distinct()->orderBy('GPU')->get();
+    }
 
+    /** @BilalMo Assigns the product to get the distinct prices  */
+    protected function getDistinctPrices() {
+        return Product::select('price')->distinct()->orderBy('price')->get();
+    }
+
+        /** @BilalMo Renders the page if available by only the Id */
+        protected function renderPage($id, $data) {
+            $viewPage = 'Product_files.products' . ($id > 1 ? $id : '');
+            if (view()->exists($viewPage)) {
+                return view($viewPage, $data);
+            }
+            return redirect()->back();
         }
-        if($sorting == "Newest-Arrival") {
-            $laptops = Product::orderby('created_at', 'Asc')->paginate(12);
+
+    /** @Bilal Mo Assigning operations for the sorting functions */
+    protected function sortLaptops($sorting)
+    {
+        return match ($sorting) {
+            "Price_LtoH" => Product::orderby('price', 'ASC')->paginate('12'),
+            "Price_HtoL" => Product::orderby('price', 'Desc')->paginate('12'),
+            "Newest-Arrival" => Product::orderby('created_at', 'Asc')->paginate(12),
+            default => Product::all(),
+        };
+    }
+    /** @BilalMo The function works on displaying the laptop based on certain conditionals whether the filter of the feature has been
+     *pressed or not*/
+    protected function filterLaptops($checkedBrands,$checkedGPU)
+    {
+        /**Assigning operations for if there are no filters chosen or
+         * if both filters are chosen - here both selected in the request */
+
+        if (!empty($checkedBrands) && !empty($checkedGPU)) {
+           return Product::whereIn('brand', $checkedBrands)
+                ->whereIn('GPU', $checkedGPU)->get();
+        } elseif (!empty($checkedBrands)) {
+            return Product::whereIn('brand', $checkedBrands)->get();
+        } elseif (!empty($checkedGPU)) {
+           return Product::whereIn('GPU', $checkedGPU)->get();
         }
+        return null;
+    }
 
-    /**Assigning opartions for if there are no filters chosen or
-     * if both filters are chosen - here both selected in the request */
-    $checkedBrands = $request-> get('brands',[]);
-    $checkedGPU = $request -> get('graphics',[]);
-
-    /* if statements on whether both ticked or one ticked **/
-    if(!empty($checkedBrands)&& !empty($checkedGPU)){
-       $laptops =  Product::whereIn('brand',$checkedBrands)
-            -> whereIn('GPU',$checkedGPU)->get();
-    }
-    elseif(!empty($checkedBrands)){
-        $laptops = Product::whereIn('brand',$checkedBrands)->get();
-    }
-    elseif(!empty($checkedGPU)){
-        $laptops = Product::whereIn('GPU',$checkedGPU)->get();
-    }
-        /** The page update page works on making sure the products are displayed and each page works,  */
-
-
-    switch($id){
-    case 1:
-    return view('Product_files.products', [
-        'laptops' => $laptops,
-        'brands' => $brands,
-        'graphics' => $graphics,
-    ]);
-    case 2:
-        return view('Product_files.products2', [
-            'laptops' => $laptops,
-            'brands' => $brands,
-            'graphics' => $graphics,
-        ]);
-        case 3:
-            return view('Product_files.products3', [
-                'laptops' => $laptops,
-                'brands' => $brands,
-                'graphics' => $graphics,
-            ]);
-            default:
-             return redirect()->back();
-    }
-    }
     public function getInfo(Request $request)
     {
         /* had to restate these and put assign them within view since it returns an Undefined variable $brands/$graphics issue **/
