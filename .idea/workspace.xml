@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Refactored the page update function for better clarity and maintenance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet_product_webpage_template.css" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet_product_webpage_template.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +27,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="bilals-remote" />
+        <entry key="$PROJECT_DIR$" value="Valhalla-working-branch-backup" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
