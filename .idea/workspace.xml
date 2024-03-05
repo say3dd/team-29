@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="removed unintended line from dashboard.blade.php">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_18_55_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_18_55__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_19_03_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_19_03__Changes_.xml" beforeDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Refactored the page update function for better clarity and maintenance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/categories.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,7 +317,7 @@
       <workItem from="1708973724751" duration="1745000" />
       <workItem from="1709437370410" duration="3107000" />
       <workItem from="1709578178683" duration="1607000" />
-      <workItem from="1709644864650" duration="2558000" />
+      <workItem from="1709644864650" duration="7399000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -337,7 +335,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708812796953</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactored the page update function for better clarity and maintenance">
+      <option name="closed" value="true" />
+      <created>1709647614874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709647614874</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,6 +364,7 @@
     <MESSAGE value="bilal test" />
     <MESSAGE value="added Dashboard.css and linked it with dashboard.blade.php" />
     <MESSAGE value="removed unintended line from dashboard.blade.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed unintended line from dashboard.blade.php" />
+    <MESSAGE value="Refactored the page update function for better clarity and maintenance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored the page update function for better clarity and maintenance" />
   </component>
 </project>
