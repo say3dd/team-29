@@ -1,0 +1,4044 @@
+/*    
+ _______________________________   Created and designed the About page (CSS) of the webiste by @AnthonyResuello (Anthony Resuello)    ____________________________________________
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+/* Define Color Variables */
+:root {
+  --primary-color: #4E008B;         /* Purple */
+  --secondary-color: #9500ff83;     /* Light Purple with Opacity */
+  --accent-color: #A634FF;          /* Accent Color */
+  --text-color: white;              /* Text Color */
+  --shadow-color: rgba(0, 0, 0, 0.3); /* Shadow Color */
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/*                                    FONTS SECTION                            */
+body {
+  font-family: 'Noto Sans', sans-serif;
+  color: white;
+  
+}
+
+h1,
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.3rem;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.9rem;
+}
+
+
+
+
+
+/*                                  HEADER  SECTION                         */
+
+
+/* Navigation header styling */
+.nav-header {
+  font-size: 2rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 10%;
+  background: (rgb(61, 0, 230));
+  backdrop-filter: blur(1rem);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+}
+
+/* Styling  span element */
+
+
+.logo img {
+  width: 15rem;
+  height: auto;
+  border-radius: 20px;
+  border: #4E008B solid 3px;
+}
+
+
+/* Styling for navigation links */
+.navbar a {
+  font-size: 1.4rem;
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: bold;
+}
+
+#check {
+  display: none;
+}
+.nav-bar .icons {
+  cursor: pointer;
+}
+
+.navbar a:hover {
+  color: rgb(115, 0, 255);
+  text-decoration: none;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 5%;
+}
+
+header {
+  
+  background: linear-gradient(rgba(0, 0, 0, 0.288), rgba(70, 70, 70, 0.144)),
+  url("../images/abstract-purple-art-4k-5g.jpg"); 
+  
+
+
+}
+
+
+
+
+/* footer section */
+
+
+.main {
+  background-color: #120045;
+  padding-bottom: 1px; /* Add a small padding to prevent margin collapse */
+  padding-top: 1px; /* Add a small padding to prevent margin collapse */
+}
+
+.title-sellers {
+  text-align: center;
+  margin: 0.5rem;
+ font-weight: bold;
+  margin-top: 3rem;
+}
+
+.footer-section {
+  
+    background-color: #300452;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-section a  {
+      color:#9000ff;
+  }
+  
+  footer {
+    font-size: 1.2rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  
+  }
+  
+  
+  .footer-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+  gap: 15rem;
+    
+  }
+  
+  .footer-column {
+    text-align: left;
+    padding: 10px;
+  }
+  
+  .footer-column h2 {
+    color: #fff;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 5px;
+  }
+  
+  
+  .footer-bottom {
+    margin-top: 20px;
+   
+  
+  }
+  
+  .footer-bottom p {
+    font-size: 1.1rem;
+   margin-bottom: 0.5rem;
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Monitor Section */
+
+
+.heading-text {
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 4%;
+}
+
+#monitor-container {
+  margin-bottom:  6rem;
+  margin-left: 16.5rem;
+  margin-right: 16.5rem;
+  margin-top: 4rem;
+  background-color:#4E008B;
+  padding-top: 3rem;
+  padding-left: 6rem;
+  padding-right: 8rem;
+  padding-bottom: 4rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+
+}
+
+.monitor-card {
+  display: flex;
+  align-items: center;
+
+  gap: 6rem;
+}
+
+.monitor-card img {
+  width: 29rem;
+  height: 29rem;
+  border-radius: 15px; 
+  border: #300452 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.about-info {
+  text-align: left;
+}
+
+.monitor-heading {
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  
+}
+
+.price {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.add-btn,
+.wishlist-btn {
+  background-color: #A634FF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 10rem;
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+ 
+  padding: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.wishlist-btn:hover {
+  background-color: #bc00f5;
+  color: #ffffff; /* Change text color on hover */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+.add-btn:hover {
+  background-color: #bc00f5;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+
+.monitor-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 35rem;
+}
+
+.title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 75%; /* Set the width as a percentage or use other relative units */
+}
+
+
+.monitors-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 35rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+
+
+/* Monitor Feature Section */
+
+
+
+
+
+.monitor-feature-card img {
+  display: block;
+  margin: auto;
+  
+  border-radius: 15px;
+  border: #4E008B 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5rem;
+}
+
+
+
+
+
+
+.feature-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+
+
+
+
+/* Features Monitor  */
+
+
+#container-feature {
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top:2%;
+  margin-bottom: 5%;
+}
+
+.features {
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 23rem;
+}
+
+
+.features p {
+  font-size: 1.1rem;
+}
+.features h2 {
+  font-size: 1.5rem;
+}
+.top-card {
+  background-color: #4e008b; /* Background color for the top half */
+  padding: 20px;
+
+}
+
+.bottom-card {
+  background-color: #370061; /* Background color for the bottom half */
+  padding: 20px;
+
+}
+
+.features img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid #360060;
+}
+
+.person-info {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.7rem;
+  
+}
+
+.person-title {
+  font-size: 1.8rem;
+}
+
+
+
+
+
+/*      Related Products        */
+  
+  
+  
+  .related-title-line {
+    height: 2px; /* Adjust the height as needed */
+    background-color: #9000ff; /* Adjust the color as needed */
+    margin: 0 auto; /* Center the line horizontally */
+    width: 50%;
+    margin-bottom: 3rem;
+
+  }
+  
+  
+  
+  
+  #container-product {
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top:2%;
+    margin-bottom: 5%;
+  }
+  
+  .products {
+    text-align: center;
+    margin: 30px 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    border-radius: 2%;
+    overflow: hidden; /* Ensure overflow is hidden */
+    width: 23rem;
+  }
+  
+  
+  .products p {
+    font-size: 1.1rem;
+  }
+  .products h2 {
+    font-size: 1.5rem;
+  }
+  .top-card {
+    background-color: #4e008b; /* Background color for the top half */
+    padding: 20px;
+  
+  }
+  
+  .bottom-card {
+    background-color: #370061; /* Background color for the bottom half */
+    padding: 20px;
+  
+  }
+  
+  .products img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #360060;
+  }
+  
+  .monitor-info {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+    
+  }
+  
+  .monitor-title {
+    font-size: 1.8rem;
+  }
+  
+  
+  
+  .add-product-btn {
+    background-color: #A634FF;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    width: 10rem;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    padding: 0.8rem;
+    text-decoration: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1.1rem;
+  }
+  
+  
+
+
+  .add-product-btn:hover {
+    background-color: #bc00f5;
+      color: #ffffff; /* Change text color on hover */
+      box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1700px) {
+  
+/* Monitor Section */
+
+
+
+#monitor-container {
+  margin-bottom:  6rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
+  margin-top: 4rem;
+  background-color:#4E008B;
+ 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+
+}
+
+.monitor-card {
+  display: flex;
+  align-items: center;
+ 
+  gap: 6rem;
+}
+
+.monitor-card img {
+  width: 29rem;
+  height: 29rem;
+  border-radius: 15px; 
+  border: #300452 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.about-info {
+  text-align: left;
+}
+
+.monitor-heading {
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  
+}
+.price {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.add-btn,
+.wishlist-btn {
+  background-color: #A634FF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 10rem;
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+  padding: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.wishlist-btn:hover {
+  background-color: #bc00f5;
+  color: #ffffff; /* Change text color on hover */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+.add-btn:hover {
+  background-color: #bc00f5;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+
+.monitor-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+.title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+
+.monitors-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.monitor-info {
+  width: 50%;
+}
+
+
+/* Monitor Feature Section */
+
+
+
+
+
+.monitor-feature-card img {
+  display: block;
+  margin: auto;
+  
+  border-radius: 15px;
+  border: #4E008B 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5rem;
+}
+
+
+
+
+
+
+.feature-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+
+
+
+
+/* Features Monitor  */
+
+
+#container-feature {
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top:2%;
+  margin-bottom: 5%;
+}
+
+.features {
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 23rem;
+}
+
+
+.features p {
+  font-size: 1.1rem;
+}
+.features h2 {
+  font-size: 1.5rem;
+}
+.top-card {
+  background-color: #4e008b; /* Background color for the top half */
+  padding: 20px;
+
+}
+
+.bottom-card {
+  background-color: #370061; /* Background color for the bottom half */
+  padding: 20px;
+
+}
+
+.features img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid #360060;
+}
+
+.person-info {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.7rem;
+  
+}
+
+.person-title {
+  font-size: 1.8rem;
+}
+
+
+
+
+
+
+
+/*      Related Products        */
+  
+  
+  
+.related-title-line {
+    height: 2px; /* Adjust the height as needed */
+    background-color: #9000ff; /* Adjust the color as needed */
+    margin: 0 auto; /* Center the line horizontally */
+    width: 50%;
+    margin-bottom: 3rem;
+
+  }
+  
+  
+  
+  
+  #container-product {
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top:2%;
+    margin-bottom: 5%;
+  }
+  
+  .products {
+    text-align: center;
+    margin: 30px 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    border-radius: 2%;
+    overflow: hidden; /* Ensure overflow is hidden */
+    width: 23rem;
+  }
+  
+  
+  .products p {
+    font-size: 1.1rem;
+  }
+  .products h2 {
+    font-size: 1.5rem;
+  }
+  .top-card {
+    background-color: #4e008b; /* Background color for the top half */
+    padding: 20px;
+  
+  }
+  
+  .bottom-card {
+    background-color: #370061; /* Background color for the bottom half */
+    padding: 20px;
+  
+  }
+  
+  .products img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #360060;
+  }
+  
+  .monitor-info {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+    
+  }
+  
+  .monitor-title {
+    font-size: 1.8rem;
+  }
+  
+  
+  
+  .add-product-btn {
+    background-color: #A634FF;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    width: 10rem;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    padding: 0.8rem;
+    text-decoration: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1.1rem;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+@media (max-width: 1500px) {
+  
+ /* Monitor Section */
+
+
+
+#monitor-container {
+  margin-bottom:  6rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
+  margin-top: 4rem;
+  background-color:#4E008B;
+ 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+
+}
+
+.monitor-heading {
+  font-size: 1.8rem;
+}
+
+.monitor-card {
+  display: flex;
+  align-items: center;
+ 
+  gap: 4rem;
+}
+
+.monitor-card img {
+  width: 25rem;
+  height: 25rem;
+  border-radius: 15px; 
+  border: #300452 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.about-info {
+  text-align: left;
+}
+
+.monitor-heading {
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  
+}
+
+.add-btn,
+.wishlist-btn {
+  background-color: #A634FF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 10rem;
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+ 
+  padding: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.wishlist-btn:hover {
+  background-color: #bc00f5;
+  color: #ffffff; /* Change text color on hover */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+.add-btn:hover {
+  background-color: #bc00f5;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+
+.monitor-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+.title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+
+.monitors-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.monitor-info {
+  width: 50%;
+}
+
+
+/* Monitor Feature Section */
+
+
+
+
+
+.monitor-feature-card img {
+  display: block;
+  margin: auto;
+  
+  border-radius: 15px;
+  border: #4E008B 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5rem;
+}
+
+
+
+
+
+
+.feature-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+
+
+
+
+/* Features Monitor  */
+
+
+#container-feature {
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top:2%;
+  margin-bottom: 5%;
+}
+
+.features {
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 23rem;
+}
+
+
+.features p {
+  font-size: 1.1rem;
+}
+.features h2 {
+  font-size: 1.5rem;
+}
+.top-card {
+  background-color: #4e008b; /* Background color for the top half */
+  padding: 20px;
+
+}
+
+.bottom-card {
+  background-color: #370061; /* Background color for the bottom half */
+  padding: 20px;
+
+}
+
+.features img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid #360060;
+}
+
+.person-info {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.7rem;
+  
+}
+
+.person-title {
+  font-size: 1.8rem;
+}
+
+
+
+/*      Related Products        */
+  
+  
+  
+.related-title-line {
+    height: 2px; /* Adjust the height as needed */
+    background-color: #9000ff; /* Adjust the color as needed */
+    margin: 0 auto; /* Center the line horizontally */
+    width: 50%;
+    margin-bottom: 3rem;
+
+  }
+  
+  
+  
+  
+  #container-product {
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top:2%;
+    margin-bottom: 5%;
+  }
+  
+  .products {
+    text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 23rem;
+  }
+  
+  
+  .products p {
+    font-size: 1.1rem;
+  }
+  .products h2 {
+    font-size: 1.5rem;
+  }
+  .top-card {
+    background-color: #4e008b; /* Background color for the top half */
+    padding: 20px;
+  
+  }
+  
+  .bottom-card {
+    background-color: #370061; /* Background color for the bottom half */
+    padding: 20px;
+  
+  }
+  
+  .products img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #360060;
+  }
+  
+  .monitor-info {
+    font-size: 1rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+    
+  }
+  
+  .monitor-title {
+    font-size: 1.8rem;
+  }
+  
+  
+  
+  .add-product-btn {
+    background-color: #A634FF;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    width: 10rem;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    padding: 0.8rem;
+    text-decoration: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1.1rem;
+  }
+  
+
+
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1250px) {
+
+/* Monitor Section */
+
+
+
+#monitor-container {
+  margin-bottom:  6rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  margin-top: 4rem;
+  background-color:#4E008B;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.monitor-heading {
+  font-size: 1.8rem;
+}
+
+.monitor-card {
+  display: flex;
+  align-items: center;
+ 
+  gap: 4rem;
+}
+
+.monitor-card img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 15px; 
+  border: #300452 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.about-info {
+  text-align: left;
+}
+
+.monitor-heading {
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  
+}
+
+.add-btn,
+.wishlist-btn {
+  background-color: #A634FF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 14rem;
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+
+  padding: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.wishlist-btn:hover {
+  background-color: #bc00f5;
+  color: #ffffff; /* Change text color on hover */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+.add-btn:hover {
+  background-color: #bc00f5;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+
+.monitor-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+.title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+
+.monitors-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.monitor-info {
+  width: 50%;
+}
+
+
+/* Monitor Feature Section */
+
+
+
+
+
+.monitor-feature-card img {
+  display: block;
+  margin: auto;
+  width: 45rem;
+  border-radius: 15px;
+  border: #4E008B 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5rem;
+}
+
+
+
+
+
+
+.feature-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+
+
+
+
+/* Features Monitor  */
+
+
+#container-feature {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top:2%;
+  margin-bottom: 5%;
+  
+}
+
+.features {
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 25rem;
+}
+
+
+.features p {
+  font-size: 1.1rem;
+}
+.features h2 {
+  font-size: 1.5rem;
+}
+.top-card {
+  background-color: #4e008b; /* Background color for the top half */
+  padding: 20px;
+
+}
+
+.bottom-card {
+  background-color: #370061; /* Background color for the bottom half */
+  padding: 20px;
+
+}
+
+.features img {
+  width: 9;
+  height: 9rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid #360060;
+}
+
+.person-info {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.7rem;
+  
+}
+
+.person-title {
+  font-size: 1.8rem;
+}
+
+
+
+/*      Related Products        */
+  
+  
+  
+
+  
+  
+  
+  #container-product {
+    display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top:2%;
+  margin-bottom: 5%;
+  }
+  
+  .products {
+    text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 23rem;
+  }
+  
+  
+  .products p {
+    font-size: 1.1rem;
+  }
+  .products h2 {
+    font-size: 1.5rem;
+  }
+  .top-card {
+    background-color: #4e008b; /* Background color for the top half */
+    padding: 20px;
+  
+  }
+  
+  .bottom-card {
+    background-color: #370061; /* Background color for the bottom half */
+    padding: 20px;
+  
+  }
+  
+  .products img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #360060;
+  }
+  
+  .monitor-info {
+    font-size: 1rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+    
+  }
+  
+  .monitor-title {
+    font-size: 1.8rem;
+  }
+  
+  
+  
+  .add-product-btn {
+    background-color: #A634FF;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    width: 10rem;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    padding: 0.8rem;
+    text-decoration: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1.1rem;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+
+/* Monitor Section */
+
+
+
+#monitor-container {
+  margin-bottom:  6rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 4rem;
+  background-color:#4E008B;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.monitor-heading {
+  font-size: 1.8rem;
+}
+
+.monitor-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.monitor-card img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 15px; 
+  border: #300452 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.about-info {
+  text-align: left;
+}
+
+.monitor-heading {
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  
+}
+
+.add-btn,
+.wishlist-btn {
+  background-color: #A634FF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 14rem;
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+
+  padding: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.wishlist-btn:hover {
+  background-color: #bc00f5;
+  color: #ffffff; /* Change text color on hover */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+.add-btn:hover {
+  background-color: #bc00f5;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+
+.monitor-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+.title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+
+.monitors-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.monitor-info {
+  width: 50%;
+}
+
+
+/* Monitor Feature Section */
+
+
+
+
+
+.monitor-feature-card img {
+  display: block;
+  margin: auto;
+  width: 45rem;
+  border-radius: 15px;
+  border: #4E008B 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5rem;
+}
+
+
+
+
+
+
+.feature-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+
+
+
+
+/* Features Monitor  */
+
+
+#container-feature {
+  flex-direction: column; /* Change to a column layout for smaller screens */
+        align-items: center; /* Center the items in the column */
+  
+}
+
+.features {
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 25rem;
+}
+
+
+.features p {
+  font-size: 1.1rem;
+}
+.features h2 {
+  font-size: 1.5rem;
+}
+.top-card {
+  background-color: #4e008b; /* Background color for the top half */
+  padding: 20px;
+
+}
+
+.bottom-card {
+  background-color: #370061; /* Background color for the bottom half */
+  padding: 20px;
+
+}
+
+.features img {
+  width: 9;
+  height: 9rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid #360060;
+}
+
+.person-info {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.7rem;
+  
+}
+
+.person-title {
+  font-size: 1.8rem;
+}
+
+
+
+
+
+/*      Related Products        */
+  
+  
+  
+
+  
+  
+  
+#container-product {
+    flex-direction: column; /* Change to a column layout for smaller screens */
+    align-items: center; /* Center the items in the column */
+  }
+  
+  .products {
+    text-align: center;
+    margin: 30px 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    border-radius: 2%;
+    overflow: hidden; /* Ensure overflow is hidden */
+    width: 25rem;
+  }
+  
+  
+  .products p {
+    font-size: 1.1rem;
+  }
+  .products h2 {
+    font-size: 1.5rem;
+  }
+  .top-card {
+    background-color: #4e008b; /* Background color for the top half */
+    padding: 20px;
+  
+  }
+  
+  .bottom-card {
+    background-color: #370061; /* Background color for the bottom half */
+    padding: 20px;
+  
+  }
+  
+  .products img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #360060;
+  }
+  
+  .monitor-info {
+    font-size: 1rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+    
+  }
+  
+  .monitor-title {
+    font-size: 1.8rem;
+  }
+  
+  
+  
+  .add-product-btn {
+    background-color: #A634FF;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    width: 10rem;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    padding: 0.8rem;
+    text-decoration: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1.1rem;
+  }
+  
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 835px) {
+
+
+/* Monitor Section */
+
+
+
+#monitor-container {
+  margin-bottom:  6rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 4rem;
+  background-color:#4E008B;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.monitor-heading {
+  font-size: 1.8rem;
+}
+
+.monitor-card {
+  flex-direction: column; /* Change to a column layout for smaller screens */
+  align-items: center; /* Center the items in the column */
+
+ 
+  gap: 4rem;
+}
+
+.monitor-card img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 15px; 
+  border: #300452 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.about-info {
+  text-align: left;
+}
+
+.monitor-heading {
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  
+}
+
+.add-btn,
+.wishlist-btn {
+  background-color: #A634FF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 14rem;
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+
+  padding: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.wishlist-btn:hover {
+  background-color: #bc00f5;
+  color: #ffffff; /* Change text color on hover */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+.add-btn:hover {
+  background-color: #bc00f5;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+
+.monitor-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+.title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+
+.monitors-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.monitor-info {
+  width: 50%;
+}
+
+
+/* Monitor Feature Section */
+
+
+
+
+
+.monitor-feature-card img {
+  display: block;
+  margin: auto;
+  max-width: 100%; /* Ensure the image doesn't exceed its natural size */
+  border-radius: 15px;
+  border: #4E008B 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5rem;
+
+}
+
+
+
+
+
+.feature-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+
+
+
+
+/* Features Monitor  */
+
+
+#container-feature {
+  flex-direction: column; /* Change to a column layout for smaller screens */
+        align-items: center; /* Center the items in the column */
+  
+}
+
+.features {
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 25rem;
+}
+
+
+.features p {
+  font-size: 1.1rem;
+}
+.features h2 {
+  font-size: 1.5rem;
+}
+.top-card {
+  background-color: #4e008b; /* Background color for the top half */
+  padding: 20px;
+
+}
+
+.bottom-card {
+  background-color: #370061; /* Background color for the bottom half */
+  padding: 20px;
+
+}
+
+.features img {
+  width: 9;
+  height: 9rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid #360060;
+}
+
+.person-info {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.7rem;
+  
+}
+
+.person-title {
+  font-size: 1.8rem;
+}
+
+
+
+.monitor-info {
+  width: 90%;
+}
+
+/*      Related Products        */
+  
+  
+  
+
+  
+  
+  
+#container-product {
+    flex-direction: column; /* Change to a column layout for smaller screens */
+    align-items: center; /* Center the items in the column */
+  }
+  
+  .products {
+     text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 25rem;
+  }
+  
+  
+  .products p {
+    font-size: 1.1rem;
+  }
+  .products h2 {
+    font-size: 1.5rem;
+  }
+  .top-card {
+    background-color: #4e008b; /* Background color for the top half */
+    padding: 20px;
+  
+  }
+  
+  .bottom-card {
+    background-color: #370061; /* Background color for the bottom half */
+    padding: 20px;
+  
+  }
+  
+  .products img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #360060;
+  }
+  
+  .monitor-info {
+    font-size: 1rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+    
+  }
+  
+  .monitor-title {
+    font-size: 1.8rem;
+  }
+  
+  
+  
+  .add-product-btn {
+    background-color: #A634FF;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    width: 10rem;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    padding: 0.8rem;
+    text-decoration: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1.1rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile Compativility */
+@media (max-width: 1400px) {
+    header {
+      background: linear-gradient(rgba(46, 46, 46, 0.384), rgba(73, 52, 52, 0.13)),
+  url("../images/abstract-purple-art-4k-5g.jpg"); 
+      
+        padding-top: 1px; /* Add a small padding to prevent margin collapse */
+      }
+      
+      .monitor-feature-card img  {
+        display: none;
+        }
+          
+    .nav-header {
+      padding: 1.3rem 5%;
+    }
+  
+    .container {
+      width: 80%;
+      margin-left: 10%;
+    }
+  
+    .hero-info {
+      text-align: center;
+    }
+  
+    .browse-btn {
+      margin-top: 1.5rem;
+    }
+    .title-line {
+      width: 100%; /* Set the line to 100% width on mobile */
+    }
+  
+    .big-card {
+      margin: 2rem 5%; /* Adjust margin for better spacing on mobile */
+    }
+  
+    .laptop {
+      flex-basis: 70%; /* Set the flex basis to 100% for full width on mobile */
+      margin: 20px 0; /* Adjust margin for better spacing */
+    }
+    
+    .brand-images {
+      flex-direction: column; /* Stack images in a column on smaller screens */
+      align-items: center;
+    }
+      /* Our Products Section */
+  
+  .heading-text {
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 4%;
+  }
+  
+  #product-container {
+    margin: 5rem 3rem;
+    background-color: #9500ff83;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    border-radius: 50px;
+  }
+  
+  
+  .box-card {
+    display: flex;
+    flex-direction: column; /* Adjusted to stack elements vertically on smaller screens */
+    align-items: center;
+    margin: auto;
+    padding: 5rem;
+  }
+  
+  .box-card img {
+    max-width: 100%; /* Ensure the image doesn't exceed the width of its container */
+    height: auto;
+    border-radius: 5%;
+    border: #300452 5px solid;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .info {
+    width: 100%; /* Adjusted to take the full width on smaller screens */
+  }
+  
+    .view-laptops-btn {
+      background-color: #a634ff;
+      border: none;
+      color: white;
+      border-radius: 30px;
+      width: 15em;
+      font-size: 1.2rem;
+      text-align: center;
+      display: inline-block;
+      padding: 0.8rem;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    }
+  
+  
+  
+/* Footer section */
+    
+  .footer-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+  gap: 0rem;
+    
+  }
+  
+  
+  
+  
+  /*   title line  */
+  .title-line {
+    height: 2px; /* Adjust the height as needed */
+    background-color: #9000ff; /* Adjust the color as needed */
+    margin: 0 auto; /* Center the line horizontally */
+    width: 75%; /* Set the width as a percentage or use other relative units */
+  }
+
+  
+  
+  /*   Why Choose Us Section   */
+  
+  
+  
+  .about-image{
+    padding-left:0%;
+  }
+  
+  
+  .choose-row {
+    display: flex;
+    justify-content: space-between;
+    width: 82%;
+    align-items: center;
+    margin: auto;
+   
+    
+   
+  }
+  
+  
+  #choose_us_title{
+    background-color: rgb(67, 0, 129);
+    color:white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.9rem;
+  
+  
+  }
+  
+  
+  
+  .about-info  {
+    color: rgb(255, 255, 255);
+    background-color: #4E008B;
+    padding: 1rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 1rem;
+    }
+    
+  
+    
+    
+  
+  .about-info h2{
+  
+  color: rgb(255, 255, 255);
+  text-align:  center;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  color: #c492eb;
+  
+  
+  }
+  
+  .Choose_Us_Section{
+    background-color: rgb(33, 0, 65);
+    padding-bottom: 5rem;
+    border-bottom: #9000ff 1  px solid;
+    
+  }
+
+  
+  
+  /* Our Values Section */
+  
+  
+  .heading-text {
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 4%;
+  }
+  
+  #about2-container {
+    margin-bottom:  5rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    margin-top: 4rem;
+    background-color:#4E008B;
+    padding-top: 2rem;
+    padding-left: 6rem;
+    padding-right: 8rem;
+    padding-bottom: 4rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+   
+  }
+  
+  .about-card {
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    gap: 0rem;
+   
+  }
+  
+  .about-card img {
+   display: none;
+  }
+  
+  .about-info-value {
+    text-align: center;
+  }
+  
+  .section-heading {
+    text-align: center;
+  }
+  
+  
+  
+  .about-title-line {
+    height: 2px; /* Adjust the height as needed */
+    background-color: #9000ff; /* Adjust the color as needed */
+    margin: 0 auto; /* Center the line horizontally */
+    
+  }
+  
+
+  
+  /* testimonials */
+  
+  .testimonials h1 {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  #testimonials-container {
+    display: flex;
+  
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    gap: 1.5rem;
+    
+  }
+  
+  .testimonial {
+    flex-basis: 30%; /* Set to full width on small screens */
+    text-align: center;
+    margin: 30px 0; /* Adjust margin for spacing */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  
+    border-radius: 5%;
+    overflow: hidden; /* Ensure overflow is hidden */
+  }
+  
+  .top-card,
+  .bottom-card {
+    padding: 20px;
+  }
+  
+  .top-card {
+    background-color: #4e008b; /* Background color for the top half */
+  }
+  
+  .bottom-card {
+    background-color: #370061; /* Background color for the bottom half */
+  }
+  
+  .testimonial img {
+    width: 10rem; /* Make the image responsive to the container width */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #360060;
+  }
+  
+  .person-info {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+  }
+  
+  .person-title {
+    font-size: 1.8rem;
+  }
+  
+  
+  
+  
+  
+  
+    /* about us section (main)  */
+  
+  
+  
+  .logo-icon{
+    width: 15rem;
+    border-radius: 150px;
+    border:blueviolet 3px solid;
+    border-radius: 50%;
+    
+  
+  }
+  
+  
+  .about-text p{
+  
+    width: 70%;
+  }
+  
+  .about-info{
+    margin-right: 3%;
+  }
+  .about-info p {
+    text-align: center;
+  }
+  
+  .about-contents{
+    margin-left: 3%;
+  }  
+  
+  
+  
+  
+  .about-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem; /* Use padding-top instead of margin-top */
+    margin-left: 25%;
+    padding-bottom: 5rem; 
+  
+  }
+  
+  .about-section {
+    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496)),
+                url("images/abstract-purple-art-4k-5g.jpg"); 
+   
+    background-attachment: fixed;
+  }
+  
+  
+  .find-more-btn{
+    display: none;
+  }
+  
+    
+  }
+  
+  
+  
+    @media (max-width: 974px) {
+  
+      /*    Navbar Section */
+      .menu-icon {
+        display: inline-flex;
+      }
+  
+      #check:checked ~ .menu-icon #menu {
+        display: none;
+      }
+      .menu-icon #close {
+        display: none;
+      }
+      .brand-images {
+        flex-direction: column; /* Stack images in a column on smaller screens */
+        align-items: center;
+      }
+  
+      #check:checked ~ .menu-icon #close {
+        display: block;
+      }
+      .title-line {
+        width: 100%; /* Set the line to 100% width on mobile */
+      }
+    
+      .big-card {
+        margin: 2rem 5%; /* Adjust margin for better spacing on mobile */
+      }
+    
+      .laptop {
+        flex-basis: 90%; /* Set the flex basis to 100% for full width on mobile */
+        margin: 20px 0; /* Adjust margin for better spacing */
+      }
+  
+      .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: blueviolet;
+        z-index: -1;
+        transition: 0.3s ease;
+        overflow: hidden;
+      }
+  
+      #check:checked ~ .navbar {
+        height: 25rem;
+      }
+  
+      .navbar a {
+        display: block;
+        margin: 1.5rem 0;
+        text-align: center;
+        transition: 0.3s ease;
+      }
+  
+  
+      .brand-images {
+        flex-direction: column; /* Stack images in a column on smaller screens */
+        align-items: center;
+      }
+  
+       #best-seller-container {
+      display: flex;
+      flex-wrap: wrap;  
+      justify-content: center;
+      max-width: 70%;
+      margin: 0 auto;
+      margin-bottom: 3rem;
+      gap: 1rem;
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  /* testimonials */
+  
+  .testimonials h1 {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  #testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
+  .testimonial {
+    flex-basis: 100%; /* Set to full width on small screens */
+    text-align: center;
+    margin: 30px 0; /* Adjust margin for spacing */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    border-radius: 5%;
+    overflow: hidden; /* Ensure overflow is hidden */
+  }
+  
+  .top-card,
+  .bottom-card {
+    padding: 20px;
+  }
+  
+  .top-card {
+    background-color: #4e008b; /* Background color for the top half */
+  }
+  
+  .bottom-card {
+    background-color: #370061; /* Background color for the bottom half */
+  }
+  
+  .testimonial img {
+    width: 10rem; /* Make the image responsive to the container width */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #360060;
+  }
+  
+  .person-info {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+  }
+  
+  .person-title {
+    font-size: 1.8rem;
+  }
+  
+  
+  
+  .about-title-line {
+    height: 2px; /* Adjust the height as needed */
+    background-color: #9000ff; /* Adjust the color as needed */
+   
+    margin: 0 auto;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Our Values Section */
+  
+  
+  .heading-text {
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 4%;
+  }
+  
+  #about2-container {
+    margin-bottom:  5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 4rem;
+    background-color:#4E008B;
+    padding: 5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+   
+  }
+  
+  .about-card {
+  
+    margin: auto;
+  
+  }
+  
+  .about-card img {
+   display: none;
+  }
+  
+  .about-info-value {
+    text-align: center;
+  }
+  
+  .section-heading {
+    text-align: center;
+  }
+  
+  
+  /*  about- title line */
+  .about-title-line {
+    height: 2px; /* Adjust the height as needed */
+    background-color: #9000ff; /* Adjust the color as needed */
+    margin: 0 auto; /* Center the line horizontally */
+   
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    /* about us section (main)  */
+  
+  
+  
+    .logo-icon{
+      display: none;
+      
+    
+    }
+    
+    
+    .about-text p{
+    
+      width: 70%;
+    }
+    
+    .about-info{
+      margin-right: 3%;
+    }
+    .about-info p {
+      text-align: center;
+    }
+    
+    .about-contents{
+      margin-left: 3%;
+    }  
+    .btn-header {
+      background-color: #ff0000;
+      border: none;
+      color: white;
+      border: white 1px solid;
+      border-radius: 5%;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+    
+    .btn-header:hover {
+      background-color: #760000;
+      color: white;
+    }
+      
+    
+    
+    
+    .about-container {
+      display: flex;
+      justify-content: center;
+      padding-top: 5rem; /* Use padding-top instead of margin-top */
+      margin-left: 25%;
+      padding-bottom: 5rem; 
+    
+    }
+    
+    .about-section {
+      background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496)),
+                  url("images/abstract-purple-art-4k-5g.jpg"); 
+     
+      background-attachment: fixed;
+    }
+    
+    
+    .find-more-btn{
+      display: none;
+    }
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   /* Why Choose Us Section */
+  
+  .about-image {
+    padding-left: 0%;
+  }
+  
+  .choose-row {
+    display: flex;
+    flex-direction: column; /* Switch to a column layout on small screens */
+    width: 90%;
+    align-items: center;
+    margin: auto;
+  }
+  
+  #choose_us_title {
+    background-color: rgb(67, 0, 129);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.9rem;
+  }
+  
+  .about-info {
+    color: rgb(255, 255, 255);
+    background-color: #4E008B;
+    padding: 1rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .about-info h2 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: #c492eb;
+  }
+  
+  .Choose_Us_Section {
+    background-color: rgb(33, 0, 65);
+    padding-bottom: 5rem;
+  
+  }
+    
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    }
+
+
+
+
+
+@media (max-width: 450px) {
+
+
+
+
+/* Monitor Section */
+
+
+
+#monitor-container {
+  margin-bottom:6rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 4rem;
+  background-color:#4E008B;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.monitor-heading {
+  font-size: 1.8rem;
+}
+
+.monitor-card {
+  flex-direction: column; /* Change to a column layout for smaller screens */
+  align-items: center; /* Center the items in the column */
+
+ 
+  gap: 4rem;
+}
+
+.monitor-card img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 15px; 
+  border: #300452 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.about-info {
+  text-align: left;
+}
+
+.monitor-heading {
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  
+}
+
+.add-btn,
+.wishlist-btn {
+  background-color: #A634FF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 14rem;
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+
+  padding: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.wishlist-btn:hover {
+  background-color: #bc00f5;
+  color: #ffffff; /* Change text color on hover */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+.add-btn:hover {
+  background-color: #bc00f5;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+
+.monitor-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+.title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+
+.monitors-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.monitor-info {
+  width: 50%;
+}
+
+
+/* Monitor Feature Section */
+
+
+
+
+
+.monitor-feature-card img {
+  display: block;
+  margin: auto;
+  max-width: 100%; /* Ensure the image doesn't exceed its natural size */
+  border-radius: 15px;
+  border: #4E008B 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5rem;
+
+}
+
+
+
+
+
+.feature-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+
+
+
+
+/* Features Monitor  */
+
+
+#container-feature {
+  flex-direction: column; /* Change to a column layout for smaller screens */
+        align-items: center; /* Center the items in the column */
+  
+}
+
+.features {
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 20rem;
+}
+
+
+.features p {
+  font-size: 1.1rem;
+}
+.features h2 {
+  font-size: 1.5rem;
+}
+.top-card {
+  background-color: #4e008b; /* Background color for the top half */
+  padding: 20px;
+
+}
+
+.bottom-card {
+  background-color: #370061; /* Background color for the bottom half */
+  padding: 20px;
+
+}
+
+.features img {
+  width: 9;
+  height: 9rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid #360060;
+}
+
+.person-info {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.7rem;
+  
+}
+
+.person-title {
+  font-size: 1.8rem;
+}
+
+
+
+.monitor-info {
+  width: 90%;
+}
+
+/*      Related Products        */
+  
+  
+  
+
+  
+  
+  
+#container-product {
+    flex-direction: column; /* Change to a column layout for smaller screens */
+    align-items: center; /* Center the items in the column */
+  }
+  
+  .products {
+    text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 20rem;
+  }
+  
+  
+  .products p {
+    font-size: 1.1rem;
+  }
+  .products h2 {
+    font-size: 1.5rem;
+  }
+  .top-card {
+    background-color: #4e008b; /* Background color for the top half */
+    padding: 20px;
+  
+  }
+  
+  .bottom-card {
+    background-color: #370061; /* Background color for the bottom half */
+    padding: 20px;
+  
+  }
+  
+  .products img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #360060;
+  }
+  
+  .monitor-info {
+    font-size: 1rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+    
+  }
+  
+  .monitor-title {
+    font-size: 1.8rem;
+  }
+  
+  
+  
+  .add-product-btn {
+    background-color: #A634FF;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    width: 10rem;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    padding: 0.8rem;
+    text-decoration: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1.1rem;
+
+}
+
+
+
+}
+
+
+
+@media (max-width: 350px) {
+
+
+
+/* Monitor Section */
+
+
+
+#monitor-container {
+  margin-bottom:6rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 4rem;
+  background-color:#4E008B;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.monitor-heading {
+  font-size: 1.8rem;
+}
+
+.monitor-card {
+  flex-direction: column; /* Change to a column layout for smaller screens */
+  align-items: center; /* Center the items in the column */
+  gap: 4rem;
+}
+
+.monitor-card img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 15px; 
+  border: #300452 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.about-info {
+  text-align: left;
+}
+
+.monitor-heading {
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  
+}
+
+.add-btn,
+.wishlist-btn {
+  background-color: #A634FF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 14rem;
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+  padding: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.wishlist-btn:hover {
+  background-color: #bc00f5;
+  color: #ffffff; /* Change text color on hover */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+.add-btn:hover {
+  background-color: #bc00f5;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+
+.monitor-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+.title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+
+.monitors-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.monitor-info {
+  width: 50%;
+}
+
+
+/* Monitor Feature Section */
+
+
+
+
+
+.monitor-feature-card img {
+  display: block;
+  margin: auto;
+  max-width: 100%; /* Ensure the image doesn't exceed its natural size */
+  border-radius: 15px;
+  border: #4E008B 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5rem;
+
+}
+
+
+
+
+
+.feature-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+
+
+/* Features Monitor  */
+
+
+#container-feature {
+  flex-direction: column; /* Change to a column layout for smaller screens */
+  align-items: center; /* Center the items in the column */
+  
+}
+
+.features {
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 15rem;
+}
+
+
+.features p {
+  font-size: 1.1rem;
+}
+.features h2 {
+  font-size: 1.5rem;
+}
+.top-card {
+  background-color: #4e008b; /* Background color for the top half */
+  padding: 20px;
+
+}
+
+.bottom-card {
+  background-color: #370061; /* Background color for the bottom half */
+  padding: 20px;
+
+}
+
+.features img {
+  width: 9;
+  height: 9rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid #360060;
+}
+
+.person-info {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.7rem;
+  
+}
+
+.person-title {
+  font-size: 1.8rem;
+}
+
+
+
+.monitor-info {
+  width: 90%;
+}
+
+
+/*      Related Products        */
+  
+  
+  
+
+  
+  
+  
+#container-product {
+    flex-direction: column; /* Change to a column layout for smaller screens */
+    align-items: center; /* Center the items in the column */
+  }
+  
+  .products {
+    text-align: center;
+    margin: 30px 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    border-radius: 2%;
+    overflow: hidden; /* Ensure overflow is hidden */
+    width: 15rem;
+  }
+  
+  
+  .products p {
+    font-size: 1.1rem;
+  }
+  .products h2 {
+    font-size: 1.5rem;
+  }
+  .top-card {
+    background-color: #4e008b; /* Background color for the top half */
+    padding: 20px;
+  
+  }
+  
+  .bottom-card {
+    background-color: #370061; /* Background color for the bottom half */
+    padding: 20px;
+  
+  }
+  
+  .products img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #360060;
+  }
+  
+  .monitor-info {
+    font-size: 1rem;
+    color: white;
+    margin-top: 1rem;
+    line-height: 1.7rem;
+    
+  }
+  
+  .monitor-title {
+    font-size: 1.8rem;
+  }
+  
+  
+  
+  .add-product-btn {
+    background-color: #A634FF;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    width: 10rem;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    padding: 0.8rem;
+    text-decoration: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1.1rem;
+
+}
+
+
+
+}
+
+  
+  
+   @media (max-width: 500px) {
+
+
+
+  /*              Hero Section          */
+  .hero-info {
+    font-size: 0.2rem;
+  }
+  
+  
+  /*             Best Seller Section          */
+    .title-line {
+     width: 100%; 
+  }
+  
+  .big-card {
+    margin: 2rem 5%;
+  }
+  
+  .laptop {
+    flex-basis: 90%;
+    margin: 20px 0; 
+  }
+  
+  
+  
+  
+  /*            Product Section             */
+  
+  #product-container {
+    background-color: #9500ff83;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    border-radius: 50px;
+  }
+  
+  
+  .box-card  {
+    display: flex;
+    flex-direction: column; /* Adjusted to stack elements vertically on smaller screens */
+    align-items: center;
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+  
+  }
+  
+  .box-card img {
+    max-width: 100%; /* Ensure the image doesn't exceed the width of its container */
+    height: auto;
+    border-radius: 5%;
+    border: #300452 5px solid;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  
+  }
+  
+  .info {
+    width: 100%; /* Adjusted to take the full width on smaller screens */
+  }
+  
+  
+  .view-laptops-btn{
+    background-color:#A634FF;
+   border: none;
+   color: white;
+   border-radius: 30px;
+   width: 15em;
+   font-size: 1.2rem;
+  
+   display: inline-block;
+   padding: 0.8rem;
+   text-decoration: none;
+   margin-top: 1.5rem;
+   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .view-laptops-btn:hover {
+    background-color:#48007f;
+    color: #FFFFFF; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+  }
+  
+  .view-laptops-btn:active {
+    transform: translateY(2px); /* Add a slight downward shift on click */
+  }
+  
+
+
+
+
+
+  @media (max-width: 300px) {
+
+/* Monitor Section */
+
+
+
+#monitor-container {
+  margin-bottom:6rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 4rem;
+  background-color:#4E008B;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.monitor-heading {
+  font-size: 1.8rem;
+}
+
+.monitor-card {
+  flex-direction: column; /* Change to a column layout for smaller screens */
+  align-items: center; /* Center the items in the column */
+  gap: 4rem;
+}
+
+.monitor-card img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 15px; 
+  border: #300452 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.about-info {
+  text-align: left;
+}
+
+.monitor-heading {
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  
+}
+
+.add-btn,
+.wishlist-btn {
+  background-color: #A634FF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 14rem;
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+  padding: 0.8rem;
+  text-decoration: none;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.wishlist-btn:hover {
+  background-color: #bc00f5;
+  color: #ffffff; /* Change text color on hover */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+.add-btn:hover {
+  background-color: #bc00f5;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+}
+
+
+.monitor-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+.title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+}
+
+
+.monitors-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: auto; /* Set the width as a percentage or use other relative units */
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.monitor-info {
+  width: 50%;
+}
+
+
+/* Monitor Feature Section */
+
+
+
+
+
+.monitor-feature-card img {
+  display: block;
+  margin: auto;
+  max-width: 100%; /* Ensure the image doesn't exceed its natural size */
+  border-radius: 15px;
+  border: #4E008B 15px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5rem;
+
+}
+
+
+
+
+
+.feature-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+
+
+/* Features Monitor  */
+
+
+#container-feature {
+  flex-direction: column; /* Change to a column layout for smaller screens */
+  align-items: center; /* Center the items in the column */
+  
+}
+
+.features {
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 15rem;
+}
+
+
+.features p {
+  font-size: 1.1rem;
+}
+.features h2 {
+  font-size: 1.5rem;
+}
+.top-card {
+  background-color: #4e008b; /* Background color for the top half */
+  padding: 20px;
+
+}
+
+.bottom-card {
+  background-color: #370061; /* Background color for the bottom half */
+  padding: 20px;
+
+}
+
+.features img {
+  width: 9;
+  height: 9rem;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid #360060;
+}
+
+.person-info {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.7rem;
+  
+}
+
+.person-title {
+  font-size: 1.8rem;
+}
+
+
+
+.monitor-info {
+  width: 90%;
+}
+
+}
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+  
+  @media (max-width: 320px) {
+    
+  /*      Hero Section    */
+    #hero {
+      width: 100%;
+      height: 110vh;
+      
+    }
+    
+    .container {
+      margin-top: 1rem;
+      width: 80%;
+      height: 90%;
+      margin-left: 11%;
+      display: flex;  
+      align-items: center;
+      justify-content: flex-start;
+    }
+  
+    /* Brands Section */
+  .brands-section {
+    display: none;
+  }
+  
+  .brand-images {
+    display: none;
+  }
+
+
+  .about-container p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .about-text p{
+
+    width: 90%;
+  }
+  .about-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem; /* Use padding-top instead of margin-top */
+    margin-left: 0%;
+    padding-bottom: 5rem; 
+     gap: 1rem;
+  
+  }
+  
+  
+
+  
+#testimonials-container {
+
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.testimonial {
+  flex-basis: 100%;
+  text-align: center;
+  margin: 10px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  overflow: hidden; /* Ensure overflow is hidden */
+}
+
+  /*        Best Seller Section          */
+  
+  
+  #best-seller-container {
+    display: flex;
+    justify-content: center;
+    max-width: 70%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    gap:1rem;
+  
+  }
+  
+  .laptop {
+    flex-basis:30%;
+    text-align: center;
+    margin: 30px 20px;
+    background-color:#4E008B;
+    padding: 20px;
+    box-shadow: 0 10px 20px #000000;
+    border-radius: 5%;
+  }
+  
+  
+  
+  
+  
+  .buy-product{
+     background-color:#A634FF;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    width: 8em;
+    font-size: 1.2rem;
+    text-align: center;
+    display: inline-block;
+    padding: 0.8rem;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  
+  
+  
+  /*        Product Section        */
+  
+  
+  #product-container {
+    background-color: #9500ff83;
+  
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    border-radius: 50px;
+  }
+  #product-container h1 {
+  font-size: 1.6rem;
+  }
+  
+  .view-laptops-btn{
+    display: none;
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Our Values Section */
+  
+  
+  .heading-text {
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 4%;
+  }
+  
+  #about2-container {
+    margin: 1rem;
+    background-color:#4E008B;
+    padding: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+  
+  }
+  
+  .about-card {
+    gap: 0rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem;  
+    
+   
+  }
+  
+  .about-card img {
+   display: none;
+  }
+  
+  .about-info-value {
+    text-align: center;
+  }
+  
+  .section-heading {
+    text-align: center;
+  }
+  
+  
+  
+  .about-title-line {
+    height: 2px; /* Adjust the height as needed */
+    background-color: #9000ff; /* Adjust the color as needed */
+    margin: 0 auto; /* Center the line horizontally */
+    
+  
+  
+  }
+  
+  
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+}
