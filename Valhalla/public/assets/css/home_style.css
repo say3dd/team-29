@@ -1404,24 +1404,27 @@ Styling for basket
 /*}*/
 
 
-.dropdown{
-    float:right;
+.dropdown {
+    float: right;
     padding-right: 30px;
+    position: relative; /* Add this if not already present */
 }
 .btn{
     border:0px;
     margin:10px 0px;
     box-shadow:none !important;
 }
-.dropdown .dropdown-menu{
-    padding:20px;
-    top:30px !important;
-    width:350px !important;
-    left:-110px !important;
-    box-shadow:0px 5px 30px black;
+.dropdown .dropdown-menu {
+    display: none;
+    padding: 20px;
+    top: 50px !important;
+    width: 350px !important;
+    left: -10vw;
+    box-shadow:  0px 5px 30px black;
+    position: absolute;
 }
 .total-header-section{
-    border-bottom:1px solid #d2d2d2;
+    border-bottom:1px solid var(--secondary-color);
 }
 .total-section p{
     margin-bottom:20px;
@@ -1432,16 +1435,17 @@ Styling for basket
 }
 
 .checkout .btn-primary{
-    border-radius:50px;
+    border-radius:50px;}
 
-}
-
-.dropdown-menu:before{
-
+.dropdown .dropdown--active {
+    display: block;
     position:absolute;
-    top:-20px;
-    right:50px;
-    border:10px solid transparent;
+    top:40px;
+    right:30px;
+    background-color: mediumpurple;
+    border:10px solid black;
     border-bottom-color:#fff;
+
 }
+
 

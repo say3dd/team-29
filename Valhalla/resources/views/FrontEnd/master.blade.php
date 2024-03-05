@@ -78,7 +78,7 @@
 
 
             <div class="dropdown">
-                <button class="btn btn-primary" type="button" onclick="toggleDropdown()">
+                <button id="basket-button" class="btn btn-primary" type="button">
                     <i class="bx bx-shopping-bag" aria-hidden="true"></i> Basket
                     <span class="badge badge-pill badge-danger">
             {{ count((array) session('basket')) }}
@@ -101,12 +101,12 @@
                     @foreach(session('basket') as $id => $details)
                     <div class="row cart-detail">
                         <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                            <img src="{{ $details['images'] }}" alt="Product Image" />
+                            <img class="mt-1.5 ml-1.5 w-[5rem] rounded" src="{{ $details['images'] }}" alt="Product Image" />
                         </div>
                         <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                            <p>{{ $details['product_name'] }}</p>
-                            <span class="price text-info"> ${{ $details['price'] }}</span>
-                            <span class="count"> Quantity: {{ $details['quantity'] }}</span>
+                            <p class="text-[0.6em]">{{ $details['product_name'] }}</p>
+                            <span class="text-[0.5em] price text-info"> ${{ $details['price'] }}</span>
+                            <span class="text-[0.5em] count"> Quantity: {{ $details['quantity'] }}</span>
                         </div>
                     </div>
                     @endforeach
@@ -339,11 +339,14 @@ to constantly scroll up after pressing the navbar buttons -->
             @endif
         });
 
-        function toggleDropdown() {
-            const dropdown = document.getElementById('cartDropdown');
-            dropdown.classList.toggle('hide');
 
-        }
+        const dropdown = document.getElementById("cartDropdown");
+        const basketButton = document.getElementById("basket-button");
+
+        basketButton.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event from propagating to other elements
+            dropdown.classList.toggle("dropdown--active"); // Correctly toggle the active class to show/hide the dropdown
+        });
 
     </script>
 
