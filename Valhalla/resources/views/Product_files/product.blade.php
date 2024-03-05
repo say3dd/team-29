@@ -20,7 +20,6 @@
     {{-- Section 1 starts here --}}
     <div class="background_shape1">
         <div class="background_shape_1_2">
-            <<<<<<< HEAD
             <div class="slideshow-container">
                 <div class="slide">
                     <div class="mySlides">
@@ -48,6 +47,8 @@
                         <span class="dot" onclick="currentSlide(5)"></span>
                     </div>
                 </div>
+            </div>
+        </div>
                 <div class="product_information">
                     <p class="product_name">
                         Dell Alienware x16 Gaming Laptop</p>
