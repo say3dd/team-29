@@ -6,17 +6,18 @@
      */
 
 
-use App\Http\Controllers\Basket\BasketController;
-use App\Http\Controllers\Basket\CheckoutController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\Product\ReturnController;
-use App\Http\Controllers\Product\ReturnRequestSubmitController;
-use App\Http\Controllers\Product\TrackingController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WishListController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Basket\BasketController;
+use App\Http\Controllers\Product\ReturnController;
+use App\Http\Controllers\Basket\CheckoutController;
+use App\Http\Controllers\Product\TrackingController;
+use App\Http\Controllers\Product\ReturnRequestSubmitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +112,7 @@ Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
 
+Route::get('/wishlist', [WishListController::class, 'index']);
 
 //--------------------- No code beyond this line. All routing code must be ABOVE THIS LINE. ^^^^^^________----------
 require __DIR__ . '/auth.php';

@@ -37,32 +37,37 @@
 $( function() {
   $( "#sortable" ).sortable({
     placeholder: "sortable-placeholder",
-    forcePlaceholderSize: true,
-    update: function(event, ui) {
-      var productOrder = $(this).sortable('toArray').toString();
-      $.ajax({
-        url: '/saveWishlistOrder',
-        method: 'POST',
-        data: {
-          order: productOrder,
-          _token: '{{ csrf_token() }}'
-        }
-      });
-    }
+    forcePlaceholderSize: true
   });
+
   $( "#sortable" ).disableSelection();
-} );
+
+  $('#save-wishlist').click(function() {
+    var productOrder = $('#sortable').sortable('toArray').toString();
+
+    $.ajax({
+      url: '/saveWishlistOrder',
+      method: 'POST',
+      data: {
+        order: productOrder,
+        _token: '{{ csrf_token() }}'
+      }
+    });
+  });
+});
   </script>
 </head>
 <body>
   <div id="sortable">
-    @foreach($products as $product)
-      <div id="product-{{ $product->id }}" class="ui-state-default">
+    @foreach($wishlistItems as $product)
+      <div id="product-{{ $product->product_id }}" class="ui-state-default">
         <img src="{{ asset($product->images) }}" alt="{{ $product->product_name }}" style="max-width: 100px; max-height: 100px;">
         {{ $product->product_name }}
       </div>
     @endforeach
   </div>
+
+  <button id="save-wishlist">Save Wishlist</button>
  
 </body>
 </html>
