@@ -317,10 +317,15 @@ and it will demonstrate the list of items the user has added to their basket    
                                     </button>
                                      </a>
 
+                                     <br>
                                 </form>
+                                <form method="POST" action="{{ route('wishlist.add') }}">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+                                    <button type="submit">Add to Wishlist</button>
+                                </form>  
                             </div>
                         </div>
-
                     @endforeach
                 </div>
             </div>
