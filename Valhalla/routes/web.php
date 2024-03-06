@@ -99,9 +99,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 //    })->name('thank-you');
 //});
 
-Route::get('/wishlist', function () {
-    return view('FrontEnd.wishlist');
-});
 
 Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name('return.request');
 
@@ -113,6 +110,9 @@ Route::get('/categories', function () {
 })->name('categories');
 
 Route::get('/wishlist', [WishListController::class, 'index']);
+Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
+Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']
+);
 
 //--------------------- No code beyond this line. All routing code must be ABOVE THIS LINE. ^^^^^^________----------
 require __DIR__ . '/auth.php';

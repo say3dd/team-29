@@ -39,34 +39,46 @@ $( function() {
     placeholder: "sortable-placeholder",
     forcePlaceholderSize: true
   });
-
   $( "#sortable" ).disableSelection();
+});
 
-  $('#save-wishlist').click(function() {
-    var productOrder = $('#sortable').sortable('toArray').toString();
-
-    $.ajax({
-      url: '/saveWishlistOrder',
-      method: 'POST',
-      data: {
-        order: productOrder,
-        _token: '{{ csrf_token() }}'
-      }
+$(document).ready(function() {
+    $('#save-wishlist').on('click', function() {
+        var productOrder = $('#sortable').sortable('toArray');
+        $.ajax({
+            url: '/saveWishlistOrder',
+            method: 'POST',
+            data: {
+                order: JSON.stringify(productOrder),
+                _token: '{{ csrf_token() }}'
+            },
+            success: function(response) {
+                if(response.status === 'success') {
+                    alert('Wishlist order saved successfully');
+                    console.log(productOrder)
+                } else {
+                    alert('There was an error saving the wishlist order');
+                }
+            }
+        });
     });
-  });
 });
   </script>
 </head>
 <body>
+
+  @if($wishlistItems->isEmpty())
+  <p>Your wishlist is empty. Return home here: </p> <a href="{{ route('index') }}"> >Home</a>
+  @else
   <div id="sortable">
     @foreach($wishlistItems as $product)
-      <div id="product-{{ $product->product_id }}" class="ui-state-default">
+      <div id="product_{{ $product->product_id }}" class="ui-state-default">
         <img src="{{ asset($product->images) }}" alt="{{ $product->product_name }}" style="max-width: 100px; max-height: 100px;">
         {{ $product->product_name }}
       </div>
     @endforeach
   </div>
-
+  @endif
   <button id="save-wishlist">Save Wishlist</button>
  
 </body>
