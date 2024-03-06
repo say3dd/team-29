@@ -43,8 +43,9 @@ Route::get('/test', function () {
     return view('FrontEnd.test');
 });
 
-Route::get('/product', [ProductController::class,'index'])->name('product');
+Route::get('/products', [ProductController::class,'index'])->name('product.index');
 Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
+Route::get('/products1', [ProductController::class,'pageUpdate'])->name('products');
 /*
 The second route here sometimes overrides the first one (possibly something causing the buttons to trigger without an input).
 For now I've made a workaround by having the getInfo function check if it has recieved an input, if not it behaves just like the index function.
@@ -67,11 +68,15 @@ Route::get('/test1', function () {
 
     // Route::get('/', );
     // @say3dd (Mohammed Miah) - Routing for the different product functionalities
+
+Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
+
+
+
     // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
-    Route::get('/product', [ProductController::class,'index'])->name('product');
+    Route::get('/products', [ProductController::class,'index'])->name('products.index');
     Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
-    Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
-    Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');
+//    Route::get('/products', [ProductController::class, 'show'])->name('products.show');
 
 
     Route::get('/contact', [ContactController::class, 'showForm'])->middleware(['guest'])->name('contact.show');
@@ -118,3 +123,4 @@ Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'su
 Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
+Route::get('/search', [ProductController::class, 'search']) ->name('categories.search');
