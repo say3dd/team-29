@@ -158,7 +158,7 @@ and it will demonstrate the list of items the user has added to their basket    
                 <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
             </div>
         </div>
-    
+
 
     @if(session('success'))
         <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
@@ -196,7 +196,7 @@ and it will demonstrate the list of items the user has added to their basket    
                     <p>They can handle even the most demanding games with ease, and they're also great for other
                         graphics-intensive tasks
                         like video editing, 3D modelling and game development.</p>
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="view-laptops-btn">View Products</a>
+                    <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
                 </div>
                 <div>
                     <img src="{{ asset('assets/images/asus-rog-launched-two-new-high-end.jpg') }}"
@@ -223,7 +223,7 @@ and it will demonstrate the list of items the user has added to their basket    
 
                 <div class = "Category-1-bottom">
 
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                    <a href="{{route('categories') }}" class="monitor-btn">
                         <h1>Laptop</h1>
                     </a>
                 </div>
@@ -233,7 +233,7 @@ and it will demonstrate the list of items the user has added to their basket    
             <div class="Category-1">
                 <img src="{{ asset('assets/images/webprim_apexpro_tkl.png__1200x627_crop-fit_optimize_subsampling-2.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                    <a href="{{route('categories' ) }}" class="monitor-btn">
                         <h1>Keyboard</h1></a>
                 </div>
 
@@ -242,7 +242,7 @@ and it will demonstrate the list of items the user has added to their basket    
             <div class="Category-1">
                 <img src="{{ asset('assets/images/pro-headset-gallery-1.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                    <a href="{{route('categories' ) }}" class="monitor-btn">
                         <h1>Headset</h1></a>
                 </div>
 
@@ -251,7 +251,7 @@ and it will demonstrate the list of items the user has added to their basket    
             <div class="Category-1">
                 <img src="{{ asset('assets/images/a60b39dbd9168b865d64254d7d860d20.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                    <a href="{{route('categories') }}" class="monitor-btn">
                         <h1>Mouse</h1></a>
 
                 </div>
@@ -261,7 +261,7 @@ and it will demonstrate the list of items the user has added to their basket    
             <div class="Category-1">
                 <img src="{{ asset('assets/images/h732.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                    <a href="{{route('categories') }}" class="monitor-btn">
                         <h1>Laptop</h1></a>
                 </div>
 
