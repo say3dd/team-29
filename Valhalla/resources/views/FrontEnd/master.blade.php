@@ -94,7 +94,7 @@
                         }
                         ?>
                         <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
-                            <p>Total: <span class="text-info">£ {{ $total }}</span></p>
+                            <p>Total: <span class="text-info">Â£ {{ $total }}</span></p>
                         </div>
                     </div>
                      @if(session('basket'))
@@ -137,11 +137,11 @@
 
     <!--         Hero Section         -->
     <section id="hero">
-        <div class="container">
+        <!-- <div class="container"> Change the container to be somethign else like hero-contianer so that it does affect the app.css -->
+        <div class="hero-container">
             @yield('content')
             <div class="hero-info">
-
-                <h1>Explore Top-Quality Gaming Gear</h1>
+            <h1 class ="hero-title">Explore Top-Quality Gaming Gear</h1>
                 <p class="hero-text">
                     Immerse yourself in the world of gaming with Valhalla's collection of top-notch gaming
                     laptops.
@@ -152,7 +152,7 @@
                 <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
             </div>
         </div>
-    </section>
+  
 
     @if(session('success'))
         <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
@@ -290,7 +290,7 @@
 {{--                                <p> {{ $product->processor }}</p>--}}
 {{--                                <p>RAM: {{ $product->RAM }}GB</p>--}}
                                 <p>Description: {{ $product->product_description }}</p>
-                                <h3> £{{ $product->price }}</h3>
+                                <h3> Ã‚Â£{{ $product->price }}</h3>
 
 
                                 <!-- @KraeBM (productMohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->

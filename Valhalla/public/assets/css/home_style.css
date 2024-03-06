@@ -42,7 +42,11 @@ p {
     margin-top: 1rem;
     line-height: 1.9rem;
 }
-
+img {
+    display: inline !important;
+    /* Optionally, you can include other styles specific to images here */
+    vertical-align: middle; /* Retain or modify other properties as needed */
+}
 /*                                  HEADER  SECTION                         */
 
 /* Navigation header styling */
@@ -114,7 +118,15 @@ header {
     height: 86vh;
 }
 
-.container {
+
+.hero-title {
+    font-size: 2.5rem;  
+    font-weight: bolder;
+    margin-bottom: 1rem;
+ 
+}
+
+.hero-container {
     margin-top: 1rem;
     width: 35%;
     height: 70%;
@@ -142,7 +154,7 @@ header {
     background-color: #2d044b; /* Change the background color on hover */
 }
 
-.container {
+.hero-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -193,6 +205,8 @@ header {
     font-weight: bold;
     margin-top: 3rem;
     margin-left: 12rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .title-line-products {
@@ -342,6 +356,7 @@ header {
     font-weight: bold;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
+    font-size: 2.5rem;
 }
 
 .Category-1-bottom {
@@ -465,6 +480,8 @@ blockquote {
 
 .section-heading {
     font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
 }
 
 .heading-text {
@@ -496,9 +513,8 @@ blockquote {
 }
 
 
-
 .box-card img {
-
+    
     max-width: 36rem;
     height: auto;
     border-radius: 5%;
@@ -644,7 +660,7 @@ footer {
         padding: 1.3rem 5%;
     }
 
-    .container {
+    .hero-container {
         width: 80%;
         margin-left: 10%;
     }
@@ -1130,7 +1146,7 @@ margin-bottom: 2rem;
         font-size: 0.2rem;
     }
 
-    .container {
+    .hero-container {
         margin-top: 5rem;
     }
 
@@ -1227,7 +1243,7 @@ margin-bottom: 2rem;
         height: 110vh;
     }
 
-    .container {
+    .hero-container {
         margin-top: 1rem;
         width: 80%;
         height: 90%;
@@ -1447,5 +1463,3 @@ Styling for basket
     border-bottom-color:#fff;
 
 }
-
-
