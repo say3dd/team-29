@@ -96,7 +96,7 @@ and it will demonstrate the list of items the user has added to their basket    
                         <?php
                         $total = 0;
                         foreach ((array) session('basket') as $id => $details) {
-                            $total += $details['price'] * $details['quantity'];   {{-- calculates the total based on the quantity --}}
+                            // $total += $details['price'] * $details['quantity'];   {{-- calculates the total based on the quantity --}}
                         }
                         ?>
                         <div class="total-section text-left rounded-md">
