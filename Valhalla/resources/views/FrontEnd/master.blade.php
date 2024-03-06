@@ -144,11 +144,10 @@ and it will demonstrate the list of items the user has added to their basket    
 
     <!--         Hero Section         -->
     <section id="hero">
-        <div class="container">
+        <div class="hero-container">
             @yield('content')
             <div class="hero-info">
-
-                <h1>Explore Top-Quality Gaming Gear</h1>
+                <h1 class ="hero-title">Explore Top-Quality Gaming Gear</h1>
                 <p class="hero-text">
                     Immerse yourself in the world of gaming with Valhalla's collection of top-notch gaming
                     laptops.
@@ -159,7 +158,7 @@ and it will demonstrate the list of items the user has added to their basket    
                 <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
             </div>
         </div>
-    </section>
+    
 
     @if(session('success'))
         <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
@@ -176,7 +175,7 @@ and it will demonstrate the list of items the user has added to their basket    
                 <img src="{{ asset('assets/images/Razer-Logo (1).png') }}" alt="Brand 4">
             </div>
         </div>
-
+    </section>
 </header>
 
 
