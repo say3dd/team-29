@@ -77,34 +77,41 @@
             <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
 
 
-            <div class="dropdown">
+{{--       Interactive basket that allows user to tap on the basket
+and it will demonstrate the list of items the user has added to their basket     --}}
+
+            <div class="dropdown ml-3.5 align-middle mb-1 p-1.5 text-center rounded-md">
                 <button id="basket-button" class="btn btn-primary" type="button">
-                    <i class="bx bx-shopping-bag" aria-hidden="true"></i> Basket
-                    <span class="badge badge-pill badge-danger">
-            {{ count((array) session('basket')) }}
+                    <i class="bx bx-shopping-bag align-middle mt-0.5" aria-hidden="true"></i>
+
+                   <span class="text-[0.5em] mb-2 align-middle text-center"> Basket </span>
+
+                    <span class="badge badge-pill badge-danger text-2xl">
+            {{ count((array) session('basket')) }}   {{-- keep tracks of number of items has been added to the basket --}}
         </span>
                 </button>
 
-                <div class="dropdown-menu" id="cartDropdown">
+                <div class="dropdown-menu mt-6 p-3 rounded-md" id="cartDropdown">
                     <div class="row total-header-section">
                         <?php
                         $total = 0;
                         foreach ((array) session('basket') as $id => $details) {
-                            $total += $details['price'] * $details['quantity'];
+                            $total += $details['price'] * $details['quantity'];   {{-- calculates the total based on the quantity --}}
                         }
                         ?>
-                        <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
-                            <p>Total: <span class="text-info">Â£ {{ $total }}</span></p>
+                        <div class="total-section text-left rounded-md">
+                            <p>Total: <span class="text-info text-cyan-400 font-bold">£ {{ $total }}</span></p>
                         </div>
+                        <div class="w-full h-0.5 bg-gray-200"></div>
                     </div>
                      @if(session('basket'))
                     @foreach(session('basket') as $id => $details)
                     <div class="row cart-detail">
-                        <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                            <img class="mt-1.5 ml-1.5 w-[5rem] rounded" src="{{ $details['images'] }}" alt="Product Image" />
+                        <div class=" cart-detail-img">
+                            <img class="mt-1.5 ml-[0.3rem] w-[4rem] rounded" src="{{ $details['images'] }}" alt="Product Image" />
                         </div>
-                        <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                            <p class="text-[0.6em]">{{ $details['product_name'] }}</p>
+                        <div class=" cart-detail-product flex flex-col">
+                            <p class="text-[0.6em] flex-shrink">{{ $details['product_name'] }}</p>
                             <span class="text-[0.5em] price text-info"> ${{ $details['price'] }}</span>
                             <span class="text-[0.5em] count"> Quantity: {{ $details['quantity'] }}</span>
                         </div>
@@ -112,8 +119,8 @@
                     @endforeach
                     @endif
                     <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                            <a href="{{ route('basket') }}" class="btn btn-primary btn-block">View all</a>
+                        <div class="text-center checkout">
+                            <a href="{{ route('basket') }}" class="btn btn-primary btn-block w-full">View all</a>
                         </div>
                     </div>
                 </div>
@@ -137,11 +144,11 @@
 
     <!--         Hero Section         -->
     <section id="hero">
-        <!-- <div class="container"> Change the container to be somethign else like hero-contianer so that it does affect the app.css -->
-        <div class="hero-container">
+        <div class="container">
             @yield('content')
             <div class="hero-info">
-            <h1 class ="hero-title">Explore Top-Quality Gaming Gear</h1>
+
+                <h1>Explore Top-Quality Gaming Gear</h1>
                 <p class="hero-text">
                     Immerse yourself in the world of gaming with Valhalla's collection of top-notch gaming
                     laptops.
@@ -152,7 +159,7 @@
                 <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
             </div>
         </div>
-  
+    </section>
 
     @if(session('success'))
         <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
@@ -290,7 +297,7 @@
 {{--                                <p> {{ $product->processor }}</p>--}}
 {{--                                <p>RAM: {{ $product->RAM }}GB</p>--}}
                                 <p>Description: {{ $product->product_description }}</p>
-                                <h3> Ã‚Â£{{ $product->price }}</h3>
+                                <h3> £{{ $product->price }}</h3>
 
 
                                 <!-- @KraeBM (productMohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
@@ -305,10 +312,11 @@
                                     <input type="hidden" name="laptopData" value={{$product->product_id}}>
                                     <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
 
+                                     <a href="{{route('add_to_basket', $product->product_id)}}">
                                     <button type="button" role="button" class="buy-product">
-                                        <a href="{{route('add_to_basket', $product->product_id)}}"> Add to Basket </a>
-                                        <span class="badge badge-pill badge-danger"></span>
+                                        Add to Basket
                                     </button>
+                                     </a>
 
                                 </form>
                             </div>
