@@ -181,6 +181,91 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
+                    </div>
+        <div class="product_information">
+        <p class="product_name">
+            Dell Alienware x16 Gaming Laptop</p>
+        <hr><br>
+        <div class = "product_main_features">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;13th Gen Intel Core i9-13900HK<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Windows 11 Home<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;NVIDIA® GeForce RTX 4090<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;16", QHD+ 2560x1600, 240Hz<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;32 GB 6000 MT/s RAM, 1 TB SSD<br>
+        </div>
+        <div class="button_view_specification">
+            <button class="button_view_specification" onclick="openMessageBox()">
+                View all specifications </button>
+        </div><br>
+        <hr><br>
+        <div class = "product_price">
+            Price:£3,349.00
+        </div>
+        <br><hr>
+        <div class="buttons">
+        <button class="button_cart"> ADD TO BASKET</button>
+        <button class="button_wish">ADD TO WISHLIST </button>
+        </div>
+        {{-- Part of Section 1, for showcasing all of the specification of the product --}}
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeMessageBox()">&times;</span>
+                <p>
+                <p class = "specification_title1">
+                    Product Features</p>
+                <div class = "columns_container">
+                <div class="column1">
+                    <div class = "all_specification_contents" >
+                        <hr>
+                        Processor: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 13th Gen Intel® Core™ i9-13980HX (36 MB cache, 24 cores, 32 threads,
+                        up to
+                        5.60 GHz
+                        Turbo) <br>
+                       <hr>
+
+                        Operating System: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Windows 11 Home, English, Dutch, French, German, Italian <br>
+                        <hr>
+
+                        Graphics Card: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- NVIDIA® GeForce RTX™ 4090, 16 GB GDDR6 <br>
+                        <hr>
+
+                        Display:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 18" QHD+ (2560 x 1600) 165Hz, 3ms, ComfortView Plus, NVIDIA G-SYNC +
+                        DDS,
+                        100%
+                        DCI-P3 <br>
+                       <hr>
+
+                        Memory: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 32 GB: 2 x 16 GB, DDR5, 4800 MT/s <br>
+                        <hr>
+
+                        Storage:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 1 TB, M.2, PCIe NVMe, SSD <br>
+                        <hr>
+
+                        Colour: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Dark Metallic Moon <br>
+                        <hr>
+
+                        Camera: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- 1080p at 30 fps FHD IR camera with Windows Hello support<br>
+                        <hr>
+
+                        Audio and Speakers: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Stereo speakers, 2 W x 2 = 4 W total<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;- Realtek ALC3254<br>
+                        <hr>
+
+                        Slots: <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;-1 SD-card slot<br>
+                        <hr>
+=======
+>>>>>>> 32d92273662baa80a650e0b80a368f7d77d35b0b
 
                     </div>
 
