@@ -83,7 +83,7 @@ img {
     text-decoration: none;
     margin-left: 1.5rem;
     font-weight: bold;
- 
+
 }
 
 #check {
@@ -1342,7 +1342,7 @@ margin-bottom: 2rem;
         height: 12rem;
     }
 
-  
+
 }
 
 @media (max-width: 1440px) {
@@ -1389,8 +1389,8 @@ margin-bottom: 2rem;
         transition: 0.3s ease;
     }
 
-   
-  
+
+
 
 }
 
@@ -1426,9 +1426,7 @@ Styling for basket
     display: inline-block;
 }
 
-.btn{
 
-}
 .dropdown .dropdown-content{
     display: none;
     position: absolute;
@@ -1449,15 +1447,19 @@ Styling for basket
     position: relative; /* Add this if not already present */
 }
 .btn{
-
-   
-    border-radius: 50%;
+    display: inline-block;
+    border: none;
+    height: 5vh;
+    width: auto;
+    padding: 5px;
+    border-radius: 10px;
     background-color: #2d044b;
     box-shadow:none ;
 }
 
 .btn-block{
     padding: 1.2rem;
+    margin: 16px 2em;
 }
 .dropdown .dropdown-menu {
     display: none;
@@ -1472,13 +1474,6 @@ Styling for basket
 .total-section p{
     margin-bottom:20px;
 }
-.checkout{
-    border-top:1px solid var(--secondary-color);
-    padding-top: 15px;
-}
-
-.checkout .btn-primary{
-    border-radius:50px;}
 
 .dropdown .dropdown--active {
     display: block;
@@ -1486,6 +1481,8 @@ Styling for basket
     top:40px;
     right:30px;
     background-color: mediumpurple;
-    border:10px solid black;
+    border: 4px solid var(--secondary-color);
 
 }
+
+

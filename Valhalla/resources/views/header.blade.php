@@ -7,11 +7,12 @@
 <head>
     <link rel="stylesheet" href="{{ asset('assets/css/home_style.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <script src="{{ asset('assets/JavaScript/jquery.js') }}"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <header>
-   
+
     <section class="nav-header">
 
         <a href="{{route('index')}}" class="logo"> <img src="{{asset('assets/images/Screenshot_2023-11-16_030651.png')}}" alt=""></a>
@@ -78,21 +79,21 @@
                     </div>
                     @if(session('basket'))
                         @foreach(session('basket') as $id => $details)
-                            <div class="row cart-detail">
+                            <div class="row cart-detail flex flex-row pb-2 mb-1">
                                 <div class=" cart-detail-img">
-                                    <img class="mt-1.5 ml-[0.3rem] w-[4rem] rounded" src="{{ $details['images'] }}" alt="Product Image" />
+                                    <img class="mt-1.5 p-1 mr-2.5 h-auto w-[2em] rounded-md" src="{{ $details['images'] }}" alt="Product Image" />
                                 </div>
                                 <div class=" cart-detail-product flex flex-col">
-                                    <p class="text-[0.6em] flex-shrink">{{ $details['product_name'] }}</p>
-                                    <span class="text-[0.5em] price text-info"> ${{ $details['price'] }}</span>
-                                    <span class="text-[0.5em] count"> Quantity: {{ $details['quantity'] }}</span>
+                                    <p class="text-[0.6em]">{{ $details['product_name'] }}</p>
+                                    <span class="text-[0.5em] price text-info text-amber-500 inline-flex"> £ {{ $details['price'] }}</span>
+                                    <span class="text-[0.5em] count inline-flex"> Quantity: {{ $details['quantity'] }}</span>
                                 </div>
                             </div>
                         @endforeach
                     @endif
                     <div class="row">
-                        <div class="text-center checkout">
-                            <a href="{{ route('basket') }}" class="btn btn-primary btn-block w-full">View all</a>
+                        <div class="text-center checkout inline-block bg-violet-900 w-full mt-2 rounded-md mr-2 align-middle pr-1">
+                            <a href="{{ route('basket') }}" class="text-2xl" >View all</a>
                         </div>
                     </div>
                 </div>
@@ -100,7 +101,7 @@
 
         </nav>
     </section>
- 
+
     <!--         Hero Section         -->
 
 </header>
