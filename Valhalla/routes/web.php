@@ -8,17 +8,18 @@
 
 
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BasketController;
+use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\BasketController;
 use App\Http\Controllers\TrackingController;
+use App\Http\Controllers\WishListController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\ReturnRequestSubmitController;
 
 /*
@@ -114,9 +115,6 @@ Route::group(['middleware' => 'cart.notEmpty'], function () {
 });
 
 
-Route::get('/wishlist', function () {
-    return view('FrontEnd.wishlist');
-});
 
 Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name('return.request');
 
