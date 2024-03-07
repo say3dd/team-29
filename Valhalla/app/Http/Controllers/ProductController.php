@@ -162,27 +162,40 @@ public function addToBasket($id){
     return redirect()->back()->with('success', 'Item has been added to basket');
 }
 
-    public function update(Request $request){
+    public function updateBasket(Request $request){
         if ($request->id && $request->quantity){
             $basket = session()->get('basket');
             $basket[$request->id]["quantity"] = $request->quantity;
             session()->put('basket', $basket);
             session()->flash('success', 'Basket has been updated!');
+
         }
+
     }
 
-    public function remove(Request $request)
-    {
+//    public function removeFromBasket(Request $request)
+//    {
+//        if ($request->id){
+//            $basket = session()->get('basket');
+//            if (isset($basket[$request->id])){
+//                unset($basket[$request->id]);
+//                session()->put('basket', $basket);
+//            }
+//            session()->flash('success', 'Item has been removed!');
+//        }
+//    }
+
+    public function removeFromBasket(Request $request){
         if ($request->id){
             $basket = session()->get('basket');
             if (isset($basket[$request->id])){
                 unset($basket[$request->id]);
                 session()->put('basket', $basket);
             }
-            session()->flash('success', 'Item has been removed!');
+            session()->flash('success', 'The item has been removed!');
         }
-    }
 
+    }
 
 
     public function search(){
