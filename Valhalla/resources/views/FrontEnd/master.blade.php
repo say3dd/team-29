@@ -25,123 +25,16 @@
 
 <body>
 <!--             Header                      -->
-
+<section class ="headers-image">
 <header>
-
-    <section class="nav-header">
-
-
-        <a href="" class="logo"> <img
-                src="{{ asset('assets/images/Screenshot_2023-11-16_030651.png') }}" alt=""></a>
-        <input type="checkbox" id="check">
-        <label for="check" class="menu-icon">
-            <i class="bx bx-menu" id="menu"></i>
-            <i class="bx bx-x" id="close"></i>
-        </label>
-        <nav class="navbar">
-            <a href="{{ route('index') }}">Home</a>
-            <a href="{{route('categories') }}">Products</a>
-            <a href="{{ route('about') }}">About</a>
-            <a href="{{ route('contactUs') }}">Contact Us</a>
-
-
-            <!--        Fixed the heading so that the login and register is included in the header           -->
-
-
-            {{--
-                /*
-                Login, register and dashboard
-                mady by @AbuIsNotHer3 @BravoBoy2 == Abubakarsiddik Mohammed.
-
-                Desgined by @AnthonyResuello
-                */
-
-                --}}
-            @if (Route::has('login'))
-
-                @auth
-                    <a href="{{ url('home') }}"
-                       class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                @else
-                    <a href="{{ route('login') }}"
-                       class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"><i
-                            class="bx bx-user"></i> Log in</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
-                           class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                    @endif
-                @endauth
-            @endif
-
-            <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-
-
-            <div class="dropdown">
-                <button id="basket-button" class="btn btn-primary" type="button">
-                    <i class="bx bx-shopping-bag" aria-hidden="true"></i> Basket
-                    <span class="badge badge-pill badge-danger">
-            {{ count((array) session('basket')) }}
-        </span>
-                </button>
-
-                <div class="dropdown-menu" id="cartDropdown">
-                    <div class="row total-header-section">
-                        <?php
-                        $total = 0;
-                        foreach ((array) session('basket') as $id => $details) {
-                            $total += $details['price'] * $details['quantity'];
-                        }
-                        ?>
-                        <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
-                            <p>Total: <span class="text-info">£ {{ $total }}</span></p>
-                        </div>
-                    </div>
-                     @if(session('basket'))
-                    @foreach(session('basket') as $id => $details)
-                    <div class="row cart-detail">
-                        <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                            <img class="mt-1.5 ml-1.5 w-[5rem] rounded" src="{{ $details['images'] }}" alt="Product Image" />
-                        </div>
-                        <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                            <p class="text-[0.6em]">{{ $details['product_name'] }}</p>
-                            <span class="text-[0.5em] price text-info"> ${{ $details['price'] }}</span>
-                            <span class="text-[0.5em] count"> Quantity: {{ $details['quantity'] }}</span>
-                        </div>
-                    </div>
-                    @endforeach
-                    @endif
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                            <a href="{{ route('basket') }}" class="btn btn-primary btn-block">View all</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-        </nav>
-
-
-
-{{--        <div class="dropdown-menu">--}}
-
-        <!--- End of Section  --> </section>
-
+{{--    redundant code has been removed --}}
+        @include('header')
     <!--         Hero Section         -->
     <section id="hero">
-        <div class="container">
+        <div class="hero-container">
             @yield('content')
             <div class="hero-info">
-
-                <h1>Explore Top-Quality Gaming Gear</h1>
+                <h1 class ="hero-title">Explore Top-Quality Gaming Gear</h1>
                 <p class="hero-text">
                     Immerse yourself in the world of gaming with Valhalla's collection of top-notch gaming
                     laptops.
@@ -152,7 +45,7 @@
                 <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
             </div>
         </div>
-    </section>
+
 
     @if(session('success'))
         <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
@@ -169,9 +62,10 @@
                 <img src="{{ asset('assets/images/Razer-Logo (1).png') }}" alt="Brand 4">
             </div>
         </div>
-
+    </section>
+    
 </header>
-
+</section>
 
 <!-- Best seller prodcuts-->
 <section class= "main">
@@ -190,14 +84,13 @@
                     <p>They can handle even the most demanding games with ease, and they're also great for other
                         graphics-intensive tasks
                         like video editing, 3D modelling and game development.</p>
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="view-laptops-btn">View Products</a>
+                    <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
                 </div>
                 <div>
                     <img src="{{ asset('assets/images/asus-rog-launched-two-new-high-end.jpg') }}"
                          alt="laptop 3">
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -217,7 +110,7 @@
 
                 <div class = "Category-1-bottom">
 
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                    <a href="{{route('categories') }}" class="monitor-btn">
                         <h1>Laptop</h1>
                     </a>
                 </div>
@@ -227,7 +120,7 @@
             <div class="Category-1">
                 <img src="{{ asset('assets/images/webprim_apexpro_tkl.png__1200x627_crop-fit_optimize_subsampling-2.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                    <a href="{{route('categories' ) }}" class="monitor-btn">
                         <h1>Keyboard</h1></a>
                 </div>
 
@@ -236,7 +129,7 @@
             <div class="Category-1">
                 <img src="{{ asset('assets/images/pro-headset-gallery-1.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                    <a href="{{route('categories' ) }}" class="monitor-btn">
                         <h1>Headset</h1></a>
                 </div>
 
@@ -245,7 +138,7 @@
             <div class="Category-1">
                 <img src="{{ asset('assets/images/a60b39dbd9168b865d64254d7d860d20.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                    <a href="{{route('categories') }}" class="monitor-btn">
                         <h1>Mouse</h1></a>
 
                 </div>
@@ -255,7 +148,7 @@
             <div class="Category-1">
                 <img src="{{ asset('assets/images/h732.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('productspage.id' ,['id' =>1]) }}" class="monitor-btn">
+                    <a href="{{route('categories') }}" class="monitor-btn">
                         <h1>Laptop</h1></a>
                 </div>
 
@@ -289,7 +182,7 @@
                                 <h1>{{ $product->product_name }}</h1>
 {{--                                <p> {{ $product->processor }}</p>--}}
 {{--                                <p>RAM: {{ $product->RAM }}GB</p>--}}
-                                <p>Description: {{ $product->product_description }}</p>
+                                <p>{{ $product->product_description }}</p>
                                 <h3> £{{ $product->price }}</h3>
 
 
@@ -300,20 +193,28 @@
                                         form.scrollPosition.value = scrollY;
                                     }
                                 </script>
+                                <div class = "button-container">
                                  <form action="{{ route('product.getInfo') }}" method="post" onsubmit="saveScrollPosition(this)">
                                     @csrf
                                     <input type="hidden" name="laptopData" value={{$product->product_id}}>
                                     <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
 
+                                     <a href="{{route('add_to_basket', $product->product_id)}}">
                                     <button type="button" role="button" class="buy-product">
-                                        <a href="{{route('add_to_basket', $product->product_id)}}"> Add to Basket </a>
-                                        <span class="badge badge-pill badge-danger"></span>
+                                        Add to Basket
                                     </button>
+                                     </a>
 
+                                     <br>
                                 </form>
+                                <form method="POST" action="{{ route('wishlist.add') }}">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+                                    <button class="buy-product" type="submit">Add to Wishlist</button>
+                                </form>
+                                </div>
                             </div>
                         </div>
-
                     @endforeach
                 </div>
             </div>

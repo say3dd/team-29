@@ -42,7 +42,11 @@ p {
     margin-top: 1rem;
     line-height: 1.9rem;
 }
-
+img {
+    display: inline !important;
+    /* Optionally, you can include other styles specific to images here */
+    vertical-align: middle; /* Retain or modify other properties as needed */
+}
 /*                                  HEADER  SECTION                         */
 
 /* Navigation header styling */
@@ -79,6 +83,7 @@ p {
     text-decoration: none;
     margin-left: 1.5rem;
     font-weight: bold;
+ 
 }
 
 #check {
@@ -99,10 +104,19 @@ p {
     position: absolute;
     right: 5%;
 }
-
-header {
-    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496)),
+.headers-image {
+    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.527)),
         url("../images/image.jpg");
+
+    background-size: cover;
+    background-position: center;
+    padding-top: 1px; /* Add a small padding to prevent margin collapse */
+}
+
+.headers {
+    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.527)),
+        url("../images/image.jpg");
+
     background-size: cover;
     background-position: center;
     padding-top: 1px; /* Add a small padding to prevent margin collapse */
@@ -111,10 +125,18 @@ header {
 /*                                   HERO SECTION                                    */
 #hero {
     width: 100%;
-    height: 86vh;
+    height: 87vh;
 }
 
-.container {
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin-bottom: 0.8rem;
+
+}
+
+.hero-container {
     margin-top: 1rem;
     width: 35%;
     height: 70%;
@@ -142,7 +164,7 @@ header {
     background-color: #2d044b; /* Change the background color on hover */
 }
 
-.container {
+.hero-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -193,6 +215,8 @@ header {
     font-weight: bold;
     margin-top: 3rem;
     margin-left: 12rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .title-line-products {
@@ -252,6 +276,12 @@ header {
    border-radius: 1%;
 
 
+}
+
+.button-container {
+    display: flex;
+  gap: 3rem;
+  justify-content: center;
 }
 
 #best-seller-container p {
@@ -342,6 +372,7 @@ header {
     font-weight: bold;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
+    font-size: 2.5rem;
 }
 
 .Category-1-bottom {
@@ -435,11 +466,11 @@ blockquote {
 }
 
 .buy-product {
-    background-color: #a634ff;
+    background-color: #a634ff !important;
     border: none;
     color: white;
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
     font-size: 0.9rem;
     text-align: center;
     display: inline-block;
@@ -451,10 +482,12 @@ blockquote {
 
 }
 
+
+
 .buy-product:hover {
-    background-color: #bc00f5;
+    background-color: #bc00f5 !important;
     color: #ffffff; /* Change text color on hover */
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4) !important; /* Add a slight shadow on hover */
 }
 
 .buy-product:active {
@@ -465,6 +498,8 @@ blockquote {
 
 .section-heading {
     font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
 }
 
 .heading-text {
@@ -494,7 +529,6 @@ blockquote {
 .box-card p {
     font-size: 1.2rem;
 }
-
 
 
 .box-card img {
@@ -644,7 +678,7 @@ footer {
         padding: 1.3rem 5%;
     }
 
-    .container {
+    .hero-container {
         width: 80%;
         margin-left: 10%;
     }
@@ -1130,7 +1164,7 @@ margin-bottom: 2rem;
         font-size: 0.2rem;
     }
 
-    .container {
+    .hero-container {
         margin-top: 5rem;
     }
 
@@ -1227,7 +1261,7 @@ margin-bottom: 2rem;
         height: 110vh;
     }
 
-    .container {
+    .hero-container {
         margin-top: 1rem;
         width: 80%;
         height: 90%;
@@ -1308,6 +1342,7 @@ margin-bottom: 2rem;
         height: 12rem;
     }
 
+  
 }
 
 @media (max-width: 1440px) {
@@ -1344,7 +1379,7 @@ margin-bottom: 2rem;
     }
 
     #check:checked ~ .navbar {
-        height: 25rem;
+        height: 24rem;
     }
 
     .navbar a {
@@ -1353,6 +1388,10 @@ margin-bottom: 2rem;
         text-align: center;
         transition: 0.3s ease;
     }
+
+   
+  
+
 }
 
 
@@ -1410,18 +1449,22 @@ Styling for basket
     position: relative; /* Add this if not already present */
 }
 .btn{
-    border:0px;
-    margin:10px 0px;
-    box-shadow:none !important;
+
+   
+    border-radius: 50%;
+    background-color: #2d044b;
+    box-shadow:none ;
+}
+
+.btn-block{
+    padding: 1.2rem;
 }
 .dropdown .dropdown-menu {
     display: none;
     padding: 20px;
-    top: 50px !important;
     width: 350px !important;
     left: -10vw;
-    box-shadow:  0px 5px 30px black;
-    position: absolute;
+    box-shadow:  0px 5px 30px var(--secondary-color);
 }
 .total-header-section{
     border-bottom:1px solid var(--secondary-color);
@@ -1430,7 +1473,7 @@ Styling for basket
     margin-bottom:20px;
 }
 .checkout{
-    border-top:1px solid #d2d2d2;
+    border-top:1px solid var(--secondary-color);
     padding-top: 15px;
 }
 
@@ -1444,8 +1487,5 @@ Styling for basket
     right:30px;
     background-color: mediumpurple;
     border:10px solid black;
-    border-bottom-color:#fff;
 
 }
-
-

@@ -40,7 +40,7 @@
         </div>
         <div class="about-contents">
           <div class="about-text">
-            <h1>About <span>Valhalla</span></h1>
+            <h1 class = "about-heading">About <span class = "span-heading">Valhalla</span></h1>
 
             <p>Welcome to Valhalla, where gaming reaches new heights! Immerse
               yourself in the extraordinary world of high-performance gaming
@@ -134,7 +134,7 @@
 
       <!-- What other people say? -->
       <h1 class="title-sellers">What our customers say ?</h1>
-      <div class="title-line"></div> <!-- Add this line -->
+      <div class="title-lines"></div> <!-- Add this line -->
       <section id="testimonials">
         <div id="testimonials-container">
           <div class="testimonial">

@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="somewhat basket visible">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_18_05_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_18_05__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_18_55_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_18_55__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_19_03_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_02_2024_19_03__Changes_.xml" beforeDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="minor styling to the basket item indicator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/css/home_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/public/assets/css/home_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/checkout/basket.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/checkout/basket.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +27,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Valhalla-working-branch-backup" />
+        <entry key="$PROJECT_DIR$" value="basketBackup" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -404,7 +398,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;IntelliLang.Configuration&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\abuba\\AppData\\Local\\Programs\\PhpStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -444,7 +438,11 @@
       <workItem from="1708973724751" duration="1745000" />
       <workItem from="1709565350224" duration="16867000" />
       <workItem from="1709586151892" duration="428000" />
-      <workItem from="1709634165588" duration="2495000" />
+      <workItem from="1709634165588" duration="6170000" />
+      <workItem from="1709669859519" duration="592000" />
+      <workItem from="1709814435645" duration="2366000" />
+      <workItem from="1709817574255" duration="351000" />
+      <workItem from="1709818906530" duration="8710000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -510,7 +508,39 @@
       <option name="project" value="LOCAL" />
       <updated>1709581279509</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="basket button styling fixed 1.0">
+      <option name="closed" value="true" />
+      <created>1709640372774</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709640372774</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Basket patch">
+      <option name="closed" value="true" />
+      <created>1709819789764</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1709819789764</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Refactored web.php and refactored master.blade.php with navigation system">
+      <option name="closed" value="true" />
+      <created>1709822278153</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709822278153</updated>
+    </task>
+    <task id="LOCAL-00012" summary="minor styling to the basket item indicator">
+      <option name="closed" value="true" />
+      <created>1709822504415</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1709822504415</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +557,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Abu-testing" />
+                        <option value="Valhalla-working-branch-backup" />
                       </list>
                     </value>
                   </entry>
@@ -548,6 +578,11 @@
     <MESSAGE value="Dashboard.php has been refactored and organised" />
     <MESSAGE value="more functions has been added to the basket" />
     <MESSAGE value="somewhat basket visible" />
-    <option name="LAST_COMMIT_MESSAGE" value="somewhat basket visible" />
+    <MESSAGE value="basket button syling fixed 1.0" />
+    <MESSAGE value="basket button styling fixed 1.0" />
+    <MESSAGE value="Basket patch" />
+    <MESSAGE value="Refactored web.php and refactored master.blade.php with navigation system" />
+    <MESSAGE value="minor styling to the basket item indicator" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor styling to the basket item indicator" />
   </component>
 </project>
