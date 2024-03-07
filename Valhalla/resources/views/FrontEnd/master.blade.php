@@ -25,11 +25,10 @@
 
 <body>
 <!--             Header                      -->
-
+<section class ="headers-image">
 <header>
 {{--    redundant code has been removed --}}
         @include('header')
-
     <!--         Hero Section         -->
     <section id="hero">
         <div class="hero-container">
@@ -64,8 +63,9 @@
             </div>
         </div>
     </section>
+    
 </header>
-
+</section>
 
 <!-- Best seller prodcuts-->
 <section class= "main">
@@ -182,7 +182,7 @@
                                 <h1>{{ $product->product_name }}</h1>
 {{--                                <p> {{ $product->processor }}</p>--}}
 {{--                                <p>RAM: {{ $product->RAM }}GB</p>--}}
-                                <p>Description: {{ $product->product_description }}</p>
+                                <p>{{ $product->product_description }}</p>
                                 <h3> £{{ $product->price }}</h3>
 
 
@@ -193,6 +193,7 @@
                                         form.scrollPosition.value = scrollY;
                                     }
                                 </script>
+                                <div class = "button-container">
                                  <form action="{{ route('product.getInfo') }}" method="post" onsubmit="saveScrollPosition(this)">
                                     @csrf
                                     <input type="hidden" name="laptopData" value={{$product->product_id}}>
@@ -209,8 +210,9 @@
                                 <form method="POST" action="{{ route('wishlist.add') }}">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->product_id }}">
-                                    <button type="submit">Add to Wishlist</button>
+                                    <button class="buy-product" type="submit">Add to Wishlist</button>
                                 </form>
+                                </div>
                             </div>
                         </div>
                     @endforeach
