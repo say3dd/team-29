@@ -44,7 +44,9 @@ p {
   line-height: 1.9rem !important;
 }
 
-
+h6  {
+  color: white !important;
+}
 
 img {
   max-width: none !important;
