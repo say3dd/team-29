@@ -53,7 +53,7 @@
 
                     <span class="text-[0.5em] mb-2 align-middle text-center"> Basket </span>
 
-                    <div class="badge badge-pill badge-danger text-[0.7em] bg-red-700 rounded-full w-7 h-7 inline-block">
+                    <div class="badge badge-pill badge-danger text-[0.7em] bg-red-700 rounded-full w-8 h-8 inline-block">
                         <strong> {{ count((array) session('basket')) }} </strong>  {{-- keep tracks of number of items has been added to the basket --}}
                     </div>
                 </button>
