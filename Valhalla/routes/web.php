@@ -38,7 +38,7 @@ use App\Http\Controllers\Product\ReturnRequestSubmitController;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/test', function () {
-    return view('FrontEnd.test');
+    return view('Product_files.product');
 });
 
 Route::get('/product', [ProductController::class,'index'])->name('product');
