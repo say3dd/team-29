@@ -323,7 +323,7 @@ and it will demonstrate the list of items the user has added to their basket    
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->product_id }}">
                                     <button type="submit">Add to Wishlist</button>
-                                </form>  
+                                </form>
                             </div>
                         </div>
                     @endforeach

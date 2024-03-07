@@ -52,8 +52,11 @@ For now I've made a workaround by having the getInfo function check if it has re
 if anybody could let me (Francis) know of a better way to do this, I'd gladly appreciate it.
 */
 
-Route::get('/basket', [BasketController::class,'contents'])->name('basket');
-Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
+//Route::get('/basket', [BasketController::class,'contents'])->name('basket');
+//Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
+Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
+Route::get('/basket', [ProductController::class,'contents'])->name('basket');
+
 Route::get('/test1', function () {
     return view('FrontEnd.cart');
 });
@@ -65,11 +68,9 @@ Route::get('/test1', function () {
 
     // Addded route function to the about page
     Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
-
-    // Route::get('/', );
     // @say3dd (Mohammed Miah) - Routing for the different product functionalities
 
-Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
+
 
 
 
@@ -78,9 +79,12 @@ Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->nam
     Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
 //    Route::get('/products', [ProductController::class, 'show'])->name('products.show');
 
+//refactored
+    Route::middleware('guest')->group(function () {
+        Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
+        Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
+    });
 
-    Route::get('/contact', [ContactController::class, 'showForm'])->middleware(['guest'])->name('contact.show');
-    Route::post('/contact', [ContactController::class, 'submitForm'])->middleware(['guest'])->name('contact.submit');
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -88,6 +92,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/home', [HomeController::class,'authHome'])->name('home');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -98,18 +103,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
-    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
-    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+//    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
+//    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
     Route::get('/checkout/thankyou', function(){
         return view('checkout.thankyou');
     })->name('thank-you');
 });
 
-require __DIR__ . '/auth.php';
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-});
 
 Route::get('/wishlist', function () {
     return view('FrontEnd.wishlist');
@@ -129,3 +129,10 @@ Route::get('/wishlist', [WishListController::class, 'index']);
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
 Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']
 );
+
+
+//********************************NO code beyond this line!*********************************************************************
+
+
+require __DIR__ . '/auth.php';
+
