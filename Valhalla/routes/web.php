@@ -54,8 +54,11 @@ if anybody could let me (Francis) know of a better way to do this, I'd gladly ap
 
 //Route::get('/basket', [BasketController::class,'contents'])->name('basket');
 //Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
+
+//New Basket code
 Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
 Route::get('/basket', [ProductController::class,'contents'])->name('basket');
+Route::get('basket', [ProductController::class,'basket'])->name('basket');
 
 Route::get('/test1', function () {
     return view('FrontEnd.cart');

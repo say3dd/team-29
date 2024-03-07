@@ -137,6 +137,10 @@ class ProductController extends Controller implements BasketInterface
 //    }
 
 
+public function basket(){
+        return view('checkout.basket');
+}
+
 public function addToBasket($id){
     $product = Product::findOrFail($id);
 
