@@ -83,6 +83,7 @@ img {
     text-decoration: none;
     margin-left: 1.5rem;
     font-weight: bold;
+ 
 }
 
 #check {
@@ -103,10 +104,19 @@ img {
     position: absolute;
     right: 5%;
 }
-
-header {
-    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496)),
+.headers-image {
+    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.527)),
         url("../images/image.jpg");
+
+    background-size: cover;
+    background-position: center;
+    padding-top: 1px; /* Add a small padding to prevent margin collapse */
+}
+
+.headers {
+    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.527)),
+        url("../images/image.jpg");
+
     background-size: cover;
     background-position: center;
     padding-top: 1px; /* Add a small padding to prevent margin collapse */
@@ -115,7 +125,7 @@ header {
 /*                                   HERO SECTION                                    */
 #hero {
     width: 100%;
-    height: 86vh;
+    height: 87vh;
 }
 
 
@@ -266,6 +276,12 @@ header {
    border-radius: 1%;
 
 
+}
+
+.button-container {
+    display: flex;
+  gap: 3rem;
+  justify-content: center;
 }
 
 #best-seller-container p {
@@ -450,11 +466,11 @@ blockquote {
 }
 
 .buy-product {
-    background-color: #a634ff;
+    background-color: #a634ff !important;
     border: none;
     color: white;
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
     font-size: 0.9rem;
     text-align: center;
     display: inline-block;
@@ -466,10 +482,12 @@ blockquote {
 
 }
 
+
+
 .buy-product:hover {
-    background-color: #bc00f5;
+    background-color: #bc00f5 !important;
     color: #ffffff; /* Change text color on hover */
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4); /* Add a slight shadow on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4) !important; /* Add a slight shadow on hover */
 }
 
 .buy-product:active {
@@ -1324,6 +1342,7 @@ margin-bottom: 2rem;
         height: 12rem;
     }
 
+  
 }
 
 @media (max-width: 1440px) {
@@ -1360,7 +1379,7 @@ margin-bottom: 2rem;
     }
 
     #check:checked ~ .navbar {
-        height: 25rem;
+        height: 24rem;
     }
 
     .navbar a {
@@ -1369,6 +1388,10 @@ margin-bottom: 2rem;
         text-align: center;
         transition: 0.3s ease;
     }
+
+   
+  
+
 }
 
 
@@ -1427,7 +1450,7 @@ Styling for basket
 }
 .btn{
 
-    margin:10px 0px;
+   
     border-radius: 50%;
     background-color: #2d044b;
     box-shadow:none ;

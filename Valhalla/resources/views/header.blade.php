@@ -11,7 +11,7 @@
 </head>
 
 <header>
-
+   
     <section class="nav-header">
 
         <a href="{{route('index')}}" class="logo"> <img src="{{asset('assets/images/Screenshot_2023-11-16_030651.png')}}" alt=""></a>
@@ -95,6 +95,7 @@
 
         </nav>
     </section>
+ 
     <!--         Hero Section         -->
 
 </header>
