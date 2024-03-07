@@ -38,7 +38,7 @@ h1 {
 }
 
 p {
-  font-size: 1.3rem !important;
+  font-size: 1.3rem ;
   color: white;
   margin-top: 1rem !important;
   line-height: 1.9rem !important;
@@ -303,6 +303,11 @@ header {
  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
+.find-more-btn:hover{
+  background-color: #bc00f5 !important;
+  color: #ffffff; /* Change text color on hover */
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4) !important; /* Add a slight shadow on hover */
+}
 
 /* Styling  span element */
 span {
@@ -400,10 +405,10 @@ color: #c492eb;
   margin-right: 15rem;
   margin-top: 4rem;
   background-color:#4E008B;
-  padding-top: 2rem;
-  padding-left: 9rem;
+  padding-top: 3rem;
+  padding-left: 8rem;
   padding-right: 8rem;
-  padding-bottom: 4rem;
+  padding-bottom: 5rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
   border-radius: 15px;
  
