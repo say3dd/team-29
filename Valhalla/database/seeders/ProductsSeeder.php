@@ -104,17 +104,6 @@ class ProductsSeeder extends Seeder
                 'images' => 'assets/laptop_images/Asus Zephyrus M16/ASUS ZEPHYRUS.JPG'
             ],
             [
-<<<<<<< HEAD
-                'brand' => 'ACER',
-                'product_name' => 'ACER Predator 21 X',
-                'product_description' => 'Name: Asus Predator 21 X
-                                          RAM : 16 GB
-                                          processor : 13th Gen Intel® Core™ i9-13980HX Processor,
-                                          GPU : GeForce RTX 4080',
-                'category' => 'Laptop',
-                'price' => 2899.99,
-                'images' => 'assets/laptop_images/ACER Predator 21 X/acer_predator_21.jpg'
-=======
                     'brand' => 'ACER',
                     'product_name' => 'ACER Predator 21 X',
                     'product_description' => 'Name: ACER Predator 21 X
@@ -124,7 +113,6 @@ class ProductsSeeder extends Seeder
                     'images' => 'assets/laptop_images/ACER Predator 21 X/acer_predator_21.jpg',
                     'category' => 'Laptop',
                     'price' => 2899.99,
->>>>>>> 32d92273662baa80a650e0b80a368f7d77d35b0b
             ],
             [
                 'brand' => 'MSI',
