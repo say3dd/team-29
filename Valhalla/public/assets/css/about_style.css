@@ -112,13 +112,11 @@ img {
 }
 
 header {
-  
-  background: linear-gradient(rgba(0, 0, 0, 0.288), rgba(70, 70, 70, 0.144)),
-  url("../images/abstract-purple-art-4k-5g.jpg") !important; 
-  
+  background: linear-gradient(rgba(32, 32, 32, 0.164), rgba(0, 0, 0, 0.496)),
+  url("../images/abstract-purple-art-4k-5g.jpg"); 
 
-
-}
+background-attachment: fixed;
+  }
 
 
 
