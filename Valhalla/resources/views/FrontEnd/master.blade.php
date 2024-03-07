@@ -27,120 +27,8 @@
 <!--             Header                      -->
 
 <header>
-
-    <section class="nav-header">
-
-
-        <a href="" class="logo"> <img
-                src="{{ asset('assets/images/Screenshot_2023-11-16_030651.png') }}" alt=""></a>
-        <input type="checkbox" id="check">
-        <label for="check" class="menu-icon">
-            <i class="bx bx-menu" id="menu"></i>
-            <i class="bx bx-x" id="close"></i>
-        </label>
-        <nav class="navbar">
-            <a href="{{ route('index') }}">Home</a>
-            <a href="{{route('categories') }}">Products</a>
-            <a href="{{ route('about') }}">About</a>
-            <a href="{{ route('contactUs') }}">Contact Us</a>
-
-
-            <!--        Fixed the heading so that the login and register is included in the header           -->
-
-
-            {{--
-                /*
-                Login, register and dashboard
-                mady by @AbuIsNotHer3 @BravoBoy2 == Abubakarsiddik Mohammed.
-
-                Desgined by @AnthonyResuello
-                */
-
-                --}}
-            @if (Route::has('login'))
-
-                @auth
-                    <a href="{{ url('home') }}"
-                       class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                @else
-                    <a href="{{ route('login') }}"
-                       class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"><i
-                            class="bx bx-user"></i> Log in</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
-                           class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                    @endif
-                @endauth
-            @endif
-
-            <!--<a href="#" class="login-text"><i class="bx bx-user"></i> Log in</a>  !-->
-
-
-{{--       Interactive basket that allows user to tap on the basket
-and it will demonstrate the list of items the user has added to their basket     --}}
-
-            <div class="dropdown ml-3.5 align-middle mb-1 p-1.5 text-center rounded-md">
-                <button id="basket-button" class="btn btn-primary" type="button">
-                    <i class="bx bx-shopping-bag align-middle mt-0.5" aria-hidden="true"></i>
-
-                   <span class="text-[0.5em] mb-2 align-middle text-center"> Basket </span>
-
-                    <span class="badge badge-pill badge-danger text-2xl">
-            {{ count((array) session('basket')) }}   {{-- keep tracks of number of items has been added to the basket --}}
-        </span>
-                </button>
-
-                <div class="dropdown-menu mt-6 p-3 rounded-md" id="cartDropdown">
-                    <div class="row total-header-section">
-                        <?php
-                        $total = 0;
-                        foreach ((array) session('basket') as $id => $details) {
-                            // $total += $details['price'] * $details['quantity'];   {{-- calculates the total based on the quantity --}}
-                        }
-                        ?>
-                        <div class="total-section text-left rounded-md">
-                            <p>Total: <span class="text-info text-cyan-400 font-bold">£ {{ $total }}</span></p>
-                        </div>
-                        <div class="w-full h-0.5 bg-gray-200"></div>
-                    </div>
-                     @if(session('basket'))
-                    @foreach(session('basket') as $id => $details)
-                    <div class="row cart-detail">
-                        <div class=" cart-detail-img">
-                            <img class="mt-1.5 ml-[0.3rem] w-[4rem] rounded" src="{{ $details['images'] }}" alt="Product Image" />
-                        </div>
-                        <div class=" cart-detail-product flex flex-col">
-                            <p class="text-[0.6em] flex-shrink">{{ $details['product_name'] }}</p>
-                            <span class="text-[0.5em] price text-info"> ${{ $details['price'] }}</span>
-                            <span class="text-[0.5em] count"> Quantity: {{ $details['quantity'] }}</span>
-                        </div>
-                    </div>
-                    @endforeach
-                    @endif
-                    <div class="row">
-                        <div class="text-center checkout">
-                            <a href="{{ route('basket') }}" class="btn btn-primary btn-block w-full">View all</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-        </nav>
-
-
-
-{{--        <div class="dropdown-menu">--}}
-
-        <!--- End of Section  --> </section>
+{{--    redundant code has been removed --}}
+        @include('header')
 
     <!--         Hero Section         -->
     <section id="hero">
@@ -203,7 +91,6 @@ and it will demonstrate the list of items the user has added to their basket    
                          alt="laptop 3">
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -323,7 +210,7 @@ and it will demonstrate the list of items the user has added to their basket    
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->product_id }}">
                                     <button type="submit">Add to Wishlist</button>
-                                </form>  
+                                </form>
                             </div>
                         </div>
                     @endforeach

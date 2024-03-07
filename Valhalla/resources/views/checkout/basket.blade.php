@@ -15,9 +15,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
 <!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
-<section class = "navbar-section">
+<header class = "navbar-section">
     @include ('header')
-</section>
+</header>
 
 
 <body>

@@ -3,13 +3,14 @@
 /* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\BasketService\BasketInterface;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Basket;
 use Illuminate\Support\Facades\DB;
 
-class ProductController extends Controller
+class ProductController extends Controller implements BasketInterface
 {
 //    public function productList()
 //    {
@@ -134,6 +135,54 @@ class ProductController extends Controller
 //        $laptops = Product::where('product_id', '!=', $id)->take(5)->get();
 //        return view('Product_files.product', ['product' => $product, 'laptops' => $laptops]);
 //    }
+
+
+public function basket(){
+        return view('checkout.basket');
+}
+
+public function addToBasket($id){
+    $product = Product::findOrFail($id);
+
+    $basket = session()->get('basket', []);
+
+    if (isset($basket[$id])) {
+        $basket[$id]['quantity']++;
+
+    }else{
+        $basket[$id] = [
+            "product_name" => $product->product_name,
+            "images" => $product->images,
+            "price" => $product->price,
+            "quantity" => 1
+        ];
+    }
+
+    session()->put('basket', $basket);
+    return redirect()->back()->with('success', 'Item has been added to basket');
+}
+
+    public function update(Request $request){
+        if ($request->id && $request->quantity){
+            $basket = session()->get('basket');
+            $basket[$request->id]["quantity"] = $request->quantity;
+            session()->put('basket', $basket);
+            session()->flash('success', 'Basket has been updated!');
+        }
+    }
+
+    public function remove(Request $request)
+    {
+        if ($request->id){
+            $basket = session()->get('basket');
+            if (isset($basket[$request->id])){
+                unset($basket[$request->id]);
+                session()->put('basket', $basket);
+            }
+            session()->flash('success', 'Item has been removed!');
+        }
+    }
+
 
 
     public function search(){
