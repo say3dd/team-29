@@ -111,6 +111,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
+Route::get('/wishlist', function () {
+    return view('FrontEnd.wishlist');
+});
 
 Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name('return.request');
 
@@ -120,13 +123,9 @@ Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'su
 Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
+Route::get('/search', [ProductController::class, 'search']) ->name('categories.search');
 
 Route::get('/wishlist', [WishListController::class, 'index']);
-
-//--------------------- No code beyond this line. All routing code must be ABOVE THIS LINE. ^^^^^^________----------
-require __DIR__ . '/auth.php';
-//MUST NOT ANY CODE HERE.
-
-
-
-
+Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
+Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']
+);
