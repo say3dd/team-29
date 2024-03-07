@@ -47,16 +47,21 @@
                 @endauth
             @endif
 
-            <div class="dropdown ml-3.5 align-middle mb-1 p-1.5 text-center rounded-md">
-                <button id="basket-button" class="btn btn-primary" type="button">
-                    <i class="bx bx-shopping-bag align-middle mt-0.5" aria-hidden="true"></i>
-
-                    <span class="text-[0.5em] mb-2 align-middle text-center"> Basket </span>
-
-                    <div class="badge badge-pill badge-danger text-[0.7em] bg-red-700 rounded-full w-8 h-8 inline-block">
-                        <strong> {{ count((array) session('basket')) }} </strong>  {{-- keep tracks of number of items has been added to the basket --}}
+            <div class="dropdown ml-3.5 align-middle mb-1 p-1.5 text-center rounded-md inline-flex">
+                <button id="basket-button" class="btn btn-primary align-middle inline-flex m-1.5" type="button">
+                    <div class="inline-flex justify-between">
+                    <i class="bx bx-shopping-bag align-middle inline-flex justify-between" aria-hidden="true"></i>
+                    <div class="text-[0.6em] mt-1 ml-1 align-middle text-center inline-flex justify-between"> Basket </div>
+                    <span class="badge badge-pill badge-danger text-[0.7em] ml-2 bg-red-700 rounded-full w-8 h-8 align-middle justify-center">
+                    <h6> {{ count((array) session('basket')) }} </h6>  {{-- keep tracks of number of items has been added to the basket --}}
+                </span>
                     </div>
+
+
                 </button>
+
+
+
 
                 <div class="dropdown-menu mt-6 p-3 rounded-md" id="cartDropdown">
                     <div class="row total-header-section">

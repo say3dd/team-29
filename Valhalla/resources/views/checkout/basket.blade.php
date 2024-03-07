@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Products</title>
     <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
 </head>
 <!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
 <header class = "navbar-section">
@@ -24,124 +24,49 @@
   <div class="container">
 <div class="h-screen w-screen bg-dark-blue flex  justify-center">
   <div class="pt-5 mt-16 md:w-5/6">
-    <div class="rounded-lg border p-6 shadow-md h-auto flex flex-col items-center justify-center bg-violet-950">
+    <div class="rounded-lg border-b border-violet-700 p-6 shadow-md h-auto flex flex-col items-center justify-center bg-purple-980">
       <!-- Cart Items text -->
-      @if (count($userBasket) != 0)
-        <h1 class="mb-10 text-3xl font-bold fon text-white"> Shopping Cart</h1>
-              <div class="mx-auto w-3/4 h-3/5 justify-center px-6 md:flex md:space-x-6 xl:px-0">
-                <div class="rounded-lg md:w-2/3">
-                  <!-- Products display -->
-                  @foreach ($userBasket as $item)
-                  @php
-                    $count = 0
-                  @endphp
-                  @foreach ($userBasket as $tempItem)
-                  @if ($tempItem->product_name === $item->product_name)
-                    @php
-                    $count += 1
-                    @endphp
-                  @endif
-                @endforeach
-
-
-                        <div class="row">
-                            @php $total = 0 @endphp
-                            @foreach((array) session('basket') as $id => $details))
-                            @php $total += $details['price'] * $details['quantity'] @endphp
-                            @endforeach
-                        </div>
-                </div>
-
-                  @if(session('basket'))
-                      @foreach(session('cart') as $id => $details)
-                          <div class="row cart-detail">
-                              <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                  <img src="{{ asset('img') }}/{{ $details['photo'] }}" />
-                              </div>
-                              <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                                  <p>{{ $details['product_name'] }}</p>
-                                  <span class="price text-info"> ${{ $details['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
-                              </div>
-                          </div>
-                      @endforeach
-                  @endif
-
-                  <!-- Product item -->
-                  <div class="justify-between mb-6 rounded-lg p-6 shadow-md  bg-violet-800 sm:flex sm:justify-start">
-                    <!-- Image of the product -->
-                    <img src='{{$item->image_path}}' alt="product-image" class="h-32 w-40 rounded-lg object-cover " />
-                    <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
-                      <div class="mt-5 sm:mt-0">
-                        <!-- Name of the product -->
-                        <h2 class="text-xl underline font-bold text-white">{{$item->product_name}}</h2>
-                        <!-- RAM of the product the product -->
-                        <p class=" pl-6 pt-1 text-sm text-white ">RAM: {{$item->RAM}} GB</p>
-                        <!-- Video Card of the product -->
-                        <p class=" pl-6 pt-1 text-sm text-white ">GPU: {{$item->GPU}}</p>
-                        <!-- Processor of the product -->
-                        <p class=" pl-6 pt-1 text-sm text-white ">Processor: {{$item->processor}}</p>
-                        <!-- Price of the product -->
-                        <p class=" pl-6 pt-1 text-sm text-white font-semibold ">Price: £{{$item->product_price}}</p>
-                        <!--Number of this product in the basket-->
-                        <p class=" pl-6 pt-1 text-sm text-white ">Amount CLEAN UP AFTER TESTING: {{$count}}</p>
-                      </div>
-                      <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-                        <div class="flex items-center space-x-4">
-
-                          <!-- Button to delete the product -->
-                          <form action='{{route('basket.remove')}}' method='post'>
-                            @csrf
-                            <input type="hidden" name="basketToDelete" value={{$item->id}}>
-                            <div class = "text-white text-lg bg-transparent">
-                            <button class  = "hover:text-blue-600"> x </button>
+        <table id="basket" class="table table-hover text-center w-full">
+            <thead >
+            <tr>
+            <th class="w-1/2 border-r-[2px] p-1" > Product </th>
+            <th class="w-[10%] border-r-[2px] p-1"> Price </th>
+            <th class="w-[12%] border-r-[2px] p-1 m-1">Quantity</th>
+            <th class="w-[22%] text-center p-1">Subtotal</th>
+            <th class="w-[10]"></th>
+            </tr>
+            </thead>
+            <tbody>
+            @php $total = 0 @endphp
+            @if(session('basket'))
+                @foreach(session('basket') as $id => $details)
+                    @php $total += $details['price'] * $details['quantity'] @endphp
+                    <tr data-id="{{ $id }}">
+                        <td data-th="Product">
+                            <div class="row">
+                                <div class="col-sm-3 hidden-xs"><img src="{{ $details['images'] }}" width="100" height="100" class="img-responsive rounded-md"/></div>
+                                <div class="col-sm-9 p-2 inline-block">
+                                    <h4 class="">{{ $details['product_name'] }}</h4>
+                                </div>
                             </div>
-                          </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-            @endforeach
+                        </td>
+                        <td data-th="Price">£{{ $details['price'] }}</td>
+                        <td data-th="Quantity">
+                            <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity cart_update" min="1" />
+                        </td>
+                        <td data-th="Subtotal" class="text-center">£{{ $details['price'] * $details['quantity'] }}</td>
+                        <td class="actions" data-th="">
+                            <button class="btn btn-danger btn-sm cart_remove p-5 bg-red-700"><i class='bx bx-trash-alt' ></i> Delete</button>
+
+                        </td>
+                    </tr>
+                @endforeach
+            @endif
+            </tbody>
+        </table>
             <!-- End of product container -->
           </div>
-
-          <!-- Subtotal -->
-          <div class="mt-6 md:mt-0 md:w-1/3">
-            <div class=" rounded-lg border  bg-violet-800 p-6 shadow-md">
-              <h2 class= "text-white text-2xl font-semibold underline decoration-solid pt-2 pb-8"> Order Summary</h2>
-              <div class="mb-2 flex justify-between">
-                <p class="text-white">Subtotal</p>
-                <!-- Subtotal price (do sum of all products) -->
-                <p class="text-white">£{{number_format($total,2)}}</p>
-              </div>
-              <!-- Shipping price (by default £4.99) -->
-              <div class="flex justify-between">
-                <p class="text-white">Shipping</p>
-                <p class="text-white">£4.99</p>
-              </div>
-              <hr class="my-4" />
-              <div class="flex justify-between">
-                <p class="text-lg text-white font-bold">Total</p>
-                <div>
-                  <!-- Total (sum + shipping price) -->
-                  <p class="mb-1 text-white text-lg font-bold">£{{number_format($total += 4.99, 2)}}</p>
-                  <p class="text-sm text-white">including VAT</p>
-                </div>
-              </div>
-                <form action="{{ route('checkout.summary') }}" method="GET">
-                  <button type="submit" class="mt-6 w-full rounded-md bg-violet-600 py-1.5 font-medium text-blue-50 hover:bg-blue-600">
-                      Check out
-                  </button>
-                </form>
-
-            </div>
-          </div>
-        </div>
-      @else
-        <h1 class="mb-10 text-3xl font-bold fon text-white"> Your basket is empty.</h1>
-      @endif
-
-    </div>
-    </div>
+  </div>
   </div>
   </div>
   <!-- Developed and desgined the footer for this page @AnthonyResuello (Anthony Resuello) -->

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Refactored web.php and refactored master.blade.php with navigation system" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="minor styling to the basket item indicator">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/checkout/basket.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/checkout/basket.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -438,7 +442,7 @@
       <workItem from="1709669859519" duration="592000" />
       <workItem from="1709814435645" duration="2366000" />
       <workItem from="1709817574255" duration="351000" />
-      <workItem from="1709818906530" duration="3459000" />
+      <workItem from="1709818906530" duration="8710000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -528,7 +532,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709822278153</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="minor styling to the basket item indicator">
+      <option name="closed" value="true" />
+      <created>1709822504415</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1709822504415</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,6 +582,7 @@
     <MESSAGE value="basket button styling fixed 1.0" />
     <MESSAGE value="Basket patch" />
     <MESSAGE value="Refactored web.php and refactored master.blade.php with navigation system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored web.php and refactored master.blade.php with navigation system" />
+    <MESSAGE value="minor styling to the basket item indicator" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor styling to the basket item indicator" />
   </component>
 </project>
