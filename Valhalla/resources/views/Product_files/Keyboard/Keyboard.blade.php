@@ -30,7 +30,7 @@
    
     <section class=main>
       
- <!-- Monitor Section -->
+ <!-- Keyboard Section -->
 
  <div id="monitor-container">
         <div class="monitor-card">
@@ -59,7 +59,7 @@
       </div>
 
 
- <!-- Monitor  Section -->
+ <!-- Keyboard Section -->
 
 
       <div class = "monitor-feature">
@@ -67,11 +67,10 @@
         <div class="monitor-feature-card">
          <img  src="{{ asset('assets/Keyboard_images/keyboard-features 1.png') }}" alt=""">
           <div>
-     
       </div>
       </div>
 
-  <!-- Monitor Features -->
+  <!-- Keyboard Features -->
  
       <section id="monitor-features">
         <div id="container-feature">
@@ -219,26 +218,8 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
       </section>
      
-
-
-
-
-
-     
-
 
 
     <!--            Footer                      -->
@@ -247,8 +228,6 @@
       </footer>
     
        
-   
-        
 </body>
 
 </html>
