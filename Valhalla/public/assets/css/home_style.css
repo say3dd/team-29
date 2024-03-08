@@ -1401,24 +1401,26 @@ margin-bottom: 2rem;
         text-align: center;
         margin: 30px 20px;
         background-color: #4e008b;
-        padding: 20px;
+
         box-shadow: 0 10px 20px #000000;
         border-radius: 15px;
     }
 
     .buy-product {
-        background-color: #a634ff;
+        background-color: #a634ff !important;
         border: none;
         color: white;
-        border-radius: 30px;
-        width: 8em;
-        font-size: 1.2rem;
+        border-radius: 10px;
+        width: 12rem;
+        font-size: 0.9rem;
         text-align: center;
         display: inline-block;
         padding: 0.8rem;
         text-decoration: none;
-        margin-top: 1.5rem;
+        margin-top: 1.2rem;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        margin-left: 1rem;
     }
 
     /*        Product Section        */
