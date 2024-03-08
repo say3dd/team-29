@@ -218,7 +218,9 @@ function resetSort() {
 <!-- Each button assigned an ID which presents a cetain page, leads to user interaction and less clunkiness in code. Also more fluid to use. -->
             <section class = "laptops_container">
                 <div class="button_container">
-                    {{$products->links()}}
+                    <div class = "button_to_switch_page"> 
+                        {{$products->links()}}
+                    </div>
                 </div>
             </section>
     </h2>
