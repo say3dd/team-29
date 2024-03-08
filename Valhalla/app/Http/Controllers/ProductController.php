@@ -196,8 +196,7 @@ public function addToBasket($id){
         }
 
     }
-
-
+//@BilalMo code for the search bar (not completed yet)
     public function search(){
         $search = request()->query('search');
 if ($search){

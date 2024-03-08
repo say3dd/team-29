@@ -83,7 +83,9 @@ Route::get('/test1', function () {
 
     // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
     Route::get('/products', [ProductController::class,'index'])->name('products.index');
-    Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
+    Route::get('/product',function(){
+        return view('FrontEnd.test');
+    })->name('product.info');
 //    Route::get('/products', [ProductController::class, 'show'])->name('products.show');
 
 //refactored
