@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="cart.blade.php refactored to basket.blade.php. &#10;Added new codes to the basket.blade.php. Basket implement nearly complete. &#10;&#10;New routes has been added to the web.php. Some redundant code has been removed">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="commented out search function for now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -564,7 +566,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709863234588</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="commented out search function for now">
+      <option name="closed" value="true" />
+      <created>1709866069033</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1709866069033</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +620,8 @@
     <MESSAGE value="basket button alignment fixed and introduced new styling for basket.blade.php" />
     <MESSAGE value="Added the new Pagination for the products page , fixed the product Error" />
     <MESSAGE value="cart.blade.php refactored to basket.blade.php. &#10;Added new codes to the basket.blade.php. Basket implement nearly complete. &#10;&#10;New routes has been added to the web.php. Some redundant code has been removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="cart.blade.php refactored to basket.blade.php. &#10;Added new codes to the basket.blade.php. Basket implement nearly complete. &#10;&#10;New routes has been added to the web.php. Some redundant code has been removed" />
+    <MESSAGE value="commented out search function for now" />
+    <option name="LAST_COMMIT_MESSAGE" value="commented out search function for now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
