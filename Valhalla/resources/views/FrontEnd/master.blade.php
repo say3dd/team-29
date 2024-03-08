@@ -201,7 +201,7 @@
 
                                      <a href="{{route('add_to_basket', $product->product_id)}}">
                                     <button type="button" role="button" class="buy-product">
-                                        Add to Basket
+                                     Add to Basket
                                     </button>
                                      </a>
 
@@ -210,7 +210,7 @@
                                 <form method="POST" action="{{ route('wishlist.add') }}">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->product_id }}">
-                                    <button class="buy-product" type="submit">Add to Wishlist</button>
+                                    <button class="add-wishlist" type="submit"> <a href="{{url('contactUs')}}" class="add-btn"><i class='bx bxs-heart'></i> </a></button>
                                 </form>
                                 </div>
                             </div>
