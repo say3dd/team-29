@@ -25,23 +25,23 @@
 body {
   font-family: 'Noto Sans', sans-serif;
   color: white;
-  
+  background-color: #120045;
 }
 
 h1,
 h2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem !important;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.5rem !important;
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: 1.3rem !important;
   color: white;
-  margin-top: 1rem;
-  line-height: 1.9rem;
+  margin-top: 1rem !important;
+  line-height: 1.9rem !important;
 }
 
 
@@ -110,13 +110,8 @@ p {
 }
 
 header {
-  
-  background: linear-gradient(rgba(0, 0, 0, 0.288), rgba(70, 70, 70, 0.144)),
-  url("../images/abstract-purple-art-4k-5g.jpg"); 
-  
-
-
-}
+  background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.253));
+  }
 
 
 
@@ -260,8 +255,8 @@ header {
 }
 
 .monitor-card img {
-  width: 29rem;
-  height: 29rem;
+  width: 29rem !important;
+  height: 29rem !important;
   border-radius: 15px; 
   border: #300452 15px solid;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
@@ -273,6 +268,7 @@ header {
 
 .monitor-heading {
   text-align: center;
+  font-weight: bold !important;
 }
 
 .buttons-container {
@@ -352,8 +348,8 @@ header {
 
 
 .monitor-feature-card img {
-  display: block;
-  margin: auto;
+  display: block !important;
+  margin: auto !important;
   
   border-radius: 15px;
   border: #4E008B 15px solid;
@@ -423,8 +419,8 @@ header {
 }
 
 .features img {
-  width: 15rem;
-  height: 15rem;
+  width: 15rem !important;
+  height: 15rem !important;
   border-radius: 10px;
   margin-bottom: 20px;
   overflow: hidden;
@@ -432,15 +428,19 @@ header {
 }
 
 .person-info {
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
   color: white;
-  margin-top: 1rem;
-  line-height: 1.7rem;
+  margin-top: 1rem !important;
+  line-height: 1.7rem !important;
   
 }
 
+.bottom-card p {
+  font-size: 1.1rem !important;
+}
+
 .person-title {
-  font-size: 1.8rem;
+  font-size: 1.8rem !important;
 }
 
 
@@ -518,7 +518,9 @@ header {
   }
   
   .monitor-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem !important;
+    font-weight: bolder;
+ 
   }
   
   
@@ -634,7 +636,7 @@ header {
 }
 
 .monitor-heading {
-  text-align: center;
+  text-align: center !important;
 }
 
 .buttons-container {
@@ -941,7 +943,7 @@ header {
 }
 
 .monitor-heading {
-  font-size: 1.8rem;
+  font-size: 1.8rem !important;
 }
 
 .monitor-card {
@@ -964,7 +966,7 @@ header {
 }
 
 .monitor-heading {
-  text-align: center;
+  text-align: center !important;
 }
 
 .buttons-container {
@@ -1258,7 +1260,7 @@ header {
 }
 
 .monitor-heading {
-  font-size: 1.8rem;
+  font-size: 1.8rem !important;
 }
 
 .monitor-card {
@@ -1575,7 +1577,7 @@ header {
 }
 
 .monitor-heading {
-  font-size: 1.8rem;
+  font-size: 1.8rem !important;
 }
 
 .monitor-card {

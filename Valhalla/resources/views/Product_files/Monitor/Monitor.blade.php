@@ -158,7 +158,7 @@
 
             </div>
             <div class="bottom-card">
-              <h2 class="person-title">ASUS 27 ROG Swift</h2>
+            <h2 class="monitor-title">MSI Optix 32G27C5</h2>
               <p class="person-info">Display Resolution 2560x1440</p>
               <p class="person-info">Display Size 27"</p>
               <p class="person-info"> Refresh Rate 240Hz</p>
@@ -175,7 +175,7 @@
             <img  src="{{ asset('assets/monitor_images/GAME-AW2523HF-3.jpg') }}" alt=""">
             </div>
             <div class="bottom-card">
-              <h2 class="monitior-title">Alienware AW2723DF</h2>
+            <h2 class="monitor-title">MSI Optix 32G27C5</h2>
               <p class="person-info">Display Resolution 2560x1440</p>
               <p class="person-info">Display Size 27"</p>
               <p class="person-info"> Refresh Rate 280Hz</p>
