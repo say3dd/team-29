@@ -110,7 +110,7 @@ p {
 }
 
 header {
-  background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.253));
+  background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.253))  !important;
   }
 
 
@@ -928,7 +928,9 @@ header {
   
  /* Monitor Section */
 
-
+ header {
+  background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.253));
+  }
 
 #monitor-container {
   margin-bottom:  6rem;
@@ -954,8 +956,8 @@ header {
 }
 
 .monitor-card img {
-  width: 25rem;
-  height: 25rem;
+  width: 25rem !important;
+  height: 25rem !important;
   border-radius: 15px; 
   border: #300452 15px solid;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
@@ -1245,7 +1247,9 @@ header {
 
 /* Monitor Section */
 
-
+header {
+  background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.253));
+  }
 
 #monitor-container {
   margin-bottom:  6rem;
@@ -1271,8 +1275,8 @@ header {
 }
 
 .monitor-card img {
-  width: 20rem;
-  height: 20rem;
+  width: 20rem !important;
+  height: 20rem !important;
   border-radius: 15px; 
   border: #300452 15px solid;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
@@ -2181,12 +2185,9 @@ header {
 
 /* Mobile Compativility */
 @media (max-width: 1400px) {
-    header {
-      background: linear-gradient(rgba(46, 46, 46, 0.384), rgba(73, 52, 52, 0.13)),
-  url("../images/abstract-purple-art-4k-5g.jpg"); 
-      
-        padding-top: 1px; /* Add a small padding to prevent margin collapse */
-      }
+  header {
+    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.253));
+    }
       
       .monitor-feature-card img  {
         display: none;
@@ -2536,12 +2537,7 @@ header {
   
   }
   
-  .about-section {
-    background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496)),
-                url("images/abstract-purple-art-4k-5g.jpg"); 
-   
-    background-attachment: fixed;
-  }
+
   
   
   .find-more-btn{
@@ -2834,10 +2830,7 @@ header {
     }
     
     .about-section {
-      background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496)),
-                  url("images/abstract-purple-art-4k-5g.jpg"); 
-     
-      background-attachment: fixed;
+
     }
     
     
@@ -3253,8 +3246,8 @@ header {
 }
 
 .monitor-card img {
-  width: 15rem;
-  height: 15rem;
+  width: 15rem !important;
+  height: 15rem !important;
   border-radius: 15px; 
   border: #300452 15px solid;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
