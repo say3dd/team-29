@@ -10,9 +10,9 @@
     <img class="image_all_laptop" src="{{ asset($product->images) }}" style="transition: 0.3s ease">
     <div class="laptop_all_text">
         <!--@say3dd (Mohammed Miah) Routing to make the user go to the details of an individual product by clicking on the name -->
-        <a style= "color: inherit" href="{{ route('product.info', $product->product_id) }}"> {{$product->product_name}} </a>
+        <a style= "color: inherit; font-weight: bold; font-size: 1.05rem;" href="{{ route('product.info', $product->product_id) }}"> {{$product->product_name}} </a>
         {{-- Uses regex to find the specific pattern to find the exact data needed to be shown : here its the processor, gpu and ram--}}
- @php
+        @php
         $description = $product->product_description;
 
         // Regular expressions to find Processor, RAM, and GPU
@@ -37,12 +37,13 @@
         @if(isset($details['GPU']))
             <p> {{ $details['GPU'] }}</p>
         @endif
-    </div>
+    
     @if(isset($details['RAM']))
         <p>{{ $details['RAM'] }}</p>
     @endif
-    <p class="price" style=" font-weight: bold; margin-bottom: 0px; text-decoration: underline;
-    text-decoration:underline; text-decoration-color:aquamarine ">Price: £{{ $product->price }}</p>
+    </div>
+    <div class="price" style=" font-weight: bold; margin-bottom: 0px; text-decoration: underline;
+    text-decoration:underline; text-decoration-color:aquamarine ">Price: £{{ $product->price }}</div>
     <br>
 
     <form action='{{route('product.getInfo')}}' method='post' onsubmit='saveScrollPosition(this)'>

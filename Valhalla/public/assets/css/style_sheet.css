@@ -366,8 +366,13 @@ input[type="checkbox"] {
     border-radius: 2rem;
     font-weight: lighter;
     font-family: "Noto Sans", sans-serif;
-    width: 17%; /* Adjust width to fit the container */
+    width: 20%; /* Adjust width to fit the container */
     margin-top: 2%;
+    font-size: 1rem;
+}
+
+.laptop_all p {
+    font-size: 0.9rem;
 }
 
 .laptop_all_text a:link {
