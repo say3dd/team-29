@@ -186,12 +186,13 @@ hr {
     color: white;
     line-height: 26px;
     margin-bottom: 0px;
+    margin-top: 2.5%;
 }
 .all_specification_contents {
     font-size: 1em;
     text-align: left;
     color: white;
-    line-height: 26px;
+    line-height: 34px;
     flex-wrap: wrap;
 }
 
@@ -1016,12 +1017,27 @@ footer {
 
     /*Properties of a window that enables users to access and review all the laptop specifications*/
 
+    .modal-content {
+        padding: 15px;
+        width: 70%;
+    }
+
     .modal {
         top: 5%;
     }
 
     .all_specification_contents {
         font-size: 0.9em;
+    }
+
+    .columns_container {
+        gap: 1em;
+        padding: 0.4em;
+    }
+
+    .column1,
+    .column2 {
+        width: 75%;
     }
 
     /* Slide Show Properties*/
