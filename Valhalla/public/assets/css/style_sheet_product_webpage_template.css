@@ -1,4 +1,5 @@
-/*@ElizavetaMikheev a(Elizaveta Mikheeva) -created the CSS file for fomrating and styling Product webpage */
+/* @ElizavetaMikheeva (Elizaveta Mikheeva) - created the CSS file for fomrating and styling*  Product webpage */
+
 body {
     background-color: #120045;
     margin: 0;
@@ -93,7 +94,7 @@ hr {
     justify-content: center;
     align-items: center;
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
 }
 
 /*CSS styling for product information*/
@@ -107,6 +108,7 @@ hr {
     text-align: left;
     line-height: 1.2;
     margin: 0;
+    margin-top: 2%;
 }
 
 /*CSS styling for the name, price and other relative information of the product */
@@ -119,6 +121,7 @@ hr {
 }
 
 .product_main_features {
+    margin-top: 6px;
     color: white;
     font-size: 1.2em;
     font-weight: lighter;
@@ -142,6 +145,7 @@ hr {
     width: 170px;
     margin-top: 3px;
     margin-left: 24px;
+    margin-bottom: 6px;
     font-family: "Noto Sans", sans-serif;
 }
 
@@ -249,9 +253,9 @@ hr {
     overflow: hidden;
     inline-size: inherit;
     width: fit-content;
-    width: 82%;
+    width: 96%;
     height: fit-content;
-    height: 72%;
+    height: 86%;
     margin: 2rem;
 }
 
@@ -326,6 +330,7 @@ hr {
     align-items: center; /* Center vertically */
     display: flex;
     margin: 0 auto;
+    margin-top: 8px;
     padding: 0.6rem;
     padding-top: 1rem;
     width: 100%;
@@ -378,6 +383,8 @@ hr {
 
 .text_container {
     width: 50%;
+    margin-top: 3%;
+    line-height: 1.4;
 }
 
 .unique_feature_title_title {
@@ -387,6 +394,7 @@ hr {
 }
 
 .unique_feature_content {
+    margin-top: 2%;
     font-weight: lighter;
     margin-left: 35px;
     font-size: 1.2em;
@@ -396,6 +404,7 @@ hr {
 .unique_feature_title {
     font-size: 1.2em;
     margin-left: 35px;
+    margin-top: 2%;
     text-decoration: underline;
     flex-wrap: wrap;
 }
@@ -432,12 +441,14 @@ hr {
 }
 
 .unique_feature9 {
+    margin-top: 2%;
     color: white;
     text-align: center;
     font-size: 1.85em;
 }
 
 .unique_feature9_content {
+    margin-top: 2%;
     color: white;
     text-align: center;
     justify-content: center;
@@ -471,12 +482,13 @@ hr {
 
 .title_related_products {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
     font-family: "Noto Sans", sans-serif;
     position: absolute;
     margin-top: -0.5%;
     left: 7%;
+    margin-bottom: 2%;
     text-decoration: underline;
 }
 
@@ -497,6 +509,12 @@ hr {
     border-color: transparent;
     color: white;
 }
+
+.related_products_spec li {
+    margin-top: 5%;
+    font-size: 1rem;
+}
+
 .related_product_content:hover {
     text-decoration: underline;
     color: white;
@@ -517,6 +535,7 @@ hr {
 /*Buttons for adding products to a Basket from the list of Related products*/
 
 .button_cart_laptop {
+    margin-top: 6%;
     background-color: #300452;
     font-size: 15px;
     color: white;
@@ -727,7 +746,7 @@ footer {
 
 @media (max-width: 1280px) {
     .background_shape_1_2 .slideshow-container {
-        height: 60%;
+        height: 76%;
         padding: 1.4rem;
         padding-bottom: 0.6rem;
     }
@@ -740,10 +759,13 @@ footer {
     .button_wish {
         font-size: 0.9rem;
     }
+
+    .container_section3 {
+        height: 640px;
+    }
 }
 
 @media (max-width: 1024px) {
-    /* Section 1 */
     /* Container for fitting in information about the product*/
     .background_shape1 {
         height: 440px;
@@ -751,7 +773,13 @@ footer {
     }
 
     /* Container for slide show */
+    .background_shape_1_2 {
+        height: 88%;
+    }
 
+    .background_shape_1_2 .slideshow-container {
+        height: 76%;
+    }
     /* Buttons for the slide show */
     .previousSlide {
         font-size: 24px;
@@ -789,9 +817,6 @@ footer {
         font-size: 0.9em;
     }
 
-    .background_shape_1_2 .slideshow-container {
-        height: 60%;
-    }
     /* Buttons for adding the product to the Basket or to a Wish List */
 
     /* Buttons style */
@@ -805,32 +830,51 @@ footer {
         font-size: 0.8rem;
     }
 
-    /* Container 3 for features */
+    /* Container 2 for features */
 
-    .container_section5 {
-        background-image: linear-gradient(#4e008b, #300452);
-        color: white;
-        margin: 0 auto; /* Center the container horizontally */
-        width: 90vw;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly; /* Arrange items evenly within the container */
-        gap: 1rem;
-        border-radius: 2rem;
-        padding: 0.27em;
-        padding-top: 42px;
-        padding-bottom: 42px;
+    .container_section3 {
+        height: 640px;
+    }
+
+    .text_container {
+        width: 48%;
     }
 
     .unique_feature_content {
+        margin-top: 3%;
         font-size: 1em;
     }
 
     .unique_feature_title {
-        font-size: 1.1em;
+        font-size: 1em;
+        margin-top: 2%;
     }
 
-    /*Properties of the list of Related products*/
+    .unique_feature4_5_6_7_8_image {
+        width: 47%;
+    }
+
+    /* Container 3 for features */
+
+    .container_section5 {
+        margin-top: 3.5%;
+    }
+
+    .unique_feature9_image {
+        height: 300px;
+    }
+
+    .unique_feature9 {
+        margin-top: 2%;
+        font-size: 1.85em;
+    }
+
+    .unique_feature9_content {
+        margin-top: 2%;
+        font-size: 1.2rem;
+    }
+
+    /*Related products*/
 
     .title_related_products {
         font-size: 1.5rem;
@@ -838,15 +882,26 @@ footer {
 
     .related_product_image {
         width: 170px;
-        height: 150px;
+        height: 120px;
     }
 
     .related_product_content {
         font-size: 0.9rem;
     }
+
+    .button_cart_laptop {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 920px) {
+    /*Container 1 Contents Properties */
+
+    /* Container for slide show */
+    .background_shape_1_2 {
+        height: 82%;
+    }
+
     .product_information .buttons {
         padding-top: 0rem;
     }
@@ -855,18 +910,77 @@ footer {
     .button_wish {
         font-size: 0.6rem;
     }
+
+    /* Section 5 */
+    /* Container for realted products*/
+
+    .container_section5 {
+        margin-bottom: 7%;
+        margin-top: 3%;
+    }
+
+    /*Properties of the list of Related products*/
+
+    .title_related_products {
+        font-size: 1.3rem;
+    }
+
+    .related_product_image {
+        width: 125px;
+        height: 100px;
+    }
+
+    .related_product_content {
+        font-size: 1rem;
+    }
+
+    .related_products_spec li {
+        font-size: 0.85rem;
+    }
+
+    .laptop1 {
+        width: 22%; /* Adjust width to fit the container */
+    }
+
+    .button_cart_laptop {
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 860px) {
+    /*Container 1 contents properties*/
     .background_shape_1_2 .slideshow-container {
-        height: 50%;
+        height: 68%;
+    }
+
+    .product_information {
+        margin-top: 0%;
+    }
+
+    /* Container 2 for features */
+    .container_section3 {
+        height: 650px;
+    }
+
+    /* Container 3 for features */
+
+    .unique_feature9_image {
+        height: 290px;
+    }
+
+    .unique_feature9 {
+        font-size: 1.65em;
+    }
+
+    .unique_feature9_content {
+        font-size: 1.1rem;
     }
 }
 
 @media (max-width: 768px) {
     /* Container for fitting in information about the product*/
     .background_shape1 {
-        height: 850px;
+        height: 830px;
         border-radius: 2rem;
         padding: 0;
         display: flex;
@@ -918,7 +1032,7 @@ footer {
         position: absolute;
         width: 80%;
         margin-top: 0;
-        top: 8%;
+        top: 11%;
         height: 60%;
     }
 
@@ -936,28 +1050,34 @@ footer {
         font-size: 0.9rem;
     }
 
-    /* Section 3 */
     /* Container 2 for features */
 
     .container_section3 {
-        height: 550px;
+        height: 540px;
+    }
+
+    .text_container {
+        width: 50%;
+        margin-top: 3%;
     }
 
     .unique_feature_title_title {
-        font-size: 1.4em;
+        font-size: 1.3em;
     }
 
     .unique_feature_content {
-        font-size: 0.9em;
+        font-size: 0.8em;
+        line-height: 1.7;
     }
 
     .unique_feature_title {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .unique_feature4_5_6_7_8_image {
         display: flex;
         height: 40%;
+        margin-left: 52%;
     }
 
     /* Section 4*/
@@ -971,27 +1091,19 @@ footer {
     }
 
     .unique_feature9 {
-        font-size: 1.55em;
+        font-size: 1.45em;
     }
 
     .unique_feature9_content {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     /* Section 5 */
     /* Container for realted products*/
 
     .container_section5 {
-        margin: 0 auto; /* Center the container horizontally */
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
         margin-bottom: 7%;
         margin-top: 3%;
-        border-radius: 2rem;
-        padding: 0.27em;
-        padding-top: 42px;
-        padding-bottom: 42px;
     }
 
     /*Properties of the list of Related products*/
@@ -1006,22 +1118,30 @@ footer {
     }
 
     .related_product_content {
-        font-size: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .related_products_spec li {
+        font-size: 0.9rem;
     }
 
     .laptop1 {
-        width: 16%; /* Adjust width to fit the container */
+        width: 22%; /* Adjust width to fit the container */
+    }
+
+    .button_cart_laptop {
+        font-size: 12px;
     }
 }
 
 @media (max-width: 595px) {
     .background_shape1 {
-        height: 800px;
+        height: 760px;
     }
 
     /* Container for slide show */
     .background_shape_1_2 {
-        top: 4%;
+        top: 5%;
     }
 
     /*CSS styling for product information*/
@@ -1030,10 +1150,10 @@ footer {
     .product_information {
         position: absolute;
         width: 70%;
-        top: 56%;
+        top: 53%;
     }
     .background_shape_1_2 .slideshow-container {
-        height: 41%;
+        height: 53%;
     }
 
     .button_cart,
@@ -1041,8 +1161,10 @@ footer {
         font-size: 0.75rem;
     }
 
+    /*Container 2 contents properties*/
+
     .container_section3 {
-        height: 540px;
+        height: 590px;
     }
 
     .text_container {
@@ -1064,6 +1186,52 @@ footer {
     .unique_feature4_5_6_7_8_image {
         margin-top: 9%;
     }
+
+    /* Container 3 for features */
+
+    .container_section4 {
+        height: 400px;
+    }
+
+    .unique_feature9_image {
+        height: 220px;
+    }
+
+    .unique_feature9 {
+        font-size: 1.35em;
+    }
+
+    .unique_feature9_content {
+        font-size: 0.8em;
+    }
+
+    /* Section 5 */
+    /* Container for realted products*/
+
+    .container_section5 {
+        margin-bottom: 7%;
+        margin-top: 3%;
+    }
+
+    /*Properties of the list of Related products*/
+
+    .related_product_content {
+        font-size: 0.9rem;
+    }
+
+    .related_products_spec li {
+        font-size: 0.8rem;
+    }
+
+    .laptop1 {
+        width: 40%; /* Adjust width to fit the container */
+    }
+
+    /*Buttons for adding products to a Basket from the list of Related products*/
+
+    .button_cart_laptop {
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 435px) {
@@ -1071,14 +1239,14 @@ footer {
 
     /* Container for fitting in information about the product*/
     .background_shape1 {
-        height: 680px;
+        height: 660px;
     }
 
     /* Slide Show Properties*/
 
     /* Container for slide show */
     .background_shape_1_2 {
-        top: -2%;
+        top: 0%;
     }
 
     /*CSS styling for product information*/
@@ -1087,11 +1255,11 @@ footer {
     .product_information {
         position: absolute;
         width: 70%;
-        top: 46%;
+        top: 43%;
     }
     .background_shape_1_2 .slideshow-container {
-        height: 29%;
-        width: 74%;
+        height: 38%;
+        width: 98%;
     }
 
     .nextSlide,
@@ -1165,7 +1333,7 @@ footer {
     /* Container 2 for features */
 
     .container_section3 {
-        height: 490px;
+        height: 540px;
     }
 
     .unique_feature_title_title {
@@ -1185,7 +1353,7 @@ footer {
     }
 
     .unique_feature4_5_6_7_8_image {
-        top: 2%;
+        top: -2%;
         margin-left: 20%;
         height: 26%;
         width: 60%;
@@ -1194,7 +1362,7 @@ footer {
     /* Section 4*/
     /* Container 3 for features */
     .container_section4 {
-        height: 250px;
+        height: 260px;
     }
 
     .unique_feature9_image {
@@ -1207,6 +1375,7 @@ footer {
 
     .unique_feature9_content {
         font-size: 0.6em;
+        line-height: 1.4;
     }
 
     /* Section 5 */
@@ -1226,19 +1395,33 @@ footer {
         font-size: 0.9rem;
     }
 
+    .title_related_products {
+        margin-bottom: 5%;
+    }
+
     .related_product_image {
         width: 90px;
         height: 80px;
     }
 
     .related_product_content {
-        font-size: 1em;
+        font-size: 1.3em;
+    }
+
+    .related_products_spec li {
+        font-size: 0.8rem;
     }
 
     .laptop1 {
-        width: 26%; /* Adjust width to fit the container */
+        width: 42%; /* Adjust width to fit the container */
         font-size: 0.7em;
         margin-top: 40px;
+    }
+
+    /*Buttons for adding products to a Basket from the list of Related products*/
+
+    .button_cart_laptop {
+        font-size: 12px;
     }
 }
 
@@ -1247,12 +1430,12 @@ footer {
 
     /* Container for fitting in information about the product*/
     .background_shape1 {
-        height: 600px;
+        height: 590px;
     }
 
     /* Container for slide show */
     .background_shape_1_2 {
-        top: -4%;
+        top: -2%;
         height: 60%;
     }
 
@@ -1260,12 +1443,12 @@ footer {
     .product_information {
         position: absolute;
         width: 70%;
-        top: 41%;
+        top: 38%;
     }
 
     .background_shape_1_2 .slideshow-container {
-        height: 24%;
-        width: 70%;
+        height: 35%;
+        width: 98%;
     }
 
     .nextSlide,
@@ -1293,6 +1476,7 @@ footer {
     /*CSS styling for the name, price and other relative information of the product */
     .product_name {
         font-size: 1em;
+        line-height: 1.4;
     }
 
     .product_main_features {
@@ -1313,7 +1497,7 @@ footer {
     /* Container 2 for features */
 
     .container_section3 {
-        height: 480px;
+        height: 570px;
     }
 
     .unique_feature_title_title {
@@ -1334,15 +1518,15 @@ footer {
 
     .unique_feature4_5_6_7_8_image {
         top: -1%;
-        margin-left: 20%;
+        margin-left: 13%;
         height: 26%;
-        width: 60%;
+        width: 74%;
     }
 
     /* Section 4*/
     /* Container 3 for features */
     .container_section4 {
-        height: 240px;
+        height: 260px;
     }
 
     .unique_feature9_image {
@@ -1371,7 +1555,12 @@ footer {
     .title_related_products {
         position: absolute;
         margin-top: 2.5%;
+        margin-bottom: 5%;
         font-size: 0.9rem;
+    }
+
+    .title_related_products {
+        margin-bottom: 5%;
     }
 
     .related_product_image {
@@ -1380,12 +1569,22 @@ footer {
     }
 
     .related_product_content {
-        font-size: 1em;
+        font-size: 1.3em;
+    }
+
+    .related_products_spec li {
+        font-size: 0.8rem;
     }
 
     .laptop1 {
-        width: 26%; /* Adjust width to fit the container */
+        width: 42%; /* Adjust width to fit the container */
         font-size: 0.7em;
         margin-top: 40px;
+    }
+
+    /*Buttons for adding products to a Basket from the list of Related products*/
+
+    .button_cart_laptop {
+        font-size: 11px;
     }
 }

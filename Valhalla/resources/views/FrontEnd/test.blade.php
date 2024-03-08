@@ -181,7 +181,9 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
@@ -244,9 +246,13 @@
             <div class="laptop1">
                 <img class="related_product_image" src="{{asset('assets/laptop_images/MSI Titan GT77 HX 13V/msi_Titan_GT77_HX_13V.jpg')}} ">
                 <button class="related_product_content">MSI Titan GT77 HX 13V</button>
-                <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
-                <p> - GeForce RTX™ 4090</p>
-                <p> - 128GB RAM</p>
+                <div class ="related_products_spec">
+                    <ul>
+                        <li> - 13th Gen Intel® Core™ i9-13980HX Processor </li>
+                        <li> - GeForce RTX™ 4090 </li>
+                        <li> - 128GB RAM </li>
+                    </ul>
+                </div>
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>
             <div class="laptop1">
