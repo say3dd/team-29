@@ -196,22 +196,7 @@ public function addToBasket($id){
         }
 
     }
-//    public function search(){
-//        $search = request()->query('search');
-//if ($search){
-//    $laptops = Product::where('laptop_name','LIKE',"%{$search}%")
-//        ->orwhere('price','LIKE',"%{$search}%")
-//        ->orwhere('brand','LIKE',"%{$search}%")
-//        ->simplepaginate(12);
-//}else{
-//    $laptops = Product::simplePaginate(12);
-//}
-//$brands = $this->getDistinctBrands();
-//$graphics = $this->getDistinctGPUs();
-//return view('Product_files.products',compact('laptops','brands','graphics'));
-//    }
-
-
+//@BilalMo code for the search bar (not completed yet)
     public function search(){
         $search = request()->query('search');
 if ($search){
