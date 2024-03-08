@@ -262,21 +262,32 @@ img {
 
 .laptop p {
     font-size: 0.9rem;
+    margin-left: 2rem;
+    margin-right: 2rem
 }
-.laptop h3 {
+.laptop-specs h3 {
     font-weight: bolder;
     font-style: italic;
-    font-size: 1rem;
-    margin-top: 1.2rem;
+    font-size: 1rem !important;
+    margin-top: 1.2rem !important;
+
+}
+
+.laptop-specs h1 {
+    font-weight: bolder;
+    font-size: 1.2rem !important;
+    margin-bottom: 1.2rem !important;
+  
 }
 
 .laptop-specs {
    padding: 1rem;
    background-color: #2d044b;
    border-radius: 1%;
-
-
 }
+
+
+
 
 .button-container {
     display: flex;

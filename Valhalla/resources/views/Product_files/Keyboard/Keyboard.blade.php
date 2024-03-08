@@ -1,14 +1,12 @@
 <!-- 
 
-   _____________________________________ Created and designed the Monitor Product Page of the webiste by @AnthonyResuello (Anthony Resuello) ____________________________________________
-   
-    - I designed the Monitor Product Page of the webiste using Figma @AnthonyResuello
-    
-   Page Includes :
-   - Monitor Product Page of the webiste
-   - Monitor Features 
--->
 
+   ______________________________ Created and designed the Keyboard Product Page of the webiste by @AnthonyResuello (Anthony Resuello) ____________________________________________
+   
+    - Author @AnthonyResuello designed the Monitor Product Page of the webiste using Figma 
+    - Author @AnthonyResuello created and designed the Monitor and Keyboard Page 
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,26 +30,26 @@
    
     <section class=main>
       
- <!-- Monitor Section -->
+ <!-- Keyboard Section -->
 
  <div id="monitor-container">
         <div class="monitor-card">
          
           <div>
-         
-            <img  src="{{ asset('assets/monitor_images/monitor.png') }}" alt=""">
+        
+            <img  src="{{ asset('assets/Keyboard_images/81yOuAUQAiL_SL1500_1563899022178 1.png') }}" alt=""">
 
           </div>
           <div class="monitor-info">
-            <h1 class="monitor-heading">BenQ ZOWIE XL2546K</h1>
+            <h1 class="monitor-heading">Steelseries Apex Pro TKL</h1>
             <div class="monitor-title-line"></div> 
-            <p>240Hz Refresh Rate; TN pANEL</p>
-            <p>DyAc Technology </p>
-            <p>Black eQualizer; Color Vibrance</p>
-            <p>S Switch & Sheilding Hood</p>
-            <p>Quick menu with customizable access</p>
+            <p>OmniPoint 2.0 Adjustable HyperMagnetic switches</p>
+            <p>OLED Smart Display</p>
+            <p>Ultimate Adjustability</p>
+            <p>Rapid Trigger</p>
+            <p>0.5 Response Time</p>
             <div class="monitors-title-line"></div> 
-            <h2 class="price">Price: £299</h2>
+            <h2 class="price">Price: £160</h2>
             <div class="buttons-container">
                 <a href="{{url('contactUs')}}" class="add-btn">Add to basket</a>
                 <a href="{{url('contactUs')}}" class="wishlist-btn">Add to wishlist</a>
@@ -61,30 +59,29 @@
       </div>
 
 
- <!-- Monitor  Section -->
+ <!-- Keyboard Section -->
 
-  
+
       <div class = "monitor-feature">
       <div id="monitor-feature-container">
         <div class="monitor-feature-card">
-         <img  src="{{ asset('assets/monitor_images/monitor-image.png') }}" alt=""">
+         <img  src="{{ asset('assets/Keyboard_images/keyboard-features 1.png') }}" alt=""">
           <div>
-     
       </div>
       </div>
 
-  <!-- Monitor Features -->
+  <!-- Keyboard Features -->
  
       <section id="monitor-features">
         <div id="container-feature">
           <div class="features">
             <div class="top-card">
-           
-                <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
+         
+                <img  src="{{ asset('assets/Keyboard_Images/feature1-keyboard 1.png') }}" alt=""">
 
             </div>
             <div class="bottom-card">
-              <h2 class="person-title">DyAc+ Technology</h2>
+              <h2 class="person-title">Rapid Trigger</h2>
               <p class="person-info">DyAc+ makes vigorous in-game
                  actions such as spraying less blur. 
                 This allows gamers to see the position of crosshair and 
@@ -97,11 +94,11 @@
         
           <div class="features">
             <div class="top-card">
-            
-            <img  src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
+        
+            <img  src="{{ asset('assets/Keyboard_Images/feature2-keyboard 1.png') }}" alt=""">
             </div>
             <div class="bottom-card">
-              <h2 class="person-title">0.5 Response Time</h2>
+              <h2 class="person-title">Adjustability</h2>
               <p class="person-info">Lightning-fast 240 Hz high refresh rate performance 
                 and 0.5~1ms response rate for a smooth PC gaming experience. 120 Hz
                  Compatible for PS5</p>
@@ -109,28 +106,28 @@
             </div>
         
           </div>
-
+        
           <div class="features">
             <div class="top-card">
-                <img  src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                <img  src="{{ asset('assets/Keyboard_Images\feature3-keyboard 1.png') }}" alt=""">
 
             </div>
             <div class="bottom-card">
-              <h2 class="person-title">0.5 Response Time</h2>
+              <h2 class="person-title">2-in-1 Action Keys</h2>
               <p class="person-info">Lightning-fast 240 Hz high refresh rate performance 
                 and 0.5~1ms response rate for a smooth PC gaming experience. 120 Hz
                  Compatible for PS5.</p>
 
             </div>
-
+   
           </div>
           <div class="features">
             <div class="top-card">
-                <img  src="{{ asset('assets/monitor_images/image_features.png') }}" alt=""">
+                <img  src="{{ asset('assets/Keyboard_Images\feature4-keyboard 1.png') }}" alt=""">
        
             </div>
             <div class="bottom-card">
-              <h2 class="person-title">Flexible Adjustment</h2>
+              <h2 class="person-title">OLED Smart Display</h2>
               <p class="person-info">Player diversity drives unique monitor height and angle combos, recognizing individual
                  preferences for an optimized gaming setup. Flexible Adjustment
             </p>
@@ -221,26 +218,8 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
       </section>
      
-
-
-
-
-
-     
-
 
 
     <!--            Footer                      -->
@@ -249,8 +228,6 @@
       </footer>
     
        
-   
-        
 </body>
 
 </html>
