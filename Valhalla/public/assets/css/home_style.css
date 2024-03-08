@@ -291,8 +291,9 @@ img {
 
 .button-container {
     display: flex;
-  gap: 3rem;
+  gap: 1rem;
   justify-content: center;
+  
 }
 
 #best-seller-container p {
@@ -399,6 +400,7 @@ img {
   display: inline-block;
   padding: 1rem;
   font-style: bolder;
+  border-radius: 5px;
 }
 .monitor-btn h1 {
   font-size: 1rem;
@@ -481,7 +483,23 @@ blockquote {
     border: none;
     color: white;
     border-radius: 10px;
-    width: 100%;
+    width: 12rem;
+    font-size: 0.9rem;
+    text-align: center;
+    display: inline-block;
+    padding: 0.8rem;
+    text-decoration: none;
+    margin-top: 1.2rem;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-left: 3.3rem;
+}
+.add-wishlist {
+ background-color: #a634ff !important;
+    border: none;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 3rem !important;
     font-size: 0.9rem;
     text-align: center;
     display: inline-block;
@@ -647,15 +665,40 @@ footer {
 }
 
 
-@media (max-width: 1490px) {
+@media (max-width: 1570px) {
+    
+    /* Category Section */
+    .monitor-btn {
+        background-color:#5c04a0;
+        border: none;
+        color: white;
+        width: 15em;
+        text-align: center;
+        display: inline-block;
+        padding: 1rem;
+        font-style: bolder;
+      }
+      .Category-1 img {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 10%;
+        margin: 1rem;
+      }
+    }
+
+@media  (max-width: 1200px) {
+    
     #laptop-container {
         flex-wrap: wrap; /* Allow items to wrap to the next line */
         gap: 1rem;
     }
 
+      .monitor-btn h1 {
+        font-size: 1rem;
+      }
     /* Adjust the width to achieve a 4x4 grid */
     #laptop-container > div {
-        flex: 1 0 calc(25% - 1rem); /* Each item takes up 25% of the container width with 1rem gap */
+        flex: 1 0 calc(50% - 1rem); /* Each item takes up 25% of the container width with 1rem gap */
     }
     .box-card img {
     }
@@ -674,6 +717,29 @@ footer {
         padding: 5rem;
     }
 }
+@media (max-width: 1490px) {
+
+    /* Category Section */
+    .monitor-btn {
+        background-color:#5c04a0;
+        border: none;
+        color: white;
+        width: 15em;
+        text-align: center;
+        display: inline-block;
+        padding: 1rem;
+        font-style: bolder;
+        
+      }
+      .Category-1 img {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 10%;
+        margin: 1rem;
+      }
+
+
+}
 
 /*                 Mobile Compativility              */
 @media (max-width: 1400px) {
@@ -684,7 +750,35 @@ footer {
         background-position: center;
         padding-top: 1px; /* Add a small padding to prevent margin collapse */
     }
+  
+    #laptop-container {
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        gap: 1rem;
+    }
 
+      .monitor-btn h1 {
+        font-size: 1rem;
+      }
+    /* Adjust the width to achieve a 4x4 grid */
+    #laptop-container > div {
+        flex: 1 0 calc(50% - 1rem); /* Each item takes up 25% of the container width with 1rem gap */
+    }
+    .box-card img {
+    }
+
+    #product-container {
+        margin: 5rem 14rem;
+        background-color: #4e008b;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+        border-radius: 20px;
+    }
+
+    .box-card {
+        align-items: center;
+        margin: auto;
+        padding: 5rem;
+    }
     .nav-header {
         padding: 1.3rem 5%;
     }
