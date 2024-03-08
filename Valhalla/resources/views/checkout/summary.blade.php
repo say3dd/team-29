@@ -56,8 +56,8 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
                 <div class="mt-2 flex-col">
                     <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="first_name" id="first_name" placeholder="First Name" />
                     <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="surname" id="surname" placeholder="Surname" />
-                    <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="tel" name="phone_number" id="phone_number" placeholder="Phone Number" />
-                    <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="email" name="" id="" placeholder="Email" />
+                    <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="tel" name="phone_number" id="phone_number" minlength="7" maxlength="15" placeholder="Phone Number" />
+                    <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="email" name="email" id="email" placeholder="Email" />
                 </div>
 
                 <label class="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">Shipping Address</label>
@@ -89,11 +89,11 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
                 <div class="mt-2 flex-col">
                     <div>
                         <input class="border rounded border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="" id="" placeholder="Card Holder Name" />
-                        <input class="border rounded-tl rounded-tr border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="email" name="" id="" placeholder="0000 1234 6549 15151" />
+                        <input class="border rounded-tl rounded-tr border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="email" name="" id="" minlength="16" maxlength="16" placeholder="0000 1234 6549 15151" />
                     </div>
                     <div class="flex-row flex">
-                        <input class="border rounded-bl border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="email" name="" id="" placeholder="MM/YY" />
-                        <input class="border rounded-br border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="email" name="" id="" placeholder="CVC" />
+                        <input class="border rounded-bl border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="expiry_date" id="expiry_date" placeholder="MM/YY" onkeyup="formatString(event);"/>
+                        <input class="border rounded-br border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" minlength="3" maxlength="3" type="email" name="" id="" placeholder="CVC" />
                     </div>
                 </div>
                 <form action='{{route('checkout.placeOrder')}}' method="POST">
@@ -112,6 +112,30 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
     </div>
 
 <script>
+
+    /*Validation for Epitry Date of the Card starts here*/
+    function formatString(e) {
+        var inputChar = String.fromCharCode(event.keyCode);
+        var code = event.keyCode;
+        var allowedKeys = [8]; // represent the key code of a "Backspace"
+        if (allowedKeys.indexOf(code) !== -1) {
+            return;
+        }
+        // regular expressions that allows to format the input received from the user
+        event.target.value = event.target.value.replace(
+            /[^\d\/]|/, '' // regualar expression that allows only digit to be entered
+        ).replace(
+            /^(0[1-9]|1[0-2])$/g, '$1/' // this regular expression adds a / after the tow-digit number that represetn month,
+            // e.g. 12 is going to turn into 12/
+        ).replace(
+            /^(0?[1-9]|1[0-2])([0-9]{2})$/g, '$1/$2' // if three digits are enterd such as 229, then this regular expression changes it,assumes
+            // that the first number if the month and the other two is the year, so, hence 229, will turn into 02/29, in other words: February 2028.
+        ).replace(
+            /^([1-9]\/|[2-9])$/g, '0$1/' // 3 > 03/ this regular expression intends to formal a single digit e.g. 2 into a two-digit number e.g. 02
+            // so it matches the format of "MM/YY"
+        );
+        /*Validation for Epitry Date of the Card finishes here*/
+
     let closeIcon = document.getElementById("closeIcon");
     let openIcon = document.getElementById("openIcon");
     let dropdown = document.getElementById("dropdown");

@@ -8,18 +8,19 @@
 
 
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BasketController;
+use App\Http\Controllers\Product\ReturnController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\BasketController;
-use App\Http\Controllers\TrackingController;
+use App\Http\Controllers\Product\TrackingController;
+use App\Http\Controllers\WishListController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ReturnController;
-use App\Http\Controllers\ReturnRequestSubmitController;
+use App\Http\Controllers\Product\ReturnRequestSubmitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,19 +41,29 @@ use App\Http\Controllers\ReturnRequestSubmitController;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/test', function () {
-    return view('FrontEnd.test');
+    return view('Product_files.product');
 });
 
-Route::get('/product', [ProductController::class,'index'])->name('product');
+Route::get('/products', [ProductController::class,'index'])->name('product.index');
 Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
+Route::get('/products1', [ProductController::class,'pageUpdate'])->name('products');
 /*
 The second route here sometimes overrides the first one (possibly something causing the buttons to trigger without an input).
 For now I've made a workaround by having the getInfo function check if it has recieved an input, if not it behaves just like the index function.
 if anybody could let me (Francis) know of a better way to do this, I'd gladly appreciate it.
 */
 
-Route::get('/basket', [BasketController::class,'contents'])->name('basket');
-Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
+//Route::get('/basket', [BasketController::class,'contents'])->name('basket');
+//Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
+
+//New Basket code
+Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
+//Route::get('/basket', [ProductController::class,'contents'])->name('basket');
+Route::get('basket', [ProductController::class,'basket'])->name('basket');
+Route::patch('update-basket', [ProductController::class, 'updateBasket'])->name('update_basket');
+Route::delete('remove-from-basket', [ProductController::class,'removeFromBasket'])->name('remove_from_basket');
+
+
 Route::get('/test1', function () {
     return view('FrontEnd.cart');
 });
@@ -64,18 +75,23 @@ Route::get('/test1', function () {
 
     // Addded route function to the about page
     Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
-
-    // Route::get('/', );
     // @say3dd (Mohammed Miah) - Routing for the different product functionalities
+
+
+
+
+
     // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
-    Route::get('/product', [ProductController::class,'index'])->name('product');
+    Route::get('/products', [ProductController::class,'index'])->name('products.index');
     Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
-    Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
-    Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');
+//    Route::get('/products', [ProductController::class, 'show'])->name('products.show');
 
+//refactored
+    Route::middleware('guest')->group(function () {
+        Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
+        Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
+    });
 
-    Route::get('/contact', [ContactController::class, 'showForm'])->middleware(['guest'])->name('contact.show');
-    Route::post('/contact', [ContactController::class, 'submitForm'])->middleware(['guest'])->name('contact.submit');
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -83,6 +99,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/home', [HomeController::class,'authHome'])->name('home');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -93,22 +110,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
-    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
-    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+//    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
+//    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
     Route::get('/checkout/thankyou', function(){
         return view('checkout.thankyou');
     })->name('thank-you');
 });
 
-require __DIR__ . '/auth.php';
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-});
-
-Route::get('/wishlist', function () {
-    return view('FrontEnd.wishlist');
-});
 
 Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name('return.request');
 
@@ -118,7 +127,16 @@ Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'su
 Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
-//ajax part for search
+Route::get('/search', [ProductController::class, 'search']) ->name('categories.search');
+
+Route::get('/wishlist', [WishListController::class, 'index']);
+Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
+Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']
+);
 
 
-Route::get('/search',[ProductController::class, 'search']) ->name('categories.search');
+//********************************NO code beyond this line!*********************************************************************
+
+
+require __DIR__ . '/auth.php';
+

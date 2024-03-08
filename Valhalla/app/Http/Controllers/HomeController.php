@@ -4,16 +4,17 @@
 */
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\BasketService\BasketInterface;
 use App\Models\Product;
-// use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
+// use App\Models\User;
 
 
-
-class HomeController extends Controller
+class HomeController extends Controller implements BasketInterface
 {
+
+//  \\  use Controllers\ProductController;
 
     /*user will be redirected to either home page or admin page based on the current user.
     If the user has "admin" on the usertype field then they will be redirected admin dashboard page
@@ -40,13 +41,16 @@ class HomeController extends Controller
         }
     }
 
-   
+    public function addToBasket($id){}
+
+
 
     public function index(){
-        $laptops = Product::paginate(8);
-
-        return view('FrontEnd.home', ['laptops' => $laptops]);
+        $products = Product::paginate(4);
+        return view('FrontEnd.home', ['products' => $products]);
     }
+
+
 
 
 }

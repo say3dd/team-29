@@ -25,7 +25,10 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'testadmin@example.com',
         //     'usertype' => 'admin',
         //     'password' => 'adminAcc123',
-            
+
         // ]);
+
+
+        $this->call(ProductsSeeder::class);
     }
 }
