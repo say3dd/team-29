@@ -46,7 +46,7 @@ class HomeController extends Controller implements BasketInterface
 
 
     public function index(){
-        $products = Product::paginate(4);
+        $products = Product::paginate(3);
         return view('FrontEnd.home', ['products' => $products]);
     }
 

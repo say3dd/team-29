@@ -66,12 +66,13 @@
 
                 <div class="dropdown-menu mt-6 p-3 rounded-md" id="cartDropdown">
                     <div class="row total-header-section">
-                        <?php
-                        $total = 0;
-                        foreach ((array) session('basket') as $id => $details) {
-                            // $total += $details['price'] * $details['quantity'];   {{-- calculates the total based on the quantity --}}
-                        }
-                        ?>
+
+                        @php $total = 0.0; @endphp
+                        @foreach ((array) session('basket') as $id => $details)
+                        @php $total += $details['price'] * $details['quantity'];
+                                number_format((float)$total, 2, '.', '' );
+                        @endphp  {{-- calculates the total based on the quantity --}}
+                        @endforeach
                         <div class="total-section text-left rounded-md">
                             <p>Total: <span class="text-info text-cyan-400 font-bold">£ {{ $total }}</span></p>
                         </div>

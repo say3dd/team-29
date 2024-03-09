@@ -78,6 +78,7 @@ Route::get('/test1', function () {
     // @say3dd (Mohammed Miah) - Routing for the different product functionalities
 
 
+//Route::resource()
 
 
 
