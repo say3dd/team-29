@@ -34,15 +34,16 @@ class ProductController extends Controller implements BasketInterface
         $products = $this->sortLaptops($sorting);
 
         /** This handles the filtering side of the product page */
-        $checkedBrands = $request->get('brands', []);
+        $checkedbrands = $request->get('brand', []);
        // $checkedGPU = $request->get('graphics', []);
         /*If the filtered laptops contain these checked items, and it true, make only those visible when laptop is called **/
-        $filteredLaptops = $this->filterLaptops($checkedBrands);
+        $filteredLaptops = $this->filterLaptops($checkedbrands);
         if ($filteredLaptops) {
             $laptops = $filteredLaptops;
         }
         /* Return the rendered page with the details required to show**/
-        return view('Product_files.productL' ,['brands' =>$brands, 'products'=>$products]);
+        return view('Product_files.productL' ,['brands'=>$brands, 'products'=>$products]);
+        //dd($brands);
     }
     /** @BilalMo Assigns the product to get the distinct Brands  */
 //    protected function getDistinctBrands()
@@ -74,17 +75,14 @@ class ProductController extends Controller implements BasketInterface
     }
     /** @BilalMo The function works on displaying the laptop based on certain conditionals whether the filter of the feature has been
      *pressed or not*/
-    protected function filterLaptops($checkedBrands)
+    protected function filterLaptops($checkedbrands)
     {
         /**Assigning operations for if there are no filters chosen or
          * if both filters are chosen - here both selected in the request */
 
-        if (!empty($checkedBrands)) {
-           return Product::whereIn('brand', $checkedBrands)->get();
-        } elseif (!empty($checkedBrands)) {
-            return Product::whereIn('brand', $checkedBrands)->get();
+        if (!empty($checkedbrands)) {
+           return Product::whereIn('brand', $checkedbrands)->get();
         }
-        return null;
     }
 
     public function getInfo(Request $request)
@@ -135,7 +133,7 @@ class ProductController extends Controller implements BasketInterface
 //        $laptops = Product::where('product_id', '!=', $id)->take(5)->get();
 //        return view('Product_files.product', ['product' => $product, 'laptops' => $laptops]);
 //    }
-
+//
 
 public function basket(){
     if (Auth::check()){
