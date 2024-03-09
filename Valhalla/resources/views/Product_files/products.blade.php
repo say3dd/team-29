@@ -9,7 +9,7 @@
 <div class="laptop_all">
     <img class="image_all_laptop" src="{{ asset($product->images) }}" style="transition: 0.3s ease">
     <div class="laptop_all_text">
-        <!--@say3dd (Mohammed Miah) Routing to make the user go to the details of an individual product by clicking on the name -->
+        <!--@say3dd (Mohammed Miah) && @BilalMO (Bilal Mohamed) Routing to make the user go to the details of an individual product by clicking on the name -->
         <a style= "color: inherit; font-weight: bold; font-size: 1.05rem;" href="{{ route('product.info', $product->product_id) }}"> {{$product->product_name}} </a>
         {{-- Uses regex to find the specific pattern to find the exact data needed to be shown : here its the processor, gpu and ram--}}
         @php
@@ -37,7 +37,7 @@
         @if(isset($details['GPU']))
             <p> {{ $details['GPU'] }}</p>
         @endif
-    
+
     @if(isset($details['RAM']))
         <p>{{ $details['RAM'] }}</p>
     @endif
@@ -45,8 +45,7 @@
     <div class="price" style=" font-weight: bold; margin-bottom: 0px; text-decoration: underline;
     text-decoration:underline; text-decoration-color:aquamarine ">Price: £{{ $product->price }}</div>
     <br>
-
-    <form action='{{route('product.getInfo')}}' method='post' onsubmit='saveScrollPosition(this)'>
+    <form action="{{route('product.info')}}" method='post' onsubmit='saveScrollPosition(this)'>
         @csrf
         <input type="hidden" name="laptopData" value={{$product->product_id}}>
         <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
