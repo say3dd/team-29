@@ -74,58 +74,44 @@
         </button>
     </section>
         <!-- This is the code for the filter of products , linked to the database one is for the brands other is for graphics-->
-{{--    <div id="filter-container" class="filters">--}}
-{{--        <div class ="scroller">--}}
-{{--        <ul class="filters__list">--}}
-{{--            <form action="{{URL::current()}}" method="GET">--}}
-{{--                <li>--}}
-{{--                    <p style = "text-decoration: underline"> Brand: </p><br>--}}
-{{--                    </li>--}}
-{{--                    <!-- for each brand/graphics, it assigns the checked area as empty, once filled with the brands/graphics--}}
-{{--                         it selects the item and shows which is needed by its id, name and value. Also has an if statement on whether brand/graphics  is there and checkbrands is checked -->--}}
-{{--                @foreach ($brands as $brand)--}}
-{{--                @php--}}
-{{--                $checkedbrands = [];--}}
-{{--                if(isset($_GET['brands']))--}}
-{{--                {--}}
-{{--                    $checkedbrands=$_GET['brands'];--}}
-{{--                }--}}
-{{--                @endphp--}}
-{{--                <li>--}}
-{{--            <input id="{{$brand->brand}}" name="brands[]" value="{{$brand->brand}}" type="checkbox"--}}
-{{--            @if(in_array($brand -> brand, $checkedbrands))checked="checked" @endif/>--}}
-{{--            <label>{{$brand->brand}}</label>--}}
-{{--            </li>--}}
-{{--            @endforeach--}}
-{{--            <li>--}}
-{{--                <p style = "text-decoration: underline">GPU: </p><br>--}}
-{{--                </li>--}}
-{{--            @foreach ($graphics as $graphic)--}}
-{{--            @php--}}
-{{--            $checkedGPU = [];--}}
-{{--            if(isset($_GET['graphics']))--}}
-{{--            {--}}
-{{--                $checkedGPU=$_GET['graphics'];--}}
-{{--            }--}}
-{{--            @endphp--}}
-{{--            <li>--}}
+    <div id="filter-container" class="filters">
+        <div class ="scroller">
+        <ul class="filters__list">
+            <form action="{{URL::current()}}" method="GET">
+                <li>
+                    <p style = "text-decoration: underline"> Brand: </p><br>
+                    </li>
+                    <!-- for each brand/graphics, it assigns the checked area as empty, once filled with the brands/graphics
+                         it selects the item and shows which is needed by its id, name and value. Also has an if statement on whether brand/graphics  is there and checkbrands is checked -->
+                @foreach ($brands as $brand)
+                @php
+                $checkedbrands = [];
+                if(isset($_GET['brands']))
+                {
+                    $checkedbrands=$_GET['brands'];
+                }
+                @endphp
+                <li>
+            <input id="{{$brand->brand}}" name="brands[]" value="{{$brand->brand}}" type="checkbox"
+            @if(in_array($brand -> brand, $checkedbrands))checked="checked" @endif/>
+            <label>{{$brand->brand}}</label>
+            </li>
+            @endforeach
+            <li>
+                <p style = "text-decoration: underline">GPU: </p><br>
+            </li>
+        </li>
+            <li>
+            </div>
+                <button class = "button_apply" > Apply Changes </button>
+                <button class = "button_reset" onclick="resetFilters()" > Reset </button>
+            </li>
 
-{{--        <input id="{{$graphic->GPU}}" name="graphics[]" value="{{$graphic->GPU}}" type="checkbox"--}}
-{{--        @if(in_array($graphic -> GPU, $checkedGPU)) checked="checked" @endif/>--}}
-{{--        <label>{{$graphic->GPU}}</label>--}}
-{{--        </li>--}}
-{{--        @endforeach--}}
-{{--            <li>--}}
-{{--            </div>--}}
-{{--                <button class = "button_apply" > Apply Changes </button>--}}
-{{--                <button class = "button_reset" onclick="resetFilters()" > Reset </button>--}}
-{{--            </li>--}}
+        </ul>
 
-{{--        </ul>--}}
+    </form>
 
-{{--    </form>--}}
-
-{{--    </div>--}}
+    </div>
     <!--Form for hidden fields so the filter request gets sent without a need for a submit button, more smoother functionality -->
 
     <div id="sorting-container" class="sort">
@@ -215,11 +201,11 @@ function resetSort() {
 </script>
 
 @yield('productP')
-<!-- Each button assigned an ID which presents a cetain page, leads to user interaction and less clunkiness in code. Also more fluid to use. -->
+<!-- @BilalMo uses links to assign pagination buttons to the page, query uses the data given so all pages available (e.g. page 1-2) have the same filtering or sorting features-->
             <section class = "laptops_container">
                 <div class="button_container">
-                    <div class = "button_to_switch_page"> 
-                        {{$products->links()}}
+                    <div class = "button_to_switch_page">
+                        {{$products->appends(request()->query())->links()}}
                     </div>
                 </div>
             </section>

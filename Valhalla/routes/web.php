@@ -85,7 +85,7 @@ Route::get('/test1', function () {
         return view('FrontEnd.test');
     })->name('product.info');
 //    Route::get('/products', [ProductController::class, 'show'])->name('products.show');
-Route::Post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
+Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
 
 //refactored
     Route::middleware('guest')->group(function () {

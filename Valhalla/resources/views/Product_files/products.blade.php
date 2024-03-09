@@ -45,7 +45,7 @@
     <div class="price" style=" font-weight: bold; margin-bottom: 0px; text-decoration: underline;
     text-decoration:underline; text-decoration-color:aquamarine ">Price: £{{ $product->price }}</div>
     <br>
-    <form action="{{route('product.info')}}" method='post' onsubmit='saveScrollPosition(this)'>
+    <form action="{{route('products.index')}}" method='post' onsubmit='saveScrollPosition(this)'>
         @csrf
         <input type="hidden" name="laptopData" value={{$product->product_id}}>
         <input type="hidden" name="scrollPosition" id="scrollPosition" value="">

@@ -20,68 +20,46 @@ class ProductController extends Controller implements BasketInterface
 //    }
     /** @BilalMo The page update page works on making sure the products are displayed a  */
 
-    //
-    public function pageUpdate(Request $request)
+    public function index(Request $request)
     {
-      /** This retrieve the distinct data */
         $query = Product::query();
-        $query->orderBy('brand', 'asc');
-        $brands = $query->get();
-        //$graphics = $this->getDistinctGPUs();
+        //
+        //looks cleaner like this imo
+        $this->filterProducts($query,$request->input('brands',[],'gpu',[],'cpu',[],'ram',[]));
+        //
 
-      /** This organises the sorting for the product page */
-        $sorting = $request->input('sorting');
-        $products = $this->sortLaptops($sorting);
+        $this->sortLaptops($query, $request->input('sorting'));
+        //
+        $products = $query->paginate(12);
+        //
+        $brands = Product::select('brand')->distinct()->orderBy('brand')->get();
 
-        /** This handles the filtering side of the product page */
-        $checkedbrands = $request->get('brand', []);
-       // $checkedGPU = $request->get('graphics', []);
-        /*If the filtered laptops contain these checked items, and it true, make only those visible when laptop is called **/
-        $filteredLaptops = $this->filterLaptops($checkedbrands);
-        if ($filteredLaptops) {
-            $laptops = $filteredLaptops;
-        }
-        /* Return the rendered page with the details required to show**/
-        return view('Product_files.productL' ,['brands'=>$brands, 'products'=>$products]);
-        //dd($brands);
+        return view('Product_files.products', compact('products','brands'));
     }
-    /** @BilalMo Assigns the product to get the distinct Brands  */
-//    protected function getDistinctBrands()
-//    {
-//        return Product::select('brand')->distinct()->orderBy('brand')->get();
-//    }
-//    /** @BilalMo Assigns the product to get the distinct GPUs  */
-//    protected function getDistinctGPUs() {
-//        return Product::select('GPU')->distinct()->orderBy('GPU')->get();
-//    }
-//
-//    /** @BilalMo Assigns the product to get the distinct prices  */
-//    protected function getDistinctPrices() {
-//        return Product::select('price')->distinct()->orderBy('price')->get();
-//    }
+
 
         /** @BilalMo Renders the page if available by only the Id */
 
 
     /** @Bilal Mo Assigning operations for the sorting functions */
-    protected function sortLaptops($sorting)
+    protected function sortLaptops($query,$sorting)
     {
         return match ($sorting) {
-            "Price_LtoH" => Product::orderby('price', 'ASC')->paginate('12'),
-            "Price_HtoL" => Product::orderby('price', 'Desc')->paginate('12'),
-            "Newest-Arrival" => Product::orderby('created_at', 'Asc')->paginate(12),
-            default => Product::all(),
+            "Price_LtoH" => $query->orderby('price', 'ASC'),
+            "Price_HtoL" => $query->orderby('price', 'DESC'),
+            "Newest-Arrival" => $query->orderby('created_at', 'ASC'),
+            default => $query->orderby('product_name'),
         };
     }
     /** @BilalMo The function works on displaying the laptop based on certain conditionals whether the filter of the feature has been
      *pressed or not*/
-    protected function filterLaptops($checkedbrands)
+    protected function filterProducts($query,$checkedbrands,$checkedGPUs,$checkedCPUs,$checkedRAM)
     {
         /**Assigning operations for if there are no filters chosen or
          * if both filters are chosen - here both selected in the request */
 
         if (!empty($checkedbrands)) {
-           return Product::whereIn('brand', $checkedbrands)->get();
+            return $query->whereIn('brand', $checkedbrands);
         }
     }
 
@@ -118,15 +96,7 @@ class ProductController extends Controller implements BasketInterface
     }
 
     // @say3dd (Mohammed Miah) displays all the products, maximum of 12 on the products page
-    public function index()
-    {
-        $query = Product::query();
-        $query->orderBy('Product_name');
-        $products = $query->paginate(12);
-         return view('Product_files.products', compact('products'));
 
-
-    }
 //    public function show($id)
 //    {
 //        $product = Product::find($id);
