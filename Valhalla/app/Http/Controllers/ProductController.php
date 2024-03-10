@@ -18,23 +18,54 @@ class ProductController extends Controller implements BasketInterface
 //        $products = Product::all();
 //        return view('product', compact('Product_files.product'));
 //    }
-    /** @BilalMo The page update page works on making sure the products are displayed a  */
-
+    /** @BilalMo The Index function works on making sure the products are displayed and that both the pagination,filtering and sorting
+     *functionalities work */
     public function index(Request $request)
     {
         $query = Product::query();
         //
-        //looks cleaner like this imo
-        $this->filterProducts($query,$request->input('brands',[],'gpu',[],'cpu',[],'ram',[]));
-        //
+        //uses the filter products function to create empty arrays for each item which will be part of the filter feature
+        $gpus = Product::select('product_description')
+            ->distinct()
+            ->get()
+            ->pluck('product_description')
+            ->map(function ($desc) {
+                preg_match("/GPU: ([^,]+)/", $desc, $matches);
+                return $matches[1] ?? null;
+            })->filter()->unique();
 
+        $cpus = Product::select('product_description')
+            ->distinct()
+            ->get()
+            ->pluck('product_description')
+            ->map(function ($desc) {
+                preg_match("/Processor: ([^,]+)/", $desc, $matches);
+                return $matches[1] ?? null;
+            })->filter()->unique();
+
+        $rams = Product::select('product_description')
+            ->distinct()
+            ->get()
+            ->pluck('product_description')
+            ->map(function ($desc) {
+                preg_match("/RAM: ([^,]+)/", $desc, $matches);
+                return $matches[1] ?? null;
+            })->filter()->unique();
+
+        // Apply filters
+        $this->filterProducts($query, $request->input('brands', []), $request->input('gpu', []), $request->input('cpu', []), $request->input('ram', []));
+
+        // Apply sorting
         $this->sortLaptops($query, $request->input('sorting'));
-        //
+
+        // Get paginated products
         $products = $query->paginate(12);
-        //
+
+        // Get distinct brands
         $brands = Product::select('brand')->distinct()->orderBy('brand')->get();
 
-        return view('Product_files.products', compact('products','brands'));
+        // Pass all the variables to the view
+        return view('Product_files.products', compact('products', 'brands', 'gpus', 'cpus', 'rams'));
     }
 
 
@@ -53,14 +84,36 @@ class ProductController extends Controller implements BasketInterface
     }
     /** @BilalMo The function works on displaying the laptop based on certain conditionals whether the filter of the feature has been
      *pressed or not*/
-    protected function filterProducts($query,$checkedbrands,$checkedGPUs,$checkedCPUs,$checkedRAM)
+    protected function filterProducts($query,$checkedbrands,$checkedGPUs,$checkedCPUs,$checkedRAMs)
     {
         /**Assigning operations for if there are no filters chosen or
          * if both filters are chosen - here both selected in the request */
 
         if (!empty($checkedbrands)) {
-            return $query->whereIn('brand', $checkedbrands);
+            $query->whereIn('brand', $checkedbrands);
         }
+        if(!empty($checkedGPUs)) {
+            $query->where(function ($q) use ($checkedGPUs) {
+                foreach ($checkedGPUs as $gpu) {
+                    $q->orWhere('product_description', 'like', "%GPU: $gpu%");
+                }
+            });
+            }
+                if(!empty($checkedCPUs)) {
+                    $query->where(function ($q) use ($checkedCPUs) {
+                        foreach ($checkedCPUs as $cpu) {
+                            $q->orWhere('product_description', 'like', "%Processor: $cpu%");
+                        }
+                    });
+                    }
+        if(!empty($checkedRAMs)) {
+            $query->where(function ($q) use ($checkedRAMs) {
+                foreach ($checkedRAMs as $RAM) {
+                    $q->orWhere('product_description', 'like', "%RAM: $RAM%");
+                }
+            });
+            }
+        return $query;
     }
 
     public function getInfo(Request $request)
