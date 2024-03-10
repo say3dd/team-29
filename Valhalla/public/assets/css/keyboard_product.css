@@ -1,5 +1,5 @@
 /*    
- _______________________________   Created and designed the About page (CSS) of the webiste by @AnthonyResuello (Anthony Resuello)    ____________________________________________
+ _______________________________   Created and designed the Keyboard page (CSS) of the webiste by @AnthonyResuello (Anthony Resuello)    ____________________________________________
 
 */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
@@ -43,9 +43,6 @@ p {
   margin-top: 1rem !important;
   line-height: 1.9rem !important;
 }
-
-
-
 
 
 /*                                  HEADER  SECTION                         */
@@ -112,8 +109,6 @@ p {
 header {
   background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.253))  !important;
   }
-
-
 
 
 /* footer section */

@@ -48,7 +48,7 @@
                 @endauth
             @endif
 
-            <div class="dropdown ml-3.5 align-middle mb-1 p-1.5 text-center rounded-md inline-flex">
+            <div id="basket-container" class="dropdown ml-3.5 align-middle mb-1 p-1.5 text-center rounded-md inline-flex">
                 <button id="basket-button" class="btn btn-primary align-middle inline-flex m-1.5" type="button">
                     <div class="inline-flex justify-between">
                     <i class="bx bx-shopping-bag align-middle inline-flex justify-between" aria-hidden="true"></i>
