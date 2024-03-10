@@ -236,7 +236,104 @@ class ProductsSeeder extends Seeder
                 'category' => 'Laptop',
                 'price' => 4799.00,
                 'images' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg'
-            ]
+            ],
+            [
+            'brand' => 'Logitech',
+            'product_name' => 'Logitech MX Master 3',
+            'product_description' => 'Name: Logitech MX Master 3
+            DPI: 4000
+            Connectivity: Wireless
+            Battery Life: 70 days',
+            'category' => 'Mouse',
+            'price' => 99.99,
+            'images' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg'
+        ],
+             [
+             'brand' => 'Razer',
+        'product_name' => 'Razer DeathAdder V2',
+        'product_description' => 'Name: Razer DeathAdder V2
+                            DPI: 20000
+                            Connectivity: Wired',
+            'category' => 'Mouse',
+         'price' => 69.99,
+        'images' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg'
+             ],
+            [
+                'brand' => 'Corsair',
+                'product_name' => 'Corsair Ironclaw RGB',
+                'product_description' => 'Name: Corsair Ironclaw RGB
+                DPI: 18000
+                Connectivity: Wireless, Bluetooth
+                Battery Life: 50 hours',
+                'category' => 'Mouse',
+                'price' => 79.99,
+                'images' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg'
+            ],
+            [
+                'brand' => 'SteelSeries',
+                'product_name' => 'SteelSeries Apex Pro',
+                'product_description' => 'Name: SteelSeries Apex Pro
+                            Switches: Red
+                            Connectivity: Wired
+                            Keyboard type : Mechanical',
+                'category' => 'Keyboard',
+                'price' => 199.99,
+                'images' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg'
+            ],
+            [
+            'brand' => 'Corsair',
+            'product_name' => 'Corsair K95 RGB Platinum',
+            'product_description' => 'Name: Corsair K95 RGB Platinum
+            Switches: Red
+            Connectivity: Wired
+            Keyboard type : Mechanical',
+            'category' => 'Keyboard',
+            'price' => 169.99,
+            'images' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg'
+        ],
+            [
+                'brand' => 'Razer',
+                'product_name' => 'Razer Huntsman Elite',
+                'product_description' => 'Name: Razer Huntsman Elite
+                            Switches: Blue
+                            Connectivity: Wired
+                            Keyboard type : Mechanical',
+                'category' => 'Keyboard',
+                'price' => 199.99,
+                'images' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg'
+                ],
+            [
+                'brand' => 'Samsung',
+                'product_name' => 'Samsung Odyssey G9',
+                'product_description' => 'Name: Samsung Odyssey G9
+                Screen Size: 24"
+                Refresh rate: 144Hz
+                Response Time : 1ms',
+                'category' => 'Monitor',
+                'price' => 1399.99,
+                'images' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg'
+            ],
+            [    'brand' => 'LG',
+                'product_name' => 'LG UltraGear',
+                'product_description' => 'Name: LG UltraGear
+                            Screen Size: 27"
+                            Refresh rate: 144Hz
+                             Response Time : 5ms',
+                'category' => 'Monitor',
+                'price' => 399.99,
+                'images' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg'
+                ],
+            [
+                'brand' => 'Dell',
+                'product_name' => 'Dell UltraSharp UP3218K',
+                'product_description' => 'Name: Dell UltraSharp UP3218K
+                Screen Size: 24"
+                Refresh rate: 144Hz
+                Response Time : 1ms',
+                'category' => 'Monitor',
+                'price' => 399.99,
+                'images' => 'assets/laptop_images/Asus ROG Zephyrus Duo/asus_rog_zephyrus_duo.jpg'
+                ]
 
         ]);
 

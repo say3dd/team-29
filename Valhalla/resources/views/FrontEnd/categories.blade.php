@@ -41,7 +41,7 @@
         <p class="title_of_category"> SHOP BY CATEGORY </p>
 
         <div class="categories_all">
-            <a href="{{ route('products.index')}}">
+            <a href="{{ route('products.index' ,['category' => 'Laptop']) }}">
                 <img class="image_categories_laptop" src="{{asset('assets/images_categories/laptops_category2.jpg')}}"
                     style="width:100%">
                 <div class="category_text"> Laptops</div>
@@ -51,17 +51,17 @@
             </a>
         </div>
         <div class="categories_all">
-            <a>
+            <a href="{{ route('products.index' ,['category' => 'Mouse']) }}">
                 <img class="image_categories_laptop" src="{{asset('assets/images_categories/mouse.jpg')}}"
                     style="width:100%">
-                <div class="category_text"> Mice</div>
+                <div class="category_text"> Mouse</div>
                 <div class="middle">
-                    <div class="text">Mice</div>
+                    <div class="text">Mouse</div>
                 </div>
             </a>
         </div>
         <div class="categories_all">
-            <a>
+            <a href="{{ route('products.index' ,['category' => 'Keyboard']) }}">
                 <img class="image_categories_laptop" src="{{asset('assets/images_categories/keyboard2.jpg')}}"
                     style="width:100%">
                 <div class="category_text"> Keyboards</div>
@@ -71,7 +71,7 @@
             </a>
         </div>
         <div class="categories_all">
-            <a>
+            <a href="{{ route('products.index' ,['category' => ' Monitor']) }}">
                 <img class="image_categories_laptop" src="{{asset('assets/images_categories/monitors.jpg')}}"
                     style="width:100%">
                 <div class="category_text"> Monitors</div>

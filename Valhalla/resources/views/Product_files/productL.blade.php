@@ -77,7 +77,7 @@
     <div id="filter-container" class="filters">
         <div class ="scroller">
         <ul class="filters__list">
-            <form action="{{URL::current()}}" method="GET">
+            <form action="{{route('products.index')}}" method="GET">
                 <li>
                     <p style = "text-decoration: underline"> Brand: </p><br>
                     </li>
@@ -99,24 +99,20 @@
             @endforeach
                 <!--Displays the Gpu checkboxes with the same checked features used  -->
                 @if(!empty($filters))
-                    @foreach($filters as $filterName => $filterValues)
-                        <li>
-                            <p style="text-decoration: underline">{{ ucfirst($filterName) }}:</p><br>
-                       <ul>
-                        @foreach ($filterValues as $value)
+                @foreach($filters as $attribute => $values)
+                    <div>
+                        <p style="text-decoration: underline">{{ ucfirst($attribute) }}:</p>
+                        @foreach($values as $value)
                             @php
-                                $checkedValues = request()->input($filterName, []);
+                                $ValueChecked = in_array($value, request()->input($attribute, []));
                             @endphp
-                            <li>
-                                <input id="{{ $filterName }}_{{ $value }}" name="{{ $filterName }}[]" value="{{ $value }}" type="checkbox"
-                                   @if( in_array($value, $checkedValues)) checked="checked" @endif/>
-                                <label>{{ $value }}</label>
-                            </li>
-                            @endforeach
-                       </ul>
-            </li>
-             @endforeach
-               @endif
+                                <input id="{{$attribute}}"  name="{{ $attribute }}[]" value="{{ $value }}" type="checkbox"
+                                    {{ $ValueChecked ? 'checked' : '' }}/>
+                            <label>  {{ $value }} </label>
+                        @endforeach
+                    </div>
+            @endforeach
+            @endif
             </div>
                 <button class = "button_apply" > Apply Changes </button>
                 <button class = "button_reset" onclick="resetFilters()" > Reset </button>
@@ -131,7 +127,7 @@
 
     <div id="sorting-container" class="sort">
         <ul class="sort__list">
-            <form action="{{URL::current()}}" method="GET" wire:model="sorting">
+            <form action="{{route('products.index')}}" method="GET" wire:model="sorting">
                 <li>
                     <p style = "text-decoration: underline"> Sort By: </p><br>
                 </li>
