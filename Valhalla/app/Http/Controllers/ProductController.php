@@ -20,56 +20,75 @@ class ProductController extends Controller implements BasketInterface
 //    }
     /** @BilalMo The Index function works on making sure the products are displayed and that both the pagination,filtering and sorting
      *functionalities work */
+    protected function getCategoryPatterns($category)
+    {
+        // Define your category specific patterns in a centralized method or configuration
+        return [
+            'Laptop' => [
+                'gpus' => "/GPU: ([^,]+)/",
+                'cpus' => "/Processor: ([^\n,]+)/",
+                'rams' => "/RAM: (\d+\s*GB)/i"
+            ]
+
+          // ... other categories
+        ];
+    }
+
     public function index(Request $request)
     {
+        $category= $request->input('category','all');
         $query = Product::query();
+
+        if ($category !== 'all') {
+            $query->where('category', $category);
+        }
+
+        $categoryPatterns = $this->getCategoryPatterns($category);
+
+        $productDesc = Product::where('category',$category)->distinct()
+            ->get()->pluck('product_description');
+        //dd($productDesc);
         //
-        //uses the filter products function to create empty arrays for each item which will be part of the filter feature
-        $gpus = Product::select('product_description')
-            ->distinct()
-            ->get()
-            ->pluck('product_description')
-            ->map(function ($desc) {
-                preg_match("/GPU: ([^,]+)/", $desc, $matches);
-                return $matches[1] ?? null;
-            })->filter()->unique();
+        $filters = $this->extractFilters($productDesc,$categoryPatterns);
 
-        $cpus = Product::select('product_description')
-            ->distinct()
-            ->get()
-            ->pluck('product_description')
-            ->map(function ($desc) {
-                preg_match("/Processor: ([^,]+)/", $desc, $matches);
-                return $matches[1] ?? null;
-            })->filter()->unique();
 
-        $rams = Product::select('product_description')
-            ->distinct()
-            ->get()
-            ->pluck('product_description')
-            ->map(function ($desc) {
-                preg_match("/RAM: ([^,]+)/", $desc, $matches);
-                return $matches[1] ?? null;
-            })->filter()->unique();
+        // Applying the filters
+        $this->filterProducts($query,$request->input('brands', []),$filters);
 
-        // Apply filters
-        $this->filterProducts($query, $request->input('brands', []), $request->input('gpu', []), $request->input('cpu', []), $request->input('ram', []));
-
-        // Apply sorting
+        // Applying sorting
         $this->sortLaptops($query, $request->input('sorting'));
 
         // Get paginated products
         $products = $query->paginate(12);
 
-        // Get distinct brands
+        // Get distinct brands found within database
         $brands = Product::select('brand')->distinct()->orderBy('brand')->get();
 
-        // Pass all the variables to the view
-        return view('Product_files.products', compact('products', 'brands', 'gpus', 'cpus', 'rams'));
+        // Pass everything to be shown to the view
+        return view('Product_files.products', compact('products','brands','filters','category'));
+    }
+
+    protected function extractFilters($descriptions,$patterns)
+    {
+        $filters = [];
+
+        foreach ($patterns as $attribute => $pattern) {
+            $filters[$attribute] = $descriptions
+                ->map(function ($desc) use ($pattern,$attribute) {
+                    preg_match_all($pattern, $desc, $matches);
+                    return $matches[1] ?? null;
+                })
+                ->flatten()
+                ->filter()
+                ->unique()
+                ->values()
+                ->toArray();
+        }
+        return $filters;
     }
 
 
-        /** @BilalMo Renders the page if available by only the Id */
+    /** @BilalMo Renders the page if available by only the Id */
 
 
     /** @Bilal Mo Assigning operations for the sorting functions */
@@ -84,7 +103,7 @@ class ProductController extends Controller implements BasketInterface
     }
     /** @BilalMo The function works on displaying the laptop based on certain conditionals whether the filter of the feature has been
      *pressed or not*/
-    protected function filterProducts($query,$checkedbrands,$checkedGPUs,$checkedCPUs,$checkedRAMs)
+    protected function filterProducts($query,$checkedbrands,$filters)
     {
         /**Assigning operations for if there are no filters chosen or
          * if both filters are chosen - here both selected in the request */
@@ -92,27 +111,16 @@ class ProductController extends Controller implements BasketInterface
         if (!empty($checkedbrands)) {
             $query->whereIn('brand', $checkedbrands);
         }
-        if(!empty($checkedGPUs)) {
-            $query->where(function ($q) use ($checkedGPUs) {
-                foreach ($checkedGPUs as $gpu) {
-                    $q->orWhere('product_description', 'like', "%GPU: $gpu%");
-                }
-            });
-            }
-                if(!empty($checkedCPUs)) {
-                    $query->where(function ($q) use ($checkedCPUs) {
-                        foreach ($checkedCPUs as $cpu) {
-                            $q->orWhere('product_description', 'like', "%Processor: $cpu%");
-                        }
-                    });
+        foreach ($filters as $attribute => $checkedValues) {
+            if (!empty($checkedValues)) {
+                $query->where(function ($q) use ($checkedValues, $attribute) {
+                    foreach ($checkedValues as $value) {
+                        $q->orWhere('product_description', 'like', "%$attribute: $value%");
                     }
-        if(!empty($checkedRAMs)) {
-            $query->where(function ($q) use ($checkedRAMs) {
-                foreach ($checkedRAMs as $RAM) {
-                    $q->orWhere('product_description', 'like', "%RAM: $RAM%");
-                }
-            });
+                });
             }
+        }
+
         return $query;
     }
 
@@ -223,20 +231,20 @@ public function addToBasket($id){
 
     }
 //@BilalMo code for the search bar (not completed yet)
-    public function search(){
-        $search = request()->query('search');
-if ($search){
-    $laptops = Product::where('laptop_name','LIKE',"%{$search}%")
-        ->orwhere('price','LIKE',"%{$search}%")
-        ->orwhere('brand','LIKE',"%{$search}%")
-        ->simplepaginate(12);
-}else{
-    $laptops = Product::simplePaginate(12);
-}
-$brands = Product::select('brand')->distinct()->orderBy('brand')->get();
-//$graphics = $this->getDistinctGPUs();
-return view('Product_files.products',compact('laptops','brands',));
-    }
+//    public function search(){
+//        $search = request()->query('search');
+//if ($search){
+//    $products= Product::where('laptop_name','LIKE',"%{$search}%")
+//        ->orwhere('price','LIKE',"%{$search}%")
+//        ->orwhere('brand','LIKE',"%{$search}%")
+//        ->simplepaginate(12);
+//}else{
+//    $laptops =
+//}
+//$brands = Product::select('brand')->distinct()->orderBy('brand')->get();
+////$graphics = $this->getDistinctGPUs();
+//return view('Product_files.products',compact('laptops','brands',));
+//    }
 
 
 

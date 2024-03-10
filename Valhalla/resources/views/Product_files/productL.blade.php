@@ -98,44 +98,25 @@
             </li>
             @endforeach
                 <!--Displays the Gpu checkboxes with the same checked features used  -->
-            <li>
-                <p style = "text-decoration: underline">GPU: </p><br>
-            </li>
-                @foreach ($gpus as $gpu)
-                    @php
-                        $checkedGPUs = request()->input('gpu', []);
-                    @endphp
-                <li>
-                    <input id="gpu_{{ $gpu }}" name="gpu[]" value="{{ $gpu }}" type="checkbox" {{ in_array($gpu, $checkedGPUs) ? 'checked' : '' }}/>
-                    <label for="gpu_{{ $gpu }}">{{ $gpu }}</label>
-                </li>
-                    @endforeach
-                    <li>
-                        <p style = "text-decoration: underline">Processors: </p><br>
-
-            </li>
-                    @foreach($cpus as $cpu)
-                        @php
-                        $checkedCPUs = request()->input('cpu', []);
-                        @endphp
+                @if(!empty($filters))
+                    @foreach($filters as $filterName => $filterValues)
                         <li>
-                            <input id="gpu_{{ $cpu }}" name="gpu[]" value="{{ $cpu }}" type="checkbox" {{ in_array($cpu, $checkedCPUs) ? 'checked' : '' }}/>
-                            <label for="gpu_{{ $cpu }}">{{ $cpu }}</label>
-                        </li>
-                    @endforeach
-            <li>
-                <p style = "text-decoration: underline">RAM: </p><br>
+                            <p style="text-decoration: underline">{{ ucfirst($filterName) }}:</p><br>
+                       <ul>
+                        @foreach ($filterValues as $value)
+                            @php
+                                $checkedValues = request()->input($filterName, []);
+                            @endphp
+                            <li>
+                                <input id="{{ $filterName }}_{{ $value }}" name="{{ $filterName }}[]" value="{{ $value }}" type="checkbox"
+                                   @if( in_array($value, $checkedValues)) checked="checked" @endif/>
+                                <label>{{ $value }}</label>
+                            </li>
+                            @endforeach
+                       </ul>
             </li>
-                @foreach($rams as $ram)
-                    @php
-                        $checkedRAMs = request()->input('ram', []);
-                    @endphp
-                    <li>
-                        <input id="gpu_{{ $ram }}" name="gpu[]" value="{{ $ram }}" type="checkbox" {{ in_array($ram, $checkedRAMs) ? 'checked' : '' }}/>
-                        <label for="gpu_{{ $ram }}">{{ $ram }}</label>
-                    </li>
-            @endforeach
-
+             @endforeach
+               @endif
             </div>
                 <button class = "button_apply" > Apply Changes </button>
                 <button class = "button_reset" onclick="resetFilters()" > Reset </button>
