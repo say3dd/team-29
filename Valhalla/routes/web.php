@@ -78,6 +78,7 @@ Route::get('/test1', function () {
     // @say3dd (Mohammed Miah) - Routing for the different product functionalities
 
 
+//Route::resource()
 
 
 
@@ -129,7 +130,7 @@ Route::get('/categories', function () {
     return view('FrontEnd.categories');})->name('categories');
 Route::get('/search', [ProductController::class, 'search']) ->name('categories.search');
 
-Route::get('/wishlist', [WishListController::class, 'index']);
+Route::get('/wishlist', [WishListController::class, 'index'])->name('FrontEnd.wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
 Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
 Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');

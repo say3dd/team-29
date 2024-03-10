@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use http\Env\Response;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -27,4 +28,16 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    /**
+     * Render the exception into an HTTP response.
+     */
+//    public function render($request, Throwable $exception): Response
+//    {
+//        if($this->isHttpException($exception)) {
+//            return response()->view('errors.404');
+//        } else{
+//            return response()->view('errors.500');
+//        }
+//    }
 }

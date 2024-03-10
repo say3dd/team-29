@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
+{{--Authors: Basit Ali Mohammad = @BM786 --}}
+
+<x-app-layout>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <style>
+
     #sortable { 
       list-style-type: none; 
       margin: 0; 
@@ -29,6 +30,17 @@
       color: #555555; 
     }
     .sortable-placeholder { height: 120px; }
+
+    p {
+      color:#020202;
+    }
+
+    .class2 {
+      background-color: #1A3A8A; 
+    }
+    .class2 p {
+      color: #020202; 
+    }
 
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -65,10 +77,25 @@ $(document).ready(function() {
 });
   </script>
 </head>
-<body>
 
+<body>
+  <class>
+    <div class=" py-6 bg-white">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-purple-700 overflow-hidden shadow-sm sm:rounded-lg">
+            </div>
+  <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    {{ __('Wishlist') }}
+</h2>
+        </div>
+    </div>
+</class>
+</body>
+
+<class2 class="class2">
   @if($wishlistItems->isEmpty())
-  <p>Your wishlist is empty. Return home here: </p> <a href="{{ route('index') }}"> >Home</a>
+  <p>Your wishlist is empty. Return home here: </p> 
+  <x-primary-button> <a href="{{ route('index') }}">Home</a> </x-primary-button>
   @else
   <div id="sortable">
     @foreach($wishlistItems as $product)
@@ -92,9 +119,9 @@ $(document).ready(function() {
     @endforeach
   </div>
   @endif
-  <button id="save-wishlist">Save Wishlist</button>
+  <x-primary-button id="save-wishlist">Save Wishlist</x-primary-button>
 
   
- 
-</body>
-</html>
+                        </div>
+</class2>
+</x-app-layout>

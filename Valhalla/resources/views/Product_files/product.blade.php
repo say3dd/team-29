@@ -295,6 +295,64 @@
     </div>
 
     <script>
+
+
+
+        /*Code for the submit button - works by assaigning variables with the id
+ and making it so if the filter is active,
+add those selected and when filled and enter is pressed run the function */
+        var sortButton = document.getElementById("sort-button");
+        var sortContainer = document.getElementById("sorting-container");
+        var filterButton = document.getElementById("filter-button");
+        var filterContainer = document.getElementById("filter-container");
+
+        // Function to toggle filter container visibility
+        filterButton.onclick = function(e) {
+            e.stopPropagation();
+            // If sort container is active, hide it
+            if (sortContainer.classList.contains("sort--active")) {
+                sortContainer.classList.remove("sort--active");
+            }
+            filterContainer.classList.toggle("filters--active");
+        };
+
+        // Function to toggle sort container visibility
+        sortButton.onclick = function(e) {
+            e.stopPropagation();
+            if (filterContainer.classList.contains("filters--active")) {
+                filterContainer.classList.remove("filters--active");
+            }
+            sortContainer.classList.toggle("sort--active");
+        };
+
+        // Hide containers when clicking outside of the containers
+        window.onclick = function(e) {
+            if (!filterContainer.contains(e.target) && !filterButton.contains(e.target)) {
+                filterContainer.classList.remove("filters--active");
+            }
+            if (!sortContainer.contains(e.target) && !sortButton.contains(e.target)) {
+                sortContainer.classList.remove("sort--active");
+            }
+        };
+
+        // Reset filter selections
+        function resetFilters() {
+            var checkboxes = document.querySelectorAll("#filter-container input[type='checkbox']");
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = false;
+            });
+        }
+
+        // Reset sort selections
+        function resetSort() {
+            var radios = document.querySelectorAll("#sorting-container input[type='radio']");
+            radios.forEach(function(radio) {
+                radio.checked = false;
+            });
+        }
+
+        /* Where the area in products will go, and the functionality of the buttons to change pages **/
+
         // JavaScript functions to show/hide the modal
         function openMessageBox() {
             var modal = document.getElementById("myModal");

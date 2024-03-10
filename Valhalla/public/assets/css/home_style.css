@@ -277,7 +277,7 @@ img {
     font-weight: bolder;
     font-size: 1.2rem !important;
     margin-bottom: 1.2rem !important;
-  
+
 }
 
 .laptop-specs {
@@ -293,7 +293,7 @@ img {
     display: flex;
   gap: 1rem;
   justify-content: center;
-  
+
 }
 
 #best-seller-container p {
@@ -666,7 +666,7 @@ footer {
 
 
 @media (max-width: 1570px) {
-    
+
     /* Category Section */
     .monitor-btn {
         background-color:#5c04a0;
@@ -687,7 +687,7 @@ footer {
     }
 
 @media  (max-width: 1200px) {
-    
+
     #laptop-container {
         flex-wrap: wrap; /* Allow items to wrap to the next line */
         gap: 1rem;
@@ -729,7 +729,7 @@ footer {
         display: inline-block;
         padding: 1rem;
         font-style: bolder;
-        
+
       }
       .Category-1 img {
         width: 12rem;
@@ -746,7 +746,7 @@ footer {
         flex-wrap: nowrap; /* Allow items to wrap to the next line */
         gap: 0.5rem;
     }
-    
+
 
 
 
@@ -807,7 +807,7 @@ footer {
     font-weight: bolder;
     font-size: 1.2rem !important;
     margin-bottom: 1.2rem !important;
-  
+
 }
 
 .laptop-specs {
@@ -823,7 +823,7 @@ footer {
     display: flex;
   gap: 1rem;
   justify-content: center;
-  
+
 }
 
 #best-seller-container p {
@@ -872,13 +872,13 @@ footer {
         background-position: center;
         padding-top: 1px; /* Add a small padding to prevent margin collapse */
     }
-  
+
     #laptop-container {
         flex-wrap: wrap; /* Allow items to wrap to the next line */
         gap: 1rem;
     }
- 
-    
+
+
       .monitor-btn h1 {
         font-size: 1rem;
       }
@@ -943,14 +943,14 @@ footer {
         margin: 2rem 5%; /* Adjust margin for better spacing on mobile */
     }
 
-    
-    
+
+
     .brand-images img {
         width: 12rem; /* Adjust the width as needed */
         margin: 0; /* Remove the margin to prevent additional spacing */
         transition: transform 0.3s ease-in-out;
     }
-    
+
     .laptop {
         flex-basis: 70%; /* Set the flex basis to 100% for full width on mobile */
         margin: 20px 0; /* Adjust margin for better spacing */
@@ -1495,9 +1495,23 @@ margin-bottom: 2rem;
         transform: translateY(2px); /* Add a slight downward shift on click */
     }
 
+}
 
+.error {
+    color: red;
+}
 
+.error-border {
+    border: 2px solid red !important;
+}
 
+/*flashes error*/
+.flash-error {
+    padding: 20px;
+    background-color: rgb(235, 47, 47);
+    color: white;
+    margin: 20px 0px;
+    border-radius: 4px;
 }
 
 @media (max-width: 320px) {
