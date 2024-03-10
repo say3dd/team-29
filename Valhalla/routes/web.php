@@ -109,7 +109,7 @@ Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
 
-Route::get('/wishlist', [WishListController::class, 'index']);
+Route::get('/wishlist', [WishListController::class, 'index'])->name('FrontEnd.wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
 Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']
 );
