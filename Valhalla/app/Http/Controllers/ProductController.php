@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Basket;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller implements BasketInterface
 {
@@ -22,17 +23,32 @@ class ProductController extends Controller implements BasketInterface
      *functionalities work */
     protected function getCategoryPatterns($category)
     {
-        // Define your category specific patterns in a centralized method or configuration
+        // Define the specific patterns used in the database and forms regular expressions to obtain them correctly.
         return [
             'Laptop' => [
-                'gpus' => "/GPU: ([^,]+)/",
-                'cpus' => "/Processor: ([^\n,]+)/",
+                'gpus' => "/GPU: ([^,\n]+)/",
+                'cpus' => "/Processor: ([^,\n]+)/",
                 'rams' => "/RAM: (\d+\s*GB)/i"
-            ]
-
+            ],
+            'Mouse' => [
+                'dpis' =>  "/DPI:\s*(\d+)/",
+                'connectivity' => "/Connectivity:\s*([^\n,]+)/",
+                'Battery'=> "/Battery Life:\s*([^\n,]+)/"
+            ],
+          'Keyboard' =>[
+              'switch' =>  "/Switches:\s*([^\n,]+)/",
+              'connectivity' => "/Connectivity:\s*([^\n,]+)/",
+              'types' => "/Type:\s*([^\n,]+)/"
+          ],
+            'Monitor' => [
+              'screens' =>  "/Screen Size:\s*([^\n,]+)/",
+              'refresh' => "/Refresh rate:\s*([^\n,]+)/",
+               'times' => "/Response Time\s*:\s*([^\n,]+)/"
+          ]
           // ... other categories
         ];
     }
+    /** @Bilal MO - made the index code as well as all function linking to products ( categorypattern,patterns,brands etc) */
 
     public function index(Request $request)
     {
@@ -42,53 +58,64 @@ class ProductController extends Controller implements BasketInterface
         if ($category !== 'all') {
             $query->where('category', $category);
         }
+        // Get paginated products
+        $products = $query->paginate(12);
+
+        // Applying sorting
+        $this->sortLaptops($query, $request->input('sorting'));
+
+
+        // Get distinct brands found within database
+        $brands = $category !==  'all' ? Product::select('brand')->where('category', $category)->distinct()->orderBy('brand')
+            ->get():Product::select('brand')->distinct()->orderBy('brand')->get();
+
 
         $categoryPatterns = $this->getCategoryPatterns($category);
 
         $productDesc = Product::where('category',$category)->distinct()
             ->get()->pluck('product_description');
-        //dd($productDesc);
-        //
-        $filters = $this->extractFilters($productDesc,$categoryPatterns);
 
+        $patterns = $category !== 'all' ? $categoryPatterns[$category] : [];
 
+        $filters = $this->extractFilters($productDesc,$patterns);
         // Applying the filters
         $this->filterProducts($query,$request->input('brands', []),$filters);
 
-        // Applying sorting
-        $this->sortLaptops($query, $request->input('sorting'));
-
-        // Get paginated products
-        $products = $query->paginate(12);
-
-        // Get distinct brands found within database
-        $brands = Product::select('brand')->distinct()->orderBy('brand')->get();
 
         // Pass everything to be shown to the view
         return view('Product_files.products', compact('products','brands','filters','category'));
     }
-
+//@Bilal Mo
     protected function extractFilters($descriptions,$patterns)
     {
         $filters = [];
+      //  Log::debug('Descriptions:', $descriptions->toArray());
+/**  Due to possible string errors , an error must be used to check whether it is a string or not to handle it correctly*/
+       // foreach ($patterns as $category => $attributePatterns) {
+            foreach ($patterns as $attribute => $pattern) {
+                // Ensure pattern is a string and is a valid regular expression
+                if (!is_string($pattern) || false === @preg_match($pattern, null)) {
+                    // Log the problem for the person coding to review and correct the issue.
+                    Log::warning("Invalid pattern for attribute {$attribute}: " . print_r($pattern, true));
+                    continue; // Skip this pattern
+                }
 
-        foreach ($patterns as $attribute => $pattern) {
-            $filters[$attribute] = $descriptions
-                ->map(function ($desc) use ($pattern,$attribute) {
-                    preg_match_all($pattern, $desc, $matches);
-                    return $matches[1] ?? null;
-                })
-                ->flatten()
-                ->filter()
-                ->unique()
-                ->values()
-                ->toArray();
-        }
+                // Extract matches for each pattern
+                $matches = $descriptions->map(function ($desc) use ($pattern) {
+                    preg_match_all($pattern, $desc, $match);
+                    return $match[1] ?? null;
+                })->flatten()->filter()->unique()->values()->toArray();
+
+                if (!empty($matches)) {
+                    $filters[$attribute] = $matches;
+                }
+            }
+        //}
+        /**  Used these debugging to find what is produced from the filtering and patterns to check whether it got the data from the DB or not*/
+        Log::debug('Patterns used:', $patterns);
+        Log::debug('Filters extracted:', $filters);
         return $filters;
     }
-
-
-    /** @BilalMo Renders the page if available by only the Id */
 
 
     /** @Bilal Mo Assigning operations for the sorting functions */
@@ -111,15 +138,15 @@ class ProductController extends Controller implements BasketInterface
         if (!empty($checkedbrands)) {
             $query->whereIn('brand', $checkedbrands);
         }
-        foreach ($filters as $attribute => $checkedValues) {
-            if (!empty($checkedValues)) {
-                $query->where(function ($q) use ($checkedValues, $attribute) {
-                    foreach ($checkedValues as $value) {
-                        $q->orWhere('product_description', 'like', "%$attribute: $value%");
-                    }
-                });
+            foreach ($filters as $attribute => $checkedValues) {
+                if (!empty($checkedValues)) {
+                    $query->where(function ($q) use ($checkedValues, $attribute) {
+                        foreach ($checkedValues as $value) {
+                            $q->orWhere('product_description', 'like', "%$attribute: $value%");
+                        }
+                    });
+                }
             }
-        }
 
         return $query;
     }
@@ -252,6 +279,7 @@ public function addToBasket($id){
 
 
     // @say3dd (Mohammed Miah) Function to allow us to see related products on the individual product details page
+
 
 }
 
