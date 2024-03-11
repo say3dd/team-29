@@ -4,11 +4,6 @@
         body {
             font-family: 'Open Sans', sans-serif;
         }
-
-        .bg-indigo-950 {
-          width: 100%; 
-          height: 100vh; 
-        }
         .container {
           margin-top: 50px;
           margin-bottom: 50px;
