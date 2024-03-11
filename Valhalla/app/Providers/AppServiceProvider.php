@@ -10,6 +10,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Product;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -32,6 +33,18 @@ class AppServiceProvider extends ServiceProvider
     View::composer('*', function ($view) {
     $bestSellerLaptops = Product::whereIn('product_id', [3, 2, 10])->orderBy('product_id')->get();
     $view->with('bestSellerLaptops', $bestSellerLaptops);
-});
+
+    });
+        if ($this->app->environment() === 'local') {
+            // Enable query log
+            DB::listen(function ($query) {
+                // Log the query
+                \Log::info(
+                    $query->sql,
+                    $query->bindings,
+                    $query->time
+                );
+            });
+        }
     }
 }
