@@ -26,26 +26,29 @@ class ProductController extends Controller implements BasketInterface
         // Define the specific patterns used in the database and forms regular expressions to obtain them correctly.
         return [
             'Laptop' => [
-                'gpus' => "/GPU: ([^,\n]+)/",
-                'cpus' => "/Processor: ([^,\n]+)/",
-                'rams' => "/RAM: (\d+\s*GB)/i"
+                'GPUs' => "/GPU: ([^,\n]+)/",
+                'CPUs' => "/Processor: ([^,\n]+)/",
+                'RAM' => "/RAM: (\d+\s*GB)/i"
             ],
             'Mouse' => [
-                'dpis' =>  "/DPI:\s*(\d+)/",
-                'connectivity' => "/Connectivity:\s*([^\n,]+)/",
-                'Battery'=> "/Battery Life:\s*([^\n,]+)/"
+                'DPI' =>  "/DPI:\s*(\d+)/",
+                'Connectivity' => "/Connectivity:\s*([^\n,]+)/",
+                'Battery Life'=> "/Battery Life:\s*([^\n,]+)/"
             ],
           'Keyboard' =>[
-              'switch' =>  "/Switches:\s*([^\n,]+)/",
+              'Type of switches' =>  "/Switches:\s*([^\n,]+)/",
               'connectivity' => "/Connectivity:\s*([^\n,]+)/",
-              'types' => "/Type:\s*([^\n,]+)/"
+              'type of Keyboard' => "/Type:\s*([^\n,]+)/"
           ],
             'Monitor' => [
-              'screens' =>  "/Screen Size:\s*([^\n,]+)/",
-              'refresh' => "/Refresh rate:\s*([^\n,]+)/",
-               'times' => "/Response Time\s*:\s*([^\n,]+)/"
-          ]
-          // ... other categories
+              'Screen Size' =>  "/Screen Size:\s*([^\n,]+)/",
+              'Refresh rate' => "/Refresh rate:\s*([^\n,]+)/",
+               'Response Time' => "/Response Time\s*:\s*([^\n,]+)/"
+          ],
+            'Headset' => [
+                'Connectivity' => "/Connectivity:\s*([^,\n]+)/",
+                'Colour' => "/Colour:\s*([^,\n]+)/"
+                ]
         ];
     }
     /** @Bilal MO - made the index code as well as all function linking to products ( categorypattern,patterns,brands etc) */
@@ -103,6 +106,7 @@ class ProductController extends Controller implements BasketInterface
                 if (!empty($matches)) {
                     $filters[$attribute] = $matches;
                 }
+                Log::debug("Attribute: $attribute, Pattern: $pattern, Matches: " . print_r($matches, true));
             }
         //}
         /**  Used these debugging to find what is produced from the filtering and patterns to check whether it got the data from the DB or not*/
@@ -135,15 +139,15 @@ class ProductController extends Controller implements BasketInterface
         if (!empty($checkedbrands)) {
             $query->whereIn('brand', $checkedbrands);
         }
-        foreach ($filters as $attribute => $values) {
-            if (!empty($values)) {
-                $query->where(function ($q) use ($values, $attribute) {
-                    foreach ($values as $value) {
-                        $q->orWhere('product_description', 'like', "%$attribute: $value%");
-                    }
-                });
-            }
-        }
+//        foreach ($filters as $attribute => $values) {
+//            if (!empty($values)) {
+//                $query->where(function ($q) use ($values, $attribute) {
+//                    foreach ($values as $value) {
+//                        $q->orWhere('product_description', 'like', "%$attribute: $value%");
+//                    }
+//                });
+//            }
+//        }
 //        $query->where(function ($q) use ($filters) {
 //            foreach ($filters as $attribute => $values) {
 //                if (!empty($values)) {

@@ -35,16 +35,16 @@ class AppServiceProvider extends ServiceProvider
     $view->with('bestSellerLaptops', $bestSellerLaptops);
 
     });
-        if ($this->app->environment() === 'local') {
-            // Enable query log
-            DB::listen(function ($query) {
-                // Log the query
-                \Log::info(
-                    $query->sql,
-                    $query->bindings,
-                    $query->time
-                );
-            });
-        }
+//        if ($this->app->environment() === 'local') {
+//            // Enable query log
+//            DB::listen(function ($query) {
+//                // Log the query
+//                \Log::info(
+//                    $query->sql,
+//                    $query->bindings,
+//                    $query->time
+//                );
+//            });
+//        }
     }
 }

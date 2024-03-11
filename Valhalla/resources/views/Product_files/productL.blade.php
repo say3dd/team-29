@@ -36,16 +36,43 @@
 </header>
 <body>
 <h1>
+
     <div class="title_shape">
-        <img class="title_image" style="" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}">
-        <p class="laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">
-            GAMING LAPTOPS
-        </p>
+        <!--@BilalMo did this ;) -->
+        @php
+          $categoryImage = match ($category) {
+              //Here add the pictures you want on the top of the product pages
+              'Laptop' => asset('assets/images_product/gaming_laptops.jpg'),
+              'Mouse' => asset('assets/images_product/gaming_laptops.jpg'),
+              'Keyboard' => asset('assets/images_product/gaming_laptops.jpg'),
+              'Monitor' => asset('assets/images_product/gaming_laptops.jpg'),
+              'Headset' => asset('assets/images_product/gaming_laptops.jpg'),
+              default => asset('assets/images_product/gaming_laptops.jpg'),
+          };
+
+          $categoryTitle = match ($category) {
+            'Laptop' => "Our Gaming Laptops",
+            'Mouse' => "Our Mice",
+            'Keyboard' => "Our Keyboards",
+            'Monitor' => "Our Monitors",
+            'Headset' => "Our Headsets",
+            default => "All Products",
+        };
+
+          $categoryText = match ($category) {
+              'Laptop' => "The most portable and powerful laptops for gamers, creators, and professionals",
+              'Mouse' => "Discover our latest mouse collection for gaming and productivity",
+              'Keyboard' => "Explore our wide range of mechanical and gaming keyboards",
+              'Monitor' => "Experience stunning visuals with our high-resolution monitors",
+              "Headset" => "Immerse yourself in rich audio with our premium gaming headsets",
+              default => "Browse our products from various categories",
+          };
+        @endphp
+        <img class="title_image" style="" src=" {{$categoryImage}}">
+        <p class="laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">{{$categoryTitle}} </p>
         <p class="title_content" style="position: absolute; top: 43%; color: white; text-align: left; left: 5%; ">
-            The most portable and powerful laptops for gamers,<br>
-            creators, and professionals
+        {{ $categoryText }}
         </p>
-    </div>
     </div>
 
 </h1>
@@ -73,7 +100,7 @@
                 <img class="image_filter" src="{{asset('assets/images_product/filter.png')}}" alt="">
             </button>
         </section>
-        <!-- This is the code for the filter of products , linked to the database one is for the brands other is for graphics-->
+        <!-- @Bilal MO This is the code for the filter of products , linked to the database one is for the brand and the filter features from the product desc string -->
         <div id="filter-container" class="filters">
             <div class="scroller">
                 <ul class="filters__list">

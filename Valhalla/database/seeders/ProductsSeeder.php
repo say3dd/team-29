@@ -294,7 +294,7 @@ class ProductsSeeder extends Seeder
             [
                 'brand' => 'Razer',
                 'product_name' => 'Razer Huntsman Elite',
-                'product_description' => 'Name: Razer Huntsman Elite, Switches: Blue, Connectivity: Wired, Keyboard type: Mechanical',
+                'product_description' => 'Name: Razer Huntsman Elite, Switches: Blue, Connectivity: Wireless, Keyboard type: Mechanical',
                 'category' => 'Keyboard',
                 'price' => 199.99,
                 'images' => 'assets/keyboard_images/Razer Huntsman Elite/razer_huntsman_elite.jpg',
@@ -330,7 +330,47 @@ class ProductsSeeder extends Seeder
                 'images' => 'assets/monitor_images/Dell UltraSharp UP3218K/dell_ultrasharp_up3218k.jpg',
                 'stock' => 10,
                 'created_at' => now(),
-            ]
+            ],
+            [
+                'brand' => 'Dell',
+                'product_name' => 'Dell UltraSharp UP3218K',
+                'product_description' => 'Name: Dell UltraSharp UP3218K, Screen Size: 32", Refresh rate: 60Hz, Response Time: 8ms',
+                'category' => 'Monitor',
+                'price' => 399.99,
+                'images' => 'assets/monitor_images/Dell UltraSharp UP3218K/dell_ultrasharp_up3218k.jpg',
+                'stock' => 10,
+                'created_at' => now(),
+            ],
+            [
+                'brand' => 'Dell',
+                'product_name' => 'Dell Headset2',
+                'product_description' => 'Name: Dell Headset1, Connectivity : Wired, Colour : Black',
+                'category' => 'Headset',
+                'price' => 199.99,
+                'images' => 'assets/monitor_images/Dell UltraSharp UP3218K/dell_ultrasharp_up3218k.jpg',
+                'stock' => 10,
+                'created_at' => now(),
+            ],
+            [
+                'brand' => 'Razer',
+                'product_name' => 'Dell Headset2',
+                'product_description' => 'Name: Razer Headset2,  Connectivity : Wired, Colour : White',
+                'category' => 'Headset',
+                'price' => 10.99,
+                'images' => 'assets/monitor_images/Dell UltraSharp UP3218K/dell_ultrasharp_up3218k.jpg',
+                'stock' => 10,
+                'created_at' => now(),
+            ],
+            [
+                'brand' => 'Sony',
+                'product_name' => 'Sony XM4s',
+                'product_description' => 'Name: Sony Headset1,  Connectivity : Wireless, Colour : Grey',
+                'category' => 'Headset',
+                'price' => 249.99,
+                'images' => 'assets/monitor_images/Dell UltraSharp UP3218K/dell_ultrasharp_up3218k.jpg',
+                'stock' => 10,
+                'created_at' => now(),
+            ],
 
         ]);
 
