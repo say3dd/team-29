@@ -81,7 +81,7 @@
             </a>
         </div>
         <div class="categories_all">
-            <a>
+            <a href="{{ route('products.index' ,['category' => 'Headset']) }}">
                 <img class="image_categories_laptop" src="{{asset('assets/images_categories/headset.jpg')}}"
                     style="width:100%">
                 <div class="category_text"> Headsets</div>
