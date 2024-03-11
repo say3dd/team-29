@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="commented out search function for now">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_03_2024_02_31__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_03_2024_02_31__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_03_2024_02_31__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_03_2024_02_31__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_03_2024_02_57__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_03_2024_02_57__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_03_2024_15_51__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_03_2024_15_51__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2024_02_58__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2024_02_58__Changes_.xml" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="about has been moved HomeController">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/team-29.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team-29.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/config/filesystems.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -381,6 +381,14 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -577,7 +585,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709866069033</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="some new routes has been added">
+      <option name="closed" value="true" />
+      <created>1710184531955</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1710184531955</updated>
+    </task>
+    <task id="LOCAL-00018" summary="about has been moved HomeController">
+      <option name="closed" value="true" />
+      <created>1710184648867</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1710184648867</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,6 +648,8 @@
     <MESSAGE value="Added the new Pagination for the products page , fixed the product Error" />
     <MESSAGE value="cart.blade.php refactored to basket.blade.php. &#10;Added new codes to the basket.blade.php. Basket implement nearly complete. &#10;&#10;New routes has been added to the web.php. Some redundant code has been removed" />
     <MESSAGE value="commented out search function for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="commented out search function for now" />
+    <MESSAGE value="some new routes has been added" />
+    <MESSAGE value="about has been moved HomeController" />
+    <option name="LAST_COMMIT_MESSAGE" value="about has been moved HomeController" />
   </component>
 </project>
