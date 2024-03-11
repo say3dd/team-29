@@ -247,11 +247,9 @@
                 <img class="related_product_image" src="{{asset('assets/laptop_images/MSI Titan GT77 HX 13V/msi_Titan_GT77_HX_13V.jpg')}} ">
                 <button class="related_product_content">MSI Titan GT77 HX 13V</button>
                 <div class ="related_products_spec">
-                    <ul>
-                        <li> - 13th Gen Intel® Core™ i9-13980HX Processor </li>
-                        <li> - GeForce RTX™ 4090 </li>
-                        <li> - 128GB RAM </li>
-                    </ul>
+                        <div> - 13th Gen Intel® Core™ i9-13980HX Processor </div>
+                        <div> - GeForce RTX™ 4090 </div>
+                        <div> - 128GB RAM </div>
                 </div>
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>
@@ -259,11 +257,9 @@
                 <img class="related_product_image" src="{{asset('assets/laptop_images/Alienware M16/alienware_m16.jpg')}}">
                 <button class="related_product_content">Alienware m16</button>
                 <div class ="related_products_spec">
-                    <ul>
-                        <li> - 13th Gen Intel® Core™ i7-13700HX Processor</li>
-                        <li> - GeForce RTX™ 4070</li>
-                        <li> - 32GB RAM</li>
-                    </ul>
+                        <div> - 13th Gen Intel® Core™ i7-13700HX Processor</div>
+                        <div> - GeForce RTX™ 4070</div>
+                        <div> - 32GB RAM</div>
                 </div>
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>
@@ -271,11 +267,9 @@
                 <img class="related_product_image" src="{{asset('assets/laptop_images/Asus ROG Strix G16 G614/asus_ROG_Strix_G16_G614.jpg')}}">
                 <button class="related_product_content">Asus ROG Strix G16 G614</button>
                 <div class ="related_products_spec">
-                    <ul>
-                        <li> - 13th Gen Intel® Core™ i9-13980HX Processor</li>
-                        <li> - GeForce RTX™ 4090</li>
-                        <li> - 128GB RAM</li>
-                    </ul>
+                        <div> - 13th Gen Intel® Core™ i9-13980HX Processor</div>
+                        <div> - GeForce RTX™ 4090</div>
+                        <div> - 128GB RAM</div>
                 </div>
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>
@@ -283,11 +277,9 @@
                 <img class="related_product_image" src="{{asset('assets/laptop_images/Alienware M18/alienware-m18.jpg ')}}">
                 <button class="related_product_content">Alienware m18</button>
                 <div class ="related_products_spec">
-                    <ul>
-                        <li> - 13th Gen Intel® Core™ i7-13700HX Processor</li>
-                        <li> - GeForce RTX™ 4080</li>
-                        <li> - 32GB RAM</li>
-                    </ul>
+                        <div> - 13th Gen Intel® Core™ i7-13700HX Processor</div>
+                        <div> - GeForce RTX™ 4080</div>
+                        <div> - 32GB RAM</div>
                 </div>
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>

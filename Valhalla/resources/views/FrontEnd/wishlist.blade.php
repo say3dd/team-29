@@ -113,10 +113,31 @@ $(document).ready(function() {
       <div id="product_{{ $product->product_id }}" class="ui-state-default">
         <img src="{{ asset($product->images) }}" alt="{{ $product->product_name }}" style="max-width: 100px; max-height: 100px;">
         {{ $product->product_name }}
+        <form method="POST" action="{{ route('wishlist.remove', $product->product_id) }}">
+          @csrf
+          @method('DELETE')
+          <button type="submit">Remove from Wishlist</button>
+      </form>
+
+      <a href="{{route('add_to_basket', $product->product_id)}}">
+        <button type="button" role="button" class="buy-product">
+         Add to Basket
+        </button>
+         </a>
       </div>
+
+
     @endforeach
+<<<<<<< HEAD
     @endif
   <x-primary-button class="border-white" id="save-wishlist">Save Wishlist</x-primary-button>
+=======
+  </div>
+  @endif
+  <x-primary-button id="save-wishlist">Save Wishlist</x-primary-button>
+
+  
+>>>>>>> 88a886773e4652e53617d4c77a6940ff5ee3103d
                         </div>
                       </div>
                     </div>

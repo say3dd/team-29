@@ -46,6 +46,7 @@
         @endisset
 
     </div>
+    <div class = "price_button_container" >
     <div class="price" style=" font-weight: bold; margin-bottom: 0px; text-decoration: underline;
     text-decoration:underline; text-decoration-color:aquamarine ">Price: £{{ $product->price }}</div>
     <br>
@@ -56,7 +57,7 @@
         <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
         <button class="button_cart_laptop"> Add to Basket </button>
     </form>
-
+</div>
 </div>
 @empty
     <h1 class="text-2xl" >No products available at the moment.</h1>

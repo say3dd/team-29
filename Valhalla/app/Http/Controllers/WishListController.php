@@ -27,6 +27,7 @@ class WishListController extends Controller
 
     public function add(Request $request)
     {
+        try {
         $user_id = auth()->id();
         $product_id = $request->input('product_id');
 
@@ -36,6 +37,11 @@ class WishListController extends Controller
             'product_id' => $product_id,
             'position' => $position,
         ]);
+    } catch (QueryException $e) {
+        return back()->with('error', 'Failed to add product to wishlist.');
+    }
+
+
         return back();
     }
     public function saveOrder(Request $request)
@@ -43,7 +49,7 @@ class WishListController extends Controller
         $order = json_decode($request->input('order'));
     
         foreach ($order as $position => $productId) {
-            // Remove the 'product_' prefix from the product ID
+            // Remove the 'product_' from the product ID
             $productId = str_replace('product_', '', $productId);
     
             $wishlistItem = DB::table('wishlists')->where('product_id', $productId)->first();
@@ -57,6 +63,27 @@ class WishListController extends Controller
         }
     
         return response()->json(['status' => 'success']);
+    }
+
+    public function remove($productId)
+    {
+        try {
+            // Get the currently authenticated user
+            $user = auth()->user();
+            // Find the wishlist item by product ID and user ID
+            $item = Wishlists::where('product_id', $productId)
+                            ->where('user_id', $user->id)
+                            ->first();
+            // If item exists, delete
+            if ($item) {
+                $item->delete();
+                return back()->with('success', 'Item removed from wishlist.');
+            }
+            return back()->with('error', 'Item not found in wishlist.');
+        } catch (Exception $e) {    
+            // Redirect back with an error message
+            return back()->with('error', 'Failed to remove item from wishlist.');
+        }
     }
 
 }
