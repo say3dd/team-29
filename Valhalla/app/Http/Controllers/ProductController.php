@@ -60,8 +60,7 @@ class ProductController extends Controller implements BasketInterface
             $query->where('category', $category);
         }
         $categoryPatterns = $this->getCategoryPatterns($category);
-        $productDesc = Product::where('category',$category)->distinct()
-            ->get()->pluck('product_description');
+        $productDesc = Product::where('category',$category)->distinct()->get()->pluck('product_description');
         $patterns = $category !== 'all' ? $categoryPatterns[$category] : [];
        // filter part
         $filters = $this->extractFilters($productDesc,$patterns);
@@ -127,6 +126,8 @@ class ProductController extends Controller implements BasketInterface
      *pressed or not*/
     protected function filterProducts($query,$checkedbrands,$filters)
     {
+        $query->distinct();
+
         /**Assigning operations for if there are no filters chosen or
          * if both filters are chosen - here both selected in the request */
         // \Log::debug('Query before filters:', [$query->toSql(), $query->getBindings()]);
@@ -138,14 +139,26 @@ class ProductController extends Controller implements BasketInterface
             if (!empty($values)) {
                 $query->where(function ($q) use ($values, $attribute) {
                     foreach ($values as $value) {
-                        // Modify the pattern to ensure it correctly matches the structured descriptions
-                        // Note: Adjust the pattern based on your exact formatting if necessary
-                        $pattern = "%{$attribute}: {$value}%";
-                        $q->orWhere('product_description', 'LIKE', $pattern);
+                        $q->orWhere('product_description', 'like', "%$attribute: $value%");
                     }
                 });
             }
         }
+//        $query->where(function ($q) use ($filters) {
+//            foreach ($filters as $attribute => $values) {
+//                if (!empty($values)) {
+//                    $q->orWhere(function ($subq) use ($values, $attribute) {
+//                        foreach ($values as $value) {
+//                            // Modify the pattern to ensure it correctly matches the structured descriptions
+//                            // Note: Adjust the pattern based on your exact formatting if necessary
+//                            $pattern = "%{$attribute}: {$value}%";
+//                            $subq->orWhere('product_description', 'LIKE', $pattern);
+//                        }
+//                    });
+//                }
+//            }
+//        });
+        //this is just a log to check the debug issue when getting Data for DB
         \Log::debug('Final Query:', [$query->toSql(), $query->getBindings()]);
         return $query;
     }
