@@ -21,6 +21,7 @@ use App\Http\Controllers\Product\TrackingController;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Product\ReturnRequestSubmitController;
+use App\Http\Middleware\CheckCartNotEmpty;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,7 +60,7 @@ if anybody could let me (Francis) know of a better way to do this, I'd gladly ap
 //New Basket code
 Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
 //Route::get('/basket', [ProductController::class,'contents'])->name('basket');
-Route::get('basket', [ProductController::class,'basket'])->name('basket');
+Route::get('basket', [ProductController::class,'basket'])->middleware(CheckCartNotEmpty::class)->name('basket');
 Route::patch('update-basket', [ProductController::class, 'updateBasket'])->name('update_basket');
 Route::delete('remove-from-basket', [ProductController::class,'removeFromBasket'])->name('remove_from_basket');
 
