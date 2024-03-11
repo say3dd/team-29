@@ -50,7 +50,4 @@ class HomeController extends Controller implements BasketInterface
         return view('FrontEnd.home', ['products' => $products]);
     }
 
-
-
-
 }

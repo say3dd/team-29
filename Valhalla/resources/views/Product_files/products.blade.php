@@ -5,7 +5,9 @@
 @section('productP')
 <!--@noramknarf (Francis Moran) - added functionality to "add to basket" buttons (see ProductController->getInfo()) -->
 <!--@say3dd (Mohammed Miah) - Displayed the products from the database -->
-@foreach($products as $product)
+
+{{-- modified to give some error message if there is no product to show --}}
+@forelse($products as $product)
 <div class="laptop_all">
     <img class="image_all_laptop" src="{{ asset($product->images) }}" style="transition: 0.3s ease">
     <div class="laptop_all_text">
@@ -31,17 +33,20 @@
         }
         @endphp
         {{--If the details array contains the same string as 'whats needed to be found', then its displays it using <p></p>--}}
-        @if(isset($details['Processor']))
-            <p> {{ $details['Processor'] }}</p>
-        @endif
-        @if(isset($details['GPU']))
-            <p> {{ $details['GPU'] }}</p>
-        @endif
-    
-    @if(isset($details['RAM']))
-        <p>{{ $details['RAM'] }}</p>
-    @endif
+        @isset($details['Processor'])
+            <p>Processor: {{ $details['Processor'] }}</p>
+        @endisset
+
+        @isset($details['GPU'])
+            <p>GPU: {{ $details['GPU'] }}</p>
+        @endisset
+
+        @isset($details['RAM'])
+            <p>RAM: {{ $details['RAM'] }}</p>
+        @endisset
+
     </div>
+    <div class = "price_button_container" >
     <div class="price" style=" font-weight: bold; margin-bottom: 0px; text-decoration: underline;
     text-decoration:underline; text-decoration-color:aquamarine ">Price: £{{ $product->price }}</div>
     <br>
@@ -52,7 +57,10 @@
         <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
         <button class="button_cart_laptop"> Add to Basket </button>
     </form>
-
 </div>
-@endforeach
+</div>
+@empty
+    <h1 class="text-2xl" >No products available at the moment.</h1>
+@endforelse
+
 @endsection

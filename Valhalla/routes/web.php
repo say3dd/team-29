@@ -12,14 +12,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BasketController;
-use App\Http\Controllers\Product\ReturnController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\Product\TrackingController;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Product\ReturnController;
+use App\Http\Controllers\Basket\CheckoutController;
+use App\Http\Controllers\Product\TrackingController;
 use App\Http\Controllers\Product\ReturnRequestSubmitController;
 use App\Http\Middleware\CheckCartNotEmpty;
 
@@ -79,6 +79,7 @@ Route::get('/test1', function () {
     // @say3dd (Mohammed Miah) - Routing for the different product functionalities
 
 
+//Route::resource()
 
 
 
@@ -113,8 +114,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
-//    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
-//    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
+   Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
     Route::get('/checkout/thankyou', function(){
         return view('checkout.thankyou');
     })->name('thank-you');
@@ -126,16 +127,15 @@ Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name
 
 Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'submit'])->name('return.request.submit');
 
-// Categories page -- change this soon
 Route::get('/categories', function () {
-    return view('FrontEnd.categories');
-})->name('categories');
+    return view('FrontEnd.categories');})->name('categories');
 Route::get('/search', [ProductController::class, 'search']) ->name('categories.search');
 
-Route::get('/wishlist', [WishListController::class, 'index']);
+Route::get('/wishlist', [WishListController::class, 'index'])->name('FrontEnd.wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
-Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']
-);
+Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
+Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
+
 
 
 //********************************NO code beyond this line!*********************************************************************

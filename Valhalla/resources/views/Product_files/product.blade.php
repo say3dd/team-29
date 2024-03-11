@@ -247,11 +247,9 @@
                 <img class="related_product_image" src="{{asset('assets/laptop_images/MSI Titan GT77 HX 13V/msi_Titan_GT77_HX_13V.jpg')}} ">
                 <button class="related_product_content">MSI Titan GT77 HX 13V</button>
                 <div class ="related_products_spec">
-                    <ul>
-                        <li> - 13th Gen Intel® Core™ i9-13980HX Processor </li>
-                        <li> - GeForce RTX™ 4090 </li>
-                        <li> - 128GB RAM </li>
-                    </ul>
+                        <div> - 13th Gen Intel® Core™ i9-13980HX Processor </div>
+                        <div> - GeForce RTX™ 4090 </div>
+                        <div> - 128GB RAM </div>
                 </div>
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>
@@ -259,11 +257,9 @@
                 <img class="related_product_image" src="{{asset('assets/laptop_images/Alienware M16/alienware_m16.jpg')}}">
                 <button class="related_product_content">Alienware m16</button>
                 <div class ="related_products_spec">
-                    <ul>
-                        <li> - 13th Gen Intel® Core™ i7-13700HX Processor</li>
-                        <li> - GeForce RTX™ 4070</li>
-                        <li> - 32GB RAM</li>
-                    </ul>
+                        <div> - 13th Gen Intel® Core™ i7-13700HX Processor</div>
+                        <div> - GeForce RTX™ 4070</div>
+                        <div> - 32GB RAM</div>
                 </div>
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>
@@ -271,11 +267,9 @@
                 <img class="related_product_image" src="{{asset('assets/laptop_images/Asus ROG Strix G16 G614/asus_ROG_Strix_G16_G614.jpg')}}">
                 <button class="related_product_content">Asus ROG Strix G16 G614</button>
                 <div class ="related_products_spec">
-                    <ul>
-                        <li> - 13th Gen Intel® Core™ i9-13980HX Processor</li>
-                        <li> - GeForce RTX™ 4090</li>
-                        <li> - 128GB RAM</li>
-                    </ul>
+                        <div> - 13th Gen Intel® Core™ i9-13980HX Processor</div>
+                        <div> - GeForce RTX™ 4090</div>
+                        <div> - 128GB RAM</div>
                 </div>
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>
@@ -283,11 +277,9 @@
                 <img class="related_product_image" src="{{asset('assets/laptop_images/Alienware M18/alienware-m18.jpg ')}}">
                 <button class="related_product_content">Alienware m18</button>
                 <div class ="related_products_spec">
-                    <ul>
-                        <li> - 13th Gen Intel® Core™ i7-13700HX Processor</li>
-                        <li> - GeForce RTX™ 4080</li>
-                        <li> - 32GB RAM</li>
-                    </ul>
+                        <div> - 13th Gen Intel® Core™ i7-13700HX Processor</div>
+                        <div> - GeForce RTX™ 4080</div>
+                        <div> - 32GB RAM</div>
                 </div>
                 <button class="button_cart_laptop"> Add to Basket </button>
             </div>
@@ -295,6 +287,64 @@
     </div>
 
     <script>
+
+
+
+        /*Code for the submit button - works by assaigning variables with the id
+ and making it so if the filter is active,
+add those selected and when filled and enter is pressed run the function */
+        var sortButton = document.getElementById("sort-button");
+        var sortContainer = document.getElementById("sorting-container");
+        var filterButton = document.getElementById("filter-button");
+        var filterContainer = document.getElementById("filter-container");
+
+        // Function to toggle filter container visibility
+        filterButton.onclick = function(e) {
+            e.stopPropagation();
+            // If sort container is active, hide it
+            if (sortContainer.classList.contains("sort--active")) {
+                sortContainer.classList.remove("sort--active");
+            }
+            filterContainer.classList.toggle("filters--active");
+        };
+
+        // Function to toggle sort container visibility
+        sortButton.onclick = function(e) {
+            e.stopPropagation();
+            if (filterContainer.classList.contains("filters--active")) {
+                filterContainer.classList.remove("filters--active");
+            }
+            sortContainer.classList.toggle("sort--active");
+        };
+
+        // Hide containers when clicking outside of the containers
+        window.onclick = function(e) {
+            if (!filterContainer.contains(e.target) && !filterButton.contains(e.target)) {
+                filterContainer.classList.remove("filters--active");
+            }
+            if (!sortContainer.contains(e.target) && !sortButton.contains(e.target)) {
+                sortContainer.classList.remove("sort--active");
+            }
+        };
+
+        // Reset filter selections
+        function resetFilters() {
+            var checkboxes = document.querySelectorAll("#filter-container input[type='checkbox']");
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = false;
+            });
+        }
+
+        // Reset sort selections
+        function resetSort() {
+            var radios = document.querySelectorAll("#sorting-container input[type='radio']");
+            radios.forEach(function(radio) {
+                radio.checked = false;
+            });
+        }
+
+        /* Where the area in products will go, and the functionality of the buttons to change pages **/
+
         // JavaScript functions to show/hide the modal
         function openMessageBox() {
             var modal = document.getElementById("myModal");
