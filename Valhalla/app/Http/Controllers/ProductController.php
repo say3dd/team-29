@@ -52,37 +52,32 @@ class ProductController extends Controller implements BasketInterface
 
     public function index(Request $request)
     {
+        \Log::info('Request data:', $request->all());
         $category= $request->input('category','all');
         $query = Product::query();
 
         if ($category !== 'all') {
             $query->where('category', $category);
         }
-        // Get paginated products
-        $products = $query->paginate(12);
-
-        // Applying sorting
-        $this->sortLaptops($query, $request->input('sorting'));
-
-
-        // Get distinct brands found within database
-        $brands = $category !==  'all' ? Product::select('brand')->where('category', $category)->distinct()->orderBy('brand')
-            ->get():Product::select('brand')->distinct()->orderBy('brand')->get();
-
-
         $categoryPatterns = $this->getCategoryPatterns($category);
-
         $productDesc = Product::where('category',$category)->distinct()
             ->get()->pluck('product_description');
-
+        $products = $query->paginate(12);
         $patterns = $category !== 'all' ? $categoryPatterns[$category] : [];
-
+        //filter part
         $filters = $this->extractFilters($productDesc,$patterns);
         // Applying the filters
         $this->filterProducts($query,$request->input('brands', []),$filters);
 
+        // Applying sorting
+        $this->sortLaptops($query, $request->input('sorting'));
+        // this paginates the page to 12 products
 
+        // Get distinct brands found within database
+        $brands = $category !==  'all' ? Product::select('brand')->where('category', $category)->distinct()->orderBy('brand')
+            ->get():Product::select('brand')->distinct()->orderBy('brand')->get();
         // Pass everything to be shown to the view
+
         return view('Product_files.products', compact('products','brands','filters','category'));
     }
 //@Bilal Mo
@@ -134,17 +129,18 @@ class ProductController extends Controller implements BasketInterface
     {
         /**Assigning operations for if there are no filters chosen or
          * if both filters are chosen - here both selected in the request */
+       // \Log::debug('Query before filters:', [$query->toSql(), $query->getBindings()]);
 
         if (!empty($checkedbrands)) {
             $query->whereIn('brand', $checkedbrands);
         }
-            foreach ($filters as $attribute => $checkedValues) {
-                if (!empty($checkedValues)) {
-                    $query->where(function ($q) use ($checkedValues, $attribute) {
-                        foreach ($checkedValues as $value) {
-                            $q->orWhere('product_description', 'like', "%$attribute: $value%");
-                        }
-                    });
+        foreach ($filters as $attribute => $values) {
+            if (!empty($values)) {
+                //$query->where(function ($q) use ($values, $attribute) {
+                    foreach ($values as $value) {
+                        // Adjust the query to match the attribute and value correctly
+                        $query->orWhere('product_description', 'like', "%$attribute: $value%");
+                    }
                 }
             }
 
