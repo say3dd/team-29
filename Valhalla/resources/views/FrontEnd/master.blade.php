@@ -41,12 +41,11 @@
                     Unleash the power, speed, and precision you need for an unparalleled gaming experience.
                     Explore our curated selection and elevate your gaming journey to new heights.
                 </p>
-                </p>
                 <a href="{{route('categories')}}" class="view-laptops-btn">View Products</a>
             </div>
         </div>
 
-
+        @includeWhen($errors->any(), '_errors')
     @if(session('success'))
         <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
             {{session('success')}}
@@ -66,6 +65,8 @@
 
 </header>
 </section>
+
+
 
 <!-- Best seller prodcuts-->
 <section class= "main">
@@ -162,18 +163,14 @@
 
     <!-- Our Product Section-->
     <section class= "main">
-
-
-
-
-
         <section id="best-seller-section">
             <div class="big-card">
                 <h1 class="title-products">Best Sellers</h1>
                 <div class="title-line-products"></div> <!-- Add this line -->
                 <div id="laptop-container">
                     <!-- @say3dd - Code for displaying "Our Laptops" section -->
-                    @foreach ($products as $product)
+{{--                   modified the loop to use forlese instead of foreach, it will give you message if there are no products avaiable --}}
+                    @forelse ($products as $product)
                         <div class="laptop">
                             <div>
                                 <img src="{{ asset($product->images) }}" alt="{{ $product->product_name }}">
@@ -186,18 +183,16 @@
                                 <h3> £{{ $product->price }}</h3>
 
 
-                                <!-- @KraeBM (productMohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
-                                <script>
-                                    function saveScrollPosition(form) {
-                                        var scrollY = window.scrollY || document.documentElement.scrollTop;
-                                        form.scrollPosition.value = scrollY;
-                                    }
-                                </script>
                                 <div class = "button-container">
                                  <form action="{{ route('product.getInfo') }}" method="post" onsubmit="saveScrollPosition(this)">
                                     @csrf
-                                    <input type="hidden" name="laptopData" value={{$product->product_id}}>
-                                    <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
+                                    <input class="@error('productData')" error-border @enderror" type="hidden" name="productData" value={{$product->product_id}}>
+                                    <input type="hidden" name="scrollPosition" id="scrollPosition">
+{{--                                    @error('productData')--}}
+{{--                                     <div class="error">--}}
+{{--                                         {{ $message }}--}}
+{{--                                     </div>--}}
+{{--                                     @enderror--}}
 
                                      <a href="{{route('add_to_basket', $product->product_id)}}">
                                     <button type="button" role="button" class="buy-product">
@@ -209,13 +204,20 @@
                                 </form>
                                 <form method="POST" action="{{ route('wishlist.add') }}">
                                     @csrf
-                                    <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+                                    <input class="@error('product_id') error-border @enderror" type="hidden" name="product_id" value="{{ $product->product_id }}">
                                     <button class="add-wishlist" type="submit"> <a href="{{url('contactUs')}}" class="add-btn"><i class='bx bxs-heart'></i> </a></button>
+{{--                                    @error('product_id')--}}
+{{--                                    <div class="error">--}}
+{{--                                        {{ $message }}--}}
+{{--                                    </div>--}}
+{{--                                    @enderror--}}
                                 </form>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @empty
+                        <h2 class="text-lg">There are no products available yet.</h2>
+                    @endforelse
                 </div>
             </div>
         </section>
@@ -224,11 +226,20 @@
         </footer>
     </section>
 </section>
+
+
     <!-- @KraeBM (Bilal Mohamed)  Improves the position where the user last pressed the "add to basket":
         button so no need to wait for page to load before moving to original position
     It also makes sure when a user presses the home button/product button, it takes you to the top and not hwere the previous saved position is - this would be frustrating
 to constantly scroll up after pressing the navbar buttons -->
+<!-- @KraeBM (productMohamed) Saves the users scroll position - if pages refreshed it goes back to it  -->
     <script>
+
+        function saveScrollPosition(form) {
+            var scrollY = window.scrollY || document.documentElement.scrollTop;
+            form.scrollPosition.value = scrollY;
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             @if(session('restoreScroll'))
             var savedScrollPosition = {{ session('scrollPosition', '0') }};

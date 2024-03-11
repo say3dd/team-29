@@ -509,11 +509,14 @@ hr {
     background-color: transparent;
     border-color: transparent;
     color: white;
+    text-decoration: underline;
+    margin-bottom: 5px;
 }
 
-.related_products_spec li {
+.related_products_spec p {
     margin-top: 5%;
     font-size: 1rem;
+    margin-top: 7px;
 }
 
 .related_product_content:hover {
@@ -935,7 +938,7 @@ footer {
         font-size: 1rem;
     }
 
-    .related_products_spec li {
+    .related_products_spec div {
         font-size: 0.85rem;
     }
 
@@ -1137,7 +1140,7 @@ footer {
         font-size: 1rem;
     }
 
-    .related_products_spec li {
+    .related_products_spec div {
         font-size: 0.9rem;
     }
 
@@ -1235,7 +1238,7 @@ footer {
         font-size: 0.9rem;
     }
 
-    .related_products_spec li {
+    .related_products_spec div {
         font-size: 0.8rem;
     }
 
@@ -1424,7 +1427,7 @@ footer {
         font-size: 1.3em;
     }
 
-    .related_products_spec li {
+    .related_products_spec div {
         font-size: 0.8rem;
     }
 
@@ -1588,7 +1591,7 @@ footer {
         font-size: 1.3em;
     }
 
-    .related_products_spec li {
+    .related_products_spec div {
         font-size: 0.8rem;
     }
 

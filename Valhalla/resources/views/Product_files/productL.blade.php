@@ -35,7 +35,6 @@
 
 </header>
 <body>
-    <h1>
         <div class="title_shape">
             <img class = "title_image" style="" src=" {{asset('assets/images_product/gaming_laptops.jpg')}}" >
             <p class = "laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">
@@ -48,8 +47,7 @@
         </div>
         </div>
 
-    </h1>
-    <h2>
+
 
         @if(session('success'))
             <div id="flash-success" class="p-5 bg-[#79c753] mx-44 my-5 rounded-[5px] w-1/2 ">
@@ -157,73 +155,17 @@
         </form>
         </ul>
     </div>
-<script>
-/*Code for the submit button - works by assaigning variables with the id
- and making it so if the filter is active,
-add those selected and when filled and enter is pressed run the function */
-var sortButton = document.getElementById("sort-button");
-var sortContainer = document.getElementById("sorting-container");
-var filterButton = document.getElementById("filter-button");
-var filterContainer = document.getElementById("filter-container");
 
-// Function to toggle filter container visibility
-filterButton.onclick = function(e) {
-    e.stopPropagation();
-    // If sort container is active, hide it
-    if (sortContainer.classList.contains("sort--active")) {
-        sortContainer.classList.remove("sort--active");
-    }
-    filterContainer.classList.toggle("filters--active");
-};
-
-// Function to toggle sort container visibility
-sortButton.onclick = function(e) {
-    e.stopPropagation();
-    if (filterContainer.classList.contains("filters--active")) {
-        filterContainer.classList.remove("filters--active");
-    }
-    sortContainer.classList.toggle("sort--active");
-};
-
-// Hide containers when clicking outside of the containers
-window.onclick = function(e) {
-    if (!filterContainer.contains(e.target) && !filterButton.contains(e.target)) {
-        filterContainer.classList.remove("filters--active");
-    }
-    if (!sortContainer.contains(e.target) && !sortButton.contains(e.target)) {
-        sortContainer.classList.remove("sort--active");
-    }
-};
-
-// Reset filter selections
-function resetFilters() {
-    var checkboxes = document.querySelectorAll("#filter-container input[type='checkbox']");
-    checkboxes.forEach(function(checkbox) {
-        checkbox.checked = false;
-    });
-}
-
-// Reset sort selections
-function resetSort() {
-    var radios = document.querySelectorAll("#sorting-container input[type='radio']");
-    radios.forEach(function(radio) {
-        radio.checked = false;
-    });
-}
-
-/* Where the area in products will go, and the functionality of the buttons to change pages **/
-</script>
 
 @yield('productP')
 <!-- Each button assigned an ID which presents a cetain page, leads to user interaction and less clunkiness in code. Also more fluid to use. -->
             <section class = "laptops_container">
                 <div class="button_container">
-                    <div class = "button_to_switch_page"> 
+                    <div class = "button_to_switch_page">
                         {{$products->links()}}
                     </div>
                 </div>
             </section>
-    </h2>
 </div>
 <script>
      /* Saves the users scroll position - if pages refreshed it goes back to it  --> */

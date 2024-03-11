@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Fixed the routing for the product page">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="commented out search function for now">
+      <change afterPath="$PROJECT_DIR$/Valhalla/resources/views/_errors.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_03_2024_14_12_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_03_2024_14_12__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_03_2024_23_46_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_03_2024_23_46__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_03_2024_06_01_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_03_2024_06_01__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_03_2024_17_31_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_03_2024_17_31__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_02_2024_15_46_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_02_2024_15_46__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_03_2024_06_03_[Changes]1/shelved.patch" beforeDir="false" />
@@ -18,9 +21,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/database/migrations/2024_03_01_142130_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/migrations/2024_03_01_142130_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/css/home_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/public/assets/css/home_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +58,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -457,9 +471,6 @@
       <workItem from="1709814435645" duration="2366000" />
       <workItem from="1709817574255" duration="351000" />
       <workItem from="1709818906530" duration="26170000" />
-      <workItem from="1709875170023" duration="57000" />
-      <workItem from="1709923131372" duration="120000" />
-      <workItem from="1709996103096" duration="1544000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -637,16 +648,5 @@
     <MESSAGE value="cart.blade.php refactored to basket.blade.php. &#10;Added new codes to the basket.blade.php. Basket implement nearly complete. &#10;&#10;New routes has been added to the web.php. Some redundant code has been removed" />
     <MESSAGE value="commented out search function for now" />
     <option name="LAST_COMMIT_MESSAGE" value="commented out search function for now" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php</url>
-          <line>39</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
