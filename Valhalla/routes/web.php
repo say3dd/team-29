@@ -75,7 +75,7 @@ Route::get('/test1', function () {
     Route::get('/tracking', [TrackingController::class,'tracking'])->name('tracking');
 
     // Addded route function to the about page
-    Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
+    Route::get('/about',[HomeController::class, 'about'])->name('about');
     // @say3dd (Mohammed Miah) - Routing for the different product functionalities
 
 
