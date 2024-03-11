@@ -356,6 +356,14 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2">

@@ -12,11 +12,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Valhalla/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/Valhalla/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/Valhalla/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
-      <sourceFolder url="file://$MODULE_DIR$/Valhalla/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/Valhalla/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/Valhalla/tests/Feature" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/Valhalla/tests/Unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/carbonphp/carbon-doctrine-types" />
@@ -131,6 +131,14 @@
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/symfony/dom-crawler" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
