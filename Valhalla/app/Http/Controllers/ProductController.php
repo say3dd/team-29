@@ -138,7 +138,12 @@ class ProductController extends Controller implements BasketInterface
 
 
 public function basket(){
+    if (Auth::check()){
         return view('checkout.basket');
+    }
+    else{
+        return redirect()->route('login');
+    }
 }
 
 public function addToBasket($id){
