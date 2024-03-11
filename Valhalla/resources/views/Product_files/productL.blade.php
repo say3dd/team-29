@@ -75,59 +75,62 @@
     </section>
         <!-- This is the code for the filter of products , linked to the database one is for the brands other is for graphics-->
     <div id="filter-container" class="filters">
-        <div class ="scroller">
-        <ul class="filters__list">
-            <form action="{{route('products.index')}}" method="GET">
-                <li>
-                    <p style = "text-decoration: underline"> Brand: </p><br>
-                    </li>
+        <div class="scroller">
+            <ul class="filters__list">
+                <form action="{{route('products.index')}}" method="GET">
+                    @if(request()->has('category'))
+                        <input type="hidden" name="category" value="{{ request()->category }}">
+                    @endif
+                    <li style="text-decoration: underline"> Brand: </li>
                     <!-- for each brand it assigns the checked area as empty, once filled with the brands/graphics
                          it selects the item and shows which is needed by its id, name and value. Also has an if statement on whether brand is there and checkbrands is checked -->
-                @foreach ($brands as $brand)
-                @php
-                $checkedbrands = [];
-                if(isset($_GET['brands']))
-                {
-                    $checkedbrands=$_GET['brands'];
-                }
-                @endphp
-                <li>
-            <input id="{{$brand->brand}}" name="brands[]" value="{{$brand->brand}}" type="checkbox"
-            @if(in_array($brand -> brand, $checkedbrands))checked="checked" @endif/>
-            <label>{{$brand->brand}}</label>
-            </li>
-            @endforeach
-                <!--Displays the Gpu checkboxes with the same checked features used  -->
-                @if(!empty($filters))
-                @foreach($filters as $attribute => $values)
-                    <div>
-                        <p style="text-decoration: underline">{{ ucfirst($attribute) }}:</p>
-                        @foreach($values as $value)
-                            @php
-                                $ValueChecked = in_array($value, request()->input($attribute, []));
-                            @endphp
-                                <input id="{{$attribute}}"  name="{{ $attribute }}[]" value="{{ $value }}" type="checkbox"
-                                    {{ $ValueChecked ? 'checked' : '' }}/>
-                            <label>  {{ $value }} </label>
+                    @foreach ($brands as $brand)
+                        @php
+                            $checkedbrands = [];
+                            if(isset($_GET['brands']))
+                            {
+                                $checkedbrands=$_GET['brands'];
+                            }
+                        @endphp
+                        <li>
+                            <input id="{{$brand->brand}}" name="brands[]" value="{{$brand->brand}}" type="checkbox"
+                                   @if(in_array($brand -> brand, $checkedbrands))checked="checked" @endif/>
+                            <label>{{$brand->brand}}</label>
+                        </li>
+                    @endforeach
+                    <!--Displays the Gpu checkboxes with the same checked features used  -->
+                    @if(!empty($filters))
+                        @foreach($filters as $attribute => $values)
+                            <div>
+                                <li style="text-decoration: underline">{{ ucfirst($attribute) }}:</li>
+                                @foreach($values as $value)
+                                    @php
+                                        $checkedValues = in_array($value, request()->input($attribute, []));
+                                    @endphp
+                                    <input id="{{$value}}" name="{{ $attribute }}[]" value="{{ $value }}"
+                                           type="checkbox"
+                                        {{ $checkedValues ? 'checked' : '' }}/>
+                                    <label for=""{{$attribute}}{{ $value }}"">  {{ $value }} </label>
+                                @endforeach
+                            </div>
                         @endforeach
-                    </div>
-            @endforeach
-            @endif
-            </div>
-                <button class = "button_apply" > Apply Changes </button>
-                <button class = "button_reset" onclick="resetFilters()" > Reset </button>
-            </li>
-
-        </ul>
-
-    </form>
-
+                    @endif
+                    <li>
+                    <button class="button_apply"> Apply Changes</button>
+                    <button class="button_reset" onclick="resetFilters()"> Reset</button>
+                    </li>
+                </form>
+            </ul>
+        </div>
     </div>
     <!--Form for hidden fields so the filter request gets sent without a need for a submit button, more smoother functionality -->
 
     <div id="sorting-container" class="sort">
         <ul class="sort__list">
             <form action="{{route('products.index')}}" method="GET" wire:model="sorting">
+                @if(request()->has('category'))
+                    <input type="hidden" name="category" value="{{ request()->category }}">
+                @endif
                 <li>
                     <p style = "text-decoration: underline"> Sort By: </p><br>
                 </li>
