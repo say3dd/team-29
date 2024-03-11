@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Getting filter data from DB now works, just need to make it actually work on the select products">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="On the final stretch for the productspage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/database/migrations/2024_03_01_142130_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/migrations/2024_03_01_142130_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -647,6 +650,7 @@
     <MESSAGE value="commented out search function for now" />
     <MESSAGE value="Updated the filter feature ,continuing it" />
     <MESSAGE value="Getting filter data from DB now works, just need to make it actually work on the select products" />
-    <option name="LAST_COMMIT_MESSAGE" value="Getting filter data from DB now works, just need to make it actually work on the select products" />
+    <MESSAGE value="On the final stretch for the productspage" />
+    <option name="LAST_COMMIT_MESSAGE" value="On the final stretch for the productspage" />
   </component>
 </project>

@@ -52,9 +52,9 @@ class ProductController extends Controller implements BasketInterface
 
     public function index(Request $request)
     {
-        \Log::info('Request data:', $request->all());
+       // \Log::info('Request data:', $request->all());
         $category= $request->input('category','all');
-        $query = Product::query();
+        $query = Product::where('stock','>',0);
 
         if ($category !== 'all') {
             $query->where('category', $category);
@@ -62,17 +62,17 @@ class ProductController extends Controller implements BasketInterface
         $categoryPatterns = $this->getCategoryPatterns($category);
         $productDesc = Product::where('category',$category)->distinct()
             ->get()->pluck('product_description');
-        $products = $query->paginate(12);
         $patterns = $category !== 'all' ? $categoryPatterns[$category] : [];
-        //filter part
+       // filter part
         $filters = $this->extractFilters($productDesc,$patterns);
         // Applying the filters
-        $this->filterProducts($query,$request->input('brands', []),$filters);
+        $query = $this->filterProducts($query, $request->input('brands', []), $filters);
+
 
         // Applying sorting
         $this->sortLaptops($query, $request->input('sorting'));
         // this paginates the page to 12 products
-
+        $products = $query->paginate(12);
         // Get distinct brands found within database
         $brands = $category !==  'all' ? Product::select('brand')->where('category', $category)->distinct()->orderBy('brand')
             ->get():Product::select('brand')->distinct()->orderBy('brand')->get();
@@ -119,8 +119,8 @@ class ProductController extends Controller implements BasketInterface
         return match ($sorting) {
             "Price_LtoH" => $query->orderby('price', 'ASC'),
             "Price_HtoL" => $query->orderby('price', 'DESC'),
-            "Newest-Arrival" => $query->orderby('created_at', 'ASC'),
-            default => $query->orderby('product_name'),
+           "Newest-Arrival" => $query->orderby('created_at', 'ASC'),
+            default => $query,
         };
     }
     /** @BilalMo The function works on displaying the laptop based on certain conditionals whether the filter of the feature has been
@@ -129,23 +129,27 @@ class ProductController extends Controller implements BasketInterface
     {
         /**Assigning operations for if there are no filters chosen or
          * if both filters are chosen - here both selected in the request */
-       // \Log::debug('Query before filters:', [$query->toSql(), $query->getBindings()]);
+        // \Log::debug('Query before filters:', [$query->toSql(), $query->getBindings()]);
 
         if (!empty($checkedbrands)) {
             $query->whereIn('brand', $checkedbrands);
         }
         foreach ($filters as $attribute => $values) {
             if (!empty($values)) {
-                //$query->where(function ($q) use ($values, $attribute) {
+                $query->where(function ($q) use ($values, $attribute) {
                     foreach ($values as $value) {
-                        // Adjust the query to match the attribute and value correctly
-                        $query->orWhere('product_description', 'like', "%$attribute: $value%");
+                        // Modify the pattern to ensure it correctly matches the structured descriptions
+                        // Note: Adjust the pattern based on your exact formatting if necessary
+                        $pattern = "%{$attribute}: {$value}%";
+                        $q->orWhere('product_description', 'LIKE', $pattern);
                     }
-                }
+                });
             }
-
+        }
+        \Log::debug('Final Query:', [$query->toSql(), $query->getBindings()]);
         return $query;
     }
+
 
     public function getInfo(Request $request)
     {

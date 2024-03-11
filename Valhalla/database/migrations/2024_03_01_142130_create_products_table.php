@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('category', ['Laptop', 'Mouse', 'Keyboard', 'Monitor', 'Headset']); //added enum to add catagories
             $table->decimal('price', 8, 2);
             $table->string('images');
+            $table->integer('stock');
             $table->timestamps();
 
 

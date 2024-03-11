@@ -18,7 +18,13 @@ class Product extends Model
         'category',
         'brand',
         'price',
-        'images'
+        'images',
+        'stock'
 
     ];
+
+    public function getAvailableProducts()
+    {
+        return Product::where('stock', '>', 0)->get();
+    }
 }
