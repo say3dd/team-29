@@ -128,16 +128,8 @@ $(document).ready(function() {
 
 
     @endforeach
-<<<<<<< HEAD
     @endif
   <x-primary-button class="border-white" id="save-wishlist">Save Wishlist</x-primary-button>
-=======
-  </div>
-  @endif
-  <x-primary-button id="save-wishlist">Save Wishlist</x-primary-button>
-
-  
->>>>>>> 88a886773e4652e53617d4c77a6940ff5ee3103d
                         </div>
                       </div>
                     </div>
