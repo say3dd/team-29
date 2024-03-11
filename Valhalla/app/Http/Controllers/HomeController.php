@@ -45,8 +45,8 @@ class HomeController extends Controller implements BasketInterface
 
 
 
-    public function home(Product $product){
-        $product = $product->getAvailableProducts()->orderBy('product_name', 'asc')->first();
+    public function index(Product $product){
+        $product = $product->orderBy('product_name','asc')->where('stock', '>', 0)->paginate(3);
         return view('FrontEnd.home', ['products' => $product]);
     }
 
