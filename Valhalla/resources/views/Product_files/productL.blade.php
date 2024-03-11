@@ -108,10 +108,12 @@
                                         @php
                                             $checkedValues = in_array($value, request()->input($attribute, []));
                                         @endphp
+                                    <li>
                                         <input id="{{$value}}" name="{{ $attribute }}[]" value="{{ $value }}"
                                                type="checkbox"
                                             {{ $checkedValues ? 'checked' : '' }}/>
                                         <label for=""{{$attribute}}{{ $value }}"">  {{ $value }} </label>
+                                    </li>
                                     @endforeach
                                 </div>
                             @endforeach
