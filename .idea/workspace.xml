@@ -4,37 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="commented out search function for now">
-      <change afterPath="$PROJECT_DIR$/Valhalla/resources/views/_errors.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_03_2024_14_12_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_03_2024_14_12__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_03_2024_23_46_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_03_2024_23_46__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_03_2024_06_01_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_03_2024_06_01__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_03_2024_17_31_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_03_2024_17_31__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_02_2024_15_46_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_02_2024_15_46__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_03_2024_06_03_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_03_2024_06_03__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Added UserController using OpenAdmin panel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/database/migrations/2024_03_01_142130_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/migrations/2024_03_01_142130_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/css/home_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/public/assets/css/home_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +29,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -404,6 +374,14 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -448,7 +426,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14475.35" />
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14808.18" />
       </set>
     </attachedChunks>
   </component>
@@ -471,6 +449,9 @@
       <workItem from="1709814435645" duration="2366000" />
       <workItem from="1709817574255" duration="351000" />
       <workItem from="1709818906530" duration="26170000" />
+      <workItem from="1710186870083" duration="87000" />
+      <workItem from="1710250291132" duration="1141000" />
+      <workItem from="1710254494411" duration="1769000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -600,7 +581,39 @@
       <option name="project" value="LOCAL" />
       <updated>1709866069033</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="some new routes has been added">
+      <option name="closed" value="true" />
+      <created>1710184531955</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1710184531955</updated>
+    </task>
+    <task id="LOCAL-00018" summary="about has been moved HomeController">
+      <option name="closed" value="true" />
+      <created>1710184648867</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1710184648867</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added OpenAdmin system to the application.">
+      <option name="closed" value="true" />
+      <created>1710186668259</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1710186668259</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added UserController using OpenAdmin panel">
+      <option name="closed" value="true" />
+      <created>1710256240819</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1710256240821</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,6 +660,10 @@
     <MESSAGE value="Added the new Pagination for the products page , fixed the product Error" />
     <MESSAGE value="cart.blade.php refactored to basket.blade.php. &#10;Added new codes to the basket.blade.php. Basket implement nearly complete. &#10;&#10;New routes has been added to the web.php. Some redundant code has been removed" />
     <MESSAGE value="commented out search function for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="commented out search function for now" />
+    <MESSAGE value="some new routes has been added" />
+    <MESSAGE value="about has been moved HomeController" />
+    <MESSAGE value="Added OpenAdmin system to the application." />
+    <MESSAGE value="Added UserController using OpenAdmin panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added UserController using OpenAdmin panel" />
   </component>
 </project>

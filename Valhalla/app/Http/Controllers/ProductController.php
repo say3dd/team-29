@@ -1,5 +1,5 @@
 <?php
-//@noramknarf (Francis Moran) - getInfo() function
+//@noramknarf (Francis Moran) - getInfo() function, redirect to login in basket()
 /* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */
 namespace App\Http\Controllers;
 
@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Basket;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller implements BasketInterface
 {
@@ -18,74 +19,154 @@ class ProductController extends Controller implements BasketInterface
 //        $products = Product::all();
 //        return view('product', compact('Product_files.product'));
 //    }
-    /** @BilalMo The page update page works on making sure the products are displayed a  */
-
-    //
-    public function pageUpdate(Request $request)
+    /** @BilalMo The Index function works on making sure the products are displayed and that both the pagination,filtering and sorting
+     *functionalities work */
+    protected function getCategoryPatterns($category)
     {
-      /** This retrieve the distinct data */
-        $query = Product::query();
-        $query->orderBy('brand', 'asc');
-        $brands = $query->get();
-        //$graphics = $this->getDistinctGPUs();
-
-      /** This organises the sorting for the product page */
-        $sorting = $request->input('sorting');
-        $products = $this->sortLaptops($sorting);
-
-        /** This handles the filtering side of the product page */
-        $checkedBrands = $request->get('brands', []);
-       // $checkedGPU = $request->get('graphics', []);
-        /*If the filtered laptops contain these checked items, and it true, make only those visible when laptop is called **/
-        $filteredLaptops = $this->filterLaptops($checkedBrands);
-        if ($filteredLaptops) {
-            $laptops = $filteredLaptops;
-        }
-        /* Return the rendered page with the details required to show**/
-        return view('Product_files.productL' ,['brands' =>$brands, 'products'=>$products]);
+        // Define the specific patterns used in the database and forms regular expressions to obtain them correctly.
+        return [
+            'Laptop' => [
+                'GPUs' => "/GPU: ([^,\n]+)/",
+                'CPUs' => "/Processor: ([^,\n]+)/",
+                'RAM' => "/RAM: (\d+\s*GB)/i"
+            ],
+            'Mouse' => [
+                'DPI' =>  "/DPI:\s*(\d+)/",
+                'Connectivity' => "/Connectivity:\s*([^\n,]+)/",
+                'Battery Life'=> "/Battery Life:\s*([^\n,]+)/"
+            ],
+          'Keyboard' =>[
+              'Type of switches' =>  "/Switches:\s*([^\n,]+)/",
+              'connectivity' => "/Connectivity:\s*([^\n,]+)/",
+              'type of Keyboard' => "/Type:\s*([^\n,]+)/"
+          ],
+            'Monitor' => [
+              'Screen Size' =>  "/Screen Size:\s*([^\n,]+)/",
+              'Refresh rate' => "/Refresh rate:\s*([^\n,]+)/",
+               'Response Time' => "/Response Time\s*:\s*([^\n,]+)/"
+          ],
+            'Headset' => [
+                'Connectivity' => "/Connectivity:\s*([^,\n]+)/",
+                'Colour' => "/Colour:\s*([^,\n]+)/"
+                ]
+        ];
     }
-    /** @BilalMo Assigns the product to get the distinct Brands  */
-//    protected function getDistinctBrands()
-//    {
-//        return Product::select('brand')->distinct()->orderBy('brand')->get();
-//    }
-//    /** @BilalMo Assigns the product to get the distinct GPUs  */
-//    protected function getDistinctGPUs() {
-//        return Product::select('GPU')->distinct()->orderBy('GPU')->get();
-//    }
-//
-//    /** @BilalMo Assigns the product to get the distinct prices  */
-//    protected function getDistinctPrices() {
-//        return Product::select('price')->distinct()->orderBy('price')->get();
-//    }
+    /** @Bilal MO - made the index code as well as all function linking to products ( categorypattern,patterns,brands etc) */
 
-        /** @BilalMo Renders the page if available by only the Id */
+    public function index(Request $request)
+    {
+        // \Log::info('Request data:', $request->all());
+        $category= $request->input('category','all');
+        $query = Product::where('stock','>',0);
+
+        if ($category !== 'all') {
+            $query->where('category', $category);
+        }
+        $categoryPatterns = $this->getCategoryPatterns($category);
+        $productDesc = Product::where('category',$category)->distinct()->get()->pluck('product_description');
+        $patterns = $category !== 'all' ? $categoryPatterns[$category] : [];
+       // filter part
+        $filters = $this->extractFilters($productDesc,$patterns);
+        // Applying the filters
+        $query = $this->filterProducts($query, $request->input('brands', []), $filters);
+
+
+        // Applying sorting
+        $this->sortLaptops($query, $request->input('sorting'));
+        // this paginates the page to 12 products
+        $products = $query->paginate(12);
+        //dd(request()->all());
+        // Get distinct brands found within database
+        $brands = $category !==  'all' ? Product::select('brand')->where('category', $category)->distinct()->orderBy('brand')
+            ->get():Product::select('brand')->distinct()->orderBy('brand')->get();
+        // Pass everything to be shown to the view
+        return view('Product_files.products', compact('products','brands','filters','category'));
+    }
+//@Bilal Mo
+    protected function extractFilters($descriptions,$patterns)
+    {
+        $filters = [];
+      //  Log::debug('Descriptions:', $descriptions->toArray());
+/**  Due to possible string errors , an error must be used to check whether it is a string or not to handle it correctly*/
+       // foreach ($patterns as $category => $attributePatterns) {
+            foreach ($patterns as $attribute => $pattern) {
+                // Ensure pattern is a string and is a valid regular expression
+                if (!is_string($pattern) || false === @preg_match($pattern, null)) {
+                    // Log the problem for the person coding to review and correct the issue.
+                    Log::warning("Invalid pattern for attribute {$attribute}: " . print_r($pattern, true));
+                    continue; // Skip this pattern
+                }
+
+                // Extract matches for each pattern
+                $matches = $descriptions->map(function ($desc) use ($pattern) {
+                    preg_match_all($pattern, $desc, $match);
+                    return $match[1] ?? null;
+                })->flatten()->filter()->unique()->values()->toArray();
+
+                if (!empty($matches)) {
+                    $filters[$attribute] = $matches;
+                }
+                Log::debug("Attribute: $attribute, Pattern: $pattern, Matches: " . print_r($matches, true));
+            }
+        //}
+        /**  Used these debugging to find what is produced from the filtering and patterns to check whether it got the data from the DB or not*/
+        Log::debug('Patterns used:', $patterns);
+        Log::debug('Filters extracted:', $filters);
+        return $filters;
+    }
 
 
     /** @Bilal Mo Assigning operations for the sorting functions */
-    protected function sortLaptops($sorting)
+    protected function sortLaptops($query,$sorting)
     {
         return match ($sorting) {
-            "Price_LtoH" => Product::orderby('price', 'ASC')->paginate('12'),
-            "Price_HtoL" => Product::orderby('price', 'Desc')->paginate('12'),
-            "Newest-Arrival" => Product::orderby('created_at', 'Asc')->paginate(12),
-            default => Product::all(),
+            "Price_LtoH" => $query->orderby('price', 'ASC'),
+            "Price_HtoL" => $query->orderby('price', 'DESC'),
+           "Newest-Arrival" => $query->orderby('created_at', 'ASC'),
+            default => $query,
         };
     }
     /** @BilalMo The function works on displaying the laptop based on certain conditionals whether the filter of the feature has been
      *pressed or not*/
-    protected function filterLaptops($checkedBrands)
+    protected function filterProducts($query,$checkedbrands,$filters)
     {
+        $query->distinct();
+
         /**Assigning operations for if there are no filters chosen or
          * if both filters are chosen - here both selected in the request */
+        // \Log::debug('Query before filters:', [$query->toSql(), $query->getBindings()]);
 
-        if (!empty($checkedBrands)) {
-           return Product::whereIn('brand', $checkedBrands)->get();
-        } elseif (!empty($checkedBrands)) {
-            return Product::whereIn('brand', $checkedBrands)->get();
+        if (!empty($checkedbrands)) {
+            $query->whereIn('brand', $checkedbrands);
         }
-        return null;
+//        foreach ($filters as $attribute => $values) {
+//            if (!empty($values)) {
+//                $query->where(function ($q) use ($values, $attribute) {
+//                    foreach ($values as $value) {
+//                        $q->orWhere('product_description', 'like', "%$attribute: $value%");
+//                    }
+//                });
+//            }
+//        }
+//        $query->where(function ($q) use ($filters) {
+//            foreach ($filters as $attribute => $values) {
+//                if (!empty($values)) {
+//                    $q->orWhere(function ($subq) use ($values, $attribute) {
+//                        foreach ($values as $value) {
+//                            // Modify the pattern to ensure it correctly matches the structured descriptions
+//                            // Note: Adjust the pattern based on your exact formatting if necessary
+//                            $pattern = "%{$attribute}: {$value}%";
+//                            $subq->orWhere('product_description', 'LIKE', $pattern);
+//                        }
+//                    });
+//                }
+//            }
+//        });
+        //this is just a log to check the debug issue when getting Data for DB
+       // \Log::debug('Final Query:', [$query->toSql(), $query->getBindings()]);
+        return $query;
     }
+
 
     public function getInfo(Request $request)
     {
@@ -120,22 +201,14 @@ class ProductController extends Controller implements BasketInterface
     }
 
     // @say3dd (Mohammed Miah) displays all the products, maximum of 12 on the products page
-    public function index()
-    {
-        $query = Product::query();
-        $query->orderBy('Product_name');
-        $products = $query->paginate(12);
-         return view('Product_files.products', compact('products'));
 
-
-    }
 //    public function show($id)
 //    {
 //        $product = Product::find($id);
 //        $laptops = Product::where('product_id', '!=', $id)->take(5)->get();
 //        return view('Product_files.product', ['product' => $product, 'laptops' => $laptops]);
 //    }
-
+//
 
 public function basket(){
     if (Auth::check()){
@@ -202,20 +275,20 @@ public function addToBasket($id){
 
     }
 //@BilalMo code for the search bar (not completed yet)
-    public function search(){
-        $search = request()->query('search');
-if ($search){
-    $laptops = Product::where('laptop_name','LIKE',"%{$search}%")
-        ->orwhere('price','LIKE',"%{$search}%")
-        ->orwhere('brand','LIKE',"%{$search}%")
-        ->simplepaginate(12);
-}else{
-    $laptops = Product::simplePaginate(12);
-}
-$brands = Product::select('brand')->distinct()->orderBy('brand')->get();
-//$graphics = $this->getDistinctGPUs();
-return view('Product_files.products',compact('laptops','brands',));
-    }
+//    public function search(){
+//        $search = request()->query('search');
+//if ($search){
+//    $products= Product::where('laptop_name','LIKE',"%{$search}%")
+//        ->orwhere('price','LIKE',"%{$search}%")
+//        ->orwhere('brand','LIKE',"%{$search}%")
+//        ->simplepaginate(12);
+//}else{
+//    $laptops =
+//}
+//$brands = Product::select('brand')->distinct()->orderBy('brand')->get();
+////$graphics = $this->getDistinctGPUs();
+//return view('Product_files.products',compact('laptops','brands',));
+//    }
 
 
 
@@ -223,6 +296,7 @@ return view('Product_files.products',compact('laptops','brands',));
 
 
     // @say3dd (Mohammed Miah) Function to allow us to see related products on the individual product details page
+
 
 }
 

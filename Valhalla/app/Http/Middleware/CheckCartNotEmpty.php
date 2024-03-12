@@ -17,9 +17,10 @@ class CheckCartNotEmpty
         // If empty, redirect to the cart page or elsewhere
         $user = $request->user();
 
-        if ($user && $user->cart && $user->cart->items()->count() === 0) {
+        if (! session('basket') || count(session('basket')) < 1) {
             // Redirect to the cart page or elsewhere
-            return redirect()->route('cart.index')->with('error', 'Your cart is empty.');
+            print_r('this triggers');
+            return redirect()->route('index')->with('error', 'No items in basket');
         }
         return $next($request);
     }
