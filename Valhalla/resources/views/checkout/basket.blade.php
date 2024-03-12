@@ -90,7 +90,7 @@
             <tr>
                 <td colspan="5" class="text-right p-5 m-1.5">
                     <a href="{{ url('/') }}" class="btn btn-danger bg-red-700 inline-block p-2 align-middle text-center"> <i class='bx bx-arrow-back' ></i> Continue Shopping</a>
-                    <button class="btn btn-success bg-green-500 p-2"><i class='bx bx-money bx-rotate-180' ></i> Checkout</button>
+                    <a href="{{ route('checkout.summary') }}" class="btn btn-primary bg-violet-900 inline-block p-2 align-middle text-center"> <i class='bx bx-shopping-bag' ></i> Proceed to Checkout</a>
                 </td>
             </tr>
             </tfoot>

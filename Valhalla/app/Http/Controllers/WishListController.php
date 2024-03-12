@@ -30,7 +30,6 @@ class WishListController extends Controller
         try {
         $user_id = auth()->id();
         $product_id = $request->input('product_id');
-
         $position = Wishlists::where('user_id', $user_id)->max('position') + 1;
         $wishlist = Wishlists::create([
             'user_id' => $user_id,
@@ -38,7 +37,7 @@ class WishListController extends Controller
             'position' => $position,
         ]);
     } catch (QueryException $e) {
-        return back()->with('error', 'Failed to add product to wishlist.');
+        return back()->flash('error', 'Failed to add product to wishlist.');
     }
 
 
