@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="fixed the layout issue with filter (li was missing)">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="about has been moved HomeController">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/team-29.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team-29.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/config/filesystems.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +35,10 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="PackageJsonUpdateNotifier">
-    <dismissed value="$PROJECT_DIR$/Valhalla/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe">
     <include_path>
@@ -382,6 +381,14 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -396,7 +403,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;bilal's-repo&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Valhalla-working-branch-backup&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/xampp/team-29&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -449,13 +456,6 @@
       <workItem from="1709814435645" duration="2366000" />
       <workItem from="1709817574255" duration="351000" />
       <workItem from="1709818906530" duration="26170000" />
-      <workItem from="1709875170023" duration="57000" />
-      <workItem from="1709923131372" duration="120000" />
-      <workItem from="1709996103096" duration="1544000" />
-      <workItem from="1710035829583" duration="1251000" />
-      <workItem from="1710046040071" duration="642000" />
-      <workItem from="1710072018237" duration="29868000" />
-      <workItem from="1710139794175" duration="5368000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -585,39 +585,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709866069033</updated>
     </task>
-    <task id="LOCAL-00017" summary="Updated the filter feature ,continuing it">
+    <task id="LOCAL-00017" summary="some new routes has been added">
       <option name="closed" value="true" />
-      <created>1710094091800</created>
+      <created>1710184531955</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1710094091800</updated>
+      <updated>1710184531955</updated>
     </task>
-    <task id="LOCAL-00018" summary="Getting filter data from DB now works, just need to make it actually work on the select products">
+    <task id="LOCAL-00018" summary="about has been moved HomeController">
       <option name="closed" value="true" />
-      <created>1710114780446</created>
+      <created>1710184648867</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1710114780446</updated>
+      <updated>1710184648867</updated>
     </task>
-    <task id="LOCAL-00019" summary="On the final stretch for the productspage">
-      <option name="closed" value="true" />
-      <created>1710139815834</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1710139815834</updated>
-    </task>
-    <task id="LOCAL-00020" summary="fixed the layout issue with filter (li was missing)">
-      <option name="closed" value="true" />
-      <created>1710142276945</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1710142276945</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,10 +648,8 @@
     <MESSAGE value="Added the new Pagination for the products page , fixed the product Error" />
     <MESSAGE value="cart.blade.php refactored to basket.blade.php. &#10;Added new codes to the basket.blade.php. Basket implement nearly complete. &#10;&#10;New routes has been added to the web.php. Some redundant code has been removed" />
     <MESSAGE value="commented out search function for now" />
-    <MESSAGE value="Updated the filter feature ,continuing it" />
-    <MESSAGE value="Getting filter data from DB now works, just need to make it actually work on the select products" />
-    <MESSAGE value="On the final stretch for the productspage" />
-    <MESSAGE value="fixed the layout issue with filter (li was missing)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the layout issue with filter (li was missing)" />
+    <MESSAGE value="some new routes has been added" />
+    <MESSAGE value="about has been moved HomeController" />
+    <option name="LAST_COMMIT_MESSAGE" value="about has been moved HomeController" />
   </component>
 </project>

@@ -1,5 +1,5 @@
 <?php
-//@noramknarf (Francis Moran) - getInfo() function
+//@noramknarf (Francis Moran) - getInfo() function, redirect to login in basket()
 /* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */
 namespace App\Http\Controllers;
 
