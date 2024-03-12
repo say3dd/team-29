@@ -53,8 +53,8 @@
             <div class="monitors-title-line"></div> 
             <h2 class="price">Price: £299</h2>
             <div class="buttons-container">
-                <a href="{{url('contactUs')}}" class="add-btn">Add to basket</a>
-                <a href="{{url('contactUs')}}" class="wishlist-btn">Add to wishlist</a>
+                <a href="{{url('contactUs')}}" class="add-btn">ADD TO BASKET</a>
+                <a href="{{url('contactUs')}}" class="wishlist-btn">ADD TO WISHLIST</a>
             </div>
         </div>
       </div>
