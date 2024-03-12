@@ -353,7 +353,7 @@ class ProductsSeeder extends Seeder
             ],
             [
                 'brand' => 'Razer',
-                'product_name' => 'Dell Headset2',
+                'product_name' => 'Dell Headset1',
                 'product_description' => 'Name: Razer Headset2,  Connectivity : Wired, Colour : White',
                 'category' => 'Headset',
                 'price' => 10.99,
