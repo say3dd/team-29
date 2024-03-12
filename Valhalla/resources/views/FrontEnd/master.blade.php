@@ -52,6 +52,12 @@
             {{--                <p class=" text-amber-200">Hello, a message</p>--}}
         </div>
     @endif
+    @if(session('error'))
+        <div id="flash-error" class="p-5 bg-red-700 mx-0 my-5 rounded-[5px]">
+            {{session('error')}}
+            <!--I have no idea if this is alright, I was just copying from the success popup-->
+        </div>
+    @endif
         <!-- Brands Section -->
         <div class="brands-section">
             <div class="brand-images">
