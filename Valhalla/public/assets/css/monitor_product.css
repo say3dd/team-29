@@ -233,7 +233,7 @@ header {
 }
 
 #monitor-container {
-  margin-bottom:  6rem;
+  margin-bottom:  5rem;
   margin-left: 16.5rem;
   margin-right: 16.5rem;
   margin-top: 4rem;
@@ -430,7 +430,7 @@ header {
   border: 3px solid #360060;
 }
 
-.person-info {
+.info-feature {
   font-size: 1.2rem !important;
   color: white;
   margin-top: 1rem !important;
@@ -442,14 +442,22 @@ header {
   font-size: 1.1rem !important;
 }
 
-.person-title {
-  font-size: 1.8rem !important;
+.title-feature {
+  font-size: 1.6rem !important;
+  font-weight: bold;
 }
 
 
+.monitor-products {
+  font-size: 1.6rem !important;
+}
 
 
+#monitor-products p {
 
+  font-size: 1rem !important;
+
+}
 /*      Related Products        */
   
   
@@ -483,7 +491,7 @@ header {
     overflow: hidden; /* Ensure overflow is hidden */
     width: 23rem;
   }
-  
+
   
   .products p {
     font-size: 1.1rem;
@@ -553,9 +561,6 @@ header {
   }
   
   
-
-
-
 
 
 
@@ -798,7 +803,7 @@ header {
   border: 3px solid #360060;
 }
 
-.person-info {
+.info-feature {
   font-size: 1.2rem;
   color: white;
   margin-top: 1rem;
@@ -806,7 +811,7 @@ header {
   
 }
 
-.person-title {
+.title-feature {
   font-size: 1.8rem;
 }
 
@@ -1128,7 +1133,7 @@ header {
   border: 3px solid #360060;
 }
 
-.person-info {
+.info-feature {
   font-size: 1.2rem;
   color: white;
   margin-top: 1rem;
@@ -1136,7 +1141,7 @@ header {
   
 }
 
-.person-title {
+.title-feature {
   font-size: 1.8rem;
 }
 
@@ -1462,7 +1467,7 @@ header {
   border: 3px solid #360060;
 }
 
-.person-info {
+.info-feature {
   font-size: 1.2rem;
   color: white;
   margin-top: 1rem;
@@ -1470,7 +1475,7 @@ header {
   
 }
 
-.person-title {
+.title-feature {
   font-size: 1.8rem;
 }
 
@@ -1774,7 +1779,7 @@ header {
   border: 3px solid #360060;
 }
 
-.person-info {
+.info-feature {
   font-size: 1.2rem;
   color: white;
   margin-top: 1rem;
@@ -1782,7 +1787,7 @@ header {
   
 }
 
-.person-title {
+.title-feature {
   font-size: 1.8rem;
 }
 
@@ -2084,7 +2089,7 @@ header {
   border: 3px solid #360060;
 }
 
-.person-info {
+.info-feature {
   font-size: 1.2rem;
   color: white;
   margin-top: 1rem;
@@ -2092,7 +2097,7 @@ header {
   
 }
 
-.person-title {
+.title-feature {
   font-size: 1.8rem;
 }
 
@@ -2496,14 +2501,14 @@ header {
     border: 3px solid #360060;
   }
   
-  .person-info {
+  .info-feature {
     font-size: 1.2rem;
     color: white;
     margin-top: 1rem;
     line-height: 1.7rem;
   }
   
-  .person-title {
+  .title-feature {
     font-size: 1.8rem;
   }
   
@@ -2698,14 +2703,14 @@ header {
     border: 3px solid #360060;
   }
   
-  .person-info {
+  .info-feature {
     font-size: 1.2rem;
     color: white;
     margin-top: 1rem;
     line-height: 1.7rem;
   }
   
-  .person-title {
+  .title-feature {
     font-size: 1.8rem;
   }
   
@@ -3128,7 +3133,7 @@ header {
   border: 3px solid #360060;
 }
 
-.person-info {
+.info-feature {
   font-size: 1.2rem;
   color: white;
   margin-top: 1rem;
@@ -3136,7 +3141,7 @@ header {
   
 }
 
-.person-title {
+.title-feature {
   font-size: 1.8rem;
 }
 
@@ -3449,7 +3454,7 @@ header {
   border: 3px solid #360060;
 }
 
-.person-info {
+.info-feature {
   font-size: 1.2rem;
   color: white;
   margin-top: 1rem;
@@ -3457,7 +3462,7 @@ header {
   
 }
 
-.person-title {
+.title-feature {
   font-size: 1.8rem;
 }
 
@@ -3834,7 +3839,7 @@ header {
   border: 3px solid #360060;
 }
 
-.person-info {
+.info-feature {
   font-size: 1.2rem;
   color: white;
   margin-top: 1rem;
@@ -3842,7 +3847,7 @@ header {
   
 }
 
-.person-title {
+.title-feature {
   font-size: 1.8rem;
 }
 
