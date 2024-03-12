@@ -55,7 +55,7 @@ class ProductController extends Controller implements BasketInterface
 
     public function index(Request $request)
     {
-       // \Log::info('Request data:', $request->all());
+        // \Log::info('Request data:', $request->all());
         $category= $request->input('category','all');
         $query = Product::where('stock','>',0);
 
@@ -75,11 +75,11 @@ class ProductController extends Controller implements BasketInterface
         $this->sortLaptops($query, $request->input('sorting'));
         // this paginates the page to 12 products
         $products = $query->paginate(12);
+        //dd(request()->all());
         // Get distinct brands found within database
         $brands = $category !==  'all' ? Product::select('brand')->where('category', $category)->distinct()->orderBy('brand')
             ->get():Product::select('brand')->distinct()->orderBy('brand')->get();
         // Pass everything to be shown to the view
-
         return view('Product_files.products', compact('products','brands','filters','category'));
     }
 //@Bilal Mo
@@ -163,7 +163,7 @@ class ProductController extends Controller implements BasketInterface
 //            }
 //        });
         //this is just a log to check the debug issue when getting Data for DB
-        \Log::debug('Final Query:', [$query->toSql(), $query->getBindings()]);
+       // \Log::debug('Final Query:', [$query->toSql(), $query->getBindings()]);
         return $query;
     }
 
