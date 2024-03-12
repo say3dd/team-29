@@ -92,8 +92,7 @@ $(document).ready(function() {
 </class>
 </body>
 
-<class2 class="class2">
-  @if($wishlistItems->isEmpty())
+@if($wishlistItems->isEmpty())
   <p>Your wishlist is empty. Return home here: </p> 
   <x-primary-button> <a href="{{ route('index') }}">Home</a> </x-primary-button>
   @else
@@ -102,26 +101,24 @@ $(document).ready(function() {
       <div id="product_{{ $product->product_id }}" class="ui-state-default">
         <img src="{{ asset($product->images) }}" alt="{{ $product->product_name }}" style="max-width: 100px; max-height: 100px;">
         {{ $product->product_name }}
+
+        <div style="display:flex;">
+          <a href="{{route('add_to_basket', $product->product_id)}}">
+            <x-primary-button type="button" role="button" class="buy-product">
+             Add to Basket
+            </x-primary-button>
+             </a>
+          </div>
         <form method="POST" action="{{ route('wishlist.remove', $product->product_id) }}">
           @csrf
           @method('DELETE')
-          <button type="submit">Remove from Wishlist</button>
+          <div style="display:flex;">
+            <x-secondary-button type="submit">Remove from Wishlist</x-secondary-button>
+          </div>
+       </div>
       </form>
-
-      <a href="{{route('add_to_basket', $product->product_id)}}">
-        <button type="button" role="button" class="buy-product">
-         Add to Basket
-        </button>
-         </a>
-      </div>
-
-
     @endforeach
   </div>
   @endif
   <x-primary-button id="save-wishlist">Save Wishlist</x-primary-button>
-
-  
-                        </div>
-</class2>
 </x-app-layout>

@@ -103,6 +103,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/home', [HomeController::class,'authHome'])->name('home');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    
+    
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -136,6 +138,9 @@ Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
 Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
 
 
+Route::get('/summary', function () {
+    return view('checkout.summary');
+})->name('summary');
 
 //********************************NO code beyond this line!*********************************************************************
 
