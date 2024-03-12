@@ -29,13 +29,13 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
 
         <div class="flex flex-col xl:flex-row justify-center xl:justify-between space-y-6 xl:space-y-0 xl:space-x-6 w-full">
             <div class="xl:w-3/5 flex flex-col sm:flex-row xl:flex-col justify-center items-center bg-gray-100 dark:bg-gray-800 py-7 sm:py-0 xl:py-10 px-10{{--xl:w-full--}}">
-                @foreach ($userBasket as $item)
+                @foreach($userBasket as $id => $details)
                 <div class="flex flex-col justify-start items-start w-full space-y-4">
-                    <p class="text-xl md:text-2xl leading-normal text-gray-800 dark:text-gray-50">{{$item->product_name}}</p>
-                    <p class="text-base font-semibold leading-none text-gray-600 dark:text-white">£{{$item->product_price}}</p>
+                    <p class="text-xl md:text-2xl leading-normal text-gray-800 dark:text-gray-50">{{$details['product_name']}}</p>
+                    <p class="text-base font-semibold leading-none text-gray-600 dark:text-white">£{{$details['price']}}</p>
                 </div>
                 <div class="mt-6 sm:mt-0 xl:my-10 xl:px-20 w-52 sm:w-96 xl:w-auto">
-                    {{-- <img src="{{$item->image_path}}" alt="item image" /> --}}
+                    <img src="{{$details['images']}}" alt="item-image"/>
                 </div>
                 @endforeach
                 <!--The section below is just so the user knows where the extra £5 comes from. I just copy + pasted from above but I'll leave it up to frontend to determine what to do from here -F -->
@@ -100,7 +100,7 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
                     @csrf
                     <button class="mt-8 border border-transparent hover:border-gray-300 dark:bg-white dark:hover:bg-gray-900 dark:text-gray-900 dark:hover:text-white dark:border-transparent bg-gray-900 hover:bg-white text-white hover:text-gray-900 flex justify-center items-center py-4 rounded w-full">
                         <div>
-                            <p class="text-base leading-4">Pay £{{number_format($total,2)}}</p>
+                            {{-- <p class="text-base leading-4">Pay £{{number_format($total,2)}}</p> --}}
                         </div>
                     </button>
                 </form>
