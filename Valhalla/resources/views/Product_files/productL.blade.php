@@ -144,14 +144,14 @@
                                     @endforeach
                                 </div>
                             @endforeach
-                        @endif
-                        <li>
-                            <button class="button_apply"> Apply Changes</button>
-                            <button class="button_reset" onclick="resetFilters()"> Reset</button>
-                        </li>
-                    </form>
+                        @endif   
                 </ul>
             </div>
+            <div class = "container_buttons">
+                <button class="button_apply"> Apply Changes</button>
+                <button class="button_reset" onclick="resetFilters()"> Reset</button>
+            </div>
+             </form>
         </div>
         <!--Form for hidden fields so the filter request gets sent without a need for a submit button, more smoother functionality -->
 
@@ -181,10 +181,8 @@
                         <input type="radio" id="Recommended" name="sorting" value="Recommended">
                         <label for="Recommended"> Recommended</label> <br>
                     </li>
-                    <li>
                         <button class="button_apply"> Apply Changes</button>
                         <button class="button_reset" onclick="resetSort()"> Reset</button>
-                    </li>
                 </form>
             </ul>
         </div>
