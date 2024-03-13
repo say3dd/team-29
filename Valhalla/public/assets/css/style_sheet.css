@@ -228,15 +228,15 @@ li {
 
 .filters {
     position: absolute;
-    width: 300px;
+    width: 340px;
     box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.3);
     padding: 1.5em;
-    position: absolute;
     background-color: #1e0431;
     border-radius: 2rem;
-    left: 70%;
+    left: 69.5%;
     top: 70.3%;
     padding-bottom: 60px;
+    z-index: 2;
 }
 
 .filters__list li {
@@ -252,7 +252,7 @@ li {
 .scroller {
     height: 600px;
     overflow-y: scroll;
-    overflow-x:hidden;
+    overflow-x: hidden;
     scroll-snap-type: y mandatory;
 }
 .scroller::-webkit-scrollbar {
@@ -262,7 +262,7 @@ li {
 .scroller::-webkit-scrollbar-track {
     background: #4e008b;
     border-radius: 13px;
-    height: 500px;
+    height: 400px;
 }
 
 /* Handle */
@@ -284,6 +284,10 @@ input[type="checkbox"] {
     display: none;
 }
 
+label {
+    font-size: 0.9rem;
+}
+
 /* Container for sorting */
 
 .sort {
@@ -294,9 +298,11 @@ input[type="checkbox"] {
     position: absolute;
     background-color: #1e0431;
     border-radius: 2rem;
-    left: 70%;
+    left: 72%;
     top: 70.3%;
     padding-bottom: 60px;
+    z-index: 2;
+    font-size: 1rem;
 }
 
 .sort__list li {
@@ -313,7 +319,7 @@ input[type="checkbox"] {
     padding-bottom: 0;
 }
 
-input[type="checkbox"] {
+input[type="radio"] {
     margin-right: 0.5em;
     margin-left: 25px;
 }
@@ -324,16 +330,23 @@ input[type="checkbox"] {
 
 /* Button for both sorting and filetering, to either apply all of the changes, or reset */
 
+.container_buttons {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
 .button_apply {
     padding: 1em;
     background: #5e208d;
     border-color: #9000ff;
     margin-top: 25px;
-    margin-left: 25px;
     color: #fff;
-    font-size: 1.2em;
+    font-size: 0.9em;
     font-family: "Noto Sans", sans-serif;
     border-radius: 1.2rem;
+    text-wrap: nowrap;
+    margin-left: 10px;
 }
 
 .button_apply:hover {
@@ -349,7 +362,7 @@ input[type="checkbox"] {
     margin-top: 25px;
     margin-left: 30px;
     color: #fff;
-    font-size: 1.2em;
+    font-size: 0.9em;
     font-family: "Noto Sans", sans-serif;
     border-radius: 1.2rem;
 }
