@@ -16,7 +16,7 @@ use App\Http\Controllers\Product\ReturnController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\Basket\CheckoutController;
 use App\Http\Controllers\Product\TrackingController;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\DashboardController;
@@ -113,7 +113,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
-//    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
+   Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
 //    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
     Route::get('/checkout/thankyou', function(){
         return view('checkout.thankyou');
@@ -126,7 +126,6 @@ Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name
 
 Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'submit'])->name('return.request.submit');
 
-// Categories page -- change this soon
 Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
