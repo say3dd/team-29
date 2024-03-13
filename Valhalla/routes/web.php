@@ -102,8 +102,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/home', [HomeController::class,'authHome'])->name('home');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    
-    
+
+
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -133,7 +133,7 @@ Route::get('/categories', function () {
 })->name('categories');
 Route::get('/search', [ProductController::class, 'search']) ->name('categories.search');
 
-Route::get('/wishlist', [WishListController::class, 'index'])->name('FrontEnd.wishlist');
+Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
 Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
 Route::post('/remove-from-wishlist/{productId}', [WishListController::class, 'remove'])->name('wishlist.remove');

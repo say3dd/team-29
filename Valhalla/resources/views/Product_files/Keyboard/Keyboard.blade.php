@@ -51,8 +51,8 @@
             <div class="monitors-title-line"></div> 
             <h2 class="price">Price: £160</h2>
             <div class="buttons-container">
-                <a href="{{url('contactUs')}}" class="add-btn">Add to basket</a>
-                <a href="{{url('contactUs')}}" class="wishlist-btn">Add to wishlist</a>
+                <a href="{{url('contactUs')}}" class="add-btn">ADD TO BASKET</a>
+                <a href="{{url('contactUs')}}" class="wishlist-btn">ADD TO WISHLIST</a>
             </div>
         </div>
       </div>
@@ -81,8 +81,8 @@
 
             </div>
             <div class="bottom-card">
-              <h2 class="person-title">Rapid Trigger</h2>
-              <p class="person-info">DyAc+ makes vigorous in-game
+              <h2 class="title-feature"">Rapid Trigger</h2>
+              <p class="info-feature"">DyAc+ makes vigorous in-game
                  actions such as spraying less blur. 
                 This allows gamers to see the position of crosshair and 
                 impact points more clearly.</p>
@@ -98,8 +98,8 @@
             <img  src="{{ asset('assets/Keyboard_Images/feature2-keyboard 1.png') }}" alt=""">
             </div>
             <div class="bottom-card">
-              <h2 class="person-title">Adjustability</h2>
-              <p class="person-info">Lightning-fast 240 Hz high refresh rate performance 
+              <h2 class="title-feature"">Adjustability</h2>
+              <p class="info-feature"">Lightning-fast 240 Hz high refresh rate performance 
                 and 0.5~1ms response rate for a smooth PC gaming experience. 120 Hz
                  Compatible for PS5</p>
 
@@ -113,8 +113,8 @@
 
             </div>
             <div class="bottom-card">
-              <h2 class="person-title">2-in-1 Action Keys</h2>
-              <p class="person-info">Lightning-fast 240 Hz high refresh rate performance 
+              <h2 class="title-feature"">2-in-1 Action Keys</h2>
+              <p class="info-feature"">Lightning-fast 240 Hz high refresh rate performance 
                 and 0.5~1ms response rate for a smooth PC gaming experience. 120 Hz
                  Compatible for PS5.</p>
 
@@ -127,8 +127,8 @@
        
             </div>
             <div class="bottom-card">
-              <h2 class="person-title">OLED Smart Display</h2>
-              <p class="person-info">Player diversity drives unique monitor height and angle combos, recognizing individual
+              <h2 class="title-feature"">OLED Smart Display</h2>
+              <p class="info-feature"">Player diversity drives unique monitor height and angle combos, recognizing individual
                  preferences for an optimized gaming setup. Flexible Adjustment
             </p>
 

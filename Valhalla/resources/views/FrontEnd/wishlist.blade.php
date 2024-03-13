@@ -48,8 +48,6 @@
     </div>
 
 @if($wishlistItems->isEmpty())
-  <p>Your wishlist is empty. Return home here: </p> 
-  <x-primary-button> <a href="{{ route('index') }}">Home</a> </x-primary-button>
 <div class=" bg-indigo-950">
   @if($wishlistItems->isEmpty())
     <div class="p-6 text-white bg-purple-700 overflow-hidden shadow-sm sm:rounded-lg custom-container">
@@ -79,9 +77,7 @@
     @endforeach
   </div>
   @endif
-  <x-primary-button id="save-wishlist">Save Wishlist</x-primary-button>
       </div>
-    @endforeach
     @endif
   <x-primary-button class="border-white" id="save-wishlist">Save Wishlist</x-primary-button>
                         </div>

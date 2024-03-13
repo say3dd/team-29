@@ -1,6 +1,6 @@
 {{-- Author @BM786 = Basit Ali Mohammad --}}
 <x-guest-layout>
-    <div class="mb-4 text-white">
+    <div class=" mb-4 text-white">
         <h2 class="text-2xl font-bold px-4 py-2 mt-0">Return Request</h2>
     </div>
     <!-- Session Status -->
