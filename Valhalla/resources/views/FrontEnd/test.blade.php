@@ -54,15 +54,15 @@
                        {{$product->product_name}}</p>
                     <hr><br>
                     <div class = "product_main_features">
+                        {{-- Uses regex to find the specific pattern to find the exact data needed to be shown : here its the laptop detials--}}
                         @php
                             $description = $product->product_description;
 
                             // Regular expressions to find Processor, RAM, and GPU
                             $patterns = [
                                 'Processor' => '/Processor: ([^,\n]+)/',
-                                'Operating System' => '/Operating System: ([^,\n]+)/',
                                 'RAM' => '/RAM:\s*([^\n]+)/',
-                                'GPU' => '/GPU:\s*([^\n]+)/',
+                                'GPU' => '/GPU: ([^,\n]+)/',
                                 'Display' => '/Display: ([^,\n]+)/',
                                 'Memory' => '/Memory: ([^,\n]+)/',
                                 'Storage' => '/Storage: ([^,\n]+)/',
@@ -78,10 +78,10 @@
                             }
                         @endphp
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;{{$details['Processor']}}<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Windows 11 Home<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Windows 11<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;{{$details['GPU']}}<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;16", QHD+ 2560x1600, 240Hz<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;32 GB 6000 MT/s RAM, 1 TB SSD<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;{{$details['Display']}}<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Colour:{{$details['Colour']}}<br>
                     </div>
                     <div class="button_view_specification">
                         <button class="button_view_specification" onclick="openMessageBox()">
@@ -89,7 +89,7 @@
                     </div><br>
                     <hr><br>
                     <div class = "product_price">
-                        {{$price->price}}
+                      £{{$product->price}}
                     </div>
                     <br><hr>
                     <div class="buttons">
@@ -116,26 +116,23 @@
                                         <hr>
 
                                         Graphics Card: <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp; {{$details['GPU']}} 16 GB GDDR6 <br>
-                                        <hr>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; -{{$details['GPU']}}  <br>
 
+                                        <hr>
                                         Display:<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;- 18" QHD+ (2560 x 1600) 165Hz, 3ms, ComfortView Plus, NVIDIA G-SYNC +
-                                        DDS,
-                                        100%
-                                        DCI-P3 <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;-{{$details['Display']}} <br>
                                         <hr>
 
                                         Memory: <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;- 32 GB: 2 x 16 GB, DDR5, 4800 MT/s <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;-{{$details['Memory']}}<br>
                                         <hr>
 
                                         Storage:<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;- 1 TB, M.2, PCIe NVMe, SSD <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;-{{$details['Storage']}}<br>
                                         <hr>
 
                                         Colour: <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;- Dark Metallic Moon <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;-{{$details['Colour']}}<br>
                                         <hr>
 
                                         Camera: <br>
