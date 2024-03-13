@@ -26,8 +26,8 @@ class ProductController extends Controller implements BasketInterface
         // Define the specific patterns used in the database and forms regular expressions to obtain them correctly.
         return [
             'Laptop' => [
-                'GPUs' => "/GPU: ([^,\n]+)/",
-                'CPUs' => "/Processor: ([^,\n]+)/",
+                'GPU' => "/GPU: ([^,\n]+)/",
+                'CPU' => "/Processor: ([^,\n]+)/",
                 'RAM' => "/RAM: (\d+\s*GB)/i"
             ],
             'Mouse' => [
@@ -36,13 +36,13 @@ class ProductController extends Controller implements BasketInterface
                 'Battery Life'=> "/Battery Life:\s*([^\n,]+)/"
             ],
           'Keyboard' =>[
-              'Type of switches' =>  "/Switches:\s*([^\n,]+)/",
-              'connectivity' => "/Connectivity:\s*([^\n,]+)/",
-              'type of Keyboard' => "/Type:\s*([^\n,]+)/"
+              'Switches' =>  "/Switches:\s*([^\n,]+)/",
+              'Connectivity' => "/Connectivity:\s*([^\n,]+)/",
+              'Type' => "/Keyboard Type:\s*([^\n,]+)/"
           ],
             'Monitor' => [
               'Screen Size' =>  "/Screen Size:\s*([^\n,]+)/",
-              'Refresh rate' => "/Refresh rate:\s*([^\n,]+)/",
+              'Refresh Rate' => "/Refresh rate:\s*([^\n,]+)/",
                'Response Time' => "/Response Time\s*:\s*([^\n,]+)/"
           ],
             'Headset' => [
@@ -66,55 +66,87 @@ class ProductController extends Controller implements BasketInterface
         $productDesc = Product::where('category',$category)->distinct()->get()->pluck('product_description');
         $patterns = $category !== 'all' ? $categoryPatterns[$category] : [];
        // filter part
-        $filters = $this->extractFilters($productDesc,$patterns);
+       // $filters = $this->extractFilters($productDesc,$patterns);
         // Applying the filters
-        $query = $this->filterProducts($query, $request->input('brands', []), $filters);
+       $query = $this->filterProducts($query, $request->input('brands', []));
 
 
         // Applying sorting
         $this->sortLaptops($query, $request->input('sorting'));
         // this paginates the page to 12 products
         $products = $query->paginate(12);
-        //dd(request()->all());
+
+        //this loops the feature extraction function to display the features to all products
+        foreach ($products as $product) {
+            $product->features = $this->extractProductFeatures($product);
+        }
+
         // Get distinct brands found within database
         $brands = $category !==  'all' ? Product::select('brand')->where('category', $category)->distinct()->orderBy('brand')
             ->get():Product::select('brand')->distinct()->orderBy('brand')->get();
         // Pass everything to be shown to the view
-        return view('Product_files.products', compact('products','brands','filters','category'));
+        return view('Product_files.products', compact('products','brands','category'));
     }
-//@Bilal Mo
-    protected function extractFilters($descriptions,$patterns)
-    {
-        $filters = [];
-      //  Log::debug('Descriptions:', $descriptions->toArray());
-/**  Due to possible string errors , an error must be used to check whether it is a string or not to handle it correctly*/
-       // foreach ($patterns as $category => $attributePatterns) {
-            foreach ($patterns as $attribute => $pattern) {
-                // Ensure pattern is a string and is a valid regular expression
-                if (!is_string($pattern) || false === @preg_match($pattern, null)) {
-                    // Log the problem for the person coding to review and correct the issue.
-                    Log::warning("Invalid pattern for attribute {$attribute}: " . print_r($pattern, true));
-                    continue; // Skip this pattern
-                }
+//@Bilal Mo extract filter was for the filtering part - kinda not needed rn since it doesnt work :/
+//    protected function extractFilters($descriptions,$patterns)
+//    {
+//        $filters = [];
+//      //  Log::debug('Descriptions:', $descriptions->toArray());
+///**  Due to possible string errors , an error must be used to check whether it is a string or not to handle it correctly*/
+//       // foreach ($patterns as $category => $attributePatterns) {
+//            foreach ($patterns as $attribute => $pattern) {
+//                // Ensure pattern is a string and is a valid regular expression
+//                if (!is_string($pattern) || false === @preg_match($pattern, null)) {
+//                    // Log the problem for the person coding to review and correct the issue.
+//                    Log::warning("Invalid pattern for attribute {$attribute}: " . print_r($pattern, true));
+//                    continue; // Skip this pattern
+//                }
+//
+//                // Extract matches for each pattern
+//                $matches = $descriptions->map(function ($desc) use ($pattern) {
+//                    preg_match_all($pattern, $desc, $match);
+//                    return $match[1] ?? null;
+//                })->flatten()->filter()->unique()->values()->toArray();
+//
+//                if (!empty($matches)) {
+//                    $filters[$attribute] = $matches;
+//                }
+//                Log::debug("Attribute: $attribute, Pattern: $pattern, Matches: " . print_r($matches, true));
+//            }
+//        //}
+//        /**  Used these debugging to find what is produced from the filtering and patterns to check whether it got the data from the DB or not*/
+//        Log::debug('Patterns used:', $patterns);
+//        Log::debug('Filters extracted:', $filters);
+//        return $filters;
+//    }
 
-                // Extract matches for each pattern
-                $matches = $descriptions->map(function ($desc) use ($pattern) {
-                    preg_match_all($pattern, $desc, $match);
-                    return $match[1] ?? null;
-                })->flatten()->filter()->unique()->values()->toArray();
+/** This function works on extracting the featueres of the product and displaying it for each product
+ * - shown in productL page so all products have small info below them for the
+ user to see
+ */
+protected function extractProductFeatures($product){
+    $category = $product->category;
+    $categoryPatterns = $this->getCategoryPatterns($category)[$category];
+    //placed in an array to contain the data obtained from DB to be displayed to the product paghe
+    $features=[];
 
-                if (!empty($matches)) {
-                    $filters[$attribute] = $matches;
-                }
-                Log::debug("Attribute: $attribute, Pattern: $pattern, Matches: " . print_r($matches, true));
+    foreach($categoryPatterns as $featureName => $pattern){
+        //checks to match if the pattern and the product desc matches
+       // if(is_string($pattern)) {
+            preg_match($pattern, $product->product_description, $matches);
+            //if the matches array isnt empty and if its correctly matches what been obtained in the array - in this case the product desc
+            //then assings to features
+            if (!empty($matches) && isset($matches[1])) {
+                $features[$featureName] = $matches[1];
             }
-        //}
-        /**  Used these debugging to find what is produced from the filtering and patterns to check whether it got the data from the DB or not*/
-        Log::debug('Patterns used:', $patterns);
-        Log::debug('Filters extracted:', $filters);
-        return $filters;
-    }
+      //  }else{
+         //   Log::warning("Pattern for {$featureName} is not a string.");
 
+        }
+   // }
+//return features and displays the result of the matching.
+    return $features;
+}
 
     /** @Bilal Mo Assigning operations for the sorting functions */
     protected function sortLaptops($query,$sorting)
@@ -128,7 +160,7 @@ class ProductController extends Controller implements BasketInterface
     }
     /** @BilalMo The function works on displaying the laptop based on certain conditionals whether the filter of the feature has been
      *pressed or not*/
-    protected function filterProducts($query,$checkedbrands,$filters)
+    protected function filterProducts($query,$checkedbrands)//$filters)
     {
         $query->distinct();
 
@@ -171,8 +203,7 @@ class ProductController extends Controller implements BasketInterface
     public function getInfo(Request $request)
     {
         /* had to restate these and put assign them within view since it returns an Undefined variable $brands/$graphics issue **/
-        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
-
+      //  $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
         $laptopID = request()->input('laptopData'); //grabs specifically the section of the request that holds the laptop's ID
       if($laptopID != '' && Auth::id() != null){
        //     $product_data = DB::table('products')->where('product_id', $laptopID)->first();
@@ -198,6 +229,21 @@ class ProductController extends Controller implements BasketInterface
        $scrollPosition = $request->input('scrollPosition');
        session(['scrollPosition' => $scrollPosition, 'restoreScroll' => true]);
        return redirect()->back();
+    }
+    public function showlaptopinfo($id){
+        $productDetails = Product::find($id);
+
+        return view('Frontend.test',['product' => $productDetails]);
+    }
+
+    public function showotherproductinfo($id){
+        $productDetails = Product::find($id);
+        if (!$productDetails) {
+            // Handle the case where the product is not found
+            abort(404);
+        }
+
+        return view('Product_files.Monitor.Monitor',['product' => $productDetails]);
     }
 
     // @say3dd (Mohammed Miah) displays all the products, maximum of 12 on the products page
