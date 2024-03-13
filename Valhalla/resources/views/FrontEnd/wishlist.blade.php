@@ -47,6 +47,9 @@
         </div>
     </div>
 
+@if($wishlistItems->isEmpty())
+  <p>Your wishlist is empty. Return home here: </p> 
+  <x-primary-button> <a href="{{ route('index') }}">Home</a> </x-primary-button>
 <div class=" bg-indigo-950">
   @if($wishlistItems->isEmpty())
     <div class="p-6 text-white bg-purple-700 overflow-hidden shadow-sm sm:rounded-lg custom-container">
@@ -57,6 +60,26 @@
   <div id="sortable">
     @foreach($wishlistItems as $product)
         {{ $product->product_name }}
+
+        <div style="display:flex;">
+          <a href="{{route('add_to_basket', $product->product_id)}}">
+            <x-primary-button type="button" role="button" class="buy-product">
+             Add to Basket
+            </x-primary-button>
+             </a>
+          </div>
+        <form method="POST" action="{{ route('wishlist.remove', $product->product_id) }}">
+          @csrf
+          @method('DELETE')
+          <div style="display:flex;">
+            <x-secondary-button type="submit">Remove from Wishlist</x-secondary-button>
+          </div>
+       </div>
+      </form>
+    @endforeach
+  </div>
+  @endif
+  <x-primary-button id="save-wishlist">Save Wishlist</x-primary-button>
       </div>
     @endforeach
     @endif

@@ -8,35 +8,44 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
 
 namespace App\Http\Controllers\Basket;
 
-use App\Http\Controllers\Controller;
+use App\Models\Orders;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
     public function showSummary()
     {
         $userID = Auth::id();
-        $baskets = DB::table('baskets')->get();
-        $userBasket = $baskets->where('user_id', $userID);
-
-        $running_total = 0.00;
-        foreach($userBasket as $item){
-            $running_total += $item->product_price;
-        }
-        //Copied this logic from the basket page, seems to work but may need tweaking later
-        $running_total += 5.00; //The 5.00 is the placeholder shipping cost as shown on the basket page
-        return view('checkout.summary', ['userBasket' => $userBasket, 'total' => $running_total]);
+        $userBasket = session()->get('basket', []);
+        // Return the summary view with the user's basket
+        return view('checkout.summary')->with('userBasket', $userBasket);
     }
-
     public function placeOrder(Request $request)
     {
-        // Add logic to process the order and store it in the database
-        // You can access form input data using $request->input('your_input_name')
-        // For example: $productName = $request->input('product_name');
+    // Retrieve the basket from the session
+    $basket = session()->get('basket', []);
 
-        // Your order processing logic here
+    // Loop through each item in the basket
+    foreach ($basket as $id => $details) {
+        // Create a new order for each item
+        Orders::create([
+            'user_id' => Auth::id(),
+            'product_id' => $id,
+            'product_name' => $details['product_name'],
+            'status' => 'order placed',
+            'quantity' => $details['quantity'],
+            'price' => $details['price'],
+            'tracking_number' => (string) Str::random(10)
+        ]);
+    }
+
+    // Clear the basket
+    session()->forget('basket');
+
 
         // Redirect to a thank you page or order confirmation page
 
