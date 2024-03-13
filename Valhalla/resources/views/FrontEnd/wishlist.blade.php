@@ -129,10 +129,7 @@
                         @endforeach
                     </div>
                     <x-primary-button class="border-white" id="save-wishlist">Save Wishlist</x-primary-button>
-
                 @endif
-
-
             </div>
         </class2>
     </body>
