@@ -133,10 +133,10 @@ Route::get('/categories', function () {
 })->name('categories');
 Route::get('/search', [ProductController::class, 'search']) ->name('categories.search');
 
-Route::get('/wishlist', [WishListController::class, 'index']);
+Route::get('/wishlist', [WishListController::class, 'index'])->name('FrontEnd.wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
-Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']
-);
+Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
+Route::post('/remove-from-wishlist/{productId}', [WishListController::class, 'remove'])->name('wishlist.remove');
 
 Route::get('/summary', function () {
     return view('checkout.summary');
