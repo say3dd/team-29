@@ -51,12 +51,35 @@
         </div>
                 <div class="product_information">
                     <p class="product_name">
-                        Dell Alienware x16 Gaming Laptop</p>
+                       {{$product->product_name}}</p>
                     <hr><br>
                     <div class = "product_main_features">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;13th Gen Intel Core i9-13900HK<br>
+                        @php
+                            $description = $product->product_description;
+
+                            // Regular expressions to find Processor, RAM, and GPU
+                            $patterns = [
+                                'Processor' => '/Processor: ([^,\n]+)/',
+                                'Operating System' => '/Operating System: ([^,\n]+)/',
+                                'RAM' => '/RAM:\s*([^\n]+)/',
+                                'GPU' => '/GPU:\s*([^\n]+)/',
+                                'Display' => '/Display: ([^,\n]+)/',
+                                'Memory' => '/Memory: ([^,\n]+)/',
+                                'Storage' => '/Storage: ([^,\n]+)/',
+                                'Colour' => '/Colour: ([^,\n]+)/'
+                            ];
+                    // key refers to the descriptive names (processor,gpu etc), $pattern is the regular expressions, details is what stores the data found
+                            $details = [];
+                            foreach ($patterns as $key => $pattern) {
+                                if (preg_match($pattern, $description, $matches)) {
+                                    //$matches[1] used for only the specified details matching the regex
+                                    $details[$key] = $matches[1];
+                                }
+                            }
+                        @endphp
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;{{$details['Processor']}}<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Windows 11 Home<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;NVIDIA® GeForce RTX 4090<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;{{$details['GPU']}}<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;16", QHD+ 2560x1600, 240Hz<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;32 GB 6000 MT/s RAM, 1 TB SSD<br>
                     </div>
@@ -66,7 +89,7 @@
                     </div><br>
                     <hr><br>
                     <div class = "product_price">
-                        Price:£3,349.00
+                        {{$price->price}}
                     </div>
                     <br><hr>
                     <div class="buttons">
@@ -85,10 +108,7 @@
                                     <div class = "all_specification_contents" >
                                         <hr>
                                         Processor: <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;- 13th Gen Intel® Core™ i9-13980HX (36 MB cache, 24 cores, 32 threads,
-                                        up to
-                                        5.60 GHz
-                                        Turbo) <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;{{$details['Processor']}} <br>
                                         <hr>
 
                                         Operating System: <br>
@@ -96,7 +116,7 @@
                                         <hr>
 
                                         Graphics Card: <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;- NVIDIA® GeForce RTX™ 4090, 16 GB GDDR6 <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; {{$details['GPU']}} 16 GB GDDR6 <br>
                                         <hr>
 
                                         Display:<br>

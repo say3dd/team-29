@@ -10,7 +10,8 @@
     <img class="image_all_laptop" src="{{ asset($product->images) }}" style="transition: 0.3s ease">
     <div class="laptop_all_text">
         <!--@say3dd (Mohammed Miah) && @BilalMO (Bilal Mohamed) Routing to make the user go to the details of an individual product by clicking on the name -->
-        <a style= "color: inherit; font-weight: bold; font-size: 1.05rem;" href="{{ route('product.info', $product->product_id) }}"> {{$product->product_name}} </a>
+        <a style= "color: inherit; font-weight: bold; font-size: 1.05rem;" href="{{ $product->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$product->product_id]) : route('product.otherInfo', ['id' =>$product->product_id]) }}">
+            {{$product->product_name}} </a>
         {{-- Uses regex to find the specific pattern to find the exact data needed to be shown : here its the processor, gpu and ram--}}
         @php
         $description = $product->product_description;

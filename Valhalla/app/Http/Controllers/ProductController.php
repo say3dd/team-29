@@ -171,8 +171,7 @@ class ProductController extends Controller implements BasketInterface
     public function getInfo(Request $request)
     {
         /* had to restate these and put assign them within view since it returns an Undefined variable $brands/$graphics issue **/
-        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
-
+      //  $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
         $laptopID = request()->input('laptopData'); //grabs specifically the section of the request that holds the laptop's ID
       if($laptopID != '' && Auth::id() != null){
        //     $product_data = DB::table('products')->where('product_id', $laptopID)->first();
@@ -198,6 +197,21 @@ class ProductController extends Controller implements BasketInterface
        $scrollPosition = $request->input('scrollPosition');
        session(['scrollPosition' => $scrollPosition, 'restoreScroll' => true]);
        return redirect()->back();
+    }
+    public function showlaptopinfo($id){
+        $productDetails = Product::find($id);
+
+        return view('Frontend.test',['product' => $productDetails]);
+    }
+
+    public function showotherproductinfo($id){
+        $productDetails = Product::find($id);
+        if (!$productDetails) {
+            // Handle the case where the product is not found
+            abort(404);
+        }
+
+        return view('Product_files.Monitor.Monitor',['product' => $productDetails]);
     }
 
     // @say3dd (Mohammed Miah) displays all the products, maximum of 12 on the products page
