@@ -136,8 +136,7 @@ Route::get('/search', [ProductController::class, 'search']) ->name('categories.s
 Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
 Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
-Route::post('/remove-from-wishlist/{productId}', [WishListController::class, 'remove'])->name('wishlist.remove');
-
+Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
 Route::get('/summary', function () {
     return view('checkout.summary');
 })->name('summary');
