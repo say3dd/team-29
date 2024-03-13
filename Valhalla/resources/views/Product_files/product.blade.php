@@ -14,7 +14,6 @@
 <section class = "navbar-section">
     @include ('header')
 </section>
-
 <body>
 <div class="main">
     {{-- Section 1 starts here --}}
