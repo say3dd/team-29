@@ -37,12 +37,12 @@ class WishListController extends Controller
             'position' => $position,
         ]);
     } catch (QueryException $e) {
-        return back()->flash('error', 'Failed to add product to wishlist.');
+        return back()->with('error', 'Failed to add product to wishlist.');
     }
 
 
-        return back();
-    }
+    return back()->with('success', 'Product added to your wishlist!');
+}
     public function saveOrder(Request $request)
     {
         $order = json_decode($request->input('order'));
@@ -80,7 +80,6 @@ class WishListController extends Controller
             }
             return back()->with('error', 'Item not found in wishlist.');
         } catch (Exception $e) {    
-            // Redirect back with an error message
             return back()->with('error', 'Failed to remove item from wishlist.');
         }
     }
