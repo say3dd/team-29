@@ -201,9 +201,9 @@
 {{--                                     @enderror--}}
 
                                      <a href="{{route('add_to_basket', $product->product_id)}}">
-                                         <button type="button" role="button" class="buy-product">
-                                             Add to Basket
-                                         </button>
+                                    <button type="button" role="button" class="buy-product">
+                                     Add to Basket
+                                    </button>
                                      </a>
 
                                      <br>
