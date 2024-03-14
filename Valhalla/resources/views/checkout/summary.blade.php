@@ -35,7 +35,7 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
                     <p class="text-base font-semibold leading-none text-gray-600 dark:text-white">£{{$details['price']}}</p>
                 </div>
                 <div class="mt-6 sm:mt-0 xl:my-10 xl:px-20 w-52 sm:w-96 xl:w-auto">
-                    <img src="{{$details['images']}}" alt="item-image"/>
+                    <img src="{{ asset($details['images']) }}" alt="item-image" width="300" height="300" class="img-responsive rounded-md mr-2"/>
                 </div>
                 @endforeach
                 <!--The section below is just so the user knows where the extra £5 comes from. I just copy + pasted from above but I'll leave it up to frontend to determine what to do from here -F -->

@@ -114,7 +114,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
-//    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+   Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
     Route::get('/checkout/thankyou', function(){
         return view('checkout.thankyou');
     })->name('thank-you');
@@ -134,6 +134,7 @@ Route::get('/search', [ProductController::class, 'search']) ->name('categories.s
 Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
 Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
+Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
 
 
 

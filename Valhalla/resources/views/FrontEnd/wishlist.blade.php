@@ -86,6 +86,11 @@
     </head>
 
     <body>
+        @if (session('success'))
+            <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
+                {{ session('success') }}
+            </div>
+        @endif
         <class>
             <div class=" py-6 bg-white">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
