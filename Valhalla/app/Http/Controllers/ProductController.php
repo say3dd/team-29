@@ -271,24 +271,15 @@ public function addToBasket($id){
     $basket = session()->get('basket', []);
 
     if (isset($basket[$id])) {
+        $basket[$id]['quantity']++;
 
-        if ($basket[$id]['quantity'] + 1 <= $basket[$id]['stock']) {
-            $basket[$id]['quantity']++;
-        } else {
-            // Handle stock limitation (optional)
-            // You can throw an exception, display an error message, etc.
-            return redirect()->back()->withErrors('Failed', 'quantity exceeded the stock level');
-        }
-
-    } else{
+    }else{
         $basket[$id] = [
             "product_name" => $product->product_name,
             "images" => $product->images,
             "price" => $product->price,
-            "quantity" => 1,
-            "stock" => $product->stock,
+            "quantity" => 1
         ];
-        $basket[$id]['stock'] -= $basket[$id]['quantity'];
     }
 
     session()->put('basket', $basket);
@@ -298,20 +289,12 @@ public function addToBasket($id){
     public function updateBasket(Request $request){
         if ($request->id && $request->quantity){
             $basket = session()->get('basket');
-
-            if($basket[$request->id]["quantity"] < $basket[$request->id]["stock"] ){
-                $basket[$request->id]["quantity"] = $request->quantity;
-            } else {
-                return redirect()->back()->withErrors('Failed', 'quantity exceeded the stock level');
-            }
-
-
+            $basket[$request->id]["quantity"] = $request->quantity;
             session()->put('basket', $basket);
-
             session()->flash('success', 'Basket has been updated!');
 
         }
-        return redirect()->back();
+
     }
 
 //    public function removeFromBasket(Request $request)

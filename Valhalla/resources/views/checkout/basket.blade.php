@@ -51,7 +51,7 @@
             <tbody>
             @php $total = 0 @endphp
             @if(session('basket'))
-                @forelse(session('basket') as $id => $details)
+                @foreach(session('basket') as $id => $details)
                     @php $total += $details['price'] * $details['quantity'] @endphp
                     <tr data-id="{{ $id }}" class="border-b" >
                         <td data-th="Product">
@@ -66,10 +66,7 @@
                         <td data-th="Price">£ {{ $details['price'] }}</td>
 
                         <td data-th="Quantity">
-
-                            <input type="number" value="{{ $details['quantity'] }}" class="basket_update form-control quantity  text-black w-1/2 rounded-md" min="1" />
-
-
+                                <input type="number" value="{{ $details['quantity'] }}" class="basket_update form-control quantity  text-black w-1/2 rounded-md" min="1" />
                         </td>
                         <td data-th="Subtotal" class="text-center">£ {{ $details['price'] * $details['quantity'] }}</td>
                         <td class="actions p-1.5" data-th="">
@@ -88,9 +85,7 @@
                     <tr>
                         <td colspan="5"></td>
                     </tr>
-                    @empty
-                    <h1>Basket is currently empty </h1>
-                @endforelse
+                @endforeach
             @endif
             </tbody>
             <tfoot>
