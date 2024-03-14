@@ -149,16 +149,15 @@
           <div class="features">
             <div class="top-card">
 
-                <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
-
+                <img  src="{{ asset('assets/Monitor_images/71978ixVUsL._AC_SL1500_.jpg') }}" alt=""">
+             
             </div>
             <div class="bottom-card">
               <h2 class="title-feature">High-grade Technology</h2>
-              <p class="info-feature">Our high grade technology makes vigorous in-game
-                 actions such as spraying less blurry.
-                This allows gamers to see the position of crosshair and
-                impact points more clearly.</p>
-
+              <p class="info-feature">Enhance your gaming experience with cutting-edge technology, 
+                ensuring smooth gameplay and seamless performance. 
+                Immerse yourself in every moment with fluid animations and responsive controls</p>
+             
             </div>
 
           </div>
@@ -167,21 +166,21 @@
             <div class="features">
                 <div class="top-card">
 
-                    <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
+                    <img src="{{ asset('assets/Monitor_images/71dsXYpPL5L._AC_SL1500_.jpg') }}" alt=""">
                 </div>
                 <div class="bottom-card">
                     <h2 class="title-feature">Fast Response Time</h2>
                     <p class="info-feature">
                         Experience unparalleled, lightning-fast performance with a high refresh rate,
                         ensuring a supremely smooth and immersive PC gaming experience.
-                        Perfect for demanding gamers seeking fluid gameplay without any compromise.
+                        Perfect for demanding gamers seeking  gameplay without any compromise.
                       </p>
                 </div>
             </div>
 
             <div class="features">
                 <div class="top-card">
-                    <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                    <img src="{{ asset('assets/Monitor_images/71DIQKo4OZL._AC_SL1500_.jpg') }}" alt=""">
 
                 </div>
                 <div class="bottom-card">
@@ -190,20 +189,21 @@
                         Experience the pinnacle of gaming with a lightning-fast 240 Hz refresh rate
                         and ultra-quick response time for an exceptionally smooth PC gaming experience.
                         Fully compatible with PS5 at 120 Hz.</p>
-
+                   
                 </div>
 
             </div>
             <div class="features">
                 <div class="top-card">
-                    <img src="{{ asset('assets/monitor_images/image_features.png') }}" alt=""">
-
+                    <img src="{{ asset('assets/Monitor_images/61ZG1gImaeL._AC_SL1500_.jpg') }}" alt=""">
+               
                 </div>
                 <div class="bottom-card">
                     <h2 class="title-feature">Flexible Adjustment</h2>
-                    <p class="info-feature">Player diversity drives unique monitor height and angle combos, recognizing
-                        individual
-                        preferences for an optimized gaming setup. Flexible Adjustment
+                    <p class="info-feature">
+                     Optimize your gaming setup with high-grade technology, offering flexible adjustments for
+                      personalized comfort and precision. Seamlessly adapt your gear to suit your unique
+                   playstyle, ensuring optimal performance.
                     </p>
 
                 </div>
@@ -220,13 +220,13 @@
           <div class="features">
               <div class="top-card">
 
-                  <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
-
+                  <img  src="{{ asset('assets/Monitor_images/image_file__97427.jpg') }}" alt=""">
+    
               </div>
               <div class="bottom-card">
                   <h2 class="title-feature">Ergonomic Design </h2>
                   <p class="info-feature">Enjoy extended gaming sessions in comfort with an ergonomically
-                      designed gaming mouse. Its shape and size are optimized to reduce
+                      designed gaming mouse. And its shape and size are optimized in order to reduce
                       strain on your hand and wrist.</p>
 
               </div>
@@ -236,8 +236,8 @@
 
           <div class="features">
               <div class="top-card">
-
-                  <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
+         
+                  <img src="{{ asset('assets/Monitor_images/razer_deathadder_v3_wired_30kdpi_optical_sensor.jpg') }}" alt=""">
               </div>
               <div class="bottom-card">
                   <h2 class="title-feature">High Precision Sensors</h2>
@@ -248,25 +248,26 @@
                   </p>
               </div>
           </div>
-
+       
           <div class="features">
               <div class="top-card">
-                  <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
-
+         
+                  <img src="{{ asset('assets/Monitor_images/button_image.jpg') }}" alt=""">
               </div>
               <div class="bottom-card">
                   <h2 class="title-feature">Customizable buttons</h2>
                   <p class="info-feature">
-                      Tailor your gaming mouse to fit your playstyle with customizable buttons.
-                      Assign complex macro functions effortlessly,
-                      enabling quick actions and reactions in game.</p>
-
+                      Elevate your gameplay with ultra-responsive high precision sensors,
+                      offering unparalleled accuracy and tracking speed.
+                      Perfect for competitive gaming where every millisecond counts.
+                  </p>
               </div>
           </div>
+     
           @if(strtolower($mouseType) ==='wired')
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                                <img src="{{ asset('assets/Monitor_images/816c3NWn39L._AC_UF1000,1000_QL80_.jpg') }}" alt=""">
                             </div>
                             <div class="bottom-card">
                                 <h2 class="title-feature">Tangle-free wires</h2>
@@ -281,8 +282,8 @@
                     {{-- Assumes if the choice is wireless --}}
                     <div class="features">
                         <div class="top-card">
-                            <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
-                        </div>
+                            <img src="{{ asset('assets/Monitor_images/logitech-g703-LIGHTSPEED-Wireless-Mouse-2.jpg') }}" alt=""">
+                        </div>   
                         <div class="bottom-card">
                             <h2 class="title-feature">Wireless Technology </h2>
                             <p class="info-feature"> Unleash true freedom with our wireless mouse,
@@ -301,14 +302,14 @@
                     <div class="features">
                         <div class="top-card">
 
-                            <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
-
+                            <img  src="{{ asset('assets/Monitor_images/8.jpg') }}" alt=""">
+                  
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature"> The Best Mechanical Keyboards </h2>
-                            <p class="info-feature">Elevate your typing experience with our mechanical keyboard,
-                                designed for tactile feedback and durability.
-                                Experience accurate keystrokes and unmatched responsiveness in every gaming battle.</p>
+                            <h2 class="title-feature">Durability </h2>
+                            <p class="info-feature">Our keyboard is built to last, featuring robust construction and high-quality materials.
+                                It withstands intense gaming sessions,
+                                ensuring reliability and longevity in every click.
                         </div>
 
                     </div>
@@ -316,29 +317,28 @@
 
                     <div class="features">
                         <div class="top-card">
-
-                            <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
+                        
+                            <img src="{{ asset('assets/Monitor_images/634ee60305bfdf097677f7c8-havit-60-mechanical-keyboard-mouse.jpg') }}" alt=""">
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature">Wired/Wireless Keyboards</h2>
+                            <h2 class="title-feature">Wired/Wireless </h2>
                             <p class="info-feature">  Experience unparalleled stability and zero latency with our wired keyboards,
                                 or  Embrace the ultimate gaming freedom with our wireless keyboards.
-                                Improving gaming from indoors or in any atmosphere.
+                                Improving gaming from indoors.
                             </p>
                         </div>
                     </div>
 
                     <div class="features">
                         <div class="top-card">
-                            <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                            <img src="{{ asset('assets/Monitor_images/645aa5a8910e9d2f697d11df-dierya-dk61e-wired-60-mechanical-gaming.jpg') }}" alt=""">
 
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature">Tested Durability</h2>
+                            <h2 class="title-feature">Egonomics</h2>
                             <p class="info-feature">
-                                Our keyboard is built to last, featuring robust construction and high-quality materials.
-                                It withstands intense gaming sessions,
-                                ensuring reliability and longevity in every click.
+                            Elevate your typing experience with our ergonomically designed mechanical keyboard, meticulously crafted for tactile 
+                            feedback, durability as well as reliability. Experience accurate keystrokes.
                                </p>
 
                         </div>
@@ -346,7 +346,7 @@
                     @if(strtolower($SwitchType) === "red") {{--Add image for red switches--}}
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                                <img src="{{ asset('assets/Monitor_images/71T2t9o0X2L._AC_UF1000,1000_QL80_.jpg') }}" alt=""">
 
                             </div>
                             <div class="bottom-card">
@@ -362,8 +362,8 @@
                         {{-- Assumes if the choice is blue switches--}}
                         <div class="features">
                             <div class="top-card">
-
-                                <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
+                    
+                                <img src="{{ asset('assets/Monitor_images\4-CH-9109411-NA-Gallery-K70-RGB-PRO-PBT-05.jpg') }}" alt=""">
                             </div>
                             <div class="bottom-card">
                                 <h2 class="title-feature">The Blue Switches </h2>
@@ -386,44 +386,63 @@
                     <div class="features">
                         <div class="top-card">
 
-                            <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
-
+                            <img  src="{{ asset('assets/Monitor_images/71r7e-GFSkL._AC_SL1500_.jpg') }}" alt=""">
+    
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature"> High-Quality Audio</h2>
-                            <p class="info-feature"> Immerse yourself in superior sound with our gaming headset.
-                                Experience crystal-clear audio and deep bass,
-                                enhancing every in-game detail for a truly immersive experience.</p>
-
+                            <h2 class="title-feature">Surround Sound</h2>
+                            <p class="info-feature"> 
+                            Immerse yourself in superior sound with our gaming headset, meticulously engineered for
+                             durability and comfort, ensuring you stay focused
+                              and immersed in your gaming adventures for hours on end.</p>
+                     
                         </div>
 
                     </div>
 
-
+                            
                     <div class="features">
                         <div class="top-card">
-
-                            <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
+       
+                            <img src="{{ asset('assets/Monitor_images/mic_headset.jpg') }}" alt=""">
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature">The best Mics</h2>
+                            <h2 class="title-feature">Microphone Quality</h2>
                             <p class="info-feature">Our gaming headset boasts a high-quality microphone,
                                 ensuring your voice is heard with clarity and precision.
                                 Communicate effortlessly, making teamwork seamless and impactful in every game.
                             </p>
                         </div>
                     </div>
+
+                                   
+                    <div class="features">
+                        <div class="top-card">
+
+                            <img src="{{ asset('assets/Monitor_images/ergonomics_headset.jpg') }}" alt=""">
+                        </div>
+                        <div class="bottom-card">
+                            <h2 class="title-feature">Ergonomic Design</h2>
+                            <p class="info-feature">Crafted with ergonomic design principles in mind, our gaming headset 
+                                offers unparalleled comfort for extended gaming sessions. 
+                                Experience crystal-clear audio and deep bass, heightening every in-game detail.
+                            </p>
+                        </div>
+                    </div>
+
                     @if(strtolower($mouseType) ==='wired')
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
-
+                                <img src="{{ asset('assets/Monitor_images/81YKfMGxIBL._AC_SL1500_.jpg') }}" alt=""">
+                         
                             </div>
                             <div class="bottom-card">
                                 <h2 class="title-feature">Our Headsets</h2>
-                                <p class="info-feature"> Experience unmatched audio fidelity and zero latency with our wired headset,
-                                    designed for gamers seeking a direct, stable connection for uninterrupted,
-                                    high-quality sound.
+                                <p class="info-feature"> 
+                        Experience unparalleled audio fidelity with our wired headphones, meticulously
+                         engineered for uncompromising sound quality and reliability.
+                         Immerse yourself in crystal-clear audio and deep bass, capturing every nuance 
+                         of in your games.
                                 </p>
                             </div>
                         </div>
@@ -432,8 +451,8 @@
                         {{-- Assumes if the choice is wireless headphones--}}
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
-
+                                <img src="{{ asset('assets/Monitor_images/81RjUDCOh9L._AC_SL1500_.jpg') }}" alt=""">
+                       
                             </div>
                             <div class="bottom-card">
                                 <h2 class="title-feature">Our Wireless Headsets</h2>
