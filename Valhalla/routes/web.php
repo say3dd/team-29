@@ -1,7 +1,7 @@
 <?php
 /*
 
-    Author @BM786 Basit Ali Mohammad == worked on this page checkout summary and contact.
+    Author @BM786 Basit Ali Mohammad == worked on this page.
         @noramknarf (Francis Moran) - route to product.getInfo() and basket routes.
      */
 
@@ -135,8 +135,7 @@ Route::get('/search', [ProductController::class, 'search']) ->name('categories.s
 
 Route::get('/wishlist', [WishListController::class, 'index'])->name('FrontEnd.wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
-Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']
-);
+Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
 
 Route::get('/summary', function () {
     return view('checkout.summary');
