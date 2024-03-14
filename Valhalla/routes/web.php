@@ -62,7 +62,7 @@ if anybody could let me (Francis) know of a better way to do this, I'd gladly ap
 //New Basket code
 Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
 //Route::get('/basket', [ProductController::class,'contents'])->name('basket');
-Route::get('basket', [ProductController::class,'basket'])->middleware(CheckCartNotEmpty::class)->name('basket');
+Route::get('basket', [ProductController::class,'basket'])->name('basket');
 Route::patch('update-basket', [ProductController::class, 'updateBasket'])->name('update_basket');
 Route::delete('remove-from-basket', [ProductController::class,'removeFromBasket'])->name('remove_from_basket');
 
@@ -114,7 +114,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
-//    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+   Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
     Route::get('/checkout/thankyou', function(){
         return view('checkout.thankyou');
     })->name('thank-you');
