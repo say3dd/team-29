@@ -28,6 +28,11 @@
               {{--                <p class=" text-amber-200">Hello, a message</p>--}}
           </div>
       @endif
+      @if(session('error'))
+      <div id="flash-error" class="p-5 bg-red-700 mx-0 my-5 rounded-[5px]">
+        {{session('error')}}
+    </div>
+      @endif
 
 <div class="h-screen w-screen bg-dark-blue flex  justify-center">
   <div class="pt-5 mt-16 md:w-5/6">

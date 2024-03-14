@@ -20,7 +20,7 @@ class CheckCartNotEmpty
         if (! session('basket') || count(session('basket')) < 1) {
             // Redirect to the cart page or elsewhere
             print_r('this triggers');
-            return redirect()->route('index')->with('error', 'No items in basket');
+            return redirect()->route('basket')->with('error', 'No items in basket');
         }
         return $next($request);
     }
