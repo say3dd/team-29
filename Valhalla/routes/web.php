@@ -16,7 +16,7 @@ use App\Http\Controllers\Product\ReturnController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\Basket\CheckoutController;
 use App\Http\Controllers\Product\TrackingController;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\DashboardController;
@@ -82,9 +82,8 @@ Route::get('/test1', function () {
 
     // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
     Route::get('/products', [ProductController::class,'index'])->name('products.index');
-    Route::get('/product',function(){
-        return view('FrontEnd.test');
-    })->name('product.info');
+    Route::get('/product/laptops/{id}', [ProductController::class, 'showlaptopInfo'])->name('product.laptopInfo');
+    Route::get('product/{id}',[ProductController::class, 'showotherproductInfo'])->name('product.otherInfo');
 //    Route::get('/products', [ProductController::class, 'show'])->name('products.show');
 Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
 
@@ -102,8 +101,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/home', [HomeController::class,'authHome'])->name('home');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    
-    
+
+
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -114,7 +113,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
-//    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
+   Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
 //    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
     Route::get('/checkout/thankyou', function(){
         return view('checkout.thankyou');
@@ -127,16 +126,19 @@ Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name
 
 Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'submit'])->name('return.request.submit');
 
-// Categories page -- change this soon
 Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
 Route::get('/search', [ProductController::class, 'search']) ->name('categories.search');
 
-Route::get('/wishlist', [WishListController::class, 'index'])->name('FrontEnd.wishlist');
+Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
 Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
+<<<<<<< HEAD
 
+=======
+Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
+>>>>>>> a647fabb680b76c5c3ba286f59038cca3b3d0915
 Route::get('/summary', function () {
     return view('checkout.summary');
 })->name('summary');
