@@ -134,16 +134,7 @@ Route::get('/search', [ProductController::class, 'search']) ->name('categories.s
 Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
 Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
-<<<<<<< HEAD
 
-=======
-Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
->>>>>>> a647fabb680b76c5c3ba286f59038cca3b3d0915
-Route::get('/summary', function () {
-    return view('checkout.summary');
-})->name('summary');
-
-//********************************NO code beyond this line!*********************************************************************
 
 
 require __DIR__ . '/auth.php';
