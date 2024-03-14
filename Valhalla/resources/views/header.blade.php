@@ -78,7 +78,7 @@
                         <div class="w-full h-0.5 bg-gray-200"></div>
                     </div>
                     @if(session('basket'))
-                        @foreach(session('basket') as $id => $details)
+                        @forelse(session('basket') as $id => $details)
                             <div class="row cart-detail flex flex-row pb-2 mb-1">
                                 <div class=" cart-detail-img">
                                     <img class="mt-1.5 p-1 mr-2.5 h-auto w-[2em] rounded-md" src="{{ $details['images'] }}" alt="Product Image" />
@@ -87,9 +87,12 @@
                                     <p class="text-[0.6em]">{{ $details['product_name'] }}</p>
                                     <span class="text-[0.5em] price text-info text-amber-500 inline-flex"> £ {{ $details['price'] }}</span>
                                     <span class="text-[0.5em] count inline-flex"> Quantity: {{ $details['quantity'] }}</span>
+                                    <span class="text-[0.5em] count inline-flex">Stock: {{ $details['stock'] }} </span>
                                 </div>
                             </div>
-                        @endforeach
+                            @empty
+                            <h2>You have not added anything to the basket</h2>
+                            @endforelse
                     @endif
                     <div class="row">
                         <div class="text-center checkout inline-block bg-violet-900 w-full mt-2 rounded-md mr-2 align-middle pr-1">
