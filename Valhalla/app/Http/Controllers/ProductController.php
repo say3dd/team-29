@@ -327,6 +327,12 @@ public function getRelatedProducts($currentProductId,$category)
 //        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
 //        return view('Product_files.products', compact('products','category','brands'));
     }
+
+    public function show($id)
+{
+    $product = Product::findOrFail($id);
+    return view('product', compact('product'));
+}
 }
 
 
