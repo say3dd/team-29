@@ -5,7 +5,7 @@
     <style>
             .bg-indigo-950 {
                 width: 100%; 
-                height: 100vh; 
+                height: 100%; 
                 }
                     #sortable {
                         list-style-type: none;
@@ -48,6 +48,7 @@
 
                     #save-wishlist {
                             position: relative;
+                            bottom: 100px;
                     margin-top: -20px;
                     margin-left: 1200px;
                 }
@@ -65,12 +66,12 @@
 
                 #remove-wishlist{
                     position: relative; 
-                    left: 410px;
+                    left: 350px;
                 }
 
                 #add-to-basket{
                     position: relative; 
-                    left: 20px;
+                    left: -50px;
                 }
 
                 #img{
