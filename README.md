@@ -50,8 +50,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[<img width="946" alt="image" src="https://github.com/say3dd/team-29/assets/123840502/ce10d573-0543-4579-9c54-c7fe14d2d266">
-](https://example.com)
+<img width="948" alt="image" src="https://github.com/say3dd/team-29/assets/123840502/52e85bbf-0e23-446e-91d5-bb2888d969d2">
 
 Team-29's submission for Aston University's CS2TP Project, where we are given the task to create an E-Commerce website.
 
