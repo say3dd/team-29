@@ -88,11 +88,10 @@
     <!-- This is the code for the layout of product container - where all the product will be shown -->
     <div class="background_shape6">
         <section class="container_for_path_buttons">
-            <p class="path">
-                >> Home >>
-                Products >> Gaming
-                Laptops
-            </p>
+        <div class="search">
+            {{--//@todo: Need to implement search bar here--}}
+        </div>
+
             <button class="button_sort" id="sort-button">
                 <img class="image_sort" src="{{asset('assets/images_product/sort.png')}}" alt="">
             </button>

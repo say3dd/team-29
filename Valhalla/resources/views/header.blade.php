@@ -90,6 +90,7 @@
                                 </div>
                             </div>
                         @endforeach
+
                     @endif
                     <div class="row">
                         <div class="text-center checkout inline-block bg-violet-900 w-full mt-2 rounded-md mr-2 align-middle pr-1">
