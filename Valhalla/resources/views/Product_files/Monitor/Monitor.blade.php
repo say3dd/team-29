@@ -115,10 +115,6 @@
                         <p>Connectivity: {{$details['Connectivity']}}</p>
                         <p>Colour: {{$details['Colour']}}</p>
                     @endif
-                    {{--            <p>DyAc Technology </p>--}}
-                    {{--            <p>Black eQualizer; Color Vibrance</p>--}}
-                    {{--            <p>S Switch & Sheilding Hood</p>--}}
-                    {{--            <p>Quick menu with customizable access</p>--}}
                     <div class="monitors-title-line"></div>
                     <h2 class="price">£{{$product->price}}</h2>
                     <div class="buttons-container">
@@ -132,47 +128,14 @@
 
  <!-- Monitor  Section -->
 
- <!-- Added Image here for each type of category product -->
 
-       @if($product->category === 'Monitor')
       <div class = "monitor-feature">
       <div id="monitor-feature-container">
         <div class="monitor-feature-card">
-         <img  src="{{ asset('assets/Monitor_images/Asus-Gaming-Monitors.png') }}" alt="""> {{--Here when you have the images tell me so i can do the if statements for each product type--}}
+         <img  src="{{ asset('assets/monitor_images/monitor-image.png') }}" alt="""> {{--Here when you have the images tell me so i can do the if statements for each product type--}}
           <div>
       </div>
       </div>
-      @endif
-
-      @if($product->category === 'Mouse')
-      <div class = "monitor-feature">
-      <div id="monitor-feature-container">
-        <div class="monitor-feature-card">
-         <img  src="{{ asset('assets/Monitor_images/5940564_2019_11_06_12_00_541908917092.jpeg') }}" alt="""> 
-      </div>
-      </div>
-      @endif
-
-      @if($product->category === 'Keyboard')
-      <div class = "monitor-feature">
-      <div id="monitor-feature-container">
-        <div class="monitor-feature-card">
-         <img  src="{{ asset('assets/Monitor_images/PURIMINI-RGB-product-section_10-1536x591.jpg') }}" alt="""> 
-          <div>
-      </div>
-      </div>
-      @endif                  
-
-      @if($product->category === 'Headset')
-      <div class = "monitor-feature">
-      <div id="monitor-feature-container">
-        <div class="monitor-feature-card">
-         <img  src="{{ asset('assets/Monitor_images/1_EnzVLCIeYh6BRElPs11WQg.png') }}" alt="""> 
-      
-      </div>
-      </div>
-      @endif                  
-
 
   <!-- Monitor Features -->
 
@@ -182,38 +145,39 @@
           <div class="features">
             <div class="top-card">
 
-                <img  src="{{ asset('assets/Monitor_images/71978ixVUsL._AC_SL1500_.jpg') }}" alt=""">
-             
+                <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
+
             </div>
             <div class="bottom-card">
               <h2 class="title-feature">High-grade Technology</h2>
-              <p class="info-feature">Enhance your gaming experience with cutting-edge technology, 
-                ensuring smooth gameplay and seamless performance. 
-                Immerse yourself in every moment with fluid animations and responsive controls</p>
-             
+              <p class="info-feature">Our high grade technology makes vigorous in-game
+                 actions such as spraying less blurry.
+                This allows gamers to see the position of crosshair and
+                impact points more clearly.</p>
+
             </div>
 
           </div>
 
-
+{{--Displays product feature text for user to see--}}
             <div class="features">
                 <div class="top-card">
 
-                    <img src="{{ asset('assets/Monitor_images/71dsXYpPL5L._AC_SL1500_.jpg') }}" alt=""">
+                    <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
                 </div>
                 <div class="bottom-card">
                     <h2 class="title-feature">Fast Response Time</h2>
                     <p class="info-feature">
                         Experience unparalleled, lightning-fast performance with a high refresh rate,
                         ensuring a supremely smooth and immersive PC gaming experience.
-                        Perfect for demanding gamers seeking  gameplay without any compromise.
+                        Perfect for demanding gamers seeking fluid gameplay without any compromise.
                       </p>
                 </div>
             </div>
 
             <div class="features">
                 <div class="top-card">
-                    <img src="{{ asset('assets/Monitor_images/71DIQKo4OZL._AC_SL1500_.jpg') }}" alt=""">
+                    <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
 
                 </div>
                 <div class="bottom-card">
@@ -222,21 +186,20 @@
                         Experience the pinnacle of gaming with a lightning-fast 240 Hz refresh rate
                         and ultra-quick response time for an exceptionally smooth PC gaming experience.
                         Fully compatible with PS5 at 120 Hz.</p>
-                   
+
                 </div>
 
             </div>
             <div class="features">
                 <div class="top-card">
-                    <img src="{{ asset('assets/Monitor_images/61ZG1gImaeL._AC_SL1500_.jpg') }}" alt=""">
-               
+                    <img src="{{ asset('assets/monitor_images/image_features.png') }}" alt=""">
+
                 </div>
                 <div class="bottom-card">
                     <h2 class="title-feature">Flexible Adjustment</h2>
-                    <p class="info-feature">
-                     Optimize your gaming setup with high-grade technology, offering flexible adjustments for
-                      personalized comfort and precision. Seamlessly adapt your gear to suit your unique
-                   playstyle, ensuring optimal performance.
+                    <p class="info-feature">Player diversity drives unique monitor height and angle combos, recognizing
+                        individual
+                        preferences for an optimized gaming setup. Flexible Adjustment
                     </p>
 
                 </div>
@@ -253,13 +216,13 @@
           <div class="features">
               <div class="top-card">
 
-                  <img  src="{{ asset('assets/Monitor_images/image_file__97427.jpg') }}" alt=""">
-    
+                  <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
+
               </div>
               <div class="bottom-card">
                   <h2 class="title-feature">Ergonomic Design </h2>
                   <p class="info-feature">Enjoy extended gaming sessions in comfort with an ergonomically
-                      designed gaming mouse. And its shape and size are optimized in order to reduce
+                      designed gaming mouse. Its shape and size are optimized to reduce
                       strain on your hand and wrist.</p>
 
               </div>
@@ -269,8 +232,8 @@
 
           <div class="features">
               <div class="top-card">
-         
-                  <img src="{{ asset('assets/Monitor_images/razer_deathadder_v3_wired_30kdpi_optical_sensor.jpg') }}" alt=""">
+
+                  <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
               </div>
               <div class="bottom-card">
                   <h2 class="title-feature">High Precision Sensors</h2>
@@ -281,26 +244,25 @@
                   </p>
               </div>
           </div>
-       
+
           <div class="features">
               <div class="top-card">
-         
-                  <img src="{{ asset('assets/Monitor_images/button_image.jpg') }}" alt=""">
+                  <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+
               </div>
               <div class="bottom-card">
                   <h2 class="title-feature">Customizable buttons</h2>
                   <p class="info-feature">
-                      Elevate your gameplay with ultra-responsive high precision sensors,
-                      offering unparalleled accuracy and tracking speed.
-                      Perfect for competitive gaming where every millisecond counts.
-                  </p>
+                      Tailor your gaming mouse to fit your playstyle with customizable buttons.
+                      Assign complex macro functions effortlessly,
+                      enabling quick actions and reactions in game.</p>
+
               </div>
           </div>
-     
           @if(strtolower($mouseType) ==='wired')
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/Monitor_images/816c3NWn39L._AC_UF1000,1000_QL80_.jpg') }}" alt=""">
+                                <img src="{{ asset('assets/monitor_images/maault 1.png') }}" alt=""">
                             </div>
                             <div class="bottom-card">
                                 <h2 class="title-feature">Tangle-free wires</h2>
@@ -315,8 +277,8 @@
                     {{-- Assumes if the choice is wireless --}}
                     <div class="features">
                         <div class="top-card">
-                            <img src="{{ asset('assets/Monitor_images/logitech-g703-LIGHTSPEED-Wireless-Mouse-2.jpg') }}" alt=""">
-                        </div>   
+                            <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                        </div>
                         <div class="bottom-card">
                             <h2 class="title-feature">Wireless Technology </h2>
                             <p class="info-feature"> Unleash true freedom with our wireless mouse,
@@ -335,14 +297,14 @@
                     <div class="features">
                         <div class="top-card">
 
-                            <img  src="{{ asset('assets/Monitor_images/8.jpg') }}" alt=""">
-                  
+                            <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
+
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature">Durability </h2>
-                            <p class="info-feature">Our keyboard is built to last, featuring robust construction and high-quality materials.
-                                It withstands intense gaming sessions,
-                                ensuring reliability and longevity in every click.
+                            <h2 class="title-feature"> The Best Mechanical Keyboards </h2>
+                            <p class="info-feature">Elevate your typing experience with our mechanical keyboard,
+                                designed for tactile feedback and durability.
+                                Experience accurate keystrokes and unmatched responsiveness in every gaming battle.</p>
                         </div>
 
                     </div>
@@ -350,28 +312,29 @@
 
                     <div class="features">
                         <div class="top-card">
-                        
-                            <img src="{{ asset('assets/Monitor_images/634ee60305bfdf097677f7c8-havit-60-mechanical-keyboard-mouse.jpg') }}" alt=""">
+
+                            <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature">Wired/Wireless </h2>
+                            <h2 class="title-feature">Wired/Wireless Keyboards</h2>
                             <p class="info-feature">  Experience unparalleled stability and zero latency with our wired keyboards,
                                 or  Embrace the ultimate gaming freedom with our wireless keyboards.
-                                Improving gaming from indoors.
+                                Improving gaming from indoors or in any atmosphere.
                             </p>
                         </div>
                     </div>
 
                     <div class="features">
                         <div class="top-card">
-                            <img src="{{ asset('assets/Monitor_images/645aa5a8910e9d2f697d11df-dierya-dk61e-wired-60-mechanical-gaming.jpg') }}" alt=""">
+                            <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
 
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature">Egonomics</h2>
+                            <h2 class="title-feature">Tested Durability</h2>
                             <p class="info-feature">
-                            Elevate your typing experience with our ergonomically designed mechanical keyboard, meticulously crafted for tactile 
-                            feedback, durability as well as reliability. Experience accurate keystrokes.
+                                Our keyboard is built to last, featuring robust construction and high-quality materials.
+                                It withstands intense gaming sessions,
+                                ensuring reliability and longevity in every click.
                                </p>
 
                         </div>
@@ -379,7 +342,7 @@
                     @if(strtolower($SwitchType) === "red") {{--Add image for red switches--}}
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/Monitor_images/71T2t9o0X2L._AC_UF1000,1000_QL80_.jpg') }}" alt=""">
+                                <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
 
                             </div>
                             <div class="bottom-card">
@@ -395,8 +358,8 @@
                         {{-- Assumes if the choice is blue switches--}}
                         <div class="features">
                             <div class="top-card">
-                    
-                                <img src="{{ asset('assets/Monitor_images\4-CH-9109411-NA-Gallery-K70-RGB-PRO-PBT-05.jpg') }}" alt=""">
+
+                                <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
                             </div>
                             <div class="bottom-card">
                                 <h2 class="title-feature">The Blue Switches </h2>
@@ -419,62 +382,44 @@
                     <div class="features">
                         <div class="top-card">
 
-                            <img  src="{{ asset('assets/Monitor_images/71r7e-GFSkL._AC_SL1500_.jpg') }}" alt=""">
-    
+                            <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
+
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature">Surround Sound</h2>
-                            <p class="info-feature"> 
-                            Immerse yourself in superior sound with our gaming headset, meticulously engineered for
-                             durability and comfort, ensuring you stay focused
-                              and immersed in your gaming adventures for hours on end.</p>
-                     
+                            <h2 class="title-feature"> High-Quality Audio</h2>
+                            <p class="info-feature"> Immerse yourself in superior sound with our gaming headset.
+                                Experience crystal-clear audio and deep bass,
+                                enhancing every in-game detail for a truly immersive experience.</p>
+
                         </div>
 
                     </div>
 
-                            
+
                     <div class="features">
                         <div class="top-card">
-       
-                            <img src="{{ asset('assets/Monitor_images/mic_headset.jpg') }}" alt=""">
+
+                            <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature">Microphone Quality</h2>
+                            <h2 class="title-feature">The best Mics</h2>
                             <p class="info-feature">Our gaming headset boasts a high-quality microphone,
                                 ensuring your voice is heard with clarity and precision.
                                 Communicate effortlessly, making teamwork seamless and impactful in every game.
                             </p>
                         </div>
                     </div>
-
-                                   
-                    <div class="features">
-                        <div class="top-card">
-
-                            <img src="{{ asset('assets/Monitor_images/ergonomics_headset.jpg') }}" alt=""">
-                        </div>
-                        <div class="bottom-card">
-                            <h2 class="title-feature">Ergonomic Design</h2>
-                            <p class="info-feature">Crafted with ergonomic design principles in mind, our gaming headset 
-                                offers unparalleled comfort for extended gaming sessions. 
-                                Experience crystal-clear audio and deep bass, heightening every in-game detail.
-                            </p>
-                        </div>
-                    </div>
-
                     @if(strtolower($mouseType) ==='wired')
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/Monitor_images/81YKfMGxIBL._AC_SL1500_.jpg') }}" alt=""">
-                         
+                                <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+
                             </div>
                             <div class="bottom-card">
                                 <h2 class="title-feature">Our Headsets</h2>
-                                <p class="info-feature"> 
-                        Experience unparalleled audio fidelity with our wired headphones, meticulously
-                         engineered for uncompromising sound quality and reliability.
-                         Immerse yourself in crystal-clear audio and deep bass, capturing every detail.
+                                <p class="info-feature"> Experience unmatched audio fidelity and zero latency with our wired headset,
+                                    designed for gamers seeking a direct, stable connection for uninterrupted,
+                                    high-quality sound.
                                 </p>
                             </div>
                         </div>
@@ -483,8 +428,8 @@
                         {{-- Assumes if the choice is wireless headphones--}}
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/Monitor_images/81RjUDCOh9L._AC_SL1500_.jpg') }}" alt=""">
-                       
+                                <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+
                             </div>
                             <div class="bottom-card">
                                 <h2 class="title-feature">Our Wireless Headsets</h2>
@@ -499,81 +444,106 @@
                     @endif
         </div>
 
+{{-- Displays the related products, all depending on their category  --}}
 
           <h1 class="monitor-heading">Related Products</h1>
      <div class="related-title-line"></div>
-
-
-
      <section id="monitor-products">
         <div id="container-product">
-          <div class="products">
-            <div class="top-card">
+    @foreach($relatedProducts as $relatedProduct)
+                <div class="products">
+                    <div class="top-card">
+                        <img src="{{ asset($relatedProduct->images) }}">
+                    </div>
+               <div class="bottom-card">
+                 <h2 class="monitor-title"><a style="color: inherit; font-weight: bold; font-size: 1.05rem;"
+                               href="{{ $product->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$product->product_id]) : route('product.otherInfo', ['id' =>$product->product_id]) }}">
+                           {{$relatedProduct->product_name}} </a></h2>
+                   @foreach($relatedProduct->features as $featureName => $featureValue)
+                       <p><strong>{{ $featureName }}</strong>: {{ $featureValue }}</p>
+                   @endforeach
 
-                <img  src="{{ asset('assets/monitor_images/monitors_image1.jpg') }}" alt=""">
-
-            </div>
-            <div class="bottom-card">
-            <h2 class="monitor-title">MSI Optix 32G27C5</h2>
-              <p class="info-specs">Display Resolution 2560x1440</p>
-              <p class="info-specs">Display Size 27"</p>
-              <p class="info-specs">Refresh Rate 240Hz</p>
-              <p class="info-specs">0.03 Response Time</p>
-              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>
-            </div>
-
-          </div>
+               </div>
+                </div>
 
 
-          <div class="products">
-            <div class="top-card">
 
-            <img  src="{{ asset('assets/monitor_images/GAME-AW2523HF-3.jpg') }}" alt=""">
-            </div>
-            <div class="bottom-card">
-            <h2 class="monitor-title">MSI Optix 32G27C5</h2>
-              <p>Display Resolution 2560x1440</p>
-              <p>Display Size 27"</p>
-              <p>Refresh Rate 280Hz</p>
-              <p>1ms Response Time</p>
-              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>
-            </div>
 
-          </div>
 
-          <div class="products">
-            <div class="top-card">
-                <img  src="{{ asset('assets/monitor_images/msi_g27c5_1.jpg') }}" alt=""">
 
-            </div>
-            <div class="bottom-card">
-            <h2 class="monitor-title">MSI Optix 32G27C5</h2>
+                        @endforeach
 
-              <p>Display Resolution 2560x1440</p>
-              <p>Display Size 27"</p>
-              <p>Refresh Rate 165z</p>
-              <p>0.5 Response Time</p>
-              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>
-            </div>
 
-          </div>
-          <div class="products">
-            <div class="top-card">
-                <img  src="{{ asset('assets/monitor_images/3219921_JK2Y.jpg') }}" alt=""">
 
-            </div>
-            <div class="bottom-card">
-            <h2 class="monitor-title">BenQ EX240N</h2>
-              <p>Display Resolution 1920x1080</p>
-              <p>Display Size 24"</p>
-              <p>Refresh Rate 240Hz</p>
-              <p>0.03 Response Time</p>
-              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>
-            </div>
 
-          </div>
 
-        </div>
+{{--          <div class="products">--}}
+{{--            <div class="top-card">--}}
+
+{{--                <img  src="{{ asset('assets/monitor_images/monitors_image1.jpg') }}" alt=""">--}}
+
+{{--            </div>--}}
+{{--            <div class="bottom-card">--}}
+{{--            <h2 class="monitor-title">MSI Optix 32G27C5</h2>--}}
+{{--              <p class="info-specs">Display Resolution 2560x1440</p>--}}
+{{--              <p class="info-specs">Display Size 27"</p>--}}
+{{--              <p class="info-specs">Refresh Rate 240Hz</p>--}}
+{{--              <p class="info-specs">0.03 Response Time</p>--}}
+{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
+{{--            </div>--}}
+
+{{--          </div>--}}
+
+
+{{--          <div class="products">--}}
+{{--            <div class="top-card">--}}
+
+{{--            <img  src="{{ asset('assets/monitor_images/GAME-AW2523HF-3.jpg') }}" alt=""">--}}
+{{--            </div>--}}
+{{--            <div class="bottom-card">--}}
+{{--            <h2 class="monitor-title">MSI Optix 32G27C5</h2>--}}
+{{--              <p>Display Resolution 2560x1440</p>--}}
+{{--              <p>Display Size 27"</p>--}}
+{{--              <p>Refresh Rate 280Hz</p>--}}
+{{--              <p>1ms Response Time</p>--}}
+{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
+{{--            </div>--}}
+
+{{--          </div>--}}
+
+{{--          <div class="products">--}}
+{{--            <div class="top-card">--}}
+{{--                <img  src="{{ asset('assets/monitor_images/msi_g27c5_1.jpg') }}" alt=""">--}}
+
+{{--            </div>--}}
+{{--            <div class="bottom-card">--}}
+{{--            <h2 class="monitor-title">MSI Optix 32G27C5</h2>--}}
+
+{{--              <p>Display Resolution 2560x1440</p>--}}
+{{--              <p>Display Size 27"</p>--}}
+{{--              <p>Refresh Rate 165z</p>--}}
+{{--              <p>0.5 Response Time</p>--}}
+{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
+{{--            </div>--}}
+
+{{--          </div>--}}
+{{--          <div class="products">--}}
+{{--            <div class="top-card">--}}
+{{--                <img  src="{{ asset('assets/monitor_images/3219921_JK2Y.jpg') }}" alt=""">--}}
+
+{{--            </div>--}}
+{{--            <div class="bottom-card">--}}
+{{--            <h2 class="monitor-title">BenQ EX240N</h2>--}}
+{{--              <p>Display Resolution 1920x1080</p>--}}
+{{--              <p>Display Size 24"</p>--}}
+{{--              <p>Refresh Rate 240Hz</p>--}}
+{{--              <p>0.03 Response Time</p>--}}
+{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
+{{--            </div>--}}
+
+{{--          </div>--}}
+
+{{--        </div>--}}
         </div>
 
 
