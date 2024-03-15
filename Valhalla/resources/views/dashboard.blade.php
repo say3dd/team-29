@@ -63,10 +63,17 @@
             @if(isset($order_history)) 
               @foreach ($order_history as $item)  
             <tr>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->$id}} </td>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->product_id }}</td> 
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> test </td>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> test </td> 
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->product_name}} </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->id }}</td> 
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->tracking_number}} </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->price}} </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->created_at}} </td> 
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"><a href="{{route('tracking')}}">
+                <x-primary-button>
+                    {{ __('Track') }}
+                </x-primary-button>
+            </a>
+          </td>
             </tr>
               @endforeach
               @else 
@@ -75,11 +82,6 @@
               <td class="px-4 py-2 border-gray-800 bg-white flex justify-center"> 
                 @endif 
                   <div>
-                      <a href="{{route('tracking')}}">
-                          <x-primary-button>
-                              {{ __('Track') }}
-                          </x-primary-button>
-                      </a>
                       <a href="{{route('return.request')}}">
                         <x-primary-button>
                             {{ __('Return') }}
