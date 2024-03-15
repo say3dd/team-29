@@ -234,13 +234,13 @@ header {
 
 #monitor-container {
   margin-bottom:  5rem;
-  margin-left: 16.5rem;
-  margin-right: 16.5rem;
+  margin-left: 14rem;
+  margin-right: 14rem;
   margin-top: 4rem;
   background-color:#4E008B;
   padding-top: 3rem;
   padding-left: 6rem;
-  padding-right: 8rem;
+  padding-right: 6rem;
   padding-bottom: 4rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
   border-radius: 15px;
@@ -251,7 +251,7 @@ header {
   display: flex;
   align-items: center;
 
-  gap: 6rem;
+  gap: 5rem;
 }
 
 .monitor-card img {
@@ -401,6 +401,7 @@ header {
   border-radius: 2%;
   overflow: hidden; /* Ensure overflow is hidden */
   width: 23rem;
+  background-color: #370061;
 }
 
 
@@ -526,7 +527,7 @@ header {
     color: white;
     margin-top: 1rem;
     line-height: 1.7rem;
-    
+    width: 50rem;
   }
   
   .monitor-title {
@@ -535,6 +536,9 @@ header {
  
   }
   
+  .monitor-info p {
+    margin-left: 3rem;
+  }
   
   
   .add-product-btn {
@@ -3809,7 +3813,8 @@ header {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
   border-radius: 2%;
   overflow: hidden; /* Ensure overflow is hidden */
-  width: 15rem;
+  width: 30rem;
+  background-color: #dddddd;
 }
 
 
@@ -3854,6 +3859,7 @@ header {
 
 
 
+
 .monitor-info {
   width: 90%;
 }
@@ -3867,7 +3873,125 @@ header {
 
 
 
+@media (max-width:1750) {
+  
 
+/* Monitor Feature Section */
+
+
+
+
+
+.monitor-feature-card img {
+  display: block !important;
+  margin: auto !important;
+  width: 60rem;
+  height: auto !important;
+  border-radius: 15px;
+  border: #4E008B 10px solid;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5rem;
+}
+
+
+
+
+
+
+.feature-title-line {
+  height: 2px; /* Adjust the height as needed */
+  background-color: #9000ff; /* Adjust the color as needed */
+  margin: 0 auto; /* Center the line horizontally */
+  width: 50%;
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+
+
+
+
+/* Features Monitor  */
+
+
+#container-feature {
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top:3%;
+  margin-bottom: 5%;
+}
+
+.features {
+  text-align: center;
+  margin: 30px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 2%;
+  overflow: hidden; /* Ensure overflow is hidden */
+  width: 23rem;
+  
+}
+
+
+.features p {
+  font-size: 1.1rem;
+}
+.features h2 {
+  font-size: 1.5rem;
+}
+.top-card {
+  background-color: #4e008b; /* Background color for the top half */
+  padding: 20px;
+
+}
+
+.bottom-card {
+  background-color: #370061; /* Background color for the bottom half */
+  padding: 20px;
+
+}
+
+.features img {
+  width: 12rem !important;
+  height: 12rem !important;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 3px solid #360060;
+}
+
+.info-feature {
+  font-size: 1.2rem !important;
+  color: white;
+  margin-top: 1rem !important;
+  line-height: 1.7rem !important;
+  
+}
+
+.bottom-card p {
+  font-size: 1rem !important;
+}
+
+.title-feature {
+  font-size: 1.6rem !important;
+  font-weight: bold;
+}
+
+
+.monitor-products {
+  font-size: 1.6rem !important;
+}
+
+
+#monitor-products p {
+
+  font-size: 1rem !important;
+
+}
 
 
 
@@ -4072,7 +4196,8 @@ header {
   
   }
   
-  
+}
+}
     
   
 
@@ -4082,8 +4207,3 @@ header {
 
 
 
-
-
-
-
-}
