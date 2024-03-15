@@ -80,6 +80,7 @@ class WishListController extends Controller
             }
             return back()->with('error', 'Item not found in wishlist.');
         } catch (Exception $e) {    
+            // Redirect back with an error message
             return back()->with('error', 'Failed to remove item from wishlist.');
         }
     }

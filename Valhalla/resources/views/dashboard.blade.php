@@ -60,51 +60,38 @@
             </tr>
           </thead>
           <tbody>
-            <?php
-            if (!empty($orders)) {
-              foreach ($orders as $item) {
-            ?>
+            @if(isset($order_history)) 
+              @foreach ($order_history as $item)  
             <tr>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['order_number']; ?></td>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['tracking_number']; ?></td>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['total_price']; ?></td>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"><?= $item['created_at']; ?></td>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200">
-              </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->$id}} </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->product_id }}</td> 
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> test </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> test </td> 
             </tr>
-            <?php
-              }
-            } else {
-            ?>
+              @endforeach
+              @else 
             <tr>
               <td colspan="5" class="px-4 py-2 bg-white">No orders yet</td>
-              <td class="px-4 py-2 border-gray-800 bg-white flex justify-center">
+              <td class="px-4 py-2 border-gray-800 bg-white flex justify-center"> 
+                @endif 
                   <div>
                       <a href="{{route('tracking')}}">
                           <x-primary-button>
                               {{ __('Track') }}
                           </x-primary-button>
                       </a>
+                      <a href="{{route('return.request')}}">
+                        <x-primary-button>
+                            {{ __('Return') }}
+                        </x-primary-button>
+                    </a>
                   </div>
               </td>
           </tr>
-          <tr>
-            <td colspan="5" class="px-4 py-2 bg-white">No orders yet</td>
-            <td class="px-4 py-2 border-gray-800 bg-white flex justify-center">
-              <div>
-                  <a href="{{route('return.request')}}">
-                      <x-primary-button>
-                          {{ __('Return') }}
-                      </x-primary-button>
-                  </a>
-              </div>
-          </td>
-          </tr>
-          <?php
-          }
-          ?>
       </tbody>
+      
   </table>
+  
 </div>
 </div>
 </div>

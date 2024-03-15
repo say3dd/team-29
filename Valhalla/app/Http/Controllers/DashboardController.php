@@ -4,7 +4,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Orders;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User; // Assuming you have a User model
 
 class DashboardController extends Controller
@@ -26,5 +29,16 @@ class DashboardController extends Controller
             'userCount' => $userCount,
             // Add more data here if needed
         ]);
+    }
+
+    public function orderHistory(){
+        
+        $user = auth()->user();
+        $user->load('orders');
+
+        
+
+
+        return view('dashboard', ['order_history' => $order_history]);
     }
 }
