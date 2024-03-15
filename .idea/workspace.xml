@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Re added monitor pictures">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/team-29.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team-29.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -383,6 +393,13 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/deprecations" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/laravel/jetstream" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{

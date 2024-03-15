@@ -139,6 +139,13 @@
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/symfony/dom-crawler" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/bacon/bacon-qr-code" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/dasprid/enum" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/laravel/fortify" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/laravel/jetstream" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/mobiledetect/mobiledetectlib" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/pragmarx/google2fa" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
