@@ -7,12 +7,17 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\BasketService\BasketInterface;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use App\Services\ProductService;
 
 // use App\Models\User;
 
 
 class HomeController extends Controller implements BasketInterface
 {
+    protected $productService;
+    public function __construct( ProductService $productService) {
+        $this->productService = $productService;
+    }
 
 //  \\  use Controllers\ProductController;
 
@@ -46,8 +51,22 @@ class HomeController extends Controller implements BasketInterface
 
 
     public function index(Product $product){
-        $product = $product->orderBy('product_name','asc')->where('stock', '>', 0)->paginate(3);
-        return view('FrontEnd.home', ['products' => $product]);
+        $product = $product->orderBy('product_name','asc')->paginate(3);
+        $randomProducts = $this->getRandomProducts();
+        foreach ($product as $prod) {
+            $prod->features = $this->productService->extractProductFeatures($prod);
+        }
+        foreach ($randomProducts as $randomProduct) {
+            $randomProduct->features = $this->productService->extractProductFeatures($randomProduct);
+        }
+        return view('FrontEnd.home', ['products' => $product,'category' =>'$category','randomProducts' => $randomProducts]);
+    }
+    public function getRandomProducts(){
+        $randomProducts = Product::where('stock', '>', 0)
+            ->take(30)
+            ->get()
+            ->random(3);
+        return $randomProducts;
     }
 
     public function about(){

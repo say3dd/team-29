@@ -115,10 +115,6 @@
                         <p>Connectivity: {{$details['Connectivity']}}</p>
                         <p>Colour: {{$details['Colour']}}</p>
                     @endif
-                    {{--            <p>DyAc Technology </p>--}}
-                    {{--            <p>Black eQualizer; Color Vibrance</p>--}}
-                    {{--            <p>S Switch & Sheilding Hood</p>--}}
-                    {{--            <p>Quick menu with customizable access</p>--}}
                     <div class="monitors-title-line"></div>
                     <h2 class="price">£{{$product->price}}</h2>
                     <div class="buttons-container">
@@ -163,7 +159,7 @@
 
           </div>
 
-
+{{--Displays product feature text for user to see--}}
             <div class="features">
                 <div class="top-card">
 
@@ -266,7 +262,7 @@
           @if(strtolower($mouseType) ==='wired')
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                                <img src="{{ asset('assets/monitor_images/maault 1.png') }}" alt=""">
                             </div>
                             <div class="bottom-card">
                                 <h2 class="title-feature">Tangle-free wires</h2>
@@ -448,81 +444,106 @@
                     @endif
         </div>
 
+{{-- Displays the related products, all depending on their category  --}}
 
           <h1 class="monitor-heading">Related Products</h1>
      <div class="related-title-line"></div>
-
-
-
      <section id="monitor-products">
         <div id="container-product">
-          <div class="products">
-            <div class="top-card">
+    @foreach($relatedProducts as $relatedProduct)
+                <div class="products">
+                    <div class="top-card">
+                        <img src="{{ asset($relatedProduct->images) }}">
+                    </div>
+               <div class="bottom-card">
+                 <h2 class="monitor-title"><a style="color: inherit; font-weight: bold; font-size: 1.05rem;"
+                               href="{{ $product->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$product->product_id]) : route('product.otherInfo', ['id' =>$product->product_id]) }}">
+                           {{$relatedProduct->product_name}} </a></h2>
+                   @foreach($relatedProduct->features as $featureName => $featureValue)
+                       <p><strong>{{ $featureName }}</strong>: {{ $featureValue }}</p>
+                   @endforeach
 
-                <img  src="{{ asset('assets/monitor_images/monitors_image1.jpg') }}" alt=""">
-
-            </div>
-            <div class="bottom-card">
-            <h2 class="monitor-title">MSI Optix 32G27C5</h2>
-              <p class="info-specs">Display Resolution 2560x1440</p>
-              <p class="info-specs">Display Size 27"</p>
-              <p class="info-specs">Refresh Rate 240Hz</p>
-              <p class="info-specs">0.03 Response Time</p>
-              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>
-            </div>
-
-          </div>
+               </div>
+                </div>
 
 
-          <div class="products">
-            <div class="top-card">
 
-            <img  src="{{ asset('assets/monitor_images/GAME-AW2523HF-3.jpg') }}" alt=""">
-            </div>
-            <div class="bottom-card">
-            <h2 class="monitor-title">MSI Optix 32G27C5</h2>
-              <p>Display Resolution 2560x1440</p>
-              <p>Display Size 27"</p>
-              <p>Refresh Rate 280Hz</p>
-              <p>1ms Response Time</p>
-              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>
-            </div>
 
-          </div>
 
-          <div class="products">
-            <div class="top-card">
-                <img  src="{{ asset('assets/monitor_images/msi_g27c5_1.jpg') }}" alt=""">
 
-            </div>
-            <div class="bottom-card">
-            <h2 class="monitor-title">MSI Optix 32G27C5</h2>
+                        @endforeach
 
-              <p>Display Resolution 2560x1440</p>
-              <p>Display Size 27"</p>
-              <p>Refresh Rate 165z</p>
-              <p>0.5 Response Time</p>
-              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>
-            </div>
 
-          </div>
-          <div class="products">
-            <div class="top-card">
-                <img  src="{{ asset('assets/monitor_images/3219921_JK2Y.jpg') }}" alt=""">
 
-            </div>
-            <div class="bottom-card">
-            <h2 class="monitor-title">BenQ EX240N</h2>
-              <p>Display Resolution 1920x1080</p>
-              <p>Display Size 24"</p>
-              <p>Refresh Rate 240Hz</p>
-              <p>0.03 Response Time</p>
-              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>
-            </div>
 
-          </div>
 
-        </div>
+{{--          <div class="products">--}}
+{{--            <div class="top-card">--}}
+
+{{--                <img  src="{{ asset('assets/monitor_images/monitors_image1.jpg') }}" alt=""">--}}
+
+{{--            </div>--}}
+{{--            <div class="bottom-card">--}}
+{{--            <h2 class="monitor-title">MSI Optix 32G27C5</h2>--}}
+{{--              <p class="info-specs">Display Resolution 2560x1440</p>--}}
+{{--              <p class="info-specs">Display Size 27"</p>--}}
+{{--              <p class="info-specs">Refresh Rate 240Hz</p>--}}
+{{--              <p class="info-specs">0.03 Response Time</p>--}}
+{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
+{{--            </div>--}}
+
+{{--          </div>--}}
+
+
+{{--          <div class="products">--}}
+{{--            <div class="top-card">--}}
+
+{{--            <img  src="{{ asset('assets/monitor_images/GAME-AW2523HF-3.jpg') }}" alt=""">--}}
+{{--            </div>--}}
+{{--            <div class="bottom-card">--}}
+{{--            <h2 class="monitor-title">MSI Optix 32G27C5</h2>--}}
+{{--              <p>Display Resolution 2560x1440</p>--}}
+{{--              <p>Display Size 27"</p>--}}
+{{--              <p>Refresh Rate 280Hz</p>--}}
+{{--              <p>1ms Response Time</p>--}}
+{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
+{{--            </div>--}}
+
+{{--          </div>--}}
+
+{{--          <div class="products">--}}
+{{--            <div class="top-card">--}}
+{{--                <img  src="{{ asset('assets/monitor_images/msi_g27c5_1.jpg') }}" alt=""">--}}
+
+{{--            </div>--}}
+{{--            <div class="bottom-card">--}}
+{{--            <h2 class="monitor-title">MSI Optix 32G27C5</h2>--}}
+
+{{--              <p>Display Resolution 2560x1440</p>--}}
+{{--              <p>Display Size 27"</p>--}}
+{{--              <p>Refresh Rate 165z</p>--}}
+{{--              <p>0.5 Response Time</p>--}}
+{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
+{{--            </div>--}}
+
+{{--          </div>--}}
+{{--          <div class="products">--}}
+{{--            <div class="top-card">--}}
+{{--                <img  src="{{ asset('assets/monitor_images/3219921_JK2Y.jpg') }}" alt=""">--}}
+
+{{--            </div>--}}
+{{--            <div class="bottom-card">--}}
+{{--            <h2 class="monitor-title">BenQ EX240N</h2>--}}
+{{--              <p>Display Resolution 1920x1080</p>--}}
+{{--              <p>Display Size 24"</p>--}}
+{{--              <p>Refresh Rate 240Hz</p>--}}
+{{--              <p>0.03 Response Time</p>--}}
+{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
+{{--            </div>--}}
+
+{{--          </div>--}}
+
+{{--        </div>--}}
         </div>
 
 

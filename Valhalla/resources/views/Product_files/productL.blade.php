@@ -144,7 +144,7 @@
                                     @endforeach
                                 </div>
                             @endforeach
-                        @endif   
+                        @endif
                 </ul>
             </div>
             <div class = "container_buttons">
