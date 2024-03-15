@@ -45,6 +45,7 @@ class CheckoutController extends Controller
 
     // Clear the basket
     session()->forget('basket');
+    
 
 
         // Redirect to a thank you page or order confirmation page
