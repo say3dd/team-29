@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "content-hash": "d5a811e1c5c8b95d9bc50d7877f2411c",
+    "content-hash": "498a7981673d2f15b9545c7e0f5588db",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1494,6 +1495,15 @@
             "time": "2023-12-03T19:50:20+00:00"
         },
         {
+            "name": "laravel/framework",
+            "version": "v10.48.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "5791c052b41c6b593556adc687076bfbdd13c501"
+            },
+            "dist": {
+                "type": "zip",
             "name": "laravel/fortify",
             "version": "v1.21.0",
             "source": {
@@ -1763,8 +1773,6 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2024-03-15T10:17:07+00:00"
-<<<<<<< HEAD
-=======
         },
         {
             "name": "laravel/jetstream",
@@ -1834,7 +1842,6 @@
                 "source": "https://github.com/laravel/jetstream"
             },
             "time": "2024-02-29T17:10:06+00:00"
->>>>>>> d159d5917ef277d59982d59a5404bafd6480ed14
         },
         {
             "name": "laravel/prompts",
@@ -2480,7 +2487,6 @@
             "time": "2024-01-28T23:22:08+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "livewire/livewire",
             "version": "v3.4.9",
             "source": {
@@ -2530,7 +2536,6 @@
                 ],
                 "psr-4": {
                     "Livewire\\": "src/"
-=======
             "name": "mobiledetect/mobiledetectlib",
             "version": "4.8.06",
             "source": {
@@ -2559,7 +2564,6 @@
             "autoload": {
                 "psr-4": {
                     "Detection\\": "src/"
->>>>>>> d159d5917ef277d59982d59a5404bafd6480ed14
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2568,7 +2572,6 @@
             ],
             "authors": [
                 {
-<<<<<<< HEAD
                     "name": "Caleb Porzio",
                     "email": "calebporzio@gmail.com"
                 }
@@ -2585,7 +2588,6 @@
                 }
             ],
             "time": "2024-03-14T14:03:32+00:00"
-=======
                     "name": "Serban Ghita",
                     "email": "serbanghita@gmail.com",
                     "homepage": "http://mobiledetect.net",
@@ -2612,7 +2614,6 @@
                 }
             ],
             "time": "2024-03-01T22:28:42+00:00"
->>>>>>> d159d5917ef277d59982d59a5404bafd6480ed14
         },
         {
             "name": "monolog/monolog",
