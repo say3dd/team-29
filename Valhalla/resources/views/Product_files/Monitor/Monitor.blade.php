@@ -127,17 +127,48 @@
 
 
  <!-- Monitor  Section -->
+        @if($product->category === 'Monitor')
+            <div class = "monitor-feature">
+                <div id="monitor-feature-container">
+                    <div class="monitor-feature-card">
+                        <img  src="{{ asset('assets/Monitor_images/Asus-Gaming-Monitors.png') }}" alt="""> {{--Here when you have the images tell me so i can do the if statements for each product type--}}
+                        <div>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if($product->category === 'Mouse')
+                        <div class = "monitor-feature">
+                            <div id="monitor-feature-container">
+                                <div class="monitor-feature-card">
+                                    <img  src="{{ asset('assets/Monitor_images/5940564_2019_11_06_12_00_541908917092.jpeg') }}" alt=""">
+                                </div>
+                            </div>
+                            @endif
+
+                            @if($product->category === 'Keyboard')
+                                <div class = "monitor-feature">
+                                    <div id="monitor-feature-container">
+                                        <div class="monitor-feature-card">
+                                            <img  src="{{ asset('assets/Monitor_images/PURIMINI-RGB-product-section_10-1536x591.jpg') }}" alt=""">
+                                            <div>
+                                            </div>
+                                        </div>
+                                        @endif
+
+                                        @if($product->category === 'Headset')
+                                            <div class = "monitor-feature">
+                                                <div id="monitor-feature-container">
+                                                    <div class="monitor-feature-card">
+                                                        <img  src="{{ asset('assets/Monitor_images/1_EnzVLCIeYh6BRElPs11WQg.png') }}" alt=""">
+
+                                                    </div>
+                                                </div>
+                                                @endif
 
 
-      <div class = "monitor-feature">
-      <div id="monitor-feature-container">
-        <div class="monitor-feature-card">
-         <img  src="{{ asset('assets/monitor_images/monitor-image.png') }}" alt="""> {{--Here when you have the images tell me so i can do the if statements for each product type--}}
-          <div>
-      </div>
-      </div>
 
-  <!-- Monitor Features -->
+                                                <!-- Monitor Features -->
 
       <section id="monitor-features">
         <div id="container-feature">
@@ -145,7 +176,7 @@
           <div class="features">
             <div class="top-card">
 
-                <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
+                <img  src="{{ asset('assets/Monitor_images/5940564_2019_11_06_12_00_541908917092.jpeg') }}" alt=""">
 
             </div>
             <div class="bottom-card">
@@ -163,7 +194,7 @@
             <div class="features">
                 <div class="top-card">
 
-                    <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
+                    <img src="{{ asset('assets/Monitor_images/71978ixVUsL._AC_SL1500_.jpg') }}" alt=""">
                 </div>
                 <div class="bottom-card">
                     <h2 class="title-feature">Fast Response Time</h2>
@@ -177,7 +208,7 @@
 
             <div class="features">
                 <div class="top-card">
-                    <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                    <img src="{{ asset('assets/Monitor_images/71dsXYpPL5L._AC_SL1500_.jpg') }}" alt=""">
 
                 </div>
                 <div class="bottom-card">
@@ -192,7 +223,7 @@
             </div>
             <div class="features">
                 <div class="top-card">
-                    <img src="{{ asset('assets/monitor_images/image_features.png') }}" alt=""">
+                    <img src="{{ asset('assets/Monitor_images/61ZG1gImaeL._AC_SL1500_.jpg') }}" alt=""">
 
                 </div>
                 <div class="bottom-card">
@@ -216,7 +247,7 @@
           <div class="features">
               <div class="top-card">
 
-                  <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
+                  <img  src="{{ asset('assets/Monitor_images/image_file__97427.jpg') }}" alt=""">
 
               </div>
               <div class="bottom-card">
@@ -233,7 +264,7 @@
           <div class="features">
               <div class="top-card">
 
-                  <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
+                  <img src="{{ asset('assets/Monitor_images/razer_deathadder_v3_wired_30kdpi_optical_sensor.jpg') }}" alt=""">
               </div>
               <div class="bottom-card">
                   <h2 class="title-feature">High Precision Sensors</h2>
@@ -247,7 +278,7 @@
 
           <div class="features">
               <div class="top-card">
-                  <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                  <img src="{{ asset('assets/Monitor_images/button_image.jpg') }}" alt=""">
 
               </div>
               <div class="bottom-card">
@@ -262,7 +293,7 @@
           @if(strtolower($mouseType) ==='wired')
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/monitor_images/maault 1.png') }}" alt=""">
+                                <img src="{{ asset('assets/Monitor_images/816c3NWn39L._AC_UF1000,1000_QL80_.jpg') }}" alt=""">
                             </div>
                             <div class="bottom-card">
                                 <h2 class="title-feature">Tangle-free wires</h2>
@@ -277,7 +308,7 @@
                     {{-- Assumes if the choice is wireless --}}
                     <div class="features">
                         <div class="top-card">
-                            <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                            <img src="{{ asset('assets/Monitor_images/logitech-g703-LIGHTSPEED-Wireless-Mouse-2.jpg') }}" alt=""">
                         </div>
                         <div class="bottom-card">
                             <h2 class="title-feature">Wireless Technology </h2>
@@ -297,7 +328,7 @@
                     <div class="features">
                         <div class="top-card">
 
-                            <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
+                            <img  src="{{ asset('assets/Monitor_images/645aa5a8910e9d2f697d11df-dierya-dk61e-wired-60-mechanical-gaming.jpg') }}" alt=""">
 
                         </div>
                         <div class="bottom-card">
@@ -313,7 +344,7 @@
                     <div class="features">
                         <div class="top-card">
 
-                            <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
+                            <img src="{{ asset('assets/Monitor_images/634ee60305bfdf097677f7c8-havit-60-mechanical-keyboard-mouse.jpg') }}" alt=""">
                         </div>
                         <div class="bottom-card">
                             <h2 class="title-feature">Wired/Wireless Keyboards</h2>
@@ -326,7 +357,7 @@
 
                     <div class="features">
                         <div class="top-card">
-                            <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                            <img src="{{ asset('assets/Monitor_images/8.jpg') }}" alt=""">
 
                         </div>
                         <div class="bottom-card">
@@ -342,7 +373,7 @@
                     @if(strtolower($SwitchType) === "red") {{--Add image for red switches--}}
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                                <img src="{{ asset('assets/Monitor_images/71T2t9o0X2L._AC_UF1000,1000_QL80_.jpg') }}" alt=""">
 
                             </div>
                             <div class="bottom-card">
@@ -359,7 +390,7 @@
                         <div class="features">
                             <div class="top-card">
 
-                                <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
+                                <img src="{{ asset('assets/Monitor_images\4-CH-9109411-NA-Gallery-K70-RGB-PRO-PBT-05.jpg') }}" alt=""">
                             </div>
                             <div class="bottom-card">
                                 <h2 class="title-feature">The Blue Switches </h2>
@@ -382,27 +413,38 @@
                     <div class="features">
                         <div class="top-card">
 
-                            <img  src="{{ asset('assets/monitor_images/1327d96220d45afcf0033605711984ea.png') }}" alt=""">
+                            <img  src="{{ asset('assets/Monitor_images/71r7e-GFSkL._AC_SL1500_.jpg') }}" alt=""">
 
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature"> High-Quality Audio</h2>
+                            <h2 class="title-feature">Surround Sound</h2>
                             <p class="info-feature"> Immerse yourself in superior sound with our gaming headset.
                                 Experience crystal-clear audio and deep bass,
                                 enhancing every in-game detail for a truly immersive experience.</p>
 
                         </div>
-
                     </div>
+                        <div class="features">
+                            <div class="top-card">
 
+                                <img src="{{ asset('assets/Monitor_images/ergonomics_headset.jpg') }}" alt=""">
+                            </div>
+                            <div class="bottom-card">
+                                <h2 class="title-feature">Ergonomic Design</h2>
+                                <p class="info-feature">Crafted with ergonomic design principles in mind, our gaming headset
+                                    offers unparalleled comfort for extended gaming sessions.
+                                    Experience crystal-clear audio and deep bass, heightening every in-game detail.
+                                </p>
+                            </div>
+                        </div>
 
                     <div class="features">
                         <div class="top-card">
 
-                            <img src="{{ asset('assets/monitor_images/my-11134207-7r98v-lnv22dn162rhda.jpg') }}" alt=""">
+                            <img src="{{ asset('assets/Monitor_images/mic_headset.jpg') }}" alt=""">
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature">The best Mics</h2>
+                            <h2 class="title-feature">Microphone Quality</h2>
                             <p class="info-feature">Our gaming headset boasts a high-quality microphone,
                                 ensuring your voice is heard with clarity and precision.
                                 Communicate effortlessly, making teamwork seamless and impactful in every game.
@@ -412,7 +454,7 @@
                     @if(strtolower($mouseType) ==='wired')
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                                <img src="{{ asset('assets/Monitor_images/81YKfMGxIBL._AC_SL1500_.jpg') }}" alt=""">
 
                             </div>
                             <div class="bottom-card">
@@ -428,7 +470,7 @@
                         {{-- Assumes if the choice is wireless headphones--}}
                         <div class="features">
                             <div class="top-card">
-                                <img src="{{ asset('assets/monitor_images/maxresdefault 1.png') }}" alt=""">
+                                <img src="{{ asset('assets/Monitor_images/81RjUDCOh9L._AC_SL1500_.jpg') }}" alt=""">
 
                             </div>
                             <div class="bottom-card">
