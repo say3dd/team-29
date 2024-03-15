@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Added UserController using OpenAdmin panel">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="added the ProductService">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Monitor/Monitor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Monitor/Monitor.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +26,11 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Valhalla-working-branch-backup" />
+        <entry key="$PROJECT_DIR$" value="bilal's-repo" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -401,7 +398,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;bilal's-repo&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Valhalla-working-branch-backup&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/xampp/team-29&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -458,6 +455,8 @@
       <workItem from="1710250291132" duration="1141000" />
       <workItem from="1710254494411" duration="1769000" />
       <workItem from="1710339695866" duration="21450000" />
+      <workItem from="1710447915880" duration="19418000" />
+      <workItem from="1710513376768" duration="2132000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -644,7 +643,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Valhalla-working-branch-backup" />
+                        <option value="bilal's-repo" />
                       </list>
                     </value>
                   </entry>
@@ -679,7 +678,8 @@
     <MESSAGE value="Added OpenAdmin system to the application." />
     <MESSAGE value="Added UserController using OpenAdmin panel" />
     <MESSAGE value="down some of the product page linking to DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="down some of the product page linking to DB" />
+    <MESSAGE value="added the ProductService" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the ProductService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -688,6 +688,11 @@
           <url>file://$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php</url>
           <line>15</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php</url>
+          <line>5</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

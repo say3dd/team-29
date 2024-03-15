@@ -3,52 +3,96 @@
 <x-app-layout>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <style>
-        #sortable {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            width: 60%;
-            display: flex;
-            flex-direction: column;
-        }
+            .bg-indigo-950 {
+                width: 100%; 
+                height: 100vh; 
+                }
+                    #sortable {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 200px;
+                        width: 100%;
+                        display: inline-block;
+                        flex-direction: column;
+                    }
 
-        #sortable div {
-            margin: 0 3px 3px 3px;
-            padding: 0.4em;
-            padding-left: 1.5em;
-            font-size: 1.4em;
-            display: flex;
-            align-items: center;
-        }
+                    #sortable div {
+                        margin: 0 3px 3px 3px;
+                        padding: 0.4em;
+                        padding-left: 1.5em;
+                        font-size: 1.4em;
+                        display: flex;
+                        align-items: center;
+                    }
 
-        #sortable div img {
-            width: 100px;
-            height: 100px;
-        }
+                    #sortable div img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                    .ui-state-default,
+                    .ui-widget-content .ui-state-default,
+                    .ui-widget-header .ui-state-default {
+                        border: 1px solid #d3d3d3;
+                        background: #5B21B6;
+                        color: #f9FFFF;
+                        position: static;
+                        top: 382px;
+                        right: 1000px;
+                        border-radius: 20px;
+                        margin-top: 300px;
+                    }
 
-        .ui-state-default,
-        .ui-widget-content .ui-state-default,
-        .ui-widget-header .ui-state-default {
-            border: 1px solid #d3d3d3;
-            background: #e6e6e6;
-            color: #555555;
-        }
+                    .sortable-placeholder {
+                        height: 120px;
+                    }
 
-        .sortable-placeholder {
-            height: 120px;
-        }
+                    #save-wishlist {
+                            position: relative;
+                    margin-top: -20px;
+                    margin-left: 1200px;
+                }
+                #home {
+                position: absolute;
+                top: 289px; 
+                left: 156px; 
+                }
 
-        p {
-            color: #020202;
-        }
+                #home-2 {
+                position: relative;
+                top: 120px; 
+                left: 200px; 
+                }
 
-        .class2 {
-            background-color: #1A3A8A;
-        }
+                #remove-wishlist{
+                    position: relative; 
+                    left: 410px;
+                }
 
-        .class2 p {
-            color: #020202;
-        }
+                #add-to-basket{
+                    position: relative; 
+                    left: 20px;
+                }
+
+                #img{
+                    border-radius: 20px;
+                    margin-right: 40px;
+                    margin-left: 20px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+
+                    p {
+                        color: #020202;
+                    }
+
+                    .custom-container {
+        width: 80%;
+        margin: auto;
+        position: absolute;
+        top: 185px; 
+        left: 148px;
+    }
+
     </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -103,7 +147,6 @@
             </div>
         </class>
 
-        <class2 class="class2">
             <div class=" bg-indigo-950">
                 @if ($wishlistItems->isEmpty())
                     <div class="p-6 text-white bg-purple-700 overflow-hidden shadow-sm sm:rounded-lg custom-container">
@@ -112,21 +155,23 @@
                     <x-primary-button class=" border-white" id="home"> <a href="{{ route('index') }}">Home</a>
                     </x-primary-button>
                 @else
-                    <div id="sortable">
+                <x-primary-button class=" border-white" id="home-2"> <a href="{{ route('index') }}">Home</a>
+                </x-primary-button>
+                <div id="sortable">
                         @foreach ($wishlistItems as $product)
                             <div id="product_{{ $product->product_id }}" class="ui-state-default">
-                                <img src="{{ asset($product->images) }}" alt="{{ $product->product_name }}"
+                                <img id="img" src="{{ asset($product->images) }}" alt="{{ $product->product_name }}"
                                     style="max-width: 100px; max-height: 100px;">
                                 {{ $product->product_name }}
                                 <form method="POST" action="{{ route('wishlist.remove', $product->product_id) }}">
                                     @csrf
                                     @method('DELETE')
                                     <a href="{{ route('wishlist.remove', $product->product_id) }}">
-                                        <x-secondary-button type="submit">Remove from Wishlist</x-secondary-button>
+                                        <x-secondary-button type="submit" id="remove-wishlist">Remove from Wishlist</x-secondary-button>
                                 </form>
 
                                 <a href="{{ route('add_to_basket', $product->product_id) }}">
-                                    <x-primary-button type="button" role="button" class="buy-product">
+                                    <x-primary-button type="button" role="button" id="add-to-basket" class="buy-product">
                                         Add to Basket
                                     </x-primary-button>
                                 </a>
@@ -136,7 +181,6 @@
                     <x-primary-button class="border-white" id="save-wishlist">Save Wishlist</x-primary-button>
                 @endif
             </div>
-        </class2>
     </body>
 
 </x-app-layout>

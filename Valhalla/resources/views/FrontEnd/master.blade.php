@@ -117,8 +117,8 @@
 
                 <div class = "Category-1-bottom">
 
-                    <a href="{{route('categories') }}" class="monitor-btn">
-                        <h1>Laptop</h1>
+                    <a href="{{ route('products.index' ,['category' => 'Monitor']) }}" class="monitor-btn">
+                        <h1>Monitors</h1>
                     </a>
                 </div>
 
@@ -127,8 +127,8 @@
             <div class="Category-1">
                 <img src="{{ asset('assets/images/webprim_apexpro_tkl.png__1200x627_crop-fit_optimize_subsampling-2.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('categories' ) }}" class="monitor-btn">
-                        <h1>Keyboard</h1></a>
+                    <a href="{{ route('products.index' ,['category' => 'Keyboard']) }}" class="monitor-btn">
+                        <h1>Keyboards</h1></a>
                 </div>
 
             </div>
@@ -136,8 +136,8 @@
             <div class="Category-1">
                 <img src="{{ asset('assets/images/pro-headset-gallery-1.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('categories' ) }}" class="monitor-btn">
-                        <h1>Headset</h1></a>
+                    <a href="{{ route('products.index' ,['category' => 'Headset']) }}" class="monitor-btn">
+                        <h1>Headsets</h1></a>
                 </div>
 
             </div>
@@ -145,8 +145,8 @@
             <div class="Category-1">
                 <img src="{{ asset('assets/images/a60b39dbd9168b865d64254d7d860d20.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('categories') }}" class="monitor-btn">
-                        <h1>Mouse</h1></a>
+                    <a href="{{ route('products.index' ,['category' => 'Mouse']) }}" class="monitor-btn">
+                        <h1>Mice</h1></a>
 
                 </div>
 
@@ -155,8 +155,8 @@
             <div class="Category-1">
                 <img src="{{ asset('assets/images/h732.png') }}" alt="laptop1">
                 <div class = "Category-1-bottom">
-                    <a href="{{route('categories') }}" class="monitor-btn">
-                        <h1>Laptop</h1></a>
+                    <a href="{{ route('products.index' ,['category' => 'Laptop']) }}" class="monitor-btn">
+                        <h1>Laptops</h1></a>
                 </div>
 
             </div>
@@ -176,23 +176,23 @@
                 <div id="laptop-container">
                     <!-- @say3dd - Code for displaying "Our Laptops" section -->
 {{--                   modified the loop to use forlese instead of foreach, it will give you message if there are no products avaiable --}}
-                    @forelse ($products as $product)
+                    @forelse ($randomProducts as $randomproduct)
                         <div class="laptop">
                             <div>
-                                <img src="{{ asset($product->images) }}" alt="{{ $product->product_name }}">
+                                <img src="{{ asset($randomproduct->images) }}">
                             </div>
                             <div class="laptop-specs">
-                                <h1>{{ $product->product_name }}</h1>
-{{--                                <p> {{ $product->processor }}</p>--}}
-{{--                                <p>RAM: {{ $product->RAM }}GB</p>--}}
-                                <p>{{ $product->product_description }}</p>
-                                <h3> £{{ $product->price }}</h3>
-
-
+                                <a style= "color: inherit; font-weight: bold; font-size: 1.05rem;" href="{{ $randomproduct->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$randomproduct->product_id]) : route('product.otherInfo', ['id' =>$randomproduct->product_id]) }}">
+                                    {{$randomproduct->product_name}}
+{{--                                @Bilal Mo To show the product desc--}}
+                                @foreach($randomproduct->features as $featureName => $featureValue)
+                                        <p> {{ $featureName }}:{{ $featureValue }}</p>
+                                    @endforeach
+                                <h3> £{{ $randomproduct->price }}</h3>
                                 <div class = "button-container">
                                  <form action="{{ route('product.getInfo') }}" method="post" onsubmit="saveScrollPosition(this)">
                                     @csrf
-                                    <input class="@error('productData')" error-border @enderror" type="hidden" name="productData" value={{$product->product_id}}>
+                                    <input class="@error('productData')" error-border @enderror" type="hidden" name="productData" value={{$randomproduct->product_id}}>
                                     <input type="hidden" name="scrollPosition" id="scrollPosition">
 {{--                                    @error('productData')--}}
 {{--                                     <div class="error">--}}
@@ -200,7 +200,7 @@
 {{--                                     </div>--}}
 {{--                                     @enderror--}}
 
-                                     <a href="{{route('add_to_basket', $product->product_id)}}">
+                                     <a href="{{route('add_to_basket', $randomproduct->product_id)}}">
                                     <button type="button" role="button" class="buy-product">
                                      Add to Basket
                                     </button>
@@ -210,7 +210,7 @@
                                 </form>
                                 <form method="POST" action="{{ route('wishlist.add') }}">
                                     @csrf
-                                    <input class="@error('product_id') error-border @enderror" type="hidden" name="product_id" value="{{ $product->product_id }}">
+                                    <input class="@error('product_id') error-border @enderror" type="hidden" name="product_id" value="{{ $randomproduct->product_id }}">
                                     <button class="add-wishlist" type="submit"> <a href="{{url('contactUs')}}" class="add-btn"><i class='bx bxs-heart'></i> </a></button>
 {{--                                    @error('product_id')--}}
 {{--                                    <div class="error">--}}
