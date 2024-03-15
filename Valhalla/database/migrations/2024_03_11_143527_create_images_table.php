@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('path');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('product_id')->on('products');
             $table->timestamps();
 
         });
@@ -24,6 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        $table->dropForeign('images_product_id_foreign');
         Schema::dropIfExists('images');
     }
 };
