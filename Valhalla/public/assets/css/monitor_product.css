@@ -353,9 +353,10 @@ header {
 .monitor-feature-card img {
   display: block !important;
   margin: auto !important;
-  
+  width: 60rem;
+  height: auto !important;
   border-radius: 15px;
-  border: #4E008B 15px solid;
+  border: #4E008B 10px solid;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   margin-bottom: 5rem;
 }
