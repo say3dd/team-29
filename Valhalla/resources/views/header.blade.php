@@ -27,6 +27,7 @@
             <a href="{{route('categories')}}">Products</a>
             <a href="{{route('about')}}">About</a>
             <a href="{{route('contactUs')}}">Contact Us</a>
+            <a href="{{route('wishlist')}}">Wishlist</a>
 
 
             <!--        Fixed the heading so that the login and register is included in the header           -->
