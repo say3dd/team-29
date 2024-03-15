@@ -35,7 +35,6 @@
 
 </header>
 <body>
-<h1>
 
     <div class="title_shape">
         <!--@BilalMo did this ;) -->
@@ -68,18 +67,16 @@
               default => "Browse our products from various categories",
           };
         @endphp
-        <img class="title_image" style="" src=" {{$categoryImage}}">
+        <img class="title_image" style="" src=" {{$categoryImage}}" alt="{{ $categoryTitle }}">
         <p class="laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">{{$categoryTitle}} </p>
         <p class="title_content" style="position: absolute; top: 43%; color: white; text-align: left; left: 5%; ">
         {{ $categoryText }}
         </p>
     </div>
 
-</h1>
-<h2>
 
     @if(session('success'))
-        <div id="flash-success" class="p-5 bg-[#79c753] mx-44 my-5 rounded-[5px] w-1/2 ">
+        <div id="flash-success" class="p-5 ml-2 bg-[#79c753] mx-44 my-5 rounded-[5px] w-1/2 ">
             {{session('success')}}
             {{--                <p class=" text-amber-200">Hello, a message</p>--}}
         </div>
@@ -251,7 +248,6 @@
                 </div>
             </div>
         </section>
-</h2>
 </div>
 <script>
     /* Saves the users scroll position - if pages refreshed it goes back to it  --> */
