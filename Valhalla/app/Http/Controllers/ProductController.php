@@ -43,9 +43,9 @@ class ProductController extends Controller implements BasketInterface
         $productDesc = Product::where('category', $category)->distinct()->get()->pluck('product_description');
         $patterns = $category !== 'all' ? $categoryPatterns[$category] : [];
         // filter part
-        // $filters = $this->extractFilters($productDesc,$patterns);
+         $filters = $this->extractFilters($productDesc,$patterns);
         // Applying the filters
-        $query = $this->filterProducts($query, $request->input('brands', []));
+        $query = $this->filterProducts($query, $request->input('brands', []),$filters);
 
 
         // Applying sorting
@@ -62,40 +62,40 @@ class ProductController extends Controller implements BasketInterface
         $brands = $category !== 'all' ? Product::select('brand')->where('category', $category)->distinct()->orderBy('brand')
             ->get() : Product::select('brand')->distinct()->orderBy('brand')->get();
         // Pass everything to be shown to the view
-        return view('Product_files.products', compact('products', 'brands', 'category'));
+        return view('Product_files.products', compact('products', 'brands','filters', 'category'));
     }
-//@Bilal Mo extract filter was for the filtering part - kinda not needed rn since it doesnt work :/
-//    protected function extractFilters($descriptions,$patterns)
-//    {
-//        $filters = [];
-//      //  Log::debug('Descriptions:', $descriptions->toArray());
-///**  Due to possible string errors , an error must be used to check whether it is a string or not to handle it correctly*/
-//       // foreach ($patterns as $category => $attributePatterns) {
-//            foreach ($patterns as $attribute => $pattern) {
-//                // Ensure pattern is a string and is a valid regular expression
-//                if (!is_string($pattern) || false === @preg_match($pattern, null)) {
-//                    // Log the problem for the person coding to review and correct the issue.
-//                    Log::warning("Invalid pattern for attribute {$attribute}: " . print_r($pattern, true));
-//                    continue; // Skip this pattern
-//                }
-//
-//                // Extract matches for each pattern
-//                $matches = $descriptions->map(function ($desc) use ($pattern) {
-//                    preg_match_all($pattern, $desc, $match);
-//                    return $match[1] ?? null;
-//                })->flatten()->filter()->unique()->values()->toArray();
-//
-//                if (!empty($matches)) {
-//                    $filters[$attribute] = $matches;
-//                }
-//                Log::debug("Attribute: $attribute, Pattern: $pattern, Matches: " . print_r($matches, true));
-//            }
-//        //}
-//        /**  Used these debugging to find what is produced from the filtering and patterns to check whether it got the data from the DB or not*/
-//        Log::debug('Patterns used:', $patterns);
-//        Log::debug('Filters extracted:', $filters);
-//        return $filters;
-//    }
+/**  @Bilal Mo extract filter was for the filtering part - kinda not needed rn since it doesnt work :/ */
+    protected function extractFilters($descriptions,$patterns)
+    {
+        $filters = [];
+      //  Log::debug('Descriptions:', $descriptions->toArray());
+/**  Due to possible string errors , an error must be used to check whether it is a string or not to handle it correctly*/
+       // foreach ($patterns as $category => $attributePatterns) {
+            foreach ($patterns as $attribute => $pattern) {
+                // Ensure pattern is a string and is a valid regular expression
+                if (!is_string($pattern) || false === @preg_match($pattern, null)) {
+                    // Log the problem for the person coding to review and correct the issue.
+                    Log::warning("Invalid pattern for attribute {$attribute}: " . print_r($pattern, true));
+                    continue; // Skip this pattern
+                }
+
+                // Extract matches for each pattern
+                $matches = $descriptions->map(function ($desc) use ($pattern) {
+                    preg_match_all($pattern, $desc, $match);
+                    return $match[1] ?? null;
+                })->flatten()->filter()->unique()->values()->toArray();
+
+                if (!empty($matches)) {
+                    $filters[$attribute] = $matches;
+                }
+                Log::debug("Attribute: $attribute, Pattern: $pattern, Matches: " . print_r($matches, true));
+            }
+        //}
+        /**  Used these debugging to find what is produced from the filtering and patterns to check whether it got the data from the DB or not*/
+        Log::debug('Patterns used:', $patterns);
+        Log::debug('Filters extracted:', $filters);
+        return $filters;
+    }
     /** @Bilal Mo Assigning operations for the sorting functions */
     protected function sortLaptops($query, $sorting)
     {
@@ -109,7 +109,7 @@ class ProductController extends Controller implements BasketInterface
 
     /** @BilalMo The function works on displaying the laptop based on certain conditionals whether the filter of the feature has been
      *pressed or not - other part for the flexible filter doesnt work so "//" for now*/
-    protected function filterProducts($query, $checkedbrands)//$filters)
+    protected function filterProducts($query, $checkedbrands,$filters)
     {
         $query->distinct();
 
@@ -129,20 +129,20 @@ class ProductController extends Controller implements BasketInterface
 //                });
 //            }
 //        }
-//        $query->where(function ($q) use ($filters) {
-//            foreach ($filters as $attribute => $values) {
-//                if (!empty($values)) {
-//                    $q->orWhere(function ($subq) use ($values, $attribute) {
-//                        foreach ($values as $value) {
-//                            // Modify the pattern to ensure it correctly matches the structured descriptions
-//                            // Note: Adjust the pattern based on your exact formatting if necessary
-//                            $pattern = "%{$attribute}: {$value}%";
-//                            $subq->orWhere('product_description', 'LIKE', $pattern);
-//                        }
-//                    });
-//                }
-//            }
-//        });
+        $query->where(function ($q) use ($filters) {
+            foreach ($filters as $attribute => $values) {
+                if (!empty($values)) {
+                    $q->orWhere(function ($subq) use ($values, $attribute) {
+                        foreach ($values as $value) {
+                            // Modify the pattern to ensure it correctly matches the structured descriptions
+                            // Note: Adjust the pattern based on your exact formatting if necessary
+                            $pattern = "%{$attribute}: {$value}%";
+                            $subq->orWhere('product_description', 'LIKE', $pattern);
+                        }
+                    });
+                }
+            }
+        });
         //this is just a log to check the debug issue when getting Data for DB
         // \Log::debug('Final Query:', [$query->toSql(), $query->getBindings()]);
         return $query;
@@ -217,7 +217,7 @@ public function getRelatedProducts($currentProductId,$category)
     ->take(12)
     ->get()
 //        HAD TO MAKE IT TWO FOR LACK OF PRODUCTS, WHEN U ADD MORE DUMMY DATA, CHANGE IT TO 4
-    ->random(2);
+    ->random(2); //Will make this 4 when theres enough products available
     return $relatedProducts;
 }
 

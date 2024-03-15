@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="added the ProductService">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Re added monitor pictures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Monitor/Monitor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Monitor/Monitor.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +30,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -456,7 +455,7 @@
       <workItem from="1710254494411" duration="1769000" />
       <workItem from="1710339695866" duration="21450000" />
       <workItem from="1710447915880" duration="19418000" />
-      <workItem from="1710513376768" duration="2132000" />
+      <workItem from="1710513376768" duration="3795000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -626,7 +625,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710296691993</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Re added monitor pictures">
+      <option name="closed" value="true" />
+      <created>1710515652707</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1710515652707</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +686,8 @@
     <MESSAGE value="Added UserController using OpenAdmin panel" />
     <MESSAGE value="down some of the product page linking to DB" />
     <MESSAGE value="added the ProductService" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the ProductService" />
+    <MESSAGE value="Re added monitor pictures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re added monitor pictures" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
