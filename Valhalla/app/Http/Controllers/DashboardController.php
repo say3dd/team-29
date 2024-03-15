@@ -31,14 +31,11 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function orderHistory(){
+    public function orderHistory()
+    {
+        $order_history = auth()->user()->orders;
         
-        $user = auth()->user();
-        $user->load('orders');
-
-        
-
-
+    
         return view('dashboard', ['order_history' => $order_history]);
     }
 }
