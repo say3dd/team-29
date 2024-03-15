@@ -5,7 +5,7 @@
 @section('productP')
 <!--@noramknarf (Francis Moran) - added functionality to "add to basket" buttons (see ProductController->getInfo()) -->
 <!--@say3dd (Mohammed Miah) - Displayed the products from the database -->
-@foreach($products as $product)
+@forelse($products as $product)
 <div class="laptop_all">
     <img class="image_all_laptop" src="{{ asset($product->images) }}" style="transition: 0.3s ease">
     <div class="laptop_all_text">
@@ -38,5 +38,7 @@
     </form>
 </div>
 </div>
-@endforeach
+@empty
+    <h1 class="text-2xl">There are no products available yet.</h1>
+@endforelse
 @endsection
