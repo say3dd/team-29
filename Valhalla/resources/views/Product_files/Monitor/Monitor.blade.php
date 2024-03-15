@@ -474,8 +474,7 @@
                                 <p class="info-feature"> 
                         Experience unparalleled audio fidelity with our wired headphones, meticulously
                          engineered for uncompromising sound quality and reliability.
-                         Immerse yourself in crystal-clear audio and deep bass, capturing every nuance 
-                         of in your games.
+                         Immerse yourself in crystal-clear audio and deep bass, capturing every detail.
                                 </p>
                             </div>
                         </div>
