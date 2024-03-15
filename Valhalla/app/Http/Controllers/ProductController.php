@@ -337,5 +337,9 @@ public function getRelatedProducts($currentProductId,$category)
     // @say3dd (Mohammed Miah) Function to allow us to see related products on the individual product details page
 
 
+<<<<<<< HEAD
+=======
+}
+>>>>>>> parent of 3f3ac761 (rating added to test blade, wishlist buttons position fixed)
 
 

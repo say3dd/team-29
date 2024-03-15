@@ -130,8 +130,11 @@ Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
 Route::get('/search', [ProductController::class, 'search']) ->name('categories.search');
+<<<<<<< HEAD
 Route::get('/product/{id}', [ProductController::class, 'show']);
 Route::get('/search/products', [ProductController::class, 'search']) ->name('categories.search');
+=======
+>>>>>>> parent of 3f3ac761 (rating added to test blade, wishlist buttons position fixed)
 
 Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');

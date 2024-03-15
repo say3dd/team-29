@@ -4,8 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "d5a811e1c5c8b95d9bc50d7877f2411c",
     "content-hash": "498a7981673d2f15b9545c7e0f5588db",
+=======
+    "content-hash": "27c2a8aecb4c0d8bb0f7a2f61b4faf3d",
+>>>>>>> parent of 3f3ac761 (rating added to test blade, wishlist buttons position fixed)
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1497,6 +1501,7 @@
         {
             "name": "laravel/framework",
             "version": "v10.48.2",
+<<<<<<< HEAD
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
@@ -1570,15 +1575,17 @@
         {
             "name": "laravel/framework",
             "version": "v10.48.3",
+=======
+>>>>>>> parent of 3f3ac761 (rating added to test blade, wishlist buttons position fixed)
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5791c052b41c6b593556adc687076bfbdd13c501"
+                "reference": "32a8bb151d748b579c3794dea53b56bd40dfbbd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5791c052b41c6b593556adc687076bfbdd13c501",
-                "reference": "5791c052b41c6b593556adc687076bfbdd13c501",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/32a8bb151d748b579c3794dea53b56bd40dfbbd3",
+                "reference": "32a8bb151d748b579c3794dea53b56bd40dfbbd3",
                 "shasum": ""
             },
             "require": {
@@ -1773,6 +1780,7 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2024-03-12T16:35:43+00:00"
+<<<<<<< HEAD
         },
         {
             "name": "laravel/jetstream",
@@ -1842,6 +1850,8 @@
                 "source": "https://github.com/laravel/jetstream"
             },
             "time": "2024-02-29T17:10:06+00:00"
+=======
+>>>>>>> parent of 3f3ac761 (rating added to test blade, wishlist buttons position fixed)
         },
         {
             "name": "laravel/prompts",
@@ -2487,6 +2497,7 @@
             "time": "2024-01-28T23:22:08+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "livewire/livewire",
             "version": "v3.4.9",
             "source": {
@@ -2616,6 +2627,8 @@
             "time": "2024-03-01T22:28:42+00:00"
         },
         {
+=======
+>>>>>>> parent of 3f3ac761 (rating added to test blade, wishlist buttons position fixed)
             "name": "monolog/monolog",
             "version": "3.5.0",
             "source": {
