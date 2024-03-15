@@ -11,6 +11,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+    
 
 <class>
     <div class="py-12 bg-indigo-950">

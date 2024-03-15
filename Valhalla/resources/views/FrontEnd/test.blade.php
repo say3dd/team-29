@@ -257,6 +257,9 @@
         </div>
         {{-- Section 4 ends here --}}
 
+        {{-- Product rating --}}
+            @livewire('product-ratings', ['product' => $product], key($product->product_id))
+
         {{-- Section 5 begins here --}}
         <div class="container_section5">
             <div class="title_related_products"> Related Products </div>

@@ -343,6 +343,11 @@ public function addToBasket($id){
 
     // @say3dd (Mohammed Miah) Function to allow us to see related products on the individual product details page
 
+   /* public function show($id)
+{
+    $product = Product::findOrFail($id);
+    return view('product-ratings', compact('products'));
+} */
 
 }
 

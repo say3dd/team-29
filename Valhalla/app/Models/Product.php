@@ -27,4 +27,9 @@ class Product extends Model
     {
         return Product::where('stock', '>', 0)->get();
     }
+
+    public function ratings()
+    {
+        return $this->hasMany('App\Models\Rating');
+    }
 }

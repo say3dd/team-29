@@ -65,12 +65,12 @@
 
                 #remove-wishlist{
                     position: relative; 
-                    left: 410px;
+                    left: 300px;
                 }
 
                 #add-to-basket{
                     position: relative; 
-                    left: 20px;
+                    left: -100px;
                 }
 
                 #img{
@@ -163,6 +163,7 @@
                                 <img id="img" src="{{ asset($product->images) }}" alt="{{ $product->product_name }}"
                                     style="max-width: 100px; max-height: 100px;">
                                 {{ $product->product_name }}
+                                <div class="inline-flex flex: basis-10;">
                                 <form method="POST" action="{{ route('wishlist.remove', $product->product_id) }}">
                                     @csrf
                                     @method('DELETE')
@@ -175,6 +176,7 @@
                                         Add to Basket
                                     </x-primary-button>
                                 </a>
+                            </div>
                             </div>
                         @endforeach
                     </div>
