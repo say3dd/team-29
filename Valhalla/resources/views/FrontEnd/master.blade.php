@@ -30,6 +30,22 @@
 {{--    redundant code has been removed --}}
         @include('header')
     <!--         Hero Section         -->
+
+    @includeWhen($errors->any(), '_errors')
+    @if(session('success'))
+        <div id="flash-success" class="bg-[#79c753] text-bold text-[1.1rem] ">
+            {{session('success')}}
+            {{--                <p class=" text-amber-200">Hello, a message</p>--}}
+        </div>
+    @endif
+    @if(session('error'))
+        <div id="flash-error" class="p-5 bg-red-700 text-bold text-[1.1rem]">
+            {{session('error')}}
+            <!--I have no idea if this is alright, I was just copying from the success popup-->
+        </div>
+    @endif
+
+
     <section id="hero">
         <div class="hero-container">
             @yield('content')
@@ -45,19 +61,7 @@
             </div>
         </div>
 
-        @includeWhen($errors->any(), '_errors')
-    @if(session('success'))
-        <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
-            {{session('success')}}
-            {{--                <p class=" text-amber-200">Hello, a message</p>--}}
-        </div>
-    @endif
-    @if(session('error'))
-        <div id="flash-error" class="p-5 bg-red-700 mx-0 my-5 rounded-[5px]">
-            {{session('error')}}
-            <!--I have no idea if this is alright, I was just copying from the success popup-->
-        </div>
-    @endif
+    
         <!-- Brands Section -->
         <div class="brands-section">
             <div class="brand-images">
@@ -178,11 +182,14 @@
 {{--                   modified the loop to use forlese instead of foreach, it will give you message if there are no products avaiable --}}
                     @forelse ($randomProducts as $randomproduct)
                         <div class="laptop">
+                            <div class = "top-card">
                             <div>
                                 <img src="{{ asset($randomproduct->images) }}">
                             </div>
+                            </div>
+                            
                             <div class="laptop-specs">
-                                <a style= "color: inherit; font-weight: bold; font-size: 1.05rem;" href="{{ $randomproduct->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$randomproduct->product_id]) : route('product.otherInfo', ['id' =>$randomproduct->product_id]) }}">
+                                <a class = "product-info" style= "color: inherit; font-weight: bold; font-size: 1.2rem;" href="{{ $randomproduct->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$randomproduct->product_id]) : route('product.otherInfo', ['id' =>$randomproduct->product_id]) }}">
                                     {{$randomproduct->product_name}}
 {{--                                @Bilal Mo To show the product desc--}}
                                 @foreach($randomproduct->features as $featureName => $featureValue)

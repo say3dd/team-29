@@ -263,14 +263,29 @@ img {
 .laptop p {
     font-size: 0.9rem;
     margin-left: 2rem;
-    margin-right: 2rem
+    margin-right: 2rem;
+    margin-top: 0.5rem;
+}
+
+.laptop a {
+   margin-bottom: 1rem !important;
+    
+}
+
+
+
+.laptop-specs a {
+    margin-bottom: 1rem !important;
 }
 .laptop-specs h3 {
     font-weight: bolder;
-    font-style: italic;
+    
     font-size: 1rem !important;
     margin-top: 1.2rem !important;
 
+}
+.product-title a {
+    margin-bottom: 1rem !important;
 }
 
 .laptop-specs h1 {
@@ -312,14 +327,22 @@ img {
     width: 75%; /* Set the width as a percentage or use other relative units */
 }
 
+.top-card {
+    background-color: #4e008b !important;
+    padding: 25px;
+}
+.title-product a {
+    margin-bottom: 1rem !important;
+}
+
 
 
 .laptop {
-    width:  22rem;
+    width:  24rem;
     text-align: center;
     margin: 1rem;
-    background-color: #4e008b;
-    padding: 0px;
+    background-color: #2d044b;
+    padding: 0px !important;
     padding-top: 10px;
     box-shadow: 0 10px 20px #000000;
     border-radius: 15px;
@@ -664,6 +687,55 @@ footer {
     margin-bottom: 0.5rem;
 }
 
+
+
+
+
+
+
+/*     Message    */
+
+#flash-success {
+  margin-top: 1rem !important;
+    padding: 1rem !important;
+    text-align: center !important;
+    margin-left: 35rem;
+    margin-right: 35rem;
+    border-radius: 15px;
+    font-size: 1.1rem !important;
+    font-style: bold !important;
+    border: rgb(255, 255, 255) 2px solid;
+    
+}
+
+#flash-success p {
+  
+ 
+    font-size: 1.1rem !important;
+    font-style: bold !important;
+
+}
+
+#flash-error {
+    margin-top: 1rem !important;
+      padding: 1rem !important;
+      text-align: center !important;
+      margin-left: 30rem;
+      margin-right: 30rem;
+      border-radius: 15px;
+      font-size: 1.1rem !important;
+      font-style: bold !important;
+      border: rgb(255, 255, 255) 2px solid;
+  }
+  
+  #flash-error p {
+    
+   
+      font-size: 1.1rem !important;
+      font-style: bold !important;
+  
+  }
+  
 
 @media (max-width: 1570px) {
     
