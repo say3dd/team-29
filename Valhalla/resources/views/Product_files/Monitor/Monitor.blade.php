@@ -132,14 +132,47 @@
 
  <!-- Monitor  Section -->
 
+ <!-- Added Image here for each type of category product -->
 
+       @if($product->category === 'Monitor')
       <div class = "monitor-feature">
       <div id="monitor-feature-container">
         <div class="monitor-feature-card">
-         <img  src="{{ asset('assets/monitor_images/monitor-image.png') }}" alt="""> {{--Here when you have the images tell me so i can do the if statements for each product type--}}
+         <img  src="{{ asset('assets/Monitor_images/Asus-Gaming-Monitors.png') }}" alt="""> {{--Here when you have the images tell me so i can do the if statements for each product type--}}
           <div>
       </div>
       </div>
+      @endif
+
+      @if($product->category === 'Mouse')
+      <div class = "monitor-feature">
+      <div id="monitor-feature-container">
+        <div class="monitor-feature-card">
+         <img  src="{{ asset('assets/Monitor_images/5940564_2019_11_06_12_00_541908917092.jpeg') }}" alt="""> 
+      </div>
+      </div>
+      @endif
+
+      @if($product->category === 'Keyboard')
+      <div class = "monitor-feature">
+      <div id="monitor-feature-container">
+        <div class="monitor-feature-card">
+         <img  src="{{ asset('assets/Monitor_images/PURIMINI-RGB-product-section_10-1536x591.jpg') }}" alt="""> 
+          <div>
+      </div>
+      </div>
+      @endif                  
+
+      @if($product->category === 'Headset')
+      <div class = "monitor-feature">
+      <div id="monitor-feature-container">
+        <div class="monitor-feature-card">
+         <img  src="{{ asset('assets/Monitor_images/1_EnzVLCIeYh6BRElPs11WQg.png') }}" alt="""> 
+      
+      </div>
+      </div>
+      @endif                  
+
 
   <!-- Monitor Features -->
 
