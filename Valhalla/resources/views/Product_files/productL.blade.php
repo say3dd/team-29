@@ -35,7 +35,6 @@
 
 </header>
 <body>
-<h1>
 
     <div class="title_shape">
         <!--@BilalMo did this ;) -->
@@ -68,18 +67,16 @@
               default => "Browse our products from various categories",
           };
         @endphp
-        <img class="title_image" style="" src=" {{$categoryImage}}">
+        <img class="title_image" style="" src=" {{$categoryImage}}" alt="{{ $categoryTitle }}">
         <p class="laptop_title1" style="position: absolute; top: 33%; color: white; text-align: center; left: 5%; ">{{$categoryTitle}} </p>
         <p class="title_content" style="position: absolute; top: 43%; color: white; text-align: left; left: 5%; ">
         {{ $categoryText }}
         </p>
     </div>
 
-</h1>
-<h2>
 
     @if(session('success'))
-        <div id="flash-success" class="p-5 bg-[#79c753] mx-44 my-5 rounded-[5px] w-1/2 ">
+        <div id="flash-success" class="p-5 ml-2 bg-[#79c753] mx-44 my-5 rounded-[5px] w-1/2 ">
             {{session('success')}}
             {{--                <p class=" text-amber-200">Hello, a message</p>--}}
         </div>
@@ -88,11 +85,10 @@
     <!-- This is the code for the layout of product container - where all the product will be shown -->
     <div class="background_shape6">
         <section class="container_for_path_buttons">
-            <p class="path">
-                >> Home >>
-                Products >> Gaming
-                Laptops
-            </p>
+        <div class="search">
+            {{--//@todo: Need to implement search bar here--}}
+        </div>
+
             <button class="button_sort" id="sort-button">
                 <img class="image_sort" src="{{asset('assets/images_product/sort.png')}}" alt="">
             </button>
@@ -144,7 +140,7 @@
                                     @endforeach
                                 </div>
                             @endforeach
-                        @endif   
+                        @endif
                 </ul>
             </div>
             <div class = "container_buttons">
@@ -252,7 +248,6 @@
                 </div>
             </div>
         </section>
-</h2>
 </div>
 <script>
     /* Saves the users scroll position - if pages refreshed it goes back to it  --> */

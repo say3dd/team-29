@@ -34,7 +34,7 @@
             @if (Route::has('login'))
 
                 @auth
-                    <a href="{{ url('home') }}"
+                    <a href="{{ route('dashboard') }}"
                         class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                 @else
                     <a href="{{ route('login') }}"
@@ -90,6 +90,7 @@
                                 </div>
                             </div>
                         @endforeach
+
                     @endif
                     <div class="row">
                         <div class="text-center checkout inline-block bg-violet-900 w-full mt-2 rounded-md mr-2 align-middle pr-1">

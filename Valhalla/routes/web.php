@@ -78,8 +78,8 @@ Route::get('/test1', function () {
 
     // Addded route function to the about page
     Route::get('/about',[HomeController::class, 'about'])->name('about');
-    // @say3dd (Mohammed Miah) - Routing for the different product functionalities
 
+    // @say3dd (Mohammed Miah) - Routing for the different product functionalities
     // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
     Route::get('/products', [ProductController::class,'index'])->name('products.index');
     Route::get('/product/laptops/{id}', [ProductController::class, 'showlaptopInfo'])->name('product.laptopInfo');
@@ -100,8 +100,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/home', [HomeController::class,'authHome'])->name('home');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
+    // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'orderHistory'])->name('dashboard');
 
 });
 
@@ -131,6 +131,7 @@ Route::get('/categories', function () {
 })->name('categories');
 Route::get('/search', [ProductController::class, 'search']) ->name('categories.search');
 Route::get('/product/{id}', [ProductController::class, 'show']);
+Route::get('/search/products', [ProductController::class, 'search']) ->name('categories.search');
 
 Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
 Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');

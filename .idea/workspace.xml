@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Added UserController using OpenAdmin panel">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Re added monitor pictures">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/team-29.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team-29.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Monitor/Monitor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Monitor/Monitor.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +36,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Valhalla-working-branch-backup" />
+        <entry key="$PROJECT_DIR$" value="bilal's-repo" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -387,6 +393,13 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/deprecations" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/laravel/jetstream" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -401,7 +414,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;bilal's-repo&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Valhalla-working-branch-backup&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/xampp/team-29&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -458,6 +471,8 @@
       <workItem from="1710250291132" duration="1141000" />
       <workItem from="1710254494411" duration="1769000" />
       <workItem from="1710339695866" duration="21450000" />
+      <workItem from="1710447915880" duration="19418000" />
+      <workItem from="1710513376768" duration="3795000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -627,7 +642,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710296691993</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Re added monitor pictures">
+      <option name="closed" value="true" />
+      <created>1710515652707</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1710515652707</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +667,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Valhalla-working-branch-backup" />
+                        <option value="bilal's-repo" />
                       </list>
                     </value>
                   </entry>
@@ -679,7 +702,9 @@
     <MESSAGE value="Added OpenAdmin system to the application." />
     <MESSAGE value="Added UserController using OpenAdmin panel" />
     <MESSAGE value="down some of the product page linking to DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="down some of the product page linking to DB" />
+    <MESSAGE value="added the ProductService" />
+    <MESSAGE value="Re added monitor pictures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re added monitor pictures" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -688,6 +713,11 @@
           <url>file://$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php</url>
           <line>15</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php</url>
+          <line>5</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -262,50 +262,24 @@
 
         {{-- Section 5 begins here --}}
         <div class="container_section5">
-            <div class="title_related_products"> Related Products </div>
-            <div class="laptop1">
-                <img class="related_product_image" src="{{asset('assets/laptop_images/MSI Titan GT77 HX 13V/msi_Titan_GT77_HX_13V.jpg')}} ">
-                <button class="related_product_content">MSI Titan GT77 HX 13V</button>
-                <div class ="related_products_spec">
-                        <p> - 13th Gen Intel® Core™ i9-13980HX Processor </p>
-                        <p> - GeForce RTX™ 4090 </p>
-                        <p> - 128GB RAM </p>
-                </div>
-                <button class="button_cart_laptop"> Add to Basket </button>
-            </div>
-            <div class="laptop1">
-                <img class="related_product_image" src="{{asset('assets/laptop_images/Alienware M16/alienware_m16.jpg')}}">
-                <button class="related_product_content">Alienware m16</button>
-                <div class ="related_products_spec">
-                        <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
-                        <p> - GeForce RTX™ 4070</p>
-                        <p> - 32GB RAM</p>
-                </div>
-                <button class="button_cart_laptop"> Add to Basket </button>
-            </div>
-            <div class="laptop1">
-                <img class="related_product_image" src="{{asset('assets/laptop_images/Asus ROG Strix G16 G614/asus_ROG_Strix_G16_G614.jpg')}}">
-                <button class="related_product_content">Asus ROG Strix G16 G614</button>
-                <div class ="related_products_spec">
-                        <p> - 13th Gen Intel® Core™ i9-13980HX Processor</p>
-                        <p> - GeForce RTX™ 4090</p>
-                        <p> - 128GB RAM</p>
-                </div>
-                <button class="button_cart_laptop"> Add to Basket </button>
-            </div>
-            <div class="laptop1">
-                <img class="related_product_image" src="{{asset('assets/laptop_images/Alienware M18/alienware-m18.jpg ')}}">
-                <button class="related_product_content">Alienware m18</button>
-                <div class ="related_products_spec">
-                        <p> - 13th Gen Intel® Core™ i7-13700HX Processor</p>
-                        <p> - GeForce RTX™ 4080</p>
-                        <p> - 32GB RAM</p>
-                </div>
-                <button class="button_cart_laptop"> Add to Basket </button>
-            </div>
+            <div class="title_related_products"> Related Products</div>
+    {{--   @Bilal Mo  added a randomizer which chooses 4 products from the specific category it is and randomizes it after every refresh--}}
+    @foreach($relatedProducts as $relatedProduct)
+                <div class="laptop1">
+                    <img class="related_product_image" src="{{ asset($relatedProduct->images) }}">
+                   <button> <a style="color: inherit; font-weight: bold; font-size: 1.05rem;"
+                       href="{{ $product->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$product->product_id]) : route('product.otherInfo', ['id' =>$product->product_id]) }}">
+                           {{$relatedProduct->product_name}} </a></button>
+                    <div class="related_products_spec">
+                        @foreach($relatedProduct->features as $featureName => $featureValue)
+                            <p><strong>{{ $featureName }}</strong>: {{ $featureValue }}</p>
+                        @endforeach
+                    </div>
+                    <button class="button_cart_laptop"> Add to Basket</button>
+                     </div>
+            @endforeach
         </div>
-    </div>
-
+{{--Script code --}}
     <script>
         // JavaScript functions to show/hide the modal
         function openMessageBox() {
