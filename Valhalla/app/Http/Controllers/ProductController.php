@@ -1,5 +1,5 @@
 <?php
-//@noramknarf (Francis Moran) - getInfo() function, redirect to login in basket()
+//@noramknarf (Francis Moran) - getInfo() function, redirect to login in basket(), image handling in showlaptopinfo
 /* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */
 namespace App\Http\Controllers;
 
@@ -230,10 +230,13 @@ protected function extractProductFeatures($product){
        session(['scrollPosition' => $scrollPosition, 'restoreScroll' => true]);
        return redirect()->back();
     }
+
+    //Grabs all images relevant to the laptop clicked on and passes them to that laptop's individual page.
     public function showlaptopinfo($id){
         $productDetails = Product::find($id);
+        $images = DB::table('images')->get()->where('product_id', $id);
 
-        return view('Frontend.test',['product' => $productDetails]);
+        return view('Frontend.test',['product' => $productDetails, 'images' => $images]);
     }
 
     public function showotherproductinfo($id){

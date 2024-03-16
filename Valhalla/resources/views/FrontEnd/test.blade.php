@@ -2,6 +2,7 @@
 <html>
 <!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Product page using CSS. Also used JavaScript to make "View all specification"
      button work, so the user could see all of the specifications about a praticular product  -->
+<!-- @noramknarf (Francis Moran) - Implemented dynamic images -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,9 +23,14 @@
         <div class="background_shape_1_2">
             <div class="slideshow-container">
                 <div class="slide">
-                    <div class="mySlides">
-                        <img class="slide_image" src="{{asset('assets/images_product/laptop4.jpg')}}" alt="">
-                    </div>
+                    <!--Loops through all the images passed to the route and adds a slide using the relevant path in the DB
+                        NOTE: Only ROG Strix G16 G614 has any images in the table so far because it will take ages to manually add all those images to the seeder-->
+                    @foreach($images as $image)
+                        <div class="mySlides">
+                            <img class="slide_image" src="{{asset($image->path)}}" alt="">
+                        </div>
+                    @endforeach
+                <!-- just leaving these here in case someone wants to revert my changes -F
                     <div class="mySlides">
                         <img class="slide_image" src="{{asset('assets/images_product/laptop2.jpg')}}" alt="">
                     </div>
@@ -37,14 +43,21 @@
                     <div class="mySlides">
                         <img class="slide_image" src="{{asset('assets/images_product/laptop5.jpg')}}" alt="">
                     </div>
+                -->
                     <a class="previousSlide" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="nextSlide" onclick="plusSlides(1)">&#10095;</a>
                     <div style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <!-- Adds one dot for each image that sends the slideshow to the relevant image
+                            I would've put this in the loop above, but I felt this was much more readable for anyone else -->
+                        @for($i = 1; $i <= count($images); $i++)
+                        <span class="dot" onclick="currentSlide({{$i}})"></span>
+                        @endfor
+                        <!--
                         <span class="dot" onclick="currentSlide(2)"></span>
                         <span class="dot" onclick="currentSlide(3)"></span>
                         <span class="dot" onclick="currentSlide(4)"></span>
                         <span class="dot" onclick="currentSlide(5)"></span>
+                        -->
                     </div>
                 </div>
             </div>
