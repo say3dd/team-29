@@ -60,15 +60,15 @@
             </tr>
           </thead>
           <tbody>
-            @if(isset($order_history)) 
-              @foreach ($order_history as $item)  
+            @if(isset($order_history))
+              @foreach ($order_history as $item)
             <tr>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->product_name}} </td>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->id }}</td> 
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->tracking_number}} </td>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->price}} </td>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->created_at}} </td> 
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"><a href="{{route('tracking')}}">
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200 text-center"> {{$item->product_name}} </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200 text-center"> {{$item->id }}</td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200 text-center"> {{$item->tracking_number}} </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200 text-center"> {{$item->price}} </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200 text-center"> {{$item->created_at}} </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200 text-center"><a href="{{route('tracking')}}">
                 <x-primary-button>
                     {{ __('Track') }}
                 </x-primary-button>
@@ -76,11 +76,11 @@
           </td>
             </tr>
               @endforeach
-              @else 
+              @else
             <tr>
               <td colspan="5" class="px-4 py-2 bg-white">No orders yet</td>
-              <td class="px-4 py-2 border-gray-800 bg-white flex justify-center"> 
-                @endif 
+              <td class="px-4 py-2 border-gray-800 bg-white flex justify-center">
+                @endif
                   <div>
                       <a href="{{route('return.request')}}">
                         <x-primary-button>
@@ -91,9 +91,9 @@
               </td>
           </tr>
       </tbody>
-      
+
   </table>
-  
+
 </div>
 </div>
 </div>
