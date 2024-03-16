@@ -146,6 +146,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/mobiledetect/mobiledetectlib" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/paragonie/constant_time_encoding" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/pragmarx/google2fa" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/livewire/livewire" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
