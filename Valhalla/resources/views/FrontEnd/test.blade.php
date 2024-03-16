@@ -25,12 +25,17 @@
                 <div class="slide">
                     <!--Loops through all the images passed to the route and adds a slide using the relevant path in the DB
                         NOTE: Only ROG Strix G16 G614 has any images in the table so far because it will take ages to manually add all those images to the seeder-->
+                @if($images->count() > 0)
                     @foreach($images as $image)
                         <div class="mySlides">
                             <img class="slide_image" src="{{asset($image->path)}}" alt="">
                         </div>
                     @endforeach
-                <!-- just leaving these here in case someone wants to revert my changes -F
+                    
+                @else
+                    <div class="mySlides">
+                        <img class="slide_image" src="{{asset('assets/images_product/laptop1.jpg')}}" alt="">
+                    </div>
                     <div class="mySlides">
                         <img class="slide_image" src="{{asset('assets/images_product/laptop2.jpg')}}" alt="">
                     </div>
@@ -43,21 +48,23 @@
                     <div class="mySlides">
                         <img class="slide_image" src="{{asset('assets/images_product/laptop5.jpg')}}" alt="">
                     </div>
-                -->
+                @endif
                     <a class="previousSlide" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="nextSlide" onclick="plusSlides(1)">&#10095;</a>
                     <div style="text-align:center">
                         <!-- Adds one dot for each image that sends the slideshow to the relevant image
                             I would've put this in the loop above, but I felt this was much more readable for anyone else -->
-                        @for($i = 1; $i <= count($images); $i++)
-                        <span class="dot" onclick="currentSlide({{$i}})"></span>
-                        @endfor
-                        <!--
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                        <span class="dot" onclick="currentSlide(4)"></span>
-                        <span class="dot" onclick="currentSlide(5)"></span>
-                        -->
+                        @if($images->count() >0 )
+                            @for($i = 1; $i <= count($images); $i++)
+                            <span class="dot" onclick="currentSlide({{$i}})"></span>
+                            @endfor
+                        @else    
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            <span class="dot" onclick="currentSlide(5)"></span>
+                        @endif
                     </div>
                 </div>
             </div>
