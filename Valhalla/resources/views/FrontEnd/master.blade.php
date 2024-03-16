@@ -61,7 +61,7 @@
             </div>
         </div>
 
-    
+
         <!-- Brands Section -->
         <div class="brands-section">
             <div class="brand-images">
@@ -187,10 +187,10 @@
                                 <img src="{{ asset($randomproduct->images) }}">
                             </div>
                             </div>
-                            
+
                             <div class="laptop-specs">
                                 <a class = "product-info" style= "color: inherit; font-weight: bold; font-size: 1.2rem;" href="{{ $randomproduct->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$randomproduct->product_id]) : route('product.otherInfo', ['id' =>$randomproduct->product_id]) }}">
-                                    {{$randomproduct->product_name}}
+                                    {{$randomproduct->product_name}} </a>
 {{--                                @Bilal Mo To show the product desc--}}
                                 @foreach($randomproduct->features as $featureName => $featureValue)
                                         <p> {{ $featureName }}:{{ $featureValue }}</p>
