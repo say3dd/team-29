@@ -55,7 +55,7 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 10%;
+    padding: 1rem 8%;
     background: rgba(0, 0, 0, 0.171);
     backdrop-filter: blur(1rem);
     background-repeat: no-repeat;
@@ -78,7 +78,7 @@ img {
 
 /* Styling for navigation links */
 .navbar a {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: white;
     text-decoration: none;
     margin-left: 1.5rem;
