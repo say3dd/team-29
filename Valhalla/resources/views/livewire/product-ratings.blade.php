@@ -7,7 +7,7 @@
                     <div class="relative z-10 h-auto p-4 py-10 overflow-hidden bg-violet-900 rounded-lg shadow-2xl px-7">
                         @auth
                             <div class=" space-y-5">
-                                <p class="font-medium text-white uppercase">
+                                <p class="font-bold text-white uppercase flex justify-center">
                                     Rate this product
                                 </p>
                             </div>
@@ -56,7 +56,7 @@
                         @else
                             <div>
                                 <div class="mb-8 text-center text-white">
-                                    You need to login in order to be able to rate the product!
+                                    How did you find the product? You need to login to be able to rate it!
                                 </div>
                                 <x-primary-button class="block">
                                 <a href="{{ route('login') }}"
