@@ -12,23 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-
-        // User::create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        //     'usertype' => 'user',
-        //     'password' => 'testuser123',
-        // ]);
-
-        // User::create([
-        //     'name' => 'Test Admin',
-        //     'email' => 'testadmin@example.com',
-        //     'usertype' => 'admin',
-        //     'password' => 'adminAcc123',
-
-        // ]);
-
-
         $this->call([ProductsSeeder::class, ImagesSeeder::class]);
     }
 }
