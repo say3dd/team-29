@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Re added monitor pictures">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/team-29.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team-29.iml" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="made a class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/checkout/basket.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/checkout/basket.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -418,7 +415,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.rainbow.brackets.disable.when",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Users\\abuba\\AppData\\Local\\Programs\\PhpStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -646,7 +643,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710515652707</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="made a class">
+      <option name="closed" value="true" />
+      <created>1710609787450</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1710609787450</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -700,7 +705,8 @@
     <MESSAGE value="down some of the product page linking to DB" />
     <MESSAGE value="added the ProductService" />
     <MESSAGE value="Re added monitor pictures" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re added monitor pictures" />
+    <MESSAGE value="made a class" />
+    <option name="LAST_COMMIT_MESSAGE" value="made a class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -709,11 +715,6 @@
           <url>file://$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php</url>
           <line>15</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php</url>
-          <line>5</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
