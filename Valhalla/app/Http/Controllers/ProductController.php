@@ -1,5 +1,5 @@
 <?php
-//@noramknarf (Francis Moran) - getInfo() function, redirect to login in basket()
+//@noramknarf (Francis Moran) - getInfo() function, redirect to login in basket(), image handling in showlaptopinfo
 /* @KraeBM (Bilal Mohamed) worked on this page (pageupdate function) */
 namespace App\Http\Controllers;
 
@@ -190,7 +190,9 @@ class ProductController extends Controller implements BasketInterface
         foreach ($relatedProducts as $relatedProduct) {
             $relatedProduct->features = $this->productService->extractProductFeatures($relatedProduct);
         }
-        return view('Frontend.test',['product' => $productDetails, 'relatedProducts' => $relatedProducts]);
+        
+        $images = DB::table('images')->get()->where('product_id', $id);
+        return view('Frontend.test',['product' => $productDetails, 'relatedProducts' => $relatedProducts, 'images' => $images]);
     }
 /** @Bilal Mo works on showing the individual product pages using the id */
     public function showotherproductinfo($id)
