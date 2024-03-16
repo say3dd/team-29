@@ -11,24 +11,29 @@ class ProductService{
         // Define the specific patterns used in the database and forms regular expressions to obtain them correctly.
         return [
             'Laptop' => [
+                'Colour' => "/Colour:\s*([^,\n]+)/",
                 'GPU' => "/GPU: ([^,\n]+)/",
-                'CPU' => "/Processor: ([^,\n]+)/",
+                'Processor' => "/Processor:\s*([^,\n]+)/",
                 'RAM' => "/RAM: (\d+\s*GB)/i"
             ],
             'Mouse' => [
+                'Colour' => "/Colour:\s*([^,\n]+)/",
                 'DPI' => "/DPI:\s*(\d+)/",
                 'Connectivity' => "/Connectivity:\s*([^\n,]+)/",
                 'Battery Life' => "/Battery Life:\s*([^\n,]+)/"
             ],
             'Keyboard' => [
                 'Switches' => "/Switches:\s*([^\n,]+)/",
+                'Colour' => "/Colour:\s*([^,\n]+)/",
                 'Connectivity' => "/Connectivity:\s*([^\n,]+)/",
-                'Type' => "/Keyboard Type:\s*([^\n,]+)/"
+                'KeyBoard Type' => "/Keyboard Type:\s*([^\n,]+)/"
             ],
             'Monitor' => [
-                'Screen Size' => "/Screen Size:\s*([^\n,]+)/",
-                'Refresh Rate' => "/Refresh rate:\s*([^\n,]+)/",
-                'Response Time' => "/Response Time\s*:\s*([^\n,]+)/"
+                'Colour' => "/Colour:\s*([^,\n]+)/",
+                'Screen Size' => "/Screen Size:\s*([^\n,]+\"?)/",
+                'Refresh rate' => "/Refresh rate:\s*([^\n,]+\"?)/",
+                'Response Time' => "/Response Time:\s*([^\n,]+\"?)/"
+
             ],
             'Headset' => [
                 'Connectivity' => "/Connectivity:\s*([^,\n]+)/",
