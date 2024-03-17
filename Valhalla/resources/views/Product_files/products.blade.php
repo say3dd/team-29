@@ -18,7 +18,8 @@
         @if(
     ($product->category === 'Mouse' && in_array($featureName, ['Battery Life'])) ||
     ($product->category === 'Monitor' && $featureName === 'Response Time') ||
-    ($product->category === 'Keyboard' && $featureName === 'Connectivity')
+    ($product->category === 'Keyboard' && $featureName === 'Connectivity') ||
+     ($product->category === 'Keyboard' && $featureName === 'KeyBoard Type')
         )
                     @continue
                 @endif

@@ -138,6 +138,6 @@ Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
 Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
 
 
-
+//************************************NO CODE BEYOND THIS LINE**************************
 require __DIR__ . '/auth.php';
 

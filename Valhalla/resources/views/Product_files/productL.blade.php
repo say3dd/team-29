@@ -241,13 +241,13 @@
 
         @yield('productP')
         <!-- @BilalMo uses links to assign pagination buttons to the page, query uses the data given so all pages available (e.g. page 1-2) have the same filtering or sorting features-->
-        <section class="laptops_container">
-            <div class="button_container">
-                <div class="button_to_switch_page">
-                    {{$products->appends(request()->query())->links()}}
-                </div>
-            </div>
-        </section>
+{{--        <section class="laptops_container">--}}
+{{--            <div class="button_container">--}}
+{{--                <div class="button_to_switch_page">--}}
+{{--                    {{$products->appends(request()->query())->links()}}--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
 </div>
 <script>
     /* Saves the users scroll position - if pages refreshed it goes back to it  --> */

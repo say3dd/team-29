@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BasketService;
 
 use App\Http\Controllers\Controller;
 
+use App\Models\BasketItem;
 class BasketItemController extends Controller
 {
     //
