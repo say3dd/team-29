@@ -31,6 +31,7 @@
         @include('header')
     <!--         Hero Section         -->
 
+        <!--  @AnthonyResuello  Added styling for the messages and made it repsonsive   -->
     @includeWhen($errors->any(), '_errors')
     @if(session('success'))
         <div id="flash-success" class="bg-[#79c753] text-bold text-[1.1rem] ">
