@@ -176,7 +176,7 @@
           <div class="features">
             <div class="top-card">
 
-                <img  src="{{ asset('assets/Monitor_images/5940564_2019_11_06_12_00_541908917092.jpeg') }}" alt=""">
+                <img  src="{{ asset('assets/Monitor_images/71978ixVUsL._AC_SL1500_.jpg') }}" alt=""">
 
             </div>
             <div class="bottom-card">
@@ -192,8 +192,8 @@
 {{--Displays product feature text for user to see--}}
             <div class="features">
                 <div class="top-card">
-
-                    <img src="{{ asset('assets/Monitor_images/71978ixVUsL._AC_SL1500_.jpg') }}" alt=""">
+          
+                    <img src="{{ asset('assets/Monitor_images/71DIQKo4OZL._AC_SL1500_.jpg') }}" alt=""">
                 </div>
                 <div class="bottom-card">
                     <h2 class="title-feature">Fast Response Time</h2>
@@ -332,7 +332,7 @@
 
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature">Durability</h2>
+                            <h2 class="title-feature">Egonomics design</h2>
                             <p class="info-feature">Our keyboard is built to last, featuring robust construction and high-quality materials.
                                 It withstands intense gaming sessions,
                                 ensuring reliability and longevity in every click. Crafted for enduring durability and built to perfrom.</p>
@@ -361,7 +361,7 @@
 
                         </div>
                         <div class="bottom-card">
-                            <h2 class="title-feature">Egonomics design</h2>
+                            <h2 class="title-feature">Durability</h2>
                             <p class="info-feature">
                             Elevate your typing experience with our ergonomically designed mechanical keyboard, meticulously crafted for tactile 
                             feedback, durability as well as reliability. Experience accurate keystrokes in real time imrpoving performance.
