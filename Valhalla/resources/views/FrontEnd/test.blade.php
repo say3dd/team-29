@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+
 <!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Product page using CSS. Also used JavaScript to make "View all specification"
      button work, so the user could see all of the specifications about a praticular product  -->
 <!-- @noramknarf (Francis Moran) - Implemented dynamic images -->
@@ -31,7 +30,7 @@
                             <img class="slide_image" src="{{asset($image->path)}}" alt="">
                         </div>
                     @endforeach
-                    
+
                 @else
                     <div class="mySlides">
                         <img class="slide_image" src="{{asset('assets/images_product/laptop1.jpg')}}" alt="">
@@ -58,7 +57,7 @@
                             @for($i = 1; $i <= count($images); $i++)
                             <span class="dot" onclick="currentSlide({{$i}})"></span>
                             @endfor
-                        @else    
+                        @else
                             <span class="dot" onclick="currentSlide(1)"></span>
                             <span class="dot" onclick="currentSlide(2)"></span>
                             <span class="dot" onclick="currentSlide(3)"></span>
@@ -345,4 +344,4 @@
 <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
 @include('footer')
 
-</html>
+<script src="{{ asset('assets/JavaScript/frontendJs.js') }}"></script>

@@ -60,11 +60,8 @@ if anybody could let me (Francis) know of a better way to do this, I'd gladly ap
 //Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
 
 //New Basket code
-Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
-//Route::get('/basket', [ProductController::class,'contents'])->name('basket');
-Route::get('basket', [ProductController::class,'basket'])->name('basket');
-Route::patch('update-basket', [ProductController::class, 'updateBasket'])->name('update_basket');
-Route::delete('remove-from-basket', [ProductController::class,'removeFromBasket'])->name('remove_from_basket');
+
+
 
 
 Route::get('/test1', function () {
@@ -94,6 +91,7 @@ Route::post('/product', [ProductController::class,'getInfo'])->name('product.get
     });
 
 
+    // Any user authentication route can be inside this group function
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -102,6 +100,22 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/home', [HomeController::class,'authHome'])->name('home');
     // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard', [DashboardController::class, 'orderHistory'])->name('dashboard');
+
+
+
+    //routes for wishlists moved here for user authentication
+    Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
+    Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
+    Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
+    Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
+
+
+
+    //Route::get('/basket', [ProductController::class,'contents'])->name('basket');
+    Route::get('basket', [ProductController::class,'basket'])->name('basket');
+    Route::patch('update-basket', [ProductController::class, 'updateBasket'])->name('update_basket');
+    Route::delete('remove-from-basket', [ProductController::class,'removeFromBasket'])->name('remove_from_basket');
+    Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
 
 });
 
@@ -132,10 +146,7 @@ Route::get('/categories', function () {
 Route::get('/search/products', [ProductController::class, 'search']) ->name('categories.search');
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
-Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
-Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
-Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
-Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
+
 
 
 //************************************NO CODE BEYOND THIS LINE**************************

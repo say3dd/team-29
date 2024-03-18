@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\BasketService\BasketInterface;
+use App\Models\BasketItem;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -318,39 +319,94 @@ public function getRelatedProducts($currentProductId,$category)
         }
     }
 
+//    public function addToBasket($id)
+//    {
+//        $product = Product::findOrFail($id);
+//
+//        $basket = session()->get('basket', []);
+//
+//        if (isset($basket[$id])) {
+//            $basket[$id]['quantity']++;
+//
+//        } else {
+//            $basket[$id] = [
+//                "product_name" => $product->product_name,
+//                "images" => $product->images,
+//                "price" => $product->price,
+//                "quantity" => 1
+//            ];
+//        }
+//
+//        session()->put('basket', $basket);
+//        return redirect()->back()->with('success', 'Item has been added to basket');
+//    }
+
+
     public function addToBasket($id)
     {
         $product = Product::findOrFail($id);
 
-        $basket = session()->get('basket', []);
+        // Check for existing basket item in the database
+        $basketItem = Auth::user()->basketItems()->where('product_id', $id)->first();
 
-        if (isset($basket[$id])) {
-            $basket[$id]['quantity']++;
-
+        if ($basketItem) {
+            // Update quantity if item already exists
+            $basketItem->quantity++;
+            $basketItem->updateOrFail();
         } else {
-            $basket[$id] = [
-                "product_name" => $product->product_name,
-                "images" => $product->images,
-                "price" => $product->price,
-                "quantity" => 1
-            ];
+            // Create a new BasketItem model instance
+            $basketItem = new BasketItem;
+            $basketItem->user_id = Auth::id();
+            $basketItem->product_id = $id;
+            $basketItem->product_name = $product->product_name;
+            $basketItem->product_images = $product->images;
+            $basketItem->quantity = 1;
+            $basketItem->price = $product->price;
         }
+        $basketItem->save();
 
-        session()->put('basket', $basket);
         return redirect()->back()->with('success', 'Item has been added to basket');
     }
+
+
+//    public function updateBasket(Request $request)
+//    {
+//        if ($request->id && $request->quantity) {
+//            $basket = session()->get('basket');
+//            $basket[$request->id]["quantity"] = $request->quantity;
+//            session()->put('basket', $basket);
+//            session()->flash('success', 'Basket has been updated!');
+//
+//        }
+//
+//    }
 
     public function updateBasket(Request $request)
     {
         if ($request->id && $request->quantity) {
-            $basket = session()->get('basket');
-            $basket[$request->id]["quantity"] = $request->quantity;
-            session()->put('basket', $basket);
-            session()->flash('success', 'Basket has been updated!');
+            // Retrieve the basket item from the database
+            $basketItem = BasketItem::where('user_id', Auth::id())
+                ->where('product_id', $request->id)
+                ->first();
 
+            if ($basketItem) {
+                // Update the quantity of the existing basket item
+                $basketItem->quantity = $request->quantity;
+                $basketItem->updateOrFail();
+
+                session()->flash('success', 'Basket has been updated!');
+            } else {
+                // Handle the case where the basket item doesn't exist in the database
+                session()->flash('error', 'Product not found in your basket.');
+            }
+        } else {
+            // Handle invalid request data (missing ID or quantity)
+            session()->flash('error', 'Invalid request data.');
         }
 
+        return redirect()->back();
     }
+
 
 //    public function removeFromBasket(Request $request)
 //    {
@@ -364,18 +420,45 @@ public function getRelatedProducts($currentProductId,$category)
 //        }
 //    }
 
-    public function removeFromBasket(Request $request)
+//    public function removeFromBasket(Request $request)
+//    {
+//        if ($request->id) {
+//            $basket = session()->get('basket');
+//            if (isset($basket[$request->id])) {
+//                unset($basket[$request->id]);
+//                session()->put('basket', $basket);
+//            }
+//            session()->flash('success', 'The item has been removed!');
+//        }
+//
+//    }
+
+    public function removeBasket(Request $request)
     {
         if ($request->id) {
-            $basket = session()->get('basket');
-            if (isset($basket[$request->id])) {
-                unset($basket[$request->id]);
-                session()->put('basket', $basket);
+            // Retrieve the basket item from the database
+            $basketItem = BasketItem::where('user_id', Auth::id())
+                ->where('product_id', $request->id)
+                ->first();
+
+            if ($basketItem) {
+                // Delete the basket item from the database
+                $basketItem->put();
+                $basketItem->delete();
+
+                session()->flash('success', 'Product has been removed from your basket.');
+            } else {
+                // Handle the case where the basket item doesn't exist in the database
+                session()->flash('error', 'Product not found in your basket.');
             }
-            session()->flash('success', 'The item has been removed!');
+        } else {
+            // Handle invalid request data (missing ID)
+            session()->flash('error', 'Invalid request data.');
         }
 
+        return redirect()->back();
     }
+
 
 //@BilalMo code for the search bar (not completed yet)
     public function search(Request $request)

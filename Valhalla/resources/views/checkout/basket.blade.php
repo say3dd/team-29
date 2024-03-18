@@ -1,7 +1,3 @@
-
-<!DOCTYPE html>
-<html>
-
 <!--@noramknarf (Francis Moran) - implemented functionality to display each item in the user's basket with details + total cost & delete items from baskets (see basketController)-->
 <!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the basket using Tailwind  -->
 
@@ -50,25 +46,25 @@
             </thead>
             <tbody>
             @php $total = 0 @endphp
-            @if(session('basket'))
-                @foreach(session('basket') as $id => $details)
-                    @php $total += $details['price'] * $details['quantity'] @endphp
-                    <tr data-id="{{ $id }}" class="border-b" >
+            @if($basketItems = Auth::user()->basketItems()->with('product')->get())
+                @foreach($basketItems as $item)
+                    @php $total += $item['price'] * $item['quantity'] @endphp
+                    <tr data-id="{{ $item->id }}" class="border-b" >
                         <td data-th="Product">
                             <div class="row flex flex-row p-2 text-center align-middle ">
-                                <div class="col-sm-3 hidden-xs"><img src="{{ $details['images'] }}" width="100" height="100" class="img-responsive rounded-md mr-2"/></div>
+                                <div class="col-sm-3 hidden-xs"><img src="{{ $item['product_images'] }}" width="100" height="100" class="img-responsive rounded-md mr-2"/></div>
 
                                 <div class="col-sm-9 p-2 inline-block pt-2 mr-2.5">
-                                    <h4 class="text-center align-middle pt-5 ml-2">{{ $details['product_name'] }}</h4>
+                                    <h4 class="text-center align-middle pt-5 ml-2">{{ $item['product_name'] }}</h4>
                                 </div>
                             </div>
                         </td>
-                        <td data-th="Price">£ {{ $details['price'] }}</td>
+                        <td data-th="Price">£ {{ $item['price'] }}</td>
 
                         <td data-th="Quantity">
-                                <input type="number" value="{{ $details['quantity'] }}" class="basket_update form-control quantity  text-black w-1/2 rounded-md" min="1" />
+                                <input type="number" value="{{ $item['quantity'] }}" class="basket_update form-control quantity  text-black w-1/2 rounded-md" min="1" />
                         </td>
-                        <td data-th="Subtotal" class="text-center">£ {{ $details['price'] * $details['quantity'] }}</td>
+                        <td data-th="Subtotal" class="text-center">£ {{ $item['price'] * $item['quantity'] }}</td>
                         <td class="actions p-1.5" data-th="">
                             <button id="basket_remove" class="basket_remove  bg-red-700 inline-flex m-1.5 text-center align-middle justify-center p-1.5 rounded-md"><i class='bx bx-trash-alt inline-flex mt-1 mr-1' ></i> Delete</button>
 {{--                            <form action="{{ route('remove_from_basket') }}" method="POST">--}}
@@ -134,15 +130,15 @@
       $(".basket_remove").click(function (e) {
           e.preventDefault();
 
-          var element = $(this);
+          var ele = $(this);
 
-          if(confirm("Do you really want to remove the item?")) {
+          if(confirm("Do you really want to remove?")) {
               $.ajax({
                   url: '{{ route('remove_from_basket') }}',
                   method: "DELETE",
                   data: {
                       _token: '{{ csrf_token() }}',
-                      id: element.parents("tr").attr("data-id")
+                      id: ele.parents("tr").attr("data-id")
                   },
                   success: function (response) {
                       window.location.reload();
@@ -153,5 +149,3 @@
 
   </script>
 </body>
-
-</html>

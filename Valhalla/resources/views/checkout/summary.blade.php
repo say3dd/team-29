@@ -9,7 +9,7 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
 </head>
 <!--@noramknarf (Francis Moran) - added functionality to display items in the cart, total cost & added links into and out of the page (connected to routes by Basit)-->
 <body class="flex items-center justify-center min-h-screen bg-dark-blue ">
-<div class="container">   
+<div class="container">
 <div class="py-16 px-4 md:px-6 2xl:px-0 flex justify-center items-center 2xl:mx-auto 2xl:container">
     <div class="flex flex-col justify-start items-start w-full space-y-9">
         <div class="flex justify-start flex-col items-start space-y-2">
@@ -27,9 +27,10 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
             <p class="text-base leading-normal sm:leading-4 text-white dark:text-white">Home > Basket > Checkout</p>
         </div>
 
+        @if($userBasket = Auth::user()->basketItems()->with('product')->get())
         <div class="flex flex-col xl:flex-row justify-center xl:justify-between space-y-6 xl:space-y-0 xl:space-x-6 w-full">
             <div class="xl:w-3/5 flex flex-col sm:flex-row xl:flex-col justify-center items-center bg-gray-100 dark:bg-gray-800 py-7 sm:py-0 xl:py-10 px-10{{--xl:w-full--}}">
-                @foreach($userBasket as $id => $details)
+                @foreach($userBasket as $details)
                 <div class="flex flex-col justify-start items-start w-full space-y-4">
                     <p class="text-xl md:text-2xl leading-normal text-gray-800 dark:text-gray-50">{{$details['product_name']}}</p>
                     <p class="text-base font-semibold leading-none text-gray-600 dark:text-white">£{{$details['price']}}</p>
@@ -46,12 +47,13 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
                 <div class="mt-6 sm:mt-0 xl:my-10 xl:px-20 w-52 sm:w-96 xl:w-auto">
                 </div>
             </div>
+            @endif
 
             <div class="p-8 bg-gray-100 dark:bg-gray-800 flex flex-col lg:w-full xl:w-3/5">
-                
 
-                
-                
+
+
+
                 <label class="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">Contact details</label>
                 <div class="mt-2 flex-col">
                     <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="first_name" id="first_name" placeholder="First Name" required />
@@ -61,7 +63,7 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
                 </div>
 
                 <label class="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">Shipping Address</label>
-                
+
                 <div class="mt-2 flex-col">
                 <input class="border rounded-bl rounded-br border-gray-300 p-4 m-1 w-full text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="address_line1" id="address_line1" placeholder="Address (Line 1)" required />
                 <input class="border rounded-bl rounded-br border-gray-300 p-4 m-1 w-full text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="address_line2" id="address_line2" placeholder="Address (Line 2)" />
@@ -71,7 +73,7 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
                 <div class="mt-2 flex-col">
                     <div class="relative ">
                         <button id="changetext" class="text-left border rounded-tr m-1 rounded-tl border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600 bg-white" type="email" name="" id="">United Kingdom</button>
-                       
+
                            <img onclick="showMenu(true)" id="closeIcon" class="cursor-pointer absolute top-4 right-4 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/checkouts-1-svg1.svg" alt="Dropdown">
                             <img onclick="showMenu(true)" id="openIcon" class="cursor-pointer absolute top-4 right-4 hidden transform rotate-180 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/checkouts-1-svg1.svg" alt="Dropdown">
                             <img onclick="showMenu(true)" id="closeIcon" class="cursor-pointer absolute top-4 right-4 hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/checkouts-1-svg1dark.svg" alt="Dropdown">
@@ -109,7 +111,6 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
     </div>
 </div>
 </div>
-    </div>
 
 <script>
 
@@ -162,4 +163,3 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
     };
 
 </script>
-</div> 
