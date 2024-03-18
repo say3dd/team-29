@@ -14,11 +14,16 @@ class BasketItem extends Model
         'user_id',
         'product_id',
         'product_name',
-        'product_name',
+        'images',
         'quantity',
+        'price',
     ];
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function product(){
+        return $this->belongsTo(Product::class);
     }
 }

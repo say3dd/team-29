@@ -1,7 +1,6 @@
 <!-- @KraeBM (Bilal Mohamed) worked on all the backend, JS and blade templating of this page -->
 <!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Products webpage using CSS.  -->
-<!DOCTYPE html>
-<html>
+
 <head>
 
     <meta charset="UTF-8">
@@ -193,4 +192,5 @@ document.addEventListener('DOMContentLoaded', function() {
      <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
     @include ('footer')
 </footer>
-</html>
+@yield('scripts')
+<script src="{{ asset('assets/JavaScript/frontendJs.js') }}"></script>

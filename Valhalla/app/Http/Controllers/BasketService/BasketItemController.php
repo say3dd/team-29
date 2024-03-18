@@ -5,6 +5,9 @@ namespace App\Http\Controllers\BasketService;
 use App\Http\Controllers\Controller;
 
 use App\Models\BasketItem;
+use http\Client\Request;
+use Illuminate\Support\Facades\Auth;
+
 class BasketItemController extends Controller
 {
     //
@@ -21,6 +24,8 @@ class BasketItemController extends Controller
             $basketItem->user_id = Auth::id(); // Get authenticated user ID
             $basketItem->product_id = $item['product_id'];
             $basketItem->product_name = $item['product_name'];
+            $basketItem->product_images = $item['product_images'];
+            $basketItem->price = $item['price'];
             $basketItem->quantity = $item['quantity'];
 
 
@@ -28,10 +33,12 @@ class BasketItemController extends Controller
         }
 
         // Clear the session basket data (optional)
-        $request->session()->forget('basket');
+//        $request->session()->forget('basket');
 
-        return redirect()->route('profile.basket') // Redirect to profile basket view
+        return redirect()->back('profile.basket') // Redirect to profile basket view
         ->with('success', 'Basket items saved successfully!');
     }
+
+
 
 }

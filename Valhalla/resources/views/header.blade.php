@@ -55,7 +55,7 @@
                     <i class="bx bx-shopping-bag align-middle inline-flex justify-between" aria-hidden="true"></i>
                     <div class="text-[0.6em] mt-1 ml-1 align-middle text-center inline-flex justify-between"> Basket </div>
                     <span class="badge badge-pill badge-danger text-[0.7em] ml-2 bg-red-700 rounded-full w-8 h-8 align-middle justify-center">
-                    <h6> {{ count((array) session('basket')) }} </h6>  {{-- keep tracks of number of items has been added to the basket --}}
+                    <h6> {{ count( Auth::user()->basketItems()->with('product')->get()) }} </h6>  {{-- keep tracks of number of items has been added to the basket --}}
                 </span>
                     </div>
 
@@ -64,41 +64,86 @@
 
 
 
-
                 <div class="dropdown-menu mt-6 p-3 rounded-md" id="cartDropdown">
                     <div class="row total-header-section">
 
                         @php $total = 0.00; @endphp
-                        @foreach ((array) session('basket') as $id => $details)
-                        @php $total += $details['price'] * $details['quantity'];
-                        @endphp  {{-- calculates the total based on the quantity --}}
+                        @php $count = 0; @endphp
+                        @if (Auth::check())  {{-- Check if user is authenticated --}}
+                        @php $basketItems = Auth::user()->basketItems()->with('product')->get(); @endphp
+                        @foreach ( $basketItems as $item)
+                                @php $total += $item->price * $item->quantity; @endphp
+                            {{-- Calculate total based on database data --}}
                         @endforeach
+                        @endif
                         <div class="total-section text-left rounded-md">
                             <p>Total: <span class="text-info text-cyan-400 font-bold">£ {{ $total }}</span></p>
                         </div>
                         <div class="w-full h-0.5 bg-gray-200"></div>
                     </div>
-                    @if(session('basket'))
-                        @foreach(session('basket') as $id => $details)
-                            <div class="row cart-detail flex flex-row pb-2 mb-1">
-                                <div class=" cart-detail-img">
-                                    <img class="mt-1.5 p-1 mr-2.5 h-auto w-[2em] rounded-md" src="{{ $details['images'] }}" alt="Product Image" />
-                                </div>
-                                <div class=" cart-detail-product flex flex-col">
-                                    <p class="text-[0.6em]">{{ $details['product_name'] }}</p>
-                                    <span class="text-[0.5em] price text-info text-amber-500 inline-flex"> £ {{ $details['price'] }}</span>
-                                    <span class="text-[0.5em] count inline-flex"> Quantity: {{ $details['quantity'] }}</span>
-                                </div>
-                            </div>
-                        @endforeach
 
+                    @if (Auth::check() && count($basketItems) > 0)  {{-- Check for user and items --}}
+                    @foreach ($basketItems as $item)
+                        <div class="row cart-detail flex flex-row pb-2 mb-1">
+
+                            <div class=" cart-detail-img">
+                                <img class="mt-1.5 p-1 mr-2.5 h-auto w-[2em] rounded-md" src=" {{ $item->product_images }}" alt="Product Image" />
+                            </div>
+                            <div class=" cart-detail-product flex flex-col">
+                                <p class="text-[0.6em]">{{ $item->product_name }}</p>
+                                <span class="text-[0.5em] price text-info text-amber-500 inline-flex"> £ {{ $item->price }}</span>
+                                <span class="text-[0.5em] count inline-flex"> Quantity: {{ $item->quantity }} </span>
+                            </div>
+                        </div>
+                    @endforeach
+
+                    @else
+                        <p class="text-center text-white mt-2">Your basket is currently empty.</p>
                     @endif
+
                     <div class="row">
                         <div class="text-center checkout inline-block bg-violet-900 w-full mt-2 rounded-md mr-2 align-middle pr-1">
                             <a href="{{ route('basket') }}" class="text-2xl" >View all</a>
                         </div>
                     </div>
                 </div>
+
+
+
+                {{--                <div class="dropdown-menu mt-6 p-3 rounded-md" id="cartDropdown">--}}
+{{--                    <div class="row total-header-section">--}}
+
+{{--                        @php $total = 0.00; @endphp--}}
+{{--                        @foreach ((array) session('basket') as $id => $details)--}}
+{{--                        @php $total += $details['price'] * $details['quantity'];--}}
+{{--                        @endphp  --}}{{-- calculates the total based on the quantity --}}
+{{--                        @endforeach--}}
+{{--                        <div class="total-section text-left rounded-md">--}}
+{{--                            <p>Total: <span class="text-info text-cyan-400 font-bold">£ {{ $total }}</span></p>--}}
+{{--                        </div>--}}
+{{--                        <div class="w-full h-0.5 bg-gray-200"></div>--}}
+{{--                    </div>--}}
+{{--                    @if(session('basket'))--}}
+{{--                        @foreach(session('basket') as $id => $details)--}}
+{{--                            <div class="row cart-detail flex flex-row pb-2 mb-1">--}}
+{{--                                <div class=" cart-detail-img">--}}
+{{--                                    <img class="mt-1.5 p-1 mr-2.5 h-auto w-[2em] rounded-md" src="{{ $details['images'] }}" alt="Product Image" />--}}
+{{--                                </div>--}}
+{{--                                <div class=" cart-detail-product flex flex-col">--}}
+{{--                                    <p class="text-[0.6em]">{{ $details['product_name'] }}</p>--}}
+{{--                                    <span class="text-[0.5em] price text-info text-amber-500 inline-flex"> £ {{ $details['price'] }}</span>--}}
+{{--                                    <span class="text-[0.5em] count inline-flex"> Quantity: {{ $details['quantity'] }}</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+
+{{--                    @endif--}}
+{{--                    <div class="row">--}}
+{{--                        <div class="text-center checkout inline-block bg-violet-900 w-full mt-2 rounded-md mr-2 align-middle pr-1">--}}
+{{--                            <a href="{{ route('basket') }}" class="text-2xl" >View all</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
 
         </nav>

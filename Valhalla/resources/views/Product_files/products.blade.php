@@ -43,3 +43,7 @@
     <h1 class="text-2xl">There are no products available yet.</h1>
 @endforelse
 @endsection
+
+@section('scripts')
+    <script src="{{ asset('assets/JavaScript/frontendJs.js') }}"></script>
+@endsection

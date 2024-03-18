@@ -63,4 +63,11 @@ class ProfileController extends Controller
     public function adminIndex(){
         return view('Admin.ProductList');
     }
+
+    public function showBasket(){
+        $user = Auth::id();
+        $basketItems = $user->basketItems()->with('product')->get();
+
+        return view('profile.Basket', compact('basketItems'));
+    }
 }
