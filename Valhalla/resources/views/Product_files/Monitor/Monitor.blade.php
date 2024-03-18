@@ -53,7 +53,7 @@
                   'Mouse' => [
                       'DPI' =>  "/DPI:\s*(\d+)/",
                       'Connectivity' => "/Connectivity:\s*([^\n,]+)/",
-                      'Battery Life'=> "/Battery Life:\s*([^\n,]+)/",
+                      'Battery Life'=> "/Battery-Life:\s*([^\n,]+)/",
                       'Colour' => "/Colour:\s*([^,\n]+)/"
                   ],
                 'Keyboard' =>[
@@ -62,9 +62,9 @@
                     'Colour' => "/Colour:\s*([^,\n]+)/"
                 ],
                   'Monitor' => [
-                    'Screen Size' =>  "/Screen Size:\s*([^\n,]+)/",
-                    'Refresh Rate' => "/Refresh rate:\s*([^\n,]+)/",
-                     'Response Time' => "/Response Time\s*:\s*([^\n,]+)/",
+                    'Screen Size' =>  "/Screen-Size:\s*([^\n,]+)/",
+                    'Refresh Rate' => "/Refresh-Rate:\s*([^\n,]+)/",
+                     'Response Time' => "/Response-Time\s*:\s*([^\n,]+)/",
                       'Colour' => "/Colour:\s*([^,\n]+)/"
 
                 ],
@@ -181,8 +181,8 @@
             </div>
             <div class="bottom-card">
               <h2 class="title-feature">Smooth Experience</h2>
-              <p class="info-feature">Enhance your gaming experience with cutting-edge technology, 
-                ensuring smooth gameplay and seamless performance. 
+              <p class="info-feature">Enhance your gaming experience with cutting-edge technology,
+                ensuring smooth gameplay and seamless performance.
                 Immerse yourself in every moment with fluid animations, ultra-realistic visuals, and precise.</p>
 
             </div>
@@ -192,7 +192,7 @@
 {{--Displays product feature text for user to see--}}
             <div class="features">
                 <div class="top-card">
-          
+
                     <img src="{{ asset('assets/Monitor_images/71DIQKo4OZL._AC_SL1500_.jpg') }}" alt=""">
                 </div>
                 <div class="bottom-card">
@@ -227,8 +227,8 @@
                 </div>
                 <div class="bottom-card">
                     <h2 class="title-feature">Flexible Adjustment</h2>
-                    <p class="info-feature">Unlock the full potential of your gaming setup with versatile and customizable adjustments, 
-                    allowing you to tailor every aspect to your preferences for optimal comfort and precision. 
+                    <p class="info-feature">Unlock the full potential of your gaming setup with versatile and customizable adjustments,
+                    allowing you to tailor every aspect to your preferences for optimal comfort and precision.
                     Whether you're fine-tuning your monitor's height, angle.
                     </p>
 
@@ -363,7 +363,7 @@
                         <div class="bottom-card">
                             <h2 class="title-feature">Durability</h2>
                             <p class="info-feature">
-                            Elevate your typing experience with our ergonomically designed mechanical keyboard, meticulously crafted for tactile 
+                            Elevate your typing experience with our ergonomically designed mechanical keyboard, meticulously crafted for tactile
                             feedback, durability as well as reliability. Experience accurate keystrokes in real time imrpoving performance.
                                </p>
 
@@ -379,7 +379,7 @@
                                 <h2 class="title-feature">Red Switches</h2>
                                 <p class="info-feature">Unlock your gaming potential with red switches,
                                     known for their smooth, fast keystrokes.
-                                    Benefit from quick reactions and minimal resistance, boosting your gaming prowess. 
+                                    Benefit from quick reactions and minimal resistance, boosting your gaming prowess.
                                     Quick and smooth keystrokes imrpoves gameplay.
                                 </p>
 
@@ -445,8 +445,8 @@
                         </div>
                         <div class="bottom-card">
                             <h2 class="title-feature">Egonomic Design</h2>
-                            <p class="info-feature">Crafted with ergonomic design principles in mind, our gaming headset 
-                                offers unparalleled comfort for extended gaming sessions. 
+                            <p class="info-feature">Crafted with ergonomic design principles in mind, our gaming headset
+                                offers unparalleled comfort for extended gaming sessions.
                                 Experience crystal-clear audio and deep bass.
                             </p>
                         </div>
@@ -479,7 +479,7 @@
                                     Embrace unparalleled freedom and exceptional sound quality with our wireless gaming headset.
                                     Enjoy the convenience of cord-free movement,
                                     keeping you immersed and agile in every game.
-                                </p>    
+                                </p>
                             </div>
                         </div>
                     @endif
