@@ -55,7 +55,7 @@
                     <i class="bx bx-shopping-bag align-middle inline-flex justify-between" aria-hidden="true"></i>
                     <div class="text-[0.6em] mt-1 ml-1 align-middle text-center inline-flex justify-between"> Basket </div>
                     <span class="badge badge-pill badge-danger text-[0.7em] ml-2 bg-red-700 rounded-full w-8 h-8 align-middle justify-center">
-                    <h6> {{ count( Auth::user()->basketItems()->with('product')->get()) }} </h6>  {{-- keep tracks of number of items has been added to the basket --}}
+{{--                    <h6> {{ count( Auth::user()->basketItems()->with('product')->get()) }} </h6>  --}}{{-- keep tracks of number of items has been added to the basket --}}
                 </span>
                     </div>
 
