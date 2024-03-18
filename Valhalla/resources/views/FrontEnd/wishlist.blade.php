@@ -4,8 +4,8 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <style>
             .bg-indigo-950 {
-                width: 100%; 
-                height: 100%; 
+                width: 100%;
+                height: 100%;
                 }
                     #sortable {
                         list-style-type: none;
@@ -54,23 +54,23 @@
                 }
                 #home {
                 position: absolute;
-                top: 289px; 
-                left: 156px; 
+                top: 335px;
+                left: 148px;
                 }
 
                 #home-2 {
                 position: relative;
-                top: 120px; 
-                left: 200px; 
+                top: 120px;
+                left: 200px;
                 }
 
                 #remove-wishlist{
-                    position: relative; 
+                    position: relative;
                     left: 350px;
                 }
 
                 #add-to-basket{
-                    position: relative; 
+                    position: relative;
                     left: -50px;
                 }
 
@@ -87,12 +87,19 @@
                     }
 
                     .custom-container {
-        width: 80%;
-        margin: auto;
-        position: absolute;
-        top: 185px; 
-        left: 148px;
-    }
+                       width: 80%;
+                       margin: auto;
+                       position: absolute;
+                        top: 245px;
+                       left: 148px;
+                    }
+            .custom-container2{
+                width: 80%;
+                margin: auto;
+                position: absolute;
+                top: 165px;
+                left: 148px;
+            }
 
     </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -132,10 +139,11 @@
 
     <body>
         @if (session('success'))
-            <div id="flash-success" class="p-5 bg-[#79c753] mx-0 my-5 rounded-[5px]">
+            <div id="flash-success" class="p-5 w-1/2 mt-5 inline-block text-center ml-10 bg-[#79c753] mx-0 my-5 rounded-[5px] custom-container2">
                 {{ session('success') }}
             </div>
         @endif
+{{--        @includeWhen($message->any(), 'components.input-label')--}}
         <class>
             <div class=" py-6 bg-white">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -150,7 +158,7 @@
 
             <div class=" bg-indigo-950">
                 @if ($wishlistItems->isEmpty())
-                    <div class="p-6 text-white bg-purple-700 overflow-hidden shadow-sm sm:rounded-lg custom-container">
+                    <div class="p-6 text-white bg-purple-700 mt-5 text-center text-2xl overflow-hidden shadow-sm sm:rounded-lg custom-container">
                         {{ __('Your wishlist is empty. Return home here:') }}
                     </div>
                     <x-primary-button class=" border-white" id="home"> <a href="{{ route('index') }}">Home</a>
