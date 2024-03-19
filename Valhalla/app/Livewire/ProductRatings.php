@@ -16,70 +16,57 @@ class ProductRatings extends Component
     protected $rules = [
         'rating' => ['required', 'in:1,2,3,4,5'],
         'comment' => 'required',
-
     ];
 
-    public function render()
+    public function mount($product)
     {
-        $comments = Rating::where('product_id', $this->product->id)->where('status', 1)->with('user')->get();
-        return view('livewire.product-ratings', compact('comments'));
-    }
+        $this->product = $product; // Initialize $product here
 
-    public function mount()
-    {
-        if(auth()->user()){
-            $rating = Rating::where('user_id', auth()->user()->id)->where('product_id', $this->product->id)->first();
-            if (!empty($rating)) {
-                $this->rating  = $rating->rating;
+        if (auth()->user() && $this->product) { // Check if $product is not null
+            $rating = Rating::where('user_id', auth()->user()->id)
+                ->where('product_id', $this->product->id)
+                ->first();
+            if ($rating) {
+                $this->rating = $rating->rating;
                 $this->comment = $rating->comment;
                 $this->currentId = $rating->id;
             }
         }
-        return view('livewire.product-ratings');
     }
 
-    public function delete($id)
+    public function render()
     {
-        $rating = Rating::where('id', $id)->first();
-        if ($rating && ($rating->user_id == auth()->user()->id)) {
-            $rating->delete();
-        }
-        if ($this->currentId) {
-            $this->currentId = '';
-            $this->rating  = '';
-            $this->comment = '';
+        if ($this->product) { // Check if $product is not null before accessing its id
+            $comments = Rating::where('product_id', $this->product->id)->with('user')->get();
+            return view('livewire.product-ratings', compact('comments'));
+        } else {
+            return view('livewire.product-ratings'); // Return empty view if $product is null
         }
     }
 
     public function rate()
     {
-        $rating = Rating::where('user_id', auth()->user()->id)->where('product_id', $this->product->id)->first();
-        $this->validate();
-        if (!empty($rating)) {
-            $rating->user_id = auth()->user()->id;
-            $rating->product_id = $this->product->id;
-            $rating->rating = $this->rating;
-            $rating->comment = $this->comment;
-            $rating->status = 1;
-            try {
+        if (auth()->user() && $this->product) { // Check if $product is not null
+            $rating = Rating::where('user_id', auth()->user()->id)
+                ->where('product_id', $this->product->id)
+                ->first();
+            $this->validate();
+            if ($rating) {
+                $rating->user_id = auth()->user()->id;
+                $rating->product_id = $this->product->id;
+                $rating->rating = $this->rating;
+                $rating->comment = $this->comment;
                 $rating->update();
-            } catch (\Throwable $th) {
-                throw $th;
-            }
-            session()->flash('message', 'Success!');
-        } else {
-            $rating = new Rating;
-            $rating->user_id = auth()->user()->id;
-            $rating->product_id = $this->product->id;
-            $rating->rating = $this->rating;
-            $rating->comment = $this->comment;
-            $rating->status = 1;
-            try {
+                session()->flash('message', 'Success!');
+            } else {
+                $rating = new Rating;
+                $rating->user_id = auth()->user()->id;
+                $rating->product_id = $this->product->id;
+                $rating->rating = $this->rating;
+                $rating->comment = $this->comment;
                 $rating->save();
-            } catch (\Throwable $th) {
-                throw $th;
+                $this->hideForm = true;
             }
-            $this->hideForm = true;
         }
     }
 }

@@ -17,7 +17,6 @@
                                 </p>
                             @endif
                             @if($hideForm != true)
-{{--                                <livewire:product-ratings/>--}}
                                 <form wire:submit.prevent="rate()">
                                     <div class="block max-w-3xl px-1 py-2 mx-auto">
                                         <div class="flex space-x-1 rating">
@@ -63,7 +62,7 @@
                                 </div>
                                 <x-primary-button
                                 href="{{ route('login') }}"
-                                    class="mx-auto font-medium text-center relative left-[450px]">
+                                    class="mx-auto font-medium text-center ">
                                 Login
                                 </x-primary-button>
                             </div>
