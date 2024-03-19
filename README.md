@@ -37,11 +37,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#the-team">The Team</a></li>
   </ol>
 </details>
 
@@ -70,47 +66,67 @@ Team-29's submission for Aston University's CS2TP Project, where we are given th
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+These section will guide you through setting up the project to run locally on your machine for development and testing purposes.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* NodeJS - https://nodejs.org/en/download
+* NPM (Installed with NodeJS above)
+* PHP - https://www.php.net/downloads.php
+* Composer - https://getcomposer.org/download/
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Clone this repository into a folder of your choice using the command:
+```sh
+git clone https://github.com/say3dd/team-29.git
+```
+2. Open this folder in an IDE of your choice.
+3. Open up an integrated terminal at this point of the folder and type in the command
+ ```sh
+cd team-29/valhalla 
+```
+4. Once entered into the valhalla directory, run the command in the terminal
+```sh
+composer install
+```
+5. Next, run the command 
+```sh
+npm install
+```
+6. Generate your `.env` file by running the command
+```sh
+cp .env.example .env
+```
+   - If you would like at this point, to change the name of the database, instead of it just being "laravel", you can do so by changing the `DB_DATABASE` variable in the `.env` file, to whatever you would like.
+7. Run the command
+```sh
+php artisan migrate
+```
+  - If prompted to create a database named "laravel" or what database name you chose, type in "yes"
+8. Run the command
+```sh
+php artisan db:seed
+```
+9. Generate your unique application key using the command
+```sh
+php artisan key:generate
+```
+  - NOTE: DO NOT SHARE THIS WITH ANYONE
+10. Open up another integrated terminal and run the command `cd team-29/valhalla`. On this terminal also run the command
+```sh
+npm run dev
+```
+11. Finally, open up another integrated terminal, run the command `cd team-29/valhalla`. On this terminal also run the command
+```sh
+php artisan serve
+```
+12. This website will now be visible (in development) via the URL http://127.0.0.1:8000/
+  - If you want to run it in production, instead of `npm run dev` in step 10, run the command `npm run prod`
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -122,19 +138,9 @@ Unfortunately you cannot contribute to the project. You can create pull requests
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- The team -->
 
-## The team:
+## The team: 
 <li> Bilal Mohamed - </li> 
 <li> Elizaveta Mikheeva - </li>
 <li> Abubakarsiddik Mohammed - </li> 
