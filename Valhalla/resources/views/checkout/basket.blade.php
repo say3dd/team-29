@@ -62,7 +62,14 @@
                         <td data-th="Price">£ {{ $item['price'] }}</td>
 
                         <td data-th="Quantity">
-                                <input type="number" value="{{ $item['quantity'] }}" class="basket_update form-control quantity  text-black w-1/2 rounded-md" min="1" />
+                            <form action="{{ route('update_basket') }}"  method="post">
+                                @csrf
+                                <input type="hidden" value="{{ $item->id }}" name="plus" id="plus">
+                                <button class="inline-flex p-2 bg-green-500 h-2 w-2 m-1 align-middle text-center rounded" type="submit">+</button>
+                                <input type="number" value="{{ $item['quantity'] }}" disabled class="basket_update form-control quantity  text-black w-1/2 rounded-md" min="1" />
+                                <button class="inline-flex p-2 bg-red-500 h-2 w-2 m1 align-middle text-center rounded" type="submit">-</button>
+                            </form>
+
                         </td>
                         <td data-th="Subtotal" class="text-center">£ {{ $item['price'] * $item['quantity'] }}</td>
                         <td class="actions p-1.5" data-th="">
@@ -146,6 +153,6 @@
               });
           }
       });
-
   </script>
+
 </body>

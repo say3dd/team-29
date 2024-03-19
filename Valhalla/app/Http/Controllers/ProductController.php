@@ -4,14 +4,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\BasketService\BasketInterface;
+use App\Http\Requests\BasketRequest;
 use App\Models\BasketItem;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Basket;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use MongoDB\Driver\Query;
 use App\Services\ProductService;
 
 
@@ -381,30 +380,42 @@ public function getRelatedProducts($currentProductId,$category)
 //
 //    }
 
-    public function updateBasket(Request $request)
+//    public function updateBasket(Request $request)
+//    {
+//        if ($request->id && $request->quantity) {
+//            // Retrieve the basket item from the database
+//            $basketItem = BasketItem::where('user_id', Auth::id())
+//                ->where('product_id', $request->id)
+//                ->first();
+//
+//            if ($basketItem) {
+//                // Update the quantity of the existing basket item
+//                $basketItem->quantity = $request->quantity;
+//                $basketItem->updateOrFail();
+//
+//                session()->flash('success', 'Basket has been updated!');
+//            } else {
+//                // Handle the case where the basket item doesn't exist in the database
+//                session()->flash('error', 'Product not found in your basket.');
+//            }
+//        } else {
+//            // Handle invalid request data (missing ID or quantity)
+//            session()->flash('error', 'Invalid request data.');
+//        }
+//
+//        return redirect()->back();
+//    }
+
+
+    public function updateBasket(BasketRequest $request, BasketItem $basketItem)
     {
-        if ($request->id && $request->quantity) {
-            // Retrieve the basket item from the database
-            $basketItem = BasketItem::where('user_id', Auth::id())
-                ->where('product_id', $request->id)
-                ->first();
 
-            if ($basketItem) {
-                // Update the quantity of the existing basket item
-                $basketItem->quantity = $request->quantity;
-                $basketItem->updateOrFail();
+            $this->authorize('update', $basketItem);
+            $validated = $request->validated();
+            $basketItem->update($validated);
 
-                session()->flash('success', 'Basket has been updated!');
-            } else {
-                // Handle the case where the basket item doesn't exist in the database
-                session()->flash('error', 'Product not found in your basket.');
-            }
-        } else {
-            // Handle invalid request data (missing ID or quantity)
-            session()->flash('error', 'Invalid request data.');
-        }
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Item has been updated to basket');
     }
 
 

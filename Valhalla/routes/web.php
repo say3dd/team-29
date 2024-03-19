@@ -113,7 +113,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     //Route::get('/basket', [ProductController::class,'contents'])->name('basket');
     Route::get('basket', [ProductController::class,'basket'])->name('basket');
-    Route::patch('update-basket', [ProductController::class, 'updateBasket'])->name('update_basket');
+    Route::post('update-basket', [ProductController::class, 'updateBasket'])->name('update_basket');
     Route::delete('remove-from-basket', [ProductController::class,'removeFromBasket'])->name('remove_from_basket');
     Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
 
