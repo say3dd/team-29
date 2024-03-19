@@ -20,19 +20,19 @@ class ProductService{
                 'Colour' => "/Colour:\s*([^,\n]+)/",
                 'DPI' => "/DPI:\s*(\d+)/",
                 'Connectivity' => "/Connectivity:\s*([^\n,]+)/",
-                'Battery Life' => "/Battery Life:\s*([^\n,]+)/"
+                'Battery-Life' => "/Battery-Life:\s*([^\n,]+)/"
             ],
             'Keyboard' => [
                 'Switches' => "/Switches:\s*([^\n,]+)/",
                 'Colour' => "/Colour:\s*([^,\n]+)/",
                 'Connectivity' => "/Connectivity:\s*([^\n,]+)/",
-                'KeyBoard Type' => "/Keyboard Type:\s*([^\n,]+)/"
+                'KeyBoard-Type' => "/Keyboard-Type:\s*([^\n,]+)/"
             ],
             'Monitor' => [
                 'Colour' => "/Colour:\s*([^,\n]+)/",
-                'Screen Size' => "/Screen Size:\s*([^\n,]+\"?)/",
-                'Refresh rate' => "/Refresh rate:\s*([^\n,]+\"?)/",
-                'Response Time' => "/Response Time:\s*([^\n,]+\"?)/"
+                'Screen-Size' => "/Screen-Size:\s*([^\n,]+\"?)/",
+                'Refresh-Rate' => "/Refresh-Rate:\s*([^\n,]+\"?)/",
+                'Response-Time' => "/Response-Time:\s*([^\n,]+\"?)/"
 
             ],
             'Headset' => [

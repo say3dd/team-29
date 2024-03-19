@@ -208,11 +208,16 @@
 {{--                                     </div>--}}
 {{--                                     @enderror--}}
 
-                                     <a href="{{route('add_to_basket', $randomproduct->product_id)}}">
+                                     <a class="@error('$randomproduct') @enderror" href="{{route('add_to_basket', $randomproduct->product_id)}}">
                                     <button type="button" role="button" class="buy-product">
                                      Add to Basket
                                     </button>
                                      </a>
+                                     @error('$randomproduct')
+                                     <div class="error">
+                                         {{ $message }}
+                                     </div>
+                                     @enderror
 
                                      <br>
                                 </form>
@@ -277,5 +282,5 @@ to constantly scroll up after pressing the navbar buttons -->
     </script>
 
 </body>
-
+<script src="{{ asset('assets/JavaScript/frontendJs.js') }}"></script>
 </html>
