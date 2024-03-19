@@ -55,7 +55,8 @@
                     <i class="bx bx-shopping-bag align-middle inline-flex justify-between" aria-hidden="true"></i>
                     <div class="text-[0.6em] mt-1 ml-1 align-middle text-center inline-flex justify-between"> Basket </div>
                     <span class="badge badge-pill badge-danger text-[0.7em] ml-2 bg-red-700 rounded-full w-8 h-8 align-middle justify-center">
-{{--                    <h6> {{ count( Auth::user()->basketItems()->with('product')->get()) }} </h6>  --}}{{-- keep tracks of number of items has been added to the basket --}}
+                        <h6> {{ count( Auth::user()->basketItems()->get())?? 0 }} </h6> {{-- Keep tracks of number items added to the basket (not quantity)--}}
+
                 </span>
                     </div>
 
@@ -67,10 +68,10 @@
                 <div class="dropdown-menu mt-6 p-3 rounded-md" id="cartDropdown">
                     <div class="row total-header-section">
 
-                        @php $total = 0.00; @endphp
-                        @php $count = 0; @endphp
+                        @php $total = 0; @endphp
                         @if (Auth::check())  {{-- Check if user is authenticated --}}
-                        @php $basketItems = Auth::user()->basketItems()->with('product')->get(); @endphp
+                        @php $basketItems = Auth::user()->basketItems()->with('product')->get();
+                        @endphp
                         @foreach ( $basketItems as $item)
                                 @php $total += $item->price * $item->quantity; @endphp
                             {{-- Calculate total based on database data --}}
