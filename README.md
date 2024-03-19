@@ -7,7 +7,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/say3dd/team-29">
-    <img src="Valhalla\public\assets\images\logo1.png" alt="Logo" width="80" height="80">
+    <img width="484" alt="image" src="https://github.com/say3dd/team-29/assets/123840502/1d84db3a-2dd4-415a-ac06-d452e7ca4497">
   </a>
 
 <h3 align="center">Team 29 - Valhalla</h3>
@@ -21,8 +21,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
+## Table of Contents:
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -39,7 +38,6 @@
     </li>
     <li><a href="#the-team">The Team</a></li>
   </ol>
-</details>
 
 
 
@@ -69,7 +67,7 @@ Team-29's submission for Aston University's CS2TP Project, where we are given th
 <!-- GETTING STARTED -->
 ## Getting Started
 
-These section will guide you through setting up the project to run locally on your machine for development and testing purposes.
+This section will guide you through setting up the project to run locally on your machine for development and testing purposes.
 
 ### Prerequisites
 
