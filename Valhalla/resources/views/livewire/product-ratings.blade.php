@@ -63,7 +63,7 @@
                                 </div>
                                 <x-primary-button
                                 href="{{ route('login') }}"
-                                    class="mx-auto font-medium text-center ">
+                                    class="mx-auto font-medium text-center relative left-[450px]">
                                 Login
                                 </x-primary-button>
                             </div>
