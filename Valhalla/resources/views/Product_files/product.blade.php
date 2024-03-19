@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+
 <!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Product page using CSS. Also used JavaScript to make "View all specification"
      button work, so the user could see all of the specifications about a praticular product  -->
 <head>
@@ -7,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product</title>
-    <link rel="stylesheet" href="{{asset('assets/css/style_sheet_product_webpage_template.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style_sheet_product_webpage_template.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
 <!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
@@ -384,8 +383,9 @@ add those selected and when filled and enter is pressed run the function */
         }
 
     </script>
+<script src="{{ asset('assets/JavaScript/frontendJs.js') }}"></script>
 </body>
+
 <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
 @include('footer')
 
-</html>

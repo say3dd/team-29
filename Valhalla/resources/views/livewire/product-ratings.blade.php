@@ -6,8 +6,8 @@
                 <div class="w-full mt-16 md:mt-0">
                     <div class="relative z-10 h-auto p-4 py-10 overflow-hidden bg-violet-900 rounded-lg shadow-2xl px-7">
                         @auth
-                            <div class=" space-y-5">
-                                <p class="font-medium text-white uppercase">
+                            <div class=" space-y-5 relative left-[105px] top-[-10px]">
+                                <p class="font-bold text-white uppercase">
                                     Rate this product
                                 </p>
                             </div>
@@ -17,42 +17,40 @@
                                 </p>
                             @endif
                             @if($hideForm != true)
+{{--                                <livewire:product-ratings/>--}}
                                 <form wire:submit.prevent="rate()">
                                     <div class="block max-w-3xl px-1 py-2 mx-auto">
                                         <div class="flex space-x-1 rating">
-                                            <label for="star1">
-                                                <input hidden wire:model="rating" type="radio" id="star1" name="rating" value="1" />
-                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 1 ) text-indigo-500 @else text-grey @endif " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                            <label for="star1" wire:click="$set('rating', 1)">
+                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 1 ) text-yellow-300 @else text-grey @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
                                             </label>
-                                            <label for="star2">
-                                                <input hidden wire:model="rating" type="radio" id="star2" name="rating" value="2" />
-                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 2 ) text-indigo-500 @else text-grey @endif " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                            <label for="star2" wire:click="$set('rating', 2)">
+                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 2 ) text-yellow-300 @else text-grey @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
                                             </label>
-                                            <label for="star3">
-                                                <input hidden wire:model="rating" type="radio" id="star3" name="rating" value="3" />
-                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 3 ) text-indigo-500 @else text-grey @endif " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                            <label for="star3" wire:click="$set('rating', 3)">
+                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 3 ) text-yellow-300 @else text-grey @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
                                             </label>
-                                            <label for="star4">
-                                                <input hidden wire:model="rating" type="radio" id="star4" name="rating" value="4" />
-                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 4 ) text-indigo-500 @else text-grey @endif " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                            <label for="star4" wire:click="$set('rating', 4)">
+                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 4 ) text-yellow-300 @else text-grey @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
                                             </label>
-                                            <label for="star5">
-                                                <input hidden wire:model="rating" type="radio" id="star5" name="rating" value="5" />
-                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 5 ) text-indigo-500 @else text-grey @endif " fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                            <label for="star5" wire:click="$set('rating', 5)">
+                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 5 ) text-yellow-300 @else text-grey @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
                                             </label>
                                         </div>
                                         <div class="my-5">
                                             @error('comment')
                                                 <p class="mt-1 text-red-500">{{ $message }}</p>
                                             @enderror
-                                            <textarea wire:model.lazy="comment" name="description" class="block w-full px-4 py-3 border border-2 rounded-lg focus:border-blue-500 focus:outline-none" placeholder="Comment.."></textarea>
+                                            <label>
+                                                <textarea wire:model.defer="comment" name="description" class="block text-gray-800 w-full px-4 py-3 border rounded-lg focus:border-blue-500 focus:outline-none" placeholder="Comment.."></textarea>
+                                            </label>
                                         </div>
                                     </div>
-                                    <div class="flex justify-end">
-                                        <x-primary-button type="submit" class=" text-white">Rate</x-primary-button>
+                                    <div class="relative left-[785px]">
+                                        <x-primary-button type="submit" class=" text-white">Submit</x-primary-button>
                                         @auth
                                             @if($currentId)
-                                                <button type="submit" class="w-full px-3 py-4 mt-4 font-medium text-white bg-red-400 rounded-lg" wire:click.prevent="delete({{ $currentId }})" class="text-sm cursor-pointer">Delete</button>
+                                                <button wire:click.prevent="delete({{ $currentId }})" class="text-sm cursor-pointer">Delete</button>
                                             @endif
                                         @endauth
                                     </div>
@@ -60,17 +58,19 @@
                             @endif
                         @else
                             <div>
-                                <div class="mb-8 text-center text-gray-600">
+                                <div class="mb-8 text-center text-white">
                                     You need to login in order to be able to rate the product!
                                 </div>
-                                <a href="/register"
-                                    class="block px-5 py-2 mx-auto font-medium text-center text-gray-600 bg-white border rounded-lg shadow-sm focus:outline-none hover:bg-gray-100" 
-                                >Register</a>
+                                <x-primary-button
+                                href="{{ route('login') }}"
+                                    class="mx-auto font-medium text-center relative left-[450px]">
+                                Login
+                                </x-primary-button>
                             </div>
                         @endauth
                     </div>
                 </div>
-    
+
             </div>
         </div>
     </section>
@@ -83,7 +83,7 @@
                     </h2>
                 </div>
             </div>
-            <div class="box-border flex grid flex-wrap justify-center gap-10 -mx-4 text-center text-white lg:gap-16 lg:justify-start lg:text-left">
+            <div class="box-border flex flex-wrap justify-center gap-10 -mx-4 text-center text-white lg:gap-16 lg:justify-start lg:text-left">
                 @forelse ($comments as $comment)
                     <div class="flex col-span-1">
                         <div class="relative flex-shrink-0 w-20 h-20 text-left">
@@ -118,8 +118,7 @@
                     </div>
                 </div>
                 @endforelse
-
+            </div>
             </div>
     </section>
-    
 </div>

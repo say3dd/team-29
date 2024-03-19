@@ -1,7 +1,4 @@
 <!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Categories webpage using CSS.  -->
-<!DOCTYPE html>
-<html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,11 +88,10 @@
             </a>
         </div>
     </div>
-    </div>
-    </div>
+
 
 </body>
 <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
 @include('footer')
+<script src="{{ asset('assets/JavaScript/frontendJs.js') }}"></script>
 
-</html>

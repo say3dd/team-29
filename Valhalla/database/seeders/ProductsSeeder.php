@@ -152,7 +152,7 @@ class ProductsSeeder extends Seeder
             [
                 'brand' => 'Logitech',
                 'product_name' => 'Logitech MX Master 3',
-                'product_description' => 'Name: Logitech MX Master 3, DPI: 4000, Connectivity: Wireless, Battery Life: 70 days, Colour: Black',
+                'product_description' => 'Name: Logitech MX Master 3, DPI: 4000, Connectivity: Wireless, Battery-Life: 70 days, Colour: Black',
                 'category' => 'Mouse',
                 'price' => 99.99,
                 'images' => 'assets/mouse_images/Logitech MX Master 3/logitech_mx_master_3.jpg',
@@ -172,7 +172,7 @@ class ProductsSeeder extends Seeder
             [
                 'brand' => 'Corsair',
                 'product_name' => 'Corsair Ironclaw RGB',
-                'product_description' => 'Name: Corsair Ironclaw RGB, DPI: 18000, Connectivity: Wireless, Battery Life: 50 hours, Colour: Black',
+                'product_description' => 'Name: Corsair Ironclaw RGB, DPI: 18000, Connectivity: Wireless, Battery-Life: 50 hours, Colour: Black',
                 'category' => 'Mouse',
                 'price' => 79.99,
                 'images' => 'assets/mouse_images/Corsair Ironclaw RGB/corsair_ironclaw_rgb.jpg',
@@ -182,7 +182,7 @@ class ProductsSeeder extends Seeder
             [
                 'brand' => 'SteelSeries',
                 'product_name' => 'SteelSeries Apex Pro',
-                'product_description' => 'Name: SteelSeries Apex Pro, Switches: Red, Connectivity: Wired, Keyboard Type: Mechanical, Colour: Black',
+                'product_description' => 'Name: SteelSeries Apex Pro, Switches: Red, Connectivity: Wired, Keyboard-Type: Mechanical, Colour: Black',
                 'category' => 'Keyboard',
                 'price' => 199.99,
                 'images' => 'assets/keyboard_images/SteelSeries Apex Pro/steelseries_apex_pro.jpg',
@@ -192,7 +192,7 @@ class ProductsSeeder extends Seeder
             [
                 'brand' => 'Corsair',
                 'product_name' => 'Corsair K95 RGB Platinum',
-                'product_description' => 'Name: Corsair K95 RGB Platinum, Switches: Red, Connectivity: Wired, Keyboard Type: Mechanical, Colour: Black',
+                'product_description' => 'Name: Corsair K95 RGB Platinum, Switches: Red, Connectivity: Wired, Keyboard-Type: Mechanical, Colour: Black',
                 'category' => 'Keyboard',
                 'price' => 169.99,
                 'images' => 'assets/keyboard_images/Corsair K95 RGB Platinum/corsair_k95_rgb_platinum.jpg',
@@ -202,7 +202,7 @@ class ProductsSeeder extends Seeder
             [
                 'brand' => 'Razer',
                 'product_name' => 'Razer Huntsman Elite',
-                'product_description' => 'Name: Razer Huntsman Elite, Switches: Blue, Connectivity: Wireless, Keyboard Type: Mechanical, Colour: Black',
+                'product_description' => 'Name: Razer Huntsman Elite, Switches: Blue, Connectivity: Wireless, Keyboard-Type: Mechanical, Colour: Black',
                 'category' => 'Keyboard',
                 'price' => 199.99,
                 'images' => 'assets/keyboard_images/Razer Huntsman Elite/razer_huntsman_elite.jpg',
@@ -212,7 +212,7 @@ class ProductsSeeder extends Seeder
             [
                 'brand' => 'Samsung',
                 'product_name' => 'Samsung Odyssey G9',
-                'product_description' => 'Name: Samsung Odyssey G9, Screen Size: 49", Refresh rate: 240Hz, Response Time: 1ms, Colour: Black',
+                'product_description' => 'Name: Samsung Odyssey G9, Screen-Size: 49", Refresh-Rate: 240Hz, Response-Time: 1ms, Colour: Black',
                 'category' => 'Monitor',
                 'price' => 1399.99,
                 'images' => 'assets/monitor_images/Samsung Odyssey G9/samsung_odyssey_g9.jpg',
@@ -222,7 +222,7 @@ class ProductsSeeder extends Seeder
             [
                 'brand' => 'LG',
                 'product_name' => 'LG UltraGear',
-                'product_description' => 'Name: LG UltraGear, Screen Size: 27", Refresh rate: 144Hz, Response Time: 1ms, Colour: Black',
+                'product_description' => 'Name: LG UltraGear, Screen-Size: 27", Refresh-Rate: 144Hz, Response-Time: 1ms, Colour: Black',
                 'category' => 'Monitor',
                 'price' => 399.99,
                 'images' => 'assets/monitor_images/LG UltraGear/lg_ultragear.jpg',
@@ -232,7 +232,7 @@ class ProductsSeeder extends Seeder
             [
                 'brand' => 'Dell',
                 'product_name' => 'Dell UltraSharp UP3218K',
-                'product_description' => 'Name: Dell UltraSharp UP3218K, Screen Size: 32", Refresh rate: 60Hz, Response Time: 8ms, Colour: Black',
+                'product_description' => 'Name: Dell UltraSharp UP3218K, Screen-Size: 32", Refresh-Rate: 60Hz, Response-Time: 8ms, Colour: Black',
                 'category' => 'Monitor',
                 'price' => 399.99,
                 'images' => 'assets/monitor_images/Dell UltraSharp UP3218K/dell_ultrasharp_up3218k.jpg',
@@ -242,7 +242,7 @@ class ProductsSeeder extends Seeder
             [
                 'brand' => 'Dell',
                 'product_name' => 'Dell Monitor Best Monitor',
-                'product_description' => 'Name: Dell Monitor blaa blaa, Screen Size: 100", Refresh rate: 6500Hz, Response Time: 0.1ms, Colour: Black',
+                'product_description' => 'Name: Dell Monitor blaa blaa, Screen-Size: 32", Refresh-Rate: 650Hz, Response-Time: 0.1ms, Colour: White',
                 'category' => 'Monitor',
                 'price' => 399.99,
                 'images' => 'assets/monitor_images/Dell UltraSharp UP3218K/dell_ultrasharp_up3218k.jpg',

@@ -17,7 +17,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Valhalla/tests/Unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/spec" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/Valhalla/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/carbonphp/carbon-doctrine-types" />
