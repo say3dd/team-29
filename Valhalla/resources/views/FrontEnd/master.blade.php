@@ -218,12 +218,7 @@
                                 <form method="POST" action="{{ route('wishlist.add') }}">
                                     @csrf
                                     <input class="@error('product_id') error-border @enderror" type="hidden" name="product_id" value="{{ $randomproduct->product_id }}">
-                                    <button class="add-wishlist" type="submit"> <a href="{{url('contactUs')}}" class="add-btn"><i class='bx bxs-heart'></i> </a></button>
-{{--                                    @error('product_id')--}}
-{{--                                    <div class="error">--}}
-{{--                                        {{ $message }}--}}
-{{--                                    </div>--}}
-{{--                                    @enderror--}}
+                                    <button class="add-wishlist" type="submit"><i class='bx bxs-heart'></i></button>
                                 </form>
                                 </div>
                             </div>
