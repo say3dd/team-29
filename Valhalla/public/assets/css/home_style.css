@@ -244,7 +244,7 @@ img {
     margin: 0 auto;
     margin-bottom: 6rem;
 
-    flex-wrap: wrap;
+
 
 }
 
@@ -526,13 +526,14 @@ blockquote {
     font-size: 0.9rem;
     text-align: center;
     display: inline-block;
-    padding: 0.8rem;
+    padding: 1rem;
     text-decoration: none;
     margin-top: 1.2rem;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 
 }
+
 
 
 
@@ -801,17 +802,25 @@ footer {
 
 @media  (max-width: 1200px) {
     
-    #laptop-container {
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 1rem;
+    .laptop {
+        width: 35rem !important;
+        text-align: center;
+        margin: 1rem auto; /* Center the laptop horizontally */
+        background-color: #2d044b;
+        padding: 0px;
+        padding-top: 10px;
+        box-shadow: 0 10px 20px #000000;
+        border-radius: 15px;
     }
 
-      .monitor-btn h1 {
-        font-size: 1rem;
-      }
-    /* Adjust the width to achieve a 4x4 grid */
-    #laptop-container > div {
-        flex: 1 0 calc(50% - 1rem); /* Each item takes up 25% of the container width with 1rem gap */
+    .title-line-products {
+        width: 80% !important;
+    }
+    #laptop-container {
+        display: grid;
+       
+        justify-content: center;
+      
     }
     .box-card img {
     }
@@ -911,12 +920,21 @@ footer {
 
 @media (max-width: 1550px) {
     #laptop-container {
-        flex-wrap: nowrap; /* Allow items to wrap to the next line */
+      
         gap: 0.5rem;
     }
     
 
-
+    .laptop {
+        width:  23rem;
+        text-align: center;
+        margin: 1rem;
+        background-color: #2d044b;
+        padding: 0px;
+        padding-top: 10px;
+        box-shadow: 0 10px 20px #000000;
+        border-radius: 15px;
+    }
 
 
 .title-products {
@@ -1012,16 +1030,6 @@ footer {
 
 
 
-.laptop {
-    width:  20rem;
-    text-align: center;
-    margin: 1rem;
-    background-color: #4e008b;
-    padding: 0px;
-    padding-top: 10px;
-    box-shadow: 0 10px 20px #000000;
-    border-radius: 15px;
-}
 
 .line-section{
     width: 100%;
@@ -1033,18 +1041,31 @@ footer {
 }
 /*                 Mobile Compativility              */
 @media (max-width: 1400px) {
-    header {
-        background: linear-gradient(rgba(0, 0, 0, 0.311), rgb(0, 0, 0)),
+    .headers-image {
+        background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.527)),
             url("../images/image.jpg");
+    
         background-size: cover;
         background-position: center;
         padding-top: 1px; /* Add a small padding to prevent margin collapse */
     }
-  
     #laptop-container {
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
+      
         gap: 1rem;
     }
+    
+
+    .laptop {
+        width:  15rem;
+        text-align: center;
+        margin: 1rem;
+        background-color: #2d044b;
+        padding: 0px;
+        padding-top: 10px;
+        box-shadow: 0 10px 20px #000000;
+        border-radius: 15px;
+    }
+
     #basket-container {
         display: flex !important;
         align-items: center !important;
@@ -1055,20 +1076,7 @@ footer {
       .monitor-btn h1 {
         font-size: 1rem;
       }
-    /* Adjust the width to achieve a 4x4 grid */
-    #laptop-container > div {
-        flex: 1 0 calc(50% - 1rem); /* Each item takes up 25% of the container width with 1rem gap */
-    }
-    .laptop {
-        width:  20rem;
-        text-align: center;
-        margin: 1rem;
-        background-color: #4e008b;
-        padding: 0px;
-        padding-top: 10px;
-        box-shadow: 0 10px 20px #000000;
-        border-radius: 15px;
-    }
+   
     .box-card img {
     }
 
