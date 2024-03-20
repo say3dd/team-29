@@ -95,7 +95,7 @@ npm install
 ```sh
 cp .env.example .env
 ```
-   - If you would like at this point, to change the name of the database, instead of it just being "laravel", you can do so by changing the `DB_DATABASE` variable in the `.env` file, to whatever you would like.
+   - If you would like at this point, to change the name of the database, instead of it just being "laravel", you can do so by changing the value of the `DB_DATABASE` variable in the `.env` file, to whatever you would like.
 7. Run the command
 ```sh
 php artisan migrate
