@@ -492,6 +492,7 @@ header {
     border-radius: 2%;
     overflow: hidden; /* Ensure overflow is hidden */
     width: 23rem;
+    background-color: #370061;
   }
 
   
