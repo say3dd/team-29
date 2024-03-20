@@ -95,6 +95,13 @@
                                 <span class="text-[0.5em] price text-info text-amber-500 inline-flex"> £ {{ $item->price }}</span>
                                 <span class="text-[0.5em] count inline-flex"> Quantity: {{ $item->quantity }} </span>
                             </div>
+                            <div class="inline-flex m-2">
+                                <form action="{{ route('basket.remove', $item->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="basket_remove  bg-red-700 font-bold text-sm inline-block rounded-md"> <i class='bx bx-trash-alt inline-flex mt-1 mr-1 inline-flex' ></i> Remove</button>
+                                </form>
+                            </div>
                         </div>
                     @endforeach
 

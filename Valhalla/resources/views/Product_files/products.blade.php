@@ -35,7 +35,12 @@
         @csrf
         <input type="hidden" name="laptopData" value={{$product->product_id}}>
         <input type="hidden" name="scrollPosition" id="scrollPosition" value="">
-        <button class="button_cart_laptop"> Add to Basket </button>
+{{--        <button class="button_cart_laptop"> Add to Basket </button>--}}
+        <a class="@error('$product') @enderror button_cart_laptop" href="{{route('add_to_basket', $product->product_id)}}">
+            <button type="button" role="button" class="">
+                Add to Basket
+            </button>
+        </a>
     </form>
 </div>
 </div>
@@ -44,13 +49,3 @@
 @endforelse
 @endsection
 
-<script>
-    const dropdown = document.getElementById("cartDropdown");
-    const basketButton = document.getElementById("basket-button");
-
-    basketButton.addEventListener('click', function(e) {
-        e.stopPropagation(); // Prevent event from propagating to other elements
-        dropdown.classList.toggle("dropdown--active"); // Correctly toggle the active class to show/hide the dropdown
-    });
-
-</script>
