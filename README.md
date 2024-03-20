@@ -135,13 +135,13 @@ Unfortunately you cannot contribute to the project. You can create pull requests
 <!-- The team -->
 
 ## The team: 
-<li> Bilal Mohamed - </li> 
-<li> Elizaveta Mikheeva - </li>
-<li> Abubakarsiddik Mohammed - </li> 
-<li> Basit Mohamed - </li>
-<li> Anthony Resuello - </li> 
-<li> Francis Moran - </li> 
-<li> Mohammed Miah - </li> 
+<li> Bilal Mohamed - 220174761 </li> 
+<li> Elizaveta Mikheeva - 230067459 </li>
+<li> Abubakarsiddik Mohammed - 220176639 </li> 
+<li> Basit Mohamed - 220065665 </li>
+<li> Anthony Resuello - 220161015 </li> 
+<li> Francis Moran - 210173000 </li> 
+<li> Mohammed Miah - 220147592 </li> 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
