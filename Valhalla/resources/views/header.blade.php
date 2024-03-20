@@ -85,12 +85,12 @@
 
                     @if (Auth::check() && count($basketItems) > 0)  {{-- Check for user and items --}}
                     @foreach ($basketItems as $item)
-                        <div class="row cart-detail flex flex-row pb-2 mb-1">
+                        <div class="row flex flex-row pb-2 mb-1">
 
-                            <div class=" cart-detail-img">
-                                <img class="mt-1.5 p-1 mr-2.5 h-auto w-[2em] rounded-md" src=" {{ $item->product_images }}" alt="Product Image" />
+                            <div class="cart-detail-img">
+                                <img class="mt-1.5 p-1 mr-2.5 h-auto w-[2em] img-thumbnail rounded-md" src=" {{ $item->product_images }}" alt="Product Image" />
                             </div>
-                            <div class=" cart-detail-product flex flex-col">
+                            <div class="flex flex-col">
                                 <p class="text-[1rem]">{{ $item->product_name }}</p>
                                 <span class="text-[0.5em] price text-info text-amber-500 inline-flex"> £ {{ $item->price }}</span>
                                 <span class="text-[0.5em] count inline-flex"> Quantity: {{ $item->quantity }} </span>
@@ -99,7 +99,7 @@
                                 <form action="{{ route('basket.remove', $item->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="basket_remove  bg-red-700 font-bold text-sm inline-block rounded-md"> <i class='bx bx-trash-alt inline-flex mt-1 mr-1 inline-flex' ></i> Remove</button>
+                                    <button type="submit" class="basket_remove  bg-red-700 inline-block rounded-md"> <i class='bx bx-trash-alt icon-text-width' ></i> </button>
                                 </form>
                             </div>
                         </div>
