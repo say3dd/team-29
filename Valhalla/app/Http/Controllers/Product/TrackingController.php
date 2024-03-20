@@ -4,22 +4,21 @@
 
 namespace App\Http\Controllers\Product;
 
-use App\Http\Controllers\Controller;
+use App\Models\Orders;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class TrackingController extends Controller
 {
-
-    public function tracking(Request $request)
+ // Track the order of a product, get its image to ofrom the product table.
+    public function trackOrder($id)
     {
+        $product = Orders::find($id);
+        $product_image = Product::find($product->product_id);
 
-        $trackingId = $request->input('tracking_id');
-
-
-        $trackingInfo = $this->getTrackingInfo($trackingId);
-
-
-        return view('tracking', ['trackingInfo' => $trackingInfo]);
+    
+        return view('tracking', ['product' => $product, 'product_image' => $product_image]);
     }
 
 
