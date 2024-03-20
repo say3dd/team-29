@@ -269,7 +269,7 @@ img {
 
 .laptop a {
    margin-bottom: 1rem !important;
-    
+
 }
 
 
@@ -279,7 +279,7 @@ img {
 }
 .laptop-specs h3 {
     font-weight: bolder;
-    
+
     font-size: 1rem !important;
     margin-top: 1.2rem !important;
 
@@ -292,7 +292,7 @@ img {
     font-weight: bolder;
     font-size: 1.2rem !important;
     margin-bottom: 1.2rem !important;
-  
+
 }
 
 .laptop-specs {
@@ -308,7 +308,7 @@ img {
     display: flex;
   gap: 1rem;
   justify-content: center;
-  
+
 }
 
 #best-seller-container p {
@@ -706,12 +706,12 @@ footer {
     font-size: 1.1rem !important;
     font-style: bold !important;
     border: rgb(255, 255, 255) 2px solid;
-    
+
 }
 
 #flash-success p {
-  
- 
+
+
     font-size: 1.1rem !important;
     font-style: bold !important;
 
@@ -728,15 +728,15 @@ footer {
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
   }
-  
+
   #flash-error p {
-    
-   
+
+
       font-size: 1.1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
 
 @media (max-width: 1570px) {
     /*     Message    */
@@ -751,17 +751,17 @@ footer {
       font-size: 1.1rem !important;
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
-      
+
   }
-  
+
   #flash-success p {
-    
-   
+
+
       font-size: 1.1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
   #flash-error {
       margin-top: 1rem !important;
         padding: 1rem !important;
@@ -773,13 +773,13 @@ footer {
         font-style: bold !important;
         border: rgb(255, 255, 255) 2px solid;
     }
-    
+
     #flash-error p {
-      
-     
+
+
         font-size: 1.1rem !important;
         font-style: bold !important;
-    
+
     }
     /* Category Section */
     .monitor-btn {
@@ -801,7 +801,7 @@ footer {
     }
 
 @media  (max-width: 1200px) {
-    
+
     .laptop {
         width: 35rem !important;
         text-align: center;
@@ -818,9 +818,9 @@ footer {
     }
     #laptop-container {
         display: grid;
-       
+
         justify-content: center;
-      
+
     }
     .box-card img {
     }
@@ -851,17 +851,17 @@ footer {
       font-size: 1.1rem !important;
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
-      
+
   }
-  
+
   #flash-success p {
-    
-   
+
+
       font-size: 1.1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
   #flash-error {
       margin-top: 1rem !important;
         padding: 1rem !important;
@@ -873,13 +873,13 @@ footer {
         font-style: bold !important;
         border: rgb(255, 255, 255) 2px solid;
     }
-    
+
     #flash-error p {
-      
-     
+
+
         font-size: 1.1rem !important;
         font-style: bold !important;
-    
+
     }
 
 
@@ -906,7 +906,7 @@ footer {
         display: inline-block;
         padding: 1rem;
         font-style: bolder;
-        
+
       }
       .Category-1 img {
         width: 12rem;
@@ -920,10 +920,10 @@ footer {
 
 @media (max-width: 1550px) {
     #laptop-container {
-      
+
         gap: 0.5rem;
     }
-    
+
 
     .laptop {
         width:  23rem;
@@ -993,7 +993,7 @@ footer {
     font-weight: bolder;
     font-size: 1.2rem !important;
     margin-bottom: 1.2rem !important;
-  
+
 }
 
 .laptop-specs {
@@ -1009,7 +1009,7 @@ footer {
     display: flex;
   gap: 1rem;
   justify-content: center;
-  
+
 }
 
 #best-seller-container p {
@@ -1044,16 +1044,16 @@ footer {
     .headers-image {
         background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.527)),
             url("../images/image.jpg");
-    
+
         background-size: cover;
         background-position: center;
         padding-top: 1px; /* Add a small padding to prevent margin collapse */
     }
     #laptop-container {
-      
+
         gap: 1rem;
     }
-    
+
 
     .laptop {
         width:  15rem;
@@ -1072,11 +1072,11 @@ footer {
         justify-content: center !important;
         width: 100%;
     }
-    
+
       .monitor-btn h1 {
         font-size: 1rem;
       }
-   
+
     .box-card img {
     }
 
@@ -1124,14 +1124,14 @@ footer {
         margin: 2rem 5%; /* Adjust margin for better spacing on mobile */
     }
 
-    
-    
+
+
     .brand-images img {
         width: 12rem; /* Adjust the width as needed */
         margin: 0; /* Remove the margin to prevent additional spacing */
         transition: transform 0.3s ease-in-out;
     }
-    
+
     .laptop {
         flex-basis: 70%; /* Set the flex basis to 100% for full width on mobile */
         margin: 20px 0; /* Adjust margin for better spacing */
@@ -1396,7 +1396,7 @@ Styling for basket
     float: none !important;
     padding-right: 30px;
     position: relative; /* Add this if not already present */
-    
+
 }
 .btn{
     display: inline-block;
@@ -1415,7 +1415,7 @@ Styling for basket
 }
 .dropdown .dropdown-menu {
     display: none;
-    padding: 10px !important; 
+    padding: 10px !important;
     text-align: center !important;
     width: 50% !important ;
     height: 14vh !important;
@@ -1426,9 +1426,9 @@ Styling for basket
 }
 .dropdown-menu {
     left: 0 !important;
-    width: 95% !important; 
+    width: 95% !important;
     height: 30vh !important;
-  
+
 }
 .total-header-section{
     border-bottom:1px solid var(--secondary-color);
@@ -1437,7 +1437,7 @@ Styling for basket
     margin-bottom:20px;
 }
 
-.dropdown .dropdown--active {
+.dropdown--active {
     display: block;
     position:absolute;
     top:40px;
@@ -1449,17 +1449,17 @@ Styling for basket
 .cart-detail {
     display: none !important;
   }
-    
+
 
 .dropdown-menu {
     height: 20vh !important;
-   
+
 }
 .dropdown-menu p {
     font-size: 1.3rem !important;
     margin: 0rem !important;
   }
-    
+
 .checkout {
     width: 10rem;
     height: 4rem;
@@ -1469,7 +1469,7 @@ Styling for basket
     font-size: 1.3rem !important;
     margin: 0rem !important;
     margin-top: 1rem !important;
-   
+
 }
 
 .text-center {
@@ -1493,17 +1493,17 @@ Styling for basket
       font-size: 1.1rem !important;
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
-      
+
   }
-  
+
   #flash-success p {
-    
-   
+
+
       font-size: 1.1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
   #flash-error {
       margin-top: 1rem !important;
         padding: 1rem !important;
@@ -1515,13 +1515,13 @@ Styling for basket
         font-style: bold !important;
         border: rgb(255, 255, 255) 2px solid;
     }
-    
+
     #flash-error p {
-      
-     
+
+
         font-size: 1.1rem !important;
         font-style: bold !important;
-    
+
     }
 
 
@@ -1620,17 +1620,17 @@ Styling for basket
       font-size: 1.1rem !important;
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
-      
+
   }
-  
+
   #flash-success p {
-    
-   
+
+
       font-size: 1.1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
   #flash-error {
       margin-top: 1rem !important;
         padding: 1rem !important;
@@ -1642,13 +1642,13 @@ Styling for basket
         font-style: bold !important;
         border: rgb(255, 255, 255) 2px solid;
     }
-    
+
     #flash-error p {
-      
-     
+
+
         font-size: 1.1rem !important;
         font-style: bold !important;
-    
+
     }
 
 
@@ -1743,17 +1743,17 @@ margin-bottom: 2rem;
       font-size: 1.1rem !important;
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
-      
+
   }
-  
+
   #flash-success p {
-    
-   
+
+
       font-size: 1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
   #flash-error {
       margin-top: 1rem !important;
         padding: 1rem !important;
@@ -1765,20 +1765,20 @@ margin-bottom: 2rem;
         font-style: bold !important;
         border: rgb(255, 255, 255) 2px solid;
     }
-    
+
     #flash-error p {
-      
-     
+
+
         font-size: 1rem !important;
         font-style: bold !important;
-    
+
     }
-    
-  
 
 
 
-  
+
+
+
 }
 
 @media (max-width: 1000px) {
@@ -2142,13 +2142,13 @@ Styling for basket
     position: absolute;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  
-    
+
+
 }
 .cartDropdown {
     position: relative;
     display: inline-block;
-   
+
 }
 
 /*.dropdown-content {*/

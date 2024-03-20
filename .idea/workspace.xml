@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Basket has been fixed">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Full implementation of Basket All around the website">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/css/home_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/public/assets/css/home_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/checkout/basket.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/checkout/basket.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -430,24 +426,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.127.0.0.1:8000.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Valhalla-dev&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/xampp/team-29&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\abuba\\AppData\\Local\\Programs\\PhpStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.127.0.0.1:8000.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Valhalla-dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/xampp/htdocs/xampp/team-29",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.rainbow.brackets.disable.when",
+    "ts.external.directory.path": "C:\\Users\\abuba\\AppData\\Local\\Programs\\PhpStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Team code\team-29\Valhalla\app\Http\Controllers" />
@@ -733,7 +729,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710955673744</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Full implementation of Basket All around the website">
+      <option name="closed" value="true" />
+      <created>1710957592302</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1710957592302</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -763,7 +767,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactored Controller files and blade files. Added functionality of addToBasket() in home page and productL.blade.php" />
     <MESSAGE value="Refactored admin route" />
     <MESSAGE value="Dashboard.php has been refactored and organised" />
     <MESSAGE value="more functions has been added to the basket" />
@@ -788,7 +791,8 @@
     <MESSAGE value="composer.lock update" />
     <MESSAGE value="WEB.PHP COMMENT" />
     <MESSAGE value="Basket has been fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basket has been fixed" />
+    <MESSAGE value="Full implementation of Basket All around the website" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full implementation of Basket All around the website" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

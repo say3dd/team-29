@@ -2,13 +2,11 @@
 <!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the basket using Tailwind  -->
 
 <head>
-    @vite(['resources/css/app.css','resources/js/app.js'])
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Products</title>
     <link rel="stylesheet" href="{{asset('assets/css/style_sheet.css')}}">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
+    @vite(['resources/css/app.css','resources/js/app.js'])
+
 </head>
 <!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
 <header class = "navbar-section">
@@ -67,7 +65,7 @@
                                 @csrf
                                 @method('PUT')
                                 <input type="number" name="quantity" value="{{ $item->quantity }}" class="basket_update form-control quantity  text-black w-1/2 rounded-md" min="1">
-                                <button type="submit">Update</button>
+                                <button type="submit" class="p-2 bg-blue-500 text-sm rounded">Update</button>
                             </form>
 
                         </td>
@@ -94,8 +92,8 @@
             </tr>
             <tr>
                 <td colspan="5" class="text-right p-5 m-1.5">
-                    <a href="{{ url('/') }}" class="btn btn-danger bg-red-700 inline-block p-2 align-middle text-center"> <i class='bx bx-arrow-back' ></i> Continue Shopping</a>
-                    <a href="{{ route('checkout.summary') }}" class="btn btn-primary bg-violet-900 inline-block p-2 align-middle text-center"> <i class='bx bx-shopping-bag' ></i> Proceed to Checkout</a>
+                    <a href="{{ url('/') }}" class="bg-red-700 inline-block p-2 align-middle text-center rounded-md"> <i class='bx bx-arrow-back' ></i> Continue Shopping</a>
+                    <a href="{{ route('checkout.summary') }}" class="bg-green-500 inline-block p-2 align-middle text-center rounded-md"> <i class='bx bx-shopping-bag' ></i> Proceed to Checkout</a>
                 </td>
             </tr>
             </tfoot>
