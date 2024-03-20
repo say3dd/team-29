@@ -115,8 +115,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     //Route::get('/basket', [ProductController::class,'contents'])->name('basket');
     Route::get('basket', [ProductController::class, 'basket'])->name('basket');
-    Route::post('update-basket', [ProductController::class, 'updateBasket'])->name('update_basket');
-    Route::delete('remove-from-basket', [ProductController::class, 'removeFromBasket'])->name('remove_from_basket');
+    Route::put('/basket/{id}', [ProductController::class, 'updateBasket'])->name('update_basket');
+//    Route::delete('remove-from-basket', [ProductController::class, 'removeFromBasket'])->name('remove_from_basket');
+    // routes/web.php
+
+// ... (previous routes)
+
+    Route::delete('/basket/{id}', [ProductController::class, 'removeBasket'])->name('basket.remove');
     Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
 
 });

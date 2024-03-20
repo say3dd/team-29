@@ -16,8 +16,22 @@
 </section>
 
 <body>
+@includeWhen($errors->any(), '_errors')
+@if(session('success'))
+    <div id="flash-success" class="bg-[#79c753] text-bold text-[1.1rem] ">
+        {{session('success')}}
+        {{--                <p class=" text-amber-200">Hello, a message</p>--}}
+    </div>
+@endif
+@if(session('error'))
+    <div id="flash-error" class="p-5 bg-red-700 text-bold text-[1.1rem]">
+        {{session('error')}}
+        <!--I have no idea if this is alright, I was just copying from the success popup-->
+    </div>
+@endif
 <div class="main">
     {{-- Section 1 starts here --}}
+
     <div class="background_shape1">
         <div class="background_shape_1_2">
             <div class="slideshow-container">
@@ -112,7 +126,12 @@
                     </div>
                     <br><hr>
                     <div class="buttons">
-                        <button class="button_cart"> ADD TO BASKET</button>
+{{--                        <button class=""> ADD TO BASKET</button>--}}
+                        <a class="@error('$product') @enderror button_cart" href="{{route('add_to_basket', $product->product_id)}}">
+                            <button type="button" role="button" class="">
+                                ADD TO BASKET
+                            </button>
+                        </a>
                         <button class="button_wish">ADD TO WISHLIST </button>
                     </div>
                     {{-- Part of Section 1, for showcasing all of the specification of the product --}}
@@ -294,7 +313,12 @@
                             <p><strong>{{ $featureName }}</strong>: {{ $featureValue }}</p>
                         @endforeach
                     </div>
-                    <button class="button_cart_laptop"> Add to Basket</button>
+{{--                    <button class="button_cart_laptop"> Add to Basket</button>--}}
+                    <a class="@error('$relatedProduct') @enderror button_cart_laptop" href="{{route('add_to_basket', $relatedProduct->product_id)}}">
+                        <button type="button" role="button" class="">
+                            Add to Basket
+                        </button>
+                    </a>
                      </div>
             @endforeach
         </div>

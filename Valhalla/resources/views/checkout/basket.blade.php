@@ -62,25 +62,22 @@
                         <td data-th="Price">£ {{ $item['price'] }}</td>
 
                         <td data-th="Quantity">
-                            <form action="{{ route('update_basket') }}"  method="post">
+
+                            <form action="{{ route('update_basket', $item->id) }}" method="POST">
                                 @csrf
-                                <input type="hidden" value="{{ $item->id }}" name="plus" id="plus">
-                                <button class="inline-flex p-2 bg-green-500 h-2 w-2 m-1 align-middle text-center rounded" type="submit">+</button>
-                                <input type="number" value="{{ $item['quantity'] }}" disabled class="basket_update form-control quantity  text-black w-1/2 rounded-md" min="1" />
-                                <button class="inline-flex p-2 bg-red-500 h-2 w-2 m1 align-middle text-center rounded" type="submit">-</button>
+                                @method('PUT')
+                                <input type="number" name="quantity" value="{{ $item->quantity }}" class="basket_update form-control quantity  text-black w-1/2 rounded-md" min="1">
+                                <button type="submit">Update</button>
                             </form>
 
                         </td>
                         <td data-th="Subtotal" class="text-center">£ {{ $item['price'] * $item['quantity'] }}</td>
                         <td class="actions p-1.5" data-th="">
-                            <button id="basket_remove" class="basket_remove  bg-red-700 inline-flex m-1.5 text-center align-middle justify-center p-1.5 rounded-md"><i class='bx bx-trash-alt inline-flex mt-1 mr-1' ></i> Delete</button>
-{{--                            <form action="{{ route('remove_from_basket') }}" method="POST">--}}
-{{--                                @csrf --}}{{-- Include CSRF token --}}
-{{--                                <input type="hidden" name="id" value="{{ $id }}"> --}}{{-- Hidden input for item ID --}}
-{{--                                <button class="basket_remove bg-red-700 inline-flex m-1.5 text-center align-middle justify-center p-1.5 rounded-md" type="submit" onclick="return confirm('Do you really want to remove the item?')">--}}
-{{--                                    <i class='bx bx-trash-alt inline-flex mt-1 mr-1' ></i>--}}
-{{--                                    Remove</button>--}}
-{{--                            </form>--}}
+                            <form action="{{ route('basket.remove', $item->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="basket_remove  bg-red-700 font-bold text-sm inline-block rounded-md"> <i class='bx bx-trash-alt inline-flex mt-1 mr-1' ></i> Remove</button>
+                            </form>
 
 
                         </td>
@@ -113,46 +110,6 @@
   <!-- Developed and desgined the footer for this page @AnthonyResuello (Anthony Resuello) -->
       @include('footer')
 
-  <script>
 
-      $(".basket_update").change(function (e) {
-          e.preventDefault();
-
-          var ele = $(this);
-
-          $.ajax({
-              url: '{{ route('update_basket') }}',
-              method: "patch",
-              data: {
-                  _token: '{{ csrf_token() }}',
-                  id: ele.parents("tr").attr("data-id"),
-                  quantity: ele.parents("tr").find(".quantity").val()
-              },
-              success: function (response) {
-                  window.location.reload();
-              }
-          });
-      });
-
-      $(".basket_remove").click(function (e) {
-          e.preventDefault();
-
-          var ele = $(this);
-
-          if(confirm("Do you really want to remove?")) {
-              $.ajax({
-                  url: '{{ route('remove_from_basket') }}',
-                  method: "DELETE",
-                  data: {
-                      _token: '{{ csrf_token() }}',
-                      id: ele.parents("tr").attr("data-id")
-                  },
-                  success: function (response) {
-                      window.location.reload();
-                  }
-              });
-          }
-      });
-  </script>
 
 </body>
