@@ -629,14 +629,22 @@ blockquote {
     color: white;
     text-align: center;
     display: flex;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
 }
-
+.footer-title {
+    color: #ae00ff;
+    font-weight: bold;
+   
+}
 .footer-section a {
-    color: #9000ff;
+    color: #a200ff;
 }
 
+.footer-column a:hover {
+    color: #d579ff;
+}
 footer {
     font-size: 1.2rem;
 }
@@ -658,7 +666,7 @@ footer {
     justify-content: space-around;
     width: 100%;
     margin-top: 20px;
-    gap: 15rem;
+    gap: 17rem;
 }
 
 .footer-column {
