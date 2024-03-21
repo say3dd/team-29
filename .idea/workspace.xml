@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="some styling change on the basket.blade.php and basket button">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/team-29.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team-29.iml" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="UserController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +38,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;BravoBoy2&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "history": [
+    {
+      "state": "OPEN",
+      "assignee": "AnthonyResuello"
+    }
+  ],
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "AnthonyResuello"
   }
-}</component>
+}]]></component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -513,7 +514,7 @@
       <workItem from="1710859532420" duration="5003000" />
       <workItem from="1710868160565" duration="3333000" />
       <workItem from="1710885136673" duration="1239000" />
-      <workItem from="1711030957399" duration="1707000" />
+      <workItem from="1711030957399" duration="3410000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -747,7 +748,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710964605099</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="UserController">
+      <option name="closed" value="true" />
+      <created>1711033013748</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1711033013748</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -777,7 +786,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dashboard.php has been refactored and organised" />
     <MESSAGE value="more functions has been added to the basket" />
     <MESSAGE value="somewhat basket visible" />
     <MESSAGE value="basket button syling fixed 1.0" />
@@ -802,7 +810,8 @@
     <MESSAGE value="Basket has been fixed" />
     <MESSAGE value="Full implementation of Basket All around the website" />
     <MESSAGE value="some styling change on the basket.blade.php and basket button" />
-    <option name="LAST_COMMIT_MESSAGE" value="some styling change on the basket.blade.php and basket button" />
+    <MESSAGE value="UserController" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserController" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
