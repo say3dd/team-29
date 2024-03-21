@@ -15,6 +15,19 @@
 </section>
 <body>
 <div class="main">
+    @includeWhen($errors->any(), '_errors')
+    @if(session('success'))
+        <div id="flash-success" class="bg-[#79c753] text-bold text-[1.1rem] ">
+            {{session('success')}}
+            {{--                <p class=" text-amber-200">Hello, a message</p>--}}
+        </div>
+    @endif
+    @if(session('error'))
+        <div id="flash-error" class="p-5 bg-red-700 text-bold text-[1.1rem]">
+            {{session('error')}}
+            <!--I have no idea if this is alright, I was just copying from the success popup-->
+        </div>
+    @endif
     {{-- Section 1 starts here --}}
     <div class="background_shape1">
         <div class="background_shape_1_2">
@@ -279,10 +292,15 @@
                         <div> - GeForce RTX™ 4080</div>
                         <div> - 32GB RAM</div>
                 </div>
-                <button class="button_cart_laptop"> Add to Basket </button>
+                <button class=""> Add to Basket </button>
+                <a class="@error('$randomproduct') @enderror" href="{{route('add_to_basket', $product->product_id)}}">
+                    <button type="button" role="button" class="">
+                        Add to Basket
+                    </button>
+                </a>
             </div>
         </div>
-    </div>
+
 
     <script>
 
@@ -382,8 +400,17 @@ add those selected and when filled and enter is pressed run the function */
             dots[slideIndex - 1].className += " active";
         }
 
+        const dropdown = document.getElementById("cartDropdown");
+        const basketButton = document.getElementById("basket-button");
+
+        basketButton.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event from propagating to other elements
+            dropdown.classList.toggle("dropdown--active"); // Correctly toggle the active class to show/hide the dropdown
+        });
+
+
     </script>
-<script src="{{ asset('assets/JavaScript/frontendJs.js') }}"></script>
+
 </body>
 
 <!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->

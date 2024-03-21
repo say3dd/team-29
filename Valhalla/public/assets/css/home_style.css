@@ -244,7 +244,7 @@ img {
     margin: 0 auto;
     margin-bottom: 6rem;
 
-    flex-wrap: wrap;
+
 
 }
 
@@ -269,7 +269,7 @@ img {
 
 .laptop a {
    margin-bottom: 1rem !important;
-    
+
 }
 
 
@@ -279,7 +279,7 @@ img {
 }
 .laptop-specs h3 {
     font-weight: bolder;
-    
+
     font-size: 1rem !important;
     margin-top: 1.2rem !important;
 
@@ -292,7 +292,7 @@ img {
     font-weight: bolder;
     font-size: 1.2rem !important;
     margin-bottom: 1.2rem !important;
-  
+
 }
 
 .laptop-specs {
@@ -308,7 +308,7 @@ img {
     display: flex;
   gap: 1rem;
   justify-content: center;
-  
+
 }
 
 #best-seller-container p {
@@ -526,7 +526,7 @@ blockquote {
     font-size: 0.9rem;
     text-align: center;
     display: inline-block;
-    padding: 0.8rem;
+    padding: 1rem;
     text-decoration: none;
     margin-top: 1.2rem;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
@@ -535,6 +535,11 @@ blockquote {
 }
 
 
+.add-wishlist:hover {
+    background-color: #bc00f5 !important;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4) !important; /* Add a slight shadow on hover */
+}
 
 .buy-product:hover {
     background-color: #bc00f5 !important;
@@ -628,14 +633,22 @@ blockquote {
     color: white;
     text-align: center;
     display: flex;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
 }
-
+.footer-title {
+    color: #ae00ff;
+    font-weight: bold;
+   
+}
 .footer-section a {
-    color: #9000ff;
+    color: #a200ff;
 }
 
+.footer-column a:hover {
+    color: #d579ff;
+}
 footer {
     font-size: 1.2rem;
 }
@@ -657,7 +670,7 @@ footer {
     justify-content: space-around;
     width: 100%;
     margin-top: 20px;
-    gap: 15rem;
+    gap: 17rem;
 }
 
 .footer-column {
@@ -705,12 +718,12 @@ footer {
     font-size: 1.1rem !important;
     font-style: bold !important;
     border: rgb(255, 255, 255) 2px solid;
-    
+
 }
 
 #flash-success p {
-  
- 
+
+
     font-size: 1.1rem !important;
     font-style: bold !important;
 
@@ -727,15 +740,15 @@ footer {
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
   }
-  
+
   #flash-error p {
-    
-   
+
+
       font-size: 1.1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
 
 @media (max-width: 1570px) {
     /*     Message    */
@@ -750,17 +763,17 @@ footer {
       font-size: 1.1rem !important;
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
-      
+
   }
-  
+
   #flash-success p {
-    
-   
+
+
       font-size: 1.1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
   #flash-error {
       margin-top: 1rem !important;
         padding: 1rem !important;
@@ -772,13 +785,13 @@ footer {
         font-style: bold !important;
         border: rgb(255, 255, 255) 2px solid;
     }
-    
+
     #flash-error p {
-      
-     
+
+
         font-size: 1.1rem !important;
         font-style: bold !important;
-    
+
     }
     /* Category Section */
     .monitor-btn {
@@ -800,18 +813,26 @@ footer {
     }
 
 @media  (max-width: 1200px) {
-    
-    #laptop-container {
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
-        gap: 1rem;
+
+    .laptop {
+        width: 35rem !important;
+        text-align: center;
+        margin: 1rem auto; /* Center the laptop horizontally */
+        background-color: #2d044b;
+        padding: 0px;
+        padding-top: 10px;
+        box-shadow: 0 10px 20px #000000;
+        border-radius: 15px;
     }
 
-      .monitor-btn h1 {
-        font-size: 1rem;
-      }
-    /* Adjust the width to achieve a 4x4 grid */
-    #laptop-container > div {
-        flex: 1 0 calc(50% - 1rem); /* Each item takes up 25% of the container width with 1rem gap */
+    .title-line-products {
+        width: 80% !important;
+    }
+    #laptop-container {
+        display: grid;
+
+        justify-content: center;
+
     }
     .box-card img {
     }
@@ -842,17 +863,17 @@ footer {
       font-size: 1.1rem !important;
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
-      
+
   }
-  
+
   #flash-success p {
-    
-   
+
+
       font-size: 1.1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
   #flash-error {
       margin-top: 1rem !important;
         padding: 1rem !important;
@@ -864,13 +885,13 @@ footer {
         font-style: bold !important;
         border: rgb(255, 255, 255) 2px solid;
     }
-    
+
     #flash-error p {
-      
-     
+
+
         font-size: 1.1rem !important;
         font-style: bold !important;
-    
+
     }
 
 
@@ -897,7 +918,7 @@ footer {
         display: inline-block;
         padding: 1rem;
         font-style: bolder;
-        
+
       }
       .Category-1 img {
         width: 12rem;
@@ -911,12 +932,21 @@ footer {
 
 @media (max-width: 1550px) {
     #laptop-container {
-        flex-wrap: nowrap; /* Allow items to wrap to the next line */
+
         gap: 0.5rem;
     }
-    
 
 
+    .laptop {
+        width:  23rem;
+        text-align: center;
+        margin: 1rem;
+        background-color: #2d044b;
+        padding: 0px;
+        padding-top: 10px;
+        box-shadow: 0 10px 20px #000000;
+        border-radius: 15px;
+    }
 
 
 .title-products {
@@ -975,7 +1005,7 @@ footer {
     font-weight: bolder;
     font-size: 1.2rem !important;
     margin-bottom: 1.2rem !important;
-  
+
 }
 
 .laptop-specs {
@@ -991,7 +1021,7 @@ footer {
     display: flex;
   gap: 1rem;
   justify-content: center;
-  
+
 }
 
 #best-seller-container p {
@@ -1012,16 +1042,6 @@ footer {
 
 
 
-.laptop {
-    width:  20rem;
-    text-align: center;
-    margin: 1rem;
-    background-color: #4e008b;
-    padding: 0px;
-    padding-top: 10px;
-    box-shadow: 0 10px 20px #000000;
-    border-radius: 15px;
-}
 
 .line-section{
     width: 100%;
@@ -1033,42 +1053,42 @@ footer {
 }
 /*                 Mobile Compativility              */
 @media (max-width: 1400px) {
-    header {
-        background: linear-gradient(rgba(0, 0, 0, 0.311), rgb(0, 0, 0)),
+    .headers-image {
+        background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.527)),
             url("../images/image.jpg");
+
         background-size: cover;
         background-position: center;
         padding-top: 1px; /* Add a small padding to prevent margin collapse */
     }
-  
     #laptop-container {
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
+
         gap: 1rem;
     }
+
+
+    .laptop {
+        width:  15rem;
+        text-align: center;
+        margin: 1rem;
+        background-color: #2d044b;
+        padding: 0px;
+        padding-top: 10px;
+        box-shadow: 0 10px 20px #000000;
+        border-radius: 15px;
+    }
+
     #basket-container {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         width: 100%;
     }
-    
+
       .monitor-btn h1 {
         font-size: 1rem;
       }
-    /* Adjust the width to achieve a 4x4 grid */
-    #laptop-container > div {
-        flex: 1 0 calc(50% - 1rem); /* Each item takes up 25% of the container width with 1rem gap */
-    }
-    .laptop {
-        width:  20rem;
-        text-align: center;
-        margin: 1rem;
-        background-color: #4e008b;
-        padding: 0px;
-        padding-top: 10px;
-        box-shadow: 0 10px 20px #000000;
-        border-radius: 15px;
-    }
+
     .box-card img {
     }
 
@@ -1116,14 +1136,14 @@ footer {
         margin: 2rem 5%; /* Adjust margin for better spacing on mobile */
     }
 
-    
-    
+
+
     .brand-images img {
         width: 12rem; /* Adjust the width as needed */
         margin: 0; /* Remove the margin to prevent additional spacing */
         transition: transform 0.3s ease-in-out;
     }
-    
+
     .laptop {
         flex-basis: 70%; /* Set the flex basis to 100% for full width on mobile */
         margin: 20px 0; /* Adjust margin for better spacing */
@@ -1388,7 +1408,7 @@ Styling for basket
     float: none !important;
     padding-right: 30px;
     position: relative; /* Add this if not already present */
-    
+
 }
 .btn{
     display: inline-block;
@@ -1407,7 +1427,7 @@ Styling for basket
 }
 .dropdown .dropdown-menu {
     display: none;
-    padding: 10px !important; 
+    padding: 10px !important;
     text-align: center !important;
     width: 50% !important ;
     height: 14vh !important;
@@ -1418,9 +1438,9 @@ Styling for basket
 }
 .dropdown-menu {
     left: 0 !important;
-    width: 95% !important; 
+    width: 95% !important;
     height: 30vh !important;
-  
+
 }
 .total-header-section{
     border-bottom:1px solid var(--secondary-color);
@@ -1429,7 +1449,7 @@ Styling for basket
     margin-bottom:20px;
 }
 
-.dropdown .dropdown--active {
+.dropdown--active {
     display: block;
     position:absolute;
     top:40px;
@@ -1441,17 +1461,17 @@ Styling for basket
 .cart-detail {
     display: none !important;
   }
-    
+
 
 .dropdown-menu {
     height: 20vh !important;
-   
+
 }
 .dropdown-menu p {
     font-size: 1.3rem !important;
     margin: 0rem !important;
   }
-    
+
 .checkout {
     width: 10rem;
     height: 4rem;
@@ -1461,7 +1481,7 @@ Styling for basket
     font-size: 1.3rem !important;
     margin: 0rem !important;
     margin-top: 1rem !important;
-   
+
 }
 
 .text-center {
@@ -1485,17 +1505,17 @@ Styling for basket
       font-size: 1.1rem !important;
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
-      
+
   }
-  
+
   #flash-success p {
-    
-   
+
+
       font-size: 1.1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
   #flash-error {
       margin-top: 1rem !important;
         padding: 1rem !important;
@@ -1507,13 +1527,13 @@ Styling for basket
         font-style: bold !important;
         border: rgb(255, 255, 255) 2px solid;
     }
-    
+
     #flash-error p {
-      
-     
+
+
         font-size: 1.1rem !important;
         font-style: bold !important;
-    
+
     }
 
 
@@ -1612,17 +1632,17 @@ Styling for basket
       font-size: 1.1rem !important;
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
-      
+
   }
-  
+
   #flash-success p {
-    
-   
+
+
       font-size: 1.1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
   #flash-error {
       margin-top: 1rem !important;
         padding: 1rem !important;
@@ -1634,13 +1654,13 @@ Styling for basket
         font-style: bold !important;
         border: rgb(255, 255, 255) 2px solid;
     }
-    
+
     #flash-error p {
-      
-     
+
+
         font-size: 1.1rem !important;
         font-style: bold !important;
-    
+
     }
 
 
@@ -1735,17 +1755,17 @@ margin-bottom: 2rem;
       font-size: 1.1rem !important;
       font-style: bold !important;
       border: rgb(255, 255, 255) 2px solid;
-      
+
   }
-  
+
   #flash-success p {
-    
-   
+
+
       font-size: 1rem !important;
       font-style: bold !important;
-  
+
   }
-  
+
   #flash-error {
       margin-top: 1rem !important;
         padding: 1rem !important;
@@ -1757,20 +1777,20 @@ margin-bottom: 2rem;
         font-style: bold !important;
         border: rgb(255, 255, 255) 2px solid;
     }
-    
+
     #flash-error p {
-      
-     
+
+
         font-size: 1rem !important;
         font-style: bold !important;
-    
+
     }
-    
-  
 
 
 
-  
+
+
+
 }
 
 @media (max-width: 1000px) {
@@ -2134,13 +2154,13 @@ Styling for basket
     position: absolute;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  
-    
+
+
 }
 .cartDropdown {
     position: relative;
     display: inline-block;
-   
+
 }
 
 /*.dropdown-content {*/

@@ -17,7 +17,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Valhalla/tests/Unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/spec" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/Valhalla/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/carbonphp/carbon-doctrine-types" />
@@ -131,14 +130,6 @@
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/webmozart/assert" />
-      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/doctrine/cache" />
-      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/doctrine/dbal" />
-      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/doctrine/deprecations" />
-      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/doctrine/event-manager" />
-      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
-      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
-      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/psr/cache" />
-      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/symfony/dom-crawler" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/bacon/bacon-qr-code" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/dasprid/enum" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/laravel/fortify" />
@@ -147,6 +138,30 @@
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/paragonie/constant_time_encoding" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/pragmarx/google2fa" />
       <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/livewire/livewire" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/anourvalar/eloquent-serialize" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/blade-ui-kit/blade-heroicons" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/blade-ui-kit/blade-icons" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/danharrin/date-format-converter" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/danharrin/livewire-rate-limiting" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/filament/actions" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/filament/filament" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/filament/forms" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/filament/infolists" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/filament/notifications" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/filament/support" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/filament/tables" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/filament/widgets" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/kirschbaum-development/eloquent-power-joins" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/league/csv" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/league/uri" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/league/uri-interfaces" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/masterminds/html5" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/openspout/openspout" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/ryangjchandler/blade-capture-directive" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/spatie/color" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/spatie/invade" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/spatie/laravel-package-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/Valhalla/vendor/symfony/html-sanitizer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

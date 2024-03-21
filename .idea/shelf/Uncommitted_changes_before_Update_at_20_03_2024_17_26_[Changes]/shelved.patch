@@ -1,0 +1,584 @@
+Index: Valhalla/app/Http/Controllers/Product/TrackingController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\n// Author @BM786 = Basit Ali Mohammad\n\nnamespace App\\Http\\Controllers\\Product;\n\nuse App\\Http\\Controllers\\Controller;\nuse Illuminate\\Http\\Request;\n\nclass TrackingController extends Controller\n{\n\n    public function tracking(Request $request)\n    {\n\n        $trackingId = $request->input('tracking_id');\n\n\n        $trackingInfo = $this->getTrackingInfo($trackingId);\n\n\n        return view('tracking', ['trackingInfo' => $trackingInfo]);\n    }\n\n\n    private function getTrackingInfo($trackingId)\n    {\n\n        return [\n            'tracking_number' => $trackingId,\n            'status' => 'In Transit',\n            'estimated_delivery' => 'February 28, 2024',\n\n        ];\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/app/Http/Controllers/Product/TrackingController.php b/Valhalla/app/Http/Controllers/Product/TrackingController.php
+--- a/Valhalla/app/Http/Controllers/Product/TrackingController.php	(revision 0fe07d34c5843c97908c133b9b8bb3047c8d3e04)
++++ b/Valhalla/app/Http/Controllers/Product/TrackingController.php	(date 1710955375465)
+@@ -4,22 +4,21 @@
+ 
+ namespace App\Http\Controllers\Product;
+ 
+-use App\Http\Controllers\Controller;
++use App\Models\Orders;
++use App\Models\Product;
+ use Illuminate\Http\Request;
++use App\Http\Controllers\Controller;
+ 
+ class TrackingController extends Controller
+ {
+-
+-    public function tracking(Request $request)
++ // Track the order of a product, get its image to ofrom the product table.
++    public function trackOrder($id)
+     {
+-
+-        $trackingId = $request->input('tracking_id');
+-
++        $product = Orders::find($id);
++        $product_image = Product::find($product->product_id);
+ 
+-        $trackingInfo = $this->getTrackingInfo($trackingId);
+-
+-
+-        return view('tracking', ['trackingInfo' => $trackingInfo]);
++    
++        return view('tracking', ['product' => $product, 'product_image' => $product_image]);
+     }
+ 
+ 
+Index: Valhalla/routes/web.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n/*\n\n    Author @BM786 Basit Ali Mohammad == worked on this page.\n        @noramknarf (Francis Moran) - route to product.getInfo() and basket routes.\n     */\n\n\n\n\nuse Illuminate\\Support\\Facades\\Auth;\nuse Illuminate\\Support\\Facades\\Route;\nuse App\\Http\\Controllers\\HomeController;\nuse App\\Http\\Controllers\\BasketController;\nuse App\\Http\\Controllers\\Product\\ReturnController;\nuse App\\Http\\Controllers\\ContactController;\nuse App\\Http\\Controllers\\ProductController;\nuse App\\Http\\Controllers\\ProfileController;\nuse App\\Http\\Controllers\\Basket\\CheckoutController;\nuse App\\Http\\Controllers\\Product\\TrackingController;\nuse App\\Http\\Controllers\\WishListController;\nuse App\\Http\\Controllers\\DashboardController;\nuse App\\Http\\Controllers\\Product\\ReturnRequestSubmitController;\nuse App\\Http\\Middleware\\CheckCartNotEmpty;\n\n/*\n|--------------------------------------------------------------------------\n| Web Routes\n|--------------------------------------------------------------------------\n|\n| Here is where you can register web routes for your application. These\n| routes are loaded by the RouteServiceProvider and all of them will\n| be assigned to the \"web\" middleware group. Make something great!\n|\n*/\n\n\n\n// Route::get('/dashboard', function () {\n//     return view('dashboard');\n// })->middleware(['auth', 'verified'])->name('dashboard');\nRoute::get('/', [HomeController::class, 'index']);\n\nRoute::get('/test', function () {\n    return view('Product_files.product');\n});\n\n//Route::get('/products', [ProductController::class,'index'])->name('products.index');\n//Route::get('/product', [ProductController::class,'getInfo'])->name('product.getInfo');\n////Route::get('/products/update', [ProductController::class,'pageUpdate'])->name('products.update');\n\n//\n/*\nThe second route here sometimes overrides the first one (possibly something causing the buttons to trigger without an input).\nFor now I've made a workaround by having the getInfo function check if it has recieved an input, if not it behaves just like the index function.\nif anybody could let me (Francis) know of a better way to do this, I'd gladly appreciate it.\n*/\n\n//Route::get('/basket', [BasketController::class,'contents'])->name('basket');\n//Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');\n\n//New Basket code\n\n\n\n\nRoute::get('/test1', function () {\n    return view('FrontEnd.cart');\n});\n\n\n    Route::get('/index', [HomeController::class,'index'])->name('index');\n    Route::get('/contactUs',[ContactController::class,'contact'])->name('contactUs');;\n    Route::get('/tracking', [TrackingController::class,'tracking'])->name('tracking');\n\n    // Addded route function to the about page\n    Route::get('/about',[HomeController::class, 'about'])->name('about');\n\n    // @say3dd (Mohammed Miah) - Routing for the different product functionalities\n    // @KraeBM (Bilal Mohamed) - Routing for product functionalities.\n    Route::get('/products', [ProductController::class,'index'])->name('products.index');\n    Route::get('/product/laptops/{id}', [ProductController::class, 'showlaptopInfo'])->name('product.laptopInfo');\n    Route::get('product/other/{id}',[ProductController::class, 'showotherproductInfo'])->name('product.otherInfo');\n//    Route::get('/products', [ProductController::class, 'show'])->name('products.show');\nRoute::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');\n\n//refactored\n    Route::middleware('guest')->group(function () {\n        Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');\n        Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');\n    });\n\n\n    // Any user authentication route can be inside this group function\n\nRoute::middleware(['auth', 'verified'])->group(function () {\n    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');\n    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');\n    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');\n    Route::get('/home', [HomeController::class,'authHome'])->name('home');\n    // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');\n    Route::get('/dashboard', [DashboardController::class, 'orderHistory'])->name('dashboard');\n\n\n\n    //routes for wishlists moved here for user authentication\n    Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');\n    Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');\n    Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);\n    Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');\n\n\n\n    //Route::get('/basket', [ProductController::class,'contents'])->name('basket');\n    Route::get('basket', [ProductController::class,'basket'])->name('basket');\n    Route::post('update-basket', [ProductController::class, 'updateBasket'])->name('update_basket');\n    Route::delete('remove-from-basket', [ProductController::class,'removeFromBasket'])->name('remove_from_basket');\n    Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');\n\n});\n\nRoute::middleware(['auth', 'admin'])->group(function () {\n\n    Route::get('/plist', function () {\n        return view('Admin.ProductList');\n    })->name('plist');\n});\n\nRoute::group(['middleware' => 'cart.notEmpty'], function () {\n   Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');\n   Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');\n    Route::get('/checkout/thankyou', function(){\n        return view('checkout.thankyou');\n    })->name('thank-you');\n});\n\n\n\nRoute::get('/return-request', [ReturnController::class, 'showReturnForm'])->name('return.request');\n\nRoute::post('/submit-return-request', [ReturnRequestSubmitController::class, 'submit'])->name('return.request.submit');\n\nRoute::get('/categories', function () {\n    return view('FrontEnd.categories');\n})->name('categories');\nRoute::get('/search/products', [ProductController::class, 'search']) ->name('categories.search');\nRoute::get('/product/{id}', [ProductController::class, 'show']);\n\n\n\n\n//************************************NO CODE BEYOND THIS LINE**************************\nrequire __DIR__ . '/auth.php';\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/routes/web.php b/Valhalla/routes/web.php
+--- a/Valhalla/routes/web.php	(revision 0fe07d34c5843c97908c133b9b8bb3047c8d3e04)
++++ b/Valhalla/routes/web.php	(date 1710955439681)
+@@ -69,52 +69,54 @@
+ });
+ 
+ 
+-    Route::get('/index', [HomeController::class,'index'])->name('index');
+-    Route::get('/contactUs',[ContactController::class,'contact'])->name('contactUs');;
+-    Route::get('/tracking', [TrackingController::class,'tracking'])->name('tracking');
++Route::get('/index', [HomeController::class, 'index'])->name('index');
++Route::get('/contactUs', [ContactController::class, 'contact'])->name('contactUs');
++;
+ 
+-    // Addded route function to the about page
+-    Route::get('/about',[HomeController::class, 'about'])->name('about');
++// Addded route function to the about page
++Route::get('/about', [HomeController::class, 'about'])->name('about');
+ 
+-    // @say3dd (Mohammed Miah) - Routing for the different product functionalities
+-    // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
+-    Route::get('/products', [ProductController::class,'index'])->name('products.index');
+-    Route::get('/product/laptops/{id}', [ProductController::class, 'showlaptopInfo'])->name('product.laptopInfo');
+-    Route::get('product/other/{id}',[ProductController::class, 'showotherproductInfo'])->name('product.otherInfo');
++// @say3dd (Mohammed Miah) - Routing for the different product functionalities
++// @KraeBM (Bilal Mohamed) - Routing for product functionalities.
++Route::get('/products', [ProductController::class, 'index'])->name('products.index');
++Route::get('/product/laptops/{id}', [ProductController::class, 'showlaptopInfo'])->name('product.laptopInfo');
++Route::get('product/other/{id}', [ProductController::class, 'showotherproductInfo'])->name('product.otherInfo');
+ //    Route::get('/products', [ProductController::class, 'show'])->name('products.show');
+-Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
++Route::post('/product', [ProductController::class, 'getInfo'])->name('product.getInfo');
+ 
+ //refactored
+-    Route::middleware('guest')->group(function () {
+-        Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
+-        Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
+-    });
++Route::middleware('guest')->group(function () {
++    Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
++    Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
++});
+ 
+ 
+-    // Any user authentication route can be inside this group function
++// Any user authentication route can be inside this group function
+ 
+ Route::middleware(['auth', 'verified'])->group(function () {
+     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+-    Route::get('/home', [HomeController::class,'authHome'])->name('home');
++    Route::get('/home', [HomeController::class, 'authHome'])->name('home');
+     // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+     Route::get('/dashboard', [DashboardController::class, 'orderHistory'])->name('dashboard');
++    Route::get('/tracking/{id}', [TrackingController::class, 'trackOrder'])->name('tracking');
++
+ 
+ 
+ 
+     //routes for wishlists moved here for user authentication
+     Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
+-    Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
++    Route::post('/add-to-wishlist', [WishListController::class, 'add'])->name('wishlist.add');
+     Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
+     Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
+ 
+ 
+ 
+     //Route::get('/basket', [ProductController::class,'contents'])->name('basket');
+-    Route::get('basket', [ProductController::class,'basket'])->name('basket');
++    Route::get('basket', [ProductController::class, 'basket'])->name('basket');
+     Route::post('update-basket', [ProductController::class, 'updateBasket'])->name('update_basket');
+-    Route::delete('remove-from-basket', [ProductController::class,'removeFromBasket'])->name('remove_from_basket');
++    Route::delete('remove-from-basket', [ProductController::class, 'removeFromBasket'])->name('remove_from_basket');
+     Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
+ 
+ });
+@@ -127,9 +129,9 @@
+ });
+ 
+ Route::group(['middleware' => 'cart.notEmpty'], function () {
+-   Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
+-   Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+-    Route::get('/checkout/thankyou', function(){
++    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
++    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
++    Route::get('/checkout/thankyou', function () {
+         return view('checkout.thankyou');
+     })->name('thank-you');
+ });
+@@ -143,7 +145,7 @@
+ Route::get('/categories', function () {
+     return view('FrontEnd.categories');
+ })->name('categories');
+-Route::get('/search/products', [ProductController::class, 'search']) ->name('categories.search');
++Route::get('/search/products', [ProductController::class, 'search'])->name('categories.search');
+ Route::get('/product/{id}', [ProductController::class, 'show']);
+ 
+ 
+Index: Valhalla/resources/views/tracking.blade.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{{-- Author @BM786 = Basit Ali Mohammad --}}\n<x-app-layout>\n  <style>\n    @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');\n    body {\n      font-family: 'Open Sans', sans-serif;\n      background-color:#1E1B4B;\n    }\n    .container {\n      margin-top: 50px;\n      margin-bottom: 50px;\n    }\n    .card {\n      @apply relative flex flex-col min-w-0 break-words bg-clip-border border border-solid rounded-sm;\n      display: flex;\n      flex-direction: column;\n      min-width: 0;\n      word-wrap: break-word;\n      border: 1px solid rgba(0, 0, 0, 0.1);\n      border-radius: 0.1rem;\n    }\n    .card-header:first-child {\n      border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0;\n    }\n    .card-header {\n      @apply py-3 px-5 mb-0 border-b border-solid;\n      padding: 0.75rem 1.25rem;\n      margin-bottom: 0;\n      background-color: #1E1B4B;\n      border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n    }\n    .track {\n      @apply relative h-7 flex mb-60 mt-50;\n      position: relative;\n      background-color: #ddd;\n      height: 7px;\n      display: flex;\n      margin-bottom: 60px;\n      margin-top: 50px;\n    }\n    .track .step {\n      @apply flex-grow-1 w-1/4 mt-18 text-center relative;\n      position: relative;\n      width: 25%;\n      margin-top: -18px;\n      text-align: center;\n    }\n    .track .step.active:before {\n      background: #1E1B4B;\n    }\n    .track .step::before {\n      height: 7px;\n      position: absolute;\n      content: \"\";\n      width: 100%;\n      left: 0;\n      top: 18px;\n    }\n    .track .step.active .icon {\n      background: #1E1B4B;\n    }\n    .track .icon {\n      @apply inline-block w-10 h-10;\n      display: inline-block;\n      width: 40px;\n      height: 40px;\n      line-height: 40px;\n      position: relative;\n      border-radius: 100%;\n      background: #ddd;\n    }\n    .track .step.active .text {\n      @apply font-normal;\n      font-weight: 400;\n    }\n    .track .text {\n      @apply block mt-7;\n      display: block;\n      margin-top: 7px;\n    }\n    .itemside {\n      @apply relative flex;\n      position: relative;\n      display: flex;\n      width: 100%;\n    }\n    .itemside .aside {\n      @apply relative flex-shrink-0;\n      position: relative;\n      flex-shrink: 0;\n    }\n    .img-sm {\n      @apply w-20 h-20 p-2;\n      width: 80px;\n      height: 80px;\n      padding: 7px;\n    }\n    ul.row, ul.row-sm {\n      @apply list-none p-0;\n      list-style: none;\n      padding: 0;\n    }\n    .itemside .info {\n      @apply pl-4 pr-2;\n      padding-left: 15px;\n      padding-right: 7px;\n    }\n    .itemside .title {\n      @apply block mb-5 text-white;\n      display: block;\n      margin-bottom: 5px;\n      color: #FFFFFF;\n    }\n    p {\n      @apply mt-0 mb-4;\n      margin-top: 0;\n      margin-bottom: 1rem;\n    }\n    .btn-warning {\n      @apply text-white border rounded;\n      color: #ffffff;\n      background-color: #5B21B6;\n      border-color: #5B21B6;\n      border-radius: 1px;\n    }\n    .btn-warning:hover {\n      @apply text-white rounded;\n      color: #ffffff;\n      background-color: #4713A2;\n      border-color: #ff2b00;\n      border-radius: 1px;\n    }\n\n    .page-wrapper{\n      background-color:#1E1B4B;\n    }\n  </style>\n  \n  <body>\n    <div class=\"page-wrapper overflow-hidden\">\n  <div class=\"container mx-auto p-12 my-5 bg-purple-900 rounded-xl text-white\">\n    <article class=\"card text-white\">\n        <header class=\"card-header pl-2 font-bold text-white\"> My Orders / Tracking </header>\n        <div class=\"card-body mt-6 text-white\">\n            <h6>Order ID: </h6>\n            <article class=\"card mt-2\">\n                <div class=\"card-body flex flex-row\">\n                    <div class=\"flex-1\"> <strong>Estimated Delivery time:</strong> <br>25 Mar 2024 </div>\n                    <div class=\"flex-1\"> <strong>Shipping BY:</strong> <br> Royal Mail </div>\n                    <div class=\"flex-1\"> <strong>Status:</strong> <br> Picked by the courier </div>\n                    <div class=\"flex-1\"> <strong>Tracking Number:</strong> <br> #1234567 </div>\n                </div>\n            </article>\n            <div class=\"track mt-11\">\n                <div class=\"step active\"> <span class=\"icon\"> <i class=\"fas fa-check\"></i> </span> <span class=\"text\">Order confirmed</span> </div>\n                <div class=\"step active\"> <span class=\"icon\"> <i class=\"fas fa-user\"></i> </span> <span class=\"text\"> Picked by courier</span> </div>\n                <div class=\"step\"> <span class=\"icon\"> <i class=\"fas fa-truck\"></i> </span> <span class=\"text\"> On the way </span> </div>\n                <div class=\"step\"> <span class=\"icon\"> <i class=\"fas fa-box\"></i> </span> <span class=\"text\">Delivered</span> </div>\n            </div>\n            <hr>\n            <ul class=\"flex flex-row\">\n                <li class=\"w-1/4\">\n                    <figure class=\"itemside mb-3\">\n                        <div class=\"aside\"><img src=\"IMAGE\" class=\"w-16 h-16 border\"></div>\n                        <figcaption class=\"info align-self-center\">\n                            <p class=\"title\"> PRODUCT NAME <br> RAM</p> <span class=\"text-muted\"> PRICE </span>\n                        </figcaption>\n                    </figure>\n                </li>\n            </ul>\n            <hr>\n            <div class=\"items-center justify-start mt-8\">\n              <a href=\"{{route('dashboard')}}\">\n              <x-primary-button>\n                  {{ __('Back To Orders') }}\n              </x-primary-button>\n          </a>\n          </div>\n        </div>\n    </article>\n  </div>\n    </div>\n  </body>\n</x-app-layout>\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/resources/views/tracking.blade.php b/Valhalla/resources/views/tracking.blade.php
+--- a/Valhalla/resources/views/tracking.blade.php	(revision 0fe07d34c5843c97908c133b9b8bb3047c8d3e04)
++++ b/Valhalla/resources/views/tracking.blade.php	(date 1710955375466)
+@@ -1,185 +1,224 @@
+ {{-- Author @BM786 = Basit Ali Mohammad --}}
+ <x-app-layout>
+-  <style>
+-    @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+-    body {
+-      font-family: 'Open Sans', sans-serif;
+-      background-color:#1E1B4B;
+-    }
+-    .container {
+-      margin-top: 50px;
+-      margin-bottom: 50px;
+-    }
+-    .card {
+-      @apply relative flex flex-col min-w-0 break-words bg-clip-border border border-solid rounded-sm;
+-      display: flex;
+-      flex-direction: column;
+-      min-width: 0;
+-      word-wrap: break-word;
+-      border: 1px solid rgba(0, 0, 0, 0.1);
+-      border-radius: 0.1rem;
+-    }
+-    .card-header:first-child {
+-      border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0;
+-    }
+-    .card-header {
+-      @apply py-3 px-5 mb-0 border-b border-solid;
+-      padding: 0.75rem 1.25rem;
+-      margin-bottom: 0;
+-      background-color: #1E1B4B;
+-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+-    }
+-    .track {
+-      @apply relative h-7 flex mb-60 mt-50;
+-      position: relative;
+-      background-color: #ddd;
+-      height: 7px;
+-      display: flex;
+-      margin-bottom: 60px;
+-      margin-top: 50px;
+-    }
+-    .track .step {
+-      @apply flex-grow-1 w-1/4 mt-18 text-center relative;
+-      position: relative;
+-      width: 25%;
+-      margin-top: -18px;
+-      text-align: center;
+-    }
+-    .track .step.active:before {
+-      background: #1E1B4B;
+-    }
+-    .track .step::before {
+-      height: 7px;
+-      position: absolute;
+-      content: "";
+-      width: 100%;
+-      left: 0;
+-      top: 18px;
+-    }
+-    .track .step.active .icon {
+-      background: #1E1B4B;
+-    }
+-    .track .icon {
+-      @apply inline-block w-10 h-10;
+-      display: inline-block;
+-      width: 40px;
+-      height: 40px;
+-      line-height: 40px;
+-      position: relative;
+-      border-radius: 100%;
+-      background: #ddd;
+-    }
+-    .track .step.active .text {
+-      @apply font-normal;
+-      font-weight: 400;
+-    }
+-    .track .text {
+-      @apply block mt-7;
+-      display: block;
+-      margin-top: 7px;
+-    }
+-    .itemside {
+-      @apply relative flex;
+-      position: relative;
+-      display: flex;
+-      width: 100%;
+-    }
+-    .itemside .aside {
+-      @apply relative flex-shrink-0;
+-      position: relative;
+-      flex-shrink: 0;
+-    }
+-    .img-sm {
+-      @apply w-20 h-20 p-2;
+-      width: 80px;
+-      height: 80px;
+-      padding: 7px;
+-    }
+-    ul.row, ul.row-sm {
+-      @apply list-none p-0;
+-      list-style: none;
+-      padding: 0;
+-    }
+-    .itemside .info {
+-      @apply pl-4 pr-2;
+-      padding-left: 15px;
+-      padding-right: 7px;
+-    }
+-    .itemside .title {
+-      @apply block mb-5 text-white;
+-      display: block;
+-      margin-bottom: 5px;
+-      color: #FFFFFF;
+-    }
+-    p {
+-      @apply mt-0 mb-4;
+-      margin-top: 0;
+-      margin-bottom: 1rem;
+-    }
+-    .btn-warning {
+-      @apply text-white border rounded;
+-      color: #ffffff;
+-      background-color: #5B21B6;
+-      border-color: #5B21B6;
+-      border-radius: 1px;
+-    }
+-    .btn-warning:hover {
+-      @apply text-white rounded;
+-      color: #ffffff;
+-      background-color: #4713A2;
+-      border-color: #ff2b00;
+-      border-radius: 1px;
+-    }
++    <style>
++        @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
++
++        body {
++            font-family: 'Open Sans', sans-serif;
++            background-color: #1E1B4B;
++        }
++
++        .container {
++            margin-top: 50px;
++            margin-bottom: 50px;
++        }
++
++        .card {
++            @apply relative flex flex-col min-w-0 break-words bg-clip-border border border-solid rounded-sm;
++            display: flex;
++            flex-direction: column;
++            min-width: 0;
++            word-wrap: break-word;
++            border: 1px solid rgba(0, 0, 0, 0.1);
++            border-radius: 0.1rem;
++        }
++
++        .card-header:first-child {
++            border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0;
++        }
++
++        .card-header {
++            @apply py-3 px-5 mb-0 border-b border-solid;
++            padding: 0.75rem 1.25rem;
++            margin-bottom: 0;
++            background-color: #1E1B4B;
++            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
++        }
++
++        .track {
++            @apply relative h-7 flex mb-60 mt-50;
++            position: relative;
++            background-color: #ddd;
++            height: 7px;
++            display: flex;
++            margin-bottom: 60px;
++            margin-top: 50px;
++        }
++
++        .track .step {
++            @apply flex-grow-1 w-1/4 mt-18 text-center relative;
++            position: relative;
++            width: 25%;
++            margin-top: -18px;
++            text-align: center;
++        }
++
++        .track .step.active:before {
++            background: #1E1B4B;
++        }
++
++        .track .step::before {
++            height: 7px;
++            position: absolute;
++            content: "";
++            width: 100%;
++            left: 0;
++            top: 18px;
++        }
++
++        .track .step.active .icon {
++            background: #1E1B4B;
++        }
++
++        .track .icon {
++            @apply inline-block w-10 h-10;
++            display: inline-block;
++            width: 40px;
++            height: 40px;
++            line-height: 40px;
++            position: relative;
++            border-radius: 100%;
++            background: #ddd;
++        }
++
++        .track .step.active .text {
++            @apply font-normal;
++            font-weight: 400;
++        }
++
++        .track .text {
++            @apply block mt-7;
++            display: block;
++            margin-top: 7px;
++        }
++
++        .itemside {
++            @apply relative flex;
++            position: relative;
++            display: flex;
++            width: 100%;
++        }
++
++        .itemside .aside {
++            @apply relative flex-shrink-0;
++            position: relative;
++            flex-shrink: 0;
++        }
++
++        .img-sm {
++            @apply w-20 h-20 p-2;
++            width: 80px;
++            height: 80px;
++            padding: 7px;
++        }
++
++        ul.row,
++        ul.row-sm {
++            @apply list-none p-0;
++            list-style: none;
++            padding: 0;
++        }
++
++        .itemside .info {
++            @apply pl-4 pr-2;
++            padding-left: 15px;
++            padding-right: 7px;
++        }
++
++        .itemside .title {
++            @apply block mb-5 text-white;
++            display: block;
++            margin-bottom: 5px;
++            color: #FFFFFF;
++        }
++
++        p {
++            @apply mt-0 mb-4;
++            margin-top: 0;
++            margin-bottom: 1rem;
++        }
++
++        .btn-warning {
++            @apply text-white border rounded;
++            color: #ffffff;
++            background-color: #5B21B6;
++            border-color: #5B21B6;
++            border-radius: 1px;
++        }
++
++        .btn-warning:hover {
++            @apply text-white rounded;
++            color: #ffffff;
++            background-color: #4713A2;
++            border-color: #ff2b00;
++            border-radius: 1px;
++        }
+ 
+-    .page-wrapper{
+-      background-color:#1E1B4B;
+-    }
+-  </style>
+-  
+-  <body>
+-    <div class="page-wrapper overflow-hidden">
+-  <div class="container mx-auto p-12 my-5 bg-purple-900 rounded-xl text-white">
+-    <article class="card text-white">
+-        <header class="card-header pl-2 font-bold text-white"> My Orders / Tracking </header>
+-        <div class="card-body mt-6 text-white">
+-            <h6>Order ID: </h6>
+-            <article class="card mt-2">
+-                <div class="card-body flex flex-row">
+-                    <div class="flex-1"> <strong>Estimated Delivery time:</strong> <br>25 Mar 2024 </div>
+-                    <div class="flex-1"> <strong>Shipping BY:</strong> <br> Royal Mail </div>
+-                    <div class="flex-1"> <strong>Status:</strong> <br> Picked by the courier </div>
+-                    <div class="flex-1"> <strong>Tracking Number:</strong> <br> #1234567 </div>
+-                </div>
+-            </article>
+-            <div class="track mt-11">
+-                <div class="step active"> <span class="icon"> <i class="fas fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+-                <div class="step active"> <span class="icon"> <i class="fas fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
+-                <div class="step"> <span class="icon"> <i class="fas fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+-                <div class="step"> <span class="icon"> <i class="fas fa-box"></i> </span> <span class="text">Delivered</span> </div>
+-            </div>
+-            <hr>
+-            <ul class="flex flex-row">
+-                <li class="w-1/4">
+-                    <figure class="itemside mb-3">
+-                        <div class="aside"><img src="IMAGE" class="w-16 h-16 border"></div>
+-                        <figcaption class="info align-self-center">
+-                            <p class="title"> PRODUCT NAME <br> RAM</p> <span class="text-muted"> PRICE </span>
+-                        </figcaption>
+-                    </figure>
+-                </li>
+-            </ul>
+-            <hr>
+-            <div class="items-center justify-start mt-8">
+-              <a href="{{route('dashboard')}}">
+-              <x-primary-button>
+-                  {{ __('Back To Orders') }}
+-              </x-primary-button>
+-          </a>
+-          </div>
+-        </div>
+-    </article>
+-  </div>
+-    </div>
+-  </body>
++        .page-wrapper {
++            background-color: #1E1B4B;
++        }
++    </style>
++
++    <body>
++        <div class="page-wrapper overflow-hidden">
++            <div class="container mx-auto p-12 my-5 bg-purple-900 rounded-xl text-white">
++                <article class="card text-white">
++                    <header class="card-header pl-2 font-bold text-white"> My Orders / Tracking </header>
++                    <!-- Get the order details of a specific order -->
++                    <div class="card-body mt-6 text-white">
++                        <h6> Order ID: {{ $product->id }}</h6>
++                        <article class="card mt-2">
++                            <div class="card-body flex flex-row">
++                                <div class="flex-1"> <strong>Estimated Delivery time:</strong> <br>
++                                    {{ $product->created_at->addWeeks(2)->format('d M Y') }} </div>
++                                <div class="flex-1"> <strong>Shipping BY:</strong> <br> Royal Mail </div>
++                                <div class="flex-1"> <strong>Status:</strong> <br> {{ $product->status }} </div>
++                                <div class="flex-1"> <strong>Tracking Number:</strong> <br>
++                                    {{ $product->tracking_number }} </div>
++                            </div>
++                        </article>
++                        <div class="track mt-11">
++                            <!-- PHP for the tracking status -->
++                            @php
++                                $steps = ['Order placed', 'Picked up by Courier', 'In Transit', 'Delivered'];
++                                $currentStatusIndex = array_search($product->status, $steps);
++                            @endphp
++
++                            @foreach ($steps as $index => $step)
++                                <div class="step {{ $index <= $currentStatusIndex ? 'active' : '' }}">
++                                    <span class="icon">
++                                        <i
++                                            class="fas fa-{{ $index == 0 ? 'check' : ($index == 1 ? 'user' : ($index == 2 ? 'truck' : 'box')) }}"></i>
++                                    </span>
++                                    <span class="text">{{ $step }}</span>
++                                </div>
++                            @endforeach
++                        </div>
++                        <hr>
++                        <ul class="flex flex-row">
++                            <!-- Display the order -->
++                            <li class="w-1/4">
++                                <figure class="itemside mb-3">
++                                    <div class="aside"><img src="{{ asset($product_image->images) }}"
++                                            class="w-16 h-16 border"></div>
++                                    <figcaption class="info align-self-center">
++                                        <p class="title"> {{ $product->product_name }} <br> <br> <span
++                                                class="text-muted"> £ {{ $product->price }} </span>
++                                    </figcaption>
++                                </figure>
++                            </li>
++                        </ul>
++                        <hr>
++                        <div class="items-center justify-start mt-8">
++                            <a href="{{ route('dashboard') }}">
++                                <x-primary-button>
++                                    {{ __('Back To Orders') }}
++                                </x-primary-button>
++                            </a>
++                        </div>
++                    </div>
++                </article>
++            </div>
++        </div>
++    </body>
+ </x-app-layout>
+-
+Index: Valhalla/resources/views/dashboard.blade.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{{-- Authors @BravoBoy2 @AbuIsNotHer3 = Abubakarsiddik Mohammed\n              @BM786 = Basit Ali Mohammad          --}}\n\n<x-app-layout>\n    <x-slot name=\"header\">\n        <header>\n{{--            Css file linked. Located in public/assets--}}\n            <link rel=\"stylesheet\" href=\"{{asset('assets/css/Dashboard.css')}}\">\n        </header>\n        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n            {{ __('Dashboard') }}\n        </h2>\n    </x-slot>\n\n<class>\n    <div class=\"py-12 bg-indigo-950\">\n        <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n            <div class=\"bg-purple-700 overflow-hidden shadow-sm sm:rounded-lg\">\n                <div class=\"p-6 text-white\">\n                    {{ __(\"You're logged in!\") }}\n                </div>\n            </div>\n             {{-- code for to go home page --}}\n             <div class=\"items-center justify-start mt-8\">\n              <a href=\"{{route('index')}}\">\n              <x-primary-button class=\"border-white\">\n                  {{ __('Home') }}\n              </x-primary-button>\n          </a>\n          </div>\n\n                        <div class=\"padding: 5px, marging: 5px\">\n\n\n                          <?php                                        // Orders\n\n?>\n\n<div class=\"py-3 bg-primary\">\n  <div class=\"container -mt-10\">\n    <h6 class=\"text-white\">\n      <a href=\"#\" class=\"text-white underline font-bold\">My Orders</a>\n    </h6>\n  </div>\n</div>\n\n<div class=\"py-1 -mt-9\">\n  <div class=\"container mx-auto -mt-10\">\n    <div class=\"flex\">\n      <div class=\"w-full\">\n        <table class=\"table-auto w-full border-solid border-gray-800\">\n          <thead>\n            <tr>\n              <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Product</th>\n              <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Order Number</th>\n              <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Tracking Number</th>\n              <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Price</th>\n              <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Order Date</th>\n              <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Actions</th>\n            </tr>\n          </thead>\n          <tbody>\n            @if(isset($order_history)) \n              @foreach ($order_history as $item)  \n            <tr>\n              <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\"> {{$item->product_name}} </td>\n              <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\"> {{$item->id }}</td> \n              <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\"> {{$item->tracking_number}} </td>\n              <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\"> {{$item->price}} </td>\n              <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\"> {{$item->created_at}} </td> \n              <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\"><a href=\"{{route('tracking')}}\">\n                <x-primary-button>\n                    {{ __('Track') }}\n                </x-primary-button>\n            </a>\n          </td>\n            </tr>\n              @endforeach\n              @else \n            <tr>\n              <td colspan=\"5\" class=\"px-4 py-2 bg-white\">No orders yet</td>\n              <td class=\"px-4 py-2 border-gray-800 bg-white flex justify-center\"> \n                @endif \n\n              </td>\n          </tr>\n      </tbody>      \n  </table>\n  <div style=\"display: flex ;justify-content: flex-end;\">\n    <a href=\"{{route('return.request')}}\">\n      <x-primary-button>\n          {{ __('Return') }}\n      </x-primary-button>\n  </a>\n</div>\n  \n</div>\n</div>\n</div>\n</div>\n\n</x-app-layout>\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/resources/views/dashboard.blade.php b/Valhalla/resources/views/dashboard.blade.php
+--- a/Valhalla/resources/views/dashboard.blade.php	(revision 0fe07d34c5843c97908c133b9b8bb3047c8d3e04)
++++ b/Valhalla/resources/views/dashboard.blade.php	(date 1710955375466)
+@@ -68,7 +68,7 @@
+               <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->tracking_number}} </td>
+               <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->price}} </td>
+               <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->created_at}} </td> 
+-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"><a href="{{route('tracking')}}">
++              <td class="px-4 py-2 border-gray-800 border bg-gray-200"><a href="{{ route('tracking', ['id' => $item->id]) }}">
+                 <x-primary-button>
+                     {{ __('Track') }}
+                 </x-primary-button>

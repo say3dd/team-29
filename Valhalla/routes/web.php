@@ -69,52 +69,59 @@ Route::get('/test1', function () {
 });
 
 
-    Route::get('/index', [HomeController::class,'index'])->name('index');
-    Route::get('/contactUs',[ContactController::class,'contact'])->name('contactUs');;
-    Route::get('/tracking', [TrackingController::class,'tracking'])->name('tracking');
+Route::get('/index', [HomeController::class, 'index'])->name('index');
+Route::get('/contactUs', [ContactController::class, 'contact'])->name('contactUs');
+;
 
-    // Addded route function to the about page
-    Route::get('/about',[HomeController::class, 'about'])->name('about');
+// Addded route function to the about page
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 
-    // @say3dd (Mohammed Miah) - Routing for the different product functionalities
-    // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
-    Route::get('/products', [ProductController::class,'index'])->name('products.index');
-    Route::get('/product/laptops/{id}', [ProductController::class, 'showlaptopInfo'])->name('product.laptopInfo');
-    Route::get('product/other/{id}',[ProductController::class, 'showotherproductInfo'])->name('product.otherInfo');
+// @say3dd (Mohammed Miah) - Routing for the different product functionalities
+// @KraeBM (Bilal Mohamed) - Routing for product functionalities.
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/product/laptops/{id}', [ProductController::class, 'showlaptopInfo'])->name('product.laptopInfo');
+Route::get('product/other/{id}', [ProductController::class, 'showotherproductInfo'])->name('product.otherInfo');
 //    Route::get('/products', [ProductController::class, 'show'])->name('products.show');
-Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
+Route::post('/product', [ProductController::class, 'getInfo'])->name('product.getInfo');
 
 //refactored
-    Route::middleware('guest')->group(function () {
-        Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
-        Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
-    });
+Route::middleware('guest')->group(function () {
+    Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
+    Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
+});
 
 
-    // Any user authentication route can be inside this group function
+// Any user authentication route can be inside this group function
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/home', [HomeController::class,'authHome'])->name('home');
+    Route::get('/home', [HomeController::class, 'authHome'])->name('home');
     // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard', [DashboardController::class, 'orderHistory'])->name('dashboard');
+    Route::get('/tracking/{id}', [TrackingController::class, 'trackOrder'])->name('tracking');
+
 
 
 
     //routes for wishlists moved here for user authentication
     Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
-    Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
+    Route::post('/add-to-wishlist', [WishListController::class, 'add'])->name('wishlist.add');
     Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
     Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
 
 
 
     //Route::get('/basket', [ProductController::class,'contents'])->name('basket');
-    Route::get('basket', [ProductController::class,'basket'])->name('basket');
-    Route::patch('update-basket', [ProductController::class, 'updateBasket'])->name('update_basket');
-    Route::delete('remove-from-basket', [ProductController::class,'removeFromBasket'])->name('remove_from_basket');
+    Route::get('basket', [ProductController::class, 'basket'])->name('basket');
+    Route::put('/basket/{id}', [ProductController::class, 'updateBasket'])->name('update_basket');
+//    Route::delete('remove-from-basket', [ProductController::class, 'removeFromBasket'])->name('remove_from_basket');
+    // routes/web.php
+
+// ... (previous routes)
+
+    Route::delete('/basket/{id}', [ProductController::class, 'removeBasket'])->name('basket.remove');
     Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
 
 });
@@ -127,9 +134,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {
-   Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
-   Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
-    Route::get('/checkout/thankyou', function(){
+    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
+    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+    Route::get('/checkout/thankyou', function () {
         return view('checkout.thankyou');
     })->name('thank-you');
 });
@@ -143,7 +150,7 @@ Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'su
 Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
-Route::get('/search/products', [ProductController::class, 'search']) ->name('categories.search');
+Route::get('/search/products', [ProductController::class, 'search'])->name('categories.search');
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
 

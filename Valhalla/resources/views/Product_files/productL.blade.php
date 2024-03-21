@@ -33,6 +33,19 @@
     </section>
 
 </header>
+@includeWhen($errors->any(), '_errors')
+@if(session('success'))
+    <div id="flash-success" class="bg-[#79c753] text-bold text-[1.1rem] ">
+        {{session('success')}}
+        {{--                <p class=" text-amber-200">Hello, a message</p>--}}
+    </div>
+@endif
+@if(session('error'))
+    <div id="flash-error" class="p-5 bg-red-700 text-bold text-[1.1rem]">
+        {{session('error')}}
+        <!--I have no idea if this is alright, I was just copying from the success popup-->
+    </div>
+@endif
 <body>
 
     <div class="title_shape">
@@ -72,14 +85,6 @@
         {{ $categoryText }}
         </p>
     </div>
-
-
-    @if(session('success'))
-        <div id="flash-success" class="p-5 ml-2 bg-[#79c753] mx-44 my-5 rounded-[5px] w-1/2 ">
-            {{session('success')}}
-            {{--                <p class=" text-amber-200">Hello, a message</p>--}}
-        </div>
-    @endif
 
     <!-- This is the code for the layout of product container - where all the product will be shown -->
     <div class="background_shape6">
@@ -269,6 +274,15 @@
         }
         @endif
     });
+
+    const dropdown = document.getElementById("cartDropdown");
+    const basketButton = document.getElementById("basket-button");
+
+    basketButton.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent event from propagating to other elements
+        dropdown.classList.toggle("dropdown--active"); // Correctly toggle the active class to show/hide the dropdown
+    });
+
 </script>
 </body>
 <footer>
@@ -276,4 +290,4 @@
     @include ('footer')
 </footer>
 @yield('scripts')
-<script src="{{ asset('assets/JavaScript/frontendJs.js') }}"></script>
+

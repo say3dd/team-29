@@ -55,7 +55,7 @@
                     <i class="bx bx-shopping-bag align-middle inline-flex justify-between" aria-hidden="true"></i>
                     <div class="text-[0.6em] mt-1 ml-1 align-middle text-center inline-flex justify-between"> Basket </div>
                     <span class="badge badge-pill badge-danger text-[0.7em] ml-2 bg-red-700 rounded-full w-8 h-8 align-middle justify-center">
-                        <h6> {{ count( Auth::user()->basketItems()->get())?? 0 }} </h6> {{-- Keep tracks of number items added to the basket (not quantity)--}}
+                        <h6> {{ Auth::check() ? count(Auth::user()->basketItems()->get()) ?? 0 : 0 }} </h6> {{-- Keep tracks of number items added to the basket (not quantity)--}}
 
                 </span>
                     </div>
@@ -85,15 +85,22 @@
 
                     @if (Auth::check() && count($basketItems) > 0)  {{-- Check for user and items --}}
                     @foreach ($basketItems as $item)
-                        <div class="row cart-detail flex flex-row pb-2 mb-1">
+                        <div class="row flex flex-row pb-2 mb-1">
 
-                            <div class=" cart-detail-img">
-                                <img class="mt-1.5 p-1 mr-2.5 h-auto w-[2em] rounded-md" src=" {{ $item->product_images }}" alt="Product Image" />
+                            <div class="cart-detail-img">
+                                <img class="mt-1.5 p-1 mr-2.5 h-auto w-[2em] img-thumbnail rounded-md" src=" {{ $item->product_images }}" alt="Product Image" />
                             </div>
-                            <div class=" cart-detail-product flex flex-col">
-                                <p class="text-[0.6em]">{{ $item->product_name }}</p>
+                            <div class="flex flex-col">
+                                <p class="text-[1rem]">{{ $item->product_name }}</p>
                                 <span class="text-[0.5em] price text-info text-amber-500 inline-flex"> £ {{ $item->price }}</span>
                                 <span class="text-[0.5em] count inline-flex"> Quantity: {{ $item->quantity }} </span>
+                            </div>
+                            <div class="inline-flex m-2">
+                                <form action="{{ route('basket.remove', $item->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="basket_remove  bg-red-700 inline-block rounded-md"> <i class='bx bx-trash-alt icon-text-width' ></i> </button>
+                                </form>
                             </div>
                         </div>
                     @endforeach

@@ -356,14 +356,6 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/dragonmantank/cron-expression" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/symfony/dom-crawler" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/psr/cache" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/cache" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/dbal" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/deprecations" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/dasprid/enum" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/pragmarx/google2fa" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/paragonie/constant_time_encoding" />
@@ -372,6 +364,38 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/laravel/fortify" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/laravel/jetstream" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/kirschbaum-development/eloquent-power-joins" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/league/csv" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/ryangjchandler/blade-capture-directive" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/filament/actions" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/filament/filament" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/filament/forms" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/filament/infolists" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/filament/notifications" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/filament/support" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/filament/tables" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/filament/widgets" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/symfony/html-sanitizer" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/spatie/invade" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/spatie/color" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/spatie/laravel-package-tools" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/openspout/openspout" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/anourvalar/eloquent-serialize" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/blade-ui-kit/blade-heroicons" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/blade-ui-kit/blade-icons" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/danharrin/date-format-converter" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/danharrin/livewire-rate-limiting" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2">
