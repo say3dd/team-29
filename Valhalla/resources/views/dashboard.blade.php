@@ -66,8 +66,8 @@
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->product_name}} </td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->id }}</td> 
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->tracking_number}} </td>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->price}} </td>
-              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->created_at}} </td> 
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> £ {{$item->price}} </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{ $item->created_at->format('jS F Y') }} </td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"><a href="{{ route('tracking', ['id' => $item->id]) }}">
                 <x-primary-button>
                     {{ __('Track') }}

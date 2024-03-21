@@ -8,20 +8,24 @@
 
     <form method="POST" action="{{ route('return.request.submit') }}" class="max-w-md mx-auto bg-violet-700 rounded shadow p-4">
         @csrf
+<!-- Order Number -->
+<div class="mb-4">
+    <x-input-label for="orderNumber" :value="__('Order Number')" class="text-white" />
+    <select id="orderNumber" class="block mt-1 w-full" name="orderNumber" required autofocus>
+        <option value="">-- Select Order --</option>
+        @foreach($orders as $order)
+        <option value="{{ $order->id }}" data-product-name="{{ $order->product_name }}">{{ $order->id }} - {{ $order->product_name }}</option>
+        @endforeach
+    </select>
+    <x-input-error :messages="$errors->get('orderNumber')" class="mt-2" />
+</div>
 
-        <!-- Order Number -->
-        <div class="mb-4">
-            <x-input-label for="orderNumber" :value="__('Order Number')" class="text-white" />
-            <x-text-input id="orderNumber" class="block mt-1 w-full" type="text" name="orderNumber" :value="old('orderNumber')" required autofocus />
-            <x-input-error :messages="$errors->get('orderNumber')" class="mt-2" />
-        </div>
-
-        <!-- Item Name -->
-        <div class="mb-4">
-            <x-input-label for="productName" :value="__('Product Name')" class="text-white" />
-            <x-text-input id="productName" class="block mt-1 w-full" type="text" name="productName" :value="old('productName')" required />
-            <x-input-error :messages="$errors->get('productName')" class="mt-2" />
-        </div>
+<!-- Item Name -->
+<div class="mb-4">
+    <x-input-label for="productName" :value="__('Product Name')" class="text-white" />
+    <x-text-input id="productName" class="block mt-1 w-full" type="text" name="productName" :value="old('productName')" required readonly />
+    <x-input-error :messages="$errors->get('productName')" class="mt-2" />
+</div>
 
         <!-- Reason for Return -->
         <div class="mb-4">
@@ -71,6 +75,13 @@
         function goBack() {
             window.history.back();
         }
+    </script>
+    <script>
+        document.getElementById('orderNumber').addEventListener('change', function() {
+            var selectedOption = this.options[this.selectedIndex];
+            var productName = selectedOption.getAttribute('data-product-name');
+            document.getElementById('productName').value = productName;
+        });
     </script>
 </x-guest-layout>
 
