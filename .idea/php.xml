@@ -362,8 +362,6 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/dbal" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/doctrine/deprecations" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/dasprid/enum" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/pragmarx/google2fa" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/paragonie/constant_time_encoding" />
@@ -372,6 +370,8 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/laravel/fortify" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/laravel/jetstream" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2">
