@@ -535,7 +535,11 @@ blockquote {
 }
 
 
-
+.add-wishlist:hover {
+    background-color: #bc00f5 !important;
+    color: #ffffff; /* Change text color on hover */
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4) !important; /* Add a slight shadow on hover */
+}
 
 .buy-product:hover {
     background-color: #bc00f5 !important;
