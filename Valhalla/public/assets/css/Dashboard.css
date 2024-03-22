@@ -1,12 +1,16 @@
  /* Author Basit Ali Mohammad = @BM786 */
- 
+
  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
         body {
             font-family: 'Open Sans', sans-serif;
         }
+
+ .bg-indigo-950{
+     height: 100%;
+ }
+
         .container {
           margin-top: 50px;
-          margin-bottom: 50px;
         }
         .card {
           @apply relative flex flex-col min-w-0 break-words bg-purple-900 bg-clip-border border border-solid border-gray-300 rounded-sm;

@@ -46,21 +46,21 @@ class WishListController extends Controller
     public function saveOrder(Request $request)
     {
         $order = json_decode($request->input('order'));
-    
+
         foreach ($order as $position => $productId) {
             // Remove the 'product_' from the product ID
             $productId = str_replace('product_', '', $productId);
-    
+
             $wishlistItem = DB::table('wishlists')->where('product_id', $productId)->first();
-    
+
             if (!$wishlistItem) {
                 return response()->json(['status' => 'error', 'message' => 'Wishlist item not found for product ID: ' . $productId]);
             }
-    
+
             $position += 1;
             DB::table('wishlists')->where('product_id', $productId)->update(['position' => $position]);
         }
-    
+
         return response()->json(['status' => 'success']);
     }
 
@@ -79,7 +79,7 @@ class WishListController extends Controller
                 return back()->with('success', 'Item removed from wishlist.');
             }
             return back()->with('error', 'Item not found in wishlist.');
-        } catch (Exception $e) {    
+        } catch (Exception $e) {
             // Redirect back with an error message
             return back()->with('error', 'Failed to remove item from wishlist.');
         }
