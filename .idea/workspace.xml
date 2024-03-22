@@ -4,44 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Filament Implementation">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_03_2024_17_46_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_03_2024_17_46__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/app/Providers/Filament/AdminPanelProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/css/filament/filament/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/css/filament/forms/forms.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/css/filament/support/support.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/filament/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/filament/echo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/forms/components/color-picker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/forms/components/date-time-picker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/forms/components/file-upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/forms/components/key-value.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/forms/components/markdown-editor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/forms/components/rich-editor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/forms/components/select.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/forms/components/tags-input.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/forms/components/textarea.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/notifications/notifications.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/support/async-alpine.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/support/support.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/tables/components/table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/widgets/components/chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/js/filament/widgets/components/stats-overview/stat/chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_03_2024_02_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_03_2024_02_57__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_03_2024_18_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_03_2024_18_49__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_02_2024_15_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_02_2024_15_15__Changes_.xml" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="contents on rate section positioned properly">
+      <changelist_data name="BM786" email="220065665@aston.ac.uk" date="1710815144000" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_03_2024_14_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_03_2024_14_37__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_03_2024_06_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_03_2024_06_03__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_03_2024_17_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_03_2024_17_46__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_03_2024_17_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_03_2024_17_22__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_03_2024_17_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_03_2024_17_26__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/team-29.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team-29.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Livewire/ProductRatings.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Livewire/ProductRatings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/livewire/product-ratings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/livewire/product-ratings.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +42,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Valhalla-working-branch-backup" />
+        <entry key="$PROJECT_DIR$" value="4f7bd728b8a50616ed233ac731a1a85ee2ec8004" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -529,6 +503,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.127.0.0.1:8000" />
+        <item itemvalue="JavaScript Debug.127.0.0.1:8000" />
       </list>
     </recent_temporary>
   </component>
@@ -846,7 +821,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="somewhat basket visible" />
     <MESSAGE value="basket button syling fixed 1.0" />
     <MESSAGE value="basket button styling fixed 1.0" />
     <MESSAGE value="Basket patch" />
@@ -871,7 +845,8 @@
     <MESSAGE value="some styling change on the basket.blade.php and basket button" />
     <MESSAGE value="UserController" />
     <MESSAGE value="Filament Implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filament Implementation" />
+    <MESSAGE value="contents on rate section positioned properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="contents on rate section positioned properly" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
