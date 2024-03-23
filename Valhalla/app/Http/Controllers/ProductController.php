@@ -241,27 +241,6 @@ public function getRelatedProducts($currentProductId,$category)
         }
     }
 
-//    public function addToBasket($id)
-//    {
-//        $product = Product::findOrFail($id);
-//
-//        $basket = session()->get('basket', []);
-//
-//        if (isset($basket[$id])) {
-//            $basket[$id]['quantity']++;
-//
-//        } else {
-//            $basket[$id] = [
-//                "product_name" => $product->product_name,
-//                "images" => $product->images,
-//                "price" => $product->price,
-//                "quantity" => 1
-//            ];
-//        }
-//
-//        session()->put('basket', $basket);
-//        return redirect()->back()->with('success', 'Item has been added to basket');
-//    }
 
 
     public function addToBasket($id)
@@ -291,43 +270,7 @@ public function getRelatedProducts($currentProductId,$category)
     }
 
 
-//    public function updateBasket(Request $request)
-//    {
-//        if ($request->id && $request->quantity) {
-//            $basket = session()->get('basket');
-//            $basket[$request->id]["quantity"] = $request->quantity;
-//            session()->put('basket', $basket);
-//            session()->flash('success', 'Basket has been updated!');
-//
-//        }
-//
-//    }
 
-//    public function updateBasket(Request $request)
-//    {
-//        if ($request->id && $request->quantity) {
-//            // Retrieve the basket item from the database
-//            $basketItem = BasketItem::where('user_id', Auth::id())
-//                ->where('product_id', $request->id)
-//                ->first();
-//
-//            if ($basketItem) {
-//                // Update the quantity of the existing basket item
-//                $basketItem->quantity = $request->quantity;
-//                $basketItem->updateOrFail();
-//
-//                session()->flash('success', 'Basket has been updated!');
-//            } else {
-//                // Handle the case where the basket item doesn't exist in the database
-//                session()->flash('error', 'Product not found in your basket.');
-//            }
-//        } else {
-//            // Handle invalid request data (missing ID or quantity)
-//            session()->flash('error', 'Invalid request data.');
-//        }
-//
-//        return redirect()->back();
-//    }
 
 
     public function updateBasket(Request $request, $id)

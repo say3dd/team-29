@@ -68,7 +68,7 @@
                 <div class="dropdown-menu mt-6 p-3 rounded-md" id="cartDropdown">
                     <div class="row total-header-section">
 
-                        @php $total = 0; @endphp
+                        @php $total = 0.00; @endphp
                         @if (Auth::check())  {{-- Check if user is authenticated --}}
                         @php $basketItems = Auth::user()->basketItems()->with('product')->get();
                         @endphp
