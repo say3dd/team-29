@@ -1,4 +1,6 @@
 {{-- Author @BM786 = Basit Ali Mohammad --}}
+{{-- @say3dd (Mohammed Miah ) - Did logic for this page, connected to the Orders table --}}
+
 <x-app-layout>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
@@ -202,8 +204,8 @@
                                     <div class="aside"><img src="{{ asset($product_image->images) }}"
                                             class="w-16 h-16 border"></div>
                                     <figcaption class="info align-self-center">
-                                        <p class="title"> {{ $product->product_name }} <br> <br> <span
-                                                class="text-muted"> £ {{ $product->price }} </span>
+                                        <p class="title"> {{ $product->product_name }}  x {{ $product->quantity }}<br> <br> <span
+                                                class="text-muted"> £ {{ $product->price  * $product->quantity}} </span>
                                     </figcaption>
                                 </figure>
                             </li>

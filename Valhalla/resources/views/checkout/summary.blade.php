@@ -32,9 +32,8 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
             <div class="xl:w-3/5 flex flex-col sm:flex-row xl:flex-col justify-center items-center bg-gray-100 dark:bg-gray-800 py-7 sm:py-0 xl:py-10 px-10{{--xl:w-full--}}">
                 @foreach($userBasket as $details)
                 <div class="flex flex-col justify-start items-start w-full space-y-4">
-                    <p class="text-xl md:text-2xl leading-normal text-gray-800 dark:text-gray-50">{{$details['product_name']}}</p>
-                    <p class="text-base font-semibold leading-none text-gray-600 dark:text-white">£{{$details['price']}}</p>
-                </div>
+                    <p class="text-xl md:text-2xl leading-normal text-gray-800 dark:text-gray-50">{{$details['product_name']}} x {{ $details['quantity'] }}</p>
+                    <p class="text-base font-semibold leading-none text-gray-600 dark:text-white">£{{ $details['price'] * $details['quantity'] }}</p>                </div>
                 <div class="mt-6 sm:mt-0 xl:my-10 xl:px-20 w-52 sm:w-96 xl:w-auto">
                 <img src="{{ asset($details['product_images']) }}" alt="item-image" width="300" height="300" class="img-responsive rounded-md mr-2"/>
                 </div>

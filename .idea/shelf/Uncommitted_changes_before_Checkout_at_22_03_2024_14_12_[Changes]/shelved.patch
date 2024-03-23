@@ -1,0 +1,51 @@
+Index: .idea/phpunit.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"PHPUnit\">\r\n    <option name=\"directories\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/anthony-testApp/tests/Unit\" />\r\n        <option value=\"$PROJECT_DIR$/anthony-testApp/tests/Feature\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/phpunit.xml b/.idea/phpunit.xml
+--- a/.idea/phpunit.xml	(revision 0fbfba76440612817e68d81f6a9c5068687878ec)
++++ b/.idea/phpunit.xml	(date 1711116350445)
+@@ -5,6 +5,8 @@
+       <list>
+         <option value="$PROJECT_DIR$/anthony-testApp/tests/Unit" />
+         <option value="$PROJECT_DIR$/anthony-testApp/tests/Feature" />
++        <option value="$PROJECT_DIR$/Valhalla/tests/Unit" />
++        <option value="$PROJECT_DIR$/Valhalla/tests/Feature" />
+       </list>
+     </option>
+   </component>
+Index: .idea/team-29.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"WEB_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/anthony-testApp/app\" isTestSource=\"false\" packagePrefix=\"App\\\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/anthony-testApp/database/factories\" isTestSource=\"false\" packagePrefix=\"Database\\Factories\\\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/anthony-testApp/database/seeders\" isTestSource=\"false\" packagePrefix=\"Database\\Seeders\\\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/anthony-testApp/spec\" isTestSource=\"true\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/anthony-testApp/tests\" isTestSource=\"true\" packagePrefix=\"Tests\\\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/anthony-testApp/tests/Feature\" isTestSource=\"true\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/anthony-testApp/tests/Unit\" isTestSource=\"true\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/spec\" isTestSource=\"true\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/tests\" isTestSource=\"true\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/team-29.iml b/.idea/team-29.iml
+--- a/.idea/team-29.iml	(revision 0fbfba76440612817e68d81f6a9c5068687878ec)
++++ b/.idea/team-29.iml	(date 1711116350434)
+@@ -2,15 +2,14 @@
+ <module type="WEB_MODULE" version="4">
+   <component name="NewModuleRootManager">
+     <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/app" isTestSource="false" packagePrefix="App\" />
+-      <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
+-      <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+-      <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/spec" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/tests" isTestSource="true" packagePrefix="Tests\" />
+       <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/tests/Feature" isTestSource="true" />
+       <sourceFolder url="file://$MODULE_DIR$/anthony-testApp/tests/Unit" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/Valhalla/app" isTestSource="false" packagePrefix="App\" />
++      <sourceFolder url="file://$MODULE_DIR$/Valhalla/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
++      <sourceFolder url="file://$MODULE_DIR$/Valhalla/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
++      <sourceFolder url="file://$MODULE_DIR$/Valhalla/tests" isTestSource="true" packagePrefix="Tests\" />
++      <sourceFolder url="file://$MODULE_DIR$/Valhalla/tests/Feature" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/Valhalla/tests/Unit" isTestSource="true" />
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />

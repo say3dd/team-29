@@ -39,7 +39,7 @@ use App\Http\Middleware\CheckCartNotEmpty;
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/', [HomeController::class, 'index']);
+
 
 Route::get('/test', function () {
     return view('Product_files.product');
@@ -67,14 +67,14 @@ if anybody could let me (Francis) know of a better way to do this, I'd gladly ap
 Route::get('/test1', function () {
     return view('FrontEnd.cart');
 });
-
-
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/index', [HomeController::class, 'index'])->name('index');
 Route::get('/contactUs', [ContactController::class, 'contact'])->name('contactUs');
-;
 
 // Addded route function to the about page
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+
+
 
 // @say3dd (Mohammed Miah) - Routing for the different product functionalities
 // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
@@ -86,6 +86,8 @@ Route::post('/product', [ProductController::class, 'getInfo'])->name('product.ge
 
 //refactored
 Route::middleware('guest')->group(function () {
+    //Home route for guest user
+    //Contact route
     Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
     Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
 });
@@ -113,7 +115,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 
-    //Route::get('/basket', [ProductController::class,'contents'])->name('basket');
+//    Route::get('/basket', [ProductController::class,'contents'])->name('basket');
     Route::get('basket', [ProductController::class, 'basket'])->name('basket');
     Route::put('/basket/{id}', [ProductController::class, 'updateBasket'])->name('update_basket');
 //    Route::delete('remove-from-basket', [ProductController::class, 'removeFromBasket'])->name('remove_from_basket');
@@ -131,6 +133,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/plist', function () {
         return view('Admin.ProductList');
     })->name('plist');
+
 });
 
 Route::group(['middleware' => 'cart.notEmpty'], function () {

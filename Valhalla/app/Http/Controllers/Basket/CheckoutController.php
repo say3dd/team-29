@@ -44,7 +44,7 @@ class CheckoutController extends Controller
                 'product_name' => $item->product_name,
                 'status' => 'order placed',
                 'quantity' => $item->quantity,
-                'price' => $item->price,
+                'price' => $item->price * $item->quantity,  
                 'tracking_number' => (string) Str::random(10)
             ]);
     

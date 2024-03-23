@@ -1,6 +1,7 @@
 <?php
 
 // Author @BM786 = Basit Ali Mohammad
+// @say3dd = Mohammed Miah - Did this logic for the return request form
 
 namespace App\Http\Controllers\Product;
 
