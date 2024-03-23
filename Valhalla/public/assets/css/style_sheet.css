@@ -207,13 +207,14 @@ h4 {
     color: white;
 }
 
-/* Filtering Feature */
+/* Filtering Feature Properties */
 ul {
     list-style: none;
 }
 
 label {
     cursor: pointer;
+    font-size: 0.9rem;
 }
 
 ul,
@@ -255,6 +256,7 @@ li {
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
 }
+
 .scroller::-webkit-scrollbar {
     width: 10px;
 }
@@ -265,7 +267,6 @@ li {
     height: 400px;
 }
 
-/* Handle */
 .scroller::-webkit-scrollbar-thumb {
     background: #7404ca;
     border-radius: 13px;
@@ -284,11 +285,7 @@ input[type="checkbox"] {
     display: none;
 }
 
-label {
-    font-size: 0.9rem;
-}
-
-/* Container for sorting */
+/* Sorting Feature Properties*/
 
 .sort {
     position: absolute;
@@ -545,38 +542,47 @@ footer {
 /*Properties for Responsive website (size: 1440px) */
 
 @media (max-width: 1490px) {
+    .nav-header {
+        padding: 1.3rem 5%;
+    }
+
     .button_sort {
         left: 83.5%;
     }
 
-    .nav-header {
-        padding: 1.3rem 5%;
+    /* Aligning containers for filtering and sorting */
+    .filters {
+        width: 270px;
+        left: 71%;
+        top: 62%;
     }
+
+    .sort {
+        left: 69%;
+        top: 63%;
+    }
+
+    /* Buttons for reseting and applying filters or sorting */
+
+    .button_apply {
+        font-size: 0.85rem;
+    }
+
+    .button_reset {
+        font-size: 0.85rem;
+        margin-left: 24px;
+    }
+
+    .sort .button_apply {
+        margin-left: 20px;
+    }
+
     .footer-links {
         display: flex;
         justify-content: space-around;
         width: 100%;
         margin-top: 20px;
         gap: 0rem;
-    }
-
-    .filters {
-        width: 270px;
-    }
-}
-
-@media (max-width: 1440px) {
-    .filters {
-        left: 68%;
-        top: 72%;
-    }
-
-    .button_apply {
-        font-size: 1em;
-    }
-
-    .button_reset {
-        font-size: 1em;
     }
 }
 
@@ -584,6 +590,19 @@ footer {
     .nav-header {
         padding: 1.3rem 5%;
     }
+
+    .filters {
+        left: 67.5%;
+        top: 66%;
+        width: 300px;
+    }
+
+    .sort {
+        left: 67.5%;
+        top: 65.5%;
+        width: 300px;
+    }
+
     .footer-links {
         display: flex;
         justify-content: space-around;
@@ -591,30 +610,25 @@ footer {
         margin-top: 20px;
         gap: 0rem;
     }
-
-    .button_apply {
-        font-size: 0.95em;
-    }
-
-    .button_reset {
-        font-size: 0.95em;
-    }
-
-    .filters {
-        width: 245px;
-        left: 69%;
-        top: 75%;
-    }
 }
 
 @media (max-width: 1180px) {
     .filters {
         left: 66%;
+        top: 72%;
+        width: 270px;
+    }
+
+    .sort {
+        left: 63.5%;
+        top: 72%;
     }
 }
+
 /*Properties for Responsive website (size: 1024px) */
 
 @media (max-width: 1024px) {
+    /* Properties for the menu-bar */
     .menu-icon {
         display: inline-flex;
     }
@@ -672,6 +686,17 @@ footer {
     .nav-header {
         padding: 1.3rem 5%;
     }
+
+    .nav-header {
+        padding: 0.9rem;
+    }
+
+    .background_shape6 {
+        margin-top: 4%;
+    }
+
+    /* Properties for the image and text on top of the webapge */
+
     .title_shape {
         width: 80%;
         height: 320px;
@@ -682,9 +707,7 @@ footer {
         height: 320px;
     }
 
-    .background_shape6 {
-        margin-top: 4%;
-    }
+    /* Properties for accessing filtering and sorting features */
 
     .button_sort {
         left: 81.5%;
@@ -698,11 +721,24 @@ footer {
         height: 35px;
     }
 
+    /* Properties of filtering and sorting features */
+
     .filters {
-        width: 220px;
-        left: 65%;
-        top: 66%;
+        left: 59.5%;
+        top: 66.5%;
+        width: 300px;
     }
+
+    .sort {
+        left: 60%;
+        top: 67%;
+    }
+
+    .title_sort {
+        font-size: 1.1rem;
+    }
+
+    /* Buttons for reseting and applying filters or sorting */
 
     .button_apply {
         font-size: 0.9em;
@@ -713,6 +749,8 @@ footer {
         font-size: 0.9em;
         margin-left: 23px;
     }
+
+    /* Properties for showcasing products */
 
     .image_all_laptop {
         width: 150px;
@@ -726,13 +764,10 @@ footer {
     .laptop_all {
         width: 22%; /* Adjust width to fit the container */
     }
-
-    .nav-header {
-        padding: 0.9rem;
-    }
 }
 
 @media (max-width: 974px) {
+    /* Properties for the image and the text on top of the webpapge */
     .laptop_title1 {
         font-size: 1.6em;
     }
@@ -749,12 +784,14 @@ footer {
         font-size: 1.3em;
     }
 
+    /* Properties of the buttons for filtering and sorting */
+
     .path {
         font-size: 0.8rem;
     }
 
     .button_sort {
-        left: 79.5%;
+        left: 80%;
         width: 35px;
         height: 35px;
     }
@@ -775,11 +812,39 @@ footer {
         height: 20px;
     }
 
+    /* Properties of filtering and sorting features */
+
     .filters {
-        width: 220px;
-        left: 63.5%;
-        top: 58%;
+        left: 60.5%;
+        top: 58.5%;
+        width: 280px;
     }
+
+    .sort {
+        left: 61%;
+        top: 58%;
+        width: 270px;
+    }
+
+    .title_sort {
+        font-size: 1.1rem;
+    }
+
+    /* Aligning buttons for reseting and applying filters or sorting */
+
+    .button_apply {
+        font-size: 0.8rem;
+    }
+
+    .sort .button_apply {
+        margin-left: 10px;
+    }
+
+    .button_reset {
+        font-size: 0.8rem;
+    }
+
+    /* Properties for showcasing products */
 
     .image_all_laptop {
         width: 135px;
@@ -801,6 +866,19 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Properties for the image and text on top of the webpapge */
+    .laptop_title1 {
+        font-size: 1.4rem;
+        margin-top: 1%;
+    }
+
+    .title_content {
+        font-size: 1rem;
+        margin-top: 3%;
+    }
+
+    /* Properties of the buttons that are used to access the filetering and sorting features */
+
     .container_for_path_buttons {
         padding-top: 1%;
     }
@@ -815,11 +893,6 @@ footer {
         width: 28px;
     }
 
-    .image_all_laptop {
-        width: 115px;
-        height: 105px;
-    }
-
     .image_sort {
         width: 14px;
         height: 18px;
@@ -830,13 +903,74 @@ footer {
         height: 18px;
     }
 
+    /* Properties for showcasing products */
+
+    .image_all_laptop {
+        width: 115px;
+        height: 105px;
+    }
+
+    .laptop_all {
+        width: 42%; /* Adjust width to fit the container */
+        font-size: 1rem;
+    }
+
+    /* Properties of filtering and sorting features */
+
+    /* Filetering */
+
+    label {
+        font-size: 0.9rem;
+    }
+
     .filters {
-        left: 56.5%;
-        top: 57%;
+        left: 53%;
+        top: 57.5%;
+        width: 280px;
+    }
+
+    .scroller {
+        height: 570px;
+    }
+
+    /* Sorting */
+
+    .sort {
+        left: 54%;
+        top: 58%;
+        width: 270px;
+    }
+
+    .title_sort {
+        font-size: 1.1rem;
+    }
+
+    /* Aligning buttons for reseting and applying filters or sorting */
+
+    .button_apply {
+        font-size: 0.75rem;
+    }
+
+    .sort .button_apply {
+        margin-left: 10px;
+    }
+
+    .button_reset {
+        font-size: 0.75rem;
     }
 }
 
 @media (max-width: 500px) {
+    .background_shape6 {
+        width: 92%;
+        margin-left: 3.5%;
+        margin-right: 5%;
+        margin-top: 13%;
+        padding-bottom: 50px;
+    }
+
+    /* Properties for the image and text on top of the webapge */
+
     .title_shape {
         margin-left: 2.5%;
         width: 93%;
@@ -853,25 +987,13 @@ footer {
 
     .title_content {
         margin-top: 25px;
-        font-size: 0.9em;
+        font-size: 0.75em;
     }
 
-    .background_shape6 {
-        width: 92%;
-        margin-left: 3.5%;
-        margin-right: 5%;
-        margin-top: 13%;
-        padding-bottom: 50px;
-    }
+    /* Properties for showcasing products */
 
     .laptop_all {
-        width: 32%; /* Adjust width to fit the container */
-    }
-
-    .laptop_all_text a:link {
-        font-weight: bold;
-        font-size: 1.05rem;
-        color: white;
+        width: 42%; /* Adjust width to fit the container */
     }
 
     .image_all_laptop {
@@ -879,9 +1001,15 @@ footer {
         height: 105px;
     }
 
+    .laptop_all_text a:link {
+        font-size: 0.9rem;
+    }
+
     .price {
         font-size: 1.1rem;
     }
+
+    /* Properties of the buttons that are used to access the filetering and sorting features */
 
     .container_for_path_buttons {
         padding-top: 1%;
@@ -891,12 +1019,9 @@ footer {
         font-size: 0.75rem;
     }
 
-    .image_sort {
-        width: 14px;
-        height: 18px;
-    }
+    /* Sorting Button */
 
-    .image_filter {
+    .image_sort {
         width: 14px;
         height: 18px;
     }
@@ -907,20 +1032,55 @@ footer {
         height: 30px;
     }
 
+    /* Filetring Button */
+
     .button_filter {
         left: 87%;
         width: 30px;
         height: 30px;
     }
 
-    .laptop_all_text a:link {
-        font-size: 0.9rem;
+    .image_filter {
+        width: 14px;
+        height: 18px;
     }
 
+    /* Properties of filtering and sorting features */
+
+    /* Filtering Feature */
     .filters {
-        left: 44%;
+        left: 38%;
         top: 45%;
+        padding-bottom: 50px;
+        width: 280px;
     }
+
+    .scroller {
+        height: 550px;
+    }
+
+    .scroller::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    label {
+        font-size: 0.85rem;
+    }
+
+    /* Sorting Feature */
+
+    .sort {
+        left: 42%;
+        top: 45%;
+        width: 260px;
+        height: 380px;
+    }
+
+    .title_sort {
+        font-size: 1rem;
+    }
+
+    /* Footer Properties */
 
     .footer-links {
         display: flex;
@@ -931,17 +1091,90 @@ footer {
     }
 }
 
-@media (max-width: 385px) {
-    .title_shape {
-        width: 90%;
-        height: 130px;
-        left: 1%;
+@media (max-width: 426px) {
+    /* Properties for showcasing products */
+    .laptop_all {
+        font-size: 0.85rem;
     }
 
+    .laptop_all .price {
+        font-size: 1.1rem;
+    }
+
+    .button_cart_laptop {
+        font-size: 0.85rem;
+    }
+
+    /* Properties of the buttons that are used to access the filetering and sorting features */
+    /* Sorting Button */
+
+    .button_sort {
+        left: 77%;
+    }
+
+    .image_sort {
+        width: 12px;
+        height: 16px;
+    }
+
+    /* Filtering Button */
+
+    .button_filter {
+        left: 84%;
+    }
+
+    .image_filter {
+        width: 12px;
+        height: 16px;
+    }
+
+    /* Properties of filtering and sorting features */
+    /* Filetering Feature */
+    .filters {
+        left: 32%;
+        top: 43%;
+        padding-bottom: 50px;
+        width: 260px;
+    }
+
+    .scroller {
+        height: 550px;
+    }
+
+    .scroller::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    label {
+        font-size: 0.8rem;
+    }
+
+    /* Sorting Feature */
+
+    .sort {
+        left: 35%;
+        top: 43.5%;
+        width: 250px;
+        height: 380px;
+    }
+
+    .title_sort {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 385px) {
     .background_shape6 {
         width: 88%;
         margin-left: 5%;
         margin-top: 7%;
+    }
+
+    /* Properties for the image and text on top of the webapge */
+    .title_shape {
+        width: 90%;
+        height: 130px;
+        left: 1%;
     }
 
     .title_image {
@@ -954,11 +1187,13 @@ footer {
 
     .title_content {
         margin-top: 15px;
-        font-size: 0.7em;
+        font-size: 0.55em;
     }
 
+    /* Properties for showcasing products */
+
     .laptop_all {
-        width: 66%; /* Adjust width to fit the container */
+        width: 83%; /* Adjust width to fit the container */
     }
 
     .image_all_laptop {
@@ -966,70 +1201,13 @@ footer {
         height: 138px;
     }
 
+    /* Properties of the buttons that are used to access the filetering and sorting features */
+
     .path {
         font-size: 0.65rem;
     }
 
-    .image_sort {
-        width: 10px;
-        height: 14px;
-    }
-
-    .image_filter {
-        width: 10px;
-        height: 14px;
-    }
-
-    .button_sort {
-        left: 76%;
-        width: 30px;
-        height: 30px;
-    }
-
-    .button_filter {
-        left: 84%;
-        width: 30px;
-        height: 30px;
-    }
-}
-
-@media (max-width: 426px) {
-    .filters {
-        width: 190px;
-        left: 42%;
-        top: 43%;
-    }
-
-    .button_apply {
-        font-size: 0.75em;
-        margin-left: 14px;
-    }
-
-    .button_reset {
-        font-size: 0.75em;
-        margin-left: 18px;
-    }
-}
-
-@media (max-width: 376px) {
-    .filters {
-        width: 190px;
-        left: 32%;
-        top: 39%;
-    }
-}
-
-@media (max-width: 320px) {
-    .filters {
-        width: 190px;
-        left: 23%;
-        top: 38%;
-    }
-
-    .path {
-        font-size: 0.55rem;
-        margin-left: 15px;
-    }
+    /* Sorting Button */
 
     .button_sort {
         left: 72%;
@@ -1037,17 +1215,120 @@ footer {
         height: 30px;
     }
 
+    .image_sort {
+        width: 11px;
+        height: 15px;
+    }
+
+    /* Filtering Button */
+
     .button_filter {
-        left: 81%;
+        left: 80%;
         width: 30px;
         height: 30px;
     }
+
+    .image_filter {
+        width: 11px;
+        height: 15px;
+    }
+
+    /* Properties of filtering and sorting features */
+    /* Filetering Feature */
+    .filters {
+        left: 23%;
+        top: 39%;
+    }
+
+    .scroller {
+        height: 520px;
+    }
+
+    .scroller::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    label {
+        font-size: 0.8rem;
+    }
+
+    /* Sorting Feature */
+
+    .sort {
+        left: 26%;
+        top: 38.5%;
+        height: 380px;
+    }
 }
-.button_apply:hover {
-    cursor: pointer;
-    text-decoration: none;
-}
-.button_reset:hover {
-    cursor: pointer;
-    text-decoration: none;
+
+@media (max-width: 320px) {
+    /* Properties for the image and text on top of the webapge */
+    .laptop_title1 {
+        font-size: 0.8em;
+    }
+
+    .title_content {
+        margin-top: 15px;
+        font-size: 0.45em;
+    }
+
+    /* Properties of the buttons that are used to access the filetering and sorting features */
+
+    .path {
+        font-size: 0.55rem;
+        margin-left: 15px;
+    }
+
+    /*Sorting Button */
+
+    .button_sort {
+        left: 69%;
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Filetering Button */
+
+    .button_filter {
+        left: 78%;
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Properties of filtering and sorting features */
+    /*Filtering Feature */
+
+    .filters {
+        left: 16%;
+        top: 38%;
+        width: 240px;
+        padding-bottom: 40px;
+    }
+
+    .scroller {
+        height: 480px;
+    }
+
+    .scroller::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /*Sorting Feature */
+
+    .sort {
+        left: 19%;
+        top: 38.5%;
+        height: 380px;
+        width: 230px;
+    }
+
+    /* Aligning buttons for reseting and applying filters or sorting */
+
+    .button_apply {
+        font-size: 0.65rem;
+    }
+
+    .button_reset {
+        font-size: 0.65rem;
+    }
 }
