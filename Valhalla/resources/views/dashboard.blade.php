@@ -54,6 +54,7 @@
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Product</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Order Number</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Tracking Number</th>
+              <th class="px-4 py-2 border-gray-800 border bg-gray-200">Quantity</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Price</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Order Date</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Actions</th>
@@ -66,6 +67,7 @@
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->product_name}} </td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->id }}</td> 
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->tracking_number}} </td>
+              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->quantity}} </td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"> £ {{$item->price}} </td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{ $item->created_at->format('jS F Y') }} </td>
               <td class="px-4 py-2 border-gray-800 border bg-gray-200"><a href="{{ route('tracking', ['id' => $item->id]) }}">
