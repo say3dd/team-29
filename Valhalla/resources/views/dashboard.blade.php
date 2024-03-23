@@ -52,7 +52,7 @@
           <thead>
             <tr>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Product</th>
-              <th class="px-4 py-2 border-gray-800 border bg-gray-200">Order Number</th>
+              <th class="px-4 py-2 border-gray-800 border bg-gray-200">Order ID</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Tracking Number</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Quantity</th>
               <th class="px-4 py-2 border-gray-800 border bg-gray-200">Price</th>
