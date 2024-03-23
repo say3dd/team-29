@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('brand');
             $table->string('product_name');
             $table->text('product_description');
-            $table->enum('category', ['Laptop', 'Mouse', 'Keyboard', 'Monitor', 'Headset']); //added enum to add catagories
+            $table->enum('category', ['Laptop', 'Mouse', 'Keyboard', 'Monitor', 'Headset']); //added enum to add categories
             $table->decimal('price', 8, 2);
             $table->string('images');
             $table->integer('stock');

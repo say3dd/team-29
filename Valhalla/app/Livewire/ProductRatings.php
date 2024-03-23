@@ -21,7 +21,7 @@ class ProductRatings extends Component
 
     public function render()
     {
-        $comments = Rating::where('product_id', $this->product->id)->where('status', 1)->with('user')->get();
+        $comments = Rating::where('product_id', $this->product->id)->with('user')->get();
         return view('livewire.product-ratings', compact('comments'));
     }
 
