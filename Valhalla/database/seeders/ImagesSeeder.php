@@ -14,7 +14,7 @@ class ImagesSeeder extends Seeder
      */
     public function run(): void
     {
-
+        // @say3dd (images) - Seeded the images
         Image::create([
             'path' => 'assets\laptop_images\ACER Predator 21 X\acer-predator-21-x_1.jpg',
             'product_id' => '8'
