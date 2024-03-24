@@ -66,7 +66,9 @@ class HomeController extends Controller implements BasketInterface
             ->take(30)
             ->get()
             ->random(3);
-        return $randomProducts;
+
+            return $randomProducts;
+
     }
 
     public function about(){

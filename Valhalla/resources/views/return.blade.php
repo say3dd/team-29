@@ -1,4 +1,5 @@
 {{-- Author @BM786 = Basit Ali Mohammad --}}
+{{-- @say3dd (Mohammed Miah ) - Made it so the user can select THEIR orders from a dropbox. --}}
 <x-guest-layout>
     <div class=" mb-4 text-white">
         <h2 class="text-2xl font-bold px-4 py-2 mt-0">Return Request</h2>
@@ -6,26 +7,31 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('return.request.submit') }}" class="max-w-md mx-auto bg-violet-700 rounded shadow p-4">
+    <form method="POST" action="{{ route('return.request.submit') }}"
+        class="max-w-md mx-auto bg-violet-700 rounded shadow p-4">
         @csrf
-<!-- Order Number -->
-<div class="mb-4">
-    <x-input-label for="orderNumber" :value="__('Order Number')" class="text-white" />
-    <select id="orderNumber" class="block mt-1 w-full" name="orderNumber" required autofocus>
-        <option value="">-- Select Order --</option>
-        @foreach($orders as $order)
-        <option value="{{ $order->id }}" data-product-name="{{ $order->product_name }}">{{ $order->id }} - {{ $order->product_name }}</option>
-        @endforeach
-    </select>
-    <x-input-error :messages="$errors->get('orderNumber')" class="mt-2" />
-</div>
+        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
 
-<!-- Item Name -->
-<div class="mb-4">
-    <x-input-label for="productName" :value="__('Product Name')" class="text-white" />
-    <x-text-input id="productName" class="block mt-1 w-full" type="text" name="productName" :value="old('productName')" required readonly />
-    <x-input-error :messages="$errors->get('productName')" class="mt-2" />
-</div>
+        <!-- Order Number -->
+        <div class="mb-4">
+            <x-input-label for="orderNumber" :value="__('Order ID')" class="text-white" />
+            <select id="orderNumber" class="block mt-1 w-full" name="Order ID" required autofocus>
+                <option value="">-- Select Order --</option>
+                @foreach ($orders as $order)
+                    <option value="{{ $order->id }}" data-product-name="{{ $order->product_name }}">
+                        {{ $order->id }} - {{ $order->product_name }}</option>
+                @endforeach
+            </select>
+            <x-input-error :messages="$errors->get('orderNumber')" class="mt-2" />
+        </div>
+
+        <!-- Item Name -->
+        <div class="mb-4">
+            <x-input-label for="productName" :value="__('Product Name')" class="text-white" />
+            <x-text-input id="productName" class="block mt-1 w-full" type="text" name="Product name" :value="old('productName')"
+                required readonly />
+            <x-input-error :messages="$errors->get('productName')" class="mt-2" />
+        </div>
 
         <!-- Reason for Return -->
         <div class="mb-4">
@@ -43,7 +49,8 @@
         <!-- Preferred Resolution -->
         <div class="mb-4">
             <x-input-label for="resolution" :value="__('Preferred Resolution')" class="text-white" />
-            <select id="resolution" name="resolution" class="form-select rounded-md shadow-sm mt-1 block w-full" required>
+            <select id="resolution" name="resolution" class="form-select rounded-md shadow-sm mt-1 block w-full"
+                required>
                 <option value="">Select a resolution</option>
                 <option value="Refund">Refund</option>
                 <option value="Exchange">Exchange</option>
@@ -54,7 +61,8 @@
         <!-- Comments -->
         <div class="mb-4">
             <x-input-label for="comments" :value="__('Comments')" class="text-white" />
-            <textarea id="comments" name="comments" rows="4" class="form-textarea rounded-md shadow-sm mt-1 block w-full" required>{{ old('comments') }}</textarea>
+            <textarea id="comments" name="comments" rows="4" class="form-textarea rounded-md shadow-sm mt-1 block w-full"
+                required>{{ old('comments') }}</textarea>
             <x-input-error :messages="$errors->get('comments')" class="mt-2" />
         </div>
 
@@ -70,7 +78,7 @@
             {{ __('Back') }}
         </x-primary-button>
     </div>
-    
+
     <script>
         function goBack() {
             window.history.back();
@@ -84,4 +92,3 @@
         });
     </script>
 </x-guest-layout>
-

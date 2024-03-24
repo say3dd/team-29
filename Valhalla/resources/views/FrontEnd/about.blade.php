@@ -185,7 +185,7 @@
                 perfect
                 balance of power and portability. Vallhala has truly
                 transformed my 
-                 gaming experience and productivity."</blockquote>
+                 gaming productivity."</blockquote>
 
             </div>
           </div>

@@ -1083,6 +1083,7 @@ footer {
         align-items: center !important;
         justify-content: center !important;
         width: 100%;
+      
     }
 
       .monitor-btn h1 {
@@ -1408,7 +1409,7 @@ Styling for basket
     float: none !important;
     padding-right: 30px;
     position: relative; /* Add this if not already present */
-
+  
 }
 .btn{
     display: inline-block;
@@ -1435,6 +1436,7 @@ Styling for basket
     margin-left: 25%;
     box-shadow:  0px 5px 30px var(--secondary-color);
     margin-top: 0rem !important;
+
 }
 .dropdown-menu {
     left: 0 !important;
@@ -1815,11 +1817,36 @@ margin-bottom: 2rem;
   border: #300452 5px solid;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
+@media (max-width: 400px) {
+    .laptop {
+        
+        width: 17rem !important;
+    }
+    .buy-product {
+        width: 10rem !important;
+        margin-left: 1rem !important;
+    }
+   .footer-content a {
+    font-size: 1rem !important;
+   }
+   .footer-title {
+    font-size: 1rem !important;
+   }
 
+   .box-card p {
+    font-size:  1rem !important;
+   }
+   .text-info {
+    font-size: 0.95rem !important;
+   }
+
+   
+
+}
 @media (max-width: 500px) {
 
   .view-laptops-btn {
-    display: none;
+    display: none !important;
   }
   /*    Category Section */
 #category-container {
@@ -2015,7 +2042,7 @@ margin-bottom: 2rem;
         text-align: center;
         margin: 30px 20px;
         background-color: #4e008b;
-
+        
         box-shadow: 0 10px 20px #000000;
         border-radius: 15px;
     }
@@ -2067,6 +2094,118 @@ margin-bottom: 2rem;
 }
 
 @media (max-width: 1440px) {
+
+    #basket-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100%;
+     
+    }
+
+    .basket-menu:before{
+        content: " ";
+        position:absolute;
+        top:0 !important;
+        right:0 !important;
+        border:10px solid transparent;
+        border-bottom-color:#fff;
+    }
+    
+    
+    /*
+    Styling for basket
+    */
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        overflow: visible !important;
+        z-index: 5 !important;
+    }
+    
+    
+    .dropdown .dropdown-content{
+        display: none;
+        position: absolute;
+        min-width: 10rem;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+       z-index: 1;
+    }
+    
+    
+    /*.dropdown-content {*/
+    /*    */
+    /*}*/
+    
+    
+    .dropdown {
+        float: none !important;
+        padding-right: 30px;
+        position: relative; /* Add this if not already present */
+    
+    }
+    .btn{
+        display: inline-block;
+        border: none;
+        height: 5vh;
+        width: auto;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #2d044b;
+        box-shadow:none ;
+    }
+    
+    .btn-block{
+        padding: 1.2rem;
+        margin: 16px 2em;
+    }
+    .dropdown .dropdown-menu {
+        display: none;
+        padding: 10px !important;
+        text-align: center !important;
+        width: 50% !important ;
+        height: 14vh !important;
+        margin-right: 90%;
+        margin-left: 25%;
+        box-shadow:  0px 5px 30px var(--secondary-color);
+        margin-top: 0rem !important;
+    }
+    .dropdown-menu {
+        left: 0 !important;
+        width: 95% !important;
+        height: 30vh !important;
+    
+    }
+    .dropdown-menu {
+        height: 20vh !important;
+    
+    }
+    .dropdown-menu p {
+        font-size: 1.3rem !important;
+        margin: 0rem !important;
+      }
+    
+    .checkout {
+        width: 10rem;
+        height: 4rem;
+    }
+    
+    .text-1xl {
+        font-size: 1.3rem !important;
+        margin: 0rem !important;
+        margin-top: 1rem !important;
+    
+    }
+    
+    .text-center {
+        height: 6vh !important;
+    }
+    
+    
+    .row {
+        margin: 0 !important;
+    }
     /*    Navbar Section */
     .menu-icon {
         display: inline-flex;
@@ -2100,9 +2239,10 @@ margin-bottom: 2rem;
     }
 
     #check:checked ~ .navbar {
-        height: 34rem;
+        height: 36rem;
     }
 
+  
     .navbar a {
         display: block;
         margin: 1.5rem 0;
@@ -2111,9 +2251,15 @@ margin-bottom: 2rem;
     }
 
 
+    #empty  {
+        display: none !important;
+    }
 
+    .flex-row {
+        display: none !important;
+    }
 
-
+ 
 }
 
 
@@ -2143,9 +2289,11 @@ Interactive Basket section
 Styling for basket
 */
 
+
 .dropdown {
     position: relative;
     display: inline-block;
+   
 }
 
 

@@ -68,7 +68,7 @@
                 <div class="dropdown-menu mt-6 p-3 rounded-md" id="cartDropdown">
                     <div class="row total-header-section">
 
-                        @php $total = 0; @endphp
+                        @php $total = 0.00; @endphp
                         @if (Auth::check())  {{-- Check if user is authenticated --}}
                         @php $basketItems = Auth::user()->basketItems()->with('product')->get();
                         @endphp
@@ -106,12 +106,12 @@
                     @endforeach
 
                     @else
-                        <p class="text-center text-white mt-2">Your basket is currently empty.</p>
+                        <p id= "empty" class="empty text-center text-white mt-2">Your basket is currently empty.</p>
                     @endif
 
                     <div class="row">
                         <div class="text-center checkout inline-block bg-violet-900 w-full mt-2 rounded-md mr-2 align-middle pr-1">
-                            <a href="{{ route('basket') }}" class="text-2xl" >View all</a>
+                            <a href="{{ route('basket') }}" class="text-1xl" >View all</a>
                         </div>
                     </div>
                 </div>
