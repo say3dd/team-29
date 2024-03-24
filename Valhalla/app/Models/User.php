@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail, FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -49,11 +49,11 @@ class User extends Authenticatable
 
 
 
-//    public function canAccessPanel(Panel $panel): bool
-//    {
-//        // TODO: Implement canAccessPanel() method.
-//        return str_ends_with($this->email, '@aston.ac.uk') && $this->hasVerifiedEmail();
-//    }
+   public function canAccessPanel(Panel $panel): bool
+   {
+       // TODO: Implement canAccessPanel() method.
+       return str_ends_with($this->email, '@aston.ac.uk') && $this->hasVerifiedEmail();
+   }
 
     public function orders()
 {
