@@ -283,7 +283,7 @@
                 Seamless Gaming
             </p>
             <p class="unique_feature9_content">
-                "Crafted to elevate your gaming experience, whether you're on the move or at home, by offering impressive refresh rates, 
+                "Crafted to elevate your gaming experience, whether you're on the move or at home, by offering impressive refresh rates,
                 Cherry mechanical keys, and Dolby Atmos® sound, ensuring enjoyment regardless of your gaming setup."
             </p>
         </div>
@@ -319,24 +319,26 @@
                             </label>
                         </div>
                         <p>Share your review:</p>
-                        <textarea id="review" placeholder="Write your review here"></textarea>
+                        <textarea name="text-box" id="review" placeholder="Write your review here"></textarea>
                         <x-primary-button class="ml-10 mt-16" id="submit">Submit</x-primary-button>
                     </div>
                 @else
-                    <div class="mb-8 text-center text-white">
-                        You need to login in order to be able to rate the product!
-                    </div>
-                    <x-primary-button>
-                        <a href="{{ route('login', ['redirect' => url()->current()]) }}">Login</a>
-                    </x-primary-button>
+{{--                    <div class="mb-8 text-center text-white">--}}
+{{--                        You need to login in order to be able to rate the product!--}}
+{{--                    </div>--}}
+{{--                    <x-primary-button>--}}
+{{--                        <a href="{{ route('login', ['redirect' => url()->current()]) }}">Login</a>--}}
+{{--                    </x-primary-button>--}}
                 @endif
             @else
-                <div class="mb-8 text-center text-gray-600">
-                    You need to login in order to be able to rate the product!
+                <div class="mb-8 text-center text-white">
+                    You need to login in order to rate the product!
                 </div>
+            <x-primary-button>
                 <a href="{{ route('login') }}"
-                   class="block px-5 py-2 mx-auto font-medium text-center text-gray-600 bg-white border rounded-lg shadow-sm focus:outline-none hover:bg-gray-100"
+                   class="block mx-auto"
                 >Login</a>
+            </x-primary-button>
             @endauth
         </div>
         </body>
