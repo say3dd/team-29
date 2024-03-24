@@ -4,7 +4,7 @@
 
     - I designed the Monitor Product Page of the webiste using Figma @AnthonyResuello
     - Template was used for different products such as monitor, keyboard, headset, and mouse.
-   
+
 -->
 
 <!DOCTYPE html>
@@ -36,7 +36,7 @@
             <div class="monitor-card">
 
                 <div>
-                    <img src="{{$product->image}}" alt=""">
+                    <img src="{{asset($product->images)}}" alt="">
 
                 </div>
                 <div class="monitor-info">

@@ -57,7 +57,7 @@ class ProductController extends Controller implements BasketInterface
         // Applying sorting
         $this->sortLaptops($query, $request->input('sorting'));
         // this paginates the page to 12 products
-        $products = $query->paginate(8);
+        $products = $query->paginate(12);
         //this loops the feature extraction function to display the features to all products
         foreach ($products as $product) {
             $product->features = $this->productService->extractProductFeatures($product);
