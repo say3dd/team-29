@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="">
-      <changelist_data name="BM786" email="220065665@aston.ac.uk" date="1711251438000" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_03_2024_14_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_03_2024_14_12__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/team-29.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team-29.iml" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="fixed the pagination for it to work on searching aswell">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +15,9 @@
   </component>
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/Valhalla/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -38,7 +35,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="29a8141db597ae347283499ae832f01ccf62db85" />
+        <entry key="$PROJECT_DIR$" value="Valhalla-working-branch-backup" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -445,9 +442,6 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/blade-ui-kit/blade-icons" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/danharrin/date-format-converter" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/danharrin/livewire-rate-limiting" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/symfony/dom-crawler" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -471,18 +465,17 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.rainbow.brackets.disable.when&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\abuba\\AppData\\Local\\Programs\\PhpStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\aliba\Documents\Git\team-29\Valhalla\resources\views\FrontEnd" />
-      <recent name="C:\Users\aliba\Documents\Git\team-29\Valhalla\resources\views\rating" />
-      <recent name="C:\Users\aliba\Documents\Git\team-29\Valhalla\resources\views" />
-      <recent name="C:\Users\aliba\Documents\Git\team-29\Valhalla\resources\js" />
       <recent name="C:\Team code\team-29\Valhalla\app\Http\Controllers" />
+      <recent name="C:\Team code\team-29\Valhalla\resources\views\checkout" />
+      <recent name="C:\Team code\team-29\Valhalla\app\Http" />
+      <recent name="C:\Team code\team-29\Valhalla\resources\views\Product_files" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.127.0.0.1:8000">
@@ -500,17 +493,13 @@
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.127.0.0.1:8000" />
-        <item itemvalue="JavaScript Debug.127.0.0.1:8000" />
-        <item itemvalue="JavaScript Debug.127.0.0.1:8000" />
-        <item itemvalue="JavaScript Debug.127.0.0.1:8000" />
-        <item itemvalue="JavaScript Debug.127.0.0.1:8000" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14808.18" />
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14475.35" />
       </set>
     </attachedChunks>
   </component>
@@ -550,10 +539,9 @@
       <workItem from="1710868160565" duration="3333000" />
       <workItem from="1710885136673" duration="1239000" />
       <workItem from="1711030957399" duration="3410000" />
-      <workItem from="1711139908186" duration="1646000" />
-      <workItem from="1711141583230" duration="425000" />
-      <workItem from="1711197607737" duration="25332000" />
-      <workItem from="1711283564364" duration="780000" />
+      <workItem from="1711130057178" duration="616000" />
+      <workItem from="1711195693237" duration="16136000" />
+      <workItem from="1711221087717" duration="10167000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -795,39 +783,31 @@
       <option name="project" value="LOCAL" />
       <updated>1711033013748</updated>
     </task>
-    <task id="LOCAL-00031" summary=".">
+    <task id="LOCAL-00031" summary="Basic Admin panel has been added">
       <option name="closed" value="true" />
-      <created>1711134929161</created>
+      <created>1711213962326</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1711134929161</updated>
+      <updated>1711213962326</updated>
     </task>
-    <task id="LOCAL-00032" summary=".">
+    <task id="LOCAL-00032" summary="removed the admin table and re added the navigation and deleted the products2 and 3">
       <option name="closed" value="true" />
-      <created>1711134941472</created>
+      <created>1711222043475</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1711134941472</updated>
+      <updated>1711222043476</updated>
     </task>
-    <task id="LOCAL-00033" summary=".">
+    <task id="LOCAL-00033" summary="fixed the pagination for it to work on searching aswell">
       <option name="closed" value="true" />
-      <created>1711134961291</created>
+      <created>1711239293010</created>
       <option name="number" value="00033" />
       <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1711134961291</updated>
+      <updated>1711239293010</updated>
     </task>
-    <task id="LOCAL-00034" summary="rating and review made again">
-      <option name="closed" value="true" />
-      <created>1711251444115</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1711251444115</updated>
-    </task>
-    <option name="localTasksCounter" value="35" />
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -879,10 +859,10 @@
     <MESSAGE value="some styling change on the basket.blade.php and basket button" />
     <MESSAGE value="UserController" />
     <MESSAGE value="Filament Implementation" />
-    <MESSAGE value="contents on rate section positioned properly" />
-    <MESSAGE value="." />
-    <MESSAGE value="rating and review made again" />
-    <option name="LAST_COMMIT_MESSAGE" value="rating and review made again" />
+    <MESSAGE value="Basic Admin panel has been added" />
+    <MESSAGE value="removed the admin table and re added the navigation and deleted the products2 and 3" />
+    <MESSAGE value="fixed the pagination for it to work on searching aswell" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the pagination for it to work on searching aswell" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
