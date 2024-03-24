@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="product images">
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/UserTrend.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/UserTrend.php" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="graphs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -839,7 +839,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711314679792</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="graphs">
+      <option name="closed" value="true" />
+      <created>1711323463257</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1711323463257</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -869,7 +877,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added the new Pagination for the products page , fixed the product Error" />
     <MESSAGE value="cart.blade.php refactored to basket.blade.php. &#10;Added new codes to the basket.blade.php. Basket implement nearly complete. &#10;&#10;New routes has been added to the web.php. Some redundant code has been removed" />
     <MESSAGE value="commented out search function for now" />
     <MESSAGE value="some new routes has been added" />
@@ -894,7 +901,8 @@
     <MESSAGE value="Admin button on dashboard.blade.php" />
     <MESSAGE value="fixed routing of product templates" />
     <MESSAGE value="product images" />
-    <option name="LAST_COMMIT_MESSAGE" value="product images" />
+    <MESSAGE value="graphs" />
+    <option name="LAST_COMMIT_MESSAGE" value="graphs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
