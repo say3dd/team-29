@@ -205,7 +205,7 @@
                                             class="w-16 h-16 border"></div>
                                     <figcaption class="info align-self-center">
                                         <p class="title"> {{ $product->product_name }}  x {{ $product->quantity }}<br> <br> <span
-                                                class="text-muted"> £ {{ $product->price  * $product->quantity}} </span>
+                                                class="text-muted"> £ {{ $product->price}} </span>
                                     </figcaption>
                                 </figure>
                             </li>
