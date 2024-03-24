@@ -14,28 +14,19 @@ class StatWidget extends BaseWidget
     use InteractsWithPageFilters;
     protected function getStats(): array
     {
-        $start = $this->filters['startDate'];
-        $end = $this->filters['endDate'];
+//        $start = $this->filters['startDate'];
+//        $end = $this->filters['endDate'];
 
         return [
             Stat::make('New Users',
-                User::when($start,
-                fn ($query) => $query->whereDate('created_at', '>=', $start))
-                ->when($end,
-                    fn ($query) => $query->whereDate('created_at', '<=', $end))
-                ->count())
+                User::count())
                 ->description('Newly joined users')
             ->descriptionIcon('heroicon-m-users', IconPosition::Before)
             ->chart([1, 2, 6, 9, 12, 15, 18])
             ->color('primary'),
 
             Stat::make('Sales',
-                Orders::
-                when($start,
-                    fn ($query) => $query->whereDate('created_at', '>=', $start))
-                    ->when($end,
-                        fn ($query) => $query->whereDate('created_at', '<=', $end))
-                ->count())
+                Orders::count())
             ->description('Total orders')
             ->descriptionIcon('heroicon-s-currency-pound', IconPosition::Before)
             ->chart([1, 2, 6, 9, 12, 15, 18])
