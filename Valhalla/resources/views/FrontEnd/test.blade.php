@@ -293,8 +293,7 @@
     <form action="{{ route('submit-review') }}" method="post">
         @csrf
         <link rel="stylesheet" href="{{asset('assets/css/rating.css')}}">
-        <body class="mt-11 custom">
-        <div class="container">
+        <div class="container mt-11 custom">
             @auth
                 @if($userId = Auth::id())
                     <div class="rate">
@@ -323,12 +322,12 @@
                         <x-primary-button class="ml-10 mt-16" id="submit">Submit</x-primary-button>
                     </div>
                 @else
-{{--                    <div class="mb-8 text-center text-white">--}}
-{{--                        You need to login in order to be able to rate the product!--}}
-{{--                    </div>--}}
-{{--                    <x-primary-button>--}}
-{{--                        <a href="{{ route('login', ['redirect' => url()->current()]) }}">Login</a>--}}
-{{--                    </x-primary-button>--}}
+                    <div class="mb-8 text-center text-white">
+                        You need to login in order to be able to rate the product!
+                    </div>
+                    <x-primary-button>
+                        <a href="{{ route('login', ['redirect' => url()->current()]) }}">Login</a>
+                    </x-primary-button>
                 @endif
             @else
                 <div class="mb-8 text-center text-white">
