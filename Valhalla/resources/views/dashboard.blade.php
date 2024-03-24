@@ -38,9 +38,9 @@
                 </div>
 
                 <div class="items-center justify-start mt-8">
-                    <a href="{{ route('admin') }}">
+                    <a href="{{url('/admin')}}">
                         <x-primary-button class="border-white">
-                            {{ __('Admin') }}
+                           Admin
                         </x-primary-button>
                     </a>
                 </div>
