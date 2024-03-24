@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="contents on rate section positioned properly">
-      <changelist_data name="BM786" email="220065665@aston.ac.uk" date="1710815144000" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_03_2024_14_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_03_2024_14_37__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_03_2024_17_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_03_2024_17_46__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_03_2024_17_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_03_2024_17_22__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_03_2024_17_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_03_2024_17_26__Changes_.xml" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Livewire/ProductRatings.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Livewire/ProductRatings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Livewire/ProductRatings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Models/Rating.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/database/migrations/2024_03_15_204031_create_ratings_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/livewire/product-ratings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/livewire/product-ratings.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/livewire/product-ratings.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -475,17 +475,18 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.rainbow.brackets.disable.when&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\abuba\\AppData\\Local\\Programs\\PhpStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aliba\Documents\Git\team-29\Valhalla\resources\views\FrontEnd" />
+      <recent name="C:\Users\aliba\Documents\Git\team-29\Valhalla\resources\views\rating" />
+      <recent name="C:\Users\aliba\Documents\Git\team-29\Valhalla\resources\views" />
+      <recent name="C:\Users\aliba\Documents\Git\team-29\Valhalla\resources\js" />
       <recent name="C:\Team code\team-29\Valhalla\app\Http\Controllers" />
-      <recent name="C:\Team code\team-29\Valhalla\resources\views\checkout" />
-      <recent name="C:\Team code\team-29\Valhalla\app\Http" />
-      <recent name="C:\Team code\team-29\Valhalla\resources\views\Product_files" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.127.0.0.1:8000">
@@ -550,6 +551,9 @@
       <workItem from="1710868160565" duration="3333000" />
       <workItem from="1710885136673" duration="1239000" />
       <workItem from="1711030957399" duration="3410000" />
+      <workItem from="1711139908186" duration="1646000" />
+      <workItem from="1711141583230" duration="425000" />
+      <workItem from="1711197607737" duration="22970000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -791,7 +795,31 @@
       <option name="project" value="LOCAL" />
       <updated>1711033013748</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary=".">
+      <option name="closed" value="true" />
+      <created>1711134929161</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1711134929161</updated>
+    </task>
+    <task id="LOCAL-00032" summary=".">
+      <option name="closed" value="true" />
+      <created>1711134941472</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1711134941472</updated>
+    </task>
+    <task id="LOCAL-00033" summary=".">
+      <option name="closed" value="true" />
+      <created>1711134961291</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1711134961291</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -821,7 +849,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="basket button syling fixed 1.0" />
     <MESSAGE value="basket button styling fixed 1.0" />
     <MESSAGE value="Basket patch" />
     <MESSAGE value="Refactored web.php and refactored master.blade.php with navigation system" />
@@ -846,7 +873,8 @@
     <MESSAGE value="UserController" />
     <MESSAGE value="Filament Implementation" />
     <MESSAGE value="contents on rate section positioned properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="contents on rate section positioned properly" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

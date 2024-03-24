@@ -52,4 +52,8 @@ class User extends Authenticatable
 public function basketItems(){
         return $this->hasMany(BasketItem::class);
 }
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
 }
