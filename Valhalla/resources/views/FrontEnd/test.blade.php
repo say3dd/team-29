@@ -110,11 +110,11 @@
                         }
                     }
                 @endphp
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;{{$details['Processor']}}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Windows 11<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;{{$details['GPU']}}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;{{$details['Display']}}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Colour:{{$details['Colour']}}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;{{$details['Processor']}}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;OS: Windows 11<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;GPU: {{$details['GPU']}}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Display: {{$details['Display']}}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Colour:{{$details['Colour']}}<br>
             </div>
             <div class="button_view_specification">
                 <button class="button_view_specification" onclick="openMessageBox()">
@@ -244,56 +244,51 @@
 </div>
 {{-- Section 1 ends here --}}
 
-{{-- Section 3 begins here --}}
-<div class="container_section3">
-    <div class = "text_container">
-        <p class="unique_feature_title_title">
-            Total Command </p>
-        <p class="unique_feature_content">
-            Control more than ever with the all-new Alienware Command Center.</p>
-        <p class="unique_feature_title">
-            Presets and overclocking</p>
-        <p class="unique_feature_content">
-            Maximise your gameplay with performance presets while overclocking capabilities give you the speed you
-            need.
-        </p>
-        <p class="unique_feature_title">
-            Performance overlay</p>
-        <p class="unique_feature_content">
-            Manage and see CPU, GPU, memory and thermals stats without exiting the game.
-        </p>
-        <p class="unique_feature_title">
-            AlienFX</p>
-        <p class="unique_feature_content">
-            Customise your set up with lighting settings that extend to all your Alienware accessories, as well as
-            keybinds and
-            calibration.
-        </p>
-        <p class="unique_feature_title">
-            AlienVision</p>
-        <p class="unique_feature_content">
-            Toggle monitor-based overlays on/off to help you focus on the targets at hand.
-        </p>
-    </div>
-    <img class="unique_feature4_5_6_7_8_image" src="{{asset('assets/images_product/laptop_specification5.jpg')}}">
-</div>
-{{-- Section 3 ends here --}}
-{{-- Section 4 begins here --}}
-<div class="container_section4">
-    <img class="unique_feature9_image" src="{{asset('assets/images_product/laptop_specification4.jpg')}}">
-    <p class="unique_feature9">
-        Seamless Gaming
-    </p>
-    <p class="unique_feature9_content">
-        The x16 is designed for a premium gaming experience on the go or at home with your Alienware ecosystem,
-        so
-        enjoy
-        features like impressive refresh rates, Cherry mechanical keys and Dolby Atmos® sound no matter where
-        you
-        game.
-    </p>
-</div>
-{{-- Section 4 ends here --}}
+        {{-- Section 2 begins here --}}
+        <div class="container_section2">
+            <div class = "text_container">
+                <p class="unique_feature_title_title">
+                    Total Command </p>
+                <p class="unique_feature_content">
+                    Take control like never before with the all-new command center.</p>
+                <p class="unique_feature_title">
+                    Presets and overclocking</p>
+                <p class="unique_feature_content">
+                    Maximise your gameplay with performance presets while overclocking capabilities give you the speed you
+                    need.
+                </p>
+
+                <p class="unique_feature_title">
+                    Performance overlay</p>
+                <p class="unique_feature_content">
+                    Manage and see CPU, GPU, memory and thermals stats without exiting the game.
+                </p>
+                <p class="unique_feature_title">
+                    Customize the illumination configurations.</p>
+                <p class="unique_feature_content">
+                    Customize your setup with lighting settings that extend to all your accessories, along with keybinds and calibration options.
+                </p>
+                <p class="unique_feature_title">
+                    Monitor Overlay Toggle: Focus Control</p>
+                <p class="unique_feature_content">
+                    Toggle monitor-based overlays on/off to help you focus on the targets at hand.
+                </p>
+            </div>
+            <img class="unique_feature4_5_6_7_8_image" src="{{asset('assets/images_product/laptop_specification5.jpg')}}">
+        </div>
+        {{-- Section 2 ends here --}}
+        {{-- Section 3 begins here --}}
+        <div class="container_section3">
+            <img class="unique_feature9_image" src="{{asset('assets/images_product/laptop_specification4.jpg')}}">
+            <p class="unique_feature9">
+                Seamless Gaming
+            </p>
+            <p class="unique_feature9_content">
+                "Crafted to elevate your gaming experience, whether you're on the move or at home, by offering impressive refresh rates, 
+                Cherry mechanical keys, and Dolby Atmos® sound, ensuring enjoyment regardless of your gaming setup."
+            </p>
+        </div>
+        {{-- Section 3 ends here --}}
 {{-- Product-rating--}}
 <div>
     <form action="{{ route('submit-review') }}" method="post">
@@ -432,30 +427,31 @@
         }
     });</script>
 
-{{-- Section 5 begins here --}}
-<div class="container_section5">
-    <div class="title_related_products"> Related Products</div>
     {{--   @Bilal Mo  added a randomizer which chooses 4 products from the specific category it is and randomizes it after every refresh--}}
-    @foreach($relatedProducts as $relatedProduct)
-        <div class="laptop1">
-            <img class="related_product_image" src="{{ asset($relatedProduct->images) }}">
-            <button> <a style="color: inherit; font-weight: bold; font-size: 1.05rem;"
-                        href="{{ $product->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$product->product_id]) : route('product.otherInfo', ['id' =>$product->product_id]) }}">
-                    {{$relatedProduct->product_name}} </a></button>
-            <div class="related_products_spec">
-                @foreach($relatedProduct->features as $featureName => $featureValue)
-                    <p><strong>{{ $featureName }}</strong>: {{ $featureValue }}</p>
-                @endforeach
-            </div>
-            {{--                    <button class="button_cart_laptop"> Add to Basket</button>--}}
-            <a class="@error('$relatedProduct') @enderror button_cart_laptop" href="{{route('add_to_basket', $relatedProduct->product_id)}}">
-                <button type="button" role="button" class="">
-                    Add to Basket
-                </button>
-            </a>
-        </div>
-    @endforeach
-</div>
+        <h1 class="laptop-heading">Related Products</h1>
+        <div class="related-title-line"></div>
+        <section id="laptop-products">
+            <div id="container-product">
+        @foreach($relatedProducts as $relatedProduct)
+                    <div class="products">
+                        <div class="top-card">
+                            <img src="{{ asset($relatedProduct->images) }}">
+                        </div>
+                <div class="bottom-card">
+                    <h2 class="laptop-title"><a style="color: inherit; font-weight: bold; font-size: 1.05rem;"
+                                href="{{ $product->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$product->product_id]) : route('product.otherInfo', ['id' =>$product->product_id]) }}">
+                            {{$relatedProduct->product_name}} </a></h2>
+                    @foreach($relatedProduct->features as $featureName => $featureValue)
+                        <p><strong>{{ $featureName }}</strong>: {{ $featureValue }}</p>
+                    @endforeach
+                    <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>
+
+                </div>
+                </div>
+        @endforeach
+                </div>
+      </section>
+    {{-- Section 4 ends here --}}
 {{--Script code --}}
 <script>
     // JavaScript functions to show/hide the modal
@@ -499,8 +495,10 @@
 
 </script>
 </body>
-<!-- Developed and designed the footer for this page @AnthonyResuello (Anthony Resuello) -->
-@include('footer')
+    <!--            Footer                      -->
+      <footer>
+        @include('footer')
+      </footer>
 
 <script>
     const dropdown = document.getElementById("cartDropdown");
