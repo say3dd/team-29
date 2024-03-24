@@ -22,7 +22,7 @@ class UserTrend extends ChartWidget
 
         $data = Trend::model(User::class)
             ->between(
-                start: $start ? Carbon::parse($start) : now()->subMonth(6),
+                start: $start ? Carbon::parse($start) : now()->subMonth(),
                 end: $end ? Carbon::parse($end) : now(),
             )
             ->perMonth()
