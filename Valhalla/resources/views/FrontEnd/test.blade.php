@@ -113,7 +113,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;{{$details['Processor']}}<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;OS: Windows 11<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;GPU: {{$details['GPU']}}<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Display: {{$details['Display']}}<br>
+
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;Colour:{{$details['Colour']}}<br>
             </div>
             <div class="button_view_specification">
@@ -284,8 +284,8 @@
                 Seamless Gaming
             </p>
             <p class="unique_feature9_content">
-                "Crafted to elevate your gaming experience, whether you're on the move or at home, by offering impressive refresh rates, 
-                Cherry mechanical keys, and Dolby Atmos® sound, ensuring enjoyment regardless of your gaming setup."
+                Crafted to elevate your gaming experience, whether you're on the move or at home, by offering impressive refresh rates, 
+                Cherry mechanical keys, and Dolby Atmos® sound, ensuring enjoyment regardless of your gaming setup.
             </p>
         </div>
         {{-- Section 3 ends here --}}
