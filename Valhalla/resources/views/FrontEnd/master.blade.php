@@ -4,7 +4,7 @@
 
     - Homepage served as the main template of the overall design of the website (colors and styling).
     - Designed Using Fimga (Link in the Team doucmentation called (website prototype).
-
+    - @Anthony Resuello - In TP2 I imrpoved the homepage styling and added a category section to display different products. 
 
     @noramknarf (Francis Moran) - various minor bugfixes
 -->

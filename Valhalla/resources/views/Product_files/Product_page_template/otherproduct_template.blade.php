@@ -2,9 +2,9 @@
 
    ___________________________________Created and designed the Standardized Product Page Template of the webiste by @AnthonyResuello (Anthony Resuello) ____________________________________________
 
-    - I designed the Monitor Product Page of the webiste using Figma @AnthonyResuello
+    - @AnthonyResuello designed and implemented the Standardized Product Page of the webiste using Figma (Link in Trello)
     - Template was used for different products such as monitor, keyboard, headset, and mouse.
-
+ 
 -->
 
 <!DOCTYPE html>
