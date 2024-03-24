@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="fixed routing of product templates">
+      <change afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Pages/Dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/ReportChart.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/ReportChart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/StatWidget.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/StatWidget.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/UserTrend.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/UserTrend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Models/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Models/Orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Providers/Filament/AdminPanelProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Providers/Filament/AdminPanelProvider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -883,6 +888,17 @@
     <MESSAGE value="Admin button on dashboard.blade.php" />
     <MESSAGE value="fixed routing of product templates" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed routing of product templates" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Valhalla/database/migrations/2024_03_11_171115_create_orders_table.php</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
