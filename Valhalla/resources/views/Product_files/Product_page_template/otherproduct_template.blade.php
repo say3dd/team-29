@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valhalla</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/monitor_product.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/standardized_product_page.css') }}">
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
