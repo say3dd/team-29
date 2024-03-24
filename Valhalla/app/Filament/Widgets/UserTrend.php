@@ -4,19 +4,26 @@ namespace App\Filament\Widgets;
 
 use App\Models\User;
 use Filament\Widgets\ChartWidget;
+use Filament\Widgets\Concerns\InteractsWithPageFilters;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
+use Illuminate\Support\Carbon;
 
 class UserTrend extends ChartWidget
 {
+    use InteractsWithPageFilters;
     protected static ?string $heading = 'Chart';
 
     protected function getData(): array
     {
+
+        $start = $this->filters['startDate'];
+        $end = $this->filters['endDate'];
+
         $data = Trend::model(User::class)
             ->between(
-                start: now()->subMonth(),
-                end: now(),
+                start: $start ? Carbon::parse($start) : now()->subMonth(6),
+                end: $end ? Carbon::parse($end) : now(),
             )
             ->perMonth()
             ->count();
@@ -24,23 +31,14 @@ class UserTrend extends ChartWidget
 
 
         return [
-            [
+
                 'datasets' => [
                     [
-                        'label' => 'Sales',
+                        'label' => 'New Users',
                         'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                     ],
                 ],
                 'labels' => $data->map(fn (TrendValue $value) => $value->date),
-            ],
-            'datasets' => [
-                [
-                    'label' => 'Sales',
-                    'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
-                ],
-            ],
-            'labels' => $data->map(fn (TrendValue $value) => $value->date),
-
         ];
     }
 

@@ -167,62 +167,6 @@ class ProductController extends Controller implements BasketInterface
         return $query;
     }
 
-//        if (!empty($filters)) {
-//            foreach ($filters as $attribute => $values) {
-//                foreach ($values as $value) {
-//                    $query->where('product_description', 'LIKE', "%{$attribute}: {$value}%");
-//                }
-//            }
-//        }
-//        if(!empty($filters)) {
-//            foreach ($filters as $filter) {
-//                // Assuming filter format is like "%attribute: value%"
-//                if (is_string($filter) && preg_match('/%([^:]+): ([^%]+)%/', $filter, $matches)) {
-//                    $attribute = $matches[1]; // e.g., "GPU"
-//                    $value = $matches[2];     // e.g., "GeForce RTX 4090"
-//                    // Apply the filter to the query
-//                    $query->where('product_description', 'LIKE', "%$attribute: $value%");
-//                }
-//            }
-//        }
-
-
-//            foreach ($filters as $attribute => $values) {
-//                    $query->where(function ($q) use ($values, $attribute) {
-//                        foreach ($values as $value) {
-//                            $q->where('product_description', 'LIKE', "%$attribute: $value%");
-//                        }
-//                    });
-//                }
-//            }
-
-//        foreach ($filters as $attribute => $values) {
-//            if (!empty($values)) {
-//                $query->where(function ($q) use ($values, $attribute) {
-//                    foreach ($values as $value) {
-//                        $q->orWhere('product_description', 'like', "%$attribute: $value%");
-//                    }
-//                });
-//            }
-//        }
-//        $query->where(function ($q) use ($filters) {
-//            foreach ($filters as $attribute => $values) {
-//                if (!empty($values)) {
-//                    $q->orWhere(function ($subq) use ($values, $attribute) {
-//                        foreach ($values as $value) {
-//                            // Modify the pattern to ensure it correctly matches the structured descriptions
-//                            // Note: Adjust the pattern based on your exact formatting if necessary
-//                            $pattern = "%{$attribute}: {$value}%";
-//                            $subq->orWhere('product_description', 'LIKE', $pattern);
-//                        }
-//                    });
-//                }
-//            }
-//        });
-//        //this is just a log to check the debug issue when getting Data for DB
-//        // \Log::debug('Final Query:', [$query->toSql(), $query->getBindings()]);
-//        return $query;
-
 
     public function getInfo(Request $request)
     {
@@ -267,7 +211,7 @@ class ProductController extends Controller implements BasketInterface
         }
 
         $images = DB::table('images')->get()->where('product_id', $id);
-        return view('Frontend.test',['product' => $productDetails, 'relatedProducts' => $relatedProducts, 'images' => $images]);
+        return view('Product_files.Product_page_template.laptopproduct_template',['product' => $productDetails, 'relatedProducts' => $relatedProducts, 'images' => $images]);
     }
 /** @Bilal Mo works on showing the individual product pages using the id */
     public function showotherproductinfo($id)
@@ -282,7 +226,7 @@ class ProductController extends Controller implements BasketInterface
         foreach ($relatedProducts as $relatedProduct) {
             $relatedProduct->features = $this->productService->extractProductFeatures($relatedProduct);
         }
-        return view('Product_files.Monitor.Monitor',['product' => $productDetails, 'relatedProducts' => $relatedProducts]);
+        return view('Product_files.Product_page_template.otherproduct_template',['product' => $productDetails, 'relatedProducts' => $relatedProducts]);
     }
 
     /**@Bilal implements a randomizer for the related products, showing diff products every time */

@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Admin button on dashboard.blade.php">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_03_2024_12_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_03_2024_12_50__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_03_2024_12_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_03_2024_12_57__Changes_.xml" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="fixed routing of product templates">
+      <change afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Pages/Dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/ReportChart.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/ReportChart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/StatWidget.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/StatWidget.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/UserTrend.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/UserTrend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Models/Orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Models/Orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Providers/Filament/AdminPanelProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Providers/Filament/AdminPanelProvider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -821,7 +824,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711284542828</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="fixed routing of product templates">
+      <option name="closed" value="true" />
+      <created>1711298809079</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1711298809079</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -851,7 +862,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="minor styling to the basket item indicator" />
     <MESSAGE value="basket button alignment fixed and introduced new styling for basket.blade.php" />
     <MESSAGE value="Added the new Pagination for the products page , fixed the product Error" />
     <MESSAGE value="cart.blade.php refactored to basket.blade.php. &#10;Added new codes to the basket.blade.php. Basket implement nearly complete. &#10;&#10;New routes has been added to the web.php. Some redundant code has been removed" />
@@ -876,7 +886,19 @@
     <MESSAGE value="fixed the pagination for it to work on searching aswell" />
     <MESSAGE value="rating and review" />
     <MESSAGE value="Admin button on dashboard.blade.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin button on dashboard.blade.php" />
+    <MESSAGE value="fixed routing of product templates" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed routing of product templates" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Valhalla/database/migrations/2024_03_11_171115_create_orders_table.php</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
