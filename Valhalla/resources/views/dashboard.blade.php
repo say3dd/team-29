@@ -37,6 +37,14 @@
                     </a>
                 </div>
 
+                <div class="items-center justify-start mt-8">
+                    <a href="{{ route('admin') }}">
+                        <x-primary-button class="border-white">
+                            {{ __('Admin') }}
+                        </x-primary-button>
+                    </a>
+                </div>
+
                 <div class="padding: 5px, marging: 5px">
 
 

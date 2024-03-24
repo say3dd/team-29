@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="fixed the pagination for it to work on searching aswell">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet.css" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="rating and review">
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/dashboard.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -837,7 +836,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Basket patch" />
     <MESSAGE value="Refactored web.php and refactored master.blade.php with navigation system" />
     <MESSAGE value="minor styling to the basket item indicator" />
     <MESSAGE value="basket button alignment fixed and introduced new styling for basket.blade.php" />
@@ -862,7 +860,8 @@
     <MESSAGE value="Basic Admin panel has been added" />
     <MESSAGE value="removed the admin table and re added the navigation and deleted the products2 and 3" />
     <MESSAGE value="fixed the pagination for it to work on searching aswell" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the pagination for it to work on searching aswell" />
+    <MESSAGE value="rating and review" />
+    <option name="LAST_COMMIT_MESSAGE" value="rating and review" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
