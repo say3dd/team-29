@@ -437,7 +437,7 @@ input[type="radio"] {
 /*Properties for the buttons that are used to switch between the pages */
 
 .button_container {
-    display: flexbox;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
