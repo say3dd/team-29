@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="product images">
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/alienware-aw768.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/alloy-origins.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/annepro-2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/apex-7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/apex-pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/ck550-rgb.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/corsair-k63.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/corsair-k70.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/corsair-platinum.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/duckyone-2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/huntsman-razer.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/logi-g-pro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/logitech - g915.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/razor-blackwidow.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/red-dragon-k552.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/rog-strix.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Mouse_images/dark-core.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Mouse_images/g502-log.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Mouse_images/lightspeed-logi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Mouse_images/razer-ultimate.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Mouse_images/rog-gladius.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Mouse_images/sensei-310.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/UserTrend.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Widgets/UserTrend.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
