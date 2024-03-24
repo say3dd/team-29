@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="fixed the pagination for it to work on searching aswell">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Admin button on dashboard.blade.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/config/fortify.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/config/fortify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -444,9 +441,6 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/blade-ui-kit/blade-icons" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/danharrin/date-format-converter" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/danharrin/livewire-rate-limiting" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/symfony/dom-crawler" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
-      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -504,7 +498,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.15026.12" />
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14475.35" />
       </set>
     </attachedChunks>
   </component>
@@ -547,7 +541,6 @@
       <workItem from="1711130057178" duration="616000" />
       <workItem from="1711195693237" duration="16136000" />
       <workItem from="1711221087717" duration="10167000" />
-      <workItem from="1711270506220" duration="2073000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -813,7 +806,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711239293010</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Admin button on dashboard.blade.php">
+      <option name="closed" value="true" />
+      <created>1711284542828</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1711284542828</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -843,8 +844,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Basket patch" />
-    <MESSAGE value="Refactored web.php and refactored master.blade.php with navigation system" />
     <MESSAGE value="minor styling to the basket item indicator" />
     <MESSAGE value="basket button alignment fixed and introduced new styling for basket.blade.php" />
     <MESSAGE value="Added the new Pagination for the products page , fixed the product Error" />
@@ -868,7 +867,9 @@
     <MESSAGE value="Basic Admin panel has been added" />
     <MESSAGE value="removed the admin table and re added the navigation and deleted the products2 and 3" />
     <MESSAGE value="fixed the pagination for it to work on searching aswell" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the pagination for it to work on searching aswell" />
+    <MESSAGE value="rating and review" />
+    <MESSAGE value="Admin button on dashboard.blade.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin button on dashboard.blade.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
