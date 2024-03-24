@@ -168,8 +168,7 @@
                 experience.
                 The cutting-edge technology and powerful processors in their
                 gaming laptops elevate gameplay to new heights.Vallhala has
-                redefined my seamless gaming experience.
-                "</blockquote>
+                redefined my seamless gaming experience."</blockquote>
             </div>
           </div>
           <div class="testimonial">
