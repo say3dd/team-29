@@ -93,9 +93,9 @@
                                                             {{ $item->price }} </td>
                                                         <td class="px-4 py-2 border-gray-800 border bg-gray-200">
                                                             {{ $item->created_at->format('jS F Y') }} </td>
-                                                        <td class="px-4 py-2 border-gray-800 border bg-gray-200"><a
+                                                        <td class="px-4 py-2 border-gray-800 border bg-gray-200 text-center""><a
                                                                 href="{{ route('tracking', ['id' => $item->id]) }}">
-                                                                <x-primary-button>
+                                                                <x-primary-button style="">
                                                                     {{ __('Track') }}
                                                                 </x-primary-button>
                                                             </a>
@@ -104,17 +104,17 @@
                                                 @endforeach
                                             @else
                                                 <tr>
-                                                    <td colspan="5" class="px-4 py-2 bg-white">No orders yet</td>
-                                                    <td class="px-4 py-2 border-gray-800 bg-white flex justify-center">
+                                                    <td colspan="7" class="px-4 py-2 bg-white">No orders yet</td>
                                             @endif
 
                                             </td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div style="display: flex ;justify-content: flex-end;">
+                                    <br>
+                                    <div style="display: flex ;justify-content: flex-end; ">
                                         <a href="{{ route('return.request') }}">
-                                            <x-primary-button>
+                                            <x-primary-button style="border-color: white">
                                                 {{ __('Return') }}
                                             </x-primary-button>
                                         </a>
