@@ -502,7 +502,7 @@
                    @foreach($relatedProduct->features as $featureName => $featureValue)
                        <p><strong>{{ $featureName }}</strong>: {{ $featureValue }}</p>
                    @endforeach
-
+                   <a href="{{ url('contactUs') }}" class="add-product-btn">Add to basket</a>
                </div>
                 </div>
 
