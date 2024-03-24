@@ -407,7 +407,7 @@ public function getRelatedProducts($currentProductId,$category)
                 }
             });
         }
-        $products = $query->get();
+        $products = $query->paginate(12);
         foreach ($products as $product) {
             $product->features = $this->productService->extractProductFeatures($product);
         }

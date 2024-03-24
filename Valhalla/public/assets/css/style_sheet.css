@@ -443,6 +443,8 @@ input[type="radio"] {
     align-items: center;
     text-align: center;
     margin: 0 auto;
+    padding-right: 10px;
+
 }
 
 .laptops_container {
@@ -450,24 +452,12 @@ input[type="radio"] {
     margin-top: 100px;
 }
 
-.button_to_switch_page {
-    background-color: #360060;
-    border: transparent;
-    color: white;
-    font-size: 1em;
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
-    margin: 0 auto;
-    font-family: "Noto Sans", sans-serif;
-    border-radius: 0.8rem;
-}
-
-.button_to_switch_page:hover {
-    background-color: rgba(115, 87, 146, 0.9);
-    text-decoration: underline;
-    color: white;
-}
+/*.button_to_switch_page {*/
+/*    width: 0px;*/
+/*    height: 30px;*/
+/*    margin-right: 20px;*/
+/*    margin: 0 auto;*/
+/*}*/
 
 /* footer section */
 

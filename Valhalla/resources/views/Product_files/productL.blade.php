@@ -177,10 +177,6 @@
                         <input type="radio" id="Price_LtoH" name="sorting" value="Price_LtoH">
                         <label for="Price_LtoH">Price: Low to High</label><br>
                     </li>
-                    <li>
-                        <input type="radio" id="Recommended" name="sorting" value="Recommended">
-                        <label for="Recommended"> Recommended</label> <br>
-                    </li>
                         <button class="button_apply"> Apply Changes</button>
                         <button class="button_reset" onclick="resetSort()"> Reset</button>
                 </form>
@@ -247,9 +243,7 @@
         <!-- @BilalMo uses links to assign pagination buttons to the page, query uses the data given so all pages available (e.g. page 1-2) have the same filtering or sorting features-->
         <section class="laptops_container">
             <div class="button_container">
-                <div class="button_to_switch_page">
                     {{$products->appends(request()->query())->links()}}
-                </div>
             </div>
         </section>
 </div>
