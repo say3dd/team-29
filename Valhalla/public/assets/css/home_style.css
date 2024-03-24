@@ -345,7 +345,7 @@ img {
     padding: 0px !important;
     padding-top: 10px;
     box-shadow: 0 10px 20px #000000;
-    border-radius: 15px;
+    border-radius: 0px !important;
 }
 
 .line-section{
