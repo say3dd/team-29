@@ -138,10 +138,10 @@
                     @if($product->category === 'Mouse')
                         <div class = "monitor-feature">
                             <div id="monitor-feature-container">
-                                <div class="monitor-feature-card">
-                                    <img  src="{{ asset('assets/Monitor_images/5940564_2019_11_06_12_00_541908917092.jpeg') }}" alt=""">
+                                <div class="monitor-feature-card">        
+                                    <img  src="{{ asset('assets/Monitor_images/mouse-imagebanner.jpg') }}" alt=""">
                                 </div>
-                            </div>
+                            </div> 
                             @endif
 
                             @if($product->category === 'Keyboard')
