@@ -51,14 +51,13 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
             <div class="p-8 bg-gray-100 dark:bg-gray-800 flex flex-col lg:w-full xl:w-3/5">
 
 
-
-
+                <form onsubmit="return validateForm()" action='{{route('checkout.placeOrder')}}' method="POST" >
                 <label class="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">Contact details</label>
                 <div class="mt-2 flex-col">
-                    <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="first_name" id="first_name" placeholder="First Name" required />
-                    <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="surname" id="surname" placeholder="Surname" required/>
+                    <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="first_name" id="first_name" minlength = "4" maxlength = "20" placeholder="First Name" required />
+                    <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="surname" id="surname" minlength = "2" maxlength = "20" placeholder="Surname" required/>
                     <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="tel" name="phone_number" id="phone_number" minlength="7" maxlength="15" placeholder="Phone Number" required />
-                    <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="email" name="email" id="email" minlength = "7" placeholder ="Email" required/>
+                    <input class="border border-gray-300 p-4 rounded w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="email" name="email" id="email" minlength = "7" maxlength = "30" placeholder ="Email" required/>
                 </div>
 
                 <label class="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">Shipping Address</label>
@@ -89,22 +88,22 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
                 <label class="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">Card details</label>
                 <div class="mt-2 flex-col">
                     <div>
-                        <input class="border rounded border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="" id="" placeholder="Card Holder Name" required/>
-                        <input class="border rounded-tl rounded-tr border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="email" name="" id="" required minlength="16" maxlength="16" placeholder="0000 1234 6549 15151" />
+                        <input class="border rounded border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="" id="card_HolderName" placeholder="Card Holder Name" required/>
+                        <input class="border rounded-tl rounded-tr border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="" id="card_number" required minlength="16" maxlength="16" placeholder="0000 1234 6549 15151" />
                     </div>
                     <div class="flex-row flex">
                         <input class="border rounded-bl border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" type="text" name="expiry_date" id="expiry_date" placeholder="MM/YY" onkeyup="formatString(event);" required/>
-                        <input class="border rounded-br border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" minlength="3" maxlength="3" type="email" name="" id="" placeholder="CVC" required />
+                        <input class="border rounded-br border-gray-300 p-4 w-full m-1 text-base leading-4 placeholder-gray-600 text-gray-600" minlength="3" maxlength="3" type="text" name="" id="cvc" placeholder="CVC" required />
                     </div>
                 </div>
-                <form action='{{route('checkout.placeOrder')}}' method="POST">
                     @csrf
-                    <button class="mt-8 border border-transparent hover:border-gray-300 dark:bg-white dark:hover:bg-gray-900 dark:text-gray-900 dark:hover:text-white dark:border-transparent bg-gray-900 hover:bg-white text-white hover:text-gray-900 flex justify-center items-center py-4 rounded w-full">
+                    <button  type = "submit" class="mt-8 border border-transparent hover:border-gray-300 dark:bg-white dark:hover:bg-gray-900 dark:text-gray-900 dark:hover:text-white dark:border-transparent bg-gray-900 hover:bg-white text-white hover:text-gray-900 flex justify-center items-center py-4 rounded w-full">
                         <div>
                             {{-- <p class="text-base leading-4">Pay £{{number_format($total,2)}}</p> --}}
                         </div>
                     </button>
                 </form>
+            
             </div>
         </div>
     </div>
@@ -113,7 +112,158 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
 
 <script>
 
-/*Validation for Epitry Date of the Card starts here*/
+document.addEventListener('DOMContentLoaded', function() {
+    setupEventListeners();
+});
+
+/* Function to set an Event Listener */
+function setupEventListeners() {
+    var firstNameInput = document.getElementById("first_name");
+    var surnameInput = document.getElementById("surname");
+    var cardHolderNameInput = document.getElementById("card_HolderName");
+    var cardNumberInput = document.getElementById("card_number");
+    var cardCVCInput = document.getElementById("cvc");
+
+    // Add Event Listener for First Name input
+    firstNameInput.addEventListener('input', function() {
+        validateInputAlphabet(firstNameInput);
+    });
+
+    // Add Event Listener for Surname input
+    surnameInput.addEventListener('input', function() {
+        validateInputAlphabet(surnameInput);
+    });
+
+    // Add Event Listener for Card Holder Name input
+    cardHolderNameInput.addEventListener('input', function() {
+        validateInputAlphabet(cardHolderNameInput);
+    });
+    // Add Event Listener for Card Number input
+    cardNumberInput.addEventListener('input', function() {
+        validateInputInteger(cardNumberInput);
+    });
+    // Add Event Listener for CVC input
+    cardCVCInput.addEventListener('input', function() {
+        validateInputInteger(cardCVCInput);
+    });
+}
+
+/* The following function checks that the input contains only alphabetical characters */
+function validateInputAlphabet(inputElement) {
+    var inputValue = inputElement.value.trim();
+    var isValid = true;
+
+    if (!allLetters(inputValue)) {
+        inputElement.setCustomValidity("Please enter only alphabetical characters");
+        isValid = false;
+    } else {
+        inputElement.setCustomValidity(""); // Clear custom validity message if input is valid
+    }
+
+    return isValid;
+}
+
+/* The following function checks that the input contains only numbers */
+function validateInputInteger(inputElement) {
+    var inputValue = inputElement.value.trim();
+    var isValid = true;
+
+    if (!allIntegers(inputValue)) {
+        inputElement.setCustomValidity("Please use integers only");
+        isValid = false;
+    } else {
+        inputElement.setCustomValidity(""); // Clear custom validity message if input is valid
+    }
+
+    return isValid;
+}
+
+/* The following function check that the user entered the infromation and the input fields are not left empty*/
+function validateForm() {
+    var firstName = document.getElementById("first_name").value;
+    var surname = document.getElementById("surname").value;
+    var phoneNumber = document.getElementById("phone_number").value;
+    var email = document.getElementById("email").value;
+    var address_line1 = document.getElementById("address_line1").value;
+    var postcode = document.getElementById("postcode").value;
+    var city_town = document.getElementById("city_town").value;
+    var card_HolderName = document.getElementById("card_HolderName").value;
+    var card_number = document.getElementById("card_number").value;
+    var expiry_date = document.getElementById("expiry_date").value;
+    var cvc = document.getElementById("cvc").value;
+    var isValid = true;
+
+    /* Checks that the Firsrt Name field is not left empty */
+    if (firstName.trim() === "") {
+        isValid = false;
+    }
+    /* Checks that the Surname field is not left empty */
+    if (surname.trim() === "") {
+        isValid = false;
+    }
+    /* Checks that the Phone Number field is not left empty */
+    if (phoneNumber.trim() === "") {
+        isValid = false;
+    }
+    /* Checks that the Email field is not left empty */
+    if (email.trim() === "") {
+        isValid = false;
+    }
+    /* Checks that the Address Line1 field is not left empty */
+    if (address_line1.trim() === "") {
+        isValid = false;
+    }
+    /* Checks that the Postcode field is not left empty */
+    if (postcode.trim() === "") {
+        isValid = false;
+    }
+    /* Checks that the City field is not left empty */
+    if (city_town.trim() === "") {
+        isValid = false;
+    }
+    /* Checks that the Card Holder Name field is not left empty */
+    if (card_HolderName.trim() === "") {
+        isValid = false;
+    }
+    /* Checks that the Card Number field is not left empty */
+    if (card_number.trim() === "") {
+        isValid = false;
+    }
+    /* Checks that the Expiry Date field is not left empty */
+    if (expiry_date.trim() === "") {
+        isValid = false;
+    }
+    /* Checks that the CVC field is not left empty */
+    if (cvc.trim() === "") {
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+/* The following functions checks that only alphabertical characters are entered */
+/* Regular expressions are used in order to check whether the user input consists of alphabetical characters only*/
+function allLetters(input) { // Receive the input field as a parameter
+    var letters = /^[A-Za-z]+$/;
+    if (input.match(letters)) { // Use the match() method directly on the input value
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/* The following functions checks that only numbers are entered */
+/* Regular expressions are used in order to check whether the user input consists of numbers only*/
+function allIntegers(input) { // Receive the input field as a parameter
+    var integers = /^[0-9]+$/;
+    if (input.match(integers)) { // Use the match() method directly on the input value
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/* Function for validating Epitry Date of the Card input*/
     function formatString(e) {
         var inputChar = String.fromCharCode(event.keyCode);
         var code = event.keyCode;
@@ -137,6 +287,8 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
         /*Validation for Epitry Date of the Card finishes here*/
 
     }
+
+
     let closeIcon = document.getElementById("closeIcon");
     let openIcon = document.getElementById("openIcon");
     let dropdown = document.getElementById("dropdown");
