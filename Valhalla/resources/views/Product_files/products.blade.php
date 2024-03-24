@@ -17,10 +17,9 @@
         {{--            This skips the feature that we dont want to show     --}}
         @if(
     ($product->category === 'Mouse' && in_array($featureName, ['Battery Life'])) ||
-    ($product->category === 'Monitor' && $featureName === 'Response Time') ||
+    ($product->category === 'Monitor' && $featureName === 'Response-Time') ||
     ($product->category === 'Keyboard' && $featureName === 'Connectivity') ||
-     ($product->category === 'Keyboard' && $featureName === 'KeyBoard Type') ||
-     ($product->category === 'Laptop' && $featureName === 'Colour') 
+     ($product->category === 'Laptop' && $featureName === 'Colour')
         )
                     @continue
                 @endif
