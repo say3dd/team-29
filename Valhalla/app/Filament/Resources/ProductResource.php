@@ -57,7 +57,7 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id')->label('ID'),
+                TextColumn::make('product_id')->label('ID'),
                 TextColumn::make('product_name')->label('Product Name')->searchable()->sortable(),
                 TextColumn::make('brand')->label('Brand')->searchable()->sortable(),
                 TextColumn::make('category')->label('Category')->sortable()->searchable(),

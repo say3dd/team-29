@@ -393,6 +393,10 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/blade-ui-kit/blade-icons" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/danharrin/date-format-converter" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/danharrin/livewire-rate-limiting" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/flowframe/laravel-trend" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2">
