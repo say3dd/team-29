@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="rating and review">
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/dashboard.blade.php" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Admin button on dashboard.blade.php">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -806,7 +806,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711239293010</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Admin button on dashboard.blade.php">
+      <option name="closed" value="true" />
+      <created>1711284542828</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1711284542828</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -836,7 +844,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactored web.php and refactored master.blade.php with navigation system" />
     <MESSAGE value="minor styling to the basket item indicator" />
     <MESSAGE value="basket button alignment fixed and introduced new styling for basket.blade.php" />
     <MESSAGE value="Added the new Pagination for the products page , fixed the product Error" />
@@ -861,7 +868,8 @@
     <MESSAGE value="removed the admin table and re added the navigation and deleted the products2 and 3" />
     <MESSAGE value="fixed the pagination for it to work on searching aswell" />
     <MESSAGE value="rating and review" />
-    <option name="LAST_COMMIT_MESSAGE" value="rating and review" />
+    <MESSAGE value="Admin button on dashboard.blade.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin button on dashboard.blade.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
