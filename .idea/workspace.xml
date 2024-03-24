@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="removed the admin table and re added the navigation and deleted the products2 and 3">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="fixed the pagination for it to work on searching aswell">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -543,7 +541,7 @@
       <workItem from="1711030957399" duration="3410000" />
       <workItem from="1711130057178" duration="616000" />
       <workItem from="1711195693237" duration="16136000" />
-      <workItem from="1711221087717" duration="10012000" />
+      <workItem from="1711221087717" duration="10167000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
@@ -801,7 +799,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711222043476</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="fixed the pagination for it to work on searching aswell">
+      <option name="closed" value="true" />
+      <created>1711239293010</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1711239293010</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -831,7 +837,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="basket button styling fixed 1.0" />
     <MESSAGE value="Basket patch" />
     <MESSAGE value="Refactored web.php and refactored master.blade.php with navigation system" />
     <MESSAGE value="minor styling to the basket item indicator" />
@@ -856,7 +861,8 @@
     <MESSAGE value="Filament Implementation" />
     <MESSAGE value="Basic Admin panel has been added" />
     <MESSAGE value="removed the admin table and re added the navigation and deleted the products2 and 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed the admin table and re added the navigation and deleted the products2 and 3" />
+    <MESSAGE value="fixed the pagination for it to work on searching aswell" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the pagination for it to work on searching aswell" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
