@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="fixed the pagination for it to work on searching aswell">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/public/assets/css/style_sheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/config/fortify.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/config/fortify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -442,6 +444,9 @@
       <path value="$PROJECT_DIR$/Valhalla/vendor/blade-ui-kit/blade-icons" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/danharrin/date-format-converter" />
       <path value="$PROJECT_DIR$/Valhalla/vendor/danharrin/livewire-rate-limiting" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-ext/helpers" />
+      <path value="$PROJECT_DIR$/Valhalla/vendor/open-admin-org/open-admin" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -499,7 +504,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14475.35" />
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.15026.12" />
       </set>
     </attachedChunks>
   </component>
@@ -542,6 +547,7 @@
       <workItem from="1711130057178" duration="616000" />
       <workItem from="1711195693237" duration="16136000" />
       <workItem from="1711221087717" duration="10167000" />
+      <workItem from="1711270506220" duration="2073000" />
     </task>
     <task id="LOCAL-00001" summary="added Dashboard.css and linked it with dashboard.blade.php">
       <option name="closed" value="true" />
