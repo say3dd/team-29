@@ -1,0 +1,350 @@
+Index: Valhalla/app/Providers/AuthServiceProvider.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Providers;\n\n// use Illuminate\\Support\\Facades\\Gate;\nuse Illuminate\\Foundation\\Support\\Providers\\AuthServiceProvider as ServiceProvider;\n\nclass AuthServiceProvider extends ServiceProvider\n{\n    /**\n     * The model to policy mappings for the application.\n     *\n     * @var array<class-string, class-string>\n     */\n    protected $policies = [\n        //\n    ];\n\n    /**\n     * Register any authentication / authorization services.\n     */\n    public function boot(): void\n    {\n        //\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/app/Providers/AuthServiceProvider.php b/Valhalla/app/Providers/AuthServiceProvider.php
+--- a/Valhalla/app/Providers/AuthServiceProvider.php	
++++ b/Valhalla/app/Providers/AuthServiceProvider.php	
+@@ -2,8 +2,11 @@
+ 
+ namespace App\Providers;
+ 
+-// use Illuminate\Support\Facades\Gate;
++use Illuminate\Support\Facades\Gate;
+ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
++use App\Models\Rating;
++use App\Policies\RatingPolicy;
++use App\Models\Orders;
+ 
+ class AuthServiceProvider extends ServiceProvider
+ {
+@@ -13,7 +16,7 @@
+      * @var array<class-string, class-string>
+      */
+     protected $policies = [
+-        //
++        Orders::class => RatingPolicy::class,
+     ];
+ 
+     /**
+Index: Valhalla/resources/views/layouts/navigation.blade.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{{-- Basit Ali Mohammad = @BM786 added Wishlist Navigation link --}}\n\n<nav x-data=\"{ open: false }\" class=\"bg-white border-b border-gray-100\">\n    <!-- Primary Navigation Menu -->\n    <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n        <div class=\"flex justify-between h-16\">\n            <div class=\"flex\">\n                <!-- Logo -->\n                <div class=\"shrink-0 flex items-center\">\n                    <a href=\"{{ route('index') }}\">\n                        <x-application-logo class=\"block h-9 w-auto fill-current text-gray-800\" />\n                    </a>\n                </div>\n\n                <!-- Navigation Links -->\n                <div class=\"hidden space-x-8 sm:-my-px sm:ms-10 sm:flex\">\n                    <x-nav-link :href=\"route('home')\" :active=\"request()->routeIs('home')\">\n                        {{ __('Dashboard') }}\n                    </x-nav-link>\n                </div>\n\n                <div class=\"hidden space-x-8 sm:-my-px sm:ms-10 sm:flex\">\n                    <x-nav-link :href=\"route('wishlist')\" :active=\"request()->routeIs('wishlist')\">\n                        {{ __('Wishlist') }}\n                    </x-nav-link>\n                </div>\n\n                <div class=\"hidden space-x-8 sm:-my-px sm:ms-10 sm:flex\">\n                    <x-nav-link :href=\"route('home')\" :active=\"request()->routeIs('home')\">\n                        {{ __('Basket') }}\n                    </x-nav-link>\n                </div>\n            </div>\n\n            <!-- Settings Dropdown -->\n            <div class=\"hidden sm:flex sm:items-center sm:ms-6\">\n                <x-dropdown align=\"right\" width=\"48\">\n                    <x-slot name=\"trigger\">\n                        <button class=\"inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150\">\n                            <div>{{ Auth::user()->name }}</div>\n\n                            <div class=\"ms-1\">\n                                <svg class=\"fill-current h-4 w-4\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\">\n                                    <path fill-rule=\"evenodd\" d=\"M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\" clip-rule=\"evenodd\" />\n                                </svg>\n                            </div>\n                        </button>\n                    </x-slot>\n\n                    <x-slot name=\"content\">\n                        <x-dropdown-link :href=\"route('profile.edit')\">\n                            {{ __('Profile') }}\n                        </x-dropdown-link>\n\n                        <!-- Authentication -->\n                        <form method=\"POST\" action=\"{{ route('logout') }}\">\n                            @csrf\n\n                            <x-dropdown-link :href=\"route('logout')\"\n                                    onclick=\"event.preventDefault();\n                                                this.closest('form').submit();\">\n                                {{ __('Log Out') }}\n                            </x-dropdown-link>\n                        </form>\n                    </x-slot>\n                </x-dropdown>\n            </div>\n\n            <!-- Hamburger -->\n            <div class=\"-me-2 flex items-center sm:hidden\">\n                <button @click=\"open = ! open\" class=\"inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out\">\n                    <svg class=\"h-6 w-6\" stroke=\"currentColor\" fill=\"none\" viewBox=\"0 0 24 24\">\n                        <path :class=\"{'hidden': open, 'inline-flex': ! open }\" class=\"inline-flex\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 6h16M4 12h16M4 18h16\" />\n                        <path :class=\"{'hidden': ! open, 'inline-flex': open }\" class=\"hidden\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\" />\n                    </svg>\n                </button>\n            </div>\n        </div>\n    </div>\n\n    <!-- Responsive Navigation Menu -->\n    <div :class=\"{'block': open, 'hidden': ! open}\" class=\"hidden sm:hidden\">\n        <div class=\"pt-2 pb-3 space-y-1\">\n            <x-responsive-nav-link :href=\"route('home')\" :active=\"request()->routeIs('home')\">\n                {{ __('Dashboard') }}\n            </x-responsive-nav-link>\n        </div>\n\n        <!-- Responsive Settings Options -->\n        <div class=\"pt-4 pb-1 border-t border-gray-200\">\n            <div class=\"px-4\">\n                <div class=\"font-medium text-base text-gray-800\">{{ Auth::user()->name }}</div>\n                <div class=\"font-medium text-sm text-gray-500\">{{ Auth::user()->email }}</div>\n            </div>\n\n            <div class=\"mt-3 space-y-1\">\n                <x-responsive-nav-link :href=\"route('profile.edit')\">\n                    {{ __('Profile') }}\n                </x-responsive-nav-link>\n\n                <!-- Authentication -->\n                <form method=\"POST\" action=\"{{ route('logout') }}\">\n                    @csrf\n\n                    <x-responsive-nav-link :href=\"route('logout')\"\n                            onclick=\"event.preventDefault();\n                                        this.closest('form').submit();\">\n                        {{ __('Log Out') }}\n                    </x-responsive-nav-link>\n                </form>\n            </div>\n        </div>\n    </div>\n</nav>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/resources/views/layouts/navigation.blade.php b/Valhalla/resources/views/layouts/navigation.blade.php
+--- a/Valhalla/resources/views/layouts/navigation.blade.php	
++++ b/Valhalla/resources/views/layouts/navigation.blade.php	
+@@ -14,7 +14,7 @@
+ 
+                 <!-- Navigation Links -->
+                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
++                    <x-nav-link :href="route('home')" :active="request()->routeIs('dashoard')">
+                         {{ __('Dashboard') }}
+                     </x-nav-link>
+                 </div>
+Index: Valhalla/resources/views/livewire/product-ratings.blade.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><div>\n    <section class=\"w-full px-8 pt-4 pb-10 xl:px-8\">\n        <div class=\"max-w-5xl mx-auto\">\n            <div class=\"flex flex-col items-center md:flex-row\">\n\n                <div class=\"w-full mt-16 md:mt-0\">\n                    <div class=\"relative z-10 h-auto p-4 py-10 overflow-hidden bg-violet-900 rounded-lg shadow-2xl px-7\">\n                        @auth\n                            <div class=\" space-y-5 relative left-[105px] top-[-10px]\">\n                                <p class=\"font-bold text-white uppercase\">\n                                    Rate this product\n                                </p>\n                            </div>\n                            @if (session()->has('message'))\n                                <p class=\"text-xl text-white md:pr-16\">\n                                    {{ session('message') }}\n                                </p>\n                            @endif\n                            @if($hideForm != true)\n{{--                                <livewire:product-ratings/>--}}\n                                <form wire:submit.prevent=\"rate()\">\n                                    <div class=\"block max-w-3xl px-1 py-2 mx-auto\">\n                                        <div class=\"flex space-x-1 rating\">\n                                            <label for=\"star1\" wire:click=\"$set('rating', 1)\">\n                                                <svg class=\"cursor-pointer block w-8 h-8 @if($rating >= 1 ) text-yellow-300 @else text-grey @endif\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z\"/></svg>\n                                            </label>\n                                            <label for=\"star2\" wire:click=\"$set('rating', 2)\">\n                                                <svg class=\"cursor-pointer block w-8 h-8 @if($rating >= 2 ) text-yellow-300 @else text-grey @endif\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z\"/></svg>\n                                            </label>\n                                            <label for=\"star3\" wire:click=\"$set('rating', 3)\">\n                                                <svg class=\"cursor-pointer block w-8 h-8 @if($rating >= 3 ) text-yellow-300 @else text-grey @endif\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z\"/></svg>\n                                            </label>\n                                            <label for=\"star4\" wire:click=\"$set('rating', 4)\">\n                                                <svg class=\"cursor-pointer block w-8 h-8 @if($rating >= 4 ) text-yellow-300 @else text-grey @endif\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z\"/></svg>\n                                            </label>\n                                            <label for=\"star5\" wire:click=\"$set('rating', 5)\">\n                                                <svg class=\"cursor-pointer block w-8 h-8 @if($rating >= 5 ) text-yellow-300 @else text-grey @endif\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z\"/></svg>\n                                            </label>\n                                        </div>\n                                        <div class=\"my-5\">\n                                            @error('comment')\n                                                <p class=\"mt-1 text-red-500\">{{ $message }}</p>\n                                            @enderror\n                                            <label>\n                                                <textarea wire:model.defer=\"comment\" name=\"description\" class=\"block text-gray-800 w-full px-4 py-3 border rounded-lg focus:border-blue-500 focus:outline-none\" placeholder=\"Comment..\"></textarea>\n                                            </label>\n                                        </div>\n                                    </div>\n                                    <div class=\"relative left-[785px]\">\n                                        <x-primary-button type=\"submit\" class=\" text-white\">Submit</x-primary-button>\n                                        @auth\n                                            @if($currentId)\n                                                <button wire:click.prevent=\"delete({{ $currentId }})\" class=\"text-sm cursor-pointer\">Delete</button>\n                                            @endif\n                                        @endauth\n                                    </div>\n                                </form>\n                            @endif\n                        @else\n                            <div>\n                                <div class=\"mb-8 text-center text-white\">\n                                    You need to login in order to be able to rate the product!\n                                </div>\n                                <x-primary-button\n                                href=\"{{ route('login') }}\"\n                                    class=\"mx-auto font-medium text-center relative left-[450px]\">\n                                Login\n                                </x-primary-button>\n                            </div>\n                        @endauth\n                    </div>\n                </div>\n\n            </div>\n        </div>\n    </section>\n    <section class=\" block pt-20 pb-24 text-left bg-indigo-950\">\n        <div class=\"w-full px-20 mx-auto text-left md:px-10 max-w-7xl xl:px-16\">\n            <div class=\"box-border flex flex-col flex-wrap justify-center -mx-4 text-indigo-900\">\n                <div class=\"relative w-full mb-12 leading-6 text-left xl:flex-grow-0 xl:flex-shrink-0\">\n                    <h2 class=\"box-border mx-0 mt-0 font-sans text-4xl font-bold text-center text-white\">\n                        Ratings\n                    </h2>\n                </div>\n            </div>\n            <div class=\"box-border flex flex-wrap justify-center gap-10 -mx-4 text-center text-white lg:gap-16 lg:justify-start lg:text-left\">\n                @forelse ($comments as $comment)\n                    <div class=\"flex col-span-1\">\n                        <div class=\"relative flex-shrink-0 w-20 h-20 text-left\">\n                            <a href=\"{{ '@' . $comment->user->name }}\">\n                            </a>\n                        </div>\n                        <div class=\"relative px-4 mb-16 leading-6 text-left\">\n                            <div class=\"box-border text-lg font-medium text-gray-600\">\n                                {{ $comment->comment }}\n                            </div>\n                            <div class=\"box-border mt-5 text-lg font-semibold text-indigo-900 uppercase\">\n                                Rating: <strong>{{ $comment->rating }}</strong> ⭐\n                                @auth\n                                    @if(auth()->user()->id == $comment->user_id || auth()->user()->role->name == 'admin' ))\n                                        - <a wire:click.prevent=\"delete({{ $comment->id }})\" class=\"text-sm cursor-pointer\">Delete</a>\n                                    @endif\n                                @endauth\n                            </div>\n                            <div class=\"box-border text-left text-white\" style=\"quotes: auto;\">\n                                <a href=\"{{ '@' . $comment->user->username }}\">\n                                    {{  $comment->user->name }}\n                                </a>\n                            </div>\n                        </div>\n                    </div>\n                @empty\n                <div class=\"flex col-span-1\">\n                    <div class=\"relative px-4 mb-16 leading-6 text-left\">\n                        <div class=\"box-border text-lg font-medium text-white\">\n                            No ratings\n                        </div>\n                    </div>\n                </div>\n                @endforelse\n            </div>\n            </div>\n    </section>\n</div>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/resources/views/livewire/product-ratings.blade.php b/Valhalla/resources/views/livewire/product-ratings.blade.php
+--- a/Valhalla/resources/views/livewire/product-ratings.blade.php	
++++ b/Valhalla/resources/views/livewire/product-ratings.blade.php	
+@@ -1,3 +1,5 @@
++@livewireScripts
++
+ <div>
+     <section class="w-full px-8 pt-4 pb-10 xl:px-8">
+         <div class="max-w-5xl mx-auto">
+@@ -6,35 +8,30 @@
+                 <div class="w-full mt-16 md:mt-0">
+                     <div class="relative z-10 h-auto p-4 py-10 overflow-hidden bg-violet-900 rounded-lg shadow-2xl px-7">
+                         @auth
+-                            <div class=" space-y-5 relative left-[105px] top-[-10px]">
++                            <div class="space-y-5 relative left-[105px] top-[-10px]">
+                                 <p class="font-bold text-white uppercase">
+                                     Rate this product
+                                 </p>
+                             </div>
+-                            @if (session()->has('message'))
+-                                <p class="text-xl text-white md:pr-16">
+-                                    {{ session('message') }}
+-                                </p>
+-                            @endif
+                             @if($hideForm != true)
+-{{--                                <livewire:product-ratings/>--}}
+                                 <form wire:submit.prevent="rate()">
+                                     <div class="block max-w-3xl px-1 py-2 mx-auto">
+                                         <div class="flex space-x-1 rating">
++                                            <!-- Star rating labels -->
+                                             <label for="star1" wire:click="$set('rating', 1)">
+-                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 1 ) text-yellow-300 @else text-grey @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
++                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 1 ) text-yellow-300 @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                             </label>
+                                             <label for="star2" wire:click="$set('rating', 2)">
+-                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 2 ) text-yellow-300 @else text-grey @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
++                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 2 ) text-yellow-300 @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                             </label>
+                                             <label for="star3" wire:click="$set('rating', 3)">
+-                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 3 ) text-yellow-300 @else text-grey @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
++                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 3 ) text-yellow-300 @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                             </label>
+                                             <label for="star4" wire:click="$set('rating', 4)">
+-                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 4 ) text-yellow-300 @else text-grey @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
++                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 4 ) text-yellow-300 @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                             </label>
+                                             <label for="star5" wire:click="$set('rating', 5)">
+-                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 5 ) text-yellow-300 @else text-grey @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
++                                                <svg class="cursor-pointer block w-8 h-8 @if($rating >= 5 ) text-yellow-300 @endif" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                                             </label>
+                                         </div>
+                                         <div class="my-5">
+@@ -47,7 +44,7 @@
+                                         </div>
+                                     </div>
+                                     <div class="relative left-[785px]">
+-                                        <x-primary-button type="submit" class=" text-white">Submit</x-primary-button>
++                                        <x-primary-button type="submit" class="text-white">Submit</x-primary-button>
+                                         @auth
+                                             @if($currentId)
+                                                 <button wire:click.prevent="delete({{ $currentId }})" class="text-sm cursor-pointer">Delete</button>
+@@ -56,15 +53,18 @@
+                                     </div>
+                                 </form>
+                             @endif
++                            @if (session()->has('message'))
++                                <p class="text-xl text-white md:pr-16">
++                                    {{ session('message') }}
++                                </p>
++                            @endif
+                         @else
+                             <div>
+                                 <div class="mb-8 text-center text-white">
+                                     You need to login in order to be able to rate the product!
+                                 </div>
+-                                <x-primary-button
+-                                href="{{ route('login') }}"
+-                                    class="mx-auto font-medium text-center relative left-[450px]">
+-                                Login
++                                <x-primary-button href="{{ route('login') }}" class="mx-auto font-medium text-center relative left-[450px]">
++                                    Login
+                                 </x-primary-button>
+                             </div>
+                         @endauth
+@@ -74,7 +74,7 @@
+             </div>
+         </div>
+     </section>
+-    <section class=" block pt-20 pb-24 text-left bg-indigo-950">
++    <section class="block pt-20 pb-24 text-left bg-indigo-950">
+         <div class="w-full px-20 mx-auto text-left md:px-10 max-w-7xl xl:px-16">
+             <div class="box-border flex flex-col flex-wrap justify-center -mx-4 text-indigo-900">
+                 <div class="relative w-full mb-12 leading-6 text-left xl:flex-grow-0 xl:flex-shrink-0">
+@@ -86,39 +86,26 @@
+             <div class="box-border flex flex-wrap justify-center gap-10 -mx-4 text-center text-white lg:gap-16 lg:justify-start lg:text-left">
+                 @forelse ($comments as $comment)
+                     <div class="flex col-span-1">
+-                        <div class="relative flex-shrink-0 w-20 h-20 text-left">
+-                            <a href="{{ '@' . $comment->user->name }}">
+-                            </a>
+-                        </div>
+-                        <div class="relative px-4 mb-16 leading-6 text-left">
+-                            <div class="box-border text-lg font-medium text-gray-600">
+-                                {{ $comment->comment }}
+-                            </div>
+-                            <div class="box-border mt-5 text-lg font-semibold text-indigo-900 uppercase">
+-                                Rating: <strong>{{ $comment->rating }}</strong> ⭐
+-                                @auth
+-                                    @if(auth()->user()->id == $comment->user_id || auth()->user()->role->name == 'admin' ))
+-                                        - <a wire:click.prevent="delete({{ $comment->id }})" class="text-sm cursor-pointer">Delete</a>
+-                                    @endif
+-                                @endauth
+-                            </div>
+-                            <div class="box-border text-left text-white" style="quotes: auto;">
+-                                <a href="{{ '@' . $comment->user->username }}">
+-                                    {{  $comment->user->name }}
+-                                </a>
+-                            </div>
+-                        </div>
++                        <!-- Rating comments -->
+                     </div>
+                 @empty
+-                <div class="flex col-span-1">
+-                    <div class="relative px-4 mb-16 leading-6 text-left">
+-                        <div class="box-border text-lg font-medium text-white">
+-                            No ratings
+-                        </div>
+-                    </div>
+-                </div>
++                    <div class="flex col-span-1">
++                        <div class="relative px-4 mb-16 leading-6 text-left">
++                            <div class="box-border text-lg font-medium text-white">
++                                No ratings
++                            </div>
++                        </div>
++                    </div>
+                 @endforelse
+             </div>
+-            </div>
++        </div>
+     </section>
+ </div>
++
++@push('scripts')
++    <script>
++        Livewire.on('ratingCreated', message => {
++            alert(message);
++        });
++    </script>
++@endpush
+\ No newline at end of file
+Index: Valhalla/app/Livewire/ProductRatings.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Livewire;\n\nuse Livewire\\Component;\nuse App\\Models\\Rating;\n\nclass ProductRatings extends Component\n{\n    public $rating;\n    public $comment;\n    public $currentId;\n    public $product;\n    public $hideForm;\n\n    protected $rules = [\n        'rating' => ['required', 'in:1,2,3,4,5'],\n        'comment' => 'required',\n\n    ];\n\n    public function render()\n    {\n        $comments = Rating::where('product_id', $this->product->id)->where('status', 1)->with('user')->get();\n        return view('livewire.product-ratings', compact('comments'));\n    }\n\n    public function mount()\n    {\n        if(auth()->user()){\n            $rating = Rating::where('user_id', auth()->user()->id)->where('product_id', $this->product->id)->first();\n            if (!empty($rating)) {\n                $this->rating  = $rating->rating;\n                $this->comment = $rating->comment;\n                $this->currentId = $rating->id;\n            }\n        }\n        return view('livewire.product-ratings');\n    }\n\n    public function delete($id)\n    {\n        $rating = Rating::where('id', $id)->first();\n        if ($rating && ($rating->user_id == auth()->user()->id)) {\n            $rating->delete();\n        }\n        if ($this->currentId) {\n            $this->currentId = '';\n            $this->rating  = '';\n            $this->comment = '';\n        }\n    }\n\n    public function rate()\n    {\n        $rating = Rating::where('user_id', auth()->user()->id)->where('product_id', $this->product->id)->first();\n        $this->validate();\n        if (!empty($rating)) {\n            $rating->user_id = auth()->user()->id;\n            $rating->product_id = $this->product->id;\n            $rating->rating = $this->rating;\n            $rating->comment = $this->comment;\n            $rating->status = 1;\n            try {\n                $rating->update();\n            } catch (\\Throwable $th) {\n                throw $th;\n            }\n            session()->flash('message', 'Success!');\n        } else {\n            $rating = new Rating;\n            $rating->user_id = auth()->user()->id;\n            $rating->product_id = $this->product->id;\n            $rating->rating = $this->rating;\n            $rating->comment = $this->comment;\n            $rating->status = 1;\n            try {\n                $rating->save();\n            } catch (\\Throwable $th) {\n                throw $th;\n            }\n            $this->hideForm = true;\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/app/Livewire/ProductRatings.php b/Valhalla/app/Livewire/ProductRatings.php
+--- a/Valhalla/app/Livewire/ProductRatings.php	
++++ b/Valhalla/app/Livewire/ProductRatings.php	
+@@ -16,17 +16,18 @@
+     protected $rules = [
+         'rating' => ['required', 'in:1,2,3,4,5'],
+         'comment' => 'required',
+-
+     ];
+ 
+     public function render()
+     {
+-        $comments = Rating::where('product_id', $this->product->id)->where('status', 1)->with('user')->get();
++        $comments = Rating::where('product_id', $this->product->id)->with('user')->get();
+         return view('livewire.product-ratings', compact('comments'));
+     }
+ 
+-    public function mount()
++    public function mount($product)
+     {
++        $this->product = $product;
++
+         if(auth()->user()){
+             $rating = Rating::where('user_id', auth()->user()->id)->where('product_id', $this->product->id)->first();
+             if (!empty($rating)) {
+@@ -35,7 +36,6 @@
+                 $this->currentId = $rating->id;
+             }
+         }
+-        return view('livewire.product-ratings');
+     }
+ 
+     public function delete($id)
+@@ -53,33 +53,27 @@
+ 
+     public function rate()
+     {
+-        $rating = Rating::where('user_id', auth()->user()->id)->where('product_id', $this->product->id)->first();
+         $this->validate();
+-        if (!empty($rating)) {
+-            $rating->user_id = auth()->user()->id;
+-            $rating->product_id = $this->product->id;
+-            $rating->rating = $this->rating;
+-            $rating->comment = $this->comment;
+-            $rating->status = 1;
+-            try {
+-                $rating->update();
+-            } catch (\Throwable $th) {
+-                throw $th;
+-            }
+-            session()->flash('message', 'Success!');
++
++        $rating = Rating::where('user_id', auth()->user()->id)
++                        ->where('product_id', $this->product->id)
++                        ->first();
++
++        if ($rating) {
++            $rating->update([
++                'rating' => $this->rating,
++                'comment' => $this->comment,
++            ]);
+         } else {
+-            $rating = new Rating;
+-            $rating->user_id = auth()->user()->id;
+-            $rating->product_id = $this->product->id;
+-            $rating->rating = $this->rating;
+-            $rating->comment = $this->comment;
+-            $rating->status = 1;
+-            try {
+-                $rating->save();
+-            } catch (\Throwable $th) {
+-                throw $th;
+-            }
+-            $this->hideForm = true;
++            Rating::create([
++                'user_id' => auth()->user()->id,
++                'product_id' => $this->product->id,
++                'rating' => $this->rating,
++                'comment' => $this->comment,
++            ]);
+         }
++
++        $this->reset(['rating', 'comment']);
++        $this->emit('ratingCreated', 'Rating and comment have been submitted successfully!');
+     }
+-}
++}
+\ No newline at end of file
+Index: Valhalla/app/Http/Controllers/WishListController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Http\\Controllers;\n\nuse Exception;\nuse App\\Models\\Wishlists;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\DB;\nuse Illuminate\\Support\\Facades\\Log;\nuse App\\Http\\Controllers\\Controller;\nuse Illuminate\\Support\\Facades\\Auth;\nuse Illuminate\\Database\\QueryException;\n\nclass WishListController extends Controller\n{\n    public function index()\n    {\n        $userID = Auth::id();\n        $wishlistItems = DB::table('Wishlists')\n            ->where('user_id', $userID)\n            ->join('products', 'Wishlists.product_id', '=', 'products.product_id')\n            ->orderBy('position')\n            ->get(['products.product_name', 'products.images', 'Wishlists.product_id']);\n\n        return view('FrontEnd.wishlist', ['wishlistItems' => $wishlistItems]);\n    }\n\n    public function add(Request $request)\n    {\n        try {\n        $user_id = auth()->id();\n        $product_id = $request->input('product_id');\n        $position = Wishlists::where('user_id', $user_id)->max('position') + 1;\n        $wishlist = Wishlists::create([\n            'user_id' => $user_id,\n            'product_id' => $product_id,\n            'position' => $position,\n        ]);\n    } catch (QueryException $e) {\n        return back()->with('error', 'Failed to add product to wishlist.');\n    }\n\n\n    return back()->with('success', 'Product added to your wishlist!');\n}\n    public function saveOrder(Request $request)\n    {\n        $order = json_decode($request->input('order'));\n    \n        foreach ($order as $position => $productId) {\n            // Remove the 'product_' from the product ID\n            $productId = str_replace('product_', '', $productId);\n    \n            $wishlistItem = DB::table('wishlists')->where('product_id', $productId)->first();\n    \n            if (!$wishlistItem) {\n                return response()->json(['status' => 'error', 'message' => 'Wishlist item not found for product ID: ' . $productId]);\n            }\n    \n            $position += 1;\n            DB::table('wishlists')->where('product_id', $productId)->update(['position' => $position]);\n        }\n    \n        return response()->json(['status' => 'success']);\n    }\n\n    public function remove($productId)\n    {\n        try {\n            // Get the currently authenticated user\n            $user = auth()->user();\n            // Find the wishlist item by product ID and user ID\n            $item = Wishlists::where('product_id', $productId)\n                            ->where('user_id', $user->id)\n                            ->first();\n            // If item exists, delete\n            if ($item) {\n                $item->delete();\n                return back()->with('success', 'Item removed from wishlist.');\n            }\n            return back()->with('error', 'Item not found in wishlist.');\n        } catch (Exception $e) {    \n            // Redirect back with an error message\n            return back()->with('error', 'Failed to remove item from wishlist.');\n        }\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/app/Http/Controllers/WishListController.php b/Valhalla/app/Http/Controllers/WishListController.php
+--- a/Valhalla/app/Http/Controllers/WishListController.php	
++++ b/Valhalla/app/Http/Controllers/WishListController.php	
+@@ -46,21 +46,21 @@
+     public function saveOrder(Request $request)
+     {
+         $order = json_decode($request->input('order'));
+-    
++
+         foreach ($order as $position => $productId) {
+             // Remove the 'product_' from the product ID
+             $productId = str_replace('product_', '', $productId);
+-    
++
+             $wishlistItem = DB::table('wishlists')->where('product_id', $productId)->first();
+-    
++
+             if (!$wishlistItem) {
+                 return response()->json(['status' => 'error', 'message' => 'Wishlist item not found for product ID: ' . $productId]);
+             }
+-    
++
+             $position += 1;
+             DB::table('wishlists')->where('product_id', $productId)->update(['position' => $position]);
+         }
+-    
++
+         return response()->json(['status' => 'success']);
+     }
+ 
+@@ -79,7 +79,7 @@
+                 return back()->with('success', 'Item removed from wishlist.');
+             }
+             return back()->with('error', 'Item not found in wishlist.');
+-        } catch (Exception $e) {    
++        } catch (Exception $e) {
+             // Redirect back with an error message
+             return back()->with('error', 'Failed to remove item from wishlist.');
+         }

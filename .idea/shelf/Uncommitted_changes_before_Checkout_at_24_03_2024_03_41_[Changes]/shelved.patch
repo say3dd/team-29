@@ -1,0 +1,215 @@
+Index: Valhalla/resources/views/dashboard.blade.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{{-- Authors @BravoBoy2 @AbuIsNotHer3 = Abubakarsiddik Mohammed\n              @BM786 = Basit Ali Mohammad\n              @say3dd = Mohammed Miah          --}}\n\n<x-app-layout>\n    <x-slot name=\"header\">\n        <header>\n            {{--            Css file linked. Located in public/assets --}}\n            <link rel=\"stylesheet\" href=\"{{ asset('assets/css/Dashboard.css') }}\">\n\n        </header>\n        <h2 class=\"font-semibold text-xl text-gray-800 leading-tight\">\n            {{ __('Dashboard') }}\n        </h2>\n\n        @if (session('success'))\n            <div id=\"flash-success\" class=\"bg-[#79c753] text-bold text-[1.1rem] \">\n                {{ session('success') }}\n            </div>\n        @endif\n    </x-slot>\n\n    <class>\n        <div class=\"py-12 bg-indigo-950\">\n            <div class=\"max-w-7xl mx-auto sm:px-6 lg:px-8\">\n                <div class=\"bg-purple-700 overflow-hidden shadow-sm sm:rounded-lg\">\n                    <div class=\"p-6 text-white\">\n                        {{ __(\"You're logged in!\") }}\n                    </div>\n                </div>\n                {{-- code for to go home page --}}\n                <div class=\"items-center justify-start mt-8\">\n                    <a href=\"{{ route('index') }}\">\n                        <x-primary-button class=\"border-white\">\n                            {{ __('Home') }}\n                        </x-primary-button>\n                    </a>\n                </div>\n\n                <div class=\"padding: 5px, marging: 5px\">\n\n\n                    <?php // Orders\n                    ?>\n\n                    <div class=\"py-3 bg-primary\">\n                        <div class=\"container -mt-10\">\n                            <h6 class=\"text-white\">\n                                <a href=\"#\" class=\"text-white underline font-bold\">My Orders</a>\n                            </h6>\n                        </div>\n                    </div>\n\n                    <div class=\"py-1 -mt-9\">\n                        <div class=\"container mx-auto -mt-10\">\n                            <div class=\"flex\">\n                                <div class=\"w-full\">\n                                    <table class=\"table-auto w-full border-solid border-gray-800\">\n                                        <thead>\n                                            <tr>\n                                                <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Product</th>\n                                                <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Order ID</th>\n                                                <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Tracking Number\n                                                </th>\n                                                <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Quantity</th>\n                                                <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Price</th>\n                                                <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Order Date</th>\n                                                <th class=\"px-4 py-2 border-gray-800 border bg-gray-200\">Actions</th>\n                                            </tr>\n                                        </thead>\n                                        <tbody>\n                                          {{-- @say3dd - Made the logic for this part of the page, displaying user orders. --}}\n                                            @if (isset($order_history))\n                                                @foreach ($order_history as $item)\n                                                    <tr>\n                                                        <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\">\n                                                            {{ $item->product_name }} </td>\n                                                        <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\">\n                                                            {{ $item->id }}</td>\n                                                        <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\">\n                                                            {{ $item->tracking_number }} </td>\n                                                        <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\">\n                                                            {{ $item->quantity }} </td>\n                                                        <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\"> £\n                                                            {{ $item->price }} </td>\n                                                        <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\">\n                                                            {{ $item->created_at->format('jS F Y') }} </td>\n                                                        <td class=\"px-4 py-2 border-gray-800 border bg-gray-200\"><a\n                                                                href=\"{{ route('tracking', ['id' => $item->id]) }}\">\n                                                                <x-primary-button>\n                                                                    {{ __('Track') }}\n                                                                </x-primary-button>\n                                                            </a>\n                                                        </td>\n                                                    </tr>\n                                                @endforeach\n                                            @else\n                                                <tr>\n                                                    <td colspan=\"5\" class=\"px-4 py-2 bg-white\">No orders yet</td>\n                                                    <td class=\"px-4 py-2 border-gray-800 bg-white flex justify-center\">\n                                            @endif\n\n                                            </td>\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                    <div style=\"display: flex ;justify-content: flex-end;\">\n                                        <a href=\"{{ route('return.request') }}\">\n                                            <x-primary-button>\n                                                {{ __('Return') }}\n                                            </x-primary-button>\n                                        </a>\n                                    </div>\n\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n</x-app-layout>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/resources/views/dashboard.blade.php b/Valhalla/resources/views/dashboard.blade.php
+--- a/Valhalla/resources/views/dashboard.blade.php	(revision f5416311e8debef6e1b46786e13b328f78bbad46)
++++ b/Valhalla/resources/views/dashboard.blade.php	(date 1711251647965)
+@@ -1,120 +1,104 @@
+ {{-- Authors @BravoBoy2 @AbuIsNotHer3 = Abubakarsiddik Mohammed
+-              @BM786 = Basit Ali Mohammad
+-              @say3dd = Mohammed Miah          --}}
++              @BM786 = Basit Ali Mohammad          --}}
+ 
+ <x-app-layout>
+     <x-slot name="header">
+         <header>
+-            {{--            Css file linked. Located in public/assets --}}
+-            <link rel="stylesheet" href="{{ asset('assets/css/Dashboard.css') }}">
+-
++{{--            Css file linked. Located in public/assets--}}
++            <link rel="stylesheet" href="{{asset('assets/css/Dashboard.css')}}">
+         </header>
+         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+             {{ __('Dashboard') }}
+         </h2>
+-
+-        @if (session('success'))
+-            <div id="flash-success" class="bg-[#79c753] text-bold text-[1.1rem] ">
+-                {{ session('success') }}
+-            </div>
+-        @endif
+     </x-slot>
+ 
+-    <class>
+-        <div class="py-12 bg-indigo-950">
+-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+-                <div class="bg-purple-700 overflow-hidden shadow-sm sm:rounded-lg">
+-                    <div class="p-6 text-white">
+-                        {{ __("You're logged in!") }}
+-                    </div>
+-                </div>
+-                {{-- code for to go home page --}}
+-                <div class="items-center justify-start mt-8">
+-                    <a href="{{ route('index') }}">
+-                        <x-primary-button class="border-white">
+-                            {{ __('Home') }}
+-                        </x-primary-button>
+-                    </a>
+-                </div>
++<class>
++    <div class="py-12 bg-indigo-950">
++        <form class="max-w-7xl mx-auto sm:px-6 lg:px-8">
++            <div class="bg-purple-700 overflow-hidden shadow-sm sm:rounded-lg">
++                <div class="p-6 text-white">
++                    {{ __("You're logged in!") }}
++                </div>
++            </div>
++             {{-- code for to go home page --}}
++             <div class="items-center justify-start mt-8">
++              <a href="{{route('index')}}">
++              <x-primary-button class="border-white">
++                  {{ __('Home') }}
++              </x-primary-button>
++          </a>
++          </div>
+ 
+-                <div class="padding: 5px, marging: 5px">
++                        <div class="padding: 5px, marging: 5px">
+ 
+ 
+-                    <?php // Orders
+-                    ?>
++                          <?php                                        // Orders
++
++?>
+ 
+-                    <div class="py-3 bg-primary">
+-                        <div class="container -mt-10">
+-                            <h6 class="text-white">
+-                                <a href="#" class="text-white underline font-bold">My Orders</a>
+-                            </h6>
+-                        </div>
+-                    </div>
++<div class="py-3 bg-primary">
++  <div class="container -mt-10">
++    <h6 class="text-white">
++      <a href="#" class="text-white underline font-bold">My Orders</a>
++    </h6>
++  </div>
++</div>
+ 
+-                    <div class="py-1 -mt-9">
+-                        <div class="container mx-auto -mt-10">
+-                            <div class="flex">
+-                                <div class="w-full">
+-                                    <table class="table-auto w-full border-solid border-gray-800">
+-                                        <thead>
+-                                            <tr>
+-                                                <th class="px-4 py-2 border-gray-800 border bg-gray-200">Product</th>
+-                                                <th class="px-4 py-2 border-gray-800 border bg-gray-200">Order ID</th>
+-                                                <th class="px-4 py-2 border-gray-800 border bg-gray-200">Tracking Number
+-                                                </th>
+-                                                <th class="px-4 py-2 border-gray-800 border bg-gray-200">Quantity</th>
+-                                                <th class="px-4 py-2 border-gray-800 border bg-gray-200">Price</th>
+-                                                <th class="px-4 py-2 border-gray-800 border bg-gray-200">Order Date</th>
+-                                                <th class="px-4 py-2 border-gray-800 border bg-gray-200">Actions</th>
+-                                            </tr>
+-                                        </thead>
+-                                        <tbody>
+-                                          {{-- @say3dd - Made the logic for this part of the page, displaying user orders. --}}
+-                                            @if (isset($order_history))
+-                                                @foreach ($order_history as $item)
+-                                                    <tr>
+-                                                        <td class="px-4 py-2 border-gray-800 border bg-gray-200">
+-                                                            {{ $item->product_name }} </td>
+-                                                        <td class="px-4 py-2 border-gray-800 border bg-gray-200">
+-                                                            {{ $item->id }}</td>
+-                                                        <td class="px-4 py-2 border-gray-800 border bg-gray-200">
+-                                                            {{ $item->tracking_number }} </td>
+-                                                        <td class="px-4 py-2 border-gray-800 border bg-gray-200">
+-                                                            {{ $item->quantity }} </td>
+-                                                        <td class="px-4 py-2 border-gray-800 border bg-gray-200"> £
+-                                                            {{ $item->price }} </td>
+-                                                        <td class="px-4 py-2 border-gray-800 border bg-gray-200">
+-                                                            {{ $item->created_at->format('jS F Y') }} </td>
+-                                                        <td class="px-4 py-2 border-gray-800 border bg-gray-200"><a
+-                                                                href="{{ route('tracking', ['id' => $item->id]) }}">
+-                                                                <x-primary-button>
+-                                                                    {{ __('Track') }}
+-                                                                </x-primary-button>
+-                                                            </a>
+-                                                        </td>
+-                                                    </tr>
+-                                                @endforeach
+-                                            @else
+-                                                <tr>
+-                                                    <td colspan="5" class="px-4 py-2 bg-white">No orders yet</td>
+-                                                    <td class="px-4 py-2 border-gray-800 bg-white flex justify-center">
+-                                            @endif
++<div class="py-1 -mt-9">
++  <div class="container mx-auto -mt-10">
++    <div class="flex">
++      <div class="w-full">
++        <table class="table-auto w-full border-solid border-gray-800">
++          <thead>
++            <tr>
++              <th class="px-4 py-2 border-gray-800 border bg-gray-200">Product</th>
++              <th class="px-4 py-2 border-gray-800 border bg-gray-200">Order Number</th>
++              <th class="px-4 py-2 border-gray-800 border bg-gray-200">Tracking Number</th>
++              <th class="px-4 py-2 border-gray-800 border bg-gray-200">Price</th>
++              <th class="px-4 py-2 border-gray-800 border bg-gray-200">Order Date</th>
++              <th class="px-4 py-2 border-gray-800 border bg-gray-200">Actions</th>
++            </tr>
++          </thead>
++          <tbody>
++            @if(isset($order_history))
++              @foreach ($order_history as $item)
++            <tr>
++              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->product_name}} </td>
++              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->id }}</td>
++              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{$item->tracking_number}} </td>
++              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> £ {{$item->price}} </td>
++              <td class="px-4 py-2 border-gray-800 border bg-gray-200"> {{ $item->created_at->format('jS F Y') }} </td>
++              <td class="px-4 py-2 border-gray-800 border bg-gray-200"><a href="{{ route('tracking', ['id' => $item->id]) }}">
++                <x-primary-button>
++                    {{ __('Track') }}
++                </x-primary-button>
++            </a>
++          </td>
++            </tr>
++              @endforeach
++              @else
++            <tr>
++              <td colspan="5" class="px-4 py-2 bg-white">No orders yet</td>
++              <td class="px-4 py-2 border-gray-800 bg-white flex justify-center">
++                @endif
+ 
+-                                            </td>
+-                                            </tr>
+-                                        </tbody>
+-                                    </table>
+-                                    <div style="display: flex ;justify-content: flex-end;">
+-                                        <a href="{{ route('return.request') }}">
+-                                            <x-primary-button>
+-                                                {{ __('Return') }}
+-                                            </x-primary-button>
+-                                        </a>
+-                                    </div>
++              </td>
++          </tr>
++      </tbody>
++  </table>
++  <div style="display: flex ;justify-content: flex-end;">
++    <a href="{{route('return.request')}}">
++      <x-primary-button>
++          {{ __('Return') }}
++      </x-primary-button>
++  </a>
++</div>
+ 
+-                                </div>
+-                            </div>
+-                        </div>
+-                    </div>
++</div>
++</div>
++</div>
++</div>
+ 
+ </x-app-layout>
++
++

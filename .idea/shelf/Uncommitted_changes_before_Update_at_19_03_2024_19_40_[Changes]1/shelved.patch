@@ -1,0 +1,137 @@
+Index: Valhalla/app/Providers/AuthServiceProvider.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Providers;\n\n// use Illuminate\\Support\\Facades\\Gate;\nuse Illuminate\\Foundation\\Support\\Providers\\AuthServiceProvider as ServiceProvider;\n\nclass AuthServiceProvider extends ServiceProvider\n{\n    /**\n     * The model to policy mappings for the application.\n     *\n     * @var array<class-string, class-string>\n     */\n    protected $policies = [\n        //\n    ];\n\n    /**\n     * Register any authentication / authorization services.\n     */\n    public function boot(): void\n    {\n        //\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/app/Providers/AuthServiceProvider.php b/Valhalla/app/Providers/AuthServiceProvider.php
+--- a/Valhalla/app/Providers/AuthServiceProvider.php	
++++ b/Valhalla/app/Providers/AuthServiceProvider.php	
+@@ -2,8 +2,11 @@
+ 
+ namespace App\Providers;
+ 
+-// use Illuminate\Support\Facades\Gate;
++use Illuminate\Support\Facades\Gate;
+ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
++use App\Models\Rating;
++use App\Policies\RatingPolicy;
++use App\Models\Orders;
+ 
+ class AuthServiceProvider extends ServiceProvider
+ {
+@@ -13,7 +16,7 @@
+      * @var array<class-string, class-string>
+      */
+     protected $policies = [
+-        //
++        Orders::class => RatingPolicy::class,
+     ];
+ 
+     /**
+Index: Valhalla/config/livewire.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nreturn [\n\n    /*\n    |---------------------------------------------------------------------------\n    | Class Namespace\n    |---------------------------------------------------------------------------\n    |\n    | This value sets the root class namespace for Livewire component classes in\n    | your application. This value will change where component auto-discovery\n    | finds components. It's also referenced by the file creation commands.\n    |\n    */\n\n    'class_namespace' => 'App\\\\Livewire',\n\n    /*\n    |---------------------------------------------------------------------------\n    | View Path\n    |---------------------------------------------------------------------------\n    |\n    | This value is used to specify where Livewire component Blade templates are\n    | stored when running file creation commands like `artisan make:livewire`.\n    | It is also used if you choose to omit a component's render() method.\n    |\n    */\n\n    'view_path' => resource_path('views/livewire'),\n\n    /*\n    |---------------------------------------------------------------------------\n    | Layout\n    |---------------------------------------------------------------------------\n    | The view that will be used as the layout when rendering a single component\n    | as an entire page via `Route::get('/post/create', CreatePost::class);`.\n    | In this case, the view returned by CreatePost will render into $slot.\n    |\n    */\n\n    'layout' => 'components.layouts.app',\n\n    /*\n    |---------------------------------------------------------------------------\n    | Lazy Loading Placeholder\n    |---------------------------------------------------------------------------\n    | Livewire allows you to lazy load components that would otherwise slow down\n    | the initial page load. Every component can have a custom placeholder or\n    | you can define the default placeholder view for all components below.\n    |\n    */\n\n    'lazy_placeholder' => null,\n\n    /*\n    |---------------------------------------------------------------------------\n    | Temporary File Uploads\n    |---------------------------------------------------------------------------\n    |\n    | Livewire handles file uploads by storing uploads in a temporary directory\n    | before the file is stored permanently. All file uploads are directed to\n    | a global endpoint for temporary storage. You may configure this below:\n    |\n    */\n\n    'temporary_file_upload' => [\n        'disk' => null,        // Example: 'local', 's3'              | Default: 'default'\n        'rules' => null,       // Example: ['file', 'mimes:png,jpg']  | Default: ['required', 'file', 'max:12288'] (12MB)\n        'directory' => null,   // Example: 'tmp'                      | Default: 'livewire-tmp'\n        'middleware' => null,  // Example: 'throttle:5,1'             | Default: 'throttle:60,1'\n        'preview_mimes' => [   // Supported file types for temporary pre-signed file URLs...\n            'png', 'gif', 'bmp', 'svg', 'wav', 'mp4',\n            'mov', 'avi', 'wmv', 'mp3', 'm4a',\n            'jpg', 'jpeg', 'mpga', 'webp', 'wma',\n        ],\n        'max_upload_time' => 5, // Max duration (in minutes) before an upload is invalidated...\n    ],\n\n    /*\n    |---------------------------------------------------------------------------\n    | Render On Redirect\n    |---------------------------------------------------------------------------\n    |\n    | This value determines if Livewire will run a component's `render()` method\n    | after a redirect has been triggered using something like `redirect(...)`\n    | Setting this to true will render the view once more before redirecting\n    |\n    */\n\n    'render_on_redirect' => false,\n\n    /*\n    |---------------------------------------------------------------------------\n    | Eloquent Model Binding\n    |---------------------------------------------------------------------------\n    |\n    | Previous versions of Livewire supported binding directly to eloquent model\n    | properties using wire:model by default. However, this behavior has been\n    | deemed too \"magical\" and has therefore been put under a feature flag.\n    |\n    */\n\n    'legacy_model_binding' => false,\n\n    /*\n    |---------------------------------------------------------------------------\n    | Auto-inject Frontend Assets\n    |---------------------------------------------------------------------------\n    |\n    | By default, Livewire automatically injects its JavaScript and CSS into the\n    | <head> and <body> of pages containing Livewire components. By disabling\n    | this behavior, you need to use @livewireStyles and @livewireScripts.\n    |\n    */\n\n    'inject_assets' => true,\n\n    /*\n    |---------------------------------------------------------------------------\n    | Navigate (SPA mode)\n    |---------------------------------------------------------------------------\n    |\n    | By adding `wire:navigate` to links in your Livewire application, Livewire\n    | will prevent the default link handling and instead request those pages\n    | via AJAX, creating an SPA-like effect. Configure this behavior here.\n    |\n    */\n\n    'navigate' => [\n        'show_progress_bar' => true,\n        'progress_bar_color' => '#2299dd',\n    ],\n\n    /*\n    |---------------------------------------------------------------------------\n    | HTML Morph Markers\n    |---------------------------------------------------------------------------\n    |\n    | Livewire intelligently \"morphs\" existing HTML into the newly rendered HTML\n    | after each update. To make this process more reliable, Livewire injects\n    | \"markers\" into the rendered Blade surrounding @if, @class & @foreach.\n    |\n    */\n\n    'inject_morph_markers' => true,\n\n    /*\n    |---------------------------------------------------------------------------\n    | Pagination Theme\n    |---------------------------------------------------------------------------\n    |\n    | When enabling Livewire's pagination feature by using the `WithPagination`\n    | trait, Livewire will use Tailwind templates to render pagination views\n    | on the page. If you want Bootstrap CSS, you can specify: \"bootstrap\"\n    |\n    */\n\n    'pagination_theme' => 'tailwind',\n];\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/config/livewire.php b/Valhalla/config/livewire.php
+--- a/Valhalla/config/livewire.php	
++++ b/Valhalla/config/livewire.php	
+@@ -156,4 +156,7 @@
+     */
+ 
+     'pagination_theme' => 'tailwind',
++
++
++    'directive_prefix' => 'wire:'
+ ];
+Index: Valhalla/resources/views/layouts/navigation.blade.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{{-- Basit Ali Mohammad = @BM786 added Wishlist Navigation link --}}\n\n<nav x-data=\"{ open: false }\" class=\"bg-white border-b border-gray-100\">\n    <!-- Primary Navigation Menu -->\n    <div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n        <div class=\"flex justify-between h-16\">\n            <div class=\"flex\">\n                <!-- Logo -->\n                <div class=\"shrink-0 flex items-center\">\n                    <a href=\"{{ route('index') }}\">\n                        <x-application-logo class=\"block h-9 w-auto fill-current text-gray-800\" />\n                    </a>\n                </div>\n\n                <!-- Navigation Links -->\n                <div class=\"hidden space-x-8 sm:-my-px sm:ms-10 sm:flex\">\n                    <x-nav-link :href=\"route('home')\" :active=\"request()->routeIs('home')\">\n                        {{ __('Dashboard') }}\n                    </x-nav-link>\n                </div>\n\n                <div class=\"hidden space-x-8 sm:-my-px sm:ms-10 sm:flex\">\n                    <x-nav-link :href=\"route('wishlist')\" :active=\"request()->routeIs('wishlist')\">\n                        {{ __('Wishlist') }}\n                    </x-nav-link>\n                </div>\n\n                <div class=\"hidden space-x-8 sm:-my-px sm:ms-10 sm:flex\">\n                    <x-nav-link :href=\"route('home')\" :active=\"request()->routeIs('home')\">\n                        {{ __('Basket') }}\n                    </x-nav-link>\n                </div>\n            </div>\n\n            <!-- Settings Dropdown -->\n            <div class=\"hidden sm:flex sm:items-center sm:ms-6\">\n                <x-dropdown align=\"right\" width=\"48\">\n                    <x-slot name=\"trigger\">\n                        <button class=\"inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150\">\n                            <div>{{ Auth::user()->name }}</div>\n\n                            <div class=\"ms-1\">\n                                <svg class=\"fill-current h-4 w-4\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\">\n                                    <path fill-rule=\"evenodd\" d=\"M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\" clip-rule=\"evenodd\" />\n                                </svg>\n                            </div>\n                        </button>\n                    </x-slot>\n\n                    <x-slot name=\"content\">\n                        <x-dropdown-link :href=\"route('profile.edit')\">\n                            {{ __('Profile') }}\n                        </x-dropdown-link>\n\n                        <!-- Authentication -->\n                        <form method=\"POST\" action=\"{{ route('logout') }}\">\n                            @csrf\n\n                            <x-dropdown-link :href=\"route('logout')\"\n                                    onclick=\"event.preventDefault();\n                                                this.closest('form').submit();\">\n                                {{ __('Log Out') }}\n                            </x-dropdown-link>\n                        </form>\n                    </x-slot>\n                </x-dropdown>\n            </div>\n\n            <!-- Hamburger -->\n            <div class=\"-me-2 flex items-center sm:hidden\">\n                <button @click=\"open = ! open\" class=\"inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out\">\n                    <svg class=\"h-6 w-6\" stroke=\"currentColor\" fill=\"none\" viewBox=\"0 0 24 24\">\n                        <path :class=\"{'hidden': open, 'inline-flex': ! open }\" class=\"inline-flex\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 6h16M4 12h16M4 18h16\" />\n                        <path :class=\"{'hidden': ! open, 'inline-flex': open }\" class=\"hidden\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\" />\n                    </svg>\n                </button>\n            </div>\n        </div>\n    </div>\n\n    <!-- Responsive Navigation Menu -->\n    <div :class=\"{'block': open, 'hidden': ! open}\" class=\"hidden sm:hidden\">\n        <div class=\"pt-2 pb-3 space-y-1\">\n            <x-responsive-nav-link :href=\"route('home')\" :active=\"request()->routeIs('home')\">\n                {{ __('Dashboard') }}\n            </x-responsive-nav-link>\n        </div>\n\n        <!-- Responsive Settings Options -->\n        <div class=\"pt-4 pb-1 border-t border-gray-200\">\n            <div class=\"px-4\">\n                <div class=\"font-medium text-base text-gray-800\">{{ Auth::user()->name }}</div>\n                <div class=\"font-medium text-sm text-gray-500\">{{ Auth::user()->email }}</div>\n            </div>\n\n            <div class=\"mt-3 space-y-1\">\n                <x-responsive-nav-link :href=\"route('profile.edit')\">\n                    {{ __('Profile') }}\n                </x-responsive-nav-link>\n\n                <!-- Authentication -->\n                <form method=\"POST\" action=\"{{ route('logout') }}\">\n                    @csrf\n\n                    <x-responsive-nav-link :href=\"route('logout')\"\n                            onclick=\"event.preventDefault();\n                                        this.closest('form').submit();\">\n                        {{ __('Log Out') }}\n                    </x-responsive-nav-link>\n                </form>\n            </div>\n        </div>\n    </div>\n</nav>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/resources/views/layouts/navigation.blade.php b/Valhalla/resources/views/layouts/navigation.blade.php
+--- a/Valhalla/resources/views/layouts/navigation.blade.php	
++++ b/Valhalla/resources/views/layouts/navigation.blade.php	
+@@ -14,7 +14,7 @@
+ 
+                 <!-- Navigation Links -->
+                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
++                    <x-nav-link :href="route('home')" :active="request()->routeIs('dashoard')">
+                         {{ __('Dashboard') }}
+                     </x-nav-link>
+                 </div>
+Index: Valhalla/app/Livewire/ProductRatings.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Livewire;\n\nuse Livewire\\Component;\nuse App\\Models\\Rating;\n\nclass ProductRatings extends Component\n{\n    public $rating;\n    public $comment;\n    public $currentId;\n    public $product;\n    public $hideForm;\n\n    protected $rules = [\n        'rating' => ['required', 'in:1,2,3,4,5'],\n        'comment' => 'required',\n\n    ];\n\n    public function render()\n    {\n        $comments = Rating::where('product_id', $this->product->id)->where('status', 1)->with('user')->get();\n        return view('livewire.product-ratings', compact('comments'));\n    }\n\n    public function mount()\n    {\n        if(auth()->user()){\n            $rating = Rating::where('user_id', auth()->user()->id)->where('product_id', $this->product->id)->first();\n            if (!empty($rating)) {\n                $this->rating  = $rating->rating;\n                $this->comment = $rating->comment;\n                $this->currentId = $rating->id;\n            }\n        }\n        return view('livewire.product-ratings');\n    }\n\n    public function delete($id)\n    {\n        $rating = Rating::where('id', $id)->first();\n        if ($rating && ($rating->user_id == auth()->user()->id)) {\n            $rating->delete();\n        }\n        if ($this->currentId) {\n            $this->currentId = '';\n            $this->rating  = '';\n            $this->comment = '';\n        }\n    }\n\n    public function rate()\n    {\n        $rating = Rating::where('user_id', auth()->user()->id)->where('product_id', $this->product->id)->first();\n        $this->validate();\n        if (!empty($rating)) {\n            $rating->user_id = auth()->user()->id;\n            $rating->product_id = $this->product->id;\n            $rating->rating = $this->rating;\n            $rating->comment = $this->comment;\n            $rating->status = 1;\n            try {\n                $rating->update();\n            } catch (\\Throwable $th) {\n                throw $th;\n            }\n            session()->flash('message', 'Success!');\n        } else {\n            $rating = new Rating;\n            $rating->user_id = auth()->user()->id;\n            $rating->product_id = $this->product->id;\n            $rating->rating = $this->rating;\n            $rating->comment = $this->comment;\n            $rating->status = 1;\n            try {\n                $rating->save();\n            } catch (\\Throwable $th) {\n                throw $th;\n            }\n            $this->hideForm = true;\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/app/Livewire/ProductRatings.php b/Valhalla/app/Livewire/ProductRatings.php
+--- a/Valhalla/app/Livewire/ProductRatings.php	
++++ b/Valhalla/app/Livewire/ProductRatings.php	
+@@ -25,8 +25,10 @@
+         return view('livewire.product-ratings', compact('comments'));
+     }
+ 
+-    public function mount()
++    public function mount($product)
+     {
++        $this->product = $product;
++
+         if(auth()->user()){
+             $rating = Rating::where('user_id', auth()->user()->id)->where('product_id', $this->product->id)->first();
+             if (!empty($rating)) {
+Index: Valhalla/app/Http/Controllers/WishListController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Http\\Controllers;\n\nuse Exception;\nuse App\\Models\\Wishlists;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\DB;\nuse Illuminate\\Support\\Facades\\Log;\nuse App\\Http\\Controllers\\Controller;\nuse Illuminate\\Support\\Facades\\Auth;\nuse Illuminate\\Database\\QueryException;\n\nclass WishListController extends Controller\n{\n    public function index()\n    {\n        $userID = Auth::id();\n        $wishlistItems = DB::table('Wishlists')\n            ->where('user_id', $userID)\n            ->join('products', 'Wishlists.product_id', '=', 'products.product_id')\n            ->orderBy('position')\n            ->get(['products.product_name', 'products.images', 'Wishlists.product_id']);\n\n        return view('FrontEnd.wishlist', ['wishlistItems' => $wishlistItems]);\n    }\n\n    public function add(Request $request)\n    {\n        try {\n        $user_id = auth()->id();\n        $product_id = $request->input('product_id');\n        $position = Wishlists::where('user_id', $user_id)->max('position') + 1;\n        $wishlist = Wishlists::create([\n            'user_id' => $user_id,\n            'product_id' => $product_id,\n            'position' => $position,\n        ]);\n    } catch (QueryException $e) {\n        return back()->with('error', 'Failed to add product to wishlist.');\n    }\n\n\n    return back()->with('success', 'Product added to your wishlist!');\n}\n    public function saveOrder(Request $request)\n    {\n        $order = json_decode($request->input('order'));\n    \n        foreach ($order as $position => $productId) {\n            // Remove the 'product_' from the product ID\n            $productId = str_replace('product_', '', $productId);\n    \n            $wishlistItem = DB::table('wishlists')->where('product_id', $productId)->first();\n    \n            if (!$wishlistItem) {\n                return response()->json(['status' => 'error', 'message' => 'Wishlist item not found for product ID: ' . $productId]);\n            }\n    \n            $position += 1;\n            DB::table('wishlists')->where('product_id', $productId)->update(['position' => $position]);\n        }\n    \n        return response()->json(['status' => 'success']);\n    }\n\n    public function remove($productId)\n    {\n        try {\n            // Get the currently authenticated user\n            $user = auth()->user();\n            // Find the wishlist item by product ID and user ID\n            $item = Wishlists::where('product_id', $productId)\n                            ->where('user_id', $user->id)\n                            ->first();\n            // If item exists, delete\n            if ($item) {\n                $item->delete();\n                return back()->with('success', 'Item removed from wishlist.');\n            }\n            return back()->with('error', 'Item not found in wishlist.');\n        } catch (Exception $e) {    \n            // Redirect back with an error message\n            return back()->with('error', 'Failed to remove item from wishlist.');\n        }\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Valhalla/app/Http/Controllers/WishListController.php b/Valhalla/app/Http/Controllers/WishListController.php
+--- a/Valhalla/app/Http/Controllers/WishListController.php	
++++ b/Valhalla/app/Http/Controllers/WishListController.php	
+@@ -46,21 +46,21 @@
+     public function saveOrder(Request $request)
+     {
+         $order = json_decode($request->input('order'));
+-    
++
+         foreach ($order as $position => $productId) {
+             // Remove the 'product_' from the product ID
+             $productId = str_replace('product_', '', $productId);
+-    
++
+             $wishlistItem = DB::table('wishlists')->where('product_id', $productId)->first();
+-    
++
+             if (!$wishlistItem) {
+                 return response()->json(['status' => 'error', 'message' => 'Wishlist item not found for product ID: ' . $productId]);
+             }
+-    
++
+             $position += 1;
+             DB::table('wishlists')->where('product_id', $productId)->update(['position' => $position]);
+         }
+-    
++
+         return response()->json(['status' => 'success']);
+     }
+ 
+@@ -79,7 +79,7 @@
+                 return back()->with('success', 'Item removed from wishlist.');
+             }
+             return back()->with('error', 'Item not found in wishlist.');
+-        } catch (Exception $e) {    
++        } catch (Exception $e) {
+             // Redirect back with an error message
+             return back()->with('error', 'Failed to remove item from wishlist.');
+         }
