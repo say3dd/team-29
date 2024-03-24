@@ -114,8 +114,8 @@ class ImagesSeeder extends Seeder
             'path' => 'assets\laptop_images\Asus ROG Strix G16 G614\asus-rog-strix-g16-5.jpg',
             'product_id' => '3'
         ]);
-        
-        
+
+
         Image::create([
             'path' => 'assets\laptop_images\Asus ROG Zephyrus Duo\asus-zephyrus-duo-1.jpg',
             'product_id' => '12'
@@ -141,7 +141,7 @@ class ImagesSeeder extends Seeder
             'product_id' => '12'
         ]);
 
-        
+
         Image::create([
             'path' => 'assets\laptop_images\Asus Tuf Gaming A15\asus-tuf-a15-2-1.jpg',
             'product_id' => '11'
@@ -166,9 +166,9 @@ class ImagesSeeder extends Seeder
             'path' => 'assets\laptop_images\Asus Tuf Gaming A15\asus-tuf-a15-5.jpg',
             'product_id' => '11'
         ]);
-        
 
-        
+
+
         Image::create([
             'path' => 'assets\laptop_images\Asus Zephyrus M16\asus-zephyrus-m16-1.jpg',
             'product_id' => '7'
@@ -218,7 +218,7 @@ class ImagesSeeder extends Seeder
             'path' => 'assets\laptop_images\Lenovo Legion Pro 7i Gen 8\lenovo-legion-pro-i7-gen8-5.jpg',
             'product_id' => '6'
         ]);
-        
+
         Image::create([
             'path' => 'assets\laptop_images\Lenovo Legion Slim 5\lenovo-legion-slim-5-1.jpg',
             'product_id' => '10'
@@ -244,7 +244,7 @@ class ImagesSeeder extends Seeder
             'product_id' => '10'
         ]);
 
-        
+
         Image::create([
             'path' => 'assets\laptop_images\Medion Erazer X20\medion_erazer_beast_x20-1.jpg',
             'product_id' => '2'
@@ -270,7 +270,7 @@ class ImagesSeeder extends Seeder
             'product_id' => '2'
         ]);
 
-        
+
         Image::create([
             'path' => 'assets\laptop_images\MSI Titan GT77 HX 13V\msi-titan-g77-13v-1.jpg',
             'product_id' => '1'
@@ -298,7 +298,7 @@ class ImagesSeeder extends Seeder
 
 
 
-        
+
         Image::create([
             'path' => 'assets\laptop_images\Razer Blade 14\razer-blade-14-1.jpg',
             'product_id' => '5'
@@ -323,6 +323,87 @@ class ImagesSeeder extends Seeder
             'path' => 'assets\laptop_images\Razer Blade 14\razer-blade-14-5.jpg',
             'product_id' => '5'
         ]);
-
+        Image::create([
+            'path' => 'assets/laptop_images/Razer Blade 18/razer-blade-18-1.jpg',
+            'product_id' => '13'
+        ]);
+        //the ones that has white borders **/
+        Image::create([
+            'path' => 'assets/laptop_images/Razer Blade 18/razer-blade-18-2.jpg',
+            'product_id' => '13'
+        ]);
+        //
+        Image::create([
+            'path' => 'assets/laptop_images/Razer Blade 18/razer-blade-18-4.jpg',
+            'product_id' => '13'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Razer Blade 18/razer-blade-18-3.jpg',
+            'product_id' => '13'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Razer Blade 18/razer-blade-18-5.jpg',
+            'product_id' => '13'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Dell G15/Dell-G15-3.jpg',
+            'product_id' => '14'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Dell G15/Dell-G15-2.jpg',
+            'product_id' => '14'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Dell G15/Dell-G15-1.jpg',
+            'product_id' => '14'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Dell G15/Dell-G15-4.jpg',
+            'product_id' => '14'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Dell G15/Dell-G15-5.jpg',
+            'product_id' => '14'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Alienware X16/laptop1.jpg',
+            'product_id' => '15'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Alienware X16/laptop2.jpg',
+            'product_id' => '15'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Alienware X16/laptop3.jpg',
+            'product_id' => '15'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Alienware X16/laptop4.jpg',
+            'product_id' => '15'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/Alienware X16/laptop5.jpg',
+            'product_id' => '15'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/MSI Raider GE78/msi-raider-ge78-1.jpg',
+            'product_id' => '16'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/MSI Raider GE78/msi-raider-ge78-3.png',
+            'product_id' => '16'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/MSI Raider GE78/msi-raider-ge78-4.jpg',
+            'product_id' => '16'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/MSI Raider GE78/msi-raider-ge78-5.jpg',
+            'product_id' => '16'
+        ]);
+        Image::create([
+            'path' => 'assets/laptop_images/MSI Raider GE78/msi-raider-ge78-6.jpg',
+            'product_id' => '16'
+        ]);
         }
     }
