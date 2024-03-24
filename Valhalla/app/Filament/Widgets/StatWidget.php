@@ -21,7 +21,10 @@ class StatWidget extends BaseWidget
 
             Stat::make('Sales', Orders::count())
             ->description('Total orders')
-            ->descriptionIcon('heroicon-s-currency-pound', IconPosition::Before),
+            ->descriptionIcon('heroicon-s-currency-pound', IconPosition::Before)
+            ->chart([1, 2, 6, 9, 12, 15, 18])
+            ->color('success'),
+
         ];
     }
 }

@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="some styling">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/team-29.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team-29.iml" afterDir="false" />
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="Admin button on dashboard.blade.php">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_03_2024_12_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_03_2024_12_50__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_03_2024_12_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_03_2024_12_57__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Filament/Resources/ProductResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Resources/ProductResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Filament/Resources/ProductResource/Pages/ListProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Filament/Resources/ProductResource/Pages/ListProducts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Providers/Filament/AdminPanelProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Providers/Filament/AdminPanelProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/config/fortify.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/config/fortify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/config/jetstream.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/config/jetstream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/test.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -830,15 +821,7 @@
       <option name="project" value="LOCAL" />
       <updated>1711284542828</updated>
     </task>
-    <task id="LOCAL-00035" summary="some styling">
-      <option name="closed" value="true" />
-      <created>1711287538633</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1711287538633</updated>
-    </task>
-    <option name="localTasksCounter" value="36" />
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -868,6 +851,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="minor styling to the basket item indicator" />
     <MESSAGE value="basket button alignment fixed and introduced new styling for basket.blade.php" />
     <MESSAGE value="Added the new Pagination for the products page , fixed the product Error" />
     <MESSAGE value="cart.blade.php refactored to basket.blade.php. &#10;Added new codes to the basket.blade.php. Basket implement nearly complete. &#10;&#10;New routes has been added to the web.php. Some redundant code has been removed" />
@@ -892,8 +876,7 @@
     <MESSAGE value="fixed the pagination for it to work on searching aswell" />
     <MESSAGE value="rating and review" />
     <MESSAGE value="Admin button on dashboard.blade.php" />
-    <MESSAGE value="some styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="some styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin button on dashboard.blade.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,13 +1,12 @@
 <!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Product page using CSS. Also used JavaScript to make "View all specification"
      button work, so the user could see all of the specifications about a praticular product  -->
 <!-- @noramknarf (Francis Moran) - Implemented dynamic images -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/style_sheet_product_webpage_template.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/css/style_sheet_product_webpage_template.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
 <!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
@@ -16,27 +15,27 @@
 </section>
 
 <body>
-    @includeWhen($errors->any(), '_errors')
-    @if (session('success'))
-        <div id="flash-success" class="bg-[#79c753] text-bold text-[1.1rem] ">
-            {{ session('success') }}
-            {{--                <p class=" text-amber-200">Hello, a message</p> --}}
-        </div>
-    @endif
-    @if (session('error'))
-        <div id="flash-error" class="p-5 bg-red-700 text-bold text-[1.1rem]">
-            {{ session('error') }}
-            <!--I have no idea if this is alright, I was just copying from the success popup-->
-        </div>
-    @endif
-    <div class="main">
-        {{-- Section 1 starts here --}}
+@includeWhen($errors->any(), '_errors')
+@if(session('success'))
+    <div id="flash-success" class="bg-[#79c753] text-bold text-[1.1rem] ">
+        {{session('success')}}
+        {{--                <p class=" text-amber-200">Hello, a message</p>--}}
+    </div>
+@endif
+@if(session('error'))
+    <div id="flash-error" class="p-5 bg-red-700 text-bold text-[1.1rem]">
+        {{session('error')}}
+        <!--I have no idea if this is alright, I was just copying from the success popup-->
+    </div>
+@endif
+<div class="main">
+    {{-- Section 1 starts here --}}
 
-        <div class="background_shape1">
-            <div class="background_shape_1_2">
-                <div class="slideshow-container">
-                    <div class="slide">
-                        <!--Loops through all the images passed to the route and adds a slide using the relevant path in the DB
+    <div class="background_shape1">
+        <div class="background_shape_1_2">
+            <div class="slideshow-container">
+                <div class="slide">
+                    <!--Loops through all the images passed to the route and adds a slide using the relevant path in the DB
                         NOTE: Only ROG Strix G16 G614 has any images in the table so far because it will take ages to manually add all those images to the seeder-->
                     @if($images->count() > 0)
                         @foreach($images as $image)
@@ -284,8 +283,8 @@
                 Seamless Gaming
             </p>
             <p class="unique_feature9_content">
-                Crafted to elevate your gaming experience, whether you're on the move or at home, by offering impressive refresh rates, 
-                Cherry mechanical keys, and Dolby Atmos® sound, ensuring enjoyment regardless of your gaming setup.
+                "Crafted to elevate your gaming experience, whether you're on the move or at home, by offering impressive refresh rates,
+                Cherry mechanical keys, and Dolby Atmos® sound, ensuring enjoyment regardless of your gaming setup."
             </p>
         </div>
         {{-- Section 3 ends here --}}
@@ -294,8 +293,7 @@
     <form action="{{ route('submit-review') }}" method="post">
         @csrf
         <link rel="stylesheet" href="{{asset('assets/css/rating.css')}}">
-        <body class="mt-11 custom">
-        <div class="container">
+        <div class="container mt-11 custom">
             @auth
                 @if($userId = Auth::id())
                     <div class="rate">
@@ -320,7 +318,7 @@
                             </label>
                         </div>
                         <p>Share your review:</p>
-                        <textarea id="review" placeholder="Write your review here"></textarea>
+                        <textarea name="text-box" id="review" placeholder="Write your review here"></textarea>
                         <x-primary-button class="ml-10 mt-16" id="submit">Submit</x-primary-button>
                     </div>
                 @else
@@ -332,12 +330,14 @@
                     </x-primary-button>
                 @endif
             @else
-                <div class="mb-8 text-center text-gray-600">
-                    You need to login in order to be able to rate the product!
+                <div class="mb-8 text-center text-white">
+                    You need to login in order to rate the product!
                 </div>
+            <x-primary-button>
                 <a href="{{ route('login') }}"
-                   class="block px-5 py-2 mx-auto font-medium text-center text-gray-600 bg-white border rounded-lg shadow-sm focus:outline-none hover:bg-gray-100"
+                   class="block mx-auto"
                 >Login</a>
+            </x-primary-button>
             @endauth
         </div>
         </body>
@@ -506,7 +506,7 @@
 
     basketButton.addEventListener('click', function(e) {
         e.stopPropagation(); // Prevent event from propagating to other elements
-        dropdown.classList.toggle(
-        "dropdown--active"); // Correctly toggle the active class to show/hide the dropdown
+        dropdown.classList.toggle("dropdown--active"); // Correctly toggle the active class to show/hide the dropdown
     });
+
 </script>
