@@ -238,7 +238,7 @@ public function getRelatedProducts($currentProductId,$category)
     ->take(12)
     ->get()
 //        HAD TO MAKE IT TWO FOR LACK OF PRODUCTS, WHEN U ADD MORE DUMMY DATA, CHANGE IT TO 4
-    ->random(2); //Will make this 4 when theres enough products available
+    ->random(4); //Will make this 4 when theres enough products available
     return $relatedProducts;
 }
 
