@@ -294,9 +294,149 @@
             </p>
         </div>
         {{-- Section 4 ends here --}}
-
         {{-- Product-rating--}}
-        <livewire:product-ratings :product="$product"/>
+<div>
+<form action="{{ route('submit-review') }}" method="post">
+    @csrf
+        <link rel="stylesheet" href="{{asset('assets/css/rating.css')}}">
+    <body class="mt-11 custom">
+    <div class="container">
+        @auth
+            @if($userId = Auth::id())
+                <div class="rate">
+                    <h1>Rate this Product</h1>
+                    <div class="rating">
+                        <span id="rating">0</span>/5
+                    </div>
+                    <div class="stars" id="stars">
+                        <label>
+                            <span class="star" data-value="1">★</span>
+                        </label>
+                        <label>
+                            <span class="star" data-value="2">★</span>
+                        </label>
+                        <label>
+                            <span class="star" data-value="3">★</span>
+                        </label>
+                        <label>
+                            <span class="star" data-value="4">★</span>
+                        </label><label>
+                            <span class="star" data-value="5">★</span>
+                        </label>
+                    </div>
+                    <p>Share your review:</p>
+                    <textarea id="review" placeholder="Write your review here"></textarea>
+                    <x-primary-button class="ml-10 mt-16" id="submit">Submit</x-primary-button>
+                </div>
+            @else
+                <div class="mb-8 text-center text-white">
+                    You need to login in order to be able to rate the product!
+                </div>
+            <x-primary-button>
+                <a href="{{ route('login', ['redirect' => url()->current()]) }}">Login</a>
+            </x-primary-button>
+            @endif
+        @else
+            <div class="mb-8 text-center text-gray-600">
+                You need to login in order to be able to rate the product!
+            </div>
+            <a href="{{ route('login') }}"
+               class="block px-5 py-2 mx-auto font-medium text-center text-gray-600 bg-white border rounded-lg shadow-sm focus:outline-none hover:bg-gray-100"
+            >Login</a>
+        @endauth
+    </div>
+    </body>
+</form>
+</div>
+{{--    <script src="script.js"></script>--}}
+<script>document.addEventListener("DOMContentLoaded", function() {
+        const stars = document.querySelectorAll(".star");
+        const rating = document.getElementById("rating");
+        const reviewText = document.getElementById("review");
+        const submitBtn = document.getElementById("submit");
+        const reviewsContainer = document.getElementById("reviews");
+
+        stars.forEach((star, index) => {
+            star.addEventListener("click", () => {
+                const value = index + 1; // Index is zero-based, so add 1 to get the actual value
+                rating.innerText = value;
+
+                // Add "selected" class to the clicked star and all previous stars
+                stars.forEach((s, i) => {
+                    if (i <= index) {
+                        s.classList.add("selected");
+                    } else {
+                        s.classList.remove("selected");
+                    }
+                });
+
+                console.log("Stars after adding 'selected' class:", stars);
+
+                // Remove all existing classes from stars
+                stars.forEach((s) => s.classList.remove("one", "two", "three", "four", "five"));
+
+                // Add the appropriate class to each star based on the selected star's value
+                stars.forEach((s, i) => {
+                    if (i < value) {
+                        s.classList.add(getStarColorClass(value));
+                    }
+                });
+            });
+        });
+
+        function submitReview() {
+            const userRating = parseInt(rating.innerText);
+            const review = reviewText.value;
+
+            if (userRating === 0 || review.trim() === "") {
+                alert("Please rate the product and write a review to submit.");
+                return;
+            }
+
+            // Proceed with form submission
+            document.getElementById("submit-form").submit();
+        }
+
+        submitBtn.addEventListener("click", () => {
+            const userRating = parseInt(rating.innerText);
+            const review = reviewText.value;
+
+            if (!userRating || !review) {
+                alert("Please rate the product and write a review to submit.");
+                return;
+            }
+
+            if (userRating > 0) {
+                const reviewElement = document.createElement("div");
+                reviewElement.classList.add("review");
+                reviewElement.innerHTML = `<p><strong>Rating: ${userRating}/5</strong></p><p>${review}</p>`;
+                reviewsContainer.appendChild(reviewElement);
+
+                // Reset styles after submitting
+                reviewText.value = "";
+                rating.innerText = "0";
+                stars.forEach((s) => s.classList.remove("one", "two", "three", "four", "five", "selected"));
+            }
+        });
+
+        function getStarColorClass(value) {
+            switch (value) {
+                case 1:
+                    return "one";
+                case 2:
+                    return "two";
+                case 3:
+                    return "three";
+                case 4:
+                    return "four";
+                case 5:
+                    return "five";
+                default:
+                    return "";
+            }
+        }
+    });</script>
+
         {{-- Section 5 begins here --}}
         <div class="container_section5">
             <div class="title_related_products"> Related Products</div>
