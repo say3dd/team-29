@@ -154,7 +154,7 @@ class ProductsSeeder extends Seeder
                 'product_description' =>'Name: Razer Blade 18, RAM: 64 GB, Processor: Intel Core i9-13950HX, GPU: GeForce RTX 4070, Display: 18" QHD+ 240 Hz, 16:10 (2560 x 1600), Memory: 16 GB DDR5-5600MHz, Storage: 1 TB SSD (M.2 NVMe PCIe 4.0 x4), Colour: Black',
                 'category' => 'Laptop' ,
                 'price' => 2699.99,
-                'images' => '',
+                'images' => 'assets/laptop_images/Razer Blade 18/razer-blade.jpg',
                 'stock' => 5,
                 'created_at' => now(),
 
@@ -165,7 +165,7 @@ class ProductsSeeder extends Seeder
                 'product_description' => 'Name: Dell G15 Gaming Laptop , RAM: 64 GB , Processor: Intel Core i7-10870H , GPU: GeForce RTX 3050 , Display: 15.6-inch FHD non-touchscreen , Memory: 16 GB: 2 x 8 GB, DDR5, 4800 MT/s , Storage: 512 GB, M.2, PCIe NVMe, SSD ,Colour: Grey',
                 'category' => 'Laptop' ,
                  'price' => 800.00,
-                'images' => '',
+                'images' => 'assets/laptop_images/Dell G15/dell-g15.jpg',
                 'stock' => 8,
                 'created_at' => now(),
 
@@ -176,18 +176,18 @@ class ProductsSeeder extends Seeder
                 'product_description' => 'Name: Alienware x16 R2 , RAM: 32 GB , Processor: Intel Core Ultra 7 , GPU: GeForce RTX 4060 , Display: 16.0" QHD+ (2560 x 1600) 240Hz 3ms, 100% DCI-P3, ComfortView Plus , Memory: 32 GB , Storage: 1TB SSD , Colour: Silver',
                 'category' => 'Laptop' ,
                  'price' => 2499.00 ,
-                'images' => '',
+                'images' => 'assets/laptop_images/Alienware X16/x16-r2.jpeg',
                 'stock' => 5 ,
                 'created_at' => now(),
 
             ],
             [
                 'brand' => 'MSI',
-                'product_name' => 'MSI Cyborg 15',
-                'product_description' => 'Name: MSI Cyborg 15 , RAM: 16 GB , Processor: Intel Core i7-12650H , GPU: GeForce RTX 4060 , Display: 15.6- inch IPS LCD , Memory: 32 GB , Storage: 512 GB SSD ,Colour: Black ',
+                'product_name' => 'MSI Raider GE78',
+                'product_description' => 'Name: MSI Raider G378 , RAM: 16 GB , Processor: Intel Core i7-12650H , GPU: GeForce RTX 4060 , Display: 15.6- inch IPS LCD , Memory: 32 GB , Storage: 512 GB SSD ,Colour: Black ',
                 'category' => 'Laptop',
                  'price' => 900.99 ,
-                'images' => '',
+                'images' => 'assets/laptop_images/MSI Raider GE78/msi-raider-ge.jpg',
                 'stock' => 10,
                 'created_at' => now(),
 

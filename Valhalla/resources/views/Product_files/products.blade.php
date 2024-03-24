@@ -5,6 +5,7 @@
 @section('productP')
 <!--@noramknarf (Francis Moran) - added functionality to "add to basket" buttons (see ProductController->getInfo()) -->
 <!--@say3dd (Mohammed Miah) - Displayed the products from the database -->
+
 @forelse($products as $product)
 <div class="laptop_all">
     <img class="image_all_laptop" src="{{ asset($product->images) }}" style="transition: 0.3s ease">
@@ -16,7 +17,7 @@
             @foreach($product->features as $featureName => $featureValue)
         {{--            This skips the feature that we dont want to show     --}}
         @if(
-    ($product->category === 'Mouse' && in_array($featureName, ['Battery Life'])) ||
+    ($product->category === 'Mouse' && in_array($featureName, ['Battery-Life'])) ||
     ($product->category === 'Monitor' && $featureName === 'Response-Time') ||
     ($product->category === 'Keyboard' && $featureName === 'Connectivity') ||
      ($product->category === 'Laptop' && $featureName === 'Colour')
