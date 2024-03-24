@@ -18,6 +18,7 @@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+
 </head>
 
 <body>
@@ -27,6 +28,12 @@
         @include('header')
 </header>
 
+@if (session('success'))
+<div id="flash-success" class="bg-[#79c753] text-bold text-[1.1rem] ">
+    {{ session('success') }}
+    {{--                <p class=" text-amber-200">Hello, a message</p> --}}
+</div>
+@endif
 
     <section class=main>
 
@@ -120,8 +127,13 @@
                     <div class="monitors-title-line"></div>
                     <h2 class="price">£{{$product->price}}</h2>
                     <div class="buttons-container">
-                        <a href="{{url('contactUs')}}" class="add-btn">ADD TO BASKET</a>
-                        <a href="{{url('contactUs')}}" class="wishlist-btn">ADD TO WISHLIST</a>
+                        <a class="@error('$product') @enderror add-btn"
+                        href="{{ route('add_to_basket', $product->product_id) }}">
+                        <button type="button" role="button" class="">
+                            ADD TO BASKET
+                        </button>                                            
+                        <a href="#" class="wishlist-btn" id="addToWishlist" data-id="{{ $product->product_id }}">ADD
+                            TO WISHLIST</a>
                     </div>
                 </div>
             </div>
@@ -591,7 +603,35 @@
 
 
 
-
+      <script>
+        document.getElementById('addToWishlist').addEventListener('click', function(event) {
+            event.preventDefault();
+        
+            var productId = this.getAttribute('data-id');
+        
+            fetch('{{ route('wishlist.add') }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({
+                    product_id: productId
+                })
+            }).then(response => {
+                if (response.ok) {
+                    alert('Item added to wishlist successfully');
+                    return response.json();
+                } else {
+                    throw new Error('Error: ' + response.statusText);
+                }
+            })
+            .then(data => console.log(data))
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+        </script>
 
 
 
