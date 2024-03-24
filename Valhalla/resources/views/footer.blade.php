@@ -2,8 +2,8 @@
 <!-- 
      _______________________________   Created and designed the Homepage of the webiste by @AnthonyResuello (Anthony Resuello)     ____________________________________________
 
-    -   - Created and desgined the footer to make it consistent for all pages of the website
-
+       - @Anthony Resuello- Created and desgined the footer to make it consistent for all pages of the website
+       - @Anthony Resuello - Made it responsive for different screen sizes
 -->
     <section class="footer-section">
         <footer>

@@ -1,8 +1,8 @@
 <!--
          ______________________________   Created and designed the Header of the webiste by @AnthonyResuello (Anthony Resuello)     ____________________________________________
 
-    - Created and desgined the header to make it consistent for all pages of the website
-
+    - @Anthony Resuello - Created and desgined the header to make it consistent for all pages of the website
+    - @Anthony Resuello - Made it responsive for different screen sizes
 -->
 <head>
     <link rel="stylesheet" href="{{ asset('assets/css/home_style.css') }}">

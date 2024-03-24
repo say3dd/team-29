@@ -304,7 +304,7 @@
                                 <h2 class="title-feature">Tangle-free wires</h2>
                                 <p class="info-feature">
                                     Experience the ultimate convenience with tangle-free wires,
-                                    designed to keep your gaming setup neat and efficient.
+                                    designed to keep your gaming setup clean and efficient.
                                     Enjoy uninterrupted play and superior durability without the hassle.
                                    </p>
                             </div>
