@@ -27,7 +27,7 @@ h1 {
 /* Navigation header styling */
 .nav-header {
     font-size: 2rem;
-    top: 0;
+    top: 0 !important;
     left: 0;
     padding: 1rem 10%;
     background: linear-gradient(rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.496));
