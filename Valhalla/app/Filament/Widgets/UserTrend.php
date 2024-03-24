@@ -17,13 +17,10 @@ class UserTrend extends ChartWidget
     protected function getData(): array
     {
 
-        $start = $this->filters['startDate'];
-        $end = $this->filters['endDate'];
-
         $data = Trend::model(User::class)
             ->between(
-                start: $start ? Carbon::parse($start) : now()->subMonth(6),
-                end: $end ? Carbon::parse($end) : now(),
+                start: now()->subMonth(),
+                end: now(),
             )
             ->perMonth()
             ->count();
