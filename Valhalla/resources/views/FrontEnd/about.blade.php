@@ -183,9 +183,9 @@
                 the laptop experience.
                 The laptops are reliable for everyday use, striking the
                 perfect
-                balance of power and portability. Vallhala has truly
+                balance of power and portability.Vallhala has truly
                 transformed my 
-                 gaming productivity."</blockquote>
+                 gaming productivity"</blockquote>
 
             </div>
           </div>
