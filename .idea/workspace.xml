@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment=".">
+    <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="rating added to all other products">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Product_page_template/otherproduct_template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Product_page_template/otherproduct_template.blade.php" afterDir="false" />
     </list>
@@ -904,7 +904,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711363265582</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="rating added to all other products">
+      <option name="closed" value="true" />
+      <created>1711363972207</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1711363972207</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -934,7 +942,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="down some of the product page linking to DB" />
     <MESSAGE value="added the ProductService" />
     <MESSAGE value="Re added monitor pictures" />
     <MESSAGE value="made a class" />
@@ -959,7 +966,8 @@
     <MESSAGE value="ratings system required fields made" />
     <MESSAGE value="new rating styling fixed" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="rating added to all other products" />
+    <option name="LAST_COMMIT_MESSAGE" value="rating added to all other products" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

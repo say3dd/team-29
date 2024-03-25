@@ -6,7 +6,7 @@
     - @AnthonyResuello - Template was used for different products such as monitor, keyboard, headset, and mouse.
     - @AnthonyResuello - Styled the add to basket pop-up message when users click on "Add to basket" button.
      @KraeBM (Bilal Mohamed) - Worked on implementing the DB data of the products selected to show on the screen and within specifications
-     @BM786 (Basit Ali Mohammad) - included rating system on the page.
+     @BM786 (Basit Ali Mohammad) - included rating system on the page with styling.
 -->
 
 <!DOCTYPE html>
