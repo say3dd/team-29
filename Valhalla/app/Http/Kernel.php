@@ -1,4 +1,5 @@
 <?php
+//@noramknarf (Francis Moran) - Fixed code related to CheckCartNotEmpty so it no longer runs on every route.
 
 namespace App\Http;
 
@@ -21,7 +22,6 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-    //    \App\Http\Middleware\CheckCartNotEmpty::class,
 
     ];
 

@@ -2,7 +2,7 @@
 /*
 
     Author @BM786 Basit Ali Mohammad == worked on this page.
-        @noramknarf (Francis Moran) - route to product.getInfo() and basket routes.
+        @noramknarf (Francis Moran) - route to product.getInfo() and basket routes, cart.notEmpty implementation.
      */
 
 
