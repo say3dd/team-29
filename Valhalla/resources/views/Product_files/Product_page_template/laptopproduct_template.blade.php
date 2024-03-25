@@ -424,7 +424,7 @@
             body: JSON.stringify({
                 product_id: productId
             }),
-            redirect: 'manual'  // Prevent automatic redirect
+            redirect: 'manual' 
         }).then(response => {
             if (response.type === 'opaqueredirect') {
                 window.location.href = '/login';

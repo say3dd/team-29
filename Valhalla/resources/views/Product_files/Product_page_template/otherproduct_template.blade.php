@@ -6,7 +6,7 @@
     - @AnthonyResuello - Template was used for different products such as monitor, keyboard, headset, and mouse.
     - @AnthonyResuello - Styled the add to basket pop-up message when users click on "Add to basket" button.
      @KraeBM (Bilal Mohamed) - Worked on implementing the DB data of the products selected to show on the screen and within specifications
-     @BM786 (Basit Ali Mohammad) - included rating system on the page.
+
 -->
 
 <!DOCTYPE html>
@@ -497,36 +497,6 @@
                     @endif
                     @endif
         </div>
-{{--Product Rating = @BM786 = Basit Ali Mohammad--}}
-          <div class="rating-system">
-              <link rel="stylesheet" href="{{asset('assets/css/rating.css')}}">
-              <div class="container">
-                  <h4 style="font-size: 28px;">Rate this product</h4>
-                  <form method="POST" action="{{ route('ratings.store', $product->product_id)}}">
-                      @csrf
-                      {{--            <input type="hidden" name="product_id" value="{{ $product->product_id }}">--}}
-                      <dv class="">
-                          <label for="star1" style="font-size:25px; margin-right:17px;">1</label>
-                          <label for="star2" style="font-size:25px; margin-right:17px;">2</label>
-                          <label for="star3" style="font-size:25px; margin-right:17px;">3</label>
-                          <label for="star4" style="font-size:25px; margin-right:17px;">4</label>
-                          <label for="star5" style="font-size:25px; margin-right:17px;">5</label>
-                      </dv>
-                      <div class="rating">
-                          <input type="radio" id="star1" name="rating" value="1" style="margin-right: 13px;" required />
-                          <input type="radio" id="star2" name="rating" value="2" style="margin-right: 13px;" required />
-                          <input type="radio" id="star3" name="rating" value="3" style="margin-right: 13px;" required />
-                          <input type="radio" id="star4" name="rating" value="4" style="margin-right: 13px;" required />
-                          <input type="radio" id="star5" name="rating" value="5" style="margin-right: 13px;" required />
-                      </div>
-                      <div class="form-group">
-                          <p class="font-bold">Write review here: </p>
-                          <textarea class="form-control" required name="review" rows="3"></textarea>
-                      </div>
-                      <x-primary-button type="submit" class="btn btn-primary mt-3">Submit Rating</x-primary-button>
-                  </form>
-              </div>
-          </div>
 
 
 {{--@KraeBM (Bilal Mohamed) worked on this part on 'related products'--}}
@@ -569,9 +539,9 @@
           <script>
             document.getElementById('addToWishlist').addEventListener('click', function(event) {
                 event.preventDefault();
-
+            
                 var productId = this.getAttribute('data-id');
-
+            
                 fetch('{{ route('wishlist.add') }}', {
                     method: 'POST',
                     headers: {
