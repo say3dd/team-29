@@ -320,7 +320,7 @@ Author @BM786 Basit Ali Mohammad == worked on this page.
         /* The following functions checks that only alphabertical characters are entered */
         /* Regular expressions are used in order to check whether the user input consists of alphabetical characters only*/
         function allLetters(input) { // Receive the input field as a parameter
-            var letters = /^[A-Za-z]+$/;
+            var letters = /^[a-zA-Z\s]*$/;
             if (input.match(letters)) { // Use the match() method directly on the input value
                 return true;
             } else {
