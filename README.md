@@ -119,7 +119,7 @@ npm run dev
 php artisan serve
 ```
 12. This website will now be visible (in development) via the URL http://127.0.0.1:8000/
-  - If you want to run it in production, instead of `npm run dev` in step 10, run the command `npm run prod`
+  - If you want to run it in production, instead of `npm run dev` in step 10, run the command `npm run build`
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
