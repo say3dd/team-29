@@ -269,6 +269,13 @@ header {
 .monitor-heading {
   text-align: center;
   font-weight: bold !important;
+ 
+}
+
+.related-heading {
+  text-align: center;
+  font-weight: bold !important;
+  margin-top: 5rem !important;
 }
 .monitor-info h1{
   font-size: 2.1rem !important;
