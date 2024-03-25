@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="items-center justify-start mt-8">
-                    <a href="{{url('/admin')}}">
+                    <a target="_blank" href="{{url('/admin')}}">
                         <x-primary-button class="border-white">
                            Admin
                         </x-primary-button>
