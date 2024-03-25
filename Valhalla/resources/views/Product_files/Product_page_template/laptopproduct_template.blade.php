@@ -312,7 +312,7 @@
                 @auth
                     @if ($userId = Auth::id())
                         <div class="rate">
-                            <h1>Rate this Product</h1>
+                            <div class = "heading">Rate this Product</div>
                             <div class="rating">
                                 <span id="rating">0</span>/5
                             </div>
@@ -461,7 +461,10 @@
                     @foreach ($relatedProduct->features as $featureName => $featureValue)
                         <p><strong>{{ $featureName }}</strong>: {{ $featureValue }}</p>
                     @endforeach
-                    <a href="{{ url('contactUs') }}" class="add-product-btn">Add to basket</a>
+                   <a class=" add-product-btn @error('$randomproduct') @enderror" href="{{route('add_to_basket', $relatedProduct->product_id)}}">
+                        <button type="button" role="button" class="">   Add to Basket
+                        </button>
+                    </a>
 
                 </div>
             </div>

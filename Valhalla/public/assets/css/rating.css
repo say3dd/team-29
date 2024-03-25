@@ -1,6 +1,6 @@
 /*{{--Authors = Basit Ali Mohammad = @BM786 --}}*/
 
-.custom{
+.custom {
     font-family: Arial, sans-serif;
     display: block;
     justify-content: center;
@@ -8,17 +8,19 @@
 }
 .container {
     background-color: #4e008b;
+    margin: 0 auto;
     padding: 20px;
     justify-content: center;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    width: 90vw;
 }
-.rate{
+.rate {
     color: white;
 }
 
-h1 {
+.heading {
     font-size: 24px;
     margin: 0;
 }
@@ -38,10 +40,9 @@ h1 {
     margin: 0 5px;
 }
 
-.star.selected{
+.star.selected {
     color: yellow;
 }
-
 
 textarea {
     width: 90%;
@@ -66,4 +67,22 @@ textarea {
 
 .selected {
     color: yellow;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 2%;
+        margin: 0 auto;
+        background-color: #4e008b;
+        padding: 20px;
+        justify-content: center;
+        border-radius: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 90vw;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+    }
 }
