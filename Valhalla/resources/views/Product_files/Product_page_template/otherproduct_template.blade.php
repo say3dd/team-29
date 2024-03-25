@@ -1,13 +1,12 @@
-{{--
-
-   _______________________________Created and designed the Standardized Product Page Template of the webiste by @AnthonyResuello (Anthony Resuello) ____________________________________________
+<!-- _______________________________Created and designed the Standardized Product Page Template of the webiste by @AnthonyResuello (Anthony Resuello) ____________________________________________
 
     - @AnthonyResuello - Designed and implemented the Standardized Product Page using Figma (Link in Trello called Standardize Product Page Template)
     - @AnthonyResuello - Template was used for different products such as monitor, keyboard, headset, and mouse.
     - @AnthonyResuello - Styled the add to basket pop-up message when users click on "Add to basket" button.
      @KraeBM (Bilal Mohamed) - Worked on implementing the DB data of the products selected to show on the screen and within specifications
-     @BM786 (Basit Ali Mohammad - Worked Review System
---}}
+     @BM786 Basit Ali Mohammad - Worked Review System 
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -135,7 +134,6 @@
                 </div>
             </div>
         </div>
-
 
  <!-- Monitor  Section -->
         @if($product->category === 'Monitor')
@@ -528,7 +526,6 @@
               </div>
           </div>
 
-
 {{--@KraeBM (Bilal Mohamed) worked on this part on 'related products'--}}
 {{-- Displays the related products, all depending on their category  --}}
 
@@ -559,11 +556,7 @@
 
                   @endforeach
               </div>
-
-
           </section>
-
-
 
 
           <script>
@@ -600,16 +593,10 @@
             </script>
 
 
-
-
-
     <!--            Footer                      -->
       <footer>
         @include('footer')
       </footer>
-
-
-
 
 </body>
 
