@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style_sheet_product_webpage_template.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello)
+{{-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello)--}}
 <section class = "navbar-section">
     @include ('header')
 </section>
