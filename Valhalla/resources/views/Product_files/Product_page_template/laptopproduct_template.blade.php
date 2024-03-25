@@ -1,8 +1,8 @@
-<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Product page using CSS. Also used JavaScript to make "View all specification"
-     button work, so the user could see all of the specifications about a praticular product  -->
-<!-- @noramknarf (Francis Moran) - Implemented dynamic images -->
-<!--@BM786 (Basit Ali Mohammad) - implemented rating & review-->
-<!-- @KraeBM (Bilal Mohamed) - Worked on implementing the DB data of the products selected to show on the screen and within specifications
+{{-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Product page using CSS. Also used JavaScript to make "View all specification"--}}
+{{--     button work, so the user could see all of the specifications about a praticular product  -->--}}
+{{-- @noramknarf (Francis Moran) - Implemented dynamic images -->--}}
+{{--@BM786 (Basit Ali Mohammad) - implemented rating & review-->--}}
+{{-- @KraeBM (Bilal Mohamed) - Worked on implementing the DB data of the products selected to show on the screen and within specifications--}}
 
 
 <head>
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style_sheet_product_webpage_template.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
-<!-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello) -->
+{{-- Developed and designed the header for this page @AnthonyResuello (Anthony Resuello)--}}
 <section class = "navbar-section">
     @include ('header')
 </section>
