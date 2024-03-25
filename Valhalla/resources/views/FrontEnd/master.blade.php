@@ -5,11 +5,11 @@
     - @AnthonyResuello - Designed Using Fimga (Link in the Team doucmentation called (website prototype).
     - @AnthonyResuello - In TP2 I improved the homepage styling and layout. Also, added a category section to display different products.
     - @AnthonyResuello - Styled the add to basket pop-up message when users click on "Add to basket" button and made it responsive on different screens sizes.
-    
+
     - @noramknarf (Francis Moran) - various minor bugfixes
     - @KraeBM (Bilal Mohamed) - Fixed routing for the categories and anything leading to the products side,also did some parts in the Best Sellers side.
+    @BravoBoy2 - Basket
 -->
-
 
 <head>
     <meta charset="UTF-8">
