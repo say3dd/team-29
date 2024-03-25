@@ -1,5 +1,7 @@
 <?php
 
+//Author = @BM786 = Basit Ali Mohammad
+
 namespace App\Policies;
 
 use App\Models\Rating;
@@ -8,10 +10,6 @@ use App\Models\User;
 use App\Models\Orders;
 class RatingPolicy
 {
-    /**
-     * Determine whether the user can view any models.
-     */
-
     public function view(User $user, Orders $order)
     {
         return $order->product_id && $order->user_id === $user->id;
