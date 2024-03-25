@@ -16,6 +16,7 @@ class RatingPolicy
     {
         return $order->product_id && $order->user_id === $user->id;
     }
+}
 //    public function viewAny(User $user): bool
 //    {
         //
@@ -69,4 +70,4 @@ class RatingPolicy
         //
 //    }
 
-}
+

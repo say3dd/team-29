@@ -22,7 +22,6 @@ use App\Http\Controllers\WishListController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Product\ReturnRequestSubmitController;
 use App\Http\Middleware\CheckCartNotEmpty;
-use App\Livewire\ProductRatings;
 use App\Models\Product;
 use App\Models\Rating;
 use App\Http\Controllers\RatingController;
@@ -160,12 +159,14 @@ Route::get('/categories', function () {
 Route::get('/search/products', [ProductController::class, 'search'])->name('categories.search');
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
-Route::get('/products/{product}/rate', function (Product $product) {
-    return view('product-rating', compact('product'));
-})->name('product.rate');
-
-Route::get('/product-ratings', [RatingController::class, 'index'])->name('product-ratings');
-Route::post('/submit-review', [RatingController::class, 'store'])->name('submit-review');
+//Route::get('/products/{product}/rate', function (Product $product) {
+//    return view('product-rating', compact('product'));
+//})->name('product.rate');
+//
+//Route::get('/product-ratings', [RatingController::class, 'index'])->name('product-ratings');
+//Route::post('/submit-review', [RatingController::class, 'storeReview'])->name('submit-review');
+Route::post('/submit-review/{product}/{rating}/{review}', [RatingController::class, 'storeReview'])->name('submit-review');
+//Route::post('/products/{product_id}/reviews', [RatingController::class, 'storeReview']);
 
 //************************************NO CODE BEYOND THIS LINE**************************
 require __DIR__ . '/auth.php';
