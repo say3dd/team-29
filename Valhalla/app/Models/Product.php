@@ -22,7 +22,9 @@ class Product extends Model
         'stock'
 
     ];
-    public function getAvailableProducts() {
+
+    public function getAvailableProducts()
+    {
         return Product::where('stock', '>', 0)->get();
     }
     public function ratings()

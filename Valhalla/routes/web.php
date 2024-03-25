@@ -6,18 +6,26 @@
      */
 
 
+
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BasketController;
+use App\Http\Controllers\Product\ReturnController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\WishListController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Basket\BasketController;
-use App\Http\Controllers\Product\ReturnController;
 use App\Http\Controllers\Basket\CheckoutController;
 use App\Http\Controllers\Product\TrackingController;
+use App\Http\Controllers\WishListController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Product\ReturnRequestSubmitController;
+use App\Http\Middleware\CheckCartNotEmpty;
+use App\Livewire\ProductRatings;
+use App\Models\Product;
+use App\Models\Rating;
+use App\Http\Controllers\RatingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,88 +43,130 @@ use App\Http\Controllers\Product\ReturnRequestSubmitController;
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/', [HomeController::class, 'index']);
+
 
 Route::get('/test', function () {
     return view('Product_files.product');
 });
 
-Route::get('/product', [ProductController::class,'index'])->name('product');
-Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
+//Route::get('/products', [ProductController::class,'index'])->name('products.index');
+//Route::get('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
+////Route::get('/products/update', [ProductController::class,'pageUpdate'])->name('products.update');
+
+//
 /*
 The second route here sometimes overrides the first one (possibly something causing the buttons to trigger without an input).
 For now I've made a workaround by having the getInfo function check if it has recieved an input, if not it behaves just like the index function.
 if anybody could let me (Francis) know of a better way to do this, I'd gladly appreciate it.
 */
 
-Route::get('/basket', [BasketController::class,'contents'])->name('basket');
-Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
+//Route::get('/basket', [BasketController::class,'contents'])->name('basket');
+//Route::post('/basket', [BasketController::class,'removeItem'])->name('basket.remove');
+
+//New Basket code
+
+
+
+
 Route::get('/test1', function () {
     return view('FrontEnd.cart');
 });
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/index', [HomeController::class, 'index'])->name('index');
+Route::get('/contactUs', [ContactController::class, 'contact'])->name('contactUs');
 
-
-    Route::get('/index', [HomeController::class,'index'])->name('index');
-    Route::get('/contactUs',[ContactController::class,'contact'])->name('contactUs');;
-    Route::get('/tracking', [TrackingController::class,'tracking'])->name('tracking');
-
-    // Addded route function to the about page
-    Route::get('/about', function (){return view('FrontEnd/about');})->name('about');
-
-    // Route::get('/', );
-    // @say3dd (Mohammed Miah) - Routing for the different product functionalities
-    // @KraeBM (Bilal Mohamed) - Routing for product functionalities.
-    Route::get('/product', [ProductController::class,'index'])->name('product');
-    Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
-    Route::post('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
-    Route::get('/product/{id}', [ProductController::class, 'show'])->name('laptops.show');
-    Route::get('/products/{id}',[ProductController::class,'pageUpdate']) -> name('productspage.id');
+// Addded route function to the about page
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 
 
 
-    Route::get('/contact', [ContactController::class, 'showForm'])->middleware(['guest'])->name('contact.show');
-    Route::post('/contact', [ContactController::class, 'submitForm'])->middleware(['guest'])->name('contact.submit');
+// @say3dd (Mohammed Miah) - Routing for the different product functionalities
+// @KraeBM (Bilal Mohamed) - Routing for product functionalities.
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/product/laptops/{id}', [ProductController::class, 'showlaptopInfo'])->name('product.laptopInfo');
+Route::get('product/other/{id}', [ProductController::class, 'showotherproductInfo'])->name('product.otherInfo');
+//    Route::get('/products', [ProductController::class, 'show'])->name('products.show');
+Route::post('/product', [ProductController::class, 'getInfo'])->name('product.getInfo');
 
+//refactored
+Route::middleware('guest')->group(function () {
+    //Home route for guest user
+    //Contact route
+    Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
+    Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
+});
+
+
+// Any user authentication route can be inside this group function
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/home', [HomeController::class,'authHome'])->name('home');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/home', [HomeController::class, 'authHome'])->name('home');
+    // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'orderHistory'])->name('dashboard');
+    Route::get('/tracking/{id}', [TrackingController::class, 'trackOrder'])->name('tracking');
+
+
+
+
+    //routes for wishlists moved here for user authentication
+    Route::get('/wishlist', [WishListController::class, 'index'])->name('wishlist');
+    Route::post('/add-to-wishlist', [WishListController::class, 'add'])->name('wishlist.add');
+    Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
+    Route::delete('/wishlist/{id}', [WishListController::class, 'remove'])->name('wishlist.remove');
+
+
+
+//    Route::get('/basket', [ProductController::class,'contents'])->name('basket');
+    Route::get('basket', [ProductController::class, 'basket'])->name('basket');
+    Route::put('/basket/{id}', [ProductController::class, 'updateBasket'])->name('update_basket');
+//    Route::delete('remove-from-basket', [ProductController::class, 'removeFromBasket'])->name('remove_from_basket');
+    // routes/web.php
+
+// ... (previous routes)
+
+    Route::delete('/basket/{id}', [ProductController::class, 'removeBasket'])->name('basket.remove');
+    Route::get('add_to_basket/{id}', [ProductController::class, 'addToBasket'])->name('add_to_basket');
+
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
 
-    Route::get('/productlist', [ProfileController::class, 'adminIndex']) ->name('ProductList');
+    Route::get('/plist', function () {
+        return view('Admin.ProductList');
+    })->name('plist');
+
 });
 
-//Route::group(['middleware' => 'cart.notEmpty'], function () {
-//    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
-//    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
-//    Route::get('/checkout/thankyou', function(){
-//        return view('checkout.thankyou');
-//    })->name('thank-you');
-//});
+Route::group(['middleware' => 'cart.notEmpty'], function () {
+    Route::get('/checkout/summary', [CheckoutController::class, 'showSummary'])->name('checkout.summary');
+    Route::post('/checkout/place-order', [CheckoutController::class, 'placeOrder'])->name('checkout.placeOrder');
+    Route::get('/checkout/thankyou', function () {
+        return view('checkout.thankyou');
+    })->name('thank-you');
+});
+
 
 
 Route::get('/return-request', [ReturnController::class, 'showReturnForm'])->name('return.request');
 
 Route::post('/submit-return-request', [ReturnRequestSubmitController::class, 'submit'])->name('return.request.submit');
 
-// Categories page -- change this soon
 Route::get('/categories', function () {
     return view('FrontEnd.categories');
 })->name('categories');
+Route::get('/search/products', [ProductController::class, 'search'])->name('categories.search');
+Route::get('/product/{id}', [ProductController::class, 'show']);
 
-Route::get('/wishlist', [WishListController::class, 'index'])->name('FrontEnd.wishlist');
-Route::post('/add-to-wishlist',[WishListController::class, 'add'])->name('wishlist.add');
-Route::post('/saveWishlistOrder', [WishlistController::class, 'saveOrder']);
+Route::get('/products/{product}/rate', function (Product $product) {
+    return view('product-rating', compact('product'));
+})->name('product.rate');
 
-//--------------------- No code beyond this line. All routing code must be ABOVE THIS LINE. ^^^^^^________----------
+Route::get('/product-ratings', [RatingController::class, 'index'])->name('product-ratings');
+Route::post('/submit-review', [RatingController::class, 'store'])->name('submit-review');
+
+//************************************NO CODE BEYOND THIS LINE**************************
 require __DIR__ . '/auth.php';
-//MUST NOT ANY CODE HERE.
-
-
-
 

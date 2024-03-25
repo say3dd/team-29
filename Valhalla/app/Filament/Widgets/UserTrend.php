@@ -20,7 +20,7 @@ class UserTrend extends ChartWidget
         $data = Trend::model(User::class)
             ->between(
                 start: now()->subMonth(),
-                end: now(),
+                end:  now(),
             )
             ->perMonth()
             ->count();

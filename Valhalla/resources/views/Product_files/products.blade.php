@@ -28,7 +28,6 @@
             @endforeach
         </ul>
     </div>
-    <div class = "price_button_container" >
     <div class="price" style=" font-weight: bold; margin-bottom: 0px; text-decoration: underline;
     text-decoration:underline; text-decoration-color:aquamarine ">Price: £{{ $product->price }}</div>
     <br>
@@ -43,7 +42,7 @@
             </button>
         </a>
     </form>
-</div>
+
 </div>
 @empty
     <h1 class="text-2xl">There are no products available yet.</h1>
