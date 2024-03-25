@@ -532,7 +532,7 @@
 {{--@KraeBM (Bilal Mohamed) worked on this part on 'related products'--}}
 {{-- Displays the related products, all depending on their category  --}}
 
-          <h1 class="monitor-heading">Related Products</h1>
+          <h1 class="related-heading">Related Products</h1>
           <div class="related-title-line"></div>
           <section id="monitor-products">
               <div id="container-product">
