@@ -536,35 +536,38 @@
 
 
 
-      <script>
-        document.getElementById('addToWishlist').addEventListener('click', function(event) {
-            event.preventDefault();
-
-            var productId = this.getAttribute('data-id');
-
-            fetch('{{ route('wishlist.add') }}', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({
-                    product_id: productId
+          <script>
+            document.getElementById('addToWishlist').addEventListener('click', function(event) {
+                event.preventDefault();
+            
+                var productId = this.getAttribute('data-id');
+            
+                fetch('{{ route('wishlist.add') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({
+                        product_id: productId
+                    }),
+                    redirect: 'manual'  // Prevent automatic redirect
+                }).then(response => {
+                    if (response.type === 'opaqueredirect') {
+                        window.location.href = '/login';
+                    } else if (response.ok) {
+                        alert('Item added to wishlist successfully');
+                        return response.json();
+                    } else {
+                        throw new Error('Error adding item to wishlist');
+                    }
                 })
-            }).then(response => {
-                if (response.ok) {
-                    alert('Item added to wishlist successfully');
-                    return response.json();
-                } else {
-                    throw new Error('Error: ' + response.statusText);
-                }
-            })
-            .then(data => console.log(data))
-            .catch((error) => {
-                console.error('Error:', error);
+                .then(data => console.log(data))
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
             });
-        });
-        </script>
+            </script>
 
 
 
