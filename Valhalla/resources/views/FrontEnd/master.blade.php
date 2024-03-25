@@ -3,7 +3,7 @@
 
     - @AnthonyResuello - Homepage served as the main template of the overall design of the website (colors and styling).
     - @AnthonyResuello - Designed Using Fimga (Link in the Team doucmentation called (website prototype).
-    - @AnthonyResuello - In TP2 I refined the homepage styling and layout. Also, added a category section to display different products.
+    - @AnthonyResuello - In TP2 I improved the homepage styling and layout. Also, added a category section to display different products.
     - @AnthonyResuello - Styled the add to basket pop-up message when users click on "Add to basket" button and made it responsive on different screens sizes.
     
     - @noramknarf (Francis Moran) - various minor bugfixes
