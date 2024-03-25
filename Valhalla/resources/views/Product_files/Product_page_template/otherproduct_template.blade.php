@@ -2,8 +2,9 @@
 
    ___________________________________Created and designed the Standardized Product Page Template of the webiste by @AnthonyResuello (Anthony Resuello) ____________________________________________
 
-    - @AnthonyResuello - designed and implemented the Standardized Product Page of the webiste using Figma (Link in Trello)
+    - @AnthonyResuello - Designed and implemented the Standardized Product Page of the webiste using Figma (Link in Trello)
     - @AnthonyResuello - Template was used for different products such as monitor, keyboard, headset, and mouse.
+    - @AnthonyResuello - Styled the add to basket pop-up message when users click on "Add to basket" button.
      @KraeBM (Bilal Mohamed) - Worked on implementing the DB data of the products selected to show on the screen and within specifications
 
 -->
