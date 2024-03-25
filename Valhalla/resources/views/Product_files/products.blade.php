@@ -1,6 +1,6 @@
-{{--<!-- @KraeBM (Bilal Mohamed) worked on the blade templating of this website  -->--}}
-{{--<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Products webpage using CSS  -->--}}
-{{--@extends('Product_files.productL')--}}
+<!-- @KraeBM (Bilal Mohamed) worked on the blade templating of this website  -->
+<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Products webpage using CSS  -->
+@extends('Product_files.productL')
 
 @section('productP')
 <!--@noramknarf (Francis Moran) - added functionality to "add to basket" buttons (see ProductController->getInfo()) -->

@@ -1,15 +1,15 @@
-{{--<!----}}
-{{--         ______________________________   Created and designed the Header of the webiste by @AnthonyResuello (Anthony Resuello)     ____________________________________________--}}
+<!--
+         ______________________________   Created and designed the Header of the webiste by @AnthonyResuello (Anthony Resuello)     ____________________________________________
 
-{{--    - @Anthony Resuello - Created and desgined the header to make it consistent for all pages of the website--}}
-{{--    - @Anthony Resuello - Made it responsive for different screen sizes--}}
-{{---->--}}
+    - @Anthony Resuello - Created and desgined the header to make it consistent for all pages of the website
+    - @Anthony Resuello - Made it responsive for different screen sizes
+-->
 <head>
     <link rel="stylesheet" href="{{ asset('assets/css/home_style.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
     <script src="{{ asset('assets/JavaScript/jquery.js') }}"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
 </head>
 
 <header>

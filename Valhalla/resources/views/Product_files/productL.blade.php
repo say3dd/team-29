@@ -1,5 +1,5 @@
-{{--<!-- @KraeBM (Bilal Mohamed) worked on all the backend, JS and blade templating of this page -->--}}
-{{--<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Products webpage using CSS.  -->--}}
+<!-- @KraeBM (Bilal Mohamed) worked on all the backend, JS and blade templating of this page -->
+<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Products webpage using CSS.  -->
 
 <head>
 
