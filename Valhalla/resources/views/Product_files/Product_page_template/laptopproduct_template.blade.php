@@ -305,14 +305,14 @@
     {{-- Section 3 ends here --}}
     {{-- Product-rating --}}
     <div>
-        <form action="{{ route('submit-review') }}" method="post">
+        <form action="{{ route('submit-review', ['product' => $product->product_id, 'rating' => ':rating', 'review' => ':review']) }}" method="POST">
             @csrf
-            <link rel="stylesheet" href="{{ asset('assets/css/rating.css') }}">
+            <link rel="stylesheet" href="{{asset('assets/css/rating.css')}}">
             <div class="container mt-11 custom">
                 @auth
-                    @if ($userId = Auth::id())
+                    @if($userId = Auth::id())
                         <div class="rate">
-                            <div class = "heading">Rate this Product</div>
+                            <h1>Rate this Product</h1>
                             <div class="rating">
                                 <span id="rating">0</span>/5
                             </div>
@@ -334,7 +334,7 @@
                             </div>
                             <p>Share your review:</p>
                             <textarea name="text-box" id="review" placeholder="Write your review here"></textarea>
-                            <x-primary-button class="ml-10 mt-16" id="submit">Submit</x-primary-button>
+                            <x-primary-button class="ml-10 mt-16" id="submit" type="button">Submit</x-primary-button>
                         </div>
                     @else
                         <div class="mb-8 text-center text-white">
@@ -349,102 +349,118 @@
                         You need to login in order to rate the product!
                     </div>
                     <x-primary-button>
-                        <a href="{{ route('login') }}" class="block mx-auto">Login</a>
+                        <a href="{{ route('login') }}"
+                           class="block mx-auto"
+                        >Login</a>
                     </x-primary-button>
                 @endauth
             </div>
-</body>
-</form>
-</div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const stars = document.querySelectorAll(".star");
-        const rating = document.getElementById("rating");
-        const reviewText = document.getElementById("review");
-        const submitBtn = document.getElementById("submit");
-        const reviewsContainer = document.getElementById("reviews");
+        </form>
+    </div>
+    <script>document.addEventListener("DOMContentLoaded", function() {
+            const stars = document.querySelectorAll(".star");
+            const rating = document.getElementById("rating");
+            const reviewText = document.getElementById("review");
+            const submitBtn = document.getElementById("submit");
+            const reviewsContainer = document.getElementById("reviews");
 
-        stars.forEach((star, index) => {
-            star.addEventListener("click", () => {
-                const value = index + 1;
-                rating.innerText = value;
+            stars.forEach((star, index) => {
+                star.addEventListener("click", () => {
+                    const value = index + 1;
+                    rating.innerText = value;
 
-                stars.forEach((s, i) => {
-                    if (i <= index) {
-                        s.classList.add("selected");
-                    } else {
-                        s.classList.remove("selected");
-                    }
-                });
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.classList.add("selected");
+                        } else {
+                            s.classList.remove("selected");
+                        }
+                    });
 
-                console.log("Stars after adding 'selected' class:", stars);
+                    console.log("Stars after adding 'selected' class:", stars);
 
 
-                stars.forEach((s) => s.classList.remove("one", "two", "three", "four", "five"));
+                    stars.forEach((s) => s.classList.remove("one", "two", "three", "four", "five"));
 
-                stars.forEach((s, i) => {
-                    if (i < value) {
-                        s.classList.add(getStarColorClass(value));
-                    }
+                    stars.forEach((s, i) => {
+                        if (i < value) {
+                            s.classList.add(getStarColorClass(value));
+                        }
+                    });
                 });
             });
-        });
 
-        function submitReview() {
-            const userRating = parseInt(rating.innerText);
-            const review = reviewText.value;
+            function submitReview() {
+                const userRating = parseInt(rating.innerText);
+                const review = reviewText.value;
+                const productId = "{{ $product->product_id }}"; // Replace with the actual product ID
 
-            if (userRating === 0 || review.trim() === "") {
-                alert("Please rate the product and write a review to submit.");
-                return;
+                if (userRating === 0 || review.trim() === "") {
+                    alert("Please rate the product and write a review to submit.");
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('rating', userRating);
+                formData.append('review', review);
+                formData.append('product_id', productId);
+                formData.append('_token', "{{ csrf_token() }}"); // Include the CSRF token
+
+                const url = `{{ route('submit-review', ['product' => $product->product_id, 'rating' => ':rating', 'review' => ':review']) }}`.replace(':rating', userRating).replace(':review', review);
+
+                fetch(url, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Failed to submit review. Please try again.');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (FormData().success) {
+                            alert('Review submitted successfully!');
+                            // Optionally, you can clear the form fields or perform other actions
+                            reviewText.value = '';
+                            rating.innerText = '0';
+                            stars.forEach(star => star.classList.remove('selected', 'one', 'two', 'three', 'four', 'five'));
+                        } else {
+                            alert('Failed to submit review. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error.message);
+                        alert(error.message);
+                    });
             }
 
-            document.getElementById("submit-form").submit();
-        }
+            submitBtn.addEventListener("click", submitReview);
 
-        submitBtn.addEventListener("click", () => {
-            const userRating = parseInt(rating.innerText);
-            const review = reviewText.value;
-
-            if (!userRating || !review) {
-                alert("Please rate the product and write a review to submit.");
-                return;
+            function getStarColorClass(value) {
+                switch (value) {
+                    case 1:
+                        return "one";
+                    case 2:
+                        return "two";
+                    case 3:
+                        return "three";
+                    case 4:
+                        return "four";
+                    case 5:
+                        return "five";
+                    default:
+                        return "";
+                }
             }
+        });</script>
 
-            if (userRating > 0) {
-                const reviewElement = document.createElement("div");
-                reviewElement.classList.add("review");
-                reviewElement.innerHTML =
-                    `<p><strong>Rating: ${userRating}/5</strong></p><p>${review}</p>`;
-                reviewsContainer.appendChild(reviewElement);
 
-                reviewText.value = "";
-                rating.innerText = "0";
-                stars.forEach((s) => s.classList.remove("one", "two", "three", "four", "five",
-                    "selected"));
-            }
-        });
 
-        function getStarColorClass(value) {
-            switch (value) {
-                case 1:
-                    return "one";
-                case 2:
-                    return "two";
-                case 3:
-                    return "three";
-                case 4:
-                    return "four";
-                case 5:
-                    return "five";
-                default:
-                    return "";
-            }
-        }
-    });
-</script>
-
-{{--   @Bilal Mo  added a randomizer which chooses 4 products from the specific category it is and randomizes it after every refresh --}}
+    {{--   @Bilal Mo  added a randomizer which chooses 4 products from the specific category it is and randomizes it after every refresh --}}
 <h1 class="laptop-heading">Related Products</h1>
 <div class="related-title-line"></div>
 <section id="laptop-products">
@@ -519,9 +535,9 @@
 <script>
         document.getElementById('addToWishlist').addEventListener('click', function(event) {
             event.preventDefault();
-        
+
             var productId = this.getAttribute('data-id');
-        
+
             fetch('{{ route('wishlist.add') }}', {
                 method: 'POST',
                 headers: {
