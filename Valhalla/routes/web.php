@@ -155,7 +155,7 @@ Route::get('/categories', function () {
 Route::get('/search/products', [ProductController::class, 'search'])->name('categories.search');
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
-Route::post('/submit-review/{product}/{rating}/{review}', [RatingController::class, 'storeReview'])->name('submit-review');
+Route::post('/ratings/{id}', [RatingController::class, 'store'])->name('ratings.store');
 
 //************************************NO CODE BEYOND THIS LINE**************************
 require __DIR__ . '/auth.php';

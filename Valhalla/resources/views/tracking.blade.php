@@ -1,4 +1,4 @@
-{{-- Author @BM786 = Basit Ali Mohammad --}}
+{{-- Author @BM786 = Basit Ali Mohammad - styling of page--}}
 {{-- @say3dd (Mohammed Miah ) - Did logic for this page, connected to the Orders table --}}
 
 <x-app-layout>
