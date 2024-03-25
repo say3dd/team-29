@@ -1,4 +1,4 @@
-<!--
+{{--
 
    _______________________________Created and designed the Standardized Product Page Template of the webiste by @AnthonyResuello (Anthony Resuello) ____________________________________________
 
@@ -7,8 +7,7 @@
     - @AnthonyResuello - Styled the add to basket pop-up message when users click on "Add to basket" button.
      @KraeBM (Bilal Mohamed) - Worked on implementing the DB data of the products selected to show on the screen and within specifications
      @BM786 (Basit Ali Mohammad - Worked Review System
--->
-
+--}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -506,13 +505,13 @@
                   <form method="POST" action="{{ route('ratings.store', $product->product_id)}}">
                       @csrf
                       {{--            <input type="hidden" name="product_id" value="{{ $product->product_id }}">--}}
-                      <dv class="">
+                      <div class="">
                           <label for="star1" style="font-size:25px; margin-right:17px;">1</label>
                           <label for="star2" style="font-size:25px; margin-right:17px;">2</label>
                           <label for="star3" style="font-size:25px; margin-right:17px;">3</label>
                           <label for="star4" style="font-size:25px; margin-right:17px;">4</label>
                           <label for="star5" style="font-size:25px; margin-right:17px;">5</label>
-                      </dv>
+                      </div>
                       <div class="rating">
                           <input type="radio" id="star1" name="rating" value="1" style="margin-right: 13px;" required />
                           <input type="radio" id="star2" name="rating" value="2" style="margin-right: 13px;" required />
