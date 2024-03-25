@@ -314,15 +314,15 @@
             @csrf
 {{--            <input type="hidden" name="product_id" value="{{ $product->product_id }}">--}}
             <div class="rating">
-                <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Very good">5 stars</label>
-                <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
-                <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Ok">3 stars</label>
-                <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Pretty bad">2 stars</label>
-                <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Very bad">1 star</label>
+                <input type="radio" id="star5" name="rating" value="5" required /><label for="star5" title="Very good">5 stars</label>
+                <input type="radio" id="star4" name="rating" value="4" required /><label for="star4" title="Pretty good">4 stars</label>
+                <input type="radio" id="star3" name="rating" value="3" required /><label for="star3" title="Ok">3 stars</label>
+                <input type="radio" id="star2" name="rating" value="2" required /><label for="star2" title="Pretty bad">2 stars</label>
+                <input type="radio" id="star1" name="rating" value="1" required /><label for="star1" title="Very bad">1 star</label>
             </div>
             <div class="form-group">
                 <label for="review">Review:</label>
-                <textarea class="form-control" name="review" rows="3"></textarea>
+                <textarea class="form-control" required name="review" rows="3"></textarea>
             </div>
             <x-primary-button type="submit" class="btn btn-primary">Submit Rating</x-primary-button>
         </form>
