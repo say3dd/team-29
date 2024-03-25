@@ -514,7 +514,10 @@
                    @foreach($relatedProduct->features as $featureName => $featureValue)
                        <p><strong>{{ $featureName }}</strong>: {{ $featureValue }}</p>
                    @endforeach
-                   <a href="{{ url('contactUs') }}" class="add-product-btn">Add to basket</a>
+                   <a class=" add-product-btn @error('$randomproduct') @enderror" href="{{route('add_to_basket', $relatedProduct->product_id)}}">
+                        <button type="button" role="button" class="">   Add to Basket
+                        </button>
+                    </a>
                </div>
                 </div>
 
