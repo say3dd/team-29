@@ -1,6 +1,7 @@
 <!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Product page using CSS. Also used JavaScript to make "View all specification"
      button work, so the user could see all of the specifications about a praticular product  -->
 <!-- @noramknarf (Francis Moran) - Implemented dynamic images -->
+<!--@BM786 (Basit Ali Mohammad) - implemented rating & review-->
 
 <head>
     <meta charset="UTF-8">
@@ -332,7 +333,6 @@
                                     <span class="star" data-value="5">★</span>
                                 </label>
                             </div>
-                            <p>Share your review:</p>
                             <textarea name="text-box" id="review" placeholder="Write your review here"></textarea>
                             <x-primary-button class="ml-10 mt-16" id="submit" type="button">Submit</x-primary-button>
                         </div>
@@ -393,7 +393,7 @@
             function submitReview() {
                 const userRating = parseInt(rating.innerText);
                 const review = reviewText.value;
-                const productId = "{{ $product->product_id }}"; // Replace with the actual product ID
+                const productId = "{{ $product->product_id }}";
 
                 if (userRating === 0 || review.trim() === "") {
                     alert("Please rate the product and write a review to submit.");
@@ -404,7 +404,7 @@
                 formData.append('rating', userRating);
                 formData.append('review', review);
                 formData.append('product_id', productId);
-                formData.append('_token', "{{ csrf_token() }}"); // Include the CSRF token
+                formData.append('_token', "{{ csrf_token() }}");
 
                 const url = `{{ route('submit-review', ['product' => $product->product_id, 'rating' => ':rating', 'review' => ':review']) }}`.replace(':rating', userRating).replace(':review', review);
 
@@ -415,16 +415,15 @@
                         'X-CSRF-TOKEN': "{{ csrf_token() }}"
                     }
                 })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Failed to submit review. Please try again.');
-                        }
-                        return response.json();
-                    })
+                    // .then(response => {
+                    //     if (!response.ok) {
+                    //         throw new Error('Failed to submit review. Please try again.');
+                    //     }
+                    //     return response.json();
+                    // })
                     .then(data => {
-                        if (FormData().success) {
+                        if (data.success) {
                             alert('Review submitted successfully!');
-                            // Optionally, you can clear the form fields or perform other actions
                             reviewText.value = '';
                             rating.innerText = '0';
                             stars.forEach(star => star.classList.remove('selected', 'one', 'two', 'three', 'four', 'five'));
@@ -434,7 +433,7 @@
                     })
                     .catch(error => {
                         console.error('Error:', error.message);
-                        alert(error.message);
+                        alert('An error occurred while submitting the review. Please try again.');
                     });
             }
 

@@ -9,12 +9,15 @@ use App\Models\Rating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use App\Policies\RatingPolicy;
 
 class RatingController extends Controller
 {
     public function storeReview(Request $request, Product $product)
     {
         $userId = auth()->user()->id;
+
+        $this->authorize('view', $product->order);
 
         $validator = Validator::make($request->all(), [
             'rating' => 'required|integer|between:1,5',
@@ -37,40 +40,15 @@ class RatingController extends Controller
                 'review' => $request->input('review'),
             ]);
 
-                return response()->json(['success' => true]);
+            // Return a success response
+            return response()->json(['error' => false, 'success' => 'Review submitted successfully']);
         } catch (\Exception $e) {
             return response()->json([
-                'success' => true,
+                'success' => false,
                 'error' => 'Failed to submit review. Please try again.'
             ]);
         }
     }
 }
 
-
-
-//    public function store(Request $request, $id)
-//    {
-
-//        $validator = Validator::make($request->all(), [
-//            'rating' => 'required|integer|min:1|max:5',
-//            'review' => 'required|string',
-//            'product_id' => 'required|exists:products,id',
-//        ]);
-//        $t_box = request()->input('text-box');
-////        const review = reviewText.value;
-//
-//        if (!Auth::check()) {
-//            return redirect()->back()->with('error', 'You must be logged in to rate a product.');
-//        }
-//
-//        $review = Auth::user()->ratings()->where('product_id')->first();
-//        $product_id = Product::findOrFail($id);
-
-//        $review = new Review();
-//        $review->rating = $validatedData['rating'];
-//        $review->review = $validatedData['review'];
-//        $review->user_id = $userId;
-//        $review->product_id = $validatedData['product_id'];
-//        $review->save();
 
