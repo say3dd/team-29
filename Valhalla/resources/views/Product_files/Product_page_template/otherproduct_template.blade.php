@@ -2,9 +2,9 @@
 
    ___________________________________Created and designed the Standardized Product Page Template of the webiste by @AnthonyResuello (Anthony Resuello) ____________________________________________
 
-    - @AnthonyResuello designed and implemented the Standardized Product Page of the webiste using Figma (Link in Trello)
-    - Template was used for different products such as monitor, keyboard, headset, and mouse.
- <!-- @KraeBM (Bilal Mohamed) - Worked on implementing the DB data of the products selected to show on the screen and within specifications
+    - @AnthonyResuello - designed and implemented the Standardized Product Page of the webiste using Figma (Link in Trello)
+    - @AnthonyResuello - Template was used for different products such as monitor, keyboard, headset, and mouse.
+     @KraeBM (Bilal Mohamed) - Worked on implementing the DB data of the products selected to show on the screen and within specifications
 
 -->
 
