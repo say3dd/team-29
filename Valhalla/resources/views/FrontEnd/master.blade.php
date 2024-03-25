@@ -2,11 +2,13 @@
 
     _______________________________________   Created and designed the Homepage of the webiste by @AnthonyResuello (Anthony Resuello) _______________________________________________
 
-    - @Anthony Resuello - Homepage served as the main template of the overall design of the website (colors and styling).
-    - @Anthony Resuello- Designed Using Fimga (Link in the Team doucmentation called (website prototype).
-    - @Anthony Resuello - In TP2 I imrpoved the homepage styling and added a category section to display different products.
+    - @AnthonyResuello - Homepage served as the main template of the overall design of the website (colors and styling).
+    - @AnthonyResuello - Designed Using Fimga (Link in the Team doucmentation called (website prototype).
+    - @AnthonyResuello - In TP2 I imrpoved the homepage styling and added a category section to display different products.
+    - @AnthonyResuello - Styled the add to basket pop-up message when users click on "Add to basket" button and made it responsive on different screens sizes.
+    - @noramknarf (Francis Moran) - various minor bugfixes
     - @KraeBM (Bilal Mohamed) - Fixed routing for the categories and anything leading to the products side,also did some parts in the Best Sellers side.
-    @noramknarf (Francis Moran) - various minor bugfixes
+   
 -->
 
 
