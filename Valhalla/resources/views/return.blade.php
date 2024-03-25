@@ -1,4 +1,4 @@
-{{-- Author @BM786 = Basit Ali Mohammad --}}
+{{-- Author @BM786 = Basit Ali Mohammad - styling of the page--}}
 {{-- @say3dd (Mohammed Miah ) - Made it so the user can select THEIR orders from a dropbox. --}}
 <x-guest-layout>
     <div class=" mb-4 text-white">
