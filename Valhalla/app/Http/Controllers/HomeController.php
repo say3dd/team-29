@@ -49,19 +49,25 @@ class HomeController extends Controller implements BasketInterface
     public function addToBasket($id){}
 
 
-
+/** @KraeBM (Bilal Mohamed) this is the index displaying the products in the home page - used for the random products specifically */
     public function index(Product $product){
+        //assigns it to 3 items
         $product = $product->orderBy('product_name','asc')->paginate(3);
+        //calls the randomProducts Function
         $randomProducts = $this->getRandomProducts();
+        //this loops the feature extraction function to display the features to those 3 products in the homepage
         foreach ($product as $prod) {
             $prod->features = $this->productService->extractProductFeatures($prod);
         }
+        //this loops it so the random items that appear also have product features
         foreach ($randomProducts as $randomProduct) {
             $randomProduct->features = $this->productService->extractProductFeatures($randomProduct);
         }
         return view('FrontEnd.home', ['products' => $product,'category' =>'$category','randomProducts' => $randomProducts]);
     }
+    /** @KraeBM (Bilal Mohamed) This is the function which obtains the random products */
     public function getRandomProducts(){
+        //assigning a value to get the products which have a stock>0 , taking at most thirty and showing only 3 products.
         $randomProducts = Product::where('stock', '>', 0)
             ->take(30)
             ->get()

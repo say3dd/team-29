@@ -49,7 +49,8 @@
 <body>
 
     <div class="title_shape">
-        <!--@BilalMo did this ;) -->
+        <!-- @KraeBM (Bilal Mohamed) this code displays different texts and images for what type of category is selected, done by
+        matching the category it has -->
         @php
           $categoryImage = match ($category) {
               //Here add the pictures you want on the top of the product pages
@@ -89,10 +90,6 @@
     <!-- This is the code for the layout of product container - where all the product will be shown -->
     <div class="background_shape6">
         <section class="container_for_path_buttons">
-        <div class="search">
-            {{--//@todo: Need to implement search bar here--}}
-        </div>
-
             <button class="button_sort" id="sort-button">
                 <img class="image_sort" src="{{asset('assets/images_product/sort.png')}}" alt="">
             </button>
@@ -126,7 +123,7 @@
                                 <label>{{$brand->brand}}</label>
                             </li>
                         @endforeach
-                        <!--Displays the Gpu checkboxes with the same checked features used  -->
+                        <!--Displays the filter checkboxes of those distinct products from diff categories -->
                         @if(!empty($filters))
                             @foreach($filters as $attribute => $values)
                                 <div>
@@ -139,7 +136,7 @@
                                         <input id="{{$value}}" name="{{ $attribute }}[]" value="{{ $value }}"
                                                type="checkbox"
                                             {{ $checkedValues ? 'checked' : '' }}/>
-                                        <label for=""{{$attribute}}{{ $value }}"">  {{ $value }} </label>
+                                        <label for="{{$attribute}}{{ $value }}">  {{ $value }} </label>
                                     </li>
                                     @endforeach
                                 </div>
@@ -153,8 +150,8 @@
             </div>
              </form>
         </div>
-        <!--Form for hidden fields so the filter request gets sent without a need for a submit button, more smoother functionality -->
 
+        <!-- This code is for displaying the sorting feature container and their radio buttons -->
         <div id="sorting-container" class="sort">
             <ul class="sort__list">
                 <form action="{{route('products.index')}}" method="GET" wire:model="sorting">
@@ -183,7 +180,7 @@
             </ul>
         </div>
         <script>
-            /*Code for the submit button - works by assaigning variables with the id
+            /*Code for the submit button - works by assigning variables with the id
              and making it so if the filter is active,
             add those selected and when filled and enter is pressed run the function */
             var sortButton = document.getElementById("sort-button");

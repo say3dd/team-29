@@ -1,4 +1,6 @@
 <?php
+// Created by @KraeBM (Bilal Mohamed) - this file is used as a intermediary sharing of functions that both
+// the homecontroller and product Controller use - preventing duplication of code for usage
 namespace App\Services;
 
 use App\Models\Product;
@@ -42,7 +44,7 @@ class ProductService{
         ];
     }
 
-    /** @Bilal Mo This function works on extracting the features of the product and displaying it for each product
+    /** @KraeBM (Bilal Mohamed) This function works on extracting the features of the product and displaying it for each product
      * - shown in productL page so all products have small info below them for the
      * user to see
      */
@@ -50,23 +52,18 @@ class ProductService{
     {
         $category = $product->category;
         $categoryPatterns = $this->getCategoryPatterns($category)[$category];
-        //placed in an array to contain the data obtained from DB to be displayed to the product paghe
+        //placed in an array to contain the data obtained from DB to be displayed to the product page
         $features = [];
-
         foreach ($categoryPatterns as $featureName => $pattern) {
             //checks to match if the pattern and the product desc matches
-            // if(is_string($pattern)) {
             preg_match($pattern, $product->product_description, $matches);
             //if the matches array isnt empty and if its correctly matches what been obtained in the array - in this case the product desc
-            //then assings to features
+            //then assigns to features
             if (!empty($matches) && isset($matches[1])) {
                 $features[$featureName] = $matches[1];
             }
-            //  }else{
-            //   Log::warning("Pattern for {$featureName} is not a string.");
 
         }
-        // }
 //return features and displays the result of the matching.
         return $features;
     }

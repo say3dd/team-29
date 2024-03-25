@@ -2,6 +2,8 @@
      button work, so the user could see all of the specifications about a praticular product  -->
 <!-- @noramknarf (Francis Moran) - Implemented dynamic images -->
 <!--@BM786 (Basit Ali Mohammad) - implemented rating & review-->
+<!-- @KraeBM (Bilal Mohamed) - Worked on implementing the DB data of the products selected to show on the screen and within specifications
+
 
 <head>
     <meta charset="UTF-8">

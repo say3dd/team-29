@@ -5,14 +5,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b9f93ae-4d00-4c0d-898a-902cb42df0cc" name="Changes" comment="review">
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/team-29.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team-29.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/Hyperx-cloudii.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/arctis-7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/astro-green.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/corsair-voidelite.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/gameone.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/hyperx-cloud.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/prox2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/razer-blackv2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/sennheiser gsp.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/sony xm4s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/theta.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Headset_images/turtlebeach-stealth.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/annepro 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/apex-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/apex3-tkl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/chnosav2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/ck550-rg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/corsair k70.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/corsair-k63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/duckyone.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/logi-g915.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/razer v3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/razerhuntsman.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/reddragon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/Acer Pred-xb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/Dell S320.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/Nitro-monitor.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/benq ex27.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/benq80q.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/dell S-Series 27.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/dell-ultrasharp32.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/lg- ultreagear.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/mag27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/omenx25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/omenx27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/pred xb3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/rog-swift pg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Valhalla/public/assets/Monitor_images/tuf gaming vg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_03_2024_19_40__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_03_2024_19_40__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2024_01_00__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2024_01_00__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/RatingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/RatingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/app/Policies/RatingPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Policies/RatingPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/database/migrations/2024_03_24_000254_create_rating_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/migrations/2024_03_24_000254_create_rating_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/app/Services/ProductService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/app/Services/ProductService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/database/seeders/ProductsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/annepro-2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/apex-7.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/ck550-rgb.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/corsair-k63.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/corsair-k70.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/duckyone-2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/huntsman-razer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/logitech - g915.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/razor-blackwidow.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/public/assets/Keyboard_Images/red-dragon-k552.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/FrontEnd/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Product_page_template/laptopproduct_template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Product_page_template/laptopproduct_template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Valhalla/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Product_page_template/otherproduct_template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/Product_page_template/otherproduct_template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/productL.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Valhalla/resources/views/Product_files/products.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -479,7 +531,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.rainbow.brackets.disable.when",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2023.3.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "C:\\Users\\bilal\\AppData\\Local\\Programs\\PhpStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

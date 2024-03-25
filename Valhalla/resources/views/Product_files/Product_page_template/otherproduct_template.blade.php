@@ -4,7 +4,8 @@
 
     - @AnthonyResuello designed and implemented the Standardized Product Page of the webiste using Figma (Link in Trello)
     - Template was used for different products such as monitor, keyboard, headset, and mouse.
- 
+ <!-- @KraeBM (Bilal Mohamed) - Worked on implementing the DB data of the products selected to show on the screen and within specifications
+
 -->
 
 <!DOCTYPE html>
@@ -127,7 +128,7 @@
                         href="{{ route('add_to_basket', $product->product_id) }}">
                         <button type="button" role="button" class="">
                             ADD TO BASKET
-                        </button>                                            
+                        </button>
                         <a href="#" class="wishlist-btn" id="addToWishlist" data-id="{{ $product->product_id }}">ADD
                             TO WISHLIST</a>
                     </div>
@@ -150,10 +151,10 @@
                     @if($product->category === 'Mouse')
                         <div class = "monitor-feature">
                             <div id="monitor-feature-container">
-                                <div class="monitor-feature-card">        
+                                <div class="monitor-feature-card">
                                     <img  src="{{ asset('assets/Monitor_images/mouse-imagebanner.jpg') }}" alt=""">
                                 </div>
-                            </div> 
+                            </div>
                             @endif
 
                             @if($product->category === 'Keyboard')
@@ -179,7 +180,7 @@
 
 
                                                 <!-- Monitor Features -->
-
+{{-- @KraeMo backend side - I made it so from the specific feautres the selected product has, it will display something diferent , e.g. wired and wireless will have sightly different title features--}}
       <section id="monitor-features">
         <div id="container-feature">
             @if($product->category === 'Monitor')
@@ -496,124 +497,40 @@
                     @endif
         </div>
 
+
+{{--@KraeBM (Bilal Mohamed) worked on this part on 'related products'--}}
 {{-- Displays the related products, all depending on their category  --}}
 
           <h1 class="monitor-heading">Related Products</h1>
-     <div class="related-title-line"></div>
-     <section id="monitor-products">
-        <div id="container-product">
-    @foreach($relatedProducts as $relatedProduct)
-                <div class="products">
-                    <div class="top-card">
-                        <img src="{{ asset($relatedProduct->images) }}">
-                    </div>
-               <div class="bottom-card">
-                 <h2 class="monitor-title"><a style="color: inherit; font-weight: bold; font-size: 1.05rem;"
-                               href="{{ $product->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$product->product_id]) : route('product.otherInfo', ['id' =>$product->product_id]) }}">
-                           {{$relatedProduct->product_name}} </a></h2>
-                   @foreach($relatedProduct->features as $featureName => $featureValue)
-                       <p><strong>{{ $featureName }}</strong>: {{ $featureValue }}</p>
-                   @endforeach
-                   <a class=" add-product-btn @error('$randomproduct') @enderror" href="{{route('add_to_basket', $relatedProduct->product_id)}}">
-                        <button type="button" role="button" class="">   Add to Basket
-                        </button>
-                    </a>
-               </div>
-                </div>
+          <div class="related-title-line"></div>
+          <section id="monitor-products">
+              <div id="container-product">
+                  @foreach($relatedProducts as $relatedProduct)
+                      <div class="products">
+                          <div class="top-card">
+                              <img src="{{ asset($relatedProduct->images) }}">
+                          </div>
+                          <div class="bottom-card">
+                              <h2 class="monitor-title"><a
+                                      style="color: inherit; font-weight: bold; font-size: 1.05rem;"
+                                      href="{{ $product->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$product->product_id]) : route('product.otherInfo', ['id' =>$product->product_id]) }}">
+                                      {{$relatedProduct->product_name}} </a></h2>
+                              @foreach($relatedProduct->features as $featureName => $featureValue)
+                                  <p><strong>{{ $featureName }}</strong>: {{ $featureValue }}</p>
+                              @endforeach
+                              <a class=" add-product-btn @error('$randomproduct') @enderror"
+                                 href="{{route('add_to_basket', $relatedProduct->product_id)}}">
+                                  <button type="button" role="button" class=""> Add to Basket
+                                  </button>
+                              </a>
+                          </div>
+                      </div>
+
+                  @endforeach
+              </div>
 
 
-
-
-
-
-                        @endforeach
-
-
-
-
-
-{{--          <div class="products">--}}
-{{--            <div class="top-card">--}}
-
-{{--                <img  src="{{ asset('assets/monitor_images/monitors_image1.jpg') }}" alt=""">--}}
-
-{{--            </div>--}}
-{{--            <div class="bottom-card">--}}
-{{--            <h2 class="monitor-title">MSI Optix 32G27C5</h2>--}}
-{{--              <p class="info-specs">Display Resolution 2560x1440</p>--}}
-{{--              <p class="info-specs">Display Size 27"</p>--}}
-{{--              <p class="info-specs">Refresh Rate 240Hz</p>--}}
-{{--              <p class="info-specs">0.03 Response Time</p>--}}
-{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
-{{--            </div>--}}
-
-{{--          </div>--}}
-
-
-{{--          <div class="products">--}}
-{{--            <div class="top-card">--}}
-
-{{--            <img  src="{{ asset('assets/monitor_images/GAME-AW2523HF-3.jpg') }}" alt=""">--}}
-{{--            </div>--}}
-{{--            <div class="bottom-card">--}}
-{{--            <h2 class="monitor-title">MSI Optix 32G27C5</h2>--}}
-{{--              <p>Display Resolution 2560x1440</p>--}}
-{{--              <p>Display Size 27"</p>--}}
-{{--              <p>Refresh Rate 280Hz</p>--}}
-{{--              <p>1ms Response Time</p>--}}
-{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
-{{--            </div>--}}
-
-{{--          </div>--}}
-
-{{--          <div class="products">--}}
-{{--            <div class="top-card">--}}
-{{--                <img  src="{{ asset('assets/monitor_images/msi_g27c5_1.jpg') }}" alt=""">--}}
-
-{{--            </div>--}}
-{{--            <div class="bottom-card">--}}
-{{--            <h2 class="monitor-title">MSI Optix 32G27C5</h2>--}}
-
-{{--              <p>Display Resolution 2560x1440</p>--}}
-{{--              <p>Display Size 27"</p>--}}
-{{--              <p>Refresh Rate 165z</p>--}}
-{{--              <p>0.5 Response Time</p>--}}
-{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
-{{--            </div>--}}
-
-{{--          </div>--}}
-{{--          <div class="products">--}}
-{{--            <div class="top-card">--}}
-{{--                <img  src="{{ asset('assets/monitor_images/3219921_JK2Y.jpg') }}" alt=""">--}}
-
-{{--            </div>--}}
-{{--            <div class="bottom-card">--}}
-{{--            <h2 class="monitor-title">BenQ EX240N</h2>--}}
-{{--              <p>Display Resolution 1920x1080</p>--}}
-{{--              <p>Display Size 24"</p>--}}
-{{--              <p>Refresh Rate 240Hz</p>--}}
-{{--              <p>0.03 Response Time</p>--}}
-{{--              <a href="{{url('contactUs')}}" class="add-product-btn">Add to basket</a>--}}
-{{--            </div>--}}
-
-{{--          </div>--}}
-
-{{--        </div>--}}
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </section>
+          </section>
 
 
 
@@ -621,9 +538,9 @@
       <script>
         document.getElementById('addToWishlist').addEventListener('click', function(event) {
             event.preventDefault();
-        
+
             var productId = this.getAttribute('data-id');
-        
+
             fetch('{{ route('wishlist.add') }}', {
                 method: 'POST',
                 headers: {
