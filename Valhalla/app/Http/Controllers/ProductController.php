@@ -31,33 +31,38 @@ class ProductController extends Controller implements BasketInterface
 //        return view('product', compact('Product_files.product'));
 //    }
 
-    /** @Bilal MO - made the index code as well as all functions revolving to products/product page */
+    /** @Bilal MO - made the index code as well as all functions revolving to products/product page, this is used to display all products
+     *pages.
+     */
     public function index(Request $request)
     {
-        // \Log::info('Request data:', $request->all());
+        //first displaying all items
         $category = $request->input('category', 'all');
         $query = Product::where('stock', '>', 0);
         // Get distinct brands found within database
         $brands = $category !== 'all' ? Product::select('brand')->where('category', $category)->distinct()->orderBy('brand')
             ->get() : Product::select('brand')->distinct()->orderBy('brand')->get();
 
-
+//if the category is all , then separate depending on their category
         if ($category !== 'all') {
             $query->where('category', $category);
         }
+        //assigns patters to the category - function found in service provider
         $categoryPatterns = $this->productService->getCategoryPatterns($category);
         $patterns = $category !== 'all' ? $categoryPatterns[$category] : [];
+        //this extract the data from product desc so it can be used.
         $productDesc = Product::where('category', $category)->distinct()->get()->pluck('product_description');
         // filter part
         $filters = $this->extractFilters($productDesc, $patterns);
+
         // Applying the filters
         $query = $this->filterProducts($query,$request, $filters);
-       // dd($query->toSql(), $query->getBindings()); // This will show you the SQL and the bindings
-
         // Applying sorting
         $this->sortLaptops($query, $request->input('sorting'));
+
         // this paginates the page to 12 products
         $products = $query->paginate(12);
+
         //this loops the feature extraction function to display the features to all products
         foreach ($products as $product) {
             $product->features = $this->productService->extractProductFeatures($product);
@@ -67,13 +72,13 @@ class ProductController extends Controller implements BasketInterface
         return view('Product_files.products', ['products' => $products, 'brands' => $brands, 'filters' => $filters, 'category' => $category]);
     }
 
-    /**  @Bilal Mo extract filter was for the filtering part - kinda not needed rn since it doesnt work :/ */
+    /**  @KraeBM  The extractFilter - works to extract the data from within the product description and displaying it in the filter container
+     * Done by using patterns and preg_match to match the data*/
     protected function extractFilters($descriptions, $patterns)
     {
+        //filter first left as an array, to take this data
         $filters = [];
-        //  Log::debug('Descriptions:', $descriptions->toArray());
-        /**  Due to possible string errors , an error must be used to check whether it is a string or not to handle it correctly*/
-        // foreach ($patterns as $category => $attributePatterns) {
+        //for loop works by -
         foreach ($patterns as $attribute => $pattern) {
             // Ensure pattern is a string and is a valid regular expression
             if (!is_string($pattern) || false === @preg_match($pattern, null)) {
@@ -81,7 +86,6 @@ class ProductController extends Controller implements BasketInterface
                 Log::warning("Invalid pattern for attribute {$attribute}: " . print_r($pattern, true));
                 continue; // Skip this pattern
             }
-
             // Extract matches for each pattern
             $matches = $descriptions->map(function ($desc) use ($pattern) {
                 preg_match_all($pattern, $desc, $match);
@@ -91,16 +95,11 @@ class ProductController extends Controller implements BasketInterface
             if (!empty($matches)) {
                 $filters[$attribute] = $matches;
             }
-            Log::debug("Attribute: $attribute, Pattern: $pattern, Matches: " . print_r($matches, true));
         }
-        //}
-        /**  Used these debugging to find what is produced from the filtering and patterns to check whether it got the data from the DB or not*/
-       // Log::debug('Patterns used:', $patterns);
-      //  Log::debug('Filters extracted:', $filters);
         return $filters;
     }
 
-    /** @Bilal Mo Assigning operations for the sorting functions */
+    /** @KraeBM (Bilal Mohamed) This Assigns operations for the sorting function */
     protected function sortLaptops($query, $sorting)
     {
         return match ($sorting) {
@@ -111,17 +110,17 @@ class ProductController extends Controller implements BasketInterface
         };
     }
 
-    /** @BilalMo The function works on displaying the laptop based on certain conditionals whether the filter of the feature has been
+    /** @KraeBM (Bilal Mohamed)  The function works on displaying the laptop based on certain conditionals whether the filter of the feature has been
      *pressed or not - other part for the flexible filter doesnt work so "//" for now*/
     protected function filterProducts($query,Request $request, $filters)
     {
         /**Assigning operations for if there are no filters chosen or
          * if both filters are chosen - here both selected in the request */
-        // \Log::debug('Query before filters:', [$query->toSql(), $query->getBindings()]);
-
         if ($checkedbrands = $request->input('brands', [])) {
             $query->whereIn('brand', $checkedbrands);
         }
+        /**This code works on getting the input from the database into what has been selected in the filter container, if correct - its displayed
+        used a for loop for this to iterate throughout all products, so any category chosen will also have their distinct features in filter present **/
 
         foreach ($filters as $filterName => $filterValues) {
             if ($requestInputValues = $request->input($filterName, [])) {
@@ -130,7 +129,7 @@ class ProductController extends Controller implements BasketInterface
                     $requestInputValues = [$requestInputValues];
                 }
                 $query->where(function ($q) use ($filterName, $requestInputValues, $filterValues) {
-                    // Apply only the filters that are relevant based on user input
+                    // Its applys only the filters that are relevant based on user input
                     foreach ($requestInputValues as $inputValue) {
                         if (in_array($inputValue, $filterValues)) {
                             $q->orWhere('product_description', 'LIKE',"%$filterName: %$inputValue%");
@@ -139,81 +138,47 @@ class ProductController extends Controller implements BasketInterface
                 });
             }
         }
+      //Debug: Log the final query - i used it to identify certain potential errors in the code during testing
 
-
-//        if ($request->has('GPU') && array_key_exists('GPU', $filters)) {
-//            $query->where(function ($q) use ($filters) {
-//                foreach ($filters['GPU'] as $value) {
-//                    $q->orWhereRaw('UPPER(product_description) LIKE UPPER(?)', ["%GPU:%{$value}%"]);
-//                }
-//            });
-//        }
-
-//        $query->where(function ($query) use ($filters) {
-//            foreach ($filters as $attribute => $values) {
-//                $query->orWhere(function ($query) use ($attribute, $values) {
-//                    foreach ($values as $value) {
-//                        // Debug: Log the query
-//                        Log::debug("Applying filter: {$attribute} LIKE {$value}");
-//                        $query->orWhere('product_description', 'LIKE', "%{$value}%");
-//                    }
-//                });
-//            }
-//        });
-
-        // Debug: Log the final query
         Log::debug('Final query built:', [$query->toSql(), $query->getBindings()]);
-
         return $query;
     }
-
-
     public function getInfo(Request $request)
     {
         /* had to restate these and put assign them within view since it returns an Undefined variable $brands/$graphics issue **/
         //  $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
         $laptopID = request()->input('laptopData'); //grabs specifically the section of the request that holds the laptop's ID
-        if ($laptopID != '' && Auth::id() != null) {
-            //     $product_data = DB::table('products')->where('product_id', $laptopID)->first();
-
-////            $basket = Basket::create([
-//                'user_id' => Auth::id(),
-//                'product_id' => $laptopID,
-//                'product_name' => $product_data->laptop_name,
-//                'product_price' => $product_data->price,
-//                'image_path' =>$product_data->image_path,
-//                'RAM' => $product_data->RAM,
-//                'GPU' => $product_data->GPU,
-//                'processor' => $product_data->processor
-//            ]);
-            /* In summary, $laptopID is the id passed to the controller by the products page,
-            $product_data is the entire row from the products table for that product, any info needed can be accessed with -> then the column name in the products table
-            I would have rather kept the specs somewhere else to prevent clutter but it's slightly more reliable just expanding the table and passing as usual*/
-        }
         $laptops = Product::all();
-        /*Scroll position set to the poisition of the user input */
-        /*Sets the restore scroll originally to true, if its true, then page refreshes from the top, if not continues by using
-        the saved Scroll positon */
+
+        /** Made by @KraeBM (Bilal Mohamed) - this sets the Scroll position to the position of the user input */
         $scrollPosition = $request->input('scrollPosition');
+        /*Sets the restore scroll originally to true, if its true, then page refreshes from the top, if not continues by using
+    the saved Scroll positon */
         session(['scrollPosition' => $scrollPosition, 'restoreScroll' => true]);
         return redirect()->back();
     }
 
-    /** @BilalMo displays the laptop info - also makes sure the related products change when refreshing - will make it change after 5-10s to make it cooler */
+    /** @KraeBM (Bilal Mohamed) displays the laptop info - also makes sure the related products change when refreshing - will make it change after 5-10s to make it cooler */
     public function showlaptopinfo($id)
     {
         $productDetails = Product::find($id);
+        if (!$productDetails) {
+            // Handle the case where the product is not found
+            abort(404);
+        }
+        //this displays the related products and the bottom of the template product page
         $relatedProducts = $this->getRelatedProducts($id, $productDetails->category);
+        //displays the product features
         $productDetails->features = $this->productService->extractProductFeatures($productDetails);
-//loops thru the related products part to show each ind product data
+        //loops through the related products part to show each ind product data
         foreach ($relatedProducts as $relatedProduct) {
             $relatedProduct->features = $this->productService->extractProductFeatures($relatedProduct);
         }
-
+//this is for the displaying  individual images for each product within the images table and assigning it to the specific id
         $images = DB::table('images')->get()->where('product_id', $id);
         return view('Product_files.Product_page_template.laptopproduct_template',['product' => $productDetails, 'relatedProducts' => $relatedProducts, 'images' => $images]);
     }
-/** @Bilal Mo works on showing the individual product pages using the id */
+/** @KraeBM (Bilal Mohamed)  works on showing the other individual product pages using the id - these are everything but the laptops */
     public function showotherproductinfo($id)
     {
         $productDetails = Product::find($id);
@@ -229,7 +194,8 @@ class ProductController extends Controller implements BasketInterface
         return view('Product_files.Product_page_template.otherproduct_template',['product' => $productDetails, 'relatedProducts' => $relatedProducts]);
     }
 
-    /**@Bilal implements a randomizer for the related products, showing diff products every time */
+
+    /**@KraeBM (Bilal Mohamed) This implements a randomizer for the related products, showing diff products every time when page is refreshed */
 public function getRelatedProducts($currentProductId,$category)
 {
     $relatedProducts = Product::where('product_id', '!=', $currentProductId)
@@ -237,21 +203,10 @@ public function getRelatedProducts($currentProductId,$category)
     ->where('stock','>',0)
     ->take(12)
     ->get()
-//        HAD TO MAKE IT TWO FOR LACK OF PRODUCTS, WHEN U ADD MORE DUMMY DATA, CHANGE IT TO 4
-    ->random(2); //Will make this 4 when theres enough products available
+    ->random(2);
     return $relatedProducts;
 }
 
-
-    // @say3dd (Mohammed Miah) displays all the products, maximum of 12 on the products page
-
-//    public function show($id)
-//    {
-//        $product = Product::find($id);
-//        $laptops = Product::where('product_id', '!=', $id)->take(5)->get();
-//        return view('Product_files.product', ['product' => $product, 'laptops' => $laptops]);
-//    }
-//
 
     public function basket()
     {
@@ -325,7 +280,7 @@ public function getRelatedProducts($currentProductId,$category)
 
 
 
-//@BilalMo code for the search bar (not completed yet)
+/**@KraeBM (Bilal Mohamed) code for the search bar - this works by searching through the database using SQL Queries to find those items similar to whats searched */
     public function search(Request $request)
     {
         $data = $request->input('search');
@@ -333,11 +288,11 @@ public function getRelatedProducts($currentProductId,$category)
         $brands = Product::select('brand')->distinct()->orderby('brand')->get();
         $query = Product::where('stock', '>', 0);
 
-        if(!empty($data)) {
-//Trying to implement search where it can look for specific searches, if mouses cool, but if they want a black mouse i want to only show
-            //'black  mouses'
-            // $indvData = explode(' ',$data);
-            $query->where(function ($q) use ($data){
+        //This code implements a search where it can look for specific searches that relate to the product-description, using attributes to find certain searches that match to the data
+        // within the attribute e.g. if the user searches the gpu name - it looks for those in the attribute that match that name and relate it to the data
+        // , which would be the products with that GPU
+        if (!empty($data)) {
+            $query->where(function ($q) use ($data) {
                 $q->where('brand', 'LIKE', "%$data%")
                     ->orWhere('product_name', 'LIKE', "%$data%")
                     ->orWhere('product_description', 'LIKE', "%$data%");
@@ -352,23 +307,11 @@ public function getRelatedProducts($currentProductId,$category)
             });
         }
         $products = $query->paginate(12);
+        //this is to show the individual product features in the product boxes
         foreach ($products as $product) {
             $product->features = $this->productService->extractProductFeatures($product);
         }
-        //Here i want to link it with the page that says (no products available , but for now
-        // ill use this (doesnt even show up anyway)
-
-//            DB::table('products')->where('brand', 'LIKE', "% {$data} %")
-//            ->orWhere('price','LIKE', "% {$data} %")->paginate(12);
-        //dd($products);
-        return view('Product_files.products',['products' => $products, 'category' => $category,'brands'=>$brands]);
-
-//        $search = request()->input('search');
-//        $category = 'all';
-//        $products= Product::where('brand', 'LIKE', "% . $search . %")
-//       ->paginate(12);
-//        $brands = Product::select('brand')->distinct()-> orderby('brand')-> get();
-//        return view('Product_files.products', compact('products','category','brands'));
+        return view('Product_files.products', ['products' => $products, 'category' => $category, 'brands' => $brands]);
     }
 
 

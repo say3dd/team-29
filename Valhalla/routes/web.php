@@ -48,11 +48,7 @@ Route::get('/test', function () {
     return view('Product_files.product');
 });
 
-//Route::get('/products', [ProductController::class,'index'])->name('products.index');
-//Route::get('/product', [ProductController::class,'getInfo'])->name('product.getInfo');
-////Route::get('/products/update', [ProductController::class,'pageUpdate'])->name('products.update');
 
-//
 /*
 The second route here sometimes overrides the first one (possibly something causing the buttons to trigger without an input).
 For now I've made a workaround by having the getInfo function check if it has recieved an input, if not it behaves just like the index function.

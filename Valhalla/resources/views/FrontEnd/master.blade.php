@@ -4,8 +4,8 @@
 
     - Homepage served as the main template of the overall design of the website (colors and styling).
     - Designed Using Fimga (Link in the Team doucmentation called (website prototype).
-    - @Anthony Resuello - In TP2 I imrpoved the homepage styling and added a category section to display different products. 
-
+    - @Anthony Resuello - In TP2 I imrpoved the homepage styling and added a category section to display different products.
+    - @KraeBM (Bilal Mohamed) - Fixed routing for the categories and anything leading to the products side,also did some parts in the Best Sellers side.
     @noramknarf (Francis Moran) - various minor bugfixes
 -->
 
@@ -191,7 +191,7 @@
                             <div class="laptop-specs">
                                 <a class = "product-info" style= "color: inherit; font-weight: bold; font-size: 1.2rem;" href="{{ $randomproduct->category === 'Laptop' ? route('product.laptopInfo', ['id' =>$randomproduct->product_id]) : route('product.otherInfo', ['id' =>$randomproduct->product_id]) }}">
                                     {{$randomproduct->product_name}}</a>
-{{--                                @Bilal Mo To show the product desc--}}
+{{--                                @KraeMo This is used to show the product desc from the DB--}}
                                 @foreach($randomproduct->features as $featureName => $featureValue)
                                         <p> {{ $featureName }}:{{ $featureValue }}</p>
                                     @endforeach

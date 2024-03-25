@@ -15,11 +15,12 @@
             {{$product->product_name}} </a>
         <ul>
             @foreach($product->features as $featureName => $featureValue)
-        {{--            This skips the feature that we dont want to show     --}}
+        {{--    @KraeMo (Bilal Mohamed)    This skips the feature that we dont want to show    --}}
         @if(
     ($product->category === 'Mouse' && in_array($featureName, ['Battery-Life'])) ||
     ($product->category === 'Monitor' && $featureName === 'Response-Time') ||
     ($product->category === 'Keyboard' && $featureName === 'Connectivity') ||
+    ($product->category === 'Keyboard' && $featureName === 'Colour') ||
      ($product->category === 'Laptop' && $featureName === 'Colour')
         )
                     @continue
