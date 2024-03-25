@@ -307,159 +307,26 @@
     </div>
     {{-- Section 3 ends here --}}
     {{-- Product-rating --}}
-    <div>
-        <form action="{{ route('submit-review', ['product' => $product->product_id, 'rating' => ':rating', 'review' => ':review']) }}" method="POST">
+    <div class="rating-system">
+        <link rel="stylesheet" href="{{asset('assets/css/rating.css')}}">--
+        <h4>Rate this product:</h4>
+        <form method="POST" action="{{ route('ratings.store', $product->product_id)}}">
             @csrf
-            <link rel="stylesheet" href="{{asset('assets/css/rating.css')}}">
-            <div class="container mt-11 custom">
-                @auth
-                    @if($userId = Auth::id())
-                        <div class="rate">
-                            <h1>Rate this Product</h1>
-                            <div class="rating">
-                                <span id="rating">0</span>/5
-                            </div>
-                            <div class="stars" id="stars">
-                                <label>
-                                    <span class="star" data-value="1">★</span>
-                                </label>
-                                <label>
-                                    <span class="star" data-value="2">★</span>
-                                </label>
-                                <label>
-                                    <span class="star" data-value="3">★</span>
-                                </label>
-                                <label>
-                                    <span class="star" data-value="4">★</span>
-                                </label><label>
-                                    <span class="star" data-value="5">★</span>
-                                </label>
-                            </div>
-                            <textarea name="text-box" id="review" placeholder="Write your review here"></textarea>
-                            <x-primary-button class="ml-10 mt-16" id="submit" type="button">Submit</x-primary-button>
-                        </div>
-                    @else
-                        <div class="mb-8 text-center text-white">
-                            You need to login in order to be able to rate the product!
-                        </div>
-                        <x-primary-button>
-                            <a href="{{ route('login', ['redirect' => url()->current()]) }}">Login</a>
-                        </x-primary-button>
-                    @endif
-                @else
-                    <div class="mb-8 text-center text-white">
-                        You need to login in order to rate the product!
-                    </div>
-                    <x-primary-button>
-                        <a href="{{ route('login') }}"
-                           class="block mx-auto"
-                        >Login</a>
-                    </x-primary-button>
-                @endauth
+{{--            <input type="hidden" name="product_id" value="{{ $product->product_id }}">--}}
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Very good">5 stars</label>
+                <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Ok">3 stars</label>
+                <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Pretty bad">2 stars</label>
+                <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Very bad">1 star</label>
             </div>
+            <div class="form-group">
+                <label for="review">Review:</label>
+                <textarea class="form-control" name="review" rows="3"></textarea>
+            </div>
+            <x-primary-button type="submit" class="btn btn-primary">Submit Rating</x-primary-button>
         </form>
     </div>
-    <script>document.addEventListener("DOMContentLoaded", function() {
-            const stars = document.querySelectorAll(".star");
-            const rating = document.getElementById("rating");
-            const reviewText = document.getElementById("review");
-            const submitBtn = document.getElementById("submit");
-            const reviewsContainer = document.getElementById("reviews");
-
-            stars.forEach((star, index) => {
-                star.addEventListener("click", () => {
-                    const value = index + 1;
-                    rating.innerText = value;
-
-                    stars.forEach((s, i) => {
-                        if (i <= index) {
-                            s.classList.add("selected");
-                        } else {
-                            s.classList.remove("selected");
-                        }
-                    });
-
-                    console.log("Stars after adding 'selected' class:", stars);
-
-
-                    stars.forEach((s) => s.classList.remove("one", "two", "three", "four", "five"));
-
-                    stars.forEach((s, i) => {
-                        if (i < value) {
-                            s.classList.add(getStarColorClass(value));
-                        }
-                    });
-                });
-            });
-
-            function submitReview() {
-                const userRating = parseInt(rating.innerText);
-                const review = reviewText.value;
-                const productId = "{{ $product->product_id }}";
-
-                if (userRating === 0 || review.trim() === "") {
-                    alert("Please rate the product and write a review to submit.");
-                    return;
-                }
-
-                const formData = new FormData();
-                formData.append('rating', userRating);
-                formData.append('review', review);
-                formData.append('product_id', productId);
-                formData.append('_token', "{{ csrf_token() }}");
-
-                const url = `{{ route('submit-review', ['product' => $product->product_id, 'rating' => ':rating', 'review' => ':review']) }}`.replace(':rating', userRating).replace(':review', review);
-
-                fetch(url, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ csrf_token() }}"
-                    }
-                })
-                    // .then(response => {
-                    //     if (!response.ok) {
-                    //         throw new Error('Failed to submit review. Please try again.');
-                    //     }
-                    //     return response.json();
-                    // })
-                    .then(data => {
-                        if (data.success) {
-                            alert('Review submitted successfully!');
-                            reviewText.value = '';
-                            rating.innerText = '0';
-                            stars.forEach(star => star.classList.remove('selected', 'one', 'two', 'three', 'four', 'five'));
-                        } else {
-                            alert('Failed to submit review. Please try again.');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error.message);
-                        alert('An error occurred while submitting the review. Please try again.');
-                    });
-            }
-
-            submitBtn.addEventListener("click", submitReview);
-
-            function getStarColorClass(value) {
-                switch (value) {
-                    case 1:
-                        return "one";
-                    case 2:
-                        return "two";
-                    case 3:
-                        return "three";
-                    case 4:
-                        return "four";
-                    case 5:
-                        return "five";
-                    default:
-                        return "";
-                }
-            }
-        });</script>
-
-
 
     {{--   @Bilal Mo  added a randomizer which chooses 4 products from the specific category it is and randomizes it after every refresh --}}
 <h1 class="laptop-heading">Related Products</h1>
