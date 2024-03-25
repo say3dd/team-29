@@ -8,7 +8,7 @@
 
     - @noramknarf (Francis Moran) - various minor bugfixes
     - @KraeBM (Bilal Mohamed) - Fixed routing for the categories and anything leading to the products side,also did some parts in the Best Sellers side.
-    @BravoBoy2 - Basket
+{{--    @BravoBoy2 - Basket--}}
 -->
 
 <head>

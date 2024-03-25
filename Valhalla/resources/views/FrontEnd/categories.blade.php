@@ -1,4 +1,4 @@
-<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Categories webpage using CSS.  -->
+{{--<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Categories webpage using CSS.  -->--}}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

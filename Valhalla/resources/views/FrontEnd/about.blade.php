@@ -1,15 +1,15 @@
-<!-- 
+{{--<!-- --}}
 
-   _____________________________________ Created and designed the About page of the webiste by @AnthonyResuello (Anthony Resuello) ____________________________________________
-                                          
-    - Used same styling and classes from my homepage to make the webiste look consistent.
-    - About Section 
-    - Why Choose Us Section 
-    - Our values Section
-    - What other people say? Section
+{{--   _____________________________________ Created and designed the About page of the webiste by @AnthonyResuello (Anthony Resuello) ____________________________________________--}}
+{{--                                          --}}
+{{--    - Used same styling and classes from my homepage to make the webiste look consistent.--}}
+{{--    - About Section --}}
+{{--    - Why Choose Us Section --}}
+{{--    - Our values Section--}}
+{{--    - What other people say? Section--}}
 
 
--->
+{{---->--}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +35,7 @@
 
       <div class="about-container">
         <div id="image">
-      
+
             <img class = "logo-icon" src="{{ asset('assets/images/logo-img.png') }}" alt=""">
         </div>
         <div class="about-contents">
@@ -75,7 +75,7 @@
           </p>
         </div>
 
-     
+
 
         <div class="about-info">
           <h2 class = "choose-title">Versatility</h2>
@@ -87,7 +87,7 @@
           </p>
         </div>
 
-     
+
 
         <div class="about-info">
           <h2 class = "choose-title">Innovation</h2>
@@ -124,7 +124,7 @@
               features and technologies.</p>
           </div>
           <div>
-         
+
             <img  src="{{ asset('assets/images/GrtSb9NjcYRJcojjhgEJf9.jpg') }}" alt=""">
 
           </div>
@@ -139,7 +139,7 @@
         <div id="testimonials-container">
           <div class="testimonial">
             <div class="top-card">
-         
+
                 <img  src="{{ asset('assets/images/person1.jpg') }}" alt=""">
 
             </div>
@@ -156,8 +156,8 @@
           </div>
           <div class="testimonial">
             <div class="top-card">
-            
-                
+
+
                 <img  src="{{ asset('assets/images/ptreview16.jpg') }}" alt=""">
 
             </div>
@@ -183,7 +183,7 @@
                 The laptops are reliable for everyday use, striking the
                 perfect
                 balance of power and portability.Vallhala has truly
-                transformed my 
+                transformed my
                  gaming productivity"</blockquote>
 
             </div>
@@ -195,10 +195,10 @@
       <footer>
         @include('footer')
       </footer>
-    
-       
-   
-        
+
+
+
+
 </body>
 
 </html>

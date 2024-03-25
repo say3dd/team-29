@@ -1,6 +1,6 @@
-<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Product page using CSS. Also used JavaScript to make "View all specification"
-     button work, so the user could see all of the specifications about a praticular product  -->
-<!-- @noramknarf (Francis Moran) - Implemented dynamic images -->
+{{--<!-- @ElizavetaMikheeva (Elizaveta Mikheeva) - implemented the front-end (design) of the Product page using CSS. Also used JavaScript to make "View all specification"--}}
+{{--     button work, so the user could see all of the specifications about a praticular product  -->--}}
+{{--<!-- @noramknarf (Francis Moran) - Implemented dynamic images -->--}}
 
 <head>
     <meta charset="UTF-8">
