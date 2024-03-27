@@ -308,24 +308,33 @@
     {{-- Section 3 ends here --}}
     {{-- Product-rating --}}
     <div class="rating-system">
-        <link rel="stylesheet" href="{{asset('assets/css/rating.css')}}">--
-        <h4>Rate this product:</h4>
+        <link rel="stylesheet" href="{{asset('assets/css/rating.css')}}">
+        <div class="container">
+        <h4 style="font-size: 28px;">Rate this product</h4>
         <form method="POST" action="{{ route('ratings.store', $product->product_id)}}">
             @csrf
 {{--            <input type="hidden" name="product_id" value="{{ $product->product_id }}">--}}
+            <dv class="">
+            <label for="star1" style="font-size:25px; margin-right:17px;">1</label>
+            <label for="star2" style="font-size:25px; margin-right:17px;">2</label>
+            <label for="star3" style="font-size:25px; margin-right:17px;">3</label>
+            <label for="star4" style="font-size:25px; margin-right:17px;">4</label>
+            <label for="star5" style="font-size:25px; margin-right:17px;">5</label>
+            </dv>
             <div class="rating">
-                <input type="radio" id="star5" name="rating" value="5" required /><label for="star5" title="Very good">5 stars</label>
-                <input type="radio" id="star4" name="rating" value="4" required /><label for="star4" title="Pretty good">4 stars</label>
-                <input type="radio" id="star3" name="rating" value="3" required /><label for="star3" title="Ok">3 stars</label>
-                <input type="radio" id="star2" name="rating" value="2" required /><label for="star2" title="Pretty bad">2 stars</label>
-                <input type="radio" id="star1" name="rating" value="1" required /><label for="star1" title="Very bad">1 star</label>
+                <input type="radio" id="star1" name="rating" value="1" style="margin-right: 13px;" required />
+                <input type="radio" id="star2" name="rating" value="2" style="margin-right: 13px;" required />
+                <input type="radio" id="star3" name="rating" value="3" style="margin-right: 13px;" required />
+                <input type="radio" id="star4" name="rating" value="4" style="margin-right: 13px;" required />
+                <input type="radio" id="star5" name="rating" value="5" style="margin-right: 13px;" required />
             </div>
             <div class="form-group">
-                <label for="review">Review:</label>
+                <p class="font-bold">Write review here: </p>
                 <textarea class="form-control" required name="review" rows="3"></textarea>
             </div>
-            <x-primary-button type="submit" class="btn btn-primary">Submit Rating</x-primary-button>
+            <x-primary-button type="submit" class="btn btn-primary mt-3">Submit Rating</x-primary-button>
         </form>
+        </div>
     </div>
 
     {{--   @Bilal Mo  added a randomizer which chooses 4 products from the specific category it is and randomizes it after every refresh --}}
@@ -401,34 +410,37 @@
     }
 </script>
 <script>
-        document.getElementById('addToWishlist').addEventListener('click', function(event) {
-            event.preventDefault();
-
-            var productId = this.getAttribute('data-id');
-
-            fetch('{{ route('wishlist.add') }}', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({
-                    product_id: productId
-                })
-            }).then(response => {
-                if (response.ok) {
-                    alert('Item added to wishlist successfully');
-                    return response.json();
-                } else {
-                    throw new Error('Error: ' + response.statusText);
-                }
-            })
-            .then(data => console.log(data))
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+    document.getElementById('addToWishlist').addEventListener('click', function(event) {
+        event.preventDefault();
+    
+        var productId = this.getAttribute('data-id');
+    
+        fetch('{{ route('wishlist.add') }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({
+                product_id: productId
+            }),
+            redirect: 'manual' 
+        }).then(response => {
+            if (response.type === 'opaqueredirect') {
+                window.location.href = '/login';
+            } else if (response.ok) {
+                alert('Item added to wishlist successfully');
+                return response.json();
+            } else {
+                throw new Error('Error adding item to wishlist');
+            }
+        })
+        .then(data => console.log(data))
+        .catch((error) => {
+            console.error('Error:', error);
         });
-        </script>
+    });
+    </script>
 </body>
 <!--            Footer                      -->
 <footer>

@@ -1,6 +1,6 @@
 <?php
 
-//<!--{{--Authors = Basit Ali Mohammad = @BM786 --}}-->
+//<!--{{--Authors = Basit Ali Mohammad = @BM786 = ratingController --}}-->
 
 //namespace App\Http\Controllers;
 //

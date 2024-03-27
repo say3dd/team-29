@@ -27,6 +27,10 @@ class WishListController extends Controller
 
     public function add(Request $request)
     {
+
+        if (!Auth::check()) {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
         try {
         $user_id = auth()->id();
         $product_id = $request->input('product_id');
